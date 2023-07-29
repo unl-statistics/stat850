@@ -1,7 +1,7 @@
 ---
 title: "Finding your way in R and Python"
 date: "2023-08-29"
-category: "Slides"
+categories: Slides
 format: 
   revealjs:
     css: ["robot.css", default]

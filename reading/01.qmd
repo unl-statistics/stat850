@@ -1,6 +1,6 @@
 ---
 title: "Setup and Syllabus Annotation"
-category: "Reading"
+categories: Reading
 date: 2023-08-21
 ---
 
