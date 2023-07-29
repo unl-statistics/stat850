@@ -6,4 +6,4 @@ categories: HW
 
 Note: This assignment must be submitted in github classroom.
 
-{{< include ../homework-repos/01-git-github/README.md >}}
+{{< include ../homework-repos/01-git-github/README.qmd >}}
