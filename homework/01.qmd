@@ -1,0 +1,9 @@
+---
+title: "Homework 1: Git and Github"
+date: August 25, 2023
+categories: HW
+---
+
+Note: This assignment must be submitted in github classroom.
+
+{{< include ../homework-repos/01-git-github/README.md >}}

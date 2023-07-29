@@ -3,7 +3,9 @@
     "listing": "/index.html",
     "items": [
       "/slides/02a-Finding-Your-Way.html",
-      "/homework/02.html"
+      "/homework/02.html",
+      "/homework/01.html",
+      "/reading/01.html"
     ]
   }
 ]

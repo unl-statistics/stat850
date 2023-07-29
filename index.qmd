@@ -13,6 +13,7 @@ listing:
     categories: true
     contents: 
       - "homework/*.qmd"
+      - "reading/*.qmd"
       - "project/*.qmd"
     sort: "date desc"
     type: table
@@ -24,9 +25,11 @@ listing:
 Dates shown are due dates (for homework and projects) and dates on which material was presented (for slides).
 
 ## Assignments
+Dates shown are due dates (for homework, projects) and dates by which initial comments/annotations should be made (reading).
 
 ::: {#hwlst}
 :::
+
 
 ## Slides and Other Materials
 

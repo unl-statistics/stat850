@@ -6,6 +6,7 @@ project:
     - syllabus.qmd
     - homework/*.qmd
     - slides/*.qmd
+    - reading/*.qmd
 website:
   title: "Stat 850: Computing Tools for Statisticians"
   navbar:
