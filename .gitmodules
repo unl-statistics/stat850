@@ -10,3 +10,6 @@
 [submodule "homework-repos/04-data-prog"]
 	path = homework-repos/04-data-prog
 	url = git@github.com:stat850-unl/Hw-04-DataProgramming.git
+[submodule "homework-repos/05-data-cookies"]
+	path = homework-repos/05-data-cookies
+	url = git@github.com:unl-stat251/hw-reading-data-template.git
