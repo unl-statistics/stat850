@@ -18,6 +18,7 @@ website:
       - href: syllabus.pdf
         text: Syllabus
   google-analytics: "G-KQ9CCFY6LV"
+
 format:
   html:
     theme: cosmo

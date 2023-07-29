@@ -1,0 +1,12 @@
+---
+title: "Good Enough Practices in Scientific Computing"
+date: 2023-09-04
+draft: true
+---
+
+Read: 
+- [Good Enough Practices in Scientific Computing](https://doi.org/10.1371/journal.pcbi.1005510)
+
+Think about/comment on: 
+- What basic computing skills were you taught? Which ones were you not taught?
+- Which workflows do you think will be useful to you? Which ones do you plan to ignore for now? Why?

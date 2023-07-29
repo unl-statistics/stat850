@@ -4,3 +4,9 @@
 [submodule "homework-repos/01-git-github"]
 	path = homework-repos/01-git-github
 	url = git@github.com:stat850-unl/github-starter-course.git
+[submodule "homework-repos/03-fizzbuzz"]
+	path = homework-repos/03-fizzbuzz
+	url = git@github.com:stat850-unl/Hw-03-Fizzbuzz
+[submodule "homework-repos/04-data-prog"]
+	path = homework-repos/04-data-prog
+	url = git@github.com:stat850-unl/Hw-04-DataProgramming.git

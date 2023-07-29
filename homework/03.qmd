@@ -1,0 +1,9 @@
+---
+title: "Homework 3: Fizzbuzz"
+date: September 8, 2023
+draft: true
+---
+
+Note: This assignment must be submitted in github classroom.
+
+{{< include ../homework-repos/03-fizzbuzz/index.qmd >}}

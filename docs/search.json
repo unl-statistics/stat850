@@ -4,21 +4,7 @@
     "href": "index.html",
     "title": "Stat 850: Computing Tools for Statistics",
     "section": "",
-    "text": "Dates shown are due dates (for homework and projects) and dates on which material was presented (for slides).\n\n\nDates shown are due dates (for homework, projects) and dates by which initial comments/annotations should be made (reading).\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\n\n\n\n\nSep 1, 2023\n\n\nHomework 2: Finding Your Way in R and Python\n\n\n\n\nAug 28, 2023\n\n\nDecoding Your Confusion\n\n\n\n\nAug 25, 2023\n\n\nHomework 1: Git and Github\n\n\n\n\nAug 21, 2023\n\n\nSetup and Syllabus Annotation\n\n\n\n\n\n\nNo matching items\n\n\n\n\n\nMost classes will not contain slide presentations, but when there are slides to share, they will be provided here.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\n\n\n\n\nAug 29, 2023\n\n\nFinding your way in R and Python\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html#assignments",
-    "href": "index.html#assignments",
-    "title": "Stat 850: Computing Tools for Statistics",
-    "section": "",
-    "text": "Dates shown are due dates (for homework, projects) and dates by which initial comments/annotations should be made (reading).\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\n\n\n\n\nSep 1, 2023\n\n\nHomework 2: Finding Your Way in R and Python\n\n\n\n\nAug 28, 2023\n\n\nDecoding Your Confusion\n\n\n\n\nAug 25, 2023\n\n\nHomework 1: Git and Github\n\n\n\n\nAug 21, 2023\n\n\nSetup and Syllabus Annotation\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html#slides-and-other-materials",
-    "href": "index.html#slides-and-other-materials",
-    "title": "Stat 850: Computing Tools for Statistics",
-    "section": "",
-    "text": "Most classes will not contain slide presentations, but when there are slides to share, they will be provided here.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\n\n\n\n\nAug 29, 2023\n\n\nFinding your way in R and Python\n\n\n\n\n\n\nNo matching items"
+    "text": "Course Materials\nDates shown are due dates (for homework, projects) and dates by which initial comments/annotations should be made (reading).\nMost classes will not contain slide presentations, but when there are slides to share, they will be provided here.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\n\nTitle\n\n\n\n\n\n\nSep 1, 2023\n\n\n\n\n\nHomework 2: Finding Your Way in R and Python\n\n\n\n\nAug 29, 2023\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nAug 28, 2023\n\n\n\n\n\nDecoding Your Confusion\n\n\n\n\nAug 25, 2023\n\n\n\n\n\nHomework 1: Git and Github\n\n\n\n\nAug 21, 2023\n\n\n\n\n\nSetup and Syllabus Annotation\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "homework/01.html",
@@ -35,17 +21,17 @@
     "text": "🤓 Course overview and learning outcomes\nThe goal of this course is to give you a brief introduction to GitHub. We’ll also provide you with materials for further learning and a few ideas to get you started on our platform. 🚀"
   },
   {
-    "objectID": "homework/01.html#fa-brands-fa-github-git-and-github",
-    "href": "homework/01.html#fa-brands-fa-github-git-and-github",
+    "objectID": "homework/01.html#git-and-github",
+    "href": "homework/01.html#git-and-github",
     "title": "Homework 1: Git and Github",
-    "section": " Git and GitHub",
+    "section": "Git and GitHub",
     "text": "Git and GitHub\nGit is a distributed Version Control System (VCS), which means it is a useful tool for easily tracking changes to your code, collaborating, and sharing. With Git you can track the changes you make to your project so you always have a record of what you’ve worked on and can easily revert back to an older version if need be. It also makes working with others easier—groups of people can work together on the same project and merge their changes into one final source!\nGitHub is a way to use the same power of Git all online with an easy-to-use interface. It’s used across the software world and beyond to collaborate and maintain the history of projects.\nGitHub is home to some of the most advanced technologies in the world. Whether you’re visualizing data or building a new game, there’s a whole community and set of tools on GitHub that can get you to the next step. This course starts with the basics of GitHub, but we’ll dig into the rest later."
   },
   {
-    "objectID": "homework/01.html#fa-brands-fa-github-understanding-the-github-flow",
-    "href": "homework/01.html#fa-brands-fa-github-understanding-the-github-flow",
+    "objectID": "homework/01.html#understanding-the-github-flow",
+    "href": "homework/01.html#understanding-the-github-flow",
     "title": "Homework 1: Git and Github",
-    "section": " Understanding the GitHub flow",
+    "section": "Understanding the GitHub flow",
     "text": "Understanding the GitHub flow\nThe GitHub flow is a lightweight workflow that allows you to experiment and collaborate on your projects easily, without the risk of losing your previous work.\n\nRepositories\nA repository is where your project work happens–think of it as your project folder. It contains all of your project’s files and revision history. You can work within a repository alone or invite others to collaborate with you on those files.\n\n\nCloning\nWhen a repository is created with GitHub, it’s stored remotely in the ☁️. You can clone a repository to create a local copy on your computer and then use Git to sync the two. This makes it easier to fix issues, add or remove files, and push larger commits. You can also use the editing tool of your choice as opposed to the GitHub UI. Cloning a repository also pulls down all the repository data that GitHub has at that point in time, including all versions of every file and folder for the project! This can be helpful if you experiment with your project and then realize you liked a previous version more. To learn more about cloning, read “Cloning a Repository”.\n\n\nCommitting and pushing\nCommitting and pushing are how you can add the changes you made on your local machine to the remote repository in GitHub. That way your instructor and/or teammates can see your latest work when you’re ready to share it. You can make a commit when you have made changes to your project that you want to “checkpoint.” You can also add a helpful commit message to remind yourself or your teammates what work you did (e.g. “Added a README with information about our project”).\nOnce you have a commit or multiple commits that you’re ready to add to your repository, you can use the push command to add those changes to your remote repository. Committing and pushing may feel new at first, but we promise you’ll get used to it 🙂"
   },
   {
@@ -60,7 +46,7 @@
     "href": "homework/01.html#next-steps",
     "title": "Homework 1: Git and Github",
     "section": "📝 Next steps",
-    "text": "📝 Next steps\n\nClone this repository to your local machine\nOn your local machine, create a new markdown file in this repository named ‘About_Me.md’. Provide a short biography/introduction for yourself and use markdown formatting\n\nYou must use at least the following formatting elements: header, subheader, bold, italic, bulleted list, and an image.\n\nCommit your changes to your new file locally and push them back to your github repository. Check on Github to make sure the new file appears.\nTo get full credit for your assignment, you will need to have worked with your git repository locally. I will be able to see if you have used the github editor to make your changes instead :)."
+    "text": "📝 Next steps\n\nClone this repository to your local machine\nOn your local machine, create a new markdown file in this repository named ‘About_Me.md’. Provide a short biography/introduction for yourself and use markdown formatting\n\nMarkdown Basics provides an overview of different formatting options in markdown.\nYou must use at least the following formatting elements: header, subheader, bold, italic, bulleted list, and an image.\n\nCommit your changes to your new file locally and push them back to your github repository. Check on Github to make sure the new file appears.\nTo get full credit for your assignment, you will need to have worked with your git repository locally. I will be able to see if you have used the github editor to make your changes instead :)."
   },
   {
     "objectID": "homework/01.html#resources",
@@ -126,29 +112,29 @@
     "text": "Source Script\n\n\nRunning madlibs.py using Source Script in RStudio"
   },
   {
-    "objectID": "reading/01.html",
-    "href": "reading/01.html",
+    "objectID": "reading/01-SignUp-Syllabus.html",
+    "href": "reading/01-SignUp-Syllabus.html",
     "title": "Setup and Syllabus Annotation",
     "section": "",
     "text": "In this class, we will have weekly readings that are intended to broaden your horizons, introduce you to new ideas related to computing and reproducibility, and highlight important ethical considerations that we won’t discuss directly in class but that have implications for computing.\nI haven’t yet found a great tool for “social annotation”, but the idea is to allow you to read an article, make snarky (or insightful) comments, and see how your classmates react, ideally starting discussions and enriching everyone’s experiences.\nThis semester I’ve decided to try Hypothes.is. I haven’t used this before, so we’ll see how it goes."
   },
   {
-    "objectID": "reading/01.html#setup",
-    "href": "reading/01.html#setup",
+    "objectID": "reading/01-SignUp-Syllabus.html#setup",
+    "href": "reading/01-SignUp-Syllabus.html#setup",
     "title": "Setup and Syllabus Annotation",
     "section": "Setup",
     "text": "Setup\n\nCreate a free Hypothes.is account using your UNL email address\nJoin the Class Group\nInstall the browser addon in Chrome/Edge or the bookmarklet in your browser of choice."
   },
   {
-    "objectID": "reading/01.html#annotate-the-syllabus",
-    "href": "reading/01.html#annotate-the-syllabus",
+    "objectID": "reading/01-SignUp-Syllabus.html#annotate-the-syllabus",
+    "href": "reading/01-SignUp-Syllabus.html#annotate-the-syllabus",
     "title": "Setup and Syllabus Annotation",
     "section": "Annotate the Syllabus",
     "text": "Annotate the Syllabus\nOpen the syllabus in your browser.\n\nActivate hypothes.is using the addon or the bookmarklet.\nLog in (if necessary)\nMake sure you are posting your annotations to the 2023-Stat850 group.\nHighlight some text and make a comment. Ask a question about something you don’t understand, or complain about something you find unfair - I’m totally fine with that, I can take it.\nRead through the remainder of the syllabus and comment/highlight important points, things that need clarification, etc.\nRespond to your classmates’ comments before Friday at 8pm."
   },
   {
-    "objectID": "reading/01.html#evaluation",
-    "href": "reading/01.html#evaluation",
+    "objectID": "reading/01-SignUp-Syllabus.html#evaluation",
+    "href": "reading/01-SignUp-Syllabus.html#evaluation",
     "title": "Setup and Syllabus Annotation",
     "section": "Evaluation",
     "text": "Evaluation\nI will grade this assignment (and future assignments) by looking at your annotations in the 2023-Stat850 group. If you annotate articles and post the comments to “Public” instead of our group, I have no way to give you credit for the assignment.\nYou will get credit both for your own annotations and for responses to classmates’ comments/questions. These responses should be organic, not formulaic - I expect you to engage with interesting thoughts/comments, but you are not required to make a specific number of comments each week. I will instead track your overall engagement over the course of the semester."
