@@ -16,6 +16,7 @@ listing:
       - "project/*.qmd"
     sort: "date desc"
     type: table
+    fields: [date, title]
 ---
 
 # Course Materials
@@ -27,7 +28,7 @@ Dates shown are due dates (for homework and projects) and dates on which materia
 ::: {#hwlst}
 :::
 
-## Slides
+## Slides and Other Materials
 
 Most classes will not contain slide presentations, but when there are slides to share, they will be provided here.
 

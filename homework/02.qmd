@@ -1,0 +1,9 @@
+---
+title: "Homework 2: Finding Your Way in R and Python"
+date: September 4, 2023
+categories: HW
+---
+
+Note: This assignment must be submitted in github classroom.
+
+{{< include ../homework-repos/02-finding-your-way/index.qmd >}}

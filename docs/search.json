@@ -4,21 +4,42 @@
     "href": "index.html",
     "title": "Stat 850: Computing Tools for Statistics",
     "section": "",
-    "text": "Dates shown are due dates (for homework and projects) and dates on which material was presented (for slides).\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\n\nMost classes will not contain slide presentations, but when there are slides to share, they will be provided here.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\n\n\n\n\nAug 29, 2023\n\n\nFinding your way in R and Python\n\n\n\n\n\n\nNo matching items"
+    "text": "Dates shown are due dates (for homework and projects) and dates on which material was presented (for slides).\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\n\n\n\n\nSep 4, 2023\n\n\nHomework 2: Finding Your Way in R and Python\n\n\n\n\n\n\nNo matching items\n\n\n\n\n\nMost classes will not contain slide presentations, but when there are slides to share, they will be provided here.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\n\n\n\n\nAug 29, 2023\n\n\nFinding your way in R and Python\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#assignments",
     "href": "index.html#assignments",
     "title": "Stat 850: Computing Tools for Statistics",
     "section": "",
-    "text": "No matching items"
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\n\n\n\n\nSep 4, 2023\n\n\nHomework 2: Finding Your Way in R and Python\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "index.html#slides",
-    "href": "index.html#slides",
+    "objectID": "index.html#slides-and-other-materials",
+    "href": "index.html#slides-and-other-materials",
     "title": "Stat 850: Computing Tools for Statistics",
     "section": "",
     "text": "Most classes will not contain slide presentations, but when there are slides to share, they will be provided here.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\n\n\n\n\nAug 29, 2023\n\n\nFinding your way in R and Python\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "homework/02.html",
+    "href": "homework/02.html",
+    "title": "Homework 2: Finding Your Way in R and Python",
+    "section": "",
+    "text": "Note: This assignment must be submitted in github classroom.\nInstructions: Once you have finished this assignment, render the document (Ctrl/Cmd-Shift-K or the Render button). Commit the qmd file and any other files you have changed to the repository and push your changes.\nIn Canvas, submit a link to your github repository containing the updated files.\nNote: Submitting your link in Canvas lets me know that you are ready for me to grade your homework. You can commit half-finished or not-working homework to GitHub, and it is good practice to commit frequently (at least at the end of each work session)."
+  },
+  {
+    "objectID": "homework/02.html#pythagorean-theorem-in-r",
+    "href": "homework/02.html#pythagorean-theorem-in-r",
+    "title": "Homework 2: Finding Your Way in R and Python",
+    "section": "Pythagorean Theorem in R",
+    "text": "Pythagorean Theorem in R\n\\[a^2 + b^2 = c^2\\]\nUse the chunk below to define variables \\(a\\), \\(b\\), and \\(c\\), where you define the values of \\(a\\) and \\(b\\), and \\(c\\) is determined mathematically. You may need to find the square root function in R to make this work.\n\n# Your pythagorean theorem code goes here"
+  },
+  {
+    "objectID": "homework/02.html#quadratic-formula-in-python",
+    "href": "homework/02.html#quadratic-formula-in-python",
+    "title": "Homework 2: Finding Your Way in R and Python",
+    "section": "Quadratic Formula in Python",
+    "text": "Quadratic Formula in Python\n\\[x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\\]\nUse the chunk below to define variables \\(a\\), \\(b\\), and \\(c\\), and then define \\(x1\\) and \\(x2\\), the possible values for \\(x\\). You may find it helpful to define a few additional variables, such as the value of the discriminant \\(\\sqrt{b^2 - 4ac}\\), to make it easier to calculate the results.\n\n# Your quadratic formula code goes here"
   },
   {
     "objectID": "slides/02a-Finding-Your-Way.html#rstudio-projects",

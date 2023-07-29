@@ -1,3 +1,6 @@
 [submodule "homework-repos/02-finding-your-way"]
 	path = homework-repos/02-finding-your-way
 	url = git@github.com:stat850-unl/Hw-02-Finding-Your-Way.git
+[submodule "homework-repos/01-git-github"]
+	path = homework-repos/01-git-github
+	url = git@github.com:stat850-unl/github-starter-course.git
