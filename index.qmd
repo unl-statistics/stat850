@@ -1,11 +1,20 @@
 ---
-title: "website"
+title: "Stat 850: Computing Tools for Statistics"
+format: html
+listing:
+  - id: hwlst
+    categories: true
+    contents: 
+      - "homework/*.qmd"
+      - "slides/*.qmd"
+      - "project/*.qmd"
+    sort: "date desc"
+    type: table
 ---
 
-This is a Quarto website.
+# Course Materials
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Dates shown are due dates (for homework and projects) and dates on which material was presented (for slides).
 
-```{r}
-1 + 1
-```
+::: {#hwlst}
+:::
