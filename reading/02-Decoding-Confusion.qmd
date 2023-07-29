@@ -1,0 +1,17 @@
+---
+title: "Decoding Your Confusion"
+categories: Reading
+date: 2023-08-28
+---
+
+This week's assignment is in a book available through O'Reilly Safari Online Learning. UNL's library provides access to these resources for free, if you follow these instructions:
+
+1. [O'Reilly Media page](https://www.safaribooksonline.com/library/view/temporary-access/?orpq)
+2. Enter your UNL email address when prompted. Log in with your UNL credentials.
+3. Go to [The Programmer's Brain](https://www.oreilly.com/library/view/the-programmers-brain/9781617298677/Text/ch01.htm) by Felienne Hermans, Chapter 1.
+4. Start annotating! Don't forget to post your annotations to the class group!
+
+![](oreilly-prog-brain.gif){fig-alt="A gif showing the steps to log in to O'Reilly Books using UNL's connection. Go to the link provided in step 1. Click on 'institution not found' and enter your UNL email address when prompted. Log in with your UNL Credentials. Navigate to the URL given in step 3. Start annotating."}
+
+
+Note that the examples in this book are given in unfamiliar programming languages. That's ok - read the code as best as you can, but part of the content of this chapter is that reading code can be hard!
