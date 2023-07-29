@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Stat 850: Computing Tools for Statistics",
+    "section": "",
+    "text": "Dates shown are due dates (for homework and projects) and dates on which material was presented (for slides).\n\n\n\n\n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\n\nMost classes will not contain slide presentations, but when there are slides to share, they will be provided here.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\n\n\n\n\nAug 29, 2023\n\n\nFinding your way in R and Python\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#assignments",
+    "href": "index.html#assignments",
+    "title": "Stat 850: Computing Tools for Statistics",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "index.html#slides",
+    "href": "index.html#slides",
+    "title": "Stat 850: Computing Tools for Statistics",
+    "section": "",
+    "text": "Most classes will not contain slide presentations, but when there are slides to share, they will be provided here.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\n\n\n\n\nAug 29, 2023\n\n\nFinding your way in R and Python\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "slides/02a-Finding-Your-Way.html#rstudio-projects",
+    "href": "slides/02a-Finding-Your-Way.html#rstudio-projects",
+    "title": "Finding your way in R and Python",
+    "section": "RStudio Projects",
+    "text": "RStudio Projects\nRStudio projects are a way to keep your work organized.\nLet’s create one for this week’s class work.\n\nCreating an RStudio Project"
+  },
+  {
+    "objectID": "slides/02a-Finding-Your-Way.html#ways-to-execute-code",
+    "href": "slides/02a-Finding-Your-Way.html#ways-to-execute-code",
+    "title": "Finding your way in R and Python",
+    "section": "Ways to Execute Code",
+    "text": "Ways to Execute Code\nDownload madlibs.py and place it in your newly created project."
+  },
+  {
+    "objectID": "slides/02a-Finding-Your-Way.html#command-line",
+    "href": "slides/02a-Finding-Your-Way.html#command-line",
+    "title": "Finding your way in R and Python",
+    "section": "Command Line",
+    "text": "Command Line\n\nRunning madlibs.py at the command line"
+  },
+  {
+    "objectID": "slides/02a-Finding-Your-Way.html#source-script",
+    "href": "slides/02a-Finding-Your-Way.html#source-script",
+    "title": "Finding your way in R and Python",
+    "section": "Source Script",
+    "text": "Source Script\n\n\nRunning madlibs.py using Source Script in RStudio"
+  }
+]

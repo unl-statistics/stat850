@@ -16,8 +16,13 @@ website:
         text: Textbook
       - href: syllabus.pdf
         text: Syllabus
+  google-analytics: "G-KQ9CCFY6LV"
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
+
+execute:
+  cache: true
+  freeze: auto  # re-render only when source changes

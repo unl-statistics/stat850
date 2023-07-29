@@ -23,6 +23,8 @@ officehours: "\\href{https://calendly.com/drvanderplas/officehours}{Schedule her
 office: "Hardin 343D"
 classroom: "Keim 214"
 classhours: "TR 12:30-1:45"
+execute: 
+  cache: true
 ---
 
 

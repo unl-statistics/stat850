@@ -1,5 +1,6 @@
 ---
 title: "Finding your way in R and Python"
+date: "2023-08-29"
 format: 
   revealjs:
     css: ["robot.css", default]

@@ -2,11 +2,17 @@
 title: "Stat 850: Computing Tools for Statistics"
 format: html
 listing:
+  - id: slidelst
+    categories: true
+    contents:
+      - "slides/*.qmd"
+    sort: "date desc"
+    type: table
+    fields: [date, title]
   - id: hwlst
     categories: true
     contents: 
       - "homework/*.qmd"
-      - "slides/*.qmd"
       - "project/*.qmd"
     sort: "date desc"
     type: table
@@ -16,5 +22,14 @@ listing:
 
 Dates shown are due dates (for homework and projects) and dates on which material was presented (for slides).
 
+## Assignments
+
 ::: {#hwlst}
+:::
+
+## Slides
+
+Most classes will not contain slide presentations, but when there are slides to share, they will be provided here.
+
+::: {#slidelst}
 :::
