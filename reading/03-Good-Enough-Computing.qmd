@@ -1,6 +1,6 @@
 ---
 title: "Good Enough Practices in Scientific Computing"
-date: 2023-09-04
+date: 2023-09-01
 draft: true
 ---
 

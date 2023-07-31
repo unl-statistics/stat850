@@ -1,6 +1,6 @@
 ---
 title: "Tidy Tuesday Screencast: Doctor Who"
-date: 2023-09-12
+date: 2023-09-08
 draft: true
 ---
 
@@ -12,3 +12,5 @@ Watch the following screencast:
 Think about/comment on: 
 - You might try to follow along with the data, but pay attention to how the analysis proceeds over time. 
 - What did you learn from watching someone else do data analysis in realtime?
+
+Submit your answers to the Canvas quiz. If you want to annotate the YouTube page, that is fine, but I will grade the Canvas quiz.
