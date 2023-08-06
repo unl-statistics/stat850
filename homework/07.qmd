@@ -1,0 +1,9 @@
+---
+title: "Homework 7: Murder in SQL City"
+date: October 2, 2023
+draft: true
+---
+
+Note: This assignment must be submitted in github classroom.
+
+{{< include ../homework-repos/07-murder/index.qmd >}}

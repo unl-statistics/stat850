@@ -16,3 +16,6 @@
 [submodule "homework-repos/06-wrangling"]
 	path = homework-repos/06-wrangling
 	url = https://github.com/unl-stat251/06-strings.git
+[submodule "homework-repos/07-murder"]
+	path = homework-repos/07-murder
+	url = https://github.com/stat850-unl/07-murder-mystery.git
