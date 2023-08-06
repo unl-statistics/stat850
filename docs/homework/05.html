@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Your Name">
 <meta name="dcterms.date" content="2023-09-22">
 
-<title>Stat 850: Computing Tools for Statisticians - Homework 5: Reading in Data with Cookies</title>
+<title>Stat 850: Computing Tools for Statisticians - Homework 5: Exploratory Data Analysis with Cookies</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,7 +57,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KQ9CCFY6LV"></script>
@@ -178,26 +179,35 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 </blockquote>
 <section id="generating-questions" class="level3">
 <h3 class="anchored" data-anchor-id="generating-questions">Generating Questions</h3>
-<p>Spend a few minutes generating at least 5 questions you might explore using this database of cookie ingredients.</p>
+<p>Generate at least 5 questions you might explore using this database of cookie ingredients.</p>
+<ol type="1">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
 </section>
 <section id="skimming-the-data" class="level3">
 <h3 class="anchored" data-anchor-id="skimming-the-data">Skimming the Data</h3>
 <p>One thing we often want to do during EDA is to examine the quality of the data - are there missing values? What quirks might exist in the dataset?</p>
 <p>The <code>skimr</code> package in R, and the similar <code>skimpy</code> package in python (which has a much better name, in my opinion), can help provide visual summaries of the data.</p>
 <p>Install both packages, and read the package documentation (<a href="https://cran.r-project.org/web/packages/skimr/vignettes/skimr.html">R</a>, <a href="https://pypi.org/project/skimpy/">Python</a>).</p>
-<p>Use each package and generate summaries of your data that require the use of at least some non-default options in each package’s <code>skim</code> function.</p>
-<p>Write 1-2 sentences about what you can tell from each summary display you generate. Did you discover anything new about the data?</p>
+<p>[Part 1] Use each package and generate summaries of your data that require the use of at least some non-default options in each package’s <code>skim</code> function.</p>
+<p>[Part 2] Write 1-2 sentences about what you can tell from each summary display you generate. Did you discover anything new about the data?</p>
 </section>
 <section id="generating-tables" class="level3">
 <h3 class="anchored" data-anchor-id="generating-tables">Generating Tables</h3>
-<p>Another useful technique for exploratory data analysis is to generate summary tables. Using R and Python, generate a table that shows what <strong>proportion</strong> of recipes contain each type of ingredient. Since you probably don’t want to list <em>all</em> ingredients in a table, it is acceptable to print a table with the most common 20 ingredients, and then separately print out a character string (using markdown inline code) that lists all of the ingredients that do not appear in at least 20 recipes.</p>
-<p>You may want to use the <code>dplyr</code> package in R (<code>group_by</code> or <code>count</code> functions), as well as the <code>groupby</code> and <code>count</code> methods in Pandas. <a href="https://sparkbyexamples.com/pandas/pandas-groupby-count-examples/">Python example</a>, <a href="https://dplyr.tidyverse.org/reference/count.html">R example</a></p>
+<p>Another useful technique for exploratory data analysis is to generate summary tables. You may want to use the <code>dplyr</code> package in R (<code>group_by</code> or <code>count</code> functions), as well as the <code>groupby</code> and <code>count</code> methods in Pandas. <a href="https://sparkbyexamples.com/pandas/pandas-groupby-count-examples/">Python example</a>, <a href="https://dplyr.tidyverse.org/reference/count.html">R example</a></p>
+<p>[Part 1] Using R and Python, generate a table that shows what <strong>proportion</strong> of recipes contain each type of ingredient, for the most common 20 ingredients.</p>
+<p>[Part 2] Print out a character string that lists all of the ingredients that do not appear in at least 20 recipes.</p>
 <p>(Delete this note, but you can include data values inline in markdown text by using backticks, at least in R. For instance, here is R’s built in value for pi: 3.1415927. Unfortunately, this doesn’t work in python using the knitr markdown engine, but you can print the list out in python anyways using a code chunk.)</p>
 </section>
 <section id="visualization" class="level3">
 <h3 class="anchored" data-anchor-id="visualization">Visualization</h3>
 <p>Using whatever plotting system you are comfortable with in R or python, see if you can create a couple of useful exploratory data visualizations which address one of the questions you wrote above - or another question which you’ve come up with as you’ve worked on this assignment.</p>
-<p>Create at least one plot (it doesn’t have to be pretty) that showcases an interesting facet of the data and write 2-3 sentences about what you can learn from that plot and what directions you might want to investigate from here.</p>
+<p>[Part 1] Create at least one plot (it doesn’t have to be pretty) that showcases an interesting facet of the data.</p>
+<p>[Part 2] Write 2-3 sentences about what you can learn from that plot and what directions you might want to investigate from here.</p>
 
 
 </section>

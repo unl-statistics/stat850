@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-09-01">
+<meta name="author" content="Firstname Lastname">
+<meta name="dcterms.date" content="2023-10-02">
 
-<title>Stat 850: Computing Tools for Statisticians - Good Enough Practices in Scientific Computing</title>
+<title>Stat 850: Computing Tools for Statisticians - Homework 7: Murder in SQL City</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -115,16 +150,24 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions">Instructions</a></li>
+  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
+  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Good Enough Practices in Scientific Computing</h1>
+<h1 class="title">Homework 07: Murder in SQL City</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Reading</div>
+    <div class="quarto-category">HW</div>
   </div>
   </div>
 
@@ -136,7 +179,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 1, 2023</p>
+      <p class="date">October 2, 2023</p>
     </div>
   </div>
   
@@ -146,10 +189,102 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 
 </header>
 
-<p>Read: - <a href="https://doi.org/10.1371/journal.pcbi.1005510">Good Enough Practices in Scientific Computing</a></p>
-<p>Think about/comment on: - What basic computing skills were you taught? Which ones were you not taught? - Which workflows do you think will be useful to you? Which ones do you plan to ignore for now? Why?</p>
+<p>Note: This assignment must be submitted in github classroom.</p>
+<section id="instructions" class="level2">
+<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
+<p>Northwestern University’s Knight lab created a SQL murder mystery to help users sharpen their database skills by solving the crime that happened at SQL city. There are tables with different pieces of information - social media checkins, people, drivers licenses, crime scene reports, police interviews, and more.</p>
+<p>Pick R or Python, and solve the murder mystery, showing <strong>all of your work in this document</strong>.</p>
+<p>Your solution must be reproducible – that is, you should use dplyr verbs, table joins, etc. to solve the mystery, rather than just looking through the tables yourselves.</p>
+<p>You may work in groups of 2-4 people on this assignment. Each person should turn in their own assignment, but should list their group members as authors.</p>
+<p>Make sure you do your due diligence! You should double check your answer and print out the guilty party’s interview from the database.</p>
+<p><strong>For 5 bonus points, when you’re finished in one language, write equivalent code in the other language to solve the problem.</strong></p>
+<p>When you are finished with the assignment:</p>
+<ul>
+<li>Once you have finished this assignment, render the document (Ctrl/Cmd-Shift-K or the Render button).</li>
+<li>Commit the qmd file and any other files you have changed to the repository and push your changes.</li>
+<li>In Canvas, submit a link to your github repository containing the updated files.</li>
+<li>Provide the name of the guilty party in the text input field on Canvas, and make sure all of your work is on GitHub to receive full credit.</li>
+</ul>
+<p>The chunks below use the code to read in each of the 8 tables of data for this assignment.</p>
+<p>Hints:</p>
+<ul>
+<li>You can use a lot of filter statements, but it will in many cases be easier to use joins.</li>
+<li>See if you can write code that doesn’t require you to type out knowledge gained from a previous clue (e.g.&nbsp;pipe your results from one query into the next)</li>
+</ul>
+<hr>
+<p>A crime has taken place and the detective needs your help. The detective gave you the crime scene report, but you somehow lost it. You vaguely remember that the crime was a murder that occurred sometime on January 15, 2018 and that it took place in SQL City. All the clues to this mystery are buried in a huge database, and you need to use R and SAS to navigate through this network of information. Your first step to solving the mystery is to retrieve the corresponding crime scene report from the police department’s database.</p>
+<p>This database schema may help you figure out how to navigate the database:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/NUKnightLab/sql-mysteries/blob/master/schema.png?raw=true" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">sql-murder-mystery database schema diagram</figcaption>
+</figure>
+</div>
+</section>
+<section id="r" class="level2">
+<h2 class="anchored" data-anchor-id="r">R</h2>
+<div class="cell" data-hash="07_cache/html/db-setup-r_1c07b664c0e345fb199c711a41037cfd">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># you can do the assignment using the database, if you want, </span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># or you can use the script file to read in each table separately.</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RSQLite)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DBI)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Your database connection code goes here. Store the connection as con </span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(RSQLite<span class="sc">::</span><span class="fu">SQLite</span>(), <span class="st">"sql-murder-mystery.db"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>table_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"crime_scene_report"</span>, </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"drivers_license"</span>, </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"facebook_event_checkin"</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"get_fit_now_check_in"</span>, </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"get_fit_now_member"</span>, </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"income"</span>, </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"interview"</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"person"</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># For each table name, read the tables in and store them as the name of the table</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>purrr<span class="sc">::</span><span class="fu">walk</span>(table_names, <span class="cf">function</span>(x) {</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">assign</span>(x, <span class="fu">dbReadTable</span>(con, x), <span class="at">envir =</span> .GlobalEnv)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co"># close the connection when you're done</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">dbDisconnect</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="python" class="level2">
+<h2 class="anchored" data-anchor-id="python">Python</h2>
+<div class="cell" data-hash="07_cache/html/table-setup-py_a8a7ef00c5eedfe46b0db2ba20dabb7e">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read sqlite query results into a pandas DataFrame</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>con <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">"sql-murder-mystery.db"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>crime_scene_report <span class="op">=</span> pd.read_sql_query(<span class="st">"SELECT * from crime_scene_report"</span>, con)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>drivers_license <span class="op">=</span> pd.read_sql_query(<span class="st">"SELECT * from drivers_license"</span>, con)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>facebook_event_checkin <span class="op">=</span> pd.read_sql_query(<span class="st">"SELECT * from facebook_event_checkin"</span>, con)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>get_fit_now_check_in <span class="op">=</span> pd.read_sql_query(<span class="st">"SELECT * from get_fit_now_check_in"</span>, con)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>get_fit_now_member <span class="op">=</span> pd.read_sql_query(<span class="st">"SELECT * from get_fit_now_member"</span>, con)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>income <span class="op">=</span> pd.read_sql_query(<span class="st">"SELECT * from income"</span>, con)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>interview <span class="op">=</span> pd.read_sql_query(<span class="st">"SELECT * from interview"</span>, con)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>person <span class="op">=</span> pd.read_sql_query(<span class="st">"SELECT * from person"</span>, con)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify that result of SQL query is stored in the dataframe</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(crime_scene_report.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       date  ...      city
+0  20180115  ...       NYC
+1  20180115  ...    Albany
+2  20180115  ...      Reno
+3  20180215  ...  SQL City
+4  20180215  ...  SQL City
+
+[5 rows x 4 columns]</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>con.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
