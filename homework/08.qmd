@@ -1,0 +1,9 @@
+---
+title: "Homework 8: Graphics"
+date: October 9, 2023
+draft: true
+---
+
+Note: This assignment must be submitted in github classroom.
+
+{{< include ../homework-repos/08-graphics/index.qmd >}}

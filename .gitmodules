@@ -19,3 +19,6 @@
 [submodule "homework-repos/07-murder"]
 	path = homework-repos/07-murder
 	url = https://github.com/stat850-unl/07-murder-mystery.git
+[submodule "homework-repos/08-graphics"]
+	path = homework-repos/08-graphics
+	url = https://github.com/stat850-unl/09-graphics.git
