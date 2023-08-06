@@ -1,6 +1,6 @@
 ---
 title: "Homework 8: Graphics"
-date: October 9, 2023
+date: October 13, 2023
 draft: true
 ---
 
