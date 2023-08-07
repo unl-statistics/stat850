@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Firstname Lastname">
-<meta name="dcterms.date" content="2023-10-06">
+<meta name="dcterms.date" content="2023-12-08">
 
-<title>Stat 850: Computing Tools for Statisticians - Homework 7: Murder in SQL City</title>
+<title>Stat 850: Computing Tools for Statisticians - Sample Report</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -154,9 +153,12 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions">Instructions</a></li>
-  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
-  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a></li>
+  <li><a href="#topic-of-exploration" id="toc-topic-of-exploration" class="nav-link" data-scroll-target="#topic-of-exploration">Topic of Exploration</a></li>
+  <li><a href="#additional-exploration-topic" id="toc-additional-exploration-topic" class="nav-link" data-scroll-target="#additional-exploration-topic">Additional Exploration topic</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#tips" id="toc-tips" class="nav-link" data-scroll-target="#tips">Tips</a></li>
   </ul>
 </nav>
     </div>
@@ -165,9 +167,9 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Homework 07: Murder in SQL City</h1>
+<h1 class="title">Sample Report</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">HW</div>
+    <div class="quarto-category">Project</div>
   </div>
   </div>
 
@@ -179,7 +181,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 6, 2023</p>
+      <p class="date">December 8, 2023</p>
     </div>
   </div>
   
@@ -189,97 +191,77 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 
 </header>
 
-<p>Note: This assignment must be submitted in github classroom.</p>
-<section id="instructions" class="level2">
-<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
-<p>Northwestern University’s Knight lab created a SQL murder mystery to help users sharpen their database skills by solving the crime that happened at SQL city. There are tables with different pieces of information - social media checkins, people, drivers licenses, crime scene reports, police interviews, and more.</p>
-<p>Pick R or Python, and solve the murder mystery, showing <strong>all of your work in this document</strong>.</p>
-<p>Your solution must be reproducible – that is, you should use dplyr verbs, table joins, etc. to solve the mystery, rather than just looking through the tables yourselves.</p>
-<p>You may work in groups of 2-4 people on this assignment. Each person should turn in their own assignment, but should list their group members as authors.</p>
-<p>Make sure you do your due diligence! You should double check your answer and print out the guilty party’s interview from the database.</p>
-<p><strong>For 5 bonus points, when you’re finished in one language, write equivalent code in the other language to solve the problem.</strong></p>
-<p>When you are finished with the assignment:</p>
-<ul>
-<li>Once you have finished this assignment, render the document (Ctrl/Cmd-Shift-K or the Render button).</li>
-<li>Commit the qmd file and any other files you have changed to the repository and push your changes.</li>
-<li>In Canvas, submit a link to your github repository containing the updated files.</li>
-<li>Provide the name of the guilty party in the text input field on Canvas, and make sure all of your work is on GitHub to receive full credit.</li>
-</ul>
-<p>The chunks below use the code to read in each of the 8 tables of data for this assignment.</p>
-<p>Hints:</p>
-<ul>
-<li>You can use a lot of filter statements, but it will in many cases be easier to use joins.</li>
-<li>See if you can write code that doesn’t require you to type out knowledge gained from a previous clue (e.g.&nbsp;pipe your results from one query into the next)</li>
-</ul>
-<hr>
-<p>A crime has taken place and the detective needs your help. The detective gave you the crime scene report, but you somehow lost it. You vaguely remember that the crime was a murder that occurred sometime on January 15, 2018 and that it took place in SQL City. All the clues to this mystery are buried in a huge database, and you need to use R and SAS to navigate through this network of information. Your first step to solving the mystery is to retrieve the corresponding crime scene report from the police department’s database.</p>
-<p>This database schema may help you figure out how to navigate the database:</p>
-<div class="quarto-figure quarto-figure-center">
+<div class="cell" data-hash="report_cache/html/unnamed-chunk-1_c742e36d5ae0f29aa040fda0ba469ad7">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This code chunk contains code to install all of the dependencies</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># necessary to compile and run your report, using if-statements to</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># reduce install time for unnecessary code.</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># It should be set to eval = F by default, so you aren't installing</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># software on someone's computer without their consent.</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># This works for packages that are on CRAN</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="st">"dplyr"</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()) {</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">"dplyr"</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="st">"remotes"</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()) {</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">"remotes"</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># This is how to do it for a package that's only on github</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="st">"emo"</span> <span class="sc">%in%</span> <span class="fu">installed.packages</span>()) {</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"hadley/emo"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Introduce your dataset and basic questions for exploration. Explain any unique approaches you will take or any interesting features of your dataset that you have to overcome. Cite the source of your dataset, and briefly discuss how it was collected.</p>
+<p>Discuss the variables in the dataset and if there are anomalies in the variables, provide some visual assessment of the anomalies and explain how they may have arisen. You should cover most of the information in your proposal data section, but should primarily use paragraphs and not lists/tables (the exception may be a list of e.g.&nbsp;items which were measured).</p>
+</section>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
+<p>Describe any data cleaning and rearranging you needed to do to get your dataset into a workable form. Make sure to cite any packages which were important in your data cleaning process in this section. For instance, if you used dplyr, then it would be appropriate to say something like</p>
+<blockquote class="blockquote">
+<p>we used the group-apply-combine paradigm with the <code>dplyr</code> functions <code>group_by</code> and <code>summarize</code> <span class="citation" data-cites="dplyr-package">[@dplyr-package]</span> to generate a dataset for each day of the observation period from the 15-minute interval observations in the raw data set.</p>
+</blockquote>
+</section>
+<section id="topic-of-exploration" class="level2">
+<h2 class="anchored" data-anchor-id="topic-of-exploration">Topic of Exploration</h2>
+<p>Here, you want to introduce the first topic you want to explore with your (newly cleaned up) data. Code to process data should be contained in chunks above this point, and those chunks should <em>not</em> be included in the report.</p>
+<p>You can add options to executable code like this</p>
+<div class="cell" data-hash="report_cache/html/unnamed-chunk-3_03c7271e7b10eec6e3dbe467a8c301b4">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+</div>
+<p>The <code>echo: false</code> option disables the printing of code (only output is displayed).</p>
+<p>If you generate a figure, it should have a caption. Here’s a demonstration of how to do that:</p>
+<div class="cell" data-hash="report_cache/html/fig-iris_f0e016bbc389448b805844ffe3086ab7">
+<div class="cell-output-display">
+<div id="fig-iris" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="https://github.com/NUKnightLab/sql-mysteries/blob/master/schema.png?raw=true" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">sql-murder-mystery database schema diagram</figcaption>
+<p><img src="report_files/figure-html/fig-iris-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: This figure shows the relationship between sepal width and petal width in irises. I’ve used geom_jitter to combat overplotting, as the data are measured in relatively consistent increments. The figure is drawn with <code>ggplot2</code> <span class="citation" data-cites="ggplot2-package">[@ggplot2-package]</span>.</figcaption>
 </figure>
 </div>
+</div>
+</div>
+<p>Then, you can reference <a href="#fig-iris">Figure&nbsp;1</a> in the text and the appropriate cross-reference will be generated.</p>
+<p>You can find additional information about formatting figures generated from code in the <a href="https://quarto.org/docs/authoring/figures.html#computations">quarto documentation</a>.</p>
 </section>
-<section id="r" class="level2">
-<h2 class="anchored" data-anchor-id="r">R</h2>
-<div class="cell" data-hash="07_cache/html/db-setup-r_13f3b92d0fb040e84332f5ed5cbf130c">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RSQLite)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DBI)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Your database connection code goes here. Store the connection as con </span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(RSQLite<span class="sc">::</span><span class="fu">SQLite</span>(), <span class="st">"sql-murder-mystery.db"</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>table_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"crime_scene_report"</span>, </span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"drivers_license"</span>, </span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"facebook_event_checkin"</span>,</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"get_fit_now_check_in"</span>, </span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"get_fit_now_member"</span>, </span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"income"</span>, </span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"interview"</span>,</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"person"</span>)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># For each table name, read the tables in and store them as the name of the table</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>purrr<span class="sc">::</span><span class="fu">walk</span>(table_names, <span class="cf">function</span>(x) {</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">assign</span>(x, <span class="fu">dbReadTable</span>(con, x), <span class="at">envir =</span> .GlobalEnv)</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># close the connection when you're done</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">dbDisconnect</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="additional-exploration-topic" class="level2">
+<h2 class="anchored" data-anchor-id="additional-exploration-topic">Additional Exploration topic</h2>
+<p>Add another topic here… as many as you desire, really. Make sure to include a transition between the two sections that connects the two with some sort of logical train of thought.</p>
 </section>
-<section id="python" class="level2">
-<h2 class="anchored" data-anchor-id="python">Python</h2>
-<div class="cell" data-hash="07_cache/html/table-setup-py_159a4d3a1711d4a1548cd2bdfb154f60">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read sqlite query results into a pandas DataFrame</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>con <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">"sql-murder-mystery.db"</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>crime_scene_report <span class="op">=</span> pd.read_sql_query(<span class="st">"SELECT * from crime_scene_report"</span>, con)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>drivers_license <span class="op">=</span> pd.read_sql_query(<span class="st">"SELECT * from drivers_license"</span>, con)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>facebook_event_checkin <span class="op">=</span> pd.read_sql_query(<span class="st">"SELECT * from facebook_event_checkin"</span>, con)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>get_fit_now_check_in <span class="op">=</span> pd.read_sql_query(<span class="st">"SELECT * from get_fit_now_check_in"</span>, con)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>get_fit_now_member <span class="op">=</span> pd.read_sql_query(<span class="st">"SELECT * from get_fit_now_member"</span>, con)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>income <span class="op">=</span> pd.read_sql_query(<span class="st">"SELECT * from income"</span>, con)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>interview <span class="op">=</span> pd.read_sql_query(<span class="st">"SELECT * from interview"</span>, con)</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>person <span class="op">=</span> pd.read_sql_query(<span class="st">"SELECT * from person"</span>, con)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify that result of SQL query is stored in the dataframe</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(crime_scene_report.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>       date  ...      city
-0  20180115  ...       NYC
-1  20180115  ...    Albany
-2  20180115  ...      Reno
-3  20180215  ...  SQL City
-4  20180215  ...  SQL City
-
-[5 rows x 4 columns]</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>con.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Here, you want to summarize the main points of what you’ve learned from this investigation, in paragraph form.</p>
+</section>
+<section id="tips" class="level2">
+<h2 class="anchored" data-anchor-id="tips">Tips</h2>
+<p>(delete this section from your report!)</p>
+<p>Almost anything you might want to know about how to format output in quarto can be found <a href="https://quarto.org/docs/authoring/markdown-basics.html">here</a>. Feel free to email/come to office hours to figure out how to do XYZ - part of the goal of making you write this report is that I want you to know how to write e.g.&nbsp;a journal paper in Quarto as well, so now’s the time to experiment.</p>
+<p>If you want to know what the wordcount of your report is, you can run the following command in your terminal:</p>
+<pre><code>pandoc --lua-filter wordcount.lua report.qmd</code></pre>
+<p>Notice that I have not pushed <code>_output/report.html</code> or the <code>_output/report_files/</code> folder to github - this is intentional. I have actually set <code>_output</code> to not show up in git, to encourage you all to NOT push the rendered files to github and to instead work from the markdown files directly.</p>
+<p>You may find it cleaner to create a figure subdirectory and store any figures that aren’t created by R/Python in that folder. I encourage you to organize this repository in a sensible way.</p>
 
 
 </section>

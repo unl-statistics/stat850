@@ -1,0 +1,18 @@
+---
+title: "Data Context"
+date: 2023-10-01
+draft: true
+---
+
+Read: 
+
+- Chapter 6 of Data Feminism: The Numbers Don’t Speak for Themselves (available on Canvas via Library Materials)
+
+
+Note: I assign chapters from Data Feminism because the authors made me think differently about data. I don't necessarily agree with everything they say, and I certainly don't expect you to agree with them either - I want you to stretch your brains and consider things from a different perspective. 
+
+Think about/comment on: 
+
+- Do you agree/disagree with the assertion that the context of the data matters?
+- How does maintaining good data documentation contribute to data context? What problems does it not solve?
+- Do you prefer working with raw data? cooked data? What are the advantages and disadvantages of each approach?
