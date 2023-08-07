@@ -8,6 +8,7 @@ Read:
 - Chapter 1 of Exploratory Data Analysis by John Tukey (available on Canvas)
 
 Think about/comment on: 
+
 - What do you think about Tukey's approach to exploratory data analysis?
 - What new ways to use Stem and Leaf plots did you learn?
 - How has the use of computers made EDA easier? harder?

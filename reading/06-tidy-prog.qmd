@@ -1,0 +1,22 @@
+---
+title: "Tidy Programming"
+date: 2023-09-24
+draft: true
+---
+
+Read: 
+
+- [Tidy Tools Manifesto](https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html) - Hadley Wickham
+
+- [Reddit discussion: Pandas vs. dplyr](https://www.reddit.com/r/datascience/comments/pmzevl/tidyverse_equivalent_in_python/?rdt=65309)    
+I include one of these for reading purposes, but they're all over reddit and similar discussion boards. I'm interested to see what you think about them after a brief introduction to each one - the transition is harder for those of us who learned dplyr well first and then tried to use pandas (or vice versa). Can you see the difference between the python "general programming language" design and the R domain specific language design and how those play out in practice?
+
+- [Method chaining in pandas](https://tomaugspurger.net/posts/method-chaining/) - writing readable python code by chaining methods together
+
+
+
+Think about/comment on: 
+
+- What do you think the strengths and weaknesses are of the `dplyr` approach to tidy code compared to `pandas`?
+- What do you need to focus on when writing code if you want to make your code tidy?
+- Which approach to data manipulation do you prefer? Why? Is there a case where you would prefer the other program?

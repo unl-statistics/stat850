@@ -10,6 +10,7 @@ Watch the following screencast:
 
 
 Think about/comment on: 
+
 - You might try to follow along with the data, but pay attention to how the analysis proceeds over time. 
 - What did you learn from watching someone else do data analysis in realtime?
 
