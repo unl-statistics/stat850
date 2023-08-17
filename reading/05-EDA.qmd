@@ -5,7 +5,9 @@ draft: true
 ---
 
 Read: 
-- Chapter 1 of Exploratory Data Analysis by John Tukey (available on Canvas)
+- [Chapter 1 of Exploratory Data Analysis by John Tukey](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/12340320650006387?auth=SAML) (available on Canvas)
+
+Annotate using hypothes.is (not the built in annotation tool)
 
 Think about/comment on: 
 
