@@ -28,3 +28,6 @@
 [submodule "homework-repos/10-professional"]
 	path = homework-repos/10-professional
 	url = https://github.com/stat-assignments/professional-documents.git
+[submodule "homework-repos/12-shiny"]
+	path = homework-repos/12-shiny
+	url = https://github.com/stat-assignments/shiny-cocktails.git
