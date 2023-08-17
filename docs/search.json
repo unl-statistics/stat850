@@ -206,8 +206,8 @@
     "objectID": "slides/02a-Finding-Your-Way.html#rstudio-projects",
     "href": "slides/02a-Finding-Your-Way.html#rstudio-projects",
     "title": "Finding your way in R and Python",
-    "section": "RStudio Projects",
-    "text": "RStudio Projects\nRStudio projects are a way to keep your work organized.\nLet’s create one for this week’s class work.\n\nCreating an RStudio Project"
+    "section": "",
+    "text": "RStudio projects are a way to keep your work organized.\nLet’s create one for this week’s class work.\n\n\n\nCreating an RStudio Project"
   },
   {
     "objectID": "slides/02a-Finding-Your-Way.html#ways-to-execute-code",
@@ -221,14 +221,14 @@
     "href": "slides/02a-Finding-Your-Way.html#command-line",
     "title": "Finding your way in R and Python",
     "section": "Command Line",
-    "text": "Command Line\n\nRunning madlibs.py at the command line"
+    "text": "Command Line\n\n\n\nRunning madlibs.py at the command line"
   },
   {
     "objectID": "slides/02a-Finding-Your-Way.html#source-script",
     "href": "slides/02a-Finding-Your-Way.html#source-script",
     "title": "Finding your way in R and Python",
     "section": "Source Script",
-    "text": "Source Script\n\n\nRunning madlibs.py using Source Script in RStudio"
+    "text": "Source Script\n\n\n\nRunning madlibs.py using Source Script in RStudio"
   },
   {
     "objectID": "reading/02-Decoding-Confusion.html",
@@ -278,5 +278,47 @@
     "title": "Stat 850 Project Proposal",
     "section": "Additional Comments",
     "text": "Additional Comments\nWhat concerns do you have about this project? This is your place to provide feedback about the project guidelines and ask clarifying questions for me to address either individually or in class, if the question is relevant to everyone."
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Stat 850: Computing Tools for Statisticians",
+    "section": "",
+    "text": "Introductions to statistical computing packages and document preparation software. Topics include: graphical techniques, data management, Monte Carlo simulation, dynamic document preparation, presentation software."
+  },
+  {
+    "objectID": "syllabus.html#attendance",
+    "href": "syllabus.html#attendance",
+    "title": "Stat 850: Computing Tools for Statisticians",
+    "section": "Attendance",
+    "text": "Attendance\nYou are expected to attend class and participate in online discussions. Consistent, repeated failure to attend class or actively participate in the online portions of the course will affect the participation portion of your grade.\nIf you are feeling ill, please do not come to class. Instead, review the material and work on the homework assignment, and then schedule an appointment with me to meet virtually. Feel free to contact me and let me know if you are having trouble - it is much easier to communicate early and often than to fix problems that arise later in the semester."
+  },
+  {
+    "objectID": "syllabus.html#expectations",
+    "href": "syllabus.html#expectations",
+    "title": "Stat 850: Computing Tools for Statisticians",
+    "section": "Expectations",
+    "text": "Expectations\nYou can expect me to:\n\nreply to emails within 48 hours during the week (72 hours on weekends)\nbe available in class to assist with assignments\nbe available by appointment for additional help or discussion\n\nI expect you to:\n\nRead the module material and homework assignment before coming to class\nEngage with the material and your classmates during class\nSeek help when you do not understand the material\nCommunicate promptly if you anticipate that you will have trouble meeting deadlines or participating in a portion of the course.\nDo your own troubleshooting before contacting me for help (and mention things you’ve already tried when you do ask for help!)\nBe respectful and considerate of everyone in the class\n\n\nMake Mistakes!\nProgramming is the process of making a series of silly or stupid mistakes, and then slowly fixing each mistake (while adding a few more). The only way to know how to fix these mistakes (and avoid them in the future) is to make them. (Sometimes, you have to make the same mistake a few dozen times before you can avoid it in the future). At some point during the class, you will find that you’ve spent 30 minutes staring at an error caused by a typo, a space, a parenthesis in the wrong place. You may ask for help debugging this weird error, only to have someone immediately point out the problem… it is always easier to see these things in someone else’s code. This is part of programming, it is normal, and you shouldn’t feel embarrassed or sorry (unless you put no effort into troubleshooting the problem before you asked for help)\nIf you manage to produce an error I haven’t seen before, then congratulations. You have achieved something special, and that achievement should be celebrated. Each new and bizarre error is an opportunity to learn a bit more about the programming language, the operating system, or the interaction between the two."
+  },
+  {
+    "objectID": "syllabus.html#inclement-weather",
+    "href": "syllabus.html#inclement-weather",
+    "title": "Stat 850: Computing Tools for Statisticians",
+    "section": "Inclement Weather",
+    "text": "Inclement Weather\nIf in-person classes are canceled, you will be notified of the instructional continuity plan for this class by Canvas Announcement. In most circumstances where there is power in the Lincoln area, we will continue to hold class via Zoom."
+  },
+  {
+    "objectID": "syllabus.html#academic-integrity-and-class-conduct",
+    "href": "syllabus.html#academic-integrity-and-class-conduct",
+    "title": "Stat 850: Computing Tools for Statisticians",
+    "section": "Academic Integrity and Class Conduct",
+    "text": "Academic Integrity and Class Conduct\nYou will be engaging with your classmates and me through in-person discussions and collaborative activities. It is expected that everyone will engage in these interactions civilly and in good faith. Discussion and disagreement are important parts of the learning process, but it is important that mutual respect prevail. Individuals who detract from an atmosphere of civility and respect will be removed from the conversation.\nStudents are expected to adhere to guidelines concerning academic dishonesty outlined in Article III B.1 of the University’s Student Code of Conduct. The Statistics Department academic integrity and grade appeal policy is available here.\nYou must be able to explain how the logic works for any code you turn in. This means that code you obtained from e.g. StackOverflow or ChatGPT is fine to use if you can explain it and modify it for the purposes of this class, but if you cannot explain your code you will not get credit for the assignment. This is in line with what is generally considered acceptable behavior in programming - reuse is fine (subject to the code’s license) but you must be able to fully explain and modify any code you did not write yourself. I reserve the right to replace the grade on any assignment with an oral exam over that assignment’s content and key concepts."
+  },
+  {
+    "objectID": "slides/02a-Finding-Your-Way.html",
+    "href": "slides/02a-Finding-Your-Way.html",
+    "title": "Finding your way in R and Python",
+    "section": "",
+    "text": "RStudio projects are a way to keep your work organized.\nLet’s create one for this week’s class work.\n\n\n\nCreating an RStudio Project"
   }
 ]
