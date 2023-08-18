@@ -14,7 +14,7 @@ RStudio projects are a way to keep your work organized.
 
 Let's create one for this week's class work.
 
-![Creating an RStudio Project](02a-create-project.gif){fig-alt="Gif of creating an RStudio Project. Go to File -> New Project -> New Directory -> New Project. Fill in the directory name (stat850-week2) and decide if you would like to create a git repository (not necessary for this). Click Create Project. Notice that the file path is now set to the location of the project folder. If you put your files into this folder, you can reference those file names without using a complicated path."}
+![Creating an RStudio Project](02a-create-project.gif){fig-alt="Gif of creating an RStudio Project. Go to File -> New Project -> New Directory -> New Project. Fill in the directory name (stat850-week2) and decide if you would like to create a git repository (not necessary for this). Click Create Project. Notice that the file path is now set to the location of the project folder. If you put your files into this folder, you can reference those file names without using a complicated path." width="100%" height="auto"}
 
 
 
