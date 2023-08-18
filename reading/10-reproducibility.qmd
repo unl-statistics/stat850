@@ -1,0 +1,24 @@
+---
+title: "Reproducibility"
+date: 2023-10-27
+draft: true
+---
+
+Read: 
+
+- [Framed! Reproducing and Revisiting 150-Year-Old Charts](https://www.tandfonline.com/doi/full/10.1080/10618600.2018.1562937)
+
+- [A Study in Reproducibility: The Congruent Matching Cells Algorithm and cmcR Package](https://journal.r-project.org/articles/RJ-2023-014/)
+
+
+Annotate with hypothes.is
+
+Think about/comment on: 
+
+- What attempts at reproducibility worked and didn't work in each article?
+
+- How important is long-term reproducibility?
+
+- How do the two articles differ with respect to types of reproducibility?
+
+- What important factors must exist for reproducibility?

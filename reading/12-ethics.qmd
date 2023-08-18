@@ -1,0 +1,21 @@
+---
+title: "Ethics in Algorithms"
+date: 2023-11-17
+draft: true
+---
+
+Read: 
+
+- [The Tiger Mom Tax](https://www.propublica.org/article/asians-nearly-twice-as-likely-to-get-higher-price-from-princeton-review)
+- [Rent Going Up? One Company's Algorithm Could Be Why](https://www.propublica.org/article/yieldstar-rent-increase-realpage-rent)
+- [Racial Discrimination in Face Recognition Technology](https://sitn.hms.harvard.edu/flash/2020/racial-discrimination-in-face-recognition-technology/)
+- [Machine Bias](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing)
+
+Annotate with hypothes.is
+
+Think about/comment on: 
+
+- When is it ethical to use an algorithm to make decisions?
+- When is it unethical to use an algorithm to make decisions?
+- What conditions need to exist for an algorithm to be trustworthy?
+- How do you, as a statistician, ensure that you understand the biases in your models?
