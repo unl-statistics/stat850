@@ -6,7 +6,7 @@
 	url = git@github.com:stat850-unl/github-starter-course.git
 [submodule "homework-repos/03-fizzbuzz"]
 	path = homework-repos/03-fizzbuzz
-	url = git@github.com:stat850-unl/Hw-03-Fizzbuzz
+	url = git@github.com:stat-assignments/fizzbuzz-full.git
 [submodule "homework-repos/04-data-prog"]
 	path = homework-repos/04-data-prog
 	url = git@github.com:stat850-unl/Hw-04-DataProgramming.git
@@ -15,19 +15,19 @@
 	url = git@github.com:unl-stat251/hw-reading-data-template.git
 [submodule "homework-repos/06-wrangling"]
 	path = homework-repos/06-wrangling
-	url = https://github.com/unl-stat251/06-strings.git
+	url = git@github.com:stat-assignments/poetry-reddit-dplyr.git
 [submodule "homework-repos/07-murder"]
 	path = homework-repos/07-murder
-	url = https://github.com/stat850-unl/07-murder-mystery.git
+	url = git@github.com:stat-assignments/sql-murder.git
 [submodule "homework-repos/08-graphics"]
 	path = homework-repos/08-graphics
-	url = https://github.com/stat850-unl/09-graphics.git
+	url = git@github.com:stat-assignments/graphics-complete.git
 [submodule "project/proj-template"]
 	path = project/proj-template
 	url = https://github.com/stat850-unl/project.git
 [submodule "homework-repos/10-professional"]
 	path = homework-repos/10-professional
-	url = https://github.com/stat-assignments/professional-documents.git
+	url = git@github.com:stat-assignments/professional-documents.git
 [submodule "homework-repos/12-shiny"]
 	path = homework-repos/12-shiny
 	url = https://github.com/stat-assignments/shiny-cocktails.git
