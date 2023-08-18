@@ -1,0 +1,520 @@
+---
+title: "Homework 11: Simulation"
+author: "Example: Hearts"
+output: html_document
+---
+
+```{r setup, include = F}
+# Don't include this chunk in the write-up, but run it anyways
+library(tidyverse)
+```
+
+## Is it in the cards?
+
+In this task, you will create a simulation of Hearts, a card game which is played with 52 cards.
+
+You may also work with a different game if you get approval from me before you start. You may want to avoid games which require a large amount of strategy, skill, and bluffing, such as poker.
+
+This homework file is set up to demonstrate how this would be done with the game of [hearts](https://bicyclecards.com/how-to-play/hearts/#filter).
+
+You don't need to necessarily simulate the full game mechanism, but you do need to implement enough of the game mechanism that you can identify an interesting probability question and answer the question using a simulation.
+
+### Identify a Question
+
+::: callout-note
+
+Guidelines:
+
+- Your question should be something that is not easily answerable with obviously constructed probability calculations.
+
+- Some options include: 
+      - Compute the probability of going bust given that you have N cards in your hand. (You can ignore the rules about splitting your hand if you get two cards of the same denomination)
+      - Compute the probability of going bust given that your original two cards total 9, 10, or 11 (doubling down)
+      - Compare the probability of going bust with N cards in your hand if one of the cards you were originally dealt was an Ace (which can count as 1 or 11) vs. if you know that you do not have an Ace. 
+      - Evaluate two competing strategies for Blackjack to see which one has a higher success probability.
+      - Compare strategies for Blackjack with strategies for a similar card game (31), in which the player only goes bust when the cards total more than 31. 
+
+You are not limited to the options above, but your question must be complex enough that it would require a simulation of the game's mechanics beyond the initial shuffle.
+
+:::
+
+Before I explain my question, a quick story:
+
+When my parents taught us hearts (I was about 11, my sister would have been 9), the first time we played they taught us simplified rules:
+
+- try to get the fewest hearts
+- the person with the most hearts gets the highest score (low is good)
+- try to avoid the queen of spades, because that's 13 points. 
+
+They didn't mention the fact that if you got all the hearts and the queen of spades, you "shot the moon" and scored 0, and everyone else got 26 points. During that first game, I was trying as hard as I could, and I kept getting hearts! By the end of the round, I was trying very hard not to cry, only to find out that I'd shot the moon and everyone else got all of the points - I was in the lead! It was a very confusing game.
+
+Fundamentally, my question is: What is the probability that a player using relatively little (no) strategy accidentally "shoots the moon" in a game of hearts?
+
+
+### Set up your objects
+
+::: callout-caution
+Think very carefully about how you want to set up your simulation. It is almost always easier to describe the position of all of the cards in the deck using a single data frame than it is to maintain separate data frames of multiple cards for each player and for the discard pile and undealt cards.
+:::
+
+First, you must set up a data frame describing all possible values of your playing items. A standard deck of 52 playing cards might be described using a data frame which has columns for suit and value, and you may want to make value a factor variable (your call on that one). If your game requires that players hold cards in their hand, you may also want to have a column indicating location (deck, discard, player_x).
+
+
+#### Pseudocode: Set up
+<!-- Note that indenting text with 4 spaces prints it out like code, but doesn't require anything to execute (so it doesn't have to be real code).  -->
+
+    Pseudocode: Set up objects
+
+    Create a tibble with 4 suits and 13 values labeled 
+        Ace, 2:10, J, Q, K
+    Add point values
+    Add card ID numbers
+    (Eventually) add location column - defer to a later step
+    Remove any cards from the deck not necessary for game play
+
+#### Functions: Set up
+
+```{r}
+create_deck <- function() {
+  # Set up cards
+  suits <- c("hearts", "diamonds", "spades", "clubs")
+  
+  values <- factor(1:13, labels = c(2:10, "Jack", "Queen", "King", "Ace"))
+  deck <- crossing(suit = suits, value = values)
+
+  # Set up points
+  # This will change depending on which game you want to simulate
+  # I have demonstrated this using hearts 
+  deck %>%
+    mutate(points = (suit == "hearts") +
+             13*(suit == "spades" & value == "Queen")) %>%
+    # add a card ID
+    mutate(id = 1:n())
+}
+
+create_deck()
+
+```
+
+I've created a standard deck of cards, and assigned each card the point value it has when scoring a game of hearts.
+
+In the Bicycle rules, there are specific cards which are removed if there are 3 or 5 players (to make sure there are an even number of cards for each player). I'm deviating slightly from those rules so that the 2 of clubs is always available (this makes my life easier), but the fundamentals are the same.
+
+```{r}
+deck_fix <- function(deck = create_deck(), n_players = 4) {
+
+  # Remove cards from deck to make the game playable by 3 or 5 players
+  if (n_players == 4) {
+    # do nothing special
+  } else if (n_players == 3) {
+    deck <- deck %>%
+      filter(!(suit == "diamonds" & value == "2"))
+  } else if (n_players == 5) {
+    deck <- deck %>%
+      filter(!(suit %in% c("diamonds", "spades") & value == "2"))
+  } else {
+    stop("Hearts is playable by between 3 and 5 players")
+  }
+
+  deck
+}
+
+create_deck() %>%
+  deck_fix(n_players = 3) %>%
+  arrange(value, suit)
+```
+
+### Write Pseudocode to describe how your game will be played
+
+::: callout-caution
+Note that this pseudocode should be written focused on how you will record the game's progression in a computer simulation. It's relatively easy to write pseudo"code" to describe the instructions for playing the game, but it's entirely a different thing to write pseudocode for how to simulate gameplay computationally.
+
+See [hearts.qmd](hearts.qmd) for an example of the level of detail I'm looking for here.
+:::
+
+<!-- Note that indenting text with 4 spaces prints it out like code, but doesn't require anything to execute (so it doesn't have to be real code).  -->
+
+    Full game: 
+    1. Deal Cards
+    2. Play the first trick
+        1. The player with the 2 of clubs starts
+        2. Each player must select a card (see function below)
+    3. Play 12 more tricks (mostly, this is a repeat of step 2, but the first player selects a random card instead of the 2 of clubs)
+        1. Each player must select a card
+        2. The trick must be evaluated to determine which player keeps the cards
+    4. Determine the game score by counting up the value of the hearts and queen of spades cards in each hand. Lowest score wins.
+
+    Card selection: 
+    1. If the player has any cards in suit, they must select one of those cards
+    2. If a card in suit isn't available, the player may select an out of suit card. Hearts cannot be played until the suit is "broken" or there is no other option.
+        1. Determine set of cards available to select from (see Available card function)
+        2. Randomly select a card from available options
+        
+    Available cards: 
+        1. Check if hearts have been broken 
+            - if not, check if other cards are available
+                - if other cards are available, remove all hearts from the "options"
+            - return available cards data frame
+
+### Write one or more functions to simulate the basic game mechanisms
+
+<!-- Delete this commentary and replace it with your own planning about how to simulate your game. -->
+
+<!-- If you are simulating a game where all cards are initially held by players, you need to have a function that randomly assigns 13 cards to each player.  -->
+
+<!-- You may want a function that controls the game play and functions for each separate step in game play (some of these functions may need to be called using a loop). -->
+
+<!-- In Blackjack, I would expect that you would have a function for the initial deal, a function to determine what logic should be used under each condition, and a scoring function, at minimum. -->
+
+#### Deal cards to players
+
+```{r}
+deal_cards <- function(deck, players = 1:4) {
+  deck %>%
+    # Fix the deck
+    deck_fix(n_players = length(players)) %>%
+    # shuffle the rows
+    slice_sample(n = nrow(deck)) %>%
+    # Assign cards to players one-by-one
+    mutate(player = rep(players, length.out = n())) %>%
+    # Sort deck by player, suit, and value
+    arrange(player, suit, value)
+}
+
+create_deck() %>%
+  deal_cards(players = c("Amy", "Joe", "Sarah", "Bill")) %>%
+  group_by(player) %>%
+  count()
+```
+
+#### Picking Cards
+
+Next, we need to handle how a player would select a card. We're going to ignore any sort of logic that would depend on cards played by previous players in the same trick (or previous tricks). 
+
+I'm simulating my siblings and I playing this game when I was at most 11 (and I was the oldest), so it's a 100% safe assumption that our logical skills were ... sub optimal.
+
+In Hearts, like in many other trick-based games, you have certain rules that must be followed, like matching suits.
+
+```{r}
+
+# Check whether there's a card in the selected suit
+pick_card_in_suit <- function(cards, sel_suit = NA) {
+  # if sel_suit is NA, this will return nothing
+  valid <- filter(cards, suit == sel_suit) 
+  
+  if (nrow(valid) > 0) {
+    slice_sample(valid, n = 1)
+  } else {
+    valid
+  }
+}
+
+```
+
+In addition, hearts requires that if no point cards have been played yet, you must select a card which is not a point card (so something other than a heart or the queen of spades) if you have the option to do so.
+
+We handle this using the `hearts_available` parameter, which describes whether point cards have been played. If hearts aren't available, and there are other suits in the set of cards, we will pick a non-heart card.
+
+```{r}
+# Check whether there's a card in another suit
+pick_card_out_suit <- function(cards, hearts_avail = F) {
+  if (is.na(hearts_avail)) stop("hearts_avail cannot be NA")
+  card_options <- cards
+
+  nonhearts <- any(cards$suit != "hearts")
+
+  # If hearts aren't available and there are other suits,
+  # filter out the hearts
+  # Note that this still allows the Queen of Spades to 
+  # be played at any time (which then makes hearts available)
+  if (nonhearts & !hearts_avail) {
+    card_options <- cards %>% filter(suit != "hearts")
+  }
+
+  # print(card_options)
+  slice_sample(card_options, n = 1)
+}
+
+```
+
+(This logic caused 90% of the trouble I had with this game simulation)
+
+Now that we have that, we can write a function that will take a set of cards, and pick a card for a given player in the selected suit (if provided).
+
+```{r}
+pick_card <- function(deck,
+                      this_player = NA,
+                      sel_suit = NA,
+                      hearts_avail = F) {
+  if (!is.na(this_player)) {
+    options <- filter(deck, player %in% this_player)
+  } else {
+    options <- deck
+  }
+
+  play <- bind_rows(
+    # First, try to pick something in suit
+    pick_card_in_suit(options, sel_suit = sel_suit),
+    # Then if that fails pick something out of suit
+    pick_card_out_suit(options, hearts_avail = hearts_avail)
+  )
+
+  # Take the first row - in-suit if it's available, out-of-suit otherwise
+  play[1,]
+}
+```
+
+#### Playing the first trick
+
+The first trick is a bit different, logic wise. The person with the 2 of clubs leads (in other tricks, it's the person who took the previous trick).
+
+To make this function a bit easier to use, I've created a couple of helper functions that can be re-used in any trick:
+
+```{r}
+# Evaluate a played trick, adding columns for trick_order, in_suit, player_win, and trick number
+eval_trick <- function(cards, spec_suit, trick_num = NA) {
+  # Note that trick order is likely to be wrong for the first trick,
+  # but this isn't critical - it just helps keep track of things.
+  cards %>%
+    mutate(trick_order = 1:n()) %>%
+    mutate(in_suit = suit == spec_suit) %>%
+    arrange(desc(in_suit), desc(value)) %>%
+    mutate(player_win = .$player[1]) %>%
+    arrange(trick_order) %>%
+    mutate(trick = trick_num)
+}
+
+# Remove cards from deck that have been played and bind on as a played trick
+fix_deck <- function(dealt, trick) {
+  dealt %>%
+    anti_join(trick, by = c("suit", "value", "player", "id")) %>%
+    bind_rows(trick)
+}
+
+
+```
+
+This leads to the code for the first trick:
+
+```{r}
+first_trick <- function(dealt) {
+  # Which player has 2 of clubs?
+  first_card <- dealt %>%
+    filter(suit == "clubs" & value == "2")
+
+  remaining_players <- unique(dealt$player) %>%
+    setdiff(first_card$player)
+
+  play <- first_card
+  for (i in remaining_players) {
+    play <- dealt %>%
+      filter(player == i) %>%
+      pick_card(sel_suit = "clubs") %>%
+      bind_rows(play)
+  }
+  play <- play %>%
+    eval_trick(spec_suit = "clubs",
+               trick_num = 1)
+
+  if (!all(dealt$player %in% play$player)) {
+    stop("Not all players picked cards?")
+  }
+
+  fix_deck(dealt, play)
+}
+```
+
+#### General trick
+
+The same basic logic applies in any trick - the first card is picked, and then all other players throw in a card. We do need a `hearts_playable` function that will evaluate our deck to see if hearts is an option; once we have that, we can write a general trick-playing function.
+```{r}
+hearts_playable <- function(df) {
+  sum(df$points, na.rm = T) > 0
+}
+```
+
+Notice that we're calling the `first_trick` function within the more general `play_trick` function - this makes it much easier to remember the syntax.
+
+```{r}
+play_trick <- function(dealt) {
+  if (!"trick" %in% names(dealt)) {
+    return(first_trick(dealt))
+  }
+
+  # get empty df
+  play <- filter(dealt, id < 0)
+
+  # get trick number
+  trick_num <- (1 + dealt$trick) %>% max(na.rm = T)
+
+  # get player to lead
+  avail <- filter(dealt, is.na(trick))
+  last_player <- filter(dealt, trick == max(trick, na.rm = T)) %>%
+    pluck("player_win") %>%
+    unique()
+
+  # get already played cards and see if hearts can be played
+  already_played <- anti_join(dealt, avail, by = c("suit", "value"))
+  can_play_hearts <- bind_rows(already_played, play) %>%
+    hearts_playable()
+
+  # pick first card
+  play <- pick_card(avail,
+                    this_player = last_player,
+                    sel_suit = NA,
+                    hearts_avail = can_play_hearts)
+
+  # pick remaining cards
+  remaining_players <- unique(dealt$player) %>%
+    setdiff(last_player)
+  for (i in remaining_players) {
+    can_play_hearts <- bind_rows(already_played, play) %>%
+      hearts_playable()
+    play <- bind_rows(
+      play,
+      pick_card(avail, this_player = i,
+                sel_suit = play$suit[1],
+                hearts_avail = can_play_hearts)
+    )
+  }
+
+  # evaluate the trick
+  play <- play %>%
+    eval_trick(spec_suit = play$suit[1], trick_num)
+
+  # remove trick from deck and add it back in as a played trick
+  fix_deck(dealt, play)
+}
+
+create_deck() %>%
+deal_cards(players = c("Amy", "Joe", "Sarah", "Bill")) %>%
+play_trick() %>%
+play_trick() %>%
+filter(!is.na(trick)) # first 2 tricks in a game
+```
+
+#### Play a full game
+
+Now, we can play a full game of hearts by repeatedly calling the play_trick function. All of the cards stay in the same data frame, and we keep track of who won each trick and who played each card - this allows us to calculate the score for each player at the end.
+
+```{r}
+hearts <- function(players) {
+  deck <- create_deck() %>%
+    deal_cards(players)
+
+  number_of_rounds <- nrow(deck)/length(players)
+
+  for (i in 1:number_of_rounds) {
+    # print(i)
+    deck <- play_trick(deck)
+    # print(filter(deck, trick == i))
+  }
+
+  return(deck)
+}
+
+hearts(c("Amy", "Beth", "Cara", "Dawn"))
+```
+
+#### Calculate game_score
+
+It's pretty easy given our setup to calculate each player's score:
+
+```{r}
+calc_score <- function(data) {
+  game <- data %>%
+    group_by(player) %>%
+    summarize(score = sum(points), .groups = "drop")
+  
+  # Handle the "shoot the moon" scenario 
+  # where one player has all the points
+  if (any(game$score == 26)) {
+    game <- game %>%
+      mutate(score = 26 - score)
+  }
+  game
+}
+
+
+hearts(c("Amy", "Beth", "Cara", "Dawn")) %>%
+  calc_score()
+```
+
+#### Did the player shoot the moon?
+
+In a shoot the moon scenario, the total game points will be (n-1) times normal, where $n$ is the number of players. This function returns a logical indicator of whether or not the total number of points generated is more than 26 (indicating that someone shot the moon)
+
+```{r}
+shoot_the_moon <- function(data) {
+  sum(data$score) > 26
+}
+```
+
+
+### Use your functions to simulate a game and evaluate your question
+
+<!-- Run your simulation with an increasing number of iterations and create some sort of plot showing your results. -->
+
+<!-- Describe any issues you encountered in your simulation, and how you addressed them (or where the whole thing went off the rails, if you couldn't address everything in time). -->
+
+```{r, eval = F}
+# I'm saving the results of this so that I only 
+# have to run it once...
+
+# This uses parallel processing to take advantage of the 
+# fact that I wrote this on a server with 16 cores and 
+# a lot of memory.
+# May as well use the power if you have the option!
+library(parallel)
+set.seed(34029)
+#... then parallel replicate...
+games <- mclapply(1:10000, FUN = function(i) { hearts(c("Susan", "Caroline", "Mom", "Dad")) }, mc.preschedule = F, mc.set.seed = T, mc.cores = 16, mc.cleanup = T)
+
+save(games, file = "games.Rdata")
+```
+
+```{r}
+load("games.Rdata")
+res <- tibble(
+  full_game = games, 
+  score = purrr::map(full_game, calc_score),
+  stm = purrr::map_lgl(score, shoot_the_moon)
+)
+```
+
+From this assessment, one player shoots the moon in approximately `r sprintf("%0.2f%%", 100*mean(res$stm > 0))` of games played using the naive strategy. My parents were probably pretty reasonably assuming that they could explain that part of the strategy later, once we'd grasped the fundamentals of the game.
+
+There are a couple of other options to consider - my simulation may not exactly model reality because of the assumption that all players were acting randomly:
+
+- (The most likely) I've simulated 4 players randomly playing hearts, but in the game that motivated the question, my parents actually knew what they were doing. If two players were strategizing, and two players were playing randomly, it might be more likely for someone to end up with all of the high point cards because two of the players were good enough to avoid them; the remaining point cards were randomly distributed. This seems like a more likely scenario to me. 
+- (Less likely) By trying to strategize (and failing) I unintentionally shot the moon - that is, I've simulated randomness, but that's not necessarily accurate - my strategy could have been *worse* than random guessing, making this simulation somewhat useless. 
+
+I wish I had time to add in some strategy component, but I think at this point that would be excessive. While the simulation is a useful benchmark, it doesn't completely describe the whole situation -- which is pretty typical!
+
+Note that we can compute other interesting quantities from our simulated set of games, such as the total proportion of points on the board once there $x$ tricks played.
+
+```{r}
+points_trick_cumulative <- function(game) {
+  game %>%
+    group_by(trick) %>%
+    summarize(points = sum(points))
+}
+
+library(parallel)
+points_cumulative <- res %>%
+  select(full_game) %>%
+  mutate(tmp = mclapply(full_game, points_trick_cumulative, mc.cores = 16)) 
+
+points_cumulative %>%
+  mutate(id = 1:n()) %>%
+  unnest(tmp) %>%
+  group_by(id) %>%
+  mutate(points_played = cumsum(points),
+         point_pct = points_played/sum(points)) %>%
+  ggplot(aes(x = factor(trick), y = points_played)) + 
+  geom_violin(scale = "width") + 
+  xlab("Trick") + ylab("Points played") + 
+  geom_smooth(aes(x = trick), method = "gam", se = F)
+```
+
+In most games, the Queen of Spades is played first, resulting in a 13-point jump. Then, the remaining hearts are played. By the end of the game, there are usually only a few hearts remaining, leading to very interesting looking violin plots.

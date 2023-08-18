@@ -31,3 +31,6 @@
 [submodule "homework-repos/12-shiny"]
 	path = homework-repos/12-shiny
 	url = https://github.com/stat-assignments/shiny-cocktails.git
+[submodule "homework-repos/11-simulation"]
+	path = homework-repos/11-simulation
+	url = https://github.com/stat-assignments/simulation-adv.git

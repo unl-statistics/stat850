@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.340">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Example: Hearts">
+
+<title>Stat 850: Computing Tools for Statisticians - Homework 11: Simulation</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KQ9CCFY6LV"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
+</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Stat 850: Computing Tools for Statisticians</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://srvanderplas.github.io/stat-computing-r-python/" rel="" target="">
+ <span class="menu-text">Textbook</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../syllabus.pdf" rel="" target="">
+ <span class="menu-text">Syllabus</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#is-it-in-the-cards" id="toc-is-it-in-the-cards" class="nav-link active" data-scroll-target="#is-it-in-the-cards">Is it in the cards?</a>
+  <ul class="collapse">
+  <li><a href="#identify-a-question" id="toc-identify-a-question" class="nav-link" data-scroll-target="#identify-a-question">Identify a Question</a></li>
+  <li><a href="#set-up-your-objects" id="toc-set-up-your-objects" class="nav-link" data-scroll-target="#set-up-your-objects">Set up your objects</a></li>
+  <li><a href="#write-pseudocode-to-describe-how-your-game-will-be-played" id="toc-write-pseudocode-to-describe-how-your-game-will-be-played" class="nav-link" data-scroll-target="#write-pseudocode-to-describe-how-your-game-will-be-played">Write Pseudocode to describe how your game will be played</a></li>
+  <li><a href="#write-one-or-more-functions-to-simulate-the-basic-game-mechanisms" id="toc-write-one-or-more-functions-to-simulate-the-basic-game-mechanisms" class="nav-link" data-scroll-target="#write-one-or-more-functions-to-simulate-the-basic-game-mechanisms">Write one or more functions to simulate the basic game mechanisms</a></li>
+  <li><a href="#use-your-functions-to-simulate-a-game-and-evaluate-your-question" id="toc-use-your-functions-to-simulate-a-game-and-evaluate-your-question" class="nav-link" data-scroll-target="#use-your-functions-to-simulate-a-game-and-evaluate-your-question">Use your functions to simulate a game and evaluate your question</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Homework 11: Simulation</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">HW</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Example: Hearts </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="is-it-in-the-cards" class="level2">
+<h2 class="anchored" data-anchor-id="is-it-in-the-cards">Is it in the cards?</h2>
+<p>In this task, you will create a simulation of Hearts, a card game which is played with 52 cards.</p>
+<p>You may also work with a different game if you get approval from me before you start. You may want to avoid games which require a large amount of strategy, skill, and bluffing, such as poker.</p>
+<p>This homework file is set up to demonstrate how this would be done with the game of <a href="https://bicyclecards.com/how-to-play/hearts/#filter">hearts</a>.</p>
+<p>You don’t need to necessarily simulate the full game mechanism, but you do need to implement enough of the game mechanism that you can identify an interesting probability question and answer the question using a simulation.</p>
+<section id="identify-a-question" class="level3">
+<h3 class="anchored" data-anchor-id="identify-a-question">Identify a Question</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Guidelines:</p>
+<ul>
+<li><p>Your question should be something that is not easily answerable with obviously constructed probability calculations.</p></li>
+<li><p>Some options include: - Compute the probability of going bust given that you have N cards in your hand. (You can ignore the rules about splitting your hand if you get two cards of the same denomination) - Compute the probability of going bust given that your original two cards total 9, 10, or 11 (doubling down) - Compare the probability of going bust with N cards in your hand if one of the cards you were originally dealt was an Ace (which can count as 1 or 11) vs.&nbsp;if you know that you do not have an Ace. - Evaluate two competing strategies for Blackjack to see which one has a higher success probability. - Compare strategies for Blackjack with strategies for a similar card game (31), in which the player only goes bust when the cards total more than 31.</p></li>
+</ul>
+<p>You are not limited to the options above, but your question must be complex enough that it would require a simulation of the game’s mechanics beyond the initial shuffle.</p>
+</div>
+</div>
+<p>Before I explain my question, a quick story:</p>
+<p>When my parents taught us hearts (I was about 11, my sister would have been 9), the first time we played they taught us simplified rules:</p>
+<ul>
+<li>try to get the fewest hearts</li>
+<li>the person with the most hearts gets the highest score (low is good)</li>
+<li>try to avoid the queen of spades, because that’s 13 points.</li>
+</ul>
+<p>They didn’t mention the fact that if you got all the hearts and the queen of spades, you “shot the moon” and scored 0, and everyone else got 26 points. During that first game, I was trying as hard as I could, and I kept getting hearts! By the end of the round, I was trying very hard not to cry, only to find out that I’d shot the moon and everyone else got all of the points - I was in the lead! It was a very confusing game.</p>
+<p>Fundamentally, my question is: What is the probability that a player using relatively little (no) strategy accidentally “shoots the moon” in a game of hearts?</p>
+</section>
+<section id="set-up-your-objects" class="level3">
+<h3 class="anchored" data-anchor-id="set-up-your-objects">Set up your objects</h3>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Think very carefully about how you want to set up your simulation. It is almost always easier to describe the position of all of the cards in the deck using a single data frame than it is to maintain separate data frames of multiple cards for each player and for the discard pile and undealt cards.</p>
+</div>
+</div>
+<p>First, you must set up a data frame describing all possible values of your playing items. A standard deck of 52 playing cards might be described using a data frame which has columns for suit and value, and you may want to make value a factor variable (your call on that one). If your game requires that players hold cards in their hand, you may also want to have a column indicating location (deck, discard, player_x).</p>
+<section id="pseudocode-set-up" class="level4">
+<h4 class="anchored" data-anchor-id="pseudocode-set-up">Pseudocode: Set up</h4>
+<!-- Note that indenting text with 4 spaces prints it out like code, but doesn't require anything to execute (so it doesn't have to be real code).  -->
+<pre><code>Pseudocode: Set up objects
+
+Create a tibble with 4 suits and 13 values labeled 
+    Ace, 2:10, J, Q, K
+Add point values
+Add card ID numbers
+(Eventually) add location column - defer to a later step
+Remove any cards from the deck not necessary for game play</code></pre>
+</section>
+<section id="functions-set-up" class="level4">
+<h4 class="anchored" data-anchor-id="functions-set-up">Functions: Set up</h4>
+<div class="cell" data-hash="hearts_cache/html/unnamed-chunk-1_59491ec11be9c346b2d7022c229ad3c8">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>create_deck <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Set up cards</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  suits <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"hearts"</span>, <span class="st">"diamonds"</span>, <span class="st">"spades"</span>, <span class="st">"clubs"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  values <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">13</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">10</span>, <span class="st">"Jack"</span>, <span class="st">"Queen"</span>, <span class="st">"King"</span>, <span class="st">"Ace"</span>))</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  deck <span class="ot">&lt;-</span> <span class="fu">crossing</span>(<span class="at">suit =</span> suits, <span class="at">value =</span> values)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Set up points</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># This will change depending on which game you want to simulate</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># I have demonstrated this using hearts </span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  deck <span class="sc">%&gt;%</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">points =</span> (suit <span class="sc">==</span> <span class="st">"hearts"</span>) <span class="sc">+</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>             <span class="dv">13</span><span class="sc">*</span>(suit <span class="sc">==</span> <span class="st">"spades"</span> <span class="sc">&amp;</span> value <span class="sc">==</span> <span class="st">"Queen"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># add a card ID</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">n</span>())</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fu">create_deck</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 52 × 4
+   suit  value points    id
+   &lt;chr&gt; &lt;fct&gt;  &lt;dbl&gt; &lt;int&gt;
+ 1 clubs 2          0     1
+ 2 clubs 3          0     2
+ 3 clubs 4          0     3
+ 4 clubs 5          0     4
+ 5 clubs 6          0     5
+ 6 clubs 7          0     6
+ 7 clubs 8          0     7
+ 8 clubs 9          0     8
+ 9 clubs 10         0     9
+10 clubs Jack       0    10
+# ℹ 42 more rows</code></pre>
+</div>
+</div>
+<p>I’ve created a standard deck of cards, and assigned each card the point value it has when scoring a game of hearts.</p>
+<p>In the Bicycle rules, there are specific cards which are removed if there are 3 or 5 players (to make sure there are an even number of cards for each player). I’m deviating slightly from those rules so that the 2 of clubs is always available (this makes my life easier), but the fundamentals are the same.</p>
+<div class="cell" data-hash="hearts_cache/html/unnamed-chunk-2_9f78b3ae3c95e516f86f987b90c973fd">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>deck_fix <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">deck =</span> <span class="fu">create_deck</span>(), <span class="at">n_players =</span> <span class="dv">4</span>) {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Remove cards from deck to make the game playable by 3 or 5 players</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (n_players <span class="sc">==</span> <span class="dv">4</span>) {</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># do nothing special</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (n_players <span class="sc">==</span> <span class="dv">3</span>) {</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    deck <span class="ot">&lt;-</span> deck <span class="sc">%&gt;%</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">filter</span>(<span class="sc">!</span>(suit <span class="sc">==</span> <span class="st">"diamonds"</span> <span class="sc">&amp;</span> value <span class="sc">==</span> <span class="st">"2"</span>))</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (n_players <span class="sc">==</span> <span class="dv">5</span>) {</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    deck <span class="ot">&lt;-</span> deck <span class="sc">%&gt;%</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">filter</span>(<span class="sc">!</span>(suit <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"diamonds"</span>, <span class="st">"spades"</span>) <span class="sc">&amp;</span> value <span class="sc">==</span> <span class="st">"2"</span>))</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">"Hearts is playable by between 3 and 5 players"</span>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  deck</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="fu">create_deck</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">deck_fix</span>(<span class="at">n_players =</span> <span class="dv">3</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(value, suit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 51 × 4
+   suit     value points    id
+   &lt;chr&gt;    &lt;fct&gt;  &lt;dbl&gt; &lt;int&gt;
+ 1 clubs    2          0     1
+ 2 hearts   2          1    27
+ 3 spades   2          0    40
+ 4 clubs    3          0     2
+ 5 diamonds 3          0    15
+ 6 hearts   3          1    28
+ 7 spades   3          0    41
+ 8 clubs    4          0     3
+ 9 diamonds 4          0    16
+10 hearts   4          1    29
+# ℹ 41 more rows</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="write-pseudocode-to-describe-how-your-game-will-be-played" class="level3">
+<h3 class="anchored" data-anchor-id="write-pseudocode-to-describe-how-your-game-will-be-played">Write Pseudocode to describe how your game will be played</h3>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that this pseudocode should be written focused on how you will record the game’s progression in a computer simulation. It’s relatively easy to write pseudo”code” to describe the instructions for playing the game, but it’s entirely a different thing to write pseudocode for how to simulate gameplay computationally.</p>
+<p>See <a href="../homework/hearts.html">hearts.qmd</a> for an example of the level of detail I’m looking for here.</p>
+</div>
+</div>
+<!-- Note that indenting text with 4 spaces prints it out like code, but doesn't require anything to execute (so it doesn't have to be real code).  -->
+<pre><code>Full game: 
+1. Deal Cards
+2. Play the first trick
+    1. The player with the 2 of clubs starts
+    2. Each player must select a card (see function below)
+3. Play 12 more tricks (mostly, this is a repeat of step 2, but the first player selects a random card instead of the 2 of clubs)
+    1. Each player must select a card
+    2. The trick must be evaluated to determine which player keeps the cards
+4. Determine the game score by counting up the value of the hearts and queen of spades cards in each hand. Lowest score wins.
+
+Card selection: 
+1. If the player has any cards in suit, they must select one of those cards
+2. If a card in suit isn't available, the player may select an out of suit card. Hearts cannot be played until the suit is "broken" or there is no other option.
+    1. Determine set of cards available to select from (see Available card function)
+    2. Randomly select a card from available options
+    
+Available cards: 
+    1. Check if hearts have been broken 
+        - if not, check if other cards are available
+            - if other cards are available, remove all hearts from the "options"
+        - return available cards data frame</code></pre>
+</section>
+<section id="write-one-or-more-functions-to-simulate-the-basic-game-mechanisms" class="level3">
+<h3 class="anchored" data-anchor-id="write-one-or-more-functions-to-simulate-the-basic-game-mechanisms">Write one or more functions to simulate the basic game mechanisms</h3>
+<!-- Delete this commentary and replace it with your own planning about how to simulate your game. -->
+<!-- If you are simulating a game where all cards are initially held by players, you need to have a function that randomly assigns 13 cards to each player.  -->
+<!-- You may want a function that controls the game play and functions for each separate step in game play (some of these functions may need to be called using a loop). -->
+<!-- In Blackjack, I would expect that you would have a function for the initial deal, a function to determine what logic should be used under each condition, and a scoring function, at minimum. -->
+<section id="deal-cards-to-players" class="level4">
+<h4 class="anchored" data-anchor-id="deal-cards-to-players">Deal cards to players</h4>
+<div class="cell" data-hash="hearts_cache/html/unnamed-chunk-3_ca539fd953ac76f6f88db8c8a750d966">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>deal_cards <span class="ot">&lt;-</span> <span class="cf">function</span>(deck, <span class="at">players =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) {</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  deck <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Fix the deck</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">deck_fix</span>(<span class="at">n_players =</span> <span class="fu">length</span>(players)) <span class="sc">%&gt;%</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># shuffle the rows</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="fu">nrow</span>(deck)) <span class="sc">%&gt;%</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Assign cards to players one-by-one</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">player =</span> <span class="fu">rep</span>(players, <span class="at">length.out =</span> <span class="fu">n</span>())) <span class="sc">%&gt;%</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Sort deck by player, suit, and value</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(player, suit, value)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="fu">create_deck</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">deal_cards</span>(<span class="at">players =</span> <span class="fu">c</span>(<span class="st">"Amy"</span>, <span class="st">"Joe"</span>, <span class="st">"Sarah"</span>, <span class="st">"Bill"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(player) <span class="sc">%&gt;%</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 2
+# Groups:   player [4]
+  player     n
+  &lt;chr&gt;  &lt;int&gt;
+1 Amy       13
+2 Bill      13
+3 Joe       13
+4 Sarah     13</code></pre>
+</div>
+</div>
+</section>
+<section id="picking-cards" class="level4">
+<h4 class="anchored" data-anchor-id="picking-cards">Picking Cards</h4>
+<p>Next, we need to handle how a player would select a card. We’re going to ignore any sort of logic that would depend on cards played by previous players in the same trick (or previous tricks).</p>
+<p>I’m simulating my siblings and I playing this game when I was at most 11 (and I was the oldest), so it’s a 100% safe assumption that our logical skills were … sub optimal.</p>
+<p>In Hearts, like in many other trick-based games, you have certain rules that must be followed, like matching suits.</p>
+<div class="cell" data-hash="hearts_cache/html/unnamed-chunk-4_128b7310af6e3090aeedc650da69844b">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check whether there's a card in the selected suit</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>pick_card_in_suit <span class="ot">&lt;-</span> <span class="cf">function</span>(cards, <span class="at">sel_suit =</span> <span class="cn">NA</span>) {</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># if sel_suit is NA, this will return nothing</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  valid <span class="ot">&lt;-</span> <span class="fu">filter</span>(cards, suit <span class="sc">==</span> sel_suit) </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">nrow</span>(valid) <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">slice_sample</span>(valid, <span class="at">n =</span> <span class="dv">1</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    valid</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In addition, hearts requires that if no point cards have been played yet, you must select a card which is not a point card (so something other than a heart or the queen of spades) if you have the option to do so.</p>
+<p>We handle this using the <code>hearts_available</code> parameter, which describes whether point cards have been played. If hearts aren’t available, and there are other suits in the set of cards, we will pick a non-heart card.</p>
+<div class="cell" data-hash="hearts_cache/html/unnamed-chunk-5_8ba614e2259988d83657747520e75128">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check whether there's a card in another suit</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>pick_card_out_suit <span class="ot">&lt;-</span> <span class="cf">function</span>(cards, <span class="at">hearts_avail =</span> F) {</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">is.na</span>(hearts_avail)) <span class="fu">stop</span>(<span class="st">"hearts_avail cannot be NA"</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  card_options <span class="ot">&lt;-</span> cards</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  nonhearts <span class="ot">&lt;-</span> <span class="fu">any</span>(cards<span class="sc">$</span>suit <span class="sc">!=</span> <span class="st">"hearts"</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># If hearts aren't available and there are other suits,</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># filter out the hearts</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Note that this still allows the Queen of Spades to </span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># be played at any time (which then makes hearts available)</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (nonhearts <span class="sc">&amp;</span> <span class="sc">!</span>hearts_avail) {</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    card_options <span class="ot">&lt;-</span> cards <span class="sc">%&gt;%</span> <span class="fu">filter</span>(suit <span class="sc">!=</span> <span class="st">"hearts"</span>)</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># print(card_options)</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_sample</span>(card_options, <span class="at">n =</span> <span class="dv">1</span>)</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>(This logic caused 90% of the trouble I had with this game simulation)</p>
+<p>Now that we have that, we can write a function that will take a set of cards, and pick a card for a given player in the selected suit (if provided).</p>
+<div class="cell" data-hash="hearts_cache/html/unnamed-chunk-6_37a100ab9bc19152d1fcfa25434d083c">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>pick_card <span class="ot">&lt;-</span> <span class="cf">function</span>(deck,</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">this_player =</span> <span class="cn">NA</span>,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">sel_suit =</span> <span class="cn">NA</span>,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">hearts_avail =</span> F) {</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.na</span>(this_player)) {</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    options <span class="ot">&lt;-</span> <span class="fu">filter</span>(deck, player <span class="sc">%in%</span> this_player)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    options <span class="ot">&lt;-</span> deck</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  play <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># First, try to pick something in suit</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pick_card_in_suit</span>(options, <span class="at">sel_suit =</span> sel_suit),</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Then if that fails pick something out of suit</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pick_card_out_suit</span>(options, <span class="at">hearts_avail =</span> hearts_avail)</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Take the first row - in-suit if it's available, out-of-suit otherwise</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>  play[<span class="dv">1</span>,]</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="playing-the-first-trick" class="level4">
+<h4 class="anchored" data-anchor-id="playing-the-first-trick">Playing the first trick</h4>
+<p>The first trick is a bit different, logic wise. The person with the 2 of clubs leads (in other tricks, it’s the person who took the previous trick).</p>
+<p>To make this function a bit easier to use, I’ve created a couple of helper functions that can be re-used in any trick:</p>
+<div class="cell" data-hash="hearts_cache/html/unnamed-chunk-7_e05862bc1bb94aaca8692cba7db7113b">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate a played trick, adding columns for trick_order, in_suit, player_win, and trick number</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>eval_trick <span class="ot">&lt;-</span> <span class="cf">function</span>(cards, spec_suit, <span class="at">trick_num =</span> <span class="cn">NA</span>) {</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Note that trick order is likely to be wrong for the first trick,</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># but this isn't critical - it just helps keep track of things.</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  cards <span class="sc">%&gt;%</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">trick_order =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">in_suit =</span> suit <span class="sc">==</span> spec_suit) <span class="sc">%&gt;%</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(in_suit), <span class="fu">desc</span>(value)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">player_win =</span> .<span class="sc">$</span>player[<span class="dv">1</span>]) <span class="sc">%&gt;%</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(trick_order) <span class="sc">%&gt;%</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">trick =</span> trick_num)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove cards from deck that have been played and bind on as a played trick</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>fix_deck <span class="ot">&lt;-</span> <span class="cf">function</span>(dealt, trick) {</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>  dealt <span class="sc">%&gt;%</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">anti_join</span>(trick, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"suit"</span>, <span class="st">"value"</span>, <span class="st">"player"</span>, <span class="st">"id"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bind_rows</span>(trick)</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This leads to the code for the first trick:</p>
+<div class="cell" data-hash="hearts_cache/html/unnamed-chunk-8_292770a33d314bd9c864609f242dedfb">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>first_trick <span class="ot">&lt;-</span> <span class="cf">function</span>(dealt) {</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Which player has 2 of clubs?</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  first_card <span class="ot">&lt;-</span> dealt <span class="sc">%&gt;%</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(suit <span class="sc">==</span> <span class="st">"clubs"</span> <span class="sc">&amp;</span> value <span class="sc">==</span> <span class="st">"2"</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  remaining_players <span class="ot">&lt;-</span> <span class="fu">unique</span>(dealt<span class="sc">$</span>player) <span class="sc">%&gt;%</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">setdiff</span>(first_card<span class="sc">$</span>player)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  play <span class="ot">&lt;-</span> first_card</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> remaining_players) {</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    play <span class="ot">&lt;-</span> dealt <span class="sc">%&gt;%</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">filter</span>(player <span class="sc">==</span> i) <span class="sc">%&gt;%</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>      <span class="fu">pick_card</span>(<span class="at">sel_suit =</span> <span class="st">"clubs"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>      <span class="fu">bind_rows</span>(play)</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>  play <span class="ot">&lt;-</span> play <span class="sc">%&gt;%</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">eval_trick</span>(<span class="at">spec_suit =</span> <span class="st">"clubs"</span>,</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>               <span class="at">trick_num =</span> <span class="dv">1</span>)</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">all</span>(dealt<span class="sc">$</span>player <span class="sc">%in%</span> play<span class="sc">$</span>player)) {</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">"Not all players picked cards?"</span>)</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fix_deck</span>(dealt, play)</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="general-trick" class="level4">
+<h4 class="anchored" data-anchor-id="general-trick">General trick</h4>
+<p>The same basic logic applies in any trick - the first card is picked, and then all other players throw in a card. We do need a <code>hearts_playable</code> function that will evaluate our deck to see if hearts is an option; once we have that, we can write a general trick-playing function.</p>
+<div class="cell" data-hash="hearts_cache/html/unnamed-chunk-9_e26acfd1a88d4ce166972504f14a8d9e">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>hearts_playable <span class="ot">&lt;-</span> <span class="cf">function</span>(df) {</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>(df<span class="sc">$</span>points, <span class="at">na.rm =</span> T) <span class="sc">&gt;</span> <span class="dv">0</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Notice that we’re calling the <code>first_trick</code> function within the more general <code>play_trick</code> function - this makes it much easier to remember the syntax.</p>
+<div class="cell" data-hash="hearts_cache/html/unnamed-chunk-10_6bc990197d7536a60a20e5cd52a62316">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>play_trick <span class="ot">&lt;-</span> <span class="cf">function</span>(dealt) {</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="st">"trick"</span> <span class="sc">%in%</span> <span class="fu">names</span>(dealt)) {</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">first_trick</span>(dealt))</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># get empty df</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  play <span class="ot">&lt;-</span> <span class="fu">filter</span>(dealt, id <span class="sc">&lt;</span> <span class="dv">0</span>)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># get trick number</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  trick_num <span class="ot">&lt;-</span> (<span class="dv">1</span> <span class="sc">+</span> dealt<span class="sc">$</span>trick) <span class="sc">%&gt;%</span> <span class="fu">max</span>(<span class="at">na.rm =</span> T)</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># get player to lead</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  avail <span class="ot">&lt;-</span> <span class="fu">filter</span>(dealt, <span class="fu">is.na</span>(trick))</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  last_player <span class="ot">&lt;-</span> <span class="fu">filter</span>(dealt, trick <span class="sc">==</span> <span class="fu">max</span>(trick, <span class="at">na.rm =</span> T)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pluck</span>(<span class="st">"player_win"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unique</span>()</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># get already played cards and see if hearts can be played</span></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>  already_played <span class="ot">&lt;-</span> <span class="fu">anti_join</span>(dealt, avail, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"suit"</span>, <span class="st">"value"</span>))</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>  can_play_hearts <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(already_played, play) <span class="sc">%&gt;%</span></span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">hearts_playable</span>()</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>  <span class="co"># pick first card</span></span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>  play <span class="ot">&lt;-</span> <span class="fu">pick_card</span>(avail,</span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>                    <span class="at">this_player =</span> last_player,</span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>                    <span class="at">sel_suit =</span> <span class="cn">NA</span>,</span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>                    <span class="at">hearts_avail =</span> can_play_hearts)</span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>  <span class="co"># pick remaining cards</span></span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>  remaining_players <span class="ot">&lt;-</span> <span class="fu">unique</span>(dealt<span class="sc">$</span>player) <span class="sc">%&gt;%</span></span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">setdiff</span>(last_player)</span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> remaining_players) {</span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>    can_play_hearts <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(already_played, play) <span class="sc">%&gt;%</span></span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>      <span class="fu">hearts_playable</span>()</span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a>    play <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a>      play,</span>
+<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a>      <span class="fu">pick_card</span>(avail, <span class="at">this_player =</span> i,</span>
+<span id="cb15-38"><a href="#cb15-38" aria-hidden="true" tabindex="-1"></a>                <span class="at">sel_suit =</span> play<span class="sc">$</span>suit[<span class="dv">1</span>],</span>
+<span id="cb15-39"><a href="#cb15-39" aria-hidden="true" tabindex="-1"></a>                <span class="at">hearts_avail =</span> can_play_hearts)</span>
+<span id="cb15-40"><a href="#cb15-40" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb15-41"><a href="#cb15-41" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb15-42"><a href="#cb15-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-43"><a href="#cb15-43" aria-hidden="true" tabindex="-1"></a>  <span class="co"># evaluate the trick</span></span>
+<span id="cb15-44"><a href="#cb15-44" aria-hidden="true" tabindex="-1"></a>  play <span class="ot">&lt;-</span> play <span class="sc">%&gt;%</span></span>
+<span id="cb15-45"><a href="#cb15-45" aria-hidden="true" tabindex="-1"></a>    <span class="fu">eval_trick</span>(<span class="at">spec_suit =</span> play<span class="sc">$</span>suit[<span class="dv">1</span>], trick_num)</span>
+<span id="cb15-46"><a href="#cb15-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-47"><a href="#cb15-47" aria-hidden="true" tabindex="-1"></a>  <span class="co"># remove trick from deck and add it back in as a played trick</span></span>
+<span id="cb15-48"><a href="#cb15-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fix_deck</span>(dealt, play)</span>
+<span id="cb15-49"><a href="#cb15-49" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-50"><a href="#cb15-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-51"><a href="#cb15-51" aria-hidden="true" tabindex="-1"></a><span class="fu">create_deck</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb15-52"><a href="#cb15-52" aria-hidden="true" tabindex="-1"></a><span class="fu">deal_cards</span>(<span class="at">players =</span> <span class="fu">c</span>(<span class="st">"Amy"</span>, <span class="st">"Joe"</span>, <span class="st">"Sarah"</span>, <span class="st">"Bill"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-53"><a href="#cb15-53" aria-hidden="true" tabindex="-1"></a><span class="fu">play_trick</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb15-54"><a href="#cb15-54" aria-hidden="true" tabindex="-1"></a><span class="fu">play_trick</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb15-55"><a href="#cb15-55" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(trick)) <span class="co"># first 2 tricks in a game</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8 × 9
+  suit     value points    id player trick_order in_suit player_win trick
+  &lt;chr&gt;    &lt;fct&gt;  &lt;dbl&gt; &lt;int&gt; &lt;chr&gt;        &lt;int&gt; &lt;lgl&gt;   &lt;chr&gt;      &lt;dbl&gt;
+1 clubs    10         0     9 Sarah            1 TRUE    Sarah          1
+2 clubs    3          0     2 Bill             2 TRUE    Sarah          1
+3 clubs    4          0     3 Amy              3 TRUE    Sarah          1
+4 clubs    2          0     1 Joe              4 TRUE    Sarah          1
+5 diamonds 3          0    15 Sarah            1 TRUE    Amy            2
+6 diamonds 8          0    20 Amy              2 TRUE    Amy            2
+7 spades   Jack       0    49 Bill             3 FALSE   Amy            2
+8 diamonds 6          0    18 Joe              4 TRUE    Amy            2</code></pre>
+</div>
+</div>
+</section>
+<section id="play-a-full-game" class="level4">
+<h4 class="anchored" data-anchor-id="play-a-full-game">Play a full game</h4>
+<p>Now, we can play a full game of hearts by repeatedly calling the play_trick function. All of the cards stay in the same data frame, and we keep track of who won each trick and who played each card - this allows us to calculate the score for each player at the end.</p>
+<div class="cell" data-hash="hearts_cache/html/unnamed-chunk-11_ddb87bfe59462493aee64b22ca317de9">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>hearts <span class="ot">&lt;-</span> <span class="cf">function</span>(players) {</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  deck <span class="ot">&lt;-</span> <span class="fu">create_deck</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">deal_cards</span>(players)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  number_of_rounds <span class="ot">&lt;-</span> <span class="fu">nrow</span>(deck)<span class="sc">/</span><span class="fu">length</span>(players)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>number_of_rounds) {</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># print(i)</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    deck <span class="ot">&lt;-</span> <span class="fu">play_trick</span>(deck)</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># print(filter(deck, trick == i))</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(deck)</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a><span class="fu">hearts</span>(<span class="fu">c</span>(<span class="st">"Amy"</span>, <span class="st">"Beth"</span>, <span class="st">"Cara"</span>, <span class="st">"Dawn"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 52 × 9
+   suit   value points    id player trick_order in_suit player_win trick
+   &lt;chr&gt;  &lt;fct&gt;  &lt;dbl&gt; &lt;int&gt; &lt;chr&gt;        &lt;int&gt; &lt;lgl&gt;   &lt;chr&gt;      &lt;dbl&gt;
+ 1 clubs  5          0     4 Dawn             1 TRUE    Cara           1
+ 2 clubs  6          0     5 Cara             2 TRUE    Cara           1
+ 3 clubs  4          0     3 Amy              3 TRUE    Cara           1
+ 4 clubs  2          0     1 Beth             4 TRUE    Cara           1
+ 5 spades Jack       0    49 Cara             1 TRUE    Beth           2
+ 6 spades 5          0    43 Amy              2 TRUE    Beth           2
+ 7 spades Ace        0    52 Beth             3 TRUE    Beth           2
+ 8 spades Queen     13    50 Dawn             4 TRUE    Beth           2
+ 9 spades 3          0    41 Beth             1 TRUE    Cara           3
+10 spades 7          0    45 Amy              2 TRUE    Cara           3
+# ℹ 42 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="calculate-game_score" class="level4">
+<h4 class="anchored" data-anchor-id="calculate-game_score">Calculate game_score</h4>
+<p>It’s pretty easy given our setup to calculate each player’s score:</p>
+<div class="cell" data-hash="hearts_cache/html/unnamed-chunk-12_9da870e3d74467174d6d58fbecb2c633">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>calc_score <span class="ot">&lt;-</span> <span class="cf">function</span>(data) {</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  game <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(player) <span class="sc">%&gt;%</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">score =</span> <span class="fu">sum</span>(points), <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Handle the "shoot the moon" scenario </span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># where one player has all the points</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">any</span>(game<span class="sc">$</span>score <span class="sc">==</span> <span class="dv">26</span>)) {</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    game <span class="ot">&lt;-</span> game <span class="sc">%&gt;%</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">mutate</span>(<span class="at">score =</span> <span class="dv">26</span> <span class="sc">-</span> score)</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>  game</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="fu">hearts</span>(<span class="fu">c</span>(<span class="st">"Amy"</span>, <span class="st">"Beth"</span>, <span class="st">"Cara"</span>, <span class="st">"Dawn"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calc_score</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 2
+  player score
+  &lt;chr&gt;  &lt;dbl&gt;
+1 Amy        5
+2 Beth      14
+3 Cara       4
+4 Dawn       3</code></pre>
+</div>
+</div>
+</section>
+<section id="did-the-player-shoot-the-moon" class="level4">
+<h4 class="anchored" data-anchor-id="did-the-player-shoot-the-moon">Did the player shoot the moon?</h4>
+<p>In a shoot the moon scenario, the total game points will be (n-1) times normal, where <span class="math inline">\(n\)</span> is the number of players. This function returns a logical indicator of whether or not the total number of points generated is more than 26 (indicating that someone shot the moon)</p>
+<div class="cell" data-hash="hearts_cache/html/unnamed-chunk-13_054ba7335d426891ff301e7daa8c83a4">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>shoot_the_moon <span class="ot">&lt;-</span> <span class="cf">function</span>(data) {</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>(data<span class="sc">$</span>score) <span class="sc">&gt;</span> <span class="dv">26</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="use-your-functions-to-simulate-a-game-and-evaluate-your-question" class="level3">
+<h3 class="anchored" data-anchor-id="use-your-functions-to-simulate-a-game-and-evaluate-your-question">Use your functions to simulate a game and evaluate your question</h3>
+<!-- Run your simulation with an increasing number of iterations and create some sort of plot showing your results. -->
+<!-- Describe any issues you encountered in your simulation, and how you addressed them (or where the whole thing went off the rails, if you couldn't address everything in time). -->
+<div class="cell" data-hash="hearts_cache/html/unnamed-chunk-14_6120c503244c640455129b913b0fe6ce">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># I'm saving the results of this so that I only </span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># have to run it once...</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># This uses parallel processing to take advantage of the </span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co"># fact that I wrote this on a server with 16 cores and </span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co"># a lot of memory.</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># May as well use the power if you have the option!</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(parallel)</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">34029</span>)</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="co">#... then parallel replicate...</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>games <span class="ot">&lt;-</span> <span class="fu">mclapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>, <span class="at">FUN =</span> <span class="cf">function</span>(i) { <span class="fu">hearts</span>(<span class="fu">c</span>(<span class="st">"Susan"</span>, <span class="st">"Caroline"</span>, <span class="st">"Mom"</span>, <span class="st">"Dad"</span>)) }, <span class="at">mc.preschedule =</span> F, <span class="at">mc.set.seed =</span> T, <span class="at">mc.cores =</span> <span class="dv">16</span>, <span class="at">mc.cleanup =</span> T)</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(games, <span class="at">file =</span> <span class="st">"games.Rdata"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-hash="hearts_cache/html/unnamed-chunk-15_ad030e77be7f9cc9cae6a60221192156">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"games.Rdata"</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">full_game =</span> games, </span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">score =</span> purrr<span class="sc">::</span><span class="fu">map</span>(full_game, calc_score),</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">stm =</span> purrr<span class="sc">::</span><span class="fu">map_lgl</span>(score, shoot_the_moon)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>From this assessment, one player shoots the moon in approximately 0.00% of games played using the naive strategy. My parents were probably pretty reasonably assuming that they could explain that part of the strategy later, once we’d grasped the fundamentals of the game.</p>
+<p>There are a couple of other options to consider - my simulation may not exactly model reality because of the assumption that all players were acting randomly:</p>
+<ul>
+<li>(The most likely) I’ve simulated 4 players randomly playing hearts, but in the game that motivated the question, my parents actually knew what they were doing. If two players were strategizing, and two players were playing randomly, it might be more likely for someone to end up with all of the high point cards because two of the players were good enough to avoid them; the remaining point cards were randomly distributed. This seems like a more likely scenario to me.</li>
+<li>(Less likely) By trying to strategize (and failing) I unintentionally shot the moon - that is, I’ve simulated randomness, but that’s not necessarily accurate - my strategy could have been <em>worse</em> than random guessing, making this simulation somewhat useless.</li>
+</ul>
+<p>I wish I had time to add in some strategy component, but I think at this point that would be excessive. While the simulation is a useful benchmark, it doesn’t completely describe the whole situation – which is pretty typical!</p>
+<p>Note that we can compute other interesting quantities from our simulated set of games, such as the total proportion of points on the board once there <span class="math inline">\(x\)</span> tricks played.</p>
+<div class="cell" data-hash="hearts_cache/html/unnamed-chunk-16_0aaa712f5dd9e9c23a819426273f3cae">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>points_trick_cumulative <span class="ot">&lt;-</span> <span class="cf">function</span>(game) {</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  game <span class="sc">%&gt;%</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(trick) <span class="sc">%&gt;%</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">points =</span> <span class="fu">sum</span>(points))</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(parallel)</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>points_cumulative <span class="ot">&lt;-</span> res <span class="sc">%&gt;%</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(full_game) <span class="sc">%&gt;%</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">tmp =</span> <span class="fu">mclapply</span>(full_game, points_trick_cumulative, <span class="at">mc.cores =</span> <span class="dv">16</span>)) </span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>points_cumulative <span class="sc">%&gt;%</span></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest</span>(tmp) <span class="sc">%&gt;%</span></span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(id) <span class="sc">%&gt;%</span></span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">points_played =</span> <span class="fu">cumsum</span>(points),</span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>         <span class="at">point_pct =</span> points_played<span class="sc">/</span><span class="fu">sum</span>(points)) <span class="sc">%&gt;%</span></span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(trick), <span class="at">y =</span> points_played)) <span class="sc">+</span> </span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">scale =</span> <span class="st">"width"</span>) <span class="sc">+</span> </span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Trick"</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">"Points played"</span>) <span class="sc">+</span> </span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">x =</span> trick), <span class="at">method =</span> <span class="st">"gam"</span>, <span class="at">se =</span> F)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ s(x, bs = "cs")'</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="hearts_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>In most games, the Queen of Spades is played first, resulting in a 13-point jump. Then, the remaining hearts are played. By the end of the game, there are usually only a few hearts remaining, leading to very interesting looking violin plots.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
