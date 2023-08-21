@@ -6,6 +6,7 @@ listing:
     categories: true
     contents: 
       - "homework/*.qmd"
+      - "!homework/hearts.qmd"
       - "reading/*.qmd"
       - "project/*.qmd"
       - "slides/*.qmd"

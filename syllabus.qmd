@@ -31,6 +31,8 @@ execute:
 ```{r setup, include=FALSE}
 # knitr::opts_chunk$set(cache=FALSE, dev='pdf')
 knitr::opts_chunk$set(cache=F,
+                      echo = F,
+                      message = F, warning = F,
                       fig.path = 'figs/',
                       cache.path='cache/',
                       warning=F,
@@ -84,14 +86,13 @@ In addition, you may find it useful to reference some of the following resources
 
 - [R for Data Science](https://r4ds.had.co.nz/)
 
+- [Advanced R](http://adv-r.had.co.nz/)
+
+- [Python for Everybody](https://www.py4e.com/html3/)
 
 - [Python for Data Analysis](https://www.oreilly.com/library/view/python-for-data/9781449323592/) * 
 
 - [Python Data Science Handbook](https://learning.oreilly.com/library/view/python-data-science/9781491912126/) *
-
-- [Advanced R](http://adv-r.had.co.nz/)
-
-- [Python for Everybody](https://www.py4e.com/html3/)
 
 \* Available online for free if you register with your UNL email address.
 

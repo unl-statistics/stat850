@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -90,7 +90,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KQ9CCFY6LV"></script>
@@ -601,16 +602,16 @@ Available cards:
 <span id="cb15-55"><a href="#cb15-55" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(trick)) <span class="co"># first 2 tricks in a game</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 8 × 9
-  suit     value points    id player trick_order in_suit player_win trick
-  &lt;chr&gt;    &lt;fct&gt;  &lt;dbl&gt; &lt;int&gt; &lt;chr&gt;        &lt;int&gt; &lt;lgl&gt;   &lt;chr&gt;      &lt;dbl&gt;
-1 clubs    10         0     9 Sarah            1 TRUE    Sarah          1
-2 clubs    3          0     2 Bill             2 TRUE    Sarah          1
-3 clubs    4          0     3 Amy              3 TRUE    Sarah          1
-4 clubs    2          0     1 Joe              4 TRUE    Sarah          1
-5 diamonds 3          0    15 Sarah            1 TRUE    Amy            2
-6 diamonds 8          0    20 Amy              2 TRUE    Amy            2
-7 spades   Jack       0    49 Bill             3 FALSE   Amy            2
-8 diamonds 6          0    18 Joe              4 TRUE    Amy            2</code></pre>
+  suit   value points    id player trick_order in_suit player_win trick
+  &lt;chr&gt;  &lt;fct&gt;  &lt;dbl&gt; &lt;int&gt; &lt;chr&gt;        &lt;int&gt; &lt;lgl&gt;   &lt;chr&gt;      &lt;dbl&gt;
+1 clubs  Jack       0    10 Sarah            1 TRUE    Sarah          1
+2 clubs  7          0     6 Joe              2 TRUE    Sarah          1
+3 clubs  3          0     2 Amy              3 TRUE    Sarah          1
+4 clubs  2          0     1 Bill             4 TRUE    Sarah          1
+5 spades 9          0    47 Sarah            1 TRUE    Bill           2
+6 spades King       0    51 Amy              2 TRUE    Bill           2
+7 spades Ace        0    52 Bill             3 TRUE    Bill           2
+8 spades 10         0    48 Joe              4 TRUE    Bill           2</code></pre>
 </div>
 </div>
 </section>
@@ -638,16 +639,16 @@ Available cards:
 <pre><code># A tibble: 52 × 9
    suit   value points    id player trick_order in_suit player_win trick
    &lt;chr&gt;  &lt;fct&gt;  &lt;dbl&gt; &lt;int&gt; &lt;chr&gt;        &lt;int&gt; &lt;lgl&gt;   &lt;chr&gt;      &lt;dbl&gt;
- 1 clubs  5          0     4 Dawn             1 TRUE    Cara           1
- 2 clubs  6          0     5 Cara             2 TRUE    Cara           1
- 3 clubs  4          0     3 Amy              3 TRUE    Cara           1
- 4 clubs  2          0     1 Beth             4 TRUE    Cara           1
- 5 spades Jack       0    49 Cara             1 TRUE    Beth           2
- 6 spades 5          0    43 Amy              2 TRUE    Beth           2
- 7 spades Ace        0    52 Beth             3 TRUE    Beth           2
- 8 spades Queen     13    50 Dawn             4 TRUE    Beth           2
- 9 spades 3          0    41 Beth             1 TRUE    Cara           3
-10 spades 7          0    45 Amy              2 TRUE    Cara           3
+ 1 clubs  6          0     5 Dawn             1 TRUE    Dawn           1
+ 2 clubs  4          0     3 Cara             2 TRUE    Dawn           1
+ 3 clubs  5          0     4 Beth             3 TRUE    Dawn           1
+ 4 clubs  2          0     1 Amy              4 TRUE    Dawn           1
+ 5 spades Jack       0    49 Dawn             1 TRUE    Beth           2
+ 6 spades 3          0    41 Amy              2 TRUE    Beth           2
+ 7 spades Queen     13    50 Beth             3 TRUE    Beth           2
+ 8 spades 9          0    47 Cara             4 TRUE    Beth           2
+ 9 hearts Jack       1    36 Beth             1 TRUE    Beth           3
+10 hearts 2          1    27 Amy              2 TRUE    Beth           3
 # ℹ 42 more rows</code></pre>
 </div>
 </div>
@@ -677,10 +678,10 @@ Available cards:
 <pre><code># A tibble: 4 × 2
   player score
   &lt;chr&gt;  &lt;dbl&gt;
-1 Amy        5
-2 Beth      14
-3 Cara       4
-4 Dawn       3</code></pre>
+1 Amy        2
+2 Beth      13
+3 Cara       6
+4 Dawn       5</code></pre>
 </div>
 </div>
 </section>
