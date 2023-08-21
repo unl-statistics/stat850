@@ -8,7 +8,7 @@ listing:
       - "homework/*.qmd"
       - "!homework/hearts.qmd"
       - "reading/*.qmd"
-      - "project/*.qmd"
+      - "project/*.qmd" 
       - "slides/*.qmd"
     sort: "date desc"
     type: table
