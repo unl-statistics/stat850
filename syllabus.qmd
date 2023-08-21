@@ -129,6 +129,7 @@ This schedule is tentative and subject to change. Students are expected to read 
 #| echo: false
 #| eval: true
 #| warning: false
+#| message: false
 #| fig-width: 8
 #| fig-height: 4.5
 class_cal
@@ -136,6 +137,8 @@ class_cal
 
 ```{r schedule}
 #| echo: false
+#| warning: false
+#| message: false
 #| eval: true
 #| fig-pos: 'h'
 class_days %>% select(date, topic, time) %>%
