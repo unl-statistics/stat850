@@ -1,0 +1,31 @@
+---
+title: "Stat 850: Git and Github"
+date: 2023-08-24
+format: revealjs
+---
+
+## Goals for Today
+
+- Set up Git
+
+- How to submit homework with Github Classroom
+
+- Git concepts: Push/Pull
+
+## Preview: Next Week
+
+- Finding your way in R and Python
+    - Navigating RStudio
+    - Execution modes: script, console, interactive
+    - Python vs. R code
+
+- Introduction to Programming
+
+## Reminders
+
+- Register for hypothes.is
+- Annotate the syllabus for this week's reading assignment
+    - due Friday at 8pm
+- Homework due Friday at 8pm
+
+- Read the assigned chapters in the textbook (7, 8) for class next week!

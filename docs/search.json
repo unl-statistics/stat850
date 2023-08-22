@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Stat 850: Computing Tools for Statistics",
     "section": "",
-    "text": "Course Materials\nDates shown are due dates (for homework, projects) and dates by which initial comments/annotations should be made (reading).\nMost classes will not contain slide presentations, but when there are slides to share, they will be provided here.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\n\nTitle\n\n\n\n\n\n\nDec 8, 2023\n\n\n\n\n\nSample Report\n\n\n\n\nOct 30, 2023\n\n\n\n\n\nSample Proposal\n\n\n\n\nOct 6, 2023\n\n\n\n\n\nProject Guidelines\n\n\n\n\nSep 8, 2023\n\n\n\n\n\nHomework 3: Fizzbuzz\n\n\n\n\nSep 1, 2023\n\n\n\n\n\nHomework 2: Finding Your Way in R and Python\n\n\n\n\nSep 1, 2023\n\n\n\n\n\nGood Enough Practices in Scientific Computing\n\n\n\n\nAug 29, 2023\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nAug 28, 2023\n\n\n\n\n\nDecoding Your Confusion\n\n\n\n\nAug 25, 2023\n\n\n\n\n\nHomework 1: Git and Github\n\n\n\n\nAug 22, 2023\n\n\n\n\n\nStat 850 Introduction\n\n\n\n\nAug 21, 2023\n\n\n\n\n\nSetup and Syllabus Annotation\n\n\n\n\n\n\nNo matching items"
+    "text": "Course Materials\nDates shown are due dates (for homework, projects) and dates by which initial comments/annotations should be made (reading).\nMost classes will not contain slide presentations, but when there are slides to share, they will be provided here.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\n\nTitle\n\n\n\n\n\n\nDec 8, 2023\n\n\n\n\n\nSample Report\n\n\n\n\nOct 30, 2023\n\n\n\n\n\nSample Proposal\n\n\n\n\nOct 6, 2023\n\n\n\n\n\nProject Guidelines\n\n\n\n\nSep 8, 2023\n\n\n\n\n\nHomework 3: Fizzbuzz\n\n\n\n\nSep 1, 2023\n\n\n\n\n\nHomework 2: Finding Your Way in R and Python\n\n\n\n\nSep 1, 2023\n\n\n\n\n\nGood Enough Practices in Scientific Computing\n\n\n\n\nAug 29, 2023\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nAug 28, 2023\n\n\n\n\n\nDecoding Your Confusion\n\n\n\n\nAug 25, 2023\n\n\n\n\n\nHomework 1: Git and Github\n\n\n\n\nAug 24, 2023\n\n\n\n\n\nStat 850: Git and Github\n\n\n\n\nAug 22, 2023\n\n\n\n\n\nStat 850 Introduction\n\n\n\n\nAug 21, 2023\n\n\n\n\n\nSetup and Syllabus Annotation\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "homework/01.html",
@@ -117,6 +117,34 @@
     "title": "Stat 850 Introduction",
     "section": "Preview: Thursday",
     "text": "Preview: Thursday\n\nSet up Git\nHow to submit homework with Github Classroom\nGit concepts: Push/Pull"
+  },
+  {
+    "objectID": "slides/01a-intro.html#reminders",
+    "href": "slides/01a-intro.html#reminders",
+    "title": "Stat 850 Introduction",
+    "section": "Reminders",
+    "text": "Reminders\n\nRegister for hypothes.is\nAnnotate the syllabus for this week’s reading assignment\n\ndue Friday at 8pm\n\nHomework due Friday at 8pm"
+  },
+  {
+    "objectID": "slides/01b-intro.html#goals-for-today",
+    "href": "slides/01b-intro.html#goals-for-today",
+    "title": "Stat 850: Git and Github",
+    "section": "Goals for Today",
+    "text": "Goals for Today\n\nSet up Git\nHow to submit homework with Github Classroom\nGit concepts: Push/Pull"
+  },
+  {
+    "objectID": "slides/01b-intro.html#preview-next-week",
+    "href": "slides/01b-intro.html#preview-next-week",
+    "title": "Stat 850: Git and Github",
+    "section": "Preview: Next Week",
+    "text": "Preview: Next Week\n\nFinding your way in R and Python\n\nNavigating RStudio\nExecution modes: script, console, interactive\nPython vs. R code\n\nIntroduction to Programming"
+  },
+  {
+    "objectID": "slides/01b-intro.html#reminders",
+    "href": "slides/01b-intro.html#reminders",
+    "title": "Stat 850: Git and Github",
+    "section": "Reminders",
+    "text": "Reminders\n\nRegister for hypothes.is\nAnnotate the syllabus for this week’s reading assignment\n\ndue Friday at 8pm\n\nHomework due Friday at 8pm\nRead the assigned chapters in the textbook (7, 8) for class next week!"
   },
   {
     "objectID": "slides/02a-Finding-Your-Way.html#rstudio-projects",
