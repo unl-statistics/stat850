@@ -172,7 +172,7 @@
     "href": "slides/02a-Finding-Your-Way.html#source-script",
     "title": "Finding your way in R and Python",
     "section": "Source Script",
-    "text": "Source Script\n\n\nRunning madlibs.py using Source Script in RStudio"
+    "text": "Source Script\n\nRunning madlibs.py using Source Script in RStudio"
   },
   {
     "objectID": "reading/01-SignUp-Syllabus.html",
@@ -348,5 +348,26 @@
     "title": "Sample Report",
     "section": "Tips",
     "text": "Tips\n(delete this section from your report!)\nAlmost anything you might want to know about how to format output in quarto can be found here. Feel free to email/come to office hours to figure out how to do XYZ - part of the goal of making you write this report is that I want you to know how to write e.g. a journal paper in Quarto as well, so now’s the time to experiment.\nIf you want to know what the wordcount of your report is, you can run the following command in your terminal:\npandoc --lua-filter wordcount.lua report.qmd\nNotice that I have not pushed _output/report.html or the _output/report_files/ folder to github - this is intentional. I have actually set _output to not show up in git, to encourage you all to NOT push the rendered files to github and to instead work from the markdown files directly.\nYou may find it cleaner to create a figure subdirectory and store any figures that aren’t created by R/Python in that folder. I encourage you to organize this repository in a sensible way."
+  },
+  {
+    "objectID": "slides/02a-Finding-Your-Way.html#todays-goals",
+    "href": "slides/02a-Finding-Your-Way.html#todays-goals",
+    "title": "Finding your way in R and Python",
+    "section": "Today’s Goals:",
+    "text": "Today’s Goals:\n\nKnow the 3 different ways to execute code from within RStudio\n\nTerminal (Command Line)\nSource Script (RStudio Button)\nInteractive Mode (line by line)\n\nDifferentiate between the Console and the Terminal\nDifferentiate between R and Python in the Console"
+  },
+  {
+    "objectID": "slides/02a-Finding-Your-Way.html#next-class",
+    "href": "slides/02a-Finding-Your-Way.html#next-class",
+    "title": "Finding your way in R and Python",
+    "section": "Next Class",
+    "text": "Next Class\n\nBasic Data Types\nCreating Variables\nUsing R/Python as a calculator\nIntro to Debugging"
+  },
+  {
+    "objectID": "slides/02a-Finding-Your-Way.html",
+    "href": "slides/02a-Finding-Your-Way.html",
+    "title": "Finding your way in R and Python",
+    "section": "",
+    "text": "Know the 3 different ways to execute code from within RStudio\n\nTerminal (Command Line)\nSource Script (RStudio Button)\nInteractive Mode (line by line)\n\nDifferentiate between the Console and the Terminal\nDifferentiate between R and Python in the Console"
   }
 ]

@@ -4,9 +4,19 @@ date: "2023-08-29"
 categories: Slides
 format: 
   revealjs:
-    css: ["robot.css", default]
+    theme: default
 ---
 
+## Today's Goals:
+
+- Know the 3 different ways to execute code from within RStudio
+    - Terminal (Command Line)
+    - Source Script (RStudio Button)
+    - Interactive Mode (line by line)
+
+- Differentiate between the Console and the Terminal
+
+- Differentiate between R and Python in the Console
 
 ## RStudio Projects
 
@@ -14,7 +24,7 @@ RStudio projects are a way to keep your work organized.
 
 Let's create one for this week's class work.
 
-![Creating an RStudio Project](02a-create-project.gif){fig-alt="Gif of creating an RStudio Project. Go to File -> New Project -> New Directory -> New Project. Fill in the directory name (stat850-week2) and decide if you would like to create a git repository (not necessary for this). Click Create Project. Notice that the file path is now set to the location of the project folder. If you put your files into this folder, you can reference those file names without using a complicated path." width="100%" height="auto"}
+![Creating an RStudio Project](02a-create-project.gif){fig-alt="Gif of creating an RStudio Project. Go to File -> New Project -> New Directory -> New Project. Fill in the directory name (stat850-week2) and decide if you would like to create a git repository (not necessary for this). Click Create Project. Notice that the file path is now set to the location of the project folder. If you put your files into this folder, you can reference those file names without using a complicated path."}
 
 
 
@@ -24,11 +34,20 @@ Download [madlibs.py](../code/madlibs.py) and place it in your newly created pro
 
 ## Command Line
 
-![Running `madlibs.py` at the command line](02a-python-commandline.gif){fig-alt="Use the terminal tab in RStudio. Ensure the path matches the path to madlibs.py on your machine. Type 'python madlibs.py' (or python3 madlibs.py, depending on your machine) into the terminal and hit enter. A set of prompts will appear sequentially asking for parts of speech. For each prompt, enter an appropriate word and hit enter. At the end, you will get a madlibs-style poem."}
+![Running madlibs.py at the command line](02a-python-commandline.gif){fig-alt="Use the terminal tab in RStudio. Ensure the path matches the path to madlibs.py on your machine. Type 'python madlibs.py' (or python3 madlibs.py, depending on your machine) into the terminal and hit enter. A set of prompts will appear sequentially asking for parts of speech. For each prompt, enter an appropriate word and hit enter. At the end, you will get a madlibs-style poem."}
 
 
 ## Source Script
 
-![Running `madlibs.py` using Source Script in RStudio](02a-python-source-script.gif){fig-alt="Use the Console tab in RStudio. Open madlibs.py and note that the icon to the left of the file name is a python logo. Click the Source Script button that is to the far right, directly above the text of the file. In the console, a line starting with 'reticulate::source_python' will appear. You will see a set of prompts asking for parts of speech. For each prompt, enter an appropriate word and hit enter. At the end, you will get a madlibs style poem."}
+![Running madlibs.py using Source Script in RStudio](02a-python-source-script.gif){fig-alt="Use the Console tab in RStudio. Open madlibs.py and note that the icon to the left of the file name is a python logo. Click the Source Script button that is to the far right, directly above the text of the file. In the console, a line starting with 'reticulate::source_python' will appear. You will see a set of prompts asking for parts of speech. For each prompt, enter an appropriate word and hit enter. At the end, you will get a madlibs style poem."}
 
 
+## Next Class
+
+- Basic Data Types
+
+- Creating Variables
+
+- Using R/Python as a calculator
+
+- Intro to Debugging
