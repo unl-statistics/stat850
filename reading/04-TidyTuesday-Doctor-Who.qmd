@@ -1,7 +1,6 @@
 ---
 title: "Tidy Tuesday Screencast: Doctor Who"
 date: 2023-09-08
-draft: true
 ---
 
 Watch the following screencast:
