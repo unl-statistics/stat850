@@ -4,6 +4,7 @@ project:
   render:
     - index.qmd
     - syllabus.qmd
+    - about.qmd
     - homework/*.qmd
     - slides/*.qmd
     - reading/*.qmd
@@ -18,6 +19,8 @@ website:
         text: Textbook
       - href: syllabus.pdf
         text: Syllabus
+      - href: about.qmd
+        text: About Stat 850
   google-analytics: "G-KQ9CCFY6LV"
 
 format:

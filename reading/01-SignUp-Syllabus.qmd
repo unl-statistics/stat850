@@ -1,7 +1,7 @@
 ---
 title: "Setup and Syllabus Annotation"
 categories: Reading
-date: 2023-08-21
+date: 2023-08-25
 ---
 
 In this class, we will have weekly readings that are intended to broaden your horizons, introduce you to new ideas related to computing and reproducibility, and highlight important ethical considerations that we won't discuss directly in class but that have implications for computing.

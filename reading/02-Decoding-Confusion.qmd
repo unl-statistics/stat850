@@ -1,6 +1,6 @@
 ---
 title: "Decoding Your Confusion"
-date: 2023-08-28
+date: 2023-09-01
 ---
 
 <!-- This week's assignment is in a book available through O'Reilly Safari Online Learning. UNL's library provides access to these resources for free, if you follow these instructions: -->
