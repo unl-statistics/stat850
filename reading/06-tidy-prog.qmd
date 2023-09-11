@@ -1,7 +1,6 @@
 ---
 title: "Tidy Programming"
 date: 2023-09-29
-draft: true
 ---
 
 Read: 
