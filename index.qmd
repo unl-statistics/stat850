@@ -5,6 +5,7 @@ listing:
   - id: hwlst
     categories: true
     contents: 
+      - "!archive/"
       - "homework/*.qmd"
       - "!homework/hearts.qmd"
       - "reading/*.qmd"
