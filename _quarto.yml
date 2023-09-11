@@ -9,6 +9,8 @@ project:
     - slides/*.qmd
     - reading/*.qmd
     - project/*.qmd
+    - "!archive"
+
 website:
   title: "Stat 850: Computing Tools for Statisticians"
   navbar:
