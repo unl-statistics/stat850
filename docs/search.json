@@ -126,6 +126,34 @@
     "text": "Reminders\n\nRegister for hypothes.is\nAnnotate the syllabus for this week’s reading assignment\n\ndue Friday at 8pm\n\nHomework due Friday at 8pm"
   },
   {
+    "objectID": "homework/07.html",
+    "href": "homework/07.html",
+    "title": "Homework 07: Murder in SQL City",
+    "section": "",
+    "text": "Note: This assignment must be submitted in github classroom."
+  },
+  {
+    "objectID": "homework/07.html#instructions",
+    "href": "homework/07.html#instructions",
+    "title": "Homework 07: Murder in SQL City",
+    "section": "Instructions",
+    "text": "Instructions\nNorthwestern University’s Knight lab created a SQL murder mystery to help users sharpen their database skills by solving the crime that happened at SQL city. There are tables with different pieces of information - social media checkins, people, drivers licenses, crime scene reports, police interviews, and more.\nPick R or Python, and solve the murder mystery, showing all of your work in this document.\nYour solution must be reproducible – that is, you should use dplyr verbs, table joins, etc. to solve the mystery, rather than just looking through the tables yourselves.\nYou may work in groups of 2-4 people on this assignment. Each person should turn in their own assignment, but should list their group members as authors.\nMake sure you do your due diligence! You should double check your answer and print out the guilty party’s interview from the database.\nFor 5 bonus points, when you’re finished in one language, write equivalent code in the other language to solve the problem.\nWhen you are finished with the assignment:\n\nOnce you have finished this assignment, render the document (Ctrl/Cmd-Shift-K or the Render button).\nCommit the qmd file and any other files you have changed to the repository and push your changes.\nIn Canvas, submit a link to your github repository containing the updated files.\nProvide the name of the guilty party in the text input field on Canvas, and make sure all of your work is on GitHub to receive full credit.\n\nThe chunks below use the code to read in each of the 8 tables of data for this assignment.\nHints:\n\nYou can use a lot of filter statements, but it will in many cases be easier to use joins.\nSee if you can write code that doesn’t require you to type out knowledge gained from a previous clue (e.g. pipe your results from one query into the next)\n\n\nA crime has taken place and the detective needs your help. The detective gave you the crime scene report, but you somehow lost it. You vaguely remember that the crime was a murder that occurred sometime on January 15, 2018 and that it took place in SQL City. All the clues to this mystery are buried in a huge database, and you need to use R and SAS to navigate through this network of information. Your first step to solving the mystery is to retrieve the corresponding crime scene report from the police department’s database.\nThis database schema may help you figure out how to navigate the database:\n\n\n\nsql-murder-mystery database schema diagram"
+  },
+  {
+    "objectID": "homework/07.html#r",
+    "href": "homework/07.html#r",
+    "title": "Homework 07: Murder in SQL City",
+    "section": "R",
+    "text": "R\n\nlibrary(RSQLite)\nlibrary(DBI)\n\n# Your database connection code goes here. Store the connection as con \ncon &lt;- dbConnect(RSQLite::SQLite(), \"sql-murder-mystery.db\")\n\ntable_names &lt;- c(\"crime_scene_report\", \n                 \"drivers_license\", \n                 \"facebook_event_checkin\",\n                 \"get_fit_now_check_in\", \n                 \"get_fit_now_member\", \n                 \"income\", \n                 \"interview\",\n                 \"person\")\n\n# For each table name, read the tables in and store them as the name of the table\npurrr::walk(table_names, function(x) {\n  assign(x, dbReadTable(con, x), envir = .GlobalEnv)\n})\n\n# close the connection when you're done\ndbDisconnect(con)"
+  },
+  {
+    "objectID": "homework/07.html#python",
+    "href": "homework/07.html#python",
+    "title": "Homework 07: Murder in SQL City",
+    "section": "Python",
+    "text": "Python\n\nimport pandas as pd\nimport sqlite3\n\n# Read sqlite query results into a pandas DataFrame\ncon = sqlite3.connect(\"sql-murder-mystery.db\")\n\ncrime_scene_report = pd.read_sql_query(\"SELECT * from crime_scene_report\", con)\ndrivers_license = pd.read_sql_query(\"SELECT * from drivers_license\", con)\nfacebook_event_checkin = pd.read_sql_query(\"SELECT * from facebook_event_checkin\", con)\nget_fit_now_check_in = pd.read_sql_query(\"SELECT * from get_fit_now_check_in\", con)\nget_fit_now_member = pd.read_sql_query(\"SELECT * from get_fit_now_member\", con)\nincome = pd.read_sql_query(\"SELECT * from income\", con)\ninterview = pd.read_sql_query(\"SELECT * from interview\", con)\nperson = pd.read_sql_query(\"SELECT * from person\", con)\n\n# Verify that result of SQL query is stored in the dataframe\nprint(crime_scene_report.head())\n\n       date  ...      city\n0  20180115  ...       NYC\n1  20180115  ...    Albany\n2  20180115  ...      Reno\n3  20180215  ...  SQL City\n4  20180215  ...  SQL City\n\n[5 rows x 4 columns]\n\n\ncon.close()"
+  },
+  {
     "objectID": "homework/05.html",
     "href": "homework/05.html",
     "title": "Chocolate Chip Cookies",
@@ -186,7 +214,7 @@
     "href": "index.html",
     "title": "Stat 850: Computing Tools for Statistics",
     "section": "",
-    "text": "Course Materials\nDates shown are due dates (for homework, projects) and dates by which initial comments/annotations should be made (reading).\nMost classes will not contain slide presentations, but when there are slides to share, they will be provided here.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\n\nTitle\n\n\n\n\n\n\nOct 6, 2023\n\n\n\n\n\nProject Guidelines\n\n\n\n\nSep 29, 2023\n\n\n\n\n\nHomework 6: Strings and Data Wrangling\n\n\n\n\nSep 29, 2023\n\n\n\n\n\nTidy Programming\n\n\n\n\nSep 22, 2023\n\n\n\n\n\nHomework 5: Exploratory Data Analysis with Cookies\n\n\n\n\nSep 22, 2023\n\n\n\n\n\nExploratory Data Analysis\n\n\n\n\nSep 15, 2023\n\n\n\n\n\nHomework 4: Data Programming\n\n\n\n\nSep 15, 2023\n\n\n\n\n\nTidy Tuesday Screencast: Doctor Who\n\n\n\n\nSep 10, 2023\n\n\n\n\n\nHomework 3 Discoveries\n\n\n\n\nSep 8, 2023\n\n\n\n\n\nHomework 3: Fizzbuzz\n\n\n\n\nSep 6, 2023\n\n\n\n\n\nGood Enough Practices in Scientific Computing\n\n\n\n\nSep 1, 2023\n\n\n\n\n\nHomework 2: Finding Your Way in R and Python\n\n\n\n\nSep 1, 2023\n\n\n\n\n\nDecoding Your Confusion\n\n\n\n\nAug 29, 2023\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nAug 25, 2023\n\n\n\n\n\nHomework 1: Git and Github\n\n\n\n\nAug 25, 2023\n\n\n\n\n\nSetup and Syllabus Annotation\n\n\n\n\nAug 24, 2023\n\n\n\n\n\nStat 850: Git and Github\n\n\n\n\nAug 22, 2023\n\n\n\n\n\nStat 850 Introduction\n\n\n\n\n\n\nNo matching items"
+    "text": "Course Materials\nDates shown are due dates (for homework, projects) and dates by which initial comments/annotations should be made (reading).\nMost classes will not contain slide presentations, but when there are slides to share, they will be provided here.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\n\nTitle\n\n\n\n\n\n\nOct 6, 2023\n\n\n\n\n\nHomework 7: Murder in SQL City\n\n\n\n\nOct 6, 2023\n\n\n\n\n\nData Context\n\n\n\n\nOct 6, 2023\n\n\n\n\n\nProject Guidelines\n\n\n\n\nSep 29, 2023\n\n\n\n\n\nHomework 6: Strings and Data Wrangling\n\n\n\n\nSep 29, 2023\n\n\n\n\n\nTidy Programming\n\n\n\n\nSep 22, 2023\n\n\n\n\n\nHomework 5: Exploratory Data Analysis with Cookies\n\n\n\n\nSep 22, 2023\n\n\n\n\n\nExploratory Data Analysis\n\n\n\n\nSep 15, 2023\n\n\n\n\n\nHomework 4: Data Programming\n\n\n\n\nSep 15, 2023\n\n\n\n\n\nTidy Tuesday Screencast: Doctor Who\n\n\n\n\nSep 10, 2023\n\n\n\n\n\nHomework 3 Discoveries\n\n\n\n\nSep 8, 2023\n\n\n\n\n\nHomework 3: Fizzbuzz\n\n\n\n\nSep 6, 2023\n\n\n\n\n\nGood Enough Practices in Scientific Computing\n\n\n\n\nSep 1, 2023\n\n\n\n\n\nHomework 2: Finding Your Way in R and Python\n\n\n\n\nSep 1, 2023\n\n\n\n\n\nDecoding Your Confusion\n\n\n\n\nAug 29, 2023\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nAug 25, 2023\n\n\n\n\n\nHomework 1: Git and Github\n\n\n\n\nAug 25, 2023\n\n\n\n\n\nSetup and Syllabus Annotation\n\n\n\n\nAug 24, 2023\n\n\n\n\n\nStat 850: Git and Github\n\n\n\n\nAug 22, 2023\n\n\n\n\n\nStat 850 Introduction\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "homework/01.html",
@@ -418,5 +446,12 @@
     "title": "Exploratory Data Analysis",
     "section": "",
     "text": "Read: - Chapter 1 of Exploratory Data Analysis by John Tukey (available on Canvas)\nAnnotate using hypothes.is (not the built in annotation tool)\nThink about/comment on:\n\nWhat do you think about Tukey’s approach to exploratory data analysis?\nWhat new ways to use Stem and Leaf plots did you learn?\nHow has the use of computers made EDA easier? harder?"
+  },
+  {
+    "objectID": "reading/07-data-context.html",
+    "href": "reading/07-data-context.html",
+    "title": "Data Context",
+    "section": "",
+    "text": "Read:\n\nChapter 6 of Data Feminism: The Numbers Don’t Speak for Themselves (available on Canvas via Library Materials)\n\nAnnotate with hypothes.is\nNote: I assign chapters from Data Feminism because the authors made me think differently about data. I don’t necessarily agree with everything they say, and I certainly don’t expect you to agree with them either - I want you to stretch your brains and consider things from a different perspective.\nThink about/comment on:\n\nDo you agree/disagree with the assertion that the context of the data matters?\nHow does maintaining good data documentation contribute to data context? What problems does it not solve?\nDo you prefer working with raw data? cooked data? What are the advantages and disadvantages of each approach?"
   }
 ]
