@@ -490,6 +490,41 @@
     "text": "Read:\n\nChapter 6 of Data Feminism: The Numbers Don’t Speak for Themselves (available on Canvas via Library Materials)\n\nAnnotate with hypothes.is\nNote: I assign chapters from Data Feminism because the authors made me think differently about data. I don’t necessarily agree with everything they say, and I certainly don’t expect you to agree with them either - I want you to stretch your brains and consider things from a different perspective.\nThink about/comment on:\n\nDo you agree/disagree with the assertion that the context of the data matters?\nHow does maintaining good data documentation contribute to data context? What problems does it not solve?\nDo you prefer working with raw data? cooked data? What are the advantages and disadvantages of each approach?"
   },
   {
+    "objectID": "reading/09-development.html",
+    "href": "reading/09-development.html",
+    "title": "Errors and Development",
+    "section": "",
+    "text": "Read:\n\nOpinionated Analysis Development (Annotate the embedded PDF. I know, this is less than ideal.)\nCommon errors in R: An Empirical Investigation\n\nAnnotate with hypothes.is\nThink about/comment on:\n\nWhat good practices do the authors recommend?\nWhat do you agree/disagree with?\nWhat suggestions seem strange/impractical?"
+  },
+  {
+    "objectID": "reading/10-reproducibility.html",
+    "href": "reading/10-reproducibility.html",
+    "title": "Reproducibility",
+    "section": "",
+    "text": "Read:\n\nFramed! Reproducing and Revisiting 150-Year-Old Charts\nA Study in Reproducibility: The Congruent Matching Cells Algorithm and cmcR Package\n\nAnnotate with hypothes.is\nThink about/comment on:\n\nWhat attempts at reproducibility worked and didn’t work in each article?\nHow important is long-term reproducibility?\nHow do the two articles differ with respect to types of reproducibility?\nWhat important factors must exist for reproducibility?"
+  },
+  {
+    "objectID": "reading/11-simulation.html",
+    "href": "reading/11-simulation.html",
+    "title": "Simulation",
+    "section": "",
+    "text": "Read:\n\nFree Wifi with Randomness\nSeductions of Sim - Policy as a Simulation Game\n\nAnnotate with hypothes.is\nThink about/comment on:\n\nSeductions of Sim\n\nWhat are the consequences of simulation?\nHow useful is simulation as a model exploration tool?\n\nFree Wifi with Randomness\n\nWhat did you learn about Monte Carlo methods?\nAre there any interesting tricks you’ve learned from this blog post?"
+  },
+  {
+    "objectID": "reading/12-ethics.html",
+    "href": "reading/12-ethics.html",
+    "title": "Ethics in Algorithms",
+    "section": "",
+    "text": "Read:\n\nThe Tiger Mom Tax\nRent Going Up? One Company’s Algorithm Could Be Why\nRacial Discrimination in Face Recognition Technology\nMachine Bias\n\nAnnotate with hypothes.is\nThink about/comment on:\n\nWhen is it ethical to use an algorithm to make decisions?\nWhen is it unethical to use an algorithm to make decisions?\nWhat conditions need to exist for an algorithm to be trustworthy?\nHow do you, as a statistician, ensure that you understand the biases in your models?"
+  },
+  {
+    "objectID": "reading/13-data-sketches.html",
+    "href": "reading/13-data-sketches.html",
+    "title": "Data Sketches",
+    "section": "",
+    "text": "Read 3 of the following chapters from Data Sketches by Shirley Wu and Nadieh Bremer:\n\nFilm Flowers\nMy Life in Vacations\nPutting Emojis on the President’s Face\nMagic is Everywhere\nBeautiful in English\n\nAnnotate with hypothes.is (use the O’Reilly link through the library, please, so we all annotate the same thing.)\nThink about/comment on:\n\nHow do these data visualizations differ from graphs made with e.g. ggplot2 or seaborn?\nDo you find these types of visualizations useful? aesthetically pleasing? fun?"
+  },
+  {
     "objectID": "project/guidelines.html",
     "href": "project/guidelines.html",
     "title": "Project Guidelines",
@@ -530,40 +565,5 @@
     "title": "Project Guidelines",
     "section": "Presentation",
     "text": "Presentation\nYour project presentation should:\n\ninclude a visual aid (slides or a poster) that highlight(s) the findings you have presented in your report. The visual aid must be created using LaTeX or markdown.\ninclude participation from each member of your group\nbe approximately \\(4\\times(n+1)\\) minutes long.\nbe uploaded to YouTube (you can set the link such that people with the link can view the presentation but where it is not searchable) or YuJa (but YouTube is easier for your classmates to work with). You will submit the link to the presentation on Canvas.\n\nYou will be expected to peer-evaluate two other groups presentations and/or reports, using the rubric."
-  },
-  {
-    "objectID": "reading/09-development.html",
-    "href": "reading/09-development.html",
-    "title": "Errors and Development",
-    "section": "",
-    "text": "Read:\n\nOpinionated Analysis Development (Annotate the embedded PDF. I know, this is less than ideal.)\nCommon errors in R: An Empirical Investigation\n\nAnnotate with hypothes.is\nThink about/comment on:\n\nWhat good practices do the authors recommend?\nWhat do you agree/disagree with?\nWhat suggestions seem strange/impractical?"
-  },
-  {
-    "objectID": "reading/10-reproducibility.html",
-    "href": "reading/10-reproducibility.html",
-    "title": "Reproducibility",
-    "section": "",
-    "text": "Read:\n\nFramed! Reproducing and Revisiting 150-Year-Old Charts\nA Study in Reproducibility: The Congruent Matching Cells Algorithm and cmcR Package\n\nAnnotate with hypothes.is\nThink about/comment on:\n\nWhat attempts at reproducibility worked and didn’t work in each article?\nHow important is long-term reproducibility?\nHow do the two articles differ with respect to types of reproducibility?\nWhat important factors must exist for reproducibility?"
-  },
-  {
-    "objectID": "reading/11-simulation.html",
-    "href": "reading/11-simulation.html",
-    "title": "Simulation",
-    "section": "",
-    "text": "Read:\n\nFree Wifi with Randomness\nSeductions of Sim - Policy as a Simulation Game\n\nAnnotate with hypothes.is\nThink about/comment on:\n\nSeductions of Sim\n\nWhat are the consequences of simulation?\nHow useful is simulation as a model exploration tool?\n\nFree Wifi with Randomness\n\nWhat did you learn about Monte Carlo methods?\nAre there any interesting tricks you’ve learned from this blog post?"
-  },
-  {
-    "objectID": "reading/12-ethics.html",
-    "href": "reading/12-ethics.html",
-    "title": "Ethics in Algorithms",
-    "section": "",
-    "text": "Read:\n\nThe Tiger Mom Tax\nRent Going Up? One Company’s Algorithm Could Be Why\nRacial Discrimination in Face Recognition Technology\nMachine Bias\n\nAnnotate with hypothes.is\nThink about/comment on:\n\nWhen is it ethical to use an algorithm to make decisions?\nWhen is it unethical to use an algorithm to make decisions?\nWhat conditions need to exist for an algorithm to be trustworthy?\nHow do you, as a statistician, ensure that you understand the biases in your models?"
-  },
-  {
-    "objectID": "reading/13-data-sketches.html",
-    "href": "reading/13-data-sketches.html",
-    "title": "Data Sketches",
-    "section": "",
-    "text": "Read 3 of the following chapters from Data Sketches by Shirley Wu and Nadieh Bremer:\n\nFilm Flowers\nMy Life in Vacations\nPutting Emojis on the President’s Face\nMagic is Everywhere\nBeautiful in English\n\nAnnotate with hypothes.is (use the O’Reilly link through the library, please, so we all annotate the same thing.)\nThink about/comment on:\n\nHow do these data visualizations differ from graphs made with e.g. ggplot2 or seaborn?\nDo you find these types of visualizations useful? aesthetically pleasing? fun?"
   }
 ]
