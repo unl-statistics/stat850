@@ -71,7 +71,8 @@ ul.task-list li input[type="checkbox"] {
 
     const options = {
       valueNames: ['listing-date','listing-image','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
+      page: 30,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
       searchColumns: ["listing-date","listing-title","listing-author"],
     };
 
@@ -157,7 +158,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
   <li><a href="#course-materials" id="toc-course-materials" class="nav-link active" data-scroll-target="#course-materials">Course Materials</a></li>
   </ul>
 </nav>
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(29)</span></div><div class="category" data-category="HW">HW <span class="quarto-category-count">(12)</span></div><div class="category" data-category="Project">Project <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Reading">Reading <span class="quarto-category-count">(13)</span></div><div class="category" data-category="Slides">Slides <span class="quarto-category-count">(3)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(31)</span></div><div class="category" data-category="HW">HW <span class="quarto-category-count">(12)</span></div><div class="category" data-category="Project">Project <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Reading">Reading <span class="quarto-category-count">(13)</span></div><div class="category" data-category="Slides">Slides <span class="quarto-category-count">(3)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -220,7 +221,18 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-categories="Reading" data-listing-date-sort="1701410400000" data-listing-file-modified-sort="1696945187556" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Data Sketches" data-listing-filename-sort="13-data-sketches.qmd">
+<tr data-index="0" data-categories="Project" data-listing-date-sort="1702015200000" data-listing-file-modified-sort="1696950820633" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Sample Report" data-listing-filename-sort="report.qmd">
+<td>
+<span class="listing-date">Dec 8, 2023</span>
+</td>
+<td>
+<span class="listing-image"><img src="./figs/projector-fill.svg" style="height: 40px;"></span>
+</td>
+<td>
+<a href="./project/report.html" class="title listing-title">Sample Report</a>
+</td>
+</tr>
+<tr data-index="1" data-categories="Reading" data-listing-date-sort="1701410400000" data-listing-file-modified-sort="1696945187556" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Data Sketches" data-listing-filename-sort="13-data-sketches.qmd">
 <td>
 <span class="listing-date">Dec 1, 2023</span>
 </td>
@@ -231,7 +243,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 <a href="./reading/13-data-sketches.html" class="title listing-title">Data Sketches</a>
 </td>
 </tr>
-<tr data-index="1" data-categories="HW" data-listing-date-sort="1700460000000" data-listing-file-modified-sort="1696944917511" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Homework 11: Simulation" data-listing-filename-sort="11.qmd">
+<tr data-index="2" data-categories="HW" data-listing-date-sort="1700460000000" data-listing-file-modified-sort="1696944917511" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Homework 11: Simulation" data-listing-filename-sort="11.qmd">
 <td>
 <span class="listing-date">Nov 20, 2023</span>
 </td>
@@ -242,7 +254,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 <a href="./homework/11.html" class="title listing-title">Homework 11: Simulation</a>
 </td>
 </tr>
-<tr data-index="2" data-categories="Reading" data-listing-date-sort="1700200800000" data-listing-file-modified-sort="1696945161471" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Ethics in Algorithms" data-listing-filename-sort="12-ethics.qmd">
+<tr data-index="3" data-categories="Reading" data-listing-date-sort="1700200800000" data-listing-file-modified-sort="1696945161471" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Ethics in Algorithms" data-listing-filename-sort="12-ethics.qmd">
 <td>
 <span class="listing-date">Nov 17, 2023</span>
 </td>
@@ -253,7 +265,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 <a href="./reading/12-ethics.html" class="title listing-title">Ethics in Algorithms</a>
 </td>
 </tr>
-<tr data-index="3" data-categories="HW" data-listing-date-sort="1699596000000" data-listing-file-modified-sort="1696944922707" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Homework 12: Shiny" data-listing-filename-sort="12.qmd">
+<tr data-index="4" data-categories="HW" data-listing-date-sort="1699596000000" data-listing-file-modified-sort="1696944922707" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Homework 12: Shiny" data-listing-filename-sort="12.qmd">
 <td>
 <span class="listing-date">Nov 10, 2023</span>
 </td>
@@ -264,7 +276,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 <a href="./homework/12.html" class="title listing-title">Homework 12: Shiny</a>
 </td>
 </tr>
-<tr data-index="4" data-categories="Reading" data-listing-date-sort="1698987600000" data-listing-file-modified-sort="1696945157267" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Simulation" data-listing-filename-sort="11-simulation.qmd">
+<tr data-index="5" data-categories="Reading" data-listing-date-sort="1698987600000" data-listing-file-modified-sort="1696945157267" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Simulation" data-listing-filename-sort="11-simulation.qmd">
 <td>
 <span class="listing-date">Nov 3, 2023</span>
 </td>
@@ -275,7 +287,18 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 <a href="./reading/11-simulation.html" class="title listing-title">Simulation</a>
 </td>
 </tr>
-<tr data-index="5" data-categories="HW" data-listing-date-sort="1698382800000" data-listing-file-modified-sort="1696944908899" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Homework 10: Professional Communication" data-listing-filename-sort="10.qmd">
+<tr data-index="6" data-categories="Project" data-listing-date-sort="1698642000000" data-listing-file-modified-sort="1696950818985" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Sample Proposal" data-listing-filename-sort="proposal.qmd">
+<td>
+<span class="listing-date">Oct 30, 2023</span>
+</td>
+<td>
+<span class="listing-image"><img src="./figs/projector-fill.svg" style="height: 40px;"></span>
+</td>
+<td>
+<a href="./project/proposal.html" class="title listing-title">Sample Proposal</a>
+</td>
+</tr>
+<tr data-index="7" data-categories="HW" data-listing-date-sort="1698382800000" data-listing-file-modified-sort="1696944908899" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Homework 10: Professional Communication" data-listing-filename-sort="10.qmd">
 <td>
 <span class="listing-date">Oct 27, 2023</span>
 </td>
@@ -286,7 +309,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 <a href="./homework/10.html" class="title listing-title">Homework 10: Professional Communication</a>
 </td>
 </tr>
-<tr data-index="6" data-categories="Reading" data-listing-date-sort="1698382800000" data-listing-file-modified-sort="1696945152934" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Reproducibility" data-listing-filename-sort="10-reproducibility.qmd">
+<tr data-index="8" data-categories="Reading" data-listing-date-sort="1698382800000" data-listing-file-modified-sort="1696945152934" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Reproducibility" data-listing-filename-sort="10-reproducibility.qmd">
 <td>
 <span class="listing-date">Oct 27, 2023</span>
 </td>
@@ -297,7 +320,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 <a href="./reading/10-reproducibility.html" class="title listing-title">Reproducibility</a>
 </td>
 </tr>
-<tr data-index="7" data-categories="Reading" data-listing-date-sort="1697778000000" data-listing-file-modified-sort="1696945149458" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Errors and Development" data-listing-filename-sort="09-development.qmd">
+<tr data-index="9" data-categories="Reading" data-listing-date-sort="1697778000000" data-listing-file-modified-sort="1696945149458" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Errors and Development" data-listing-filename-sort="09-development.qmd">
 <td>
 <span class="listing-date">Oct 20, 2023</span>
 </td>
@@ -308,7 +331,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 <a href="./reading/09-development.html" class="title listing-title">Errors and Development</a>
 </td>
 </tr>
-<tr data-index="8" data-categories="HW" data-listing-date-sort="1697173200000" data-listing-file-modified-sort="1696944900887" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Homework 8: Graphics" data-listing-filename-sort="08.qmd">
+<tr data-index="10" data-categories="HW" data-listing-date-sort="1697173200000" data-listing-file-modified-sort="1696944900887" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Homework 8: Graphics" data-listing-filename-sort="08.qmd">
 <td>
 <span class="listing-date">Oct 13, 2023</span>
 </td>
@@ -319,7 +342,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 <a href="./homework/08.html" class="title listing-title">Homework 8: Graphics</a>
 </td>
 </tr>
-<tr data-index="9" data-categories="Reading" data-listing-date-sort="1697173200000" data-listing-file-modified-sort="1696950754185" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Data Visualization" data-listing-filename-sort="08-graphics.qmd">
+<tr data-index="11" data-categories="Reading" data-listing-date-sort="1697173200000" data-listing-file-modified-sort="1696950754185" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Data Visualization" data-listing-filename-sort="08-graphics.qmd">
 <td>
 <span class="listing-date">Oct 13, 2023</span>
 </td>
@@ -330,7 +353,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 <a href="./reading/08-graphics.html" class="title listing-title">Data Visualization</a>
 </td>
 </tr>
-<tr data-index="10" data-categories="HW" data-listing-date-sort="1696568400000" data-listing-file-modified-sort="1696943777393" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Homework 7: Murder in SQL City" data-listing-filename-sort="07.qmd">
+<tr data-index="12" data-categories="HW" data-listing-date-sort="1696568400000" data-listing-file-modified-sort="1696943777393" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Homework 7: Murder in SQL City" data-listing-filename-sort="07.qmd">
 <td>
 <span class="listing-date">Oct 6, 2023</span>
 </td>
@@ -341,7 +364,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 <a href="./homework/07.html" class="title listing-title">Homework 7: Murder in SQL City</a>
 </td>
 </tr>
-<tr data-index="11" data-categories="Reading" data-listing-date-sort="1696568400000" data-listing-file-modified-sort="1696943777393" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Data Context" data-listing-filename-sort="07-data-context.qmd">
+<tr data-index="13" data-categories="Reading" data-listing-date-sort="1696568400000" data-listing-file-modified-sort="1696943777393" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Data Context" data-listing-filename-sort="07-data-context.qmd">
 <td>
 <span class="listing-date">Oct 6, 2023</span>
 </td>
@@ -352,7 +375,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 <a href="./reading/07-data-context.html" class="title listing-title">Data Context</a>
 </td>
 </tr>
-<tr data-index="12" data-categories="Project" data-listing-date-sort="1696568400000" data-listing-file-modified-sort="1693314666983" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Project Guidelines" data-listing-filename-sort="guidelines.qmd">
+<tr data-index="14" data-categories="Project" data-listing-date-sort="1696568400000" data-listing-file-modified-sort="1693314666983" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Project Guidelines" data-listing-filename-sort="guidelines.qmd">
 <td>
 <span class="listing-date">Oct 6, 2023</span>
 </td>
@@ -363,7 +386,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 <a href="./project/guidelines.html" class="title listing-title">Project Guidelines</a>
 </td>
 </tr>
-<tr data-index="13" data-categories="HW" data-listing-date-sort="1695963600000" data-listing-file-modified-sort="1696943777393" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Homework 6: Strings and Data Wrangling" data-listing-filename-sort="06.qmd">
+<tr data-index="15" data-categories="HW" data-listing-date-sort="1695963600000" data-listing-file-modified-sort="1696943777393" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Homework 6: Strings and Data Wrangling" data-listing-filename-sort="06.qmd">
 <td>
 <span class="listing-date">Sep 29, 2023</span>
 </td>
@@ -374,7 +397,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 <a href="./homework/06.html" class="title listing-title">Homework 6: Strings and Data Wrangling</a>
 </td>
 </tr>
-<tr data-index="14" data-categories="Reading" data-listing-date-sort="1695963600000" data-listing-file-modified-sort="1696943777393" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Tidy Programming" data-listing-filename-sort="06-tidy-prog.qmd">
+<tr data-index="16" data-categories="Reading" data-listing-date-sort="1695963600000" data-listing-file-modified-sort="1696943777393" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Tidy Programming" data-listing-filename-sort="06-tidy-prog.qmd">
 <td>
 <span class="listing-date">Sep 29, 2023</span>
 </td>
@@ -385,7 +408,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 <a href="./reading/06-tidy-prog.html" class="title listing-title">Tidy Programming</a>
 </td>
 </tr>
-<tr data-index="15" data-categories="HW" data-listing-date-sort="1695358800000" data-listing-file-modified-sort="1693927182580" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Homework 5: Exploratory Data Analysis with Cookies" data-listing-filename-sort="05.qmd">
+<tr data-index="17" data-categories="HW" data-listing-date-sort="1695358800000" data-listing-file-modified-sort="1693927182580" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Homework 5: Exploratory Data Analysis with Cookies" data-listing-filename-sort="05.qmd">
 <td>
 <span class="listing-date">Sep 22, 2023</span>
 </td>
@@ -396,7 +419,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 <a href="./homework/05.html" class="title listing-title">Homework 5: Exploratory Data Analysis with Cookies</a>
 </td>
 </tr>
-<tr data-index="16" data-categories="Reading" data-listing-date-sort="1695358800000" data-listing-file-modified-sort="1696943777393" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Exploratory Data Analysis" data-listing-filename-sort="05-EDA.qmd">
+<tr data-index="18" data-categories="Reading" data-listing-date-sort="1695358800000" data-listing-file-modified-sort="1696943777393" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Exploratory Data Analysis" data-listing-filename-sort="05-EDA.qmd">
 <td>
 <span class="listing-date">Sep 22, 2023</span>
 </td>
@@ -407,7 +430,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 <a href="./reading/05-EDA.html" class="title listing-title">Exploratory Data Analysis</a>
 </td>
 </tr>
-<tr data-index="17" data-categories="HW" data-listing-date-sort="1694754000000" data-listing-file-modified-sort="1693927175636" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Homework 4: Data Programming" data-listing-filename-sort="04.qmd">
+<tr data-index="19" data-categories="HW" data-listing-date-sort="1694754000000" data-listing-file-modified-sort="1693927175636" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Homework 4: Data Programming" data-listing-filename-sort="04.qmd">
 <td>
 <span class="listing-date">Sep 15, 2023</span>
 </td>
@@ -418,7 +441,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 <a href="./homework/04.html" class="title listing-title">Homework 4: Data Programming</a>
 </td>
 </tr>
-<tr data-index="18" data-categories="Reading" data-listing-date-sort="1694754000000" data-listing-file-modified-sort="1696943777393" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Tidy Tuesday Screencast: Doctor Who" data-listing-filename-sort="04-TidyTuesday-Doctor-Who.qmd">
+<tr data-index="20" data-categories="Reading" data-listing-date-sort="1694754000000" data-listing-file-modified-sort="1696943777393" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Tidy Tuesday Screencast: Doctor Who" data-listing-filename-sort="04-TidyTuesday-Doctor-Who.qmd">
 <td>
 <span class="listing-date">Sep 15, 2023</span>
 </td>
@@ -429,7 +452,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 <a href="./reading/04-TidyTuesday-Doctor-Who.html" class="title listing-title">Tidy Tuesday Screencast: Doctor Who</a>
 </td>
 </tr>
-<tr data-index="19" data-categories="HW" data-listing-date-sort="1694322000000" data-listing-file-modified-sort="1696943777393" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-title-sort="Homework 3 Discoveries" data-listing-filename-sort="03-after.qmd">
+<tr data-index="21" data-categories="HW" data-listing-date-sort="1694322000000" data-listing-file-modified-sort="1696943777393" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-title-sort="Homework 3 Discoveries" data-listing-filename-sort="03-after.qmd">
 <td>
 <span class="listing-date">Sep 10, 2023</span>
 </td>
@@ -440,7 +463,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 <a href="./homework/03-after.html" class="title listing-title">Homework 3 Discoveries</a>
 </td>
 </tr>
-<tr data-index="20" data-categories="HW" data-listing-date-sort="1694149200000" data-listing-file-modified-sort="1692365003784" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Homework 3: Fizzbuzz" data-listing-filename-sort="03.qmd">
+<tr data-index="22" data-categories="HW" data-listing-date-sort="1694149200000" data-listing-file-modified-sort="1692365003784" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Homework 3: Fizzbuzz" data-listing-filename-sort="03.qmd">
 <td>
 <span class="listing-date">Sep 8, 2023</span>
 </td>
@@ -451,7 +474,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 <a href="./homework/03.html" class="title listing-title">Homework 3: Fizzbuzz</a>
 </td>
 </tr>
-<tr data-index="21" data-categories="Reading" data-listing-date-sort="1693976400000" data-listing-file-modified-sort="1696943777393" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Good Enough Practices in Scientific Computing" data-listing-filename-sort="03-Good-Enough-Computing.qmd">
+<tr data-index="23" data-categories="Reading" data-listing-date-sort="1693976400000" data-listing-file-modified-sort="1696943777393" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Good Enough Practices in Scientific Computing" data-listing-filename-sort="03-Good-Enough-Computing.qmd">
 <td>
 <span class="listing-date">Sep 6, 2023</span>
 </td>
@@ -462,7 +485,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 <a href="./reading/03-Good-Enough-Computing.html" class="title listing-title">Good Enough Practices in Scientific Computing</a>
 </td>
 </tr>
-<tr data-index="22" data-categories="HW" data-listing-date-sort="1693544400000" data-listing-file-modified-sort="1692277918939" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Homework 2: Finding Your Way in R and Python" data-listing-filename-sort="02.qmd">
+<tr data-index="24" data-categories="HW" data-listing-date-sort="1693544400000" data-listing-file-modified-sort="1692277918939" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Homework 2: Finding Your Way in R and Python" data-listing-filename-sort="02.qmd">
 <td>
 <span class="listing-date">Sep 1, 2023</span>
 </td>
@@ -473,7 +496,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 <a href="./homework/02.html" class="title listing-title">Homework 2: Finding Your Way in R and Python</a>
 </td>
 </tr>
-<tr data-index="23" data-categories="Reading" data-listing-date-sort="1693544400000" data-listing-file-modified-sort="1696943777393" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Decoding Your Confusion" data-listing-filename-sort="02-Decoding-Confusion.qmd">
+<tr data-index="25" data-categories="Reading" data-listing-date-sort="1693544400000" data-listing-file-modified-sort="1696943777393" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Decoding Your Confusion" data-listing-filename-sort="02-Decoding-Confusion.qmd">
 <td>
 <span class="listing-date">Sep 1, 2023</span>
 </td>
@@ -484,7 +507,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 <a href="./reading/02-Decoding-Confusion.html" class="title listing-title">Decoding Your Confusion</a>
 </td>
 </tr>
-<tr data-index="24" data-categories="Slides" data-listing-date-sort="1693285200000" data-listing-file-modified-sort="1693314559183" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Finding your way in R and Python" data-listing-filename-sort="02a-Finding-Your-Way.qmd">
+<tr data-index="26" data-categories="Slides" data-listing-date-sort="1693285200000" data-listing-file-modified-sort="1693314559183" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Finding your way in R and Python" data-listing-filename-sort="02a-Finding-Your-Way.qmd">
 <td>
 <span class="listing-date">Aug 29, 2023</span>
 </td>
@@ -495,7 +518,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 <a href="./slides/02a-Finding-Your-Way.html" class="title listing-title">Finding your way in R and Python</a>
 </td>
 </tr>
-<tr data-index="25" data-categories="HW" data-listing-date-sort="1692939600000" data-listing-file-modified-sort="1692277918939" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Homework 1: Git and Github" data-listing-filename-sort="01.qmd">
+<tr data-index="27" data-categories="HW" data-listing-date-sort="1692939600000" data-listing-file-modified-sort="1692277918939" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Homework 1: Git and Github" data-listing-filename-sort="01.qmd">
 <td>
 <span class="listing-date">Aug 25, 2023</span>
 </td>
@@ -506,7 +529,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 <a href="./homework/01.html" class="title listing-title">Homework 1: Git and Github</a>
 </td>
 </tr>
-<tr data-index="26" data-categories="Reading" data-listing-date-sort="1692939600000" data-listing-file-modified-sort="1696943777393" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Setup and Syllabus Annotation" data-listing-filename-sort="01-SignUp-Syllabus.qmd">
+<tr data-index="28" data-categories="Reading" data-listing-date-sort="1692939600000" data-listing-file-modified-sort="1696943777393" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-title-sort="Setup and Syllabus Annotation" data-listing-filename-sort="01-SignUp-Syllabus.qmd">
 <td>
 <span class="listing-date">Aug 25, 2023</span>
 </td>
@@ -517,7 +540,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 <a href="./reading/01-SignUp-Syllabus.html" class="title listing-title">Setup and Syllabus Annotation</a>
 </td>
 </tr>
-<tr data-index="27" data-categories="Slides" data-listing-date-sort="1692853200000" data-listing-file-modified-sort="1692712023541" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Stat 850: Git and Github" data-listing-filename-sort="01b-intro.qmd">
+<tr data-index="29" data-categories="Slides" data-listing-date-sort="1692853200000" data-listing-file-modified-sort="1692712023541" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Stat 850: Git and Github" data-listing-filename-sort="01b-intro.qmd">
 <td>
 <span class="listing-date">Aug 24, 2023</span>
 </td>
@@ -528,12 +551,12 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 <a href="./slides/01b-intro.html" class="title listing-title">Stat 850: Git and Github</a>
 </td>
 </tr>
-<tr data-index="28" data-categories="Slides" data-listing-date-sort="1692680400000" data-listing-file-modified-sort="1692711789441" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Stat 850 Introduction" data-listing-filename-sort="01a-intro.qmd">
+<tr data-index="30" data-categories="Slides" data-listing-date-sort="1692680400000" data-listing-file-modified-sort="1692711789441" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="Stat 850 Introduction" data-listing-filename-sort="01a-intro.qmd">
 <td>
 <span class="listing-date">Aug 22, 2023</span>
 </td>
 <td>
-<span class="listing-image"><img src="./figs/person-chalkboard-solid.svg" style="height: 40px;"></span>
+<span class="listing-image"><img data-src="./figs/person-chalkboard-solid.svg" style="height: 40px;"></span>
 </td>
 <td>
 <a href="./slides/01a-intro.html" class="title listing-title">Stat 850 Introduction</a>
@@ -545,6 +568,9 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 <div class="listing-no-matching d-none">
 No matching items
 </div>
+<nav id="hwlst-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
 </div>
 
 
