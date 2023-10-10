@@ -1,7 +1,6 @@
 ---
 title: "Data Sketches"
 date: 2023-12-01
-draft: true
 ---
 
 Read 3 of the following chapters from Data Sketches by Shirley Wu and Nadieh Bremer:
@@ -12,7 +11,7 @@ Read 3 of the following chapters from Data Sketches by Shirley Wu and Nadieh Bre
 - [Magic is Everywhere](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/12340988810006387?auth=SAML)
 - [Beautiful in English](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/12340988890006387?auth=SAML)
 
-Annotate with hypothes.is
+Annotate with hypothes.is (use the O'Reilly link through the library, please, so we all annotate the same thing.)
 
 Think about/comment on: 
 
