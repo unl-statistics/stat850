@@ -1,7 +1,6 @@
 ---
 title: "Sample Proposal"
 date: 2023-10-30
-draft: true
 ---
 
 

@@ -1,7 +1,6 @@
 ---
 title: "Reproducibility"
 date: 2023-10-27
-draft: true
 ---
 
 Read: 

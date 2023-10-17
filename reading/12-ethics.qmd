@@ -1,7 +1,6 @@
 ---
 title: "Ethics in Algorithms"
 date: 2023-11-17
-draft: true
 ---
 
 Read: 

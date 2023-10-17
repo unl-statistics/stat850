@@ -1,7 +1,6 @@
 ---
 title: "Homework 8: Graphics"
 date: October 13, 2023
-draft: true
 ---
 
 Note: This assignment must be submitted in github classroom.
