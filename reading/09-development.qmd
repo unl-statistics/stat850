@@ -1,7 +1,6 @@
 ---
 title: "Errors and Development"
 date: 2023-10-20
-draft: true
 ---
 
 Read: 
