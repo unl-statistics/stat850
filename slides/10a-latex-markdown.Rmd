@@ -1,0 +1,396 @@
+---
+title: "LaTeX and Markdown"
+subtitle: "Documents with Markup"
+date: "2023-10-24"
+categories: Slides
+output:
+  xaringan::moon_reader:
+    css: ["default", "template/unl.css"]
+    lib_dir: template/libs
+    includes:
+      in_header: template/header.html
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.path = "deps/latex/",
+  fig.width = 6, fig.height = 4, 
+  out.width = "75%", 
+  message = F, warning = F, dpi = 300)
+```
+
+## Contents
+
+(in chronological order)
+
+- [LaTeX](#latex)
+
+- [Markdown and Pandoc](#pandoc)
+
+- Adding in R
+    - [Sweave/knitr](#knitr)
+    - [Rmarkdown](#rmarkdown)
+    
+- Special Document Types
+
+# LaTeX
+
+## LaTeX is a document preparation system 
+
+::: columns
+::: column-left
+
+Think of it as the digital version of a printing press.
+
+You will use **tags** to control the formatting of your document, and then compile it to PDF. 
+- `\emph{}` for *italic* text
+- `\textbf{}` for **bold** text
+- `{\HUGE }`, `{\footnotesize }`
+
+
+The LaTeX system lays out your document according to a set of rules for spacing, margins, figure captions, cross-references, ...
+:::
+::: column-right
+![Printing press](https://upload.wikimedia.org/wikipedia/commons/c/c3/PrintMus_038.jpg)
+:::
+:::
+
+---
+
+> Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to humans what we want the computer to do.
+
+> — Donald E. Knuth, Literate Programming, 1984
+
+## LaTeX Editors
+
+While a .tex file is just a text file, it can help to use a dedicated editor that will compile your document for you.
+
+Some options:
+
+- Overleaf.com (real-time compilation, collaboration)
+- TeXWorks
+- LyX - What-you-see-is-what-you-get (WYSIWYG) LaTeX editor
+- RStudio
+
+Of these, Lyx and Rstudio support integrating your code with your document using knitr/Sweave.
+
+[LaTeX cheatsheet](https://wch.github.io/latexsheet/latexsheet.pdf)
+
+[Learn LaTeX in 30 minutes](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes)
+
+
+## Basic LaTeX
+::: columns
+::: column-left
+
+```
+\documentclass{article}     % 1
+\usepackage[utf8]{inputenc} % 2
+
+\usepackage{natbib}         % 3 
+\usepackage{graphicx}       % 4
+
+\title{Demo}                % 5
+\author{Susan VanderPlas}
+\date{October 2020}
+
+\begin{document}            % 6
+
+\maketitle                  % 7
+
+\section{Introduction}      % 8
+\citet{adams1995hitchhiker}
+\section{Conclusion}
+
+\bibliographystyle{plain}   % 9
+\bibliography{refs}
+\end{document}
+```
+
+[Basic LaTeX document](https://www.overleaf.com/read/prfdcbtmfqjh)
+:::
+::: column-right
+
+
+1. type of document (article)
+2. allow UTF-8 characters
+
+3. use a bibliography
+4. allow pictures
+
+5. Document header information
+
+6. Actual document content
+7. Create document title/header
+8. Create introduction section    
+(with a citation)
+
+9. Create the bibliography
+
+
+[Overleaf Gallery of possibilities](https://www.overleaf.com/gallery)
+:::
+
+::: notes
+
+[Link to edit document](https://www.overleaf.com/2258276697wbnwfjhgdbvh)
+
+:::
+
+---
+
+## BibTeX
+
+One of the most wonderful parts of LaTeX is BibTeX, which handles your citations for you.
+
+- You type your references in only once (in a markup style called bibtex)
+- Citations in your paper are \citet{key} or \citep{key} or \cite{key}
+- You set the reference type at the top of the document (numeric, alphabetical, etc.)
+- At the end of the document you add a command for where the bibliography goes
+
+Bibtex does all of the hard work of cross-linking your references with the bibliography, formatting the bibliography correctly, etc.
+
+Zotero, Mendeley, etc. have BibTeX export functions so you can still use a reference manager.
+
+---
+## Typesetting math
+
+Math mode:
+`$x + 2$` for inline math: $x + 2$
+
+`$$` `x+2` `$$`  for centered paragraph math 
+$$x + 2$$
+
+`\begin` `{align} x &= a + b\\ y &= c + d` `\end{align}`    
+for systems of equations
+
+$\begin{align} x &= a + b\\ y &= c + d\end{align}$
+
+`\alpha, \beta, \gamma, \infty, \rightarrow, \int,\frac{a}{b}` 
+$$\alpha,\beta,\gamma,\infty,\rightarrow,\int,\frac{a}{b}$$
+
+[Cheatsheet for math mode](http://tug.ctan.org/info/undergradmath/undergradmath.pdf)
+
+---
+class: inverse
+## Try it out!
+
+Minimal LaTeX document:
+```
+\documentclass{article}
+\begin{document}
+Hello \LaTeX!
+\end{document}
+```
+
+1. [Add an image](https://www.overleaf.com/learn/latex/Inserting_Images)
+
+2. Add the [quadratic formula and the PDF of a normal distribution to the document](https://www.overleaf.com/learn/latex/Mathematical_expressions)
+
+3. In extremely [large](https://www.overleaf.com/learn/latex/Font_sizes,_families,_and_styles) text, print LaTeX using the `\LaTeX` command
+
+4. In extremely small, [italic](https://www.overleaf.com/learn/latex/Bold,_italics_and_underlining) text, print your name
+
+---
+class:middle,inverse,center
+name: pandoc
+# But I don't want a PDF 
+
+
+---
+## Pandoc
+
+LaTeX only creates PDF files (and PostScript files, but nevermind those). 
+
+Enter **pandoc**, which was supposed to be a "universal translator" of markup formats.
+
+Markdown document -> 
+
+- html
+- epub
+- docx
+- LaTeX
+- other markdown flavors
+- ...
+
+With pandoc, the goal is to transfer the content; the exact formatting is less of a priority. Thus, only a small set of formatting options are supported.
+
+
+You can use the same BibTeX files in markdown with Pandoc!
+
+---
+class: inverse
+## Try it out!
+
+.pull-left[
+Minimal markdown document:
+```
+---
+title: "Demo"
+author: "Me"
+date: "October 2020"
+output: 
+  word_document: default
+  html_document: default
+  pdf_document: default
+---
+
+# Introduction
+
+# Conclusion
+
+# References
+```
+
+[markdown cheatsheet](https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+].pull-right[
+1. Add an image from the internet
+
+2. Add the [quadratic formula and the PDF of a normal distribution to the document](https://www.overleaf.com/learn/latex/Mathematical_expressions)    
+Math mode works the same in markdown as in LaTeX (mostly)
+
+3. [Add a citation](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html) to the Hitchhiker's Guide using [this references file](deps/latex/refs.bib)
+
+
+]
+
+---
+class:middle,inverse,center
+# Adding in R
+
+---
+name: knitr
+## LaTeX + R?
+
+`Sweave` was the original document compilation system for combining `LaTeX` and `R` (created circa 2002)
+
+- Basic structure was great
+- Caching was terrible (so all code re-ran each time you changed formatting a bit)
+
+`knitr`: created in 2012 by Yihui Xie to be a better version of `Sweave`
+
+- Same basic syntax
+- better caching & dependency management
+- All `Sweave` features + some
+- Support for Python, Perl, C++, shell scripts
+
+<img src="https://github.com/rstudio/hex-stickers/blob/master/PNG/knitr.png?raw=true" class="bottomrightfig" width = "30%"/>
+
+---
+
+## LaTeX + R?
+
+[knitr reference manual](https://yihui.org/knitr/)
+
+
+To add R code to your .tex file, 
+
+1. Change the file extension from `.tex` to `.Rnw` (Rnw = R no weave, a holdover from `Sweave`)
+
+2. Add R code chunks 
+
+3. Compile your document
+
+
+```
+<<chunk-name, chunk-options>>=
+
+R code here
+
+@
+```
+
+---
+name: rmarkdown
+## Markdown + R?
+
+You've been using Rmarkdown for the entire semester, but it works essentially the same way as adding R to LaTeX:
+
+![Rmarkdown Workflow](https://bookdown.org/yihui/rmarkdown-cookbook/images/workflow.png)
+
+
+
+.center[The [newest release of RStudio](https://rstudio.com/products/rstudio/download/preview/) has WYSIWYG support for RMarkdown (but not yet for LaTeX).]
+
+---
+
+## Code Chunk Options
+
+[Common chunk options](https://yihui.org/knitr/options/):
+
+- `eval = (T/F)`: whether the code is evaluated by R
+
+- `include = (T/F)`: should code or output from the code be included in the document?
+
+- `echo = (T/F)`: should code be printed in the document, or just the output?
+
+- `fig.width, fig.height = `: size of the saved image, in inches 
+
+- `out.width = `: width of the output image IN THE DOCUMENT
+
+- `fig.cap = `: Set a figure caption
+
+- `cache = (T/F)`: Cache the chunk, so that it is only re-run if it changes?
+
+*All of these chunk options also work in rmarkdown*
+
+---
+class: inverse
+## Try it out!
+
+Turn your .tex file into an .Rnw file and add some more stuff!
+
+1. Add a histogram of 100 draws from a normal distribution
+```{r, eval = F}
+hist(rnorm(100))
+```
+
+2. Compute the mean of 15 draws from a binomial(10, .5) distribution and print it inline using `\Sexpr{}`
+```{r, eval = F}
+mean(rbinom(15, 10, .5))
+```
+
+3. Use `knitr::kable()` to print out the first 6 rows of the cars dataframe. 
+```{r, eval = F}
+knitr::kable(head(mtcars))
+```
+
+---
+## Table Upgrades
+
+Table Packages
+
+- kableExtra
+- [flextable](https://davidgohel.github.io/flextable/)
+- [huxtable](https://hughjonesd.github.io/huxtable/)
+- [gt](https://gt.rstudio.com/)
+- [expss](https://gdemin.github.io/expss/)
+
+Other packages
+
+- (for HTML) [papaja](https://crsh.github.io/papaja_man/) - use APA formatting throughout the whole html document
+
+
+---
+## Special Document Types
+
+Both LaTeX and Rmarkdown make use of other libraries to expand the types of documents available. 
+
+
+Document Type | Library | Compiler | End Result
+----- | ----- | ----- | ----- | -----
+Slides | Beamer | LaTeX or Markdown + LaTeX | PDF
+| IOSlides | Markdown | HTML
+| Slidy | Markdown | HTML
+| PowerPoint | Markdown | PowerPoint
+| Xaringan | Markdown + JS | HTML/markdown hybrid 
+Poster | Beamer | LaTeX | PDF
+| Posterdown | Markdown | HTML
+| Pagedown | Markdown | HTML
+
+.center[These documents use the same basic markdown or LaTeX syntax, but render differently.]
