@@ -5,8 +5,9 @@ date: "2023-10-24"
 categories: Slides
 format: 
   revealjs:
-    theme: default
+    theme: [default, inverse.scss]
     center: true
+    smaller: true
     reveal_plugins: ["notes", "search"]
     reveal_options:
       slideNumber: true
@@ -34,23 +35,25 @@ knitr::opts_chunk$set(
 
 # LaTeX
 
-## LaTeX is a document preparation system 
+## LaTeX: a document prep system {.smaller}
 
 ::: columns
-::: column-left
+::: column
 
 Think of it as the digital version of a printing press.
 
 You will use **tags** to control the formatting of your document, and then compile it to PDF. 
+
 - `\emph{}` for *italic* text
 - `\textbf{}` for **bold** text
 - `{\HUGE }`, `{\footnotesize }`
 
 
 The LaTeX system lays out your document according to a set of rules for spacing, margins, figure captions, cross-references, ...
+
 :::
-::: column-right
-![Printing press](https://upload.wikimedia.org/wikipedia/commons/c/c3/PrintMus_038.jpg)
+::: column
+![Printing press](https://upload.wikimedia.org/wikipedia/commons/c/c3/PrintMus_038.jpg){width="90%"}
 :::
 :::
 
@@ -60,16 +63,16 @@ The LaTeX system lays out your document according to a set of rules for spacing,
 
 > — Donald E. Knuth, Literate Programming, 1984
 
-## LaTeX Editors
+## LaTeX Editors {.smaller}
 
 While a .tex file is just a text file, it can help to use a dedicated editor that will compile your document for you.
 
 Some options:
 
+- RStudio (my default)
 - Overleaf.com (real-time compilation, collaboration)
 - TeXWorks
 - LyX - What-you-see-is-what-you-get (WYSIWYG) LaTeX editor
-- RStudio
 
 Of these, Lyx and Rstudio support integrating your code with your document using knitr/Sweave.
 
@@ -78,11 +81,13 @@ Of these, Lyx and Rstudio support integrating your code with your document using
 [Learn LaTeX in 30 minutes](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes)
 
 
-## Basic LaTeX
+## Basic LaTeX {.smaller}
+
 ::: columns
-::: column-left
+::: {.column width="40%"}
 
 ```
+
 \documentclass{article}     % 1
 \usepackage[utf8]{inputenc} % 2
 
@@ -91,7 +96,7 @@ Of these, Lyx and Rstudio support integrating your code with your document using
 
 \title{Demo}                % 5
 \author{Susan VanderPlas}
-\date{October 2020}
+\date{\today}
 
 \begin{document}            % 6
 
@@ -107,8 +112,9 @@ Of these, Lyx and Rstudio support integrating your code with your document using
 ```
 
 [Basic LaTeX document](https://www.overleaf.com/read/prfdcbtmfqjh)
+
 :::
-::: column-right
+::: {.column width="60%"}
 
 
 1. type of document (article)
@@ -121,8 +127,7 @@ Of these, Lyx and Rstudio support integrating your code with your document using
 
 6. Actual document content
 7. Create document title/header
-8. Create introduction section    
-(with a citation)
+8. Create introduction section (with a citation)
 
 9. Create the bibliography
 
@@ -137,7 +142,7 @@ Of these, Lyx and Rstudio support integrating your code with your document using
 
 :::
 
-## BibTeX
+## BibTeX {.r-fit-text}
 
 One of the most wonderful parts of LaTeX is BibTeX, which handles your citations for you.
 
@@ -146,30 +151,72 @@ One of the most wonderful parts of LaTeX is BibTeX, which handles your citations
 - You set the reference type at the top of the document (numeric, alphabetical, etc.)
 - At the end of the document you add a command for where the bibliography goes
 
-Bibtex does all of the hard work of cross-linking your references with the bibliography, formatting the bibliography correctly, etc.
+Bibtex does all of the hard work of cross-linking your references with the bibliography, formatting, etc.
 
-Zotero, Mendeley, etc. have BibTeX export functions so you can still use a reference manager.
+::: columns
 
+::: {.column width="20%"}
+![](https://www.zotero.org/static/images/home/privacy.svg){width="100%" fig-alt="Zotero logo"}
+:::
+
+::: {.column width="60%"}
+
+I recommend using [Zotero](https://www.zotero.org/) or [Mendeley](https://www.mendeley.com/) to keep track of papers and associated notes; these programs will export BibTeX automatically.
+
+They also come with browser addins that will easily save papers to your library as you surf.
+
+:::
+
+::: {.column width="20%"}
+![](https://www.elsevier.com/__data/assets/image/0009/998145/mdly-portrait.png){width="100%" fig-alt="Mendeley logo"}
+:::
+
+:::
 
 ## Typesetting math
+::: columns
 
-Math mode:
-`$x + 2$` for inline math: $x + 2$
+::: {.column width="40%"}
+Inline math: 
+`$x + 2$` 
 
-`$$` `x+2` `$$`  for centered paragraph math 
-$$x + 2$$
+Centered math:   
+`$$` `x+2` `$$`    
+&nbsp;    
+&nbsp;    
+&nbsp;
 
-`\begin` `{align} x &= a + b\\ y &= c + d` `\end{align}`    
-for systems of equations
+Systems of equations:    
+`\begin` `{align} x &= a + b\\`    
+`y &= c + d` `\end{align}`        
+&nbsp;
 
-$\begin{align} x &= a + b\\ y &= c + d\end{align}$
-
+Math characters:    
 `\alpha, \beta, \gamma, \infty, \rightarrow, \int,\frac{a}{b}` 
+
+:::
+
+::: {.column width="60%"}
+
+$x + 2$ is an inline equation.
+
+We can also center equations within a paragraph, like this:
+$$x + 2$$
+The paragraph resumes after we're done.
+
+Systems of equations:    
+$\begin{align} x &= a + b\\ y &= c + d\end{align}$    
+&nbsp;
+
+Math characters:    
 $$\alpha,\beta,\gamma,\infty,\rightarrow,\int,\frac{a}{b}$$
+:::
+
+:::
 
 [Cheatsheet for math mode](http://tug.ctan.org/info/undergradmath/undergradmath.pdf)
 
-## Try it out!
+## Try it out!  {.inverse}
 
 Minimal LaTeX document:
 ```
@@ -191,7 +238,7 @@ Hello \LaTeX!
 # But I don't want a PDF 
 
 ## Pandoc
-
+![](https://lh3.googleusercontent.com/-S8Fwe-PISrU/WExNwRXJHKI/AAAAAAAAAFo/tRbv1NAYBWoEBitmvDRFY_bc5xv07lnMACLcB/s320/pandoc.png){.absolute top=30 right=30 width="20%"}
 LaTeX only creates PDF files (and PostScript files, but nevermind those). 
 
 Enter **pandoc**, which was supposed to be a "universal translator" of markup formats.
@@ -210,10 +257,10 @@ With pandoc, the goal is to transfer the content; the exact formatting is less o
 
 You can use the same BibTeX files in markdown with Pandoc!
 
-## Try it out!
+## Try it out! {.inverse .r-fit-text}
 
 ::: columns
-::: column-left
+::: {.column .r-fit-text width="40%"}
 
 Minimal markdown document:
 ```
@@ -236,7 +283,7 @@ output:
 
 [markdown cheatsheet](https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
 :::
-::: column-right
+::: {.column .r-fit-text  width="60%"}
 1. Add an image from the internet
 
 2. Add the [quadratic formula and the PDF of a normal distribution to the document](https://www.overleaf.com/learn/latex/Mathematical_expressions)    
@@ -249,9 +296,18 @@ Math mode works the same in markdown as in LaTeX (mostly)
 
 # Adding in R or Python {#knitr}
 
-## LaTeX + R?
+::: {layout="[-10,30,-10,30,-10]"}
 
-`Sweave` was the original document compilation system for combining `LaTeX` and `R` (created circa 2002)
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1280px-R_logo.svg.png){fig-alt="R logo"}
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/768px-Python.svg.png){fig-alt="Python logo"}
+
+:::
+
+## LaTeX + R? {.r-fit-text}
+![](https://github.com/rstudio/hex-stickers/blob/main/PNG/knitr.png?raw=true){.absolute width="20%" top=10 right=10}
+`Sweave` was the original document compilation system for combining `LaTeX` and `R`    
+(created circa 2002)
 
 - Basic structure was great
 - Caching was terrible (so all code re-ran each time you changed formatting a bit)
@@ -263,12 +319,13 @@ Math mode works the same in markdown as in LaTeX (mostly)
 - All `Sweave` features + some
 - Support for Python, Perl, C++, shell scripts
 
-<img src="https://github.com/rstudio/hex-stickers/blob/master/PNG/knitr.png?raw=true" class="bottomrightfig" width = "30%"/>
-
-## LaTeX + R?
+## LaTeX + R? {.r-text-fit}
 
 [knitr reference manual](https://yihui.org/knitr/)
 
+::: columns
+
+::: {.column .r-fit-text}
 
 To add R code to your .tex file, 
 
@@ -278,7 +335,11 @@ To add R code to your .tex file,
 
 3. Compile your document
 
+:::
 
+::: {.column .r-fit-text}
+
+R code chunks in .Rnw documents
 ```
 <<chunk-name, chunk-options>>=
 
@@ -286,6 +347,10 @@ R code here
 
 @
 ```
+
+:::
+
+:::
 
 ## Markdown + R? {#rmarkdown}
 
@@ -317,7 +382,7 @@ Quarto is similar, but supports [even more formats](https://quarto.org/docs/outp
 
 
 
-## Try it out!
+## Try it out! {.inverse}
 
 Turn your .tex file into an .Rnw file and add some more stuff!
 
@@ -336,7 +401,7 @@ mean(rbinom(15, 10, .5))
 knitr::kable(head(mtcars))
 ```
 
-## Table Upgrades
+## Table Upgrades {.r-fit-text}
 
 Table Packages
 
@@ -359,13 +424,13 @@ Both LaTeX and quarto/Rmarkdown make use of other libraries to expand the types 
 Document Type | Library | Compiler | End Result
 ----- | ----- | ----- | ----- | -----
 Slides | Beamer | LaTeX or Markdown + LaTeX | PDF
-| Reveal.js | Markdown | HTML
-| IOSlides | Markdown | HTML
-| Slidy | Markdown | HTML
-| PowerPoint | Markdown | PowerPoint
-| Xaringan | Markdown + JS | HTML/markdown hybrid 
+&nbsp; | Reveal.js | Markdown | HTML
+&nbsp; | IOSlides | Markdown | HTML
+&nbsp; | Slidy | Markdown | HTML
+&nbsp; | PowerPoint | Markdown | PowerPoint
+&nbsp; | Xaringan | Markdown + JS | HTML/markdown hybrid 
 Poster | Beamer | LaTeX | PDF
-| Posterdown | Markdown | HTML
-| Pagedown | Markdown | HTML
+&nbsp; | Posterdown | Markdown | HTML
+&nbsp; | Pagedown | Markdown | HTML
 
 These documents use the same basic markdown or LaTeX syntax, but render differently.

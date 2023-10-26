@@ -452,35 +452,35 @@
     "href": "slides/10a-latex-markdown.html#latex-is-a-document-preparation-system",
     "title": "LaTeX and Markdown",
     "section": "LaTeX is a document preparation system",
-    "text": "LaTeX is a document preparation system\n\n\nThink of it as the digital version of a printing press.\nYou will use tags to control the formatting of your document, and then compile it to PDF. - \\emph{} for italic text - \\textbf{} for bold text - {\\HUGE }, {\\footnotesize }\nThe LaTeX system lays out your document according to a set of rules for spacing, margins, figure captions, cross-references, …\n\n\n\n\nPrinting press"
+    "text": "LaTeX is a document preparation system\n\n\nThink of it as the digital version of a printing press.\nYou will use tags to control the formatting of your document, and then compile it to PDF.\n\n\\emph{} for italic text\n\\textbf{} for bold text\n{\\HUGE }, {\\footnotesize }\n\nThe LaTeX system lays out your document according to a set of rules for spacing, margins, figure captions, cross-references, …\n\n\n\n\nPrinting press"
   },
   {
     "objectID": "slides/10a-latex-markdown.html#latex-editors",
     "href": "slides/10a-latex-markdown.html#latex-editors",
     "title": "LaTeX and Markdown",
     "section": "LaTeX Editors",
-    "text": "LaTeX Editors\nWhile a .tex file is just a text file, it can help to use a dedicated editor that will compile your document for you.\nSome options:\n\nOverleaf.com (real-time compilation, collaboration)\nTeXWorks\nLyX - What-you-see-is-what-you-get (WYSIWYG) LaTeX editor\nRStudio\n\nOf these, Lyx and Rstudio support integrating your code with your document using knitr/Sweave.\nLaTeX cheatsheet\nLearn LaTeX in 30 minutes"
+    "text": "LaTeX Editors\nWhile a .tex file is just a text file, it can help to use a dedicated editor that will compile your document for you.\nSome options:\n\nRStudio (my default)\nOverleaf.com (real-time compilation, collaboration)\nTeXWorks\nLyX - What-you-see-is-what-you-get (WYSIWYG) LaTeX editor\n\nOf these, Lyx and Rstudio support integrating your code with your document using knitr/Sweave.\nLaTeX cheatsheet\nLearn LaTeX in 30 minutes"
   },
   {
     "objectID": "slides/10a-latex-markdown.html#basic-latex",
     "href": "slides/10a-latex-markdown.html#basic-latex",
     "title": "LaTeX and Markdown",
     "section": "Basic LaTeX",
-    "text": "Basic LaTeX\n\n\n\\documentclass{article}     % 1\n\\usepackage[utf8]{inputenc} % 2\n\n\\usepackage{natbib}         % 3 \n\\usepackage{graphicx}       % 4\n\n\\title{Demo}                % 5\n\\author{Susan VanderPlas}\n\\date{October 2020}\n\n\\begin{document}            % 6\n\n\\maketitle                  % 7\n\n\\section{Introduction}      % 8\n\\citet{adams1995hitchhiker}\n\\section{Conclusion}\n\n\\bibliographystyle{plain}   % 9\n\\bibliography{refs}\n\\end{document}\nBasic LaTeX document\n\n\ntype of document (article)\nallow UTF-8 characters\nuse a bibliography\nallow pictures\nDocument header information\nActual document content\nCreate document title/header\nCreate introduction section\n(with a citation)\nCreate the bibliography\n\nOverleaf Gallery of possibilities\n\n\n\nLink to edit document"
+    "text": "Basic LaTeX\n\n\n\n\\documentclass{article}     % 1\n\\usepackage[utf8]{inputenc} % 2\n\n\\usepackage{natbib}         % 3 \n\\usepackage{graphicx}       % 4\n\n\\title{Demo}                % 5\n\\author{Susan VanderPlas}\n\\date{\\today}\n\n\\begin{document}            % 6\n\n\\maketitle                  % 7\n\n\\section{Introduction}      % 8\n\\citet{adams1995hitchhiker}\n\\section{Conclusion}\n\n\\bibliographystyle{plain}   % 9\n\\bibliography{refs}\n\\end{document}\nBasic LaTeX document\n\n\ntype of document (article)\nallow UTF-8 characters\nuse a bibliography\nallow pictures\nDocument header information\nActual document content\nCreate document title/header\nCreate introduction section (with a citation)\nCreate the bibliography\n\nOverleaf Gallery of possibilities\n\n\n\nLink to edit document"
   },
   {
     "objectID": "slides/10a-latex-markdown.html#bibtex",
     "href": "slides/10a-latex-markdown.html#bibtex",
     "title": "LaTeX and Markdown",
     "section": "BibTeX",
-    "text": "BibTeX\nOne of the most wonderful parts of LaTeX is BibTeX, which handles your citations for you.\n\nYou type your references in only once (in a markup style called bibtex)\nCitations in your paper are or or \nYou set the reference type at the top of the document (numeric, alphabetical, etc.)\nAt the end of the document you add a command for where the bibliography goes\n\nBibtex does all of the hard work of cross-linking your references with the bibliography, formatting the bibliography correctly, etc.\nZotero, Mendeley, etc. have BibTeX export functions so you can still use a reference manager."
+    "text": "BibTeX\nOne of the most wonderful parts of LaTeX is BibTeX, which handles your citations for you.\n\nYou type your references in only once (in a markup style called bibtex)\nCitations in your paper are or or \nYou set the reference type at the top of the document (numeric, alphabetical, etc.)\nAt the end of the document you add a command for where the bibliography goes\n\nBibtex does all of the hard work of cross-linking your references with the bibliography, formatting, etc.\n\n\n\n\nI recommend using Zotero or Mendeley to keep track of papers and associated notes; these programs will export BibTeX automatically.\nThey also come with browser addins that will easily save papers to your library as you surf."
   },
   {
     "objectID": "slides/10a-latex-markdown.html#typesetting-math",
     "href": "slides/10a-latex-markdown.html#typesetting-math",
     "title": "LaTeX and Markdown",
     "section": "Typesetting math",
-    "text": "Typesetting math\nMath mode: $x + 2$ for inline math: \\(x + 2\\)\n$$ x+2 $$ for centered paragraph math \\[x + 2\\]\n\\begin {align} x &= a + b\\\\ y &= c + d \\end{align}\nfor systems of equations\n\\(\\begin{align} x &= a + b\\\\ y &= c + d\\end{align}\\)\n\\alpha, \\beta, \\gamma, \\infty, \\rightarrow, \\int,\\frac{a}{b} \\[\\alpha,\\beta,\\gamma,\\infty,\\rightarrow,\\int,\\frac{a}{b}\\]\nCheatsheet for math mode"
+    "text": "Typesetting math\n\n\nInline math: $x + 2$\nCentered math:\n$$ x+2 $$\n \n \n \nSystems of equations:\n\\begin {align} x &= a + b\\\\\ny &= c + d \\end{align}\n \nMath characters:\n\\alpha, \\beta, \\gamma, \\infty, \\rightarrow, \\int,\\frac{a}{b}\n\n\\(x + 2\\) is an inline equation.\nWe can also center equations within a paragraph, like this: \\[x + 2\\] The paragraph resumes after we’re done.\nSystems of equations:\n\\(\\begin{align} x &= a + b\\\\ y &= c + d\\end{align}\\)\n \nMath characters:\n\\[\\alpha,\\beta,\\gamma,\\infty,\\rightarrow,\\int,\\frac{a}{b}\\]\n\n\nCheatsheet for math mode"
   },
   {
     "objectID": "slides/10a-latex-markdown.html#try-it-out",
@@ -494,7 +494,7 @@
     "href": "slides/10a-latex-markdown.html#pandoc",
     "title": "LaTeX and Markdown",
     "section": "Pandoc",
-    "text": "Pandoc\nLaTeX only creates PDF files (and PostScript files, but nevermind those).\nEnter pandoc, which was supposed to be a “universal translator” of markup formats.\nMarkdown document -&gt;\n\nhtml\nepub\ndocx\nLaTeX\nother markdown flavors\n…\n\nWith pandoc, the goal is to transfer the content; the exact formatting is less of a priority. Thus, only a small set of formatting options are supported.\nYou can use the same BibTeX files in markdown with Pandoc!"
+    "text": "Pandoc\n LaTeX only creates PDF files (and PostScript files, but nevermind those).\nEnter pandoc, which was supposed to be a “universal translator” of markup formats.\nMarkdown document -&gt;\n\nhtml\nepub\ndocx\nLaTeX\nother markdown flavors\n…\n\nWith pandoc, the goal is to transfer the content; the exact formatting is less of a priority. Thus, only a small set of formatting options are supported.\nYou can use the same BibTeX files in markdown with Pandoc!"
   },
   {
     "objectID": "slides/10a-latex-markdown.html#try-it-out-1",
@@ -508,14 +508,14 @@
     "href": "slides/10a-latex-markdown.html#latex-r",
     "title": "LaTeX and Markdown",
     "section": "LaTeX + R?",
-    "text": "LaTeX + R?\nSweave was the original document compilation system for combining LaTeX and R (created circa 2002)\n\nBasic structure was great\nCaching was terrible (so all code re-ran each time you changed formatting a bit)\n\nknitr: created in 2012 by Yihui Xie to be a better version of Sweave\n\nSame basic syntax\nbetter caching & dependency management\nAll Sweave features + some\nSupport for Python, Perl, C++, shell scripts"
+    "text": "LaTeX + R?\n Sweave was the original document compilation system for combining LaTeX and R\n(created circa 2002)\n\nBasic structure was great\nCaching was terrible (so all code re-ran each time you changed formatting a bit)\n\nknitr: created in 2012 by Yihui Xie to be a better version of Sweave\n\nSame basic syntax\nbetter caching & dependency management\nAll Sweave features + some\nSupport for Python, Perl, C++, shell scripts"
   },
   {
     "objectID": "slides/10a-latex-markdown.html#latex-r-1",
     "href": "slides/10a-latex-markdown.html#latex-r-1",
     "title": "LaTeX and Markdown",
     "section": "LaTeX + R?",
-    "text": "LaTeX + R?\nknitr reference manual\nTo add R code to your .tex file,\n\nChange the file extension from .tex to .Rnw (Rnw = R no weave, a holdover from Sweave)\nAdd R code chunks\nCompile your document\n\n&lt;&lt;chunk-name, chunk-options&gt;&gt;=\n\nR code here\n\n@"
+    "text": "LaTeX + R?\nknitr reference manual\n\n\nTo add R code to your .tex file,\n\nChange the file extension from .tex to .Rnw (Rnw = R no weave, a holdover from Sweave)\nAdd R code chunks\nCompile your document\n\n\nR code chunks in .Rnw documents\n&lt;&lt;chunk-name, chunk-options&gt;&gt;=\n\nR code here\n\n@"
   },
   {
     "objectID": "slides/10a-latex-markdown.html#rmarkdown",
@@ -550,7 +550,7 @@
     "href": "slides/10a-latex-markdown.html#special-document-types",
     "title": "LaTeX and Markdown",
     "section": "Special Document Types",
-    "text": "Special Document Types\nBoth LaTeX and quarto/Rmarkdown make use of other libraries to expand the types of documents available.\n\n\n\nDocument Type\nLibrary\nCompiler\nEnd Result\n\n\n\n\n\nSlides\nBeamer\nLaTeX or Markdown + LaTeX\nPDF\n\n\n\nReveal.js\nMarkdown\nHTML\n\n\n\n\nIOSlides\nMarkdown\nHTML\n\n\n\n\nSlidy\nMarkdown\nHTML\n\n\n\n\nPowerPoint\nMarkdown\nPowerPoint\n\n\n\n\nXaringan\nMarkdown + JS\nHTML/markdown hybrid\n\n\n\n\nPoster\nBeamer\nLaTeX\nPDF\n\n\n\nPosterdown\nMarkdown\nHTML\n\n\n\n\nPagedown\nMarkdown\nHTML\n\n\n\n\n\nThese documents use the same basic markdown or LaTeX syntax, but render differently."
+    "text": "Special Document Types\nBoth LaTeX and quarto/Rmarkdown make use of other libraries to expand the types of documents available.\n\n\n\nDocument Type\nLibrary\nCompiler\nEnd Result\n\n\n\n\n\nSlides\nBeamer\nLaTeX or Markdown + LaTeX\nPDF\n\n\n\n \nReveal.js\nMarkdown\nHTML\n\n\n\n \nIOSlides\nMarkdown\nHTML\n\n\n\n \nSlidy\nMarkdown\nHTML\n\n\n\n \nPowerPoint\nMarkdown\nPowerPoint\n\n\n\n \nXaringan\nMarkdown + JS\nHTML/markdown hybrid\n\n\n\nPoster\nBeamer\nLaTeX\nPDF\n\n\n\n \nPosterdown\nMarkdown\nHTML\n\n\n\n \nPagedown\nMarkdown\nHTML\n\n\n\n\nThese documents use the same basic markdown or LaTeX syntax, but render differently."
   },
   {
     "objectID": "reading/01-SignUp-Syllabus.html",
@@ -796,5 +796,12 @@
     "title": "Sample Report",
     "section": "Tips",
     "text": "Tips\n(delete this section from your report!)\nAlmost anything you might want to know about how to format output in quarto can be found here. Feel free to email/come to office hours to figure out how to do XYZ - part of the goal of making you write this report is that I want you to know how to write e.g. a journal paper in Quarto as well, so now’s the time to experiment.\nIf you want to know what the wordcount of your report is, you can run the following command in your terminal:\npandoc --lua-filter wordcount.lua report.qmd\nNotice that I have not pushed _output/report.html or the _output/report_files/ folder to github - this is intentional. I have actually set _output to not show up in git, to encourage you all to NOT push the rendered files to github and to instead work from the markdown files directly.\nYou may find it cleaner to create a figure subdirectory and store any figures that aren’t created by R/Python in that folder. I encourage you to organize this repository in a sensible way."
+  },
+  {
+    "objectID": "slides/10a-latex-markdown.html#latex-a-document-prep-system",
+    "href": "slides/10a-latex-markdown.html#latex-a-document-prep-system",
+    "title": "LaTeX and Markdown",
+    "section": "LaTeX: a document prep system",
+    "text": "LaTeX: a document prep system\n\n\nThink of it as the digital version of a printing press.\nYou will use tags to control the formatting of your document, and then compile it to PDF.\n\n\\emph{} for italic text\n\\textbf{} for bold text\n{\\HUGE }, {\\footnotesize }\n\nThe LaTeX system lays out your document according to a set of rules for spacing, margins, figure captions, cross-references, …\n\n\n\n\nPrinting press"
   }
 ]
