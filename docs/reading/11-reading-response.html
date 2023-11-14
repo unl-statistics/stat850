@@ -159,11 +159,11 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#monte-carlo-integration" id="toc-monte-carlo-integration" class="nav-link active" data-scroll-target="#monte-carlo-integration">Monte Carlo Integration</a>
+  <li><a href="#numerical-integration-approaches" id="toc-numerical-integration-approaches" class="nav-link active" data-scroll-target="#numerical-integration-approaches">Numerical Integration Approaches</a>
   <ul class="collapse">
   <li><a href="#using-rs-integrate-function" id="toc-using-rs-integrate-function" class="nav-link" data-scroll-target="#using-rs-integrate-function">Using R’s <code>integrate</code> function</a></li>
   <li><a href="#numerical-integration-the-old-fashioned-way" id="toc-numerical-integration-the-old-fashioned-way" class="nav-link" data-scroll-target="#numerical-integration-the-old-fashioned-way">Numerical Integration (the Old-fashioned way)</a></li>
-  <li><a href="#monte-carlo-integration-1" id="toc-monte-carlo-integration-1" class="nav-link" data-scroll-target="#monte-carlo-integration-1">Monte Carlo Integration</a></li>
+  <li><a href="#monte-carlo-integration" id="toc-monte-carlo-integration" class="nav-link" data-scroll-target="#monte-carlo-integration">Monte Carlo Integration</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -197,8 +197,8 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 
 </header>
 
-<section id="monte-carlo-integration" class="level1">
-<h1>Monte Carlo Integration</h1>
+<section id="numerical-integration-approaches" class="level1">
+<h1>Numerical Integration Approaches</h1>
 <p>Some of you asked some very reasonable questions when reading <a href="https://articles.foletta.org/post/random-wifi-password/">this post</a> on integrating using Monte Carlo methods. I thought it would be worth examining some of these questions in a bit more depth.</p>
 <p>Let’s start by defining the function as in the blog post, and consider a few different ways we can get the integral over <span class="math inline">\([-2, 2]\)</span>.</p>
 <div class="cell" data-hash="11-reading-response_cache/html/unnamed-chunk-1_2035529b31aab502582c539205a6e6d1">
@@ -308,8 +308,8 @@ aux              unused. For compatibility with S.</code></pre>
 </div>
 </div>
 </section>
-<section id="monte-carlo-integration-1" class="level2">
-<h2 class="anchored" data-anchor-id="monte-carlo-integration-1">Monte Carlo Integration</h2>
+<section id="monte-carlo-integration" class="level2">
+<h2 class="anchored" data-anchor-id="monte-carlo-integration">Monte Carlo Integration</h2>
 <p>Let’s think a bit about what we did last time. We created rectangles, broke our function down into pieces, and evaluated the area of each piece. But in each loop iteration we throw away all of our previous work, which isn’t really that efficient.</p>
 <p>What if instead we sample points <span class="math inline">\(x\)</span> randomly from <span class="math inline">\([-2, 2]\)</span>, evaluate each point at <span class="math inline">\(f(x)\)</span>, and take the average value? Then we can keep adding points as necessary until we reach the desired accuracy.</p>
 <p>To make this point, I’m going to do something slightly less efficient: generate a bunch of data and let you see how the result changes as more data is added to the stack.</p>

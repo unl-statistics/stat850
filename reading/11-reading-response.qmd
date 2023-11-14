@@ -3,7 +3,7 @@ title: "More on Simulation"
 date: 2023-11-14
 ---
 
-# Monte Carlo Integration
+# Numerical Integration Approaches
 
 Some of you asked some very reasonable questions when reading [this post](https://articles.foletta.org/post/random-wifi-password/) on integrating using Monte Carlo methods. I thought it would be worth examining some of these questions in a bit more depth.
 
