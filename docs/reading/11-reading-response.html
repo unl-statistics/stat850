@@ -364,6 +364,7 @@ aux              unused. For compatibility with S.</code></pre>
 </div>
 </div>
 <p>In the end, MC integration doesn’t have quite the level of precision of other ways to computationally solve the problem, but it also comes without restrictions on things like continuity conditions.</p>
+<p>It’s worth noting that the MC method I used here is 1) extremely simple, and 2) different than that used in the blog post. MC integration is usually used for higher-dimensional integrals, so there are lots of strategies to make that more efficient. I’ve gone for a slightly more efficient method than was used in the blog post but my approach is also probably more fragile (and doesn’t <em>really</em> rely on randomness - it’s the same basic approach I took in the previous section).</p>
 
 
 </section>
