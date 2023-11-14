@@ -127,7 +127,7 @@ What if instead we sample points $x$ randomly from $[-2, 2]$, evaluate each poin
 To make this point, I'm going to do something slightly less efficient: generate a bunch of data and let you see how the result changes as more data is added to the stack.
 
 ```{r}
-mc_data <- tibble(x = runif(100000000, -2, 2), y = f(x)) %>%
+mc_data <- tibble(x = runif(10000000, -2, 2), y = f(x)) %>%
   mutate(
     # Number of data values
     n = row_number(),
@@ -149,6 +149,24 @@ ggplot(plot_data,
   geom_line() +
   geom_hline(aes(yintercept = pi), color = "red") +
   scale_x_log10()
+
+
+# Get differences between successive iterations
+diffs <- diff(mc_data$est)
+
+# How many data points until we could stop?
+# Get all iterations within tol of the answer from the next iteration
+all_close_iterations <- which(abs(diffs) < tol)
+
+# If we stop at the first time that 2 successive observations are within tol,
+# we will stop too early
+(npts <- min(all_close_iterations))
+sprintf("%0.09f", mc_data$est[npts + 1])
+
+# Safer - stop when you've got multiple times where you've hit the tolerance 
+# threshold
+sprintf("%0.09f", mc_data$est[all_close_iterations[1000]])
 ```
 
 
+In the end, MC integration doesn't have quite the level of precision of other ways to computationally solve the problem, but it also comes without restrictions on things like continuity conditions.  
