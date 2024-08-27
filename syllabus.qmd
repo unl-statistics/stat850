@@ -14,17 +14,17 @@ format:
     dev: cairo_pdf
 
 title: "Stat 850: Computing Tools for Statisticians"
-instructor: Susan Vanderplas
-semester: Fall 2023
+instructor: Heike Hofmann
+semester: Fall 2024
 
-email: "[susan.vanderplas@unl.edu](mailto:susan.vanderplas@unl.edu?subject=Stat%20850)"
-web: "srvanderplas.github.io"
-officehours: "\\href{https://calendly.com/drvanderplas/officehours}{Schedule here}"
-office: "Hardin 343D"
+email: "[hhofmann4@unl.edu](mailto:hhofmann4@unl.edu?subject=Stat%20850)"
+web: "heike.github.io"
+officehours: "M 12:00-2:00 pm or by appointment"
+office: "Hardin 346D"
 classroom: "Keim 214"
 classhours: "TR 12:30-1:45"
 execute: 
-  cache: true
+  cache: false
 ---
 
 
@@ -80,7 +80,7 @@ E.  Document the data, methods, and results of an analysis using reproducible me
 
 # Textbook
 
-In keeping with the principles of this course, any course materials I develop will be made available on GitHub, in the (continuously evolving) [course textbook](https://srvanderplas.github.io/unl-stat850/). The book is laid out with the same structure as the course. In order to avoid duplicating content available elsewhere, where it is appropriate, I will link to relevant material available on other sites. This makes the course easier to maintain, but it also ensures you get the most relevant and up to date instructions.
+In keeping with the principles of this course, any course materials are made available on GitHub, in the (continuously evolving) [course textbook](https://unl-statistics.github.io/stat850/). The book is laid out with the same structure as the course. In order to avoid duplicating content available elsewhere, where it is appropriate, there are links provided to relevant material available on other sites. This makes the course easier to maintain, but it also ensures you get the most relevant and up to date instructions.
 
 In addition, you may find it useful to reference some of the following resources that I have consulted while assembling the textbook. Most are available online for free, though some require an institutional email address.
 
@@ -105,22 +105,22 @@ Reading Assignments/Participation | 10%
 Textbook Quizzes | 10%
 Project | 30%
 
-Lower bounds for grade cutoffs are shown in the following table. I will not "round up" grades at the end of the semester beyond strict mathematical rules of rounding.
+Lower bounds for grade cutoffs are shown in the following table. Grades will not be "rounded up" at the end of the semester beyond strict mathematical rules of rounding.
 
 Letter grade |	X + |  	X |	X - 
 -------- | ----- | ----- | -----
 A |	97 |	94 | 	90
 B |	87 |	84 |	80
 C |	77 |	74 |	70
-D |	67 |	64 |	61
-F |	<61 | |
+D |	67 |	64 |	60
+F |	<60 | |
 
 Interpretation of this table: 
 
 - A grade of 85 will receive a B. 
 - A grade of 77 will receive a C+. 
 - A grade of 70 will receive a C-. 
-- Anything below a 61 will receive an F. 
+- Anything below a 60 will receive an F. 
 
 # Class Schedule & Topic Outline
 
@@ -158,15 +158,15 @@ kableExtra::kable(caption = "Tentative schedule of class topics & project due da
 
 Approximately 8-12 homework assignments will be made over the course of the semester. You will have one week to work on each of the assignments. The only way to learn statistics is to practice working problems, and homework is therefore an essential part of the course. Homework must be submitted in the file format specified (usually quarto documents in a github repository), and should run or compile as submitted.
 
-### Hypothes.is Assignments
+<!-- ### Hypothes.is Assignments -->
 
-Approximately weekly reading will be assigned using Hypothes.is, which allows you to annotate the reading with questions and comments and to see your classmates comments. These reading assignments are intended to expose you to a wide array of topics about programming, statistics, data science, ethics, and reproducibility. 
+<!-- Approximately weekly reading will be assigned using Hypothes.is, which allows you to annotate the reading with questions and comments and to see your classmates comments. These reading assignments are intended to expose you to a wide array of topics about programming, statistics, data science, ethics, and reproducibility.  -->
 
-Note: Hypothes.is is something I haven't tried before; I've added it to replace online discussions about the same reading materials. I'm hopeful that it will be less awkward than discussion boards, but we will re-evaluate the use of this tool during the semester to ensure that it works for a majority of the class.
+<!-- Note: Hypothes.is is something I haven't tried before; I've added it to replace online discussions about the same reading materials. I'm hopeful that it will be less awkward than discussion boards, but we will re-evaluate the use of this tool during the semester to ensure that it works for a majority of the class. -->
 
-Hypothes.is assignments will be due weekly on Fridays at 8pm unless otherwise announced.
+<!-- Hypothes.is assignments will be due weekly on Fridays at 8pm unless otherwise announced. -->
 
-### Textbook Quizzes
+### Textbook/Reading Quizzes
 
 This class uses a flipped classroom model, which assumes that you read the material and/or watch the videos before class so that you are prepared to apply the material during in-class activities. 
 To ensure that you are doing the reading and thus are prepared for class, there are low-stakes quizzes to accompany most textbook chapters; these quizzes will highlight some important items to remember from each chapter.
@@ -175,9 +175,9 @@ These quizzes will be due at 12pm on class days (if there are multiple textbook 
 
 ### General Evaluation Criteria
 
-In every assignment, discussion, and written component of this class, you are expected to demonstrate that you are intellectually engaging with the material. I will evaluate you based on this engagement, which means that technically correct but low effort answers which do not demonstrate engagement or understanding will receive no credit.
+In every assignment, discussion, and written component of this class, you are expected to demonstrate that you are intellectually engaging with the material. I will evaluate you based on this engagement, which means that technically correct but low effort answers which do not demonstrate engagement or understanding will not receive full credit.
 
-When you answer questions in this class, your goal is to show that you either understand the material or are actively engaging with it. If you did not achieve this goal, then your answer is incomplete, regardless of whether or not it is technically correct. This is not to encourage you to add unnecessary complexity to your answer - simple, elegant solutions are always preferable to unwieldly, complex solutions that accomplish the same task.
+When you answer questions in this class, your goal is to show that you either understand the material or are actively engaging with it. If you did not achieve this goal, then your answer is incomplete, regardless of whether or not it is technically correct. This is not to encourage you to add unnecessary complexity to your answer - simple, elegant solutions are always preferable to unwieldy, complex solutions that accomplish the same task.
 
 While this is not an English class, grammar and spelling are important, as is your ability to communicate technical information in writing; both of these criteria will be used in addition to assignment-specific rubrics to evaluate your work.
 
@@ -212,7 +212,7 @@ I expect you to:
 
 ### Make Mistakes!
 
-Programming is the process of making a series of silly or stupid mistakes, and then slowly fixing each mistake (while adding a few more). The only way to know how to fix these mistakes (and avoid them in the future) is to make them. (Sometimes, you have to make the same mistake a few dozen times before you can avoid it in the future). At some point during the class, you will find that you've spent 30 minutes staring at an error caused by a typo, a space, a parenthesis in the wrong place. You may ask for help debugging this weird error, only to have someone immediately point out the problem... it is always easier to see these things in someone else's code. This is part of programming, it is normal, and you shouldn't feel embarrassed or sorry (unless you put no effort into troubleshooting the problem before you asked for help)
+Programming is the process of making a series of silly or stupid mistakes, and then slowly fixing each mistake (while potentially adding a few more). The only way to know how to fix these mistakes (and avoid them in the future) is to make them. (Sometimes, you have to make the same mistake a few dozen times before you can avoid it in the future). At some point during the class, you will find that you've spent 30 minutes staring at an error caused by a typo, a space, or a parenthesis in the wrong place. You may ask for help debugging this weird error, only to have someone immediately point out the problem... it is always easier to see these things in someone else's code. This is part of programming, it is normal, and you shouldn't feel embarrassed or sorry (unless you put no effort into troubleshooting the problem before you asked for help).
 
 If you manage to produce an error I haven't seen before, then congratulations. You have achieved something special, and that achievement should be celebrated. Each new and bizarre error is an opportunity to learn a bit more about the programming language, the operating system, or the interaction between the two.
 

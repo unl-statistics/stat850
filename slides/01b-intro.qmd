@@ -1,6 +1,6 @@
 ---
 title: "Stat 850: Git and Github"
-date: 2023-08-24
+date: 2024-08-29
 format: revealjs
 ---
 
@@ -23,9 +23,6 @@ format: revealjs
 
 ## Reminders
 
-- Register for hypothes.is
-- Annotate the syllabus for this week's reading assignment
-    - due Friday at 8pm
-- Homework due Friday at 8pm
+- Homework due Monday at 8pm
 
 - Read the assigned chapters in the textbook (7, 8) for class next week!

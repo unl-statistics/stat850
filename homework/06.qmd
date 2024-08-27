@@ -1,8 +1,0 @@
----
-title: "Homework 6: Strings and Data Wrangling"
-date: September 29, 2023
----
-
-Note: This assignment must be submitted in github classroom.
-
-{{< include ../homework-repos/06-wrangling/index.qmd >}}

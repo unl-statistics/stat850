@@ -1,8 +1,0 @@
----
-title: "Homework 4: Data Programming"
-date: September 15, 2023
----
-
-Note: This assignment must be submitted in github classroom.
-
-{{< include ../homework-repos/04-data-prog/index.qmd >}}

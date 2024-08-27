@@ -1,8 +1,0 @@
----
-title: "Homework 11: Simulation"
-date: "Nov 20, 2023"
----
-
-Note: This assignment must be submitted in github classroom.
-
-{{< include ../homework-repos/11-simulation/index.qmd >}}

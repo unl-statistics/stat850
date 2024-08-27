@@ -1,7 +1,7 @@
 ---
 title: "Stat 850 Introduction"
 subtitle: "![](https://media.mas.to/masto-public/media_attachments/files/110/911/201/296/167/652/original/d164ffd6f7e5d676.jpeg){width='50%'}"
-date: 2023-08-22
+date: 2024-08-27
 format: revealjs
 ---
 
