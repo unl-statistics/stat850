@@ -28,7 +28,4 @@ format: revealjs
 
 ## Reminders
 
-- Register for hypothes.is
-- Annotate the syllabus for this week's reading assignment
-    - due Friday at 8pm
-- Homework due Friday at 8pm
+- Homework due Monday at 8pm
