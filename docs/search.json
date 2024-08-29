@@ -56,41 +56,6 @@
     "text": "Optional extra steps\n\nOpen a pull request and let your teacher know that you’ve finished this course.\n\nCreate your profile README. Let the world know a little bit more about you! What are you interested in learning? What are you working on? What’s your favorite hobby? Learn more about creating your profile README in the document, “Managing Your Profile README”.\nGo to your user dashboard and create a new repository. Experiment with the features within that repository to familiarize yourself with them.\nLet us know what you liked or didn’t like about the content of this course. What would you like to see more of? What would be interesting or helpful to your learning journey?"
   },
   {
-    "objectID": "slides/01a-intro.html#goals-for-today",
-    "href": "slides/01a-intro.html#goals-for-today",
-    "title": "Stat 850 Introduction",
-    "section": "Goals for Today",
-    "text": "Goals for Today\n\nSyllabus Q&A\nInstall software:\n\nR\nPython\nquarto\nRStudio\ngit\n\nStretch goal: set up Git"
-  },
-  {
-    "objectID": "slides/01a-intro.html#preview-thursday",
-    "href": "slides/01a-intro.html#preview-thursday",
-    "title": "Stat 850 Introduction",
-    "section": "Preview: Thursday",
-    "text": "Preview: Thursday\n\nSet up Git\nHow to submit homework with Github Classroom\nGit concepts: Push/Pull"
-  },
-  {
-    "objectID": "slides/01a-intro.html#reminders",
-    "href": "slides/01a-intro.html#reminders",
-    "title": "Stat 850 Introduction",
-    "section": "Reminders",
-    "text": "Reminders\n\nRegister for hypothes.is\nAnnotate the syllabus for this week’s reading assignment\n\ndue Friday at 8pm\n\nHomework due Friday at 8pm"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Stat 850: Computing Tools for Statistics",
-    "section": "",
-    "text": "Course Materials\nDates shown are due dates (for homework, projects) and dates by which initial comments/annotations should be made (reading).\nMost classes will not contain slide presentations, but when there are slides to share, they will be provided here.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\n\n\nTitle\n\n\n\n\n\n\nSep 2, 2024\n\n\n\n\n\n👋 The Basics of GitHub\n\n\n\n\nAug 29, 2024\n\n\n\n\n\nStat 850: Git and Github\n\n\n\n\nAug 27, 2024\n\n\n\n\n\nStat 850 Introduction\n\n\n\n\nSep 1, 2023\n\n\n\n\n\nHomework: Finding Your Way in R and Python\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About Stat 850",
-    "section": "",
-    "text": "Course Description\nIntroductions to statistical computing packages and document preparation software. Topics include: graphical techniques, data management, Monte Carlo simulation, dynamic document preparation, presentation software.\n\n\nCourse Goals\n\nLearn how to use R and/or Python for data analysis, data processing, and data visualization.\nBecome familiar with the process, techniques, and goals of exploratory data analysis.\nCreate, assess, and debug code effectively.\n\nUse online resources to find software to perform a task, comparing approaches taken by competing programs.\nRead error messages, find related problems in online forums, and isolate the conditions necessary to generate the error.\nGenerate minimum working examples or reproducible examples of errors in order to ask for help effectively.\n\nCommunicate statistical results using reproducible, dynamic tools. Understand the importance of reproducibility in scientific computation.\n\n\n\nCourse Objectives\n(what you should be able to do at the end of this course)\n\nClean and format the data appropriately for the intended analysis or visualization method. (Goals: 1)\nExplore a data set using numerical and visual summaries, developing questions which can be answered using statistics. (Goals: 1, 2)\nEvaluate methods or software to assess relevance to a problem. Compare similar options to determine which are more appropriate for a given application (Goals: 1, 3)\nTest and debug software, using the following sequence: (Goals: 3, 4)\n\nReproduce the error in a new environment,\nCreate a minimal reproducible example,\nResearch the error message and evaluate online resources for relevance,\nAsk for help, describing the error or problem appropriately.\n\nDocument the data, methods, and results of an analysis using reproducible methods. (Goals: 1, 2, 4)\n\n\n\nTextbook\nIn keeping with the principles of this course, any course materials I develop will be made available on GitHub, in the (continuously evolving) course textbook. The book is laid out with the same structure as the course. In order to avoid duplicating content available elsewhere, where it is appropriate, I will link to relevant material available on other sites. This makes the course easier to maintain, but it also ensures you get the most relevant and up to date instructions.\nIn addition, you may find it useful to reference some of the following resources that I have consulted while assembling the textbook. Most are available online for free, though some require an institutional email address.\n\nR for Data Science\nAdvanced R\nPython for Everybody\nPython for Data Analysis *\nPython Data Science Handbook *\n\n* Available online for free if you register with your UNL email address."
-  },
-  {
     "objectID": "slides/01b-intro.html#goals-for-today",
     "href": "slides/01b-intro.html#goals-for-today",
     "title": "Stat 850: Git and Github",
@@ -110,6 +75,83 @@
     "title": "Stat 850: Git and Github",
     "section": "Reminders",
     "text": "Reminders\n\nHomework due Monday at 8pm\nRead the assigned chapters in the textbook (7, 8) for class next week!"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Stat 850",
+    "section": "",
+    "text": "Course Description\nIntroductions to statistical computing packages and document preparation software. Topics include: graphical techniques, data management, Monte Carlo simulation, dynamic document preparation, presentation software.\n\n\nCourse Goals\n\nLearn how to use R and/or Python for data analysis, data processing, and data visualization.\nBecome familiar with the process, techniques, and goals of exploratory data analysis.\nCreate, assess, and debug code effectively.\n\nUse online resources to find software to perform a task, comparing approaches taken by competing programs.\nRead error messages, find related problems in online forums, and isolate the conditions necessary to generate the error.\nGenerate minimum working examples or reproducible examples of errors in order to ask for help effectively.\n\nCommunicate statistical results using reproducible, dynamic tools. Understand the importance of reproducibility in scientific computation.\n\n\n\nCourse Objectives\n(what you should be able to do at the end of this course)\n\nClean and format the data appropriately for the intended analysis or visualization method. (Goals: 1)\nExplore a data set using numerical and visual summaries, developing questions which can be answered using statistics. (Goals: 1, 2)\nEvaluate methods or software to assess relevance to a problem. Compare similar options to determine which are more appropriate for a given application (Goals: 1, 3)\nTest and debug software, using the following sequence: (Goals: 3, 4)\n\nReproduce the error in a new environment,\nCreate a minimal reproducible example,\nResearch the error message and evaluate online resources for relevance,\nAsk for help, describing the error or problem appropriately.\n\nDocument the data, methods, and results of an analysis using reproducible methods. (Goals: 1, 2, 4)\n\n\n\nTextbook\nIn keeping with the principles of this course, any course materials I develop will be made available on GitHub, in the (continuously evolving) course textbook. The book is laid out with the same structure as the course. In order to avoid duplicating content available elsewhere, where it is appropriate, I will link to relevant material available on other sites. This makes the course easier to maintain, but it also ensures you get the most relevant and up to date instructions.\nIn addition, you may find it useful to reference some of the following resources that I have consulted while assembling the textbook. Most are available online for free, though some require an institutional email address.\n\nR for Data Science\nAdvanced R\nPython for Everybody\nPython for Data Analysis *\nPython Data Science Handbook *\n\n* Available online for free if you register with your UNL email address."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Stat 850: Computing Tools for Statistics",
+    "section": "",
+    "text": "Course Materials\nDates shown are due dates (for homework, projects) and dates by which initial comments/annotations should be made (reading).\nMost classes will not contain slide presentations, but when there are slides to share, they will be provided here.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\n\n\nTitle\n\n\n\n\n\n\nSep 2, 2024\n\n\n\n\n\n👋 The Basics of GitHub\n\n\n\n\nAug 29, 2024\n\n\n\n\n\nStat 850: Git and Github\n\n\n\n\nAug 27, 2024\n\n\n\n\n\nStat 850 Introduction\n\n\n\n\nSep 1, 2023\n\n\n\n\n\nHomework: Finding Your Way in R and Python\n\n\n\n\nAug 29, 2023\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "slides/01a-intro.html#goals-for-today",
+    "href": "slides/01a-intro.html#goals-for-today",
+    "title": "Stat 850 Introduction",
+    "section": "Goals for Today",
+    "text": "Goals for Today\n\nSyllabus Q&A\nInstall software:\n\nR\nPython\nquarto\nRStudio\ngit\n\nStretch goal: set up Git"
+  },
+  {
+    "objectID": "slides/01a-intro.html#preview-thursday",
+    "href": "slides/01a-intro.html#preview-thursday",
+    "title": "Stat 850 Introduction",
+    "section": "Preview: Thursday",
+    "text": "Preview: Thursday\n\nSet up Git\nHow to submit homework with Github Classroom\nGit concepts: Push/Pull"
+  },
+  {
+    "objectID": "slides/01a-intro.html#reminders",
+    "href": "slides/01a-intro.html#reminders",
+    "title": "Stat 850 Introduction",
+    "section": "Reminders",
+    "text": "Reminders\n\nHomework due Monday at 8pm"
+  },
+  {
+    "objectID": "slides/02a-Finding-Your-Way.html#todays-goals",
+    "href": "slides/02a-Finding-Your-Way.html#todays-goals",
+    "title": "Finding your way in R and Python",
+    "section": "Today’s Goals:",
+    "text": "Today’s Goals:\n\nKnow the 3 different ways to execute code from within RStudio\n\nTerminal (Command Line)\nSource Script (RStudio Button)\nInteractive Mode (line by line)\n\nDifferentiate between the Console and the Terminal\nDifferentiate between R and Python in the Console"
+  },
+  {
+    "objectID": "slides/02a-Finding-Your-Way.html#rstudio-projects",
+    "href": "slides/02a-Finding-Your-Way.html#rstudio-projects",
+    "title": "Finding your way in R and Python",
+    "section": "RStudio Projects",
+    "text": "RStudio Projects\nRStudio projects are a way to keep your work organized.\nLet’s create one for this week’s class work.\n\nCreating an RStudio Project"
+  },
+  {
+    "objectID": "slides/02a-Finding-Your-Way.html#ways-to-execute-code",
+    "href": "slides/02a-Finding-Your-Way.html#ways-to-execute-code",
+    "title": "Finding your way in R and Python",
+    "section": "Ways to Execute Code",
+    "text": "Ways to Execute Code\nDownload madlibs.py and place it in your newly created project."
+  },
+  {
+    "objectID": "slides/02a-Finding-Your-Way.html#command-line",
+    "href": "slides/02a-Finding-Your-Way.html#command-line",
+    "title": "Finding your way in R and Python",
+    "section": "Command Line",
+    "text": "Command Line\n\nRunning madlibs.py at the command line"
+  },
+  {
+    "objectID": "slides/02a-Finding-Your-Way.html#source-script",
+    "href": "slides/02a-Finding-Your-Way.html#source-script",
+    "title": "Finding your way in R and Python",
+    "section": "Source Script",
+    "text": "Source Script\n\nRunning madlibs.py using Source Script in RStudio"
+  },
+  {
+    "objectID": "slides/02a-Finding-Your-Way.html#next-class",
+    "href": "slides/02a-Finding-Your-Way.html#next-class",
+    "title": "Finding your way in R and Python",
+    "section": "Next Class",
+    "text": "Next Class\n\nBasic Data Types\nCreating Variables\nUsing R/Python as a calculator\nIntro to Debugging"
   },
   {
     "objectID": "homework/02.html",
