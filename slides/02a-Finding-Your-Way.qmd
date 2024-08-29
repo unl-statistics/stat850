@@ -1,6 +1,6 @@
 ---
 title: "Finding your way in R and Python"
-date: "2023-08-29"
+date: "2024-09-03"
 categories: Slides
 format: 
   revealjs:
