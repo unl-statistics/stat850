@@ -1,0 +1,43 @@
+---
+title: "Finding your way in R and Python"
+date: "2024-09-05"
+categories: Slides
+format: 
+  revealjs:
+    theme: default
+---
+
+## Today's Goals:
+
+
+Understand 
+
+- Basic Data Types
+
+- Creating Variables
+
+- Using R/Python as a calculator
+
+
+Practice working with errors
+
+- Intro to Debugging
+
+
+----
+
+## Work on the homework!
+
+Due date: Monday, Sep 9
+
+----
+
+## Next class
+
+- Data structures: vectors, lists, arrays, ...
+
+- Arithmetic operators for matrices
+
+- Function writing in R and Python
+
+
