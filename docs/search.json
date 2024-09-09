@@ -1,143 +1,10 @@
 [
   {
-    "objectID": "homework/02.html",
-    "href": "homework/02.html",
-    "title": "Homework: Finding Your Way in R and Python",
+    "objectID": "homework/03.html",
+    "href": "homework/03.html",
+    "title": "Homework: Fizzbuzz",
     "section": "",
-    "text": "Note: This assignment must be submitted in github classroom.\nInstructions: Once you have finished this assignment, render the document (Ctrl/Cmd-Shift-K or the Render button). Commit the qmd file and any other files you have changed to the repository and push your changes.\nIn Canvas, submit a link to your github repository containing the updated files.\nNote: Submitting your link in Canvas lets me know that you are ready for me to grade your homework. You can commit half-finished or not-working homework to GitHub, and it is good practice to commit frequently (at least at the end of each work session)."
-  },
-  {
-    "objectID": "homework/02.html#pythagorean-theorem-in-r",
-    "href": "homework/02.html#pythagorean-theorem-in-r",
-    "title": "Homework: Finding Your Way in R and Python",
-    "section": "Pythagorean Theorem in R",
-    "text": "Pythagorean Theorem in R\n\\[a^2 + b^2 = c^2\\]\nUse the chunk below to define variables \\(a\\), \\(b\\), and \\(c\\), where you define the values of \\(a\\) and \\(b\\), and \\(c\\) is determined mathematically. You may need to find the square root function in R to make this work.\n\n# Your pythagorean theorem code goes here"
-  },
-  {
-    "objectID": "homework/02.html#quadratic-formula-in-python",
-    "href": "homework/02.html#quadratic-formula-in-python",
-    "title": "Homework: Finding Your Way in R and Python",
-    "section": "Quadratic Formula in Python",
-    "text": "Quadratic Formula in Python\n\\[x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\\]\nUse the chunk below to define variables \\(a\\), \\(b\\), and \\(c\\), and then define \\(x1\\) and \\(x2\\), the possible values for \\(x\\). You may find it helpful to define a few additional variables, such as the value of the discriminant \\(\\sqrt{b^2 - 4ac}\\), to make it easier to calculate the results.\n\n# Your quadratic formula code goes here"
-  },
-  {
-    "objectID": "slides/02b-Finding-Your-Way.html#todays-goals",
-    "href": "slides/02b-Finding-Your-Way.html#todays-goals",
-    "title": "Finding your way in R and Python",
-    "section": "Today’s Goals:",
-    "text": "Today’s Goals:\nUnderstand\n\nBasic Data Types\nCreating Variables\nUsing R/Python as a calculator\n\nPractice working with errors\n\nIntro to Debugging"
-  },
-  {
-    "objectID": "slides/02b-Finding-Your-Way.html#work-on-the-homework",
-    "href": "slides/02b-Finding-Your-Way.html#work-on-the-homework",
-    "title": "Finding your way in R and Python",
-    "section": "Work on the homework!",
-    "text": "Work on the homework!\nDue date: Monday, Sep 9"
-  },
-  {
-    "objectID": "slides/02b-Finding-Your-Way.html#next-class",
-    "href": "slides/02b-Finding-Your-Way.html#next-class",
-    "title": "Finding your way in R and Python",
-    "section": "Next class",
-    "text": "Next class\n\nData structures: vectors, lists, arrays, …\nArithmetic operators for matrices\nFunction writing in R and Python"
-  },
-  {
-    "objectID": "slides/01b-intro.html#goals-for-today",
-    "href": "slides/01b-intro.html#goals-for-today",
-    "title": "Stat 850: Git and Github",
-    "section": "Goals for Today",
-    "text": "Goals for Today\n\nSet up Git (Chapter 5 of the textbook)\nHow to submit homework with Github Classroom\nGit concepts: Push/Pull"
-  },
-  {
-    "objectID": "slides/01b-intro.html#preview-next-week",
-    "href": "slides/01b-intro.html#preview-next-week",
-    "title": "Stat 850: Git and Github",
-    "section": "Preview: Next Week",
-    "text": "Preview: Next Week\n\nFinding your way in R and Python\n\nNavigating RStudio\nExecution modes: script, console, interactive\nPython vs. R code\n\nIntroduction to Programming"
-  },
-  {
-    "objectID": "slides/01b-intro.html#reminders",
-    "href": "slides/01b-intro.html#reminders",
-    "title": "Stat 850: Git and Github",
-    "section": "Reminders",
-    "text": "Reminders\n\nHomework due Monday at 8pm\nRead the assigned chapters in the textbook (7, 8) for class next week!"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About Stat 850",
-    "section": "",
-    "text": "Course Description\nIntroductions to statistical computing packages and document preparation software. Topics include: graphical techniques, data management, Monte Carlo simulation, dynamic document preparation, presentation software.\n\n\nCourse Goals\n\nLearn how to use R and/or Python for data analysis, data processing, and data visualization.\nBecome familiar with the process, techniques, and goals of exploratory data analysis.\nCreate, assess, and debug code effectively.\n\nUse online resources to find software to perform a task, comparing approaches taken by competing programs.\nRead error messages, find related problems in online forums, and isolate the conditions necessary to generate the error.\nGenerate minimum working examples or reproducible examples of errors in order to ask for help effectively.\n\nCommunicate statistical results using reproducible, dynamic tools. Understand the importance of reproducibility in scientific computation.\n\n\n\nCourse Objectives\n(what you should be able to do at the end of this course)\n\nClean and format the data appropriately for the intended analysis or visualization method. (Goals: 1)\nExplore a data set using numerical and visual summaries, developing questions which can be answered using statistics. (Goals: 1, 2)\nEvaluate methods or software to assess relevance to a problem. Compare similar options to determine which are more appropriate for a given application (Goals: 1, 3)\nTest and debug software, using the following sequence: (Goals: 3, 4)\n\nReproduce the error in a new environment,\nCreate a minimal reproducible example,\nResearch the error message and evaluate online resources for relevance,\nAsk for help, describing the error or problem appropriately.\n\nDocument the data, methods, and results of an analysis using reproducible methods. (Goals: 1, 2, 4)\n\n\n\nTextbook\nIn keeping with the principles of this course, any course materials I develop will be made available on GitHub, in the (continuously evolving) course textbook. The book is laid out with the same structure as the course. In order to avoid duplicating content available elsewhere, where it is appropriate, I will link to relevant material available on other sites. This makes the course easier to maintain, but it also ensures you get the most relevant and up to date instructions.\nIn addition, you may find it useful to reference some of the following resources that I have consulted while assembling the textbook. Most are available online for free, though some require an institutional email address.\n\nR for Data Science\nAdvanced R\nPython for Everybody\nPython for Data Analysis *\nPython Data Science Handbook *\n\n* Available online for free if you register with your UNL email address."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Stat 850: Computing Tools for Statistics",
-    "section": "",
-    "text": "Course Materials\nDates shown are due dates (for homework, projects) and dates by which initial comments/annotations should be made (reading).\nMost classes will not contain slide presentations, but when there are slides to share, they will be provided here.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\n\n\nTitle\n\n\n\n\n\n\nSep 13, 2024\n\n\n\n\n\nHomework: Fizzbuzz\n\n\n\n\nSep 9, 2024\n\n\n\n\n\nHomework: Finding Your Way in R and Python\n\n\n\n\nSep 5, 2024\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nSep 3, 2024\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nSep 2, 2024\n\n\n\n\n\n👋 The Basics of GitHub\n\n\n\n\nAug 29, 2024\n\n\n\n\n\nStat 850: Git and Github\n\n\n\n\nAug 27, 2024\n\n\n\n\n\nStat 850 Introduction\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "slides/01a-intro.html#goals-for-today",
-    "href": "slides/01a-intro.html#goals-for-today",
-    "title": "Stat 850 Introduction",
-    "section": "Goals for Today",
-    "text": "Goals for Today\n\nSyllabus Q&A\nInstall software:\n\nR\nPython\nquarto\nRStudio\ngit\n\nStretch goal: set up Git"
-  },
-  {
-    "objectID": "slides/01a-intro.html#preview-thursday",
-    "href": "slides/01a-intro.html#preview-thursday",
-    "title": "Stat 850 Introduction",
-    "section": "Preview: Thursday",
-    "text": "Preview: Thursday\n\nSet up Git\nHow to submit homework with Github Classroom\nGit concepts: Push/Pull"
-  },
-  {
-    "objectID": "slides/01a-intro.html#reminders",
-    "href": "slides/01a-intro.html#reminders",
-    "title": "Stat 850 Introduction",
-    "section": "Reminders",
-    "text": "Reminders\n\nHomework due Monday at 8pm"
-  },
-  {
-    "objectID": "slides/02a-Finding-Your-Way.html#todays-goals",
-    "href": "slides/02a-Finding-Your-Way.html#todays-goals",
-    "title": "Finding your way in R and Python",
-    "section": "Today’s Goals:",
-    "text": "Today’s Goals:\n\nKnow the 3 different ways to execute code from within RStudio\n\nTerminal (Command Line)\nSource Script (RStudio Button)\nInteractive Mode (line by line)\n\nDifferentiate between the Console and the Terminal\nDifferentiate between R and Python in the Console"
-  },
-  {
-    "objectID": "slides/02a-Finding-Your-Way.html#rstudio-projects",
-    "href": "slides/02a-Finding-Your-Way.html#rstudio-projects",
-    "title": "Finding your way in R and Python",
-    "section": "RStudio Projects",
-    "text": "RStudio Projects\nRStudio projects are a way to keep your work organized.\nLet’s create one for this week’s class work.\n\nCreating an RStudio Project"
-  },
-  {
-    "objectID": "slides/02a-Finding-Your-Way.html#ways-to-execute-code",
-    "href": "slides/02a-Finding-Your-Way.html#ways-to-execute-code",
-    "title": "Finding your way in R and Python",
-    "section": "Ways to Execute Code",
-    "text": "Ways to Execute Code\nDownload madlibs.py and place it in your newly created project."
-  },
-  {
-    "objectID": "slides/02a-Finding-Your-Way.html#command-line",
-    "href": "slides/02a-Finding-Your-Way.html#command-line",
-    "title": "Finding your way in R and Python",
-    "section": "Command Line",
-    "text": "Command Line\n\nRunning madlibs.py at the command line"
-  },
-  {
-    "objectID": "slides/02a-Finding-Your-Way.html#source-script",
-    "href": "slides/02a-Finding-Your-Way.html#source-script",
-    "title": "Finding your way in R and Python",
-    "section": "Source Script",
-    "text": "Source Script\n\nRunning madlibs.py using Source Script in RStudio"
-  },
-  {
-    "objectID": "slides/02a-Finding-Your-Way.html#next-class",
-    "href": "slides/02a-Finding-Your-Way.html#next-class",
-    "title": "Finding your way in R and Python",
-    "section": "Next Class",
-    "text": "Next Class\n\nBasic Data Types\nCreating Variables\nUsing R/Python as a calculator\nIntro to Debugging"
+    "text": "Note: This assignment must be submitted in github classroom.\nInstructions:\n\nYou can answer the questions below in either R or Python. I will give you 50% extra credit if you provide answers in both languages. Otherwise, please feel free to delete the code chunks corresponding to the language you don’t wish to work in.\nOnce you have finished this assignment, render the document (Ctrl/Cmd-Shift-K or the Render button).\nCommit the qmd file and any other files you have changed to the repository and push your changes.\nIn Canvas, submit a link to your github repository containing the updated files.\n\n\nIntroduction to Fizzbuzz\nThe “FizzBuzz Test” is a famous programming interview question.\n\nWrite a program that prints the numbers from 1 to 30. But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz”\n\nStart by filling in the following table for the numbers 1:30 manually, to get a feel for the task.\n\nFizzbuzz for 1:30\n\n\nInput\nOutput\n\n\n\n\n1\n\n\n\n2\n\n\n\n3\n\n\n\n4\n\n\n\n5\n\n\n\n6\n\n\n\n7\n\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n11\n\n\n\n12\n\n\n\n13\n\n\n\n14\n\n\n\n15\n\n\n\n16\n\n\n\n17\n\n\n\n18\n\n\n\n19\n\n\n\n20\n\n\n\n21\n\n\n\n22\n\n\n\n23\n\n\n\n24\n\n\n\n25\n\n\n\n26\n\n\n\n27\n\n\n\n28\n\n\n\n29\n\n\n\n30\n\n\n\n\nOn paper or using a tool such as excalidraw.com, create a program flow map for the sequence of if-statements you need to evaluate for fizzbuzz. Add the picture to the folder containing this file, and name the picture flowchart.png. Add the picture to Git and commit/push your changes.\n\n\n\nProgram Flow map for FizzBuzz\n\n\nIn the chunk below, write code which will solve this problem for a single value x. You should be able to change the value of x at the top of the chunk and still get the correct answer.\n\nx &lt;- 3\n\n# FizzBuzz code goes here\n\n\nx = 3\n\n# FizzBuzz code goes here\n\nModify the code above so that the result is stored in a value y.\n\nx &lt;- 3\ny &lt;- NA\n# FizzBuzz code goes here\n\n\n\nprint(paste(\"For x = \", x, \" my code produces \", y, sep = \"\"))\n\n[1] \"For x = 3 my code produces NA\"\n\n\n\nimport numpy as np\nx = 3\ny = np.nan\n# FizzBuzz code goes here\n\n\n\nprint(\"For x = \"+ str(x)+ \" my code produces \"+ str(y))\n\nFor x = 3 my code produces nan\n\n\n\n\nA vector of FizzBuzz\nThe code in the previous problem only solves FizzBuzz for a single value of x. Extend your code using a loop so that it will work for all values in a vector xx, storing values in a corresponding vector yy.\nYou can copy/paste code from previous chunks to make this chunk easier.\n\nxx &lt;- 1:30\nyy &lt;- rep(NA, times = 30)\n\n# FizzBuzz code goes here\n\n\n# Printing the results in a data frame\nres &lt;- cbind(x = xx, result = yy)\nres\n\n       x result\n [1,]  1     NA\n [2,]  2     NA\n [3,]  3     NA\n [4,]  4     NA\n [5,]  5     NA\n [6,]  6     NA\n [7,]  7     NA\n [8,]  8     NA\n [9,]  9     NA\n[10,] 10     NA\n[11,] 11     NA\n[12,] 12     NA\n[13,] 13     NA\n[14,] 14     NA\n[15,] 15     NA\n[16,] 16     NA\n[17,] 17     NA\n[18,] 18     NA\n[19,] 19     NA\n[20,] 20     NA\n[21,] 21     NA\n[22,] 22     NA\n[23,] 23     NA\n[24,] 24     NA\n[25,] 25     NA\n[26,] 26     NA\n[27,] 27     NA\n[28,] 28     NA\n[29,] 29     NA\n[30,] 30     NA\n\n\n\nimport pandas as pd\nxx = np.array(range(30)) + 1\nyy = [np.nan]*30\n\n# FizzBuzz code goes here\n\n\n# Printing the results in a data frame\nres = pd.DataFrame({\"x\": xx, \"result\": yy})\nres\n\n     x  result\n0    1     NaN\n1    2     NaN\n2    3     NaN\n3    4     NaN\n4    5     NaN\n5    6     NaN\n6    7     NaN\n7    8     NaN\n8    9     NaN\n9   10     NaN\n10  11     NaN\n11  12     NaN\n12  13     NaN\n13  14     NaN\n14  15     NaN\n15  16     NaN\n16  17     NaN\n17  18     NaN\n18  19     NaN\n19  20     NaN\n20  21     NaN\n21  22     NaN\n22  23     NaN\n23  24     NaN\n24  25     NaN\n25  26     NaN\n26  27     NaN\n27  28     NaN\n28  29     NaN\n29  30     NaN\n\n\n\n\nFunctions and FizzBuzz\nIn the previous question, you extended your fizzbuzz code to iterate through a vector xx and produce a result yy. Can you generalize this, writing a function fizzbuzz that takes a variable x and returns a corresponding fizzbuzzified variable? Your function should be able to handle x that is a vector or a scalar value, and should store your solution in yy.\n\nxx &lt;- sample(1:100, 10) # get a random xx\nyy &lt;- rep(NA, 10)\n\nfizzbuzz &lt;- function(x) {\n  # Your code goes here\n}\n\nyy &lt;- fizzbuzz(x = xx)\n\n# Printing the results in a data frame\nres &lt;- cbind(x = xx, result = yy)\nres\n\n        x\n [1,]  65\n [2,]   7\n [3,]  71\n [4,]  36\n [5,]  66\n [6,]  20\n [7,]   3\n [8,]  86\n [9,]  21\n[10,] 100\n\n\n\nimport pandas as pd\nfrom random import choices\nxx = np.array(choices(range(100), k = 10)) + 1\n\n\ndef fizzbuzz(x):\n  y = [np.nan]*len(x) # this just defines something to return\n  # Your code goes here\n  return y\n\nyy = fizzbuzz(x = xx)\n\n# Printing the results in a data frame\nres = pd.DataFrame({\"x\": xx, \"result\": yy})\nres\n\n    x  result\n0  32     NaN\n1  98     NaN\n2  31     NaN\n3  42     NaN\n4  40     NaN\n5  36     NaN\n6  36     NaN\n7  13     NaN\n8  53     NaN\n9  33     NaN\n\n\n\n\nDefensive Programming\nYou cannot always assume that the person using your functions knows what they’re doing. Add a check to the function you wrote in the last question so that it will handle non-numeric input by issuing an error message.\nIn R, you can use the function stopifnot() to halt function execution if there is an error; this will give you a basic error message.\n\nstopifnot(2 &gt; 3)\n\nError: 2 &gt; 3 is not TRUE\n\n\nIn Python, you can use a try: statement with a except: clause. This functions like an if-else statement, where if no error occurs, the except statement is never executed.\n\ntry: \n  int(\"hello\")\nexcept ValueError: \n  print(\"Error: could not turn value into an integer\")\n\nError: could not turn value into an integer\n\n\nSee more examples of this in the Input Validation section of the textbook.\n\nxx &lt;- sample(1:100, 10) # get a random xx\nyy &lt;- rep(NA, 10)\n\nfizzbuzz &lt;- function(x) {\n  # Your code goes here\n}\n\nyy &lt;- fizzbuzz(x = xx)\n\n# Printing the results in a data frame\nres &lt;- cbind(x = xx, result = yy)\nres\n\n       x\n [1,] 88\n [2,] 10\n [3,] 38\n [4,] 36\n [5,] 48\n [6,] 66\n [7,] 21\n [8,] 78\n [9,] 40\n[10,] 24\n\n\n\nimport pandas as pd\nfrom random import choices\nxx = np.array(choices(range(100), k = 10)) + 1\n\n\ndef fizzbuzz(x):\n  y = [np.nan]*len(x) # this just defines something to return\n  # Your code goes here\n  return y\n\nyy = fizzbuzz(x = xx)\n\n# Printing the results in a data frame\nres = pd.DataFrame({\"x\": xx, \"result\": yy})\nres\n\n    x  result\n0  99     NaN\n1  84     NaN\n2  75     NaN\n3  28     NaN\n4  57     NaN\n5  60     NaN\n6  43     NaN\n7  22     NaN\n8  19     NaN\n9  80     NaN"
   },
   {
     "objectID": "homework/01.html",
@@ -196,10 +63,164 @@
     "text": "Optional extra steps\n\nOpen a pull request and let your teacher know that you’ve finished this course.\n\nCreate your profile README. Let the world know a little bit more about you! What are you interested in learning? What are you working on? What’s your favorite hobby? Learn more about creating your profile README in the document, “Managing Your Profile README”.\nGo to your user dashboard and create a new repository. Experiment with the features within that repository to familiarize yourself with them.\nLet us know what you liked or didn’t like about the content of this course. What would you like to see more of? What would be interesting or helpful to your learning journey?"
   },
   {
-    "objectID": "homework/03.html",
-    "href": "homework/03.html",
-    "title": "Homework: Fizzbuzz",
+    "objectID": "slides/02a-Finding-Your-Way.html#todays-goals",
+    "href": "slides/02a-Finding-Your-Way.html#todays-goals",
+    "title": "Finding your way in R and Python",
+    "section": "Today’s Goals:",
+    "text": "Today’s Goals:\n\nKnow the 3 different ways to execute code from within RStudio\n\nTerminal (Command Line)\nSource Script (RStudio Button)\nInteractive Mode (line by line)\n\nDifferentiate between the Console and the Terminal\nDifferentiate between R and Python in the Console"
+  },
+  {
+    "objectID": "slides/02a-Finding-Your-Way.html#rstudio-projects",
+    "href": "slides/02a-Finding-Your-Way.html#rstudio-projects",
+    "title": "Finding your way in R and Python",
+    "section": "RStudio Projects",
+    "text": "RStudio Projects\nRStudio projects are a way to keep your work organized.\nLet’s create one for this week’s class work.\n\nCreating an RStudio Project"
+  },
+  {
+    "objectID": "slides/02a-Finding-Your-Way.html#ways-to-execute-code",
+    "href": "slides/02a-Finding-Your-Way.html#ways-to-execute-code",
+    "title": "Finding your way in R and Python",
+    "section": "Ways to Execute Code",
+    "text": "Ways to Execute Code\nDownload madlibs.py and place it in your newly created project."
+  },
+  {
+    "objectID": "slides/02a-Finding-Your-Way.html#command-line",
+    "href": "slides/02a-Finding-Your-Way.html#command-line",
+    "title": "Finding your way in R and Python",
+    "section": "Command Line",
+    "text": "Command Line\n\nRunning madlibs.py at the command line"
+  },
+  {
+    "objectID": "slides/02a-Finding-Your-Way.html#source-script",
+    "href": "slides/02a-Finding-Your-Way.html#source-script",
+    "title": "Finding your way in R and Python",
+    "section": "Source Script",
+    "text": "Source Script\n\nRunning madlibs.py using Source Script in RStudio"
+  },
+  {
+    "objectID": "slides/02a-Finding-Your-Way.html#next-class",
+    "href": "slides/02a-Finding-Your-Way.html#next-class",
+    "title": "Finding your way in R and Python",
+    "section": "Next Class",
+    "text": "Next Class\n\nBasic Data Types\nCreating Variables\nUsing R/Python as a calculator\nIntro to Debugging"
+  },
+  {
+    "objectID": "slides/01a-intro.html#goals-for-today",
+    "href": "slides/01a-intro.html#goals-for-today",
+    "title": "Stat 850 Introduction",
+    "section": "Goals for Today",
+    "text": "Goals for Today\n\nSyllabus Q&A\nInstall software:\n\nR\nPython\nquarto\nRStudio\ngit\n\nStretch goal: set up Git"
+  },
+  {
+    "objectID": "slides/01a-intro.html#preview-thursday",
+    "href": "slides/01a-intro.html#preview-thursday",
+    "title": "Stat 850 Introduction",
+    "section": "Preview: Thursday",
+    "text": "Preview: Thursday\n\nSet up Git\nHow to submit homework with Github Classroom\nGit concepts: Push/Pull"
+  },
+  {
+    "objectID": "slides/01a-intro.html#reminders",
+    "href": "slides/01a-intro.html#reminders",
+    "title": "Stat 850 Introduction",
+    "section": "Reminders",
+    "text": "Reminders\n\nHomework due Monday at 8pm"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Stat 850: Computing Tools for Statistics",
     "section": "",
-    "text": "Note: This assignment must be submitted in github classroom.\nInstructions:\n\nYou can answer the questions below in either R or Python. I will give you 50% extra credit if you provide answers in both languages. Otherwise, please feel free to delete the code chunks corresponding to the language you don’t wish to work in.\nOnce you have finished this assignment, render the document (Ctrl/Cmd-Shift-K or the Render button).\nCommit the qmd file and any other files you have changed to the repository and push your changes.\nIn Canvas, submit a link to your github repository containing the updated files.\n\n\nIntroduction to Fizzbuzz\nThe “FizzBuzz Test” is a famous programming interview question.\n\nWrite a program that prints the numbers from 1 to 30. But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz”\n\nStart by filling in the following table for the numbers 1:30 manually, to get a feel for the task.\n\nFizzbuzz for 1:30\n\n\nInput\nOutput\n\n\n\n\n1\n\n\n\n2\n\n\n\n3\n\n\n\n4\n\n\n\n5\n\n\n\n6\n\n\n\n7\n\n\n\n8\n\n\n\n9\n\n\n\n10\n\n\n\n11\n\n\n\n12\n\n\n\n13\n\n\n\n14\n\n\n\n15\n\n\n\n16\n\n\n\n17\n\n\n\n18\n\n\n\n19\n\n\n\n20\n\n\n\n21\n\n\n\n22\n\n\n\n23\n\n\n\n24\n\n\n\n25\n\n\n\n26\n\n\n\n27\n\n\n\n28\n\n\n\n29\n\n\n\n30\n\n\n\n\nOn paper or using a tool such as excalidraw.com, create a program flow map for the sequence of if-statements you need to evaluate for fizzbuzz. Add the picture to the folder containing this file, and name the picture flowchart.png. Add the picture to Git and commit/push your changes.\n\n\n\nProgram Flow map for FizzBuzz\n\n\nIn the chunk below, write code which will solve this problem for a single value x. You should be able to change the value of x at the top of the chunk and still get the correct answer.\n\nx &lt;- 3\n\n# FizzBuzz code goes here\n\n\nx = 3\n\n# FizzBuzz code goes here\n\nModify the code above so that the result is stored in a value y.\n\nx &lt;- 3\ny &lt;- NA\n# FizzBuzz code goes here\n\n\n\nprint(paste(\"For x = \", x, \" my code produces \", y, sep = \"\"))\n\n[1] \"For x = 3 my code produces NA\"\n\n\n\nimport numpy as np\nx = 3\ny = np.nan\n\nAttributeError: module 'numpy' has no attribute 'nan'\n\n# FizzBuzz code goes here\n\n\n\nprint(\"For x = \"+ str(x)+ \" my code produces \"+ str(y))\n\nNameError: name 'y' is not defined\n\n\n\n\nA vector of FizzBuzz\nThe code in the previous problem only solves FizzBuzz for a single value of x. Extend your code using a loop so that it will work for all values in a vector xx, storing values in a corresponding vector yy.\nYou can copy/paste code from previous chunks to make this chunk easier.\n\nxx &lt;- 1:30\nyy &lt;- rep(NA, times = 30)\n\n# FizzBuzz code goes here\n\n\n# Printing the results in a data frame\nres &lt;- cbind(x = xx, result = yy)\nres\n\n       x result\n [1,]  1     NA\n [2,]  2     NA\n [3,]  3     NA\n [4,]  4     NA\n [5,]  5     NA\n [6,]  6     NA\n [7,]  7     NA\n [8,]  8     NA\n [9,]  9     NA\n[10,] 10     NA\n[11,] 11     NA\n[12,] 12     NA\n[13,] 13     NA\n[14,] 14     NA\n[15,] 15     NA\n[16,] 16     NA\n[17,] 17     NA\n[18,] 18     NA\n[19,] 19     NA\n[20,] 20     NA\n[21,] 21     NA\n[22,] 22     NA\n[23,] 23     NA\n[24,] 24     NA\n[25,] 25     NA\n[26,] 26     NA\n[27,] 27     NA\n[28,] 28     NA\n[29,] 29     NA\n[30,] 30     NA\n\n\n\nimport pandas as pd\n\nModuleNotFoundError: No module named 'pandas'\n\nxx = np.array(range(30)) + 1\n\nAttributeError: module 'numpy' has no attribute 'array'\n\nyy = [np.nan]*30\n\nAttributeError: module 'numpy' has no attribute 'nan'\n\n# FizzBuzz code goes here\n\n\n# Printing the results in a data frame\nres = pd.DataFrame({\"x\": xx, \"result\": yy})\n\nNameError: name 'pd' is not defined\n\nres\n\nNameError: name 'res' is not defined\n\n\n\n\nFunctions and FizzBuzz\nIn the previous question, you extended your fizzbuzz code to iterate through a vector xx and produce a result yy. Can you generalize this, writing a function fizzbuzz that takes a variable x and returns a corresponding fizzbuzzified variable? Your function should be able to handle x that is a vector or a scalar value, and should store your solution in yy.\n\nxx &lt;- sample(1:100, 10) # get a random xx\nyy &lt;- rep(NA, 10)\n\nfizzbuzz &lt;- function(x) {\n  # Your code goes here\n}\n\nyy &lt;- fizzbuzz(x = xx)\n\n# Printing the results in a data frame\nres &lt;- cbind(x = xx, result = yy)\nres\n\n        x\n [1,]  51\n [2,]  64\n [3,]  84\n [4,] 100\n [5,]  27\n [6,]  85\n [7,]  95\n [8,]  87\n [9,]  19\n[10,]  28\n\n\n\nimport pandas as pd\n\nModuleNotFoundError: No module named 'pandas'\n\nfrom random import choices\nxx = np.array(choices(range(100), k = 10)) + 1\n\nAttributeError: module 'numpy' has no attribute 'array'\n\ndef fizzbuzz(x):\n  y = [np.nan]*len(x) # this just defines something to return\n  # Your code goes here\n  return y\n\nyy = fizzbuzz(x = xx)\n\nNameError: name 'xx' is not defined\n\n# Printing the results in a data frame\nres = pd.DataFrame({\"x\": xx, \"result\": yy})\n\nNameError: name 'pd' is not defined\n\nres\n\nNameError: name 'res' is not defined\n\n\n\n\nDefensive Programming\nYou cannot always assume that the person using your functions knows what they’re doing. Add a check to the function you wrote in the last question so that it will handle non-numeric input by issuing an error message.\nIn R, you can use the function stopifnot() to halt function execution if there is an error; this will give you a basic error message.\n\nstopifnot(2 &gt; 3)\n\nError: 2 &gt; 3 is not TRUE\n\n\nIn Python, you can use a try: statement with a except: clause. This functions like an if-else statement, where if no error occurs, the except statement is never executed.\n\ntry: \n  int(\"hello\")\nexcept ValueError: \n  print(\"Error: could not turn value into an integer\")\n\nError: could not turn value into an integer\n\n\nSee more examples of this in the Input Validation section of the textbook.\n\nxx &lt;- sample(1:100, 10) # get a random xx\nyy &lt;- rep(NA, 10)\n\nfizzbuzz &lt;- function(x) {\n  # Your code goes here\n}\n\nyy &lt;- fizzbuzz(x = xx)\n\n# Printing the results in a data frame\nres &lt;- cbind(x = xx, result = yy)\nres\n\n       x\n [1,] 71\n [2,] 79\n [3,] 35\n [4,] 60\n [5,] 15\n [6,]  3\n [7,] 24\n [8,] 90\n [9,] 27\n[10,] 11\n\n\n\nimport pandas as pd\n\nModuleNotFoundError: No module named 'pandas'\n\nfrom random import choices\nxx = np.array(choices(range(100), k = 10)) + 1\n\nAttributeError: module 'numpy' has no attribute 'array'\n\ndef fizzbuzz(x):\n  y = [np.nan]*len(x) # this just defines something to return\n  # Your code goes here\n  return y\n\nyy = fizzbuzz(x = xx)\n\nNameError: name 'xx' is not defined\n\n# Printing the results in a data frame\nres = pd.DataFrame({\"x\": xx, \"result\": yy})\n\nNameError: name 'pd' is not defined\n\nres\n\nNameError: name 'res' is not defined"
+    "text": "Course Materials\nDates shown are due dates (for homework, projects) and dates by which initial comments/annotations should be made (reading).\nMost classes will not contain slide presentations, but when there are slides to share, they will be provided here.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\n\n\nTitle\n\n\n\n\n\n\nSep 20, 2024\n\n\n\n\n\nHomework: Data Programming\n\n\n\n\nSep 13, 2024\n\n\n\n\n\nHomework: Fizzbuzz\n\n\n\n\nSep 9, 2024\n\n\n\n\n\nHomework: Finding Your Way in R and Python\n\n\n\n\nSep 5, 2024\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nSep 3, 2024\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nSep 2, 2024\n\n\n\n\n\n👋 The Basics of GitHub\n\n\n\n\nAug 29, 2024\n\n\n\n\n\nStat 850: Git and Github\n\n\n\n\nAug 27, 2024\n\n\n\n\n\nStat 850 Introduction\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Stat 850",
+    "section": "",
+    "text": "Course Description\nIntroductions to statistical computing packages and document preparation software. Topics include: graphical techniques, data management, Monte Carlo simulation, dynamic document preparation, presentation software.\n\n\nCourse Goals\n\nLearn how to use R and/or Python for data analysis, data processing, and data visualization.\nBecome familiar with the process, techniques, and goals of exploratory data analysis.\nCreate, assess, and debug code effectively.\n\nUse online resources to find software to perform a task, comparing approaches taken by competing programs.\nRead error messages, find related problems in online forums, and isolate the conditions necessary to generate the error.\nGenerate minimum working examples or reproducible examples of errors in order to ask for help effectively.\n\nCommunicate statistical results using reproducible, dynamic tools. Understand the importance of reproducibility in scientific computation.\n\n\n\nCourse Objectives\n(what you should be able to do at the end of this course)\n\nClean and format the data appropriately for the intended analysis or visualization method. (Goals: 1)\nExplore a data set using numerical and visual summaries, developing questions which can be answered using statistics. (Goals: 1, 2)\nEvaluate methods or software to assess relevance to a problem. Compare similar options to determine which are more appropriate for a given application (Goals: 1, 3)\nTest and debug software, using the following sequence: (Goals: 3, 4)\n\nReproduce the error in a new environment,\nCreate a minimal reproducible example,\nResearch the error message and evaluate online resources for relevance,\nAsk for help, describing the error or problem appropriately.\n\nDocument the data, methods, and results of an analysis using reproducible methods. (Goals: 1, 2, 4)\n\n\n\nTextbook\nIn keeping with the principles of this course, any course materials I develop will be made available on GitHub, in the (continuously evolving) course textbook. The book is laid out with the same structure as the course. In order to avoid duplicating content available elsewhere, where it is appropriate, I will link to relevant material available on other sites. This makes the course easier to maintain, but it also ensures you get the most relevant and up to date instructions.\nIn addition, you may find it useful to reference some of the following resources that I have consulted while assembling the textbook. Most are available online for free, though some require an institutional email address.\n\nR for Data Science\nAdvanced R\nPython for Everybody\nPython for Data Analysis *\nPython Data Science Handbook *\n\n* Available online for free if you register with your UNL email address."
+  },
+  {
+    "objectID": "slides/01b-intro.html#goals-for-today",
+    "href": "slides/01b-intro.html#goals-for-today",
+    "title": "Stat 850: Git and Github",
+    "section": "Goals for Today",
+    "text": "Goals for Today\n\nSet up Git (Chapter 5 of the textbook)\nHow to submit homework with Github Classroom\nGit concepts: Push/Pull"
+  },
+  {
+    "objectID": "slides/01b-intro.html#preview-next-week",
+    "href": "slides/01b-intro.html#preview-next-week",
+    "title": "Stat 850: Git and Github",
+    "section": "Preview: Next Week",
+    "text": "Preview: Next Week\n\nFinding your way in R and Python\n\nNavigating RStudio\nExecution modes: script, console, interactive\nPython vs. R code\n\nIntroduction to Programming"
+  },
+  {
+    "objectID": "slides/01b-intro.html#reminders",
+    "href": "slides/01b-intro.html#reminders",
+    "title": "Stat 850: Git and Github",
+    "section": "Reminders",
+    "text": "Reminders\n\nHomework due Monday at 8pm\nRead the assigned chapters in the textbook (7, 8) for class next week!"
+  },
+  {
+    "objectID": "slides/02b-Finding-Your-Way.html#todays-goals",
+    "href": "slides/02b-Finding-Your-Way.html#todays-goals",
+    "title": "Finding your way in R and Python",
+    "section": "Today’s Goals:",
+    "text": "Today’s Goals:\nUnderstand\n\nBasic Data Types\nCreating Variables\nUsing R/Python as a calculator\n\nPractice working with errors\n\nIntro to Debugging"
+  },
+  {
+    "objectID": "slides/02b-Finding-Your-Way.html#work-on-the-homework",
+    "href": "slides/02b-Finding-Your-Way.html#work-on-the-homework",
+    "title": "Finding your way in R and Python",
+    "section": "Work on the homework!",
+    "text": "Work on the homework!\nDue date: Monday, Sep 9"
+  },
+  {
+    "objectID": "slides/02b-Finding-Your-Way.html#next-class",
+    "href": "slides/02b-Finding-Your-Way.html#next-class",
+    "title": "Finding your way in R and Python",
+    "section": "Next class",
+    "text": "Next class\n\nData structures: vectors, lists, arrays, …\nArithmetic operators for matrices\nFunction writing in R and Python"
+  },
+  {
+    "objectID": "homework/02.html",
+    "href": "homework/02.html",
+    "title": "Homework: Finding Your Way in R and Python",
+    "section": "",
+    "text": "Note: This assignment must be submitted in github classroom.\nInstructions: Once you have finished this assignment, render the document (Ctrl/Cmd-Shift-K or the Render button). Commit the qmd file and any other files you have changed to the repository and push your changes.\nIn Canvas, submit a link to your github repository containing the updated files.\nNote: Submitting your link in Canvas lets me know that you are ready for me to grade your homework. You can commit half-finished or not-working homework to GitHub, and it is good practice to commit frequently (at least at the end of each work session)."
+  },
+  {
+    "objectID": "homework/02.html#pythagorean-theorem-in-r",
+    "href": "homework/02.html#pythagorean-theorem-in-r",
+    "title": "Homework: Finding Your Way in R and Python",
+    "section": "Pythagorean Theorem in R",
+    "text": "Pythagorean Theorem in R\n\\[a^2 + b^2 = c^2\\]\nUse the chunk below to define variables \\(a\\), \\(b\\), and \\(c\\), where you define the values of \\(a\\) and \\(b\\), and \\(c\\) is determined mathematically. You may need to find the square root function in R to make this work.\n\n# Your pythagorean theorem code goes here"
+  },
+  {
+    "objectID": "homework/02.html#quadratic-formula-in-python",
+    "href": "homework/02.html#quadratic-formula-in-python",
+    "title": "Homework: Finding Your Way in R and Python",
+    "section": "Quadratic Formula in Python",
+    "text": "Quadratic Formula in Python\n\\[x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}\\]\nUse the chunk below to define variables \\(a\\), \\(b\\), and \\(c\\), and then define \\(x1\\) and \\(x2\\), the possible values for \\(x\\). You may find it helpful to define a few additional variables, such as the value of the discriminant \\(\\sqrt{b^2 - 4ac}\\), to make it easier to calculate the results.\n\n# Your quadratic formula code goes here"
+  },
+  {
+    "objectID": "homework/04.html",
+    "href": "homework/04.html",
+    "title": "Homework: Data Programming",
+    "section": "",
+    "text": "Note: This assignment must be submitted in github classroom.\nInstructions:"
+  },
+  {
+    "objectID": "homework/04.html#r",
+    "href": "homework/04.html#r",
+    "title": "Homework: Data Programming",
+    "section": "R",
+    "text": "R\n\nmonth.name is a built-in vector containing month names that you can use to create a factor variable. Factor variables can be easily converted into numeric variables. This might help you get a numeric month, which might help you get to a fractional year.\nsubset() is a function that will subset a data frame based on a logical condition. It might be easier to use than logical indexing (though you can use either). You can also use the filter function in the dplyr package.\nTo get a line graph in ggplot2, use geom_line(). Using aes(color = varname) will color the lines by variable name.\nSome sample code to make a line graph in ggplot is provided below:\n\n\nlibrary(dplyr)\n# Get only January months so that there's one point a year\njan_data &lt;- subset(games, month == \"January\")\n\n# x axis is year, y axis is average players\n# group = gamename says draw one line for each game\nggplot(data = jan_data, \n       aes(x = year, y = avg, group = gamename)) + \n  geom_line()"
+  },
+  {
+    "objectID": "homework/04.html#python",
+    "href": "homework/04.html#python",
+    "title": "Homework: Data Programming",
+    "section": "Python",
+    "text": "Python\n\nThe time module contains the strptime function, which may help you to get from month name to month number.\nPandas will let you sort a data frame in decreasing order of variable x using sort_values('x', ascending = False)\nYou can select rows of a python data frame that match a list using .isin() demo. Alternately, Pandas data frames have a method df.query() that allows you to pass a logical condition and select rows based on that. This may be easier to use than logical indexing (though you can use either).\nUsing the .assign() function to create new variables will reduce the number of errors you run into.\nTo get a line graph in plotnine, which is a clone of ggplot2 for python, use geom_line(). Using aes(color = 'varname') will color the lines by variable name. Some sample code to make a line graph in ggplot is provided below:\n\n\n# Get only January months so that there's one point a year\njan_data = games.query('month == \"January\"')\n\nNameError: name 'games' is not defined\n\n# x axis is year, y axis is average players\n# group = gamename says draw one line for each game\n(\n  ggplot(jan_data, \n       aes(x = 'year', y = 'avg', group = 'gamename')) + \n  geom_line()\n)\n\nNameError: name 'ggplot' is not defined"
   }
 ]
