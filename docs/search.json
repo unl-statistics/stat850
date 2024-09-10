@@ -130,7 +130,7 @@
     "href": "index.html",
     "title": "Stat 850: Computing Tools for Statistics",
     "section": "",
-    "text": "Course Materials\nDates shown are due dates (for homework, projects) and dates by which initial comments/annotations should be made (reading).\nMost classes will not contain slide presentations, but when there are slides to share, they will be provided here.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\n\n\nTitle\n\n\n\n\n\n\nSep 20, 2024\n\n\n\n\n\nHomework: Data Programming\n\n\n\n\nSep 13, 2024\n\n\n\n\n\nHomework: Fizzbuzz\n\n\n\n\nSep 9, 2024\n\n\n\n\n\nHomework: Finding Your Way in R and Python\n\n\n\n\nSep 9, 2024\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nSep 5, 2024\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nSep 3, 2024\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nSep 2, 2024\n\n\n\n\n\n👋 The Basics of GitHub\n\n\n\n\nAug 29, 2024\n\n\n\n\n\nStat 850: Git and Github\n\n\n\n\nAug 27, 2024\n\n\n\n\n\nStat 850 Introduction\n\n\n\n\n\nNo matching items"
+    "text": "Course Materials\nDates shown are due dates (for homework, projects) and dates by which initial comments/annotations should be made (reading).\nMost classes will not contain slide presentations, but when there are slides to share, they will be provided here.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\n\n\nTitle\n\n\n\n\n\n\nSep 20, 2024\n\n\n\n\n\nHomework: Data Programming\n\n\n\n\nSep 13, 2024\n\n\n\n\n\nHomework: Fizzbuzz\n\n\n\n\nSep 9, 2024\n\n\n\n\n\nHomework: Finding Your Way in R and Python\n\n\n\n\nSep 9, 2024\n\n\n\n\n\nFizzing and Buzzing\n\n\n\n\nSep 5, 2024\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nSep 3, 2024\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nSep 2, 2024\n\n\n\n\n\n👋 The Basics of GitHub\n\n\n\n\nAug 29, 2024\n\n\n\n\n\nStat 850: Git and Github\n\n\n\n\nAug 27, 2024\n\n\n\n\n\nStat 850 Introduction\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -226,35 +226,35 @@
   {
     "objectID": "slides/03-fizzing-and-buzzing.html#this-weeks-big-picture-goal",
     "href": "slides/03-fizzing-and-buzzing.html#this-weeks-big-picture-goal",
-    "title": "Finding your way in R and Python",
+    "title": "Fizzing and Buzzing",
     "section": "This week’s big picture goal:",
     "text": "This week’s big picture goal:\nGoing from using functions to writing the first functions"
   },
   {
     "objectID": "slides/03-fizzing-and-buzzing.html#todays-goals",
     "href": "slides/03-fizzing-and-buzzing.html#todays-goals",
-    "title": "Finding your way in R and Python",
+    "title": "Fizzing and Buzzing",
     "section": "Today’s Goals:",
     "text": "Today’s Goals:\nUnderstand\n\nWorking with packages in R and Python\nDistinguish and recognize data structures (data as in objects, not the statistics data)\nMatrix operations\n\nDo\n\nfirst part of homework #3\n\nRead-up on\n\nControl Structures, program flows\nWriting Functions"
   },
   {
     "objectID": "slides/03-fizzing-and-buzzing.html#resources",
     "href": "slides/03-fizzing-and-buzzing.html#resources",
-    "title": "Finding your way in R and Python",
+    "title": "Fizzing and Buzzing",
     "section": "Resources",
     "text": "Resources\n\nR cheat sheet\npython cheat sheet"
   },
   {
     "objectID": "slides/03-fizzing-and-buzzing.html#next-class",
     "href": "slides/03-fizzing-and-buzzing.html#next-class",
-    "title": "Finding your way in R and Python",
+    "title": "Fizzing and Buzzing",
     "section": "Next class",
     "text": "Next class\n\nFunction writing in R and Python"
   },
   {
     "objectID": "slides/03-fizzing-and-buzzing.html#organizationclean-up",
     "href": "slides/03-fizzing-and-buzzing.html#organizationclean-up",
-    "title": "Finding your way in R and Python",
+    "title": "Fizzing and Buzzing",
     "section": "Organization/clean-up",
     "text": "Organization/clean-up\n\nHomework #2: make sur eto put the link to your repo on Github into Canvas\nHomewrok #3 repo structure"
   }
