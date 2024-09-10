@@ -9,9 +9,9 @@ format:
 
 ## Organization/clean-up
 
-- Homework #2: make sur eto put the link to your repo on Github into Canvas
+- Homework #2: make sure to put the link to your repo on Github into Canvas
 
-- Homewrok #3 repo structure
+- Homework #3 repo structure
 
 ---
 
@@ -47,9 +47,9 @@ Read-up on
 
 ## Resources
 
-- [R cheat sheet](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://srvanderplas.github.io/stat-computing-r-python/files/Short-refcard.pdf)
+- [R cheat sheet](https://srvanderplas.github.io/stat-computing-r-python/files/Short-refcard.pdf)
 
-- [python cheat sheet](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://srvanderplas.github.io/stat-computing-r-python/files/Python3_reference_cheat_sheet.pdf)
+- [python cheat sheet](https://srvanderplas.github.io/stat-computing-r-python/files/Python3_reference_cheat_sheet.pdf)
 
 
 ----
