@@ -7,6 +7,14 @@ format:
     theme: default
 ---
 
+## Organization/clean-up
+
+- Homework #2: make sur eto put the link to your repo on Github into Canvas
+
+- Homewrok #3 repo structure
+
+---
+
 ## This week's big picture goal:
 
 Going from using functions to writing the first functions

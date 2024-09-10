@@ -5,3 +5,4 @@ _freeze
 2023-student-assignments
 archive
 .RData
+.Rprofile
