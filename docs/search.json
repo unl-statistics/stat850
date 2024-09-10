@@ -130,7 +130,7 @@
     "href": "index.html",
     "title": "Stat 850: Computing Tools for Statistics",
     "section": "",
-    "text": "Course Materials\nDates shown are due dates (for homework, projects) and dates by which initial comments/annotations should be made (reading).\nMost classes will not contain slide presentations, but when there are slides to share, they will be provided here.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\n\n\nTitle\n\n\n\n\n\n\nSep 20, 2024\n\n\n\n\n\nHomework: Data Programming\n\n\n\n\nSep 13, 2024\n\n\n\n\n\nHomework: Fizzbuzz\n\n\n\n\nSep 9, 2024\n\n\n\n\n\nHomework: Finding Your Way in R and Python\n\n\n\n\nSep 5, 2024\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nSep 3, 2024\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nSep 2, 2024\n\n\n\n\n\n👋 The Basics of GitHub\n\n\n\n\nAug 29, 2024\n\n\n\n\n\nStat 850: Git and Github\n\n\n\n\nAug 27, 2024\n\n\n\n\n\nStat 850 Introduction\n\n\n\n\n\nNo matching items"
+    "text": "Course Materials\nDates shown are due dates (for homework, projects) and dates by which initial comments/annotations should be made (reading).\nMost classes will not contain slide presentations, but when there are slides to share, they will be provided here.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\n\n\nTitle\n\n\n\n\n\n\nSep 20, 2024\n\n\n\n\n\nHomework: Data Programming\n\n\n\n\nSep 13, 2024\n\n\n\n\n\nHomework: Fizzbuzz\n\n\n\n\nSep 9, 2024\n\n\n\n\n\nHomework: Finding Your Way in R and Python\n\n\n\n\nSep 9, 2024\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nSep 5, 2024\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nSep 3, 2024\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nSep 2, 2024\n\n\n\n\n\n👋 The Basics of GitHub\n\n\n\n\nAug 29, 2024\n\n\n\n\n\nStat 850: Git and Github\n\n\n\n\nAug 27, 2024\n\n\n\n\n\nStat 850 Introduction\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -222,5 +222,33 @@
     "title": "Homework: Data Programming",
     "section": "Python",
     "text": "Python\n\nThe time module contains the strptime function, which may help you to get from month name to month number.\nPandas will let you sort a data frame in decreasing order of variable x using sort_values('x', ascending = False)\nYou can select rows of a python data frame that match a list using .isin() demo. Alternately, Pandas data frames have a method df.query() that allows you to pass a logical condition and select rows based on that. This may be easier to use than logical indexing (though you can use either).\nUsing the .assign() function to create new variables will reduce the number of errors you run into.\nTo get a line graph in plotnine, which is a clone of ggplot2 for python, use geom_line(). Using aes(color = 'varname') will color the lines by variable name. Some sample code to make a line graph in ggplot is provided below:\n\n\n# Get only January months so that there's one point a year\njan_data = games.query('month == \"January\"')\n\n# x axis is year, y axis is average players\n# group = gamename says draw one line for each game\n(\n  ggplot(jan_data, \n       aes(x = 'year', y = 'avg', group = 'gamename')) + \n  geom_line()\n)\n\n&lt;Figure Size: (640 x 480)&gt;"
+  },
+  {
+    "objectID": "slides/03-fizzing-and-buzzing.html#this-weeks-big-picture-goal",
+    "href": "slides/03-fizzing-and-buzzing.html#this-weeks-big-picture-goal",
+    "title": "Finding your way in R and Python",
+    "section": "This week’s big picture goal:",
+    "text": "This week’s big picture goal:\nGoing from using functions to writing the first functions"
+  },
+  {
+    "objectID": "slides/03-fizzing-and-buzzing.html#todays-goals",
+    "href": "slides/03-fizzing-and-buzzing.html#todays-goals",
+    "title": "Finding your way in R and Python",
+    "section": "Today’s Goals:",
+    "text": "Today’s Goals:\nUnderstand\n\nWorking with packages in R and Python\nDistinguish and recognize data structures (data as in objects, not the statistics data)\nMatrix operations\n\nDo\n\nfirst part of homework #3\n\nRead-up on\n\nControl Structures, program flows\nWriting Functions"
+  },
+  {
+    "objectID": "slides/03-fizzing-and-buzzing.html#resources",
+    "href": "slides/03-fizzing-and-buzzing.html#resources",
+    "title": "Finding your way in R and Python",
+    "section": "Resources",
+    "text": "Resources\n\nR cheat sheet\npython cheat sheet"
+  },
+  {
+    "objectID": "slides/03-fizzing-and-buzzing.html#next-class",
+    "href": "slides/03-fizzing-and-buzzing.html#next-class",
+    "title": "Finding your way in R and Python",
+    "section": "Next class",
+    "text": "Next class\n\nFunction writing in R and Python"
   }
 ]
