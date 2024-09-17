@@ -41,6 +41,7 @@ Practice! Practice! Practice!
   
   - adapt (if possible) the commands from the examples to the homework data
 
+- Install packages you need for homework 4
 
 ----
 

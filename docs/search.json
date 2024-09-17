@@ -235,7 +235,7 @@
     "href": "slides/04-case-studies.html#todays-goals",
     "title": "Case Studies",
     "section": "Today’s Goals:",
-    "text": "Today’s Goals:\n\nRead actively through the examples in Chapter 15:\n\nload the data from the homework into an R session\nadapt (if possible) the commands from the examples to the homework data"
+    "text": "Today’s Goals:\n\nRead actively through the examples in Chapter 15:\n\nload the data from the homework into an R session\nadapt (if possible) the commands from the examples to the homework data\n\nInstall packages you need for homework 4"
   },
   {
     "objectID": "slides/04-case-studies.html#resources",
