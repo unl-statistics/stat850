@@ -1,5 +1,5 @@
 ---
-title: "Fizzing and Buzzing"
+title: "Case Studies"
 date: "2024-09-17"
 categories: Slides
 format: 
