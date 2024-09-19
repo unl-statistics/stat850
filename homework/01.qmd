@@ -1,6 +1,6 @@
 ---
 title: "Homework 1: Git and Github"
-date: August 25, 2023
+date: Sep 02, 2024
 ---
 
 Note: This assignment must be submitted in github classroom.

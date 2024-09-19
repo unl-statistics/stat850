@@ -7,7 +7,6 @@ project:
     - about.qmd
     - homework/*.qmd
     - slides/*.qmd
-    - reading/*.qmd
     - project/*.qmd
     - "!archive"
 

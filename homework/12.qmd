@@ -1,8 +1,0 @@
----
-title: "Homework 12: Shiny"
-date: November 10, 2023
----
-
-Note: This assignment must be submitted in github classroom.
-
-{{< include ../homework-repos/12-shiny/README.md >}}

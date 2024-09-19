@@ -1,0 +1,61 @@
+---
+title: "Case Studies"
+date: "2024-09-17"
+categories: Slides
+format: 
+  revealjs:
+    theme: default
+---
+
+## Organization
+
+- Homework #3: 
+make sure to put the link to your repo on Github into Canvas
+
+- Homework #4: 
+  
+  please check that you can access the github classroom repo
+  
+- Heads-up: 
+watch 1h video before next class: [tidy tuesday screencast](https://www.youtube.com/embed/89l_3Y53qMM)
+
+
+---
+
+## This week's big picture goal:
+
+Consolidate your knowledge 
+
+[Chapter 15](https://srvanderplas.github.io/stat-computing-r-python/part-gen-prog/07-prog-data.html)
+
+Practice! Practice! Practice!
+
+---
+
+## Today's Goals:
+
+
+- Read **actively** through the examples in Chapter 15:
+
+  - load the data from the homework into an R session 
+  
+  - adapt (if possible) the commands from the examples to the homework data
+
+- Install packages you need for homework 4
+
+----
+
+## Resources
+
+- [R cheat sheet](https://srvanderplas.github.io/stat-computing-r-python/files/Short-refcard.pdf)
+
+- [python cheat sheet](https://srvanderplas.github.io/stat-computing-r-python/files/Python3_reference_cheat_sheet.pdf)
+
+
+----
+
+## Next class
+
+- Planning out code
+
+

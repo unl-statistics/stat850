@@ -1,0 +1,61 @@
+---
+title: "Fizzing and Buzzing"
+date: "2024-09-09"
+categories: Slides
+format: 
+  revealjs:
+    theme: default
+---
+
+## Organization/clean-up
+
+- Homework #2: make sure to put the link to your repo on Github into Canvas
+
+- Homework #3 repo structure
+
+---
+
+## This week's big picture goal:
+
+Going from using functions to writing the first functions
+
+---
+
+## Today's Goals:
+
+
+Understand 
+
+- Working with packages in R and Python
+
+- Distinguish and recognize data structures (data as in objects, not the statistics data)
+
+- Matrix operations
+
+Do
+
+- first part of homework #3
+
+
+Read-up on 
+
+- Control Structures, program flows
+
+- Writing Functions
+
+----
+
+## Resources
+
+- [R cheat sheet](https://srvanderplas.github.io/stat-computing-r-python/files/Short-refcard.pdf)
+
+- [python cheat sheet](https://srvanderplas.github.io/stat-computing-r-python/files/Python3_reference_cheat_sheet.pdf)
+
+
+----
+
+## Next class
+
+- Function writing in R and Python
+
+

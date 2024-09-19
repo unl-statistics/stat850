@@ -22,9 +22,6 @@
 [submodule "homework-repos/08-graphics"]
 	path = homework-repos/08-graphics
 	url = git@github.com:stat-assignments/graphics-complete.git
-[submodule "project/proj-template"]
-	path = project/proj-template
-	url = https://github.com/stat850-unl/project.git
 [submodule "homework-repos/10-professional"]
 	path = homework-repos/10-professional
 	url = git@github.com:stat-assignments/professional-documents.git

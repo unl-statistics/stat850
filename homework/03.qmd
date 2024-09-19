@@ -1,6 +1,6 @@
 ---
 title: "Homework 3: Fizzbuzz"
-date: September 8, 2023
+date: September 13, 2024
 ---
 
 Note: This assignment must be submitted in github classroom.
