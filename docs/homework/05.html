@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Your Name">
-<meta name="dcterms.date" content="2024-09-20">
+<meta name="dcterms.date" content="2024-09-30">
 
-<title>Homework: Data Programming – Stat 850: Computing Tools for Statisticians</title>
+<title>Chocolate Chip Cookies – Stat 850: Computing Tools for Statisticians</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -165,21 +131,13 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#about-the-data-steam-games" id="toc-about-the-data-steam-games" class="nav-link active" data-scroll-target="#about-the-data-steam-games">About the Data: Steam Games</a></li>
-  <li><a href="#useful-hints" id="toc-useful-hints" class="nav-link" data-scroll-target="#useful-hints">Useful Hints</a>
+  <li><a href="#reading-in-the-data" id="toc-reading-in-the-data" class="nav-link active" data-scroll-target="#reading-in-the-data">Reading In the Data</a></li>
+  <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis">Exploratory Data Analysis</a>
   <ul class="collapse">
-  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
-  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
-  </ul></li>
-  <li><a href="#question-1-planning-r-code-replicate-the-plot" id="toc-question-1-planning-r-code-replicate-the-plot" class="nav-link" data-scroll-target="#question-1-planning-r-code-replicate-the-plot">Question 1: Planning R Code: Replicate the plot</a>
-  <ul class="collapse">
-  <li><a href="#problem-steps" id="toc-problem-steps" class="nav-link" data-scroll-target="#problem-steps">Problem Steps</a></li>
-  <li><a href="#problem-code" id="toc-problem-code" class="nav-link" data-scroll-target="#problem-code">Problem Code</a></li>
-  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection">Reflection</a></li>
-  </ul></li>
-  <li><a href="#question-2-planning-python-code-replicate-a-different-plot" id="toc-question-2-planning-python-code-replicate-a-different-plot" class="nav-link" data-scroll-target="#question-2-planning-python-code-replicate-a-different-plot">Question 2: Planning Python Code: Replicate a (different) plot</a>
-  <ul class="collapse">
-  <li><a href="#reflection-1" id="toc-reflection-1" class="nav-link" data-scroll-target="#reflection-1">Reflection</a></li>
+  <li><a href="#generating-questions" id="toc-generating-questions" class="nav-link" data-scroll-target="#generating-questions">Generating Questions</a></li>
+  <li><a href="#skimming-the-data" id="toc-skimming-the-data" class="nav-link" data-scroll-target="#skimming-the-data">Skimming the Data</a></li>
+  <li><a href="#generating-tables" id="toc-generating-tables" class="nav-link" data-scroll-target="#generating-tables">Generating Tables</a></li>
+  <li><a href="#visualization" id="toc-visualization" class="nav-link" data-scroll-target="#visualization">Visualization</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -189,7 +147,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Homework: Data Programming</h1>
+<h1 class="title">Chocolate Chip Cookies</h1>
   <div class="quarto-categories">
     <div class="quarto-category">HW</div>
   </div>
@@ -209,7 +167,7 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 20, 2024</p>
+      <p class="date">September 30, 2024</p>
     </div>
   </div>
   
@@ -222,218 +180,53 @@ gtag('config', 'G-KQ9CCFY6LV', { 'anonymize_ip': true});
 
 
 <p>Note: This assignment must be submitted in github classroom.</p>
-<p>Instructions:</p>
-<ul>
-<li><p>Answer question 1 in R, and question 2 in Python</p></li>
-<li><p>Once you have finished this assignment, render the document (Ctrl/Cmd-Shift-K or the Render button).</p></li>
-<li><p>Commit the qmd file and any other files you have changed to the repository and push your changes.</p></li>
-<li><p>In Canvas, submit a link to your github repository containing the updated files.</p></li>
-</ul>
-<section id="about-the-data-steam-games" class="level1">
-<h1>About the Data: Steam Games</h1>
-<p>TidyTuesday is an organization that provides new datasets every Tuesday for people to practice their data tidying and manipulation skills. This assignment uses a data set about Steam (an online gaming platform) game popularity over time. See the <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-03-16/readme.md">readme</a> for more information about the dataset.</p>
-<p><strong>Data Dictionary</strong></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 38%">
-<col style="width: 27%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">variable</th>
-<th style="text-align: left;">class</th>
-<th style="text-align: left;">description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">gamename</td>
-<td style="text-align: left;">character</td>
-<td style="text-align: left;">Name of video games</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">year</td>
-<td style="text-align: left;">double</td>
-<td style="text-align: left;">Year of measure</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">month</td>
-<td style="text-align: left;">character</td>
-<td style="text-align: left;">Month of measure</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">avg</td>
-<td style="text-align: left;">double</td>
-<td style="text-align: left;">Average number of players at the same time</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">gain</td>
-<td style="text-align: left;">double</td>
-<td style="text-align: left;">Gain (or loss) Difference in average compared to the previous month (NA = 1st month)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">peak</td>
-<td style="text-align: left;">double</td>
-<td style="text-align: left;">Highest number of players at the same time</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">avg_peak_perc</td>
-<td style="text-align: left;">character</td>
-<td style="text-align: left;">Share of the average in the maximum value (avg / peak) in %</td>
-</tr>
-</tbody>
-</table>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>games <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-16/games.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 83631 Columns: 7
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (3): gamename, month, avg_peak_perc
-dbl (4): year, avg, gain, peak
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co"># load ggplot2 package</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Run this if you haven't installed plotnine already</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>reticulate<span class="sc">::</span><span class="fu">py_install</span>(<span class="st">"plotnine"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Alternately, in the terminal type <code>pip install plotnine</code>. Either option will work.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>games <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-03-16/games.csv'</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> <span class="op">*</span> <span class="co"># load ggplot2-equivalent package</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="reading-in-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="reading-in-the-data">Reading In the Data</h2>
+<p>First, read in the CSV data of cookie ingredients. Make sure that your end-result data has appropriate types for each column - these should match the types provided in the documentation in the README.md file.</p>
 </section>
-<section id="useful-hints" class="level1">
-<h1>Useful Hints</h1>
-<section id="r" class="level2">
-<h2 class="anchored" data-anchor-id="r">R</h2>
+<section id="exploratory-data-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="exploratory-data-analysis">Exploratory Data Analysis</h2>
+<p>Exploratory data analysis is the process of getting familiar with your dataset. To get started, <a href="https://www.mrdbourke.com/a-gentle-introduction-to-exploratory-data-analysis/">this blog post</a> provides a nice checklist to get you thinking:</p>
+<blockquote class="blockquote">
 <ol type="1">
-<li><p><code>month.name</code> is a built-in vector containing month names that you can use to create a factor variable. Factor variables can be easily converted into numeric variables. This might help you get a numeric month, which might help you get to a fractional year.</p></li>
-<li><p><code>subset()</code> is a function that will subset a data frame based on a logical condition. It might be easier to use than logical indexing (though you can use either). You can also use the <code>filter</code> function in the <code>dplyr</code> package.</p></li>
-<li><p>To get a line graph in ggplot2, use <code>geom_line()</code>. Using <code>aes(color = varname)</code> will color the lines by variable name.</p></li>
-<li><p>Some sample code to make a line graph in ggplot is provided below:</p></li>
+<li>What question(s) are you trying to solve (or prove wrong)?</li>
+<li>What kind of data do you have and how do you treat different types?</li>
+<li>What’s missing from the data and how do you deal with it?</li>
+<li>Where are the outliers and why should you care about them?</li>
+<li>How can you add, change or remove features to get more out of your data?</li>
 </ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Get only January months so that there's one point a year</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>jan_data <span class="ot">&lt;-</span> <span class="fu">subset</span>(games, month <span class="sc">==</span> <span class="st">"January"</span>)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># x axis is year, y axis is average players</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># group = gamename says draw one line for each game</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> jan_data, </span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> avg, <span class="at">group =</span> gamename)) <span class="sc">+</span> </span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="04_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="python" class="level2">
-<h2 class="anchored" data-anchor-id="python">Python</h2>
+</blockquote>
+<section id="generating-questions" class="level3">
+<h3 class="anchored" data-anchor-id="generating-questions">Generating Questions</h3>
+<p>Generate at least 5 questions you might explore using this database of cookie ingredients.</p>
 <ol type="1">
-<li><p>The <code>time</code> module contains the <code>strptime</code> function, which may help you to get from month name to month number.</p></li>
-<li><p>Pandas will let you sort a data frame in decreasing order of variable <code>x</code> using <code>sort_values('x', ascending = False)</code></p></li>
-<li><p>You can select rows of a python data frame that match a list using <code>.isin()</code> <a href="https://www.kite.com/python/answers/how-to-filter-a-pandas-dataframe-with-a-list-by-%60in%60-or-%60not-in%60-in-python">demo</a>. Alternately, Pandas data frames have a method <code>df.query()</code> that allows you to pass a logical condition and select rows based on that. This may be easier to use than logical indexing (though you can use either).</p></li>
-<li><p>Using the <code>.assign()</code> function to create new variables will reduce the number of errors you run into.</p></li>
-<li><p>To get a line graph in plotnine, which is a clone of ggplot2 for python, use <code>geom_line()</code>. Using <code>aes(color = 'varname')</code> will color the lines by variable name. Some sample code to make a line graph in ggplot is provided below:</p></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
 </ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get only January months so that there's one point a year</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>jan_data <span class="op">=</span> games.query(<span class="st">'month == "January"'</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># x axis is year, y axis is average players</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># group = gamename says draw one line for each game</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>(</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  ggplot(jan_data, </span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>       aes(x <span class="op">=</span> <span class="st">'year'</span>, y <span class="op">=</span> <span class="st">'avg'</span>, group <span class="op">=</span> <span class="st">'gamename'</span>)) <span class="op">+</span> </span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  geom_line()</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;Figure Size: (640 x 480)&gt;</code></pre>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="04_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="614"></p>
-</figure>
-</div>
-</div>
-</div>
 </section>
+<section id="skimming-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="skimming-the-data">Skimming the Data</h3>
+<p>One thing we often want to do during EDA is to examine the quality of the data - are there missing values? What quirks might exist in the dataset?</p>
+<p>The <code>skimr</code> package in R, and the similar <code>skimpy</code> package in python (which has a much better name, in my opinion), can help provide visual summaries of the data.</p>
+<p>Install both packages, and read the package documentation (<a href="https://cran.r-project.org/web/packages/skimr/vignettes/skimr.html">R</a>, <a href="https://pypi.org/project/skimpy/">Python</a>).</p>
+<p>[Part 1] Use each package and generate summaries of your data that require the use of at least some non-default options in each package’s <code>skim</code> function.</p>
+<p>[Part 2] Write 1-2 sentences about what you can tell from each summary display you generate. Did you discover anything new about the data?</p>
 </section>
-<section id="question-1-planning-r-code-replicate-the-plot" class="level1">
-<h1>Question 1: Planning R Code: Replicate the plot</h1>
-<p>Your first goal is to get to this graph by breaking down the problem (replicating the graph) into smaller steps that make sense and that you can accomplish piece-by-piece.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://imgur.com/rbgdd3X.png" class="img-fluid figure-img"></p>
-<figcaption>Target plot to replicate</figcaption>
-</figure>
-</div>
-<section id="problem-steps" class="level3">
-<h3 class="anchored" data-anchor-id="problem-steps">Problem Steps</h3>
-<p>Make a list of steps that will be necessary to get the data you have into this form.</p>
+<section id="generating-tables" class="level3">
+<h3 class="anchored" data-anchor-id="generating-tables">Generating Tables</h3>
+<p>Another useful technique for exploratory data analysis is to generate summary tables. You may want to use the <code>dplyr</code> package in R (<code>group_by</code> or <code>count</code> functions), as well as the <code>groupby</code> and <code>count</code> methods in Pandas. <a href="https://sparkbyexamples.com/pandas/pandas-groupby-count-examples/">Python example</a>, <a href="https://dplyr.tidyverse.org/reference/count.html">R example</a></p>
+<p>[Part 1] Using R and Python, generate a table that shows what <strong>proportion</strong> of recipes contain each type of ingredient, for the most common 20 ingredients.</p>
+<p>[Part 2] Print out a character string that lists all of the ingredients that do not appear in at least 20 recipes.</p>
+<p>(Delete this note, but you can include data values inline in markdown text by using backticks, at least in R. For instance, here is R’s built in value for pi: 3.1415927. Unfortunately, this doesn’t work in python using the knitr markdown engine, but you can print the list out in python anyways using a code chunk.)</p>
 </section>
-<section id="problem-code" class="level3">
-<h3 class="anchored" data-anchor-id="problem-code">Problem Code</h3>
-<p>Provide code that sequentially works through your list of steps to produce the graph. You might put your steps as comments to remind yourself what you’re doing at each point in the code.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code for step 1 goes here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code for step 2 goes here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="reflection" class="level3">
-<h3 class="anchored" data-anchor-id="reflection">Reflection</h3>
-<p>How did your initial list of steps compare to the steps you ended up with when you wrote code? Were your initial steps too detailed? Too simple? What can you learn from this when planning out how to write code for a new problem?</p>
-<p>Write 2-3 sentences addressing the above topic.</p>
-</section>
-</section>
-<section id="question-2-planning-python-code-replicate-a-different-plot" class="level1">
-<h1>Question 2: Planning Python Code: Replicate a (different) plot</h1>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://imgur.com/hoTGRKW.png" class="img-fluid figure-img"></p>
-<figcaption>Plot to replicate</figcaption>
-</figure>
-</div>
-<p>This plot shows the 5 games with the most average users in March of 2020. It is ok if you can replicate this plot to the point where the legend doesn’t show up properly, as in this image:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://i.imgur.com/t0wYCV8.png" class="img-fluid figure-img"></p>
-<figcaption>Legend not quite right</figcaption>
-</figure>
-</div>
-<section id="problem-steps-1" class="level4">
-<h4 class="anchored" data-anchor-id="problem-steps-1">Problem Steps</h4>
-<p>Make a list of steps below that will be necessary to get the data you have into this form.</p>
-</section>
-<section id="problem-code-1" class="level4">
-<h4 class="anchored" data-anchor-id="problem-code-1">Problem Code</h4>
-<p>Provide code that sequentially works through your list of steps to produce the necessary table of games.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code for step 1 goes here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code for step 2 goes here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="reflection-1" class="level3">
-<h3 class="anchored" data-anchor-id="reflection-1">Reflection</h3>
-<p>How did your initial list of steps compare to the steps you ended up with when you wrote code? Were your initial steps too detailed? Too simple? What can you learn from this when planning out how to write code for a new problem? Did you get any better at writing out your steps this time after answering the previous problem?</p>
-<p>Write 2-3 sentences addressing the above topic.</p>
+<section id="visualization" class="level3">
+<h3 class="anchored" data-anchor-id="visualization">Visualization</h3>
+<p>Using whatever plotting system you are comfortable with in R or python, see if you can create a couple of useful exploratory data visualizations which address one of the questions you wrote above - or another question which you’ve come up with as you’ve worked on this assignment.</p>
+<p>[Part 1] Create at least one plot (it doesn’t have to be pretty) that showcases an interesting facet of the data.</p>
+<p>[Part 2] Write 2-3 sentences about what you can learn from that plot and what directions you might want to investigate from here.</p>
 
 
 </section>

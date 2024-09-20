@@ -34,14 +34,18 @@ Practice! Practice! Practice!
 
 ## Today's Goals:
 
+- Clone the repo for Homework 4
 
-- Read **actively** through the examples in Chapter 15:
+- Make sure that you are able to render `index.qmd`
+
+  - you might have to install some packages (R package `curl`, python package `plotnine`)
+
+- Read **actively** through the examples in Chapter 15
 
   - load the data from the homework into an R session 
   
   - adapt (if possible) the commands from the examples to the homework data
 
-- Install packages you need for homework 4
 
 ----
 
