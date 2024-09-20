@@ -1,0 +1,8 @@
+---
+title: "Homework 5: Exploratory Data Analysis with Cookies"
+date: September 30, 2024
+---
+
+Note: This assignment must be submitted in github classroom.
+
+{{< include ../homework-repos/05-data-cookies/index.qmd >}}
