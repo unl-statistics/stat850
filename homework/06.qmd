@@ -1,6 +1,6 @@
 ---
 title: "Homework 6: Strings and Data Wrangling"
-date: September 29, 2023
+date: October 7, 2024
 ---
 
 Note: This assignment must be submitted in github classroom.

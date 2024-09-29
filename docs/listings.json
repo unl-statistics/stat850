@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/homework/06.html",
       "/slides/06-data-wrangling.html",
       "/homework/05.html",
       "/slides/05-data-explorations.html",
@@ -14,8 +15,7 @@
       "/slides/02a-Finding-Your-Way.html",
       "/homework/01.html",
       "/slides/01b-intro.html",
-      "/slides/01a-intro.html",
-      "/homework/06.html"
+      "/slides/01a-intro.html"
     ]
   }
 ]
