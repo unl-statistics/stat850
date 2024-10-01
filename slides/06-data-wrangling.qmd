@@ -16,19 +16,22 @@ Working with text and practicing exploration skills
 
 ## Organization
 
-- Homework #5: 
-make sure to put the link to your repo on Github into Canvas
+Homework #5: 
 
-- Homework #6: 
-  
-  please check that you can access the github classroom repo
-  
+- make sure to put the link to your repo on Github into Canvas
+
+- authorization: `usethis::create_github_token()`
+
+- which files to push? any original files! 
+
 
 ---
 
 ## Today's Goals:
 
-- Clone the repo for Homework 6
+- In Canvas, follow the Github Classroom link to Homework 6
+
+- Clone the repo for Homework 6 to your local machine
 
 - Make sure that you are able to render `index.qmd`
 
@@ -36,9 +39,13 @@ make sure to put the link to your repo on Github into Canvas
 
 Try to get past checkpoints 1 and 2 for both python and R, so you can focus on the exploration on Thursday
 
-  - helpful functions in R: `separate_longer_delim`, `str_count` (make sure to check `?boundary()`), 
+---
 
-  - helpful functions in python: `str.split`, `str.count`, `explode`
+## Helpful functions
+
+  -  in R: `separate_longer_delim`, `str_count` (make sure to check `?boundary()`), 
+
+  -  in python: `str.split`, `str.count`, `explode`
 
 ----
 

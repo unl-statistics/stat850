@@ -312,14 +312,14 @@
     "href": "slides/06-data-wrangling.html#organization",
     "title": "Wrangling Data",
     "section": "Organization",
-    "text": "Organization\n\nHomework #5: make sure to put the link to your repo on Github into Canvas\nHomework #6:\nplease check that you can access the github classroom repo"
+    "text": "Organization\nHomework #5:\n\nmake sure to put the link to your repo on Github into Canvas\nauthorization: usethis::create_github_token()\nwhich files to push? any original files!"
   },
   {
     "objectID": "slides/06-data-wrangling.html#todays-goals",
     "href": "slides/06-data-wrangling.html#todays-goals",
     "title": "Wrangling Data",
     "section": "Today’s Goals:",
-    "text": "Today’s Goals:\n\nClone the repo for Homework 6\nMake sure that you are able to render index.qmd\nStart wrangling these poems!\n\nTry to get past checkpoints 1 and 2 for both python and R, so you can focus on the exploration on Thursday\n\nhelpful functions in R: separate_longer_delim, str_count (make sure to check ?boundary()),\nhelpful functions in python: str.split, str.count, explode"
+    "text": "Today’s Goals:\n\nIn Canvas, follow the Github Classroom link to Homework 6\nClone the repo for Homework 6 to your local machine\nMake sure that you are able to render index.qmd\nStart wrangling these poems!\n\nTry to get past checkpoints 1 and 2 for both python and R, so you can focus on the exploration on Thursday"
   },
   {
     "objectID": "slides/06-data-wrangling.html#resources",
@@ -425,5 +425,12 @@
     "title": "String Processing and Data Wrangling in R and Python",
     "section": "Poetry Analysis",
     "text": "Poetry Analysis\nChoose some characteristic(s) of the poet’s style to explore graphically. If necessary, create a subset of the data with poems relevant to your question before you generate numerical summaries. You may want to clean up the data and remove lines which contain quotes (e.g. start with a &gt; character) or horizontal lines in reddit markdown (e.g. only have ----).\nSome ideas to get you started thinking:\n\nNumber of syllables per line may be used to infer rhyming scheme and/or poetry style. You can use the syllables python package. You may need to use a for-loop or program a custom function to use the syllables function on every entry in your data frame column.\nUse of non-alphabetic characters. Schnoodle often uses emoji and other text annotations to convey emotions and excitement - how often do these types of annotations appear in their poems?\nCommon characters and phrases. Sprog writes poems frequently about a character named Timmy (who often meets a horrible end). Do these poems have a common format/style/rhyme scheme?\nSprog often writes longer poems with multiple stanzas. Identify which poems have multiple stanzas (Hint, look for blank lines in a systematic pattern) and show the distribution of stanza length, stanza variation within poems, and number of stanzas in each poem.\nSchnoodle often misspells words intentionally (using e.g. fren instead of friend) to convey that they are writing using an animal’s voice. What proportion of words are misspelled in each poem? How much does this proportion vary? Based on the distribution, how likely is it, in your opinion, that Schnoodle misspells words more often when speaking as one type of animal than another? You can use one of the python packages discussed in this post to detect whether words are likely misspelled."
+  },
+  {
+    "objectID": "slides/06-data-wrangling.html#helpful-functions",
+    "href": "slides/06-data-wrangling.html#helpful-functions",
+    "title": "Wrangling Data",
+    "section": "Helpful functions",
+    "text": "Helpful functions\n\nin R: separate_longer_delim, str_count (make sure to check ?boundary()),\nin python: str.split, str.count, explode"
   }
 ]
