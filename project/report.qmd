@@ -1,0 +1,7 @@
+---
+title: "Sample Report"
+date: 2024-12-08
+---
+
+
+{{< include proj-template/report.qmd >}}

@@ -1,0 +1,7 @@
+---
+title: "Project Guidelines"
+date: 2024-10-14
+---
+
+
+{{< include proj-template/guidelines.qmd >}}
