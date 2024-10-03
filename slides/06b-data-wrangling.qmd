@@ -1,0 +1,59 @@
+---
+title: "Wrangling Data"
+date: "2024-10-03"
+categories: Slides
+format: 
+  revealjs:
+    theme: default
+---
+
+
+## This week's big picture goal:
+
+Working with text and practicing exploration skills
+
+---
+
+## Organization
+
+- code for homework submissions: 
+  
+  - always make sure that the `index.qmd` file renders for you (that's where your answers are *supposed* to be)
+
+  - comment out any and all calls that produce: 
+    
+      - excessive output: `ls()`, `dir()`, `print()`
+  
+      - additional windows: `View()`, `?` (or `??`, `help`), 
+      
+      - install software: `install.packages()`,  
+  
+  - references to files outside of your repository
+
+---
+
+## Projects
+---
+
+## Today's Goals:
+
+
+- Exploration!
+
+
+Ideally you have passed checkpoint 2 for both R and python. If not, finish up checkpoint 2 for one language and proceed with that.
+
+
+
+----
+
+## Resources
+
+- [R cheat sheet](https://srvanderplas.github.io/stat-computing-r-python/files/Short-refcard.pdf)
+
+- [python cheat sheet](https://srvanderplas.github.io/stat-computing-r-python/files/Python3_reference_cheat_sheet.pdf)
+
+
+
+
+
