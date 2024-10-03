@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2024-10-14">
 
-<title>Stat 850: Computing Tools for Statistics – Stat 850: Computing Tools for Statisticians</title>
+<title>Project Guidelines – Stat 850: Computing Tools for Statisticians</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +24,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,35 +67,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-hwlst .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-image','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-hwlst'] = new List('listing-hwlst', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KQ9CCFY6LV"></script>
 
 <script type="text/javascript">
@@ -137,7 +107,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -147,7 +117,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Stat 850: Computing Tools for Statisticians</span>
     </a>
   </div>
@@ -158,7 +128,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -166,11 +136,11 @@ window.Quarto = {
 <span class="menu-text">Textbook</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./syllabus.pdf"> 
+    <a class="nav-link" href="../syllabus.pdf"> 
 <span class="menu-text">Syllabus</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About Stat 850</span></a>
   </li>  
 </ul>
@@ -189,23 +159,36 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#course-materials" id="toc-course-materials" class="nav-link active" data-scroll-target="#course-materials">Course Materials</a></li>
+  <li><a href="#general-rules" id="toc-general-rules" class="nav-link active" data-scroll-target="#general-rules">General rules</a></li>
+  <li><a href="#datasets" id="toc-datasets" class="nav-link" data-scroll-target="#datasets">Datasets</a></li>
+  <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control">Version Control</a></li>
+  <li><a href="#project-report" id="toc-project-report" class="nav-link" data-scroll-target="#project-report">Project Report</a></li>
+  <li><a href="#presentation" id="toc-presentation" class="nav-link" data-scroll-target="#presentation">Presentation</a></li>
   </ul>
 </nav>
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(18)</span></div><div class="category" data-category="HW">HW <span class="quarto-category-count">(6)</span></div><div class="category" data-category="Project">Project <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Slides">Slides <span class="quarto-category-count">(9)</span></div></div></div>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Stat 850: Computing Tools for Statistics</h1>
-</div>
+<h1 class="title">Project Guidelines</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Project</div>
+  </div>
+  </div>
 
 
 
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 14, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -215,252 +198,95 @@ window.Quarto = {
 </header>
 
 
-<section id="course-materials" class="level1">
-<h1>Course Materials</h1>
-<p>Dates shown are due dates (for homework, projects) and dates by which initial comments/annotations should be made (reading).</p>
-<p>Most classes will not contain slide presentations, but when there are slides to share, they will be provided here.</p>
-<div id="listing-hwlst" class="quarto-listing quarto-listing-container-table">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-hwlst-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-hwlst'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
-        </option>
-         <option value="listing-title-sort" data-direction="asc">
-          Title
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Date</a>
-</th>
-<th>
-</th>
-<th>
-<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-categories="Project" data-listing-date-sort="1733637600000" data-listing-file-modified-sort="1727979253029" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="4" data-listing-title-sort="Sample Report" data-listing-filename-sort="report.qmd">
-<td>
-<span class="listing-date">Dec 8, 2024</span>
-</td>
-<td>
-<span class="listing-image"><img loading="lazy" src="./figs/projector-fill.svg" style="height: 40px;"></span>
-</td>
-<td>
-<a href="./project/report.html" class="title listing-title">Sample Report</a>
-</td>
-</tr>
-<tr data-index="1" data-categories="Project" data-listing-date-sort="1728882000000" data-listing-file-modified-sort="1727979098181" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="4" data-listing-title-sort="Project Guidelines" data-listing-filename-sort="guidelines.qmd">
-<td>
-<span class="listing-date">Oct 14, 2024</span>
-</td>
-<td>
-<span class="listing-image"><img loading="lazy" src="./figs/projector-fill.svg" style="height: 40px;"></span>
-</td>
-<td>
-<a href="./project/guidelines.html" class="title listing-title">Project Guidelines</a>
-</td>
-</tr>
-<tr data-index="2" data-categories="Project" data-listing-date-sort="1728882000000" data-listing-file-modified-sort="1727979243354" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="4" data-listing-title-sort="Stat 850 Project Proposal" data-listing-filename-sort="proposal.qmd">
-<td>
-<span class="listing-date">Oct 14, 2024</span>
-</td>
-<td>
-<span class="listing-image"><img loading="lazy" src="./figs/projector-fill.svg" style="height: 40px;"></span>
-</td>
-<td>
-<a href="./project/proposal.html" class="title listing-title">Stat 850 Project Proposal</a>
-</td>
-</tr>
-<tr data-index="3" data-categories="HW" data-listing-date-sort="1728277200000" data-listing-file-modified-sort="1727646253206" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="12" data-listing-title-sort="String Processing and Data Wrangling in R and Python" data-listing-filename-sort="06.qmd">
-<td>
-<span class="listing-date">Oct 7, 2024</span>
-</td>
-<td>
-<span class="listing-image"><img loading="lazy" src="./figs/homework.svg" style="height: 40px;"></span>
-</td>
-<td>
-<a href="./homework/06.html" class="title listing-title">String Processing and Data Wrangling in R and Python</a>
-</td>
-</tr>
-<tr data-index="4" data-categories="Slides" data-listing-date-sort="1727931600000" data-listing-file-modified-sort="1727973774191" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="139" data-listing-title-sort="Wrangling Data" data-listing-filename-sort="06b-data-wrangling.qmd">
-<td>
-<span class="listing-date">Oct 3, 2024</span>
-</td>
-<td>
-<span class="listing-image"><img loading="lazy" src="./figs/person-chalkboard-solid.svg" style="height: 40px;"></span>
-</td>
-<td>
-<a href="./slides/06b-data-wrangling.html" class="title listing-title">Wrangling Data</a>
-</td>
-</tr>
-<tr data-index="5" data-categories="Slides" data-listing-date-sort="1727758800000" data-listing-file-modified-sort="1727796896509" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="119" data-listing-title-sort="Wrangling Data" data-listing-filename-sort="06-data-wrangling.qmd">
-<td>
-<span class="listing-date">Oct 1, 2024</span>
-</td>
-<td>
-<span class="listing-image"><img loading="lazy" src="./figs/person-chalkboard-solid.svg" style="height: 40px;"></span>
-</td>
-<td>
-<a href="./slides/06-data-wrangling.html" class="title listing-title">Wrangling Data</a>
-</td>
-</tr>
-<tr data-index="6" data-categories="HW" data-listing-date-sort="1727672400000" data-listing-file-modified-sort="1726770025362" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="12" data-listing-title-sort="Chocolate Chip Cookies" data-listing-filename-sort="05.qmd">
-<td>
-<span class="listing-date">Sep 30, 2024</span>
-</td>
-<td>
-<span class="listing-image"><img loading="lazy" src="./figs/homework.svg" style="height: 40px;"></span>
-</td>
-<td>
-<a href="./homework/05.html" class="title listing-title">Chocolate Chip Cookies</a>
-</td>
-</tr>
-<tr data-index="7" data-categories="Slides" data-listing-date-sort="1727154000000" data-listing-file-modified-sort="1727195603749" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="79" data-listing-title-sort="Exploring Data" data-listing-filename-sort="05-data-explorations.qmd">
-<td>
-<span class="listing-date">Sep 24, 2024</span>
-</td>
-<td>
-<span class="listing-image"><img loading="lazy" src="./figs/person-chalkboard-solid.svg" style="height: 40px;"></span>
-</td>
-<td>
-<a href="./slides/05-data-explorations.html" class="title listing-title">Exploring Data</a>
-</td>
-</tr>
-<tr data-index="8" data-categories="HW" data-listing-date-sort="1726808400000" data-listing-file-modified-sort="1725885693749" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="12" data-listing-title-sort="Homework: Data Programming" data-listing-filename-sort="04.qmd">
-<td>
-<span class="listing-date">Sep 20, 2024</span>
-</td>
-<td>
-<span class="listing-image"><img loading="lazy" src="./figs/homework.svg" style="height: 40px;"></span>
-</td>
-<td>
-<a href="./homework/04.html" class="title listing-title">Homework: Data Programming</a>
-</td>
-</tr>
-<tr data-index="9" data-categories="Slides" data-listing-date-sort="1726549200000" data-listing-file-modified-sort="1726628847588" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="136" data-listing-title-sort="Case Studies" data-listing-filename-sort="04-case-studies.qmd">
-<td>
-<span class="listing-date">Sep 17, 2024</span>
-</td>
-<td>
-<span class="listing-image"><img loading="lazy" src="./figs/person-chalkboard-solid.svg" style="height: 40px;"></span>
-</td>
-<td>
-<a href="./slides/04-case-studies.html" class="title listing-title">Case Studies</a>
-</td>
-</tr>
-<tr data-index="10" data-categories="HW" data-listing-date-sort="1726203600000" data-listing-file-modified-sort="1725519067369" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="12" data-listing-title-sort="Homework: Fizzbuzz" data-listing-filename-sort="03.qmd">
-<td>
-<span class="listing-date">Sep 13, 2024</span>
-</td>
-<td>
-<span class="listing-image"><img loading="lazy" src="./figs/homework.svg" style="height: 40px;"></span>
-</td>
-<td>
-<a href="./homework/03.html" class="title listing-title">Homework: Fizzbuzz</a>
-</td>
-</tr>
-<tr data-index="11" data-categories="HW" data-listing-date-sort="1725858000000" data-listing-file-modified-sort="1725520816993" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="12" data-listing-title-sort="Homework: Finding Your Way in R and Python" data-listing-filename-sort="02.qmd">
-<td>
-<span class="listing-date">Sep 9, 2024</span>
-</td>
-<td>
-<span class="listing-image"><img loading="lazy" src="./figs/homework.svg" style="height: 40px;"></span>
-</td>
-<td>
-<a href="./homework/02.html" class="title listing-title">Homework: Finding Your Way in R and Python</a>
-</td>
-</tr>
-<tr data-index="12" data-categories="Slides" data-listing-date-sort="1725858000000" data-listing-file-modified-sort="1725993394292" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="86" data-listing-title-sort="Fizzing and Buzzing" data-listing-filename-sort="03-fizzing-and-buzzing.qmd">
-<td>
-<span class="listing-date">Sep 9, 2024</span>
-</td>
-<td>
-<span class="listing-image"><img loading="lazy" src="./figs/person-chalkboard-solid.svg" style="height: 40px;"></span>
-</td>
-<td>
-<a href="./slides/03-fizzing-and-buzzing.html" class="title listing-title">Fizzing and Buzzing</a>
-</td>
-</tr>
-<tr data-index="13" data-categories="Slides" data-listing-date-sort="1725512400000" data-listing-file-modified-sort="1725520741188" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="44" data-listing-title-sort="Finding your way in R and Python" data-listing-filename-sort="02b-Finding-Your-Way.qmd">
-<td>
-<span class="listing-date">Sep 5, 2024</span>
-</td>
-<td>
-<span class="listing-image"><img loading="lazy" src="./figs/person-chalkboard-solid.svg" style="height: 40px;"></span>
-</td>
-<td>
-<a href="./slides/02b-Finding-Your-Way.html" class="title listing-title">Finding your way in R and Python</a>
-</td>
-</tr>
-<tr data-index="14" data-categories="Slides" data-listing-date-sort="1725339600000" data-listing-file-modified-sort="1724940517811" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="336" data-listing-title-sort="Finding your way in R and Python" data-listing-filename-sort="02a-Finding-Your-Way.qmd">
-<td>
-<span class="listing-date">Sep 3, 2024</span>
-</td>
-<td>
-<span class="listing-image"><img loading="lazy" src="./figs/person-chalkboard-solid.svg" style="height: 40px;"></span>
-</td>
-<td>
-<a href="./slides/02a-Finding-Your-Way.html" class="title listing-title">Finding your way in R and Python</a>
-</td>
-</tr>
-<tr data-index="15" data-categories="HW" data-listing-date-sort="1725253200000" data-listing-file-modified-sort="1724936737081" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="12" data-listing-title-sort="👋 The Basics of GitHub" data-listing-filename-sort="01.qmd">
-<td>
-<span class="listing-date">Sep 2, 2024</span>
-</td>
-<td>
-<span class="listing-image"><img loading="lazy" src="./figs/homework.svg" style="height: 40px;"></span>
-</td>
-<td>
-<a href="./homework/01.html" class="title listing-title">👋 The Basics of GitHub</a>
-</td>
-</tr>
-<tr data-index="16" data-categories="Slides" data-listing-date-sort="1724907600000" data-listing-file-modified-sort="1724936423589" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="74" data-listing-title-sort="Stat 850: Git and Github" data-listing-filename-sort="01b-intro.qmd">
-<td>
-<span class="listing-date">Aug 29, 2024</span>
-</td>
-<td>
-<span class="listing-image"><img loading="lazy" src="./figs/person-chalkboard-solid.svg" style="height: 40px;"></span>
-</td>
-<td>
-<a href="./slides/01b-intro.html" class="title listing-title">Stat 850: Git and Github</a>
-</td>
-</tr>
-<tr data-index="17" data-categories="Slides" data-listing-date-sort="1724734800000" data-listing-file-modified-sort="1724936655653" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="56" data-listing-title-sort="Stat 850 Introduction" data-listing-filename-sort="01a-intro.qmd">
-<td>
-<span class="listing-date">Aug 27, 2024</span>
-</td>
-<td>
-<span class="listing-image"><img loading="lazy" src="./figs/person-chalkboard-solid.svg" style="height: 40px;"></span>
-</td>
-<td>
-<a href="./slides/01a-intro.html" class="title listing-title">Stat 850 Introduction</a>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-
+<p>Your final project consists of a written report and a presentation (uploaded to YouTube), to be turned in instead of a final exam. In this project, you will select a topic, acquire data from one or more sources, and present any interesting findings you might come across as you explore your data.</p>
+<section id="general-rules" class="level2">
+<h2 class="anchored" data-anchor-id="general-rules">General rules</h2>
+<ul>
+<li><p>You may work in teams of up to 3 people, but each member of the team should contribute approximately evenly (I will measure this using your git contributions)</p></li>
+<li><p>Your work should be reproducible from start to finish. Do not modify the data by hand! I should be able to take the original data and your repository and go through your analysis from start to finish on my own machine.</p></li>
+<li><p>You should not have to do any complicated statistical modeling for this project. If you want to fit a model, you need to be able to explain it to the rest of the class - but other members of the class may have had different statistics classes than you’ve had. In general, this project should focus on exploratory data analysis; any model results should be explained using graphs, not statistical tests.</p></li>
+<li><p>Your project should use what you have learned (and what you will learn) about data visualization, data wrangling, programming, functions, interactive graphics, and dynamic documents. Your ultimate goal is to demonstrate the class objectives and your ability to conduct reproducible analyses and produce professional products using markdown and R/Python code.</p></li>
+</ul>
+</section>
+<section id="datasets" class="level2">
+<h2 class="anchored" data-anchor-id="datasets">Datasets</h2>
+<p>Your dataset(s)</p>
+<ul>
+<li><p>should be fun and interesting to you.<br>
+Past classes have worked on data covering witch trials, Super Mario competitive times, personal music databases, and many other topics. You can choose something serious, or something decidedly not serious and be successful with the analysis. The best predictor of success is that the data you’re working with is something you find interesting and want to explore.</p></li>
+<li><p>should be on a topic of general interest - something you could discuss with your parents or grandparents<br>
+If you use a technical dataset, you need to write your report with the more general audience in mind, which means you will need to explain any jargon you use, and provide diagrams of e.g.&nbsp;plant anatomy, etc. to get the reader up to speed. If you work with sports data, you should provide an explanation like this as well, because I have no background knowledge about sports at all.</p></li>
+<li><p>must have at least <strong>1000 records</strong> (rows) and at least <strong>5 variables</strong></p></li>
+<li><p>must include at least one meaningful categorical variable and one meaningful numeric variable (these can be derived, if you are e.g.&nbsp;working with text or image data)</p></li>
+<li><p>must not be published in a textbook or have a published analysis unless</p>
+<ul>
+<li>you get prior permission and</li>
+<li>your analysis is very different from what has previously been published</li>
+</ul></li>
+<li><p>must be something that you can make available to the entire class (so e.g.&nbsp;proprietary datasets from work or other sources aren’t acceptable)</p></li>
+<li><p>must be traceable to the original source of the data. You MAY NOT use data uploaded to Kaggle - go back to the data source. If you need help assembling your data, come talk to me about it and I may be able to help.</p></li>
+</ul>
+<p>Here are some potential sources of interesting and/or fun data that explain how the data was acquired/sourced and (usually) have adequate data documentation:</p>
+<ul>
+<li><a href="https://docs.google.com/spreadsheets/d/1wZhPLMCHKJvwOkP4juclhjFgqIY8fQFMemwKL2c64vk/edit#gid=0">Data is Plural</a> archive</li>
+<li><a href="https://github.com/rfordatascience/tidytuesday">TidyTuesday Archive</a></li>
+<li><a href="https://catalog.data.gov/dataset">Data.gov</a> The US government data archive</li>
+</ul>
+</section>
+<section id="version-control" class="level2">
+<h2 class="anchored" data-anchor-id="version-control">Version Control</h2>
+<p>You should use GitHub to track your project throughout its life cycle. Some tips:</p>
+<ul>
+<li>Pull before you start working, and after each commit.<br>
+Working in teams on github means that you have to allow for merge conflicts and become skilled at resolving them. This is part of my goal for making you work in groups - forcing you to develop these skills. See https://www.youtube.com/watch?v=97m0N4zIvOs for a demonstration of how to work with merge conflicts in rstudio.</li>
+<li>I do not expect you to work on branches for this project, unless you really want to - with 3 people and a defined scope, you should be able to work out of the main branch with few problems.</li>
+<li>Commit your changes in small, task-oriented batches. Try to work on small tasks and commit as soon as you finish the task. This will reduce merge conflicts.</li>
+<li>Minimize merge conflicts:<br>
+Put each sentence on a different line in your document - this makes it much easier for git to resolve the changes, as git works line-by-line. I make all of my graduate students do this with their papers, and it makes things much easier to work around.</li>
+<li>READ THE ERROR MESSAGE FROM GIT.<br>
+Seriously, this will help you figure out about 90% of the things that go wrong. Git actually has good error messages that help you know what to do next.</li>
+<li>Only commit the essential files necessary to compile your project report to github. This will reduce merge conflicts and save you a <em>ton</em> of time in the long run.
+<ul>
+<li>Don’t commit pictures generated by R/python, .tex files generated as an intermediate stage, or even html/pdf files that are the final product until the very end. I have set this repository up in such a way that each of the quarto files renders to the <code>_output</code> folder, and git ignores everything in this folder, in the hopes that this will be enough to help you out.</li>
+<li>Do commit any R/python source files you need to e.g.&nbsp;define a shiny application or do some data processing. Organize these in a <code>code</code> folder, and create a header in each code file that describes what the file does and how it relates to other code files in the project.</li>
+<li>Don’t commit any files you didn’t personally create. Be selective in what you add to git. Use the <code>.gitignore</code> file to keep git from tracking files that shouldn’t be added to the repository.</li>
+</ul></li>
+</ul>
+<p>I will track your contributions to the project using the python <code>git-fame</code> package, which you can install with the command <code>pip install git-fame</code>.</p>
+<p>I will typically use some variant of the following command to track your group contributions:</p>
+<pre><code>git fame . --incl=".(q|R)md"</code></pre>
+<p>This only counts modifications to the markdown files, which ensures that whoever adds a dataset to the repository doesn’t get credit for doing a ton of work by just uploading a file. This also ensures that people committing intermediate files don’t get credit for making the repository a mess.</p>
+</section>
+<section id="project-report" class="level2">
+<h2 class="anchored" data-anchor-id="project-report">Project Report</h2>
+<p>Your project report should:</p>
+<ul>
+<li><p>be contained in <code>report.qmd</code>. Saving your report in a different file will result in a 10 point deduction.</p></li>
+<li><p>use the <code>report.qmd</code> template file provided in the project repository to assemble your report. It contains demonstrations of all of the requirements above. If you don’t want to overwrite this, save the template as <code>report-template.qmd</code> for reference and then edit <code>report.qmd</code>.</p></li>
+<li><p>include a separate <code>requirements.txt</code> file where you list out the R and python packages required to compile your report and slides.</p></li>
+<li><p>be approximately <span class="math inline">\(450\times(2n + 1)\)</span> words, where <span class="math inline">\(n\)</span> is the number of people in your group. The extra length is to allow you space to describe your dataset, methods, and conclusions; everyone will need to do that regardless of group size.<br>
+If you want to know what the wordcount of your report is, you can run the following command in your terminal (in the project directory, assuming you’ve cloned it from github classroom):</p></li>
+</ul>
+<pre><code>pandoc --lua-filter wordcount.lua report.qmd</code></pre>
+<ul>
+<li><p>be grammatically correct. Please feel free to make use of the <a href="https://www.unl.edu/writing/">writing center</a> for editing, so that your report has appropriate grammar and structure.</p></li>
+<li><p>contain an introduction and a conclusion, written in paragraphs. The “meat” of the report should tell a story. This means your report should be written and formatted as a paper - think about writing a journal article describing your data analysis and results. This means your writeup should contain paragraphs, and each figure should be cross-referenced within the text.</p></li>
+<li><p>be factually correct, and should reference outside sources appropriately (see below) using quarto references.</p></li>
+<li><p>have a references section, using markdown’s references functionality. You should not manually create your bibliography - it should be created automatically using a bib file.</p></li>
+<li><p>reference the software packages you’ve used in your analysis/report and cite them appropriately. Software is a scholarly work, and deserves to be cited. The <code>citation()</code> R command can help you assemble appropriate references for software packages.</p></li>
+<li><p>use figures. Figures must have appropriate captions, and each figure should be referenced within the body of the paper using markdown reference syntax.</p></li>
+</ul>
+</section>
+<section id="presentation" class="level2">
+<h2 class="anchored" data-anchor-id="presentation">Presentation</h2>
+<p>Your project presentation should:</p>
+<ul>
+<li>include a visual aid (slides or a poster) that highlight(s) the findings you have presented in your report. The visual aid must be created using LaTeX or markdown.</li>
+<li>include participation from each member of your group</li>
+<li>be approximately <span class="math inline">\(4\times(n+1)\)</span> minutes long.</li>
+<li>be uploaded to YouTube (you can set the link such that people with the link can view the presentation but where it is not searchable) or YuJa (but YouTube is easier for your classmates to work with). You will submit the link to the presentation on Canvas.</li>
+</ul>
+<p>You will be expected to peer-evaluate two other groups presentations and/or reports, using the rubric.</p>
 
 
 </section>
