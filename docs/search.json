@@ -445,7 +445,7 @@
     "href": "slides/07-murder.html#this-weeks-big-picture-goal",
     "title": "Murder in SQL City",
     "section": "This week’s big picture goal:",
-    "text": "This week’s big picture goal:\nWorking with text and practicing exploration skills"
+    "text": "This week’s big picture goal:\nWorking with data filters, joining data"
   },
   {
     "objectID": "slides/07-murder.html#organization",
@@ -466,7 +466,7 @@
     "href": "slides/07-murder.html#todays-goals",
     "title": "Murder in SQL City",
     "section": "Today’s Goals:",
-    "text": "Today’s Goals:\n\nExploration!\n\nIdeally you have passed checkpoint 2 for both R and python. If not, finish up checkpoint 2 for one language and proceed with that."
+    "text": "Today’s Goals:\n\nIn Canvas, follow the Github Classroom link to Homework 7\nClone the repo for Homework 7 to your local machine\nMake sure that you are able to render index.qmd\nYou might have to install the package RSQLite\n\nStart solving the murder … by … ahem, finding that crime report."
   },
   {
     "objectID": "slides/07-murder.html#resources",

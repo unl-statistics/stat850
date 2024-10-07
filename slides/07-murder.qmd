@@ -14,42 +14,19 @@ Working with data filters, joining data
 
 ---
 
-## Organization
-
-- code for homework submissions: 
-  
-  - always make sure that the `index.qmd` file renders for you (that's where your answers are *supposed* to be)
-
-  - comment out any and all calls that produce: 
-    
-      - excessive output: `ls()`, `dir()`, `print()`
-  
-      - additional windows: `View()`, `?` (or `??`, `help`), 
-      
-      - install software: `install.packages()`,  
-  
-  - references to files outside of your repository
-
----
-
-## Projects
----
 
 ## Today's Goals:
 
+- In Canvas, follow the Github Classroom link to Homework 7
 
-
-## Today's Goals:
-
-- In Canvas, follow the Github Classroom link to Homework 6
-
-- Clone the repo for Homework 6 to your local machine
+- Clone the repo for Homework 7 to your local machine
 
 - Make sure that you are able to render `index.qmd`
 
-- Start wrangling these poems!
+- You might have to install the package `RSQLite`
 
-Try to get past checkpoints 1 and 2 for both python and R, so you can focus on the exploration on Thursday
+Start solving the murder ... by ... ahem, finding that crime report. 
+
 
 ----
 
