@@ -1,0 +1,65 @@
+---
+title: "Murder in SQL City"
+date: "2024-10-08"
+categories: Slides
+format: 
+  revealjs:
+    theme: default
+---
+
+
+## This week's big picture goal:
+
+Working with data filters, joining data
+
+---
+
+## Organization
+
+- code for homework submissions: 
+  
+  - always make sure that the `index.qmd` file renders for you (that's where your answers are *supposed* to be)
+
+  - comment out any and all calls that produce: 
+    
+      - excessive output: `ls()`, `dir()`, `print()`
+  
+      - additional windows: `View()`, `?` (or `??`, `help`), 
+      
+      - install software: `install.packages()`,  
+  
+  - references to files outside of your repository
+
+---
+
+## Projects
+---
+
+## Today's Goals:
+
+
+
+## Today's Goals:
+
+- In Canvas, follow the Github Classroom link to Homework 6
+
+- Clone the repo for Homework 6 to your local machine
+
+- Make sure that you are able to render `index.qmd`
+
+- Start wrangling these poems!
+
+Try to get past checkpoints 1 and 2 for both python and R, so you can focus on the exploration on Thursday
+
+----
+
+## Resources
+
+- [R cheat sheet](https://srvanderplas.github.io/stat-computing-r-python/files/Short-refcard.pdf)
+
+- [python cheat sheet](https://srvanderplas.github.io/stat-computing-r-python/files/Python3_reference_cheat_sheet.pdf)
+
+
+
+
+
