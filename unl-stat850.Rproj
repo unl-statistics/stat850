@@ -16,5 +16,5 @@ AutoAppendNewline: Yes
 StripTrailingWhitespace: Yes
 
 PythonType: virtualenv
-PythonVersion: 3.12.6
-PythonPath: renv/python/virtualenvs/renv-python-3.12/bin/python
+PythonVersion: 3.11.2
+PythonPath: ~/.virtualenvs/book/bin/python
