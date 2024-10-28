@@ -42,6 +42,76 @@
     "text": "Additional Comments\nWhat concerns do you have about this project? This is your place to provide feedback about the project guidelines and ask clarifying questions for me to address either individually or in class, if the question is relevant to everyone."
   },
   {
+    "objectID": "homework/11c.html",
+    "href": "homework/11c.html",
+    "title": "Homework 11: Simulation (Probability)",
+    "section": "",
+    "text": "Note: This assignment must be submitted in github classroom."
+  },
+  {
+    "objectID": "homework/11c.html#before-you-start",
+    "href": "homework/11c.html#before-you-start",
+    "title": "Homework 11: Simulation (Probability)",
+    "section": "Before you start:",
+    "text": "Before you start:\nGo to _quarto.yml and fill in your name. This will ensure that all documents in this project have your name on them."
+  },
+  {
+    "objectID": "homework/11c.html#rules-for-this-assignment",
+    "href": "homework/11c.html#rules-for-this-assignment",
+    "title": "Homework 11: Simulation (Probability)",
+    "section": "Rules for this assignment:",
+    "text": "Rules for this assignment:\n\nYou must write your own code for this assignment. You may work with other students and discuss the problem and how to solve it, but your code must be written individually.\nYou may use generative AI on this assignment, but any prompt/script must be saved and turned in with the assignment. You must also be able to explain every line of code you submit, whether or not you used AI to write it."
+  },
+  {
+    "objectID": "homework/11c.html#assignment-process",
+    "href": "homework/11c.html#assignment-process",
+    "title": "Homework 11: Simulation (Probability)",
+    "section": "Assignment Process",
+    "text": "Assignment Process\nYou will have 3 weeks to complete the steps of this assignment.\n\npseudocode.qmd - you will design pseudocode to play and summarize one or more games of craps, with some help from generative AI.\ncraps-code.qmd - you will write code (using any language taught in this class) to implement the simulated game of craps using the pseudocode created in the first week.\nsimulation.qmd - you will write code to answer a complex probability question using your craps code from week 2.\n\nI will grade pseudocode.qmd after the first week, craps-code.qmd after the second week, and simulation.qmd after the end of third week. Your assignment will be graded on the progress in your github repository at the end of each week, so please make sure you push your code after each significant modification."
+  },
+  {
+    "objectID": "homework/11c.html#grading-schema",
+    "href": "homework/11c.html#grading-schema",
+    "title": "Homework 11: Simulation (Probability)",
+    "section": "Grading Schema",
+    "text": "Grading Schema\n\nThe pseudocode for this assignment is worth one homework grade.\nThe code for the game of craps is worth a second homework grade.\nThe simulation results using the code in the previous assignment is worth a 3rd homework grade.\n\n\nPseudocode rubric\n\n\nCode rubric\n\n\nSimulation rubric"
+  },
+  {
+    "objectID": "homework/11.html",
+    "href": "homework/11.html",
+    "title": "Homework 11: Simulation (Pseudocode)",
+    "section": "",
+    "text": "Note: This assignment must be submitted in github classroom."
+  },
+  {
+    "objectID": "homework/11.html#before-you-start",
+    "href": "homework/11.html#before-you-start",
+    "title": "Homework 11: Simulation (Pseudocode)",
+    "section": "Before you start:",
+    "text": "Before you start:\nGo to _quarto.yml and fill in your name. This will ensure that all documents in this project have your name on them."
+  },
+  {
+    "objectID": "homework/11.html#rules-for-this-assignment",
+    "href": "homework/11.html#rules-for-this-assignment",
+    "title": "Homework 11: Simulation (Pseudocode)",
+    "section": "Rules for this assignment:",
+    "text": "Rules for this assignment:\n\nYou must write your own code for this assignment. You may work with other students and discuss the problem and how to solve it, but your code must be written individually.\nYou may use generative AI on this assignment, but any prompt/script must be saved and turned in with the assignment. You must also be able to explain every line of code you submit, whether or not you used AI to write it."
+  },
+  {
+    "objectID": "homework/11.html#assignment-process",
+    "href": "homework/11.html#assignment-process",
+    "title": "Homework 11: Simulation (Pseudocode)",
+    "section": "Assignment Process",
+    "text": "Assignment Process\nYou will have 3 weeks to complete the steps of this assignment.\n\npseudocode.qmd - you will design pseudocode to play and summarize one or more games of craps, with some help from generative AI.\ncraps-code.qmd - you will write code (using any language taught in this class) to implement the simulated game of craps using the pseudocode created in the first week.\nsimulation.qmd - you will write code to answer a complex probability question using your craps code from week 2.\n\nI will grade pseudocode.qmd after the first week, craps-code.qmd after the second week, and simulation.qmd after the end of third week. Your assignment will be graded on the progress in your github repository at the end of each week, so please make sure you push your code after each significant modification."
+  },
+  {
+    "objectID": "homework/11.html#grading-schema",
+    "href": "homework/11.html#grading-schema",
+    "title": "Homework 11: Simulation (Pseudocode)",
+    "section": "Grading Schema",
+    "text": "Grading Schema\n\nThe pseudocode for this assignment is worth one homework grade.\nThe code for the game of craps is worth a second homework grade.\nThe simulation results using the code in the previous assignment is worth a 3rd homework grade.\n\n\nPseudocode rubric\n\n\nCode rubric\n\n\nSimulation rubric"
+  },
+  {
     "objectID": "homework/08.html",
     "href": "homework/08.html",
     "title": "Homework: Awesomely Bad Graphics",
@@ -312,7 +382,7 @@
     "href": "index.html",
     "title": "Stat 850: Computing Tools for Statistics",
     "section": "",
-    "text": "Course Materials\nDates shown are due dates (for homework, projects) and dates by which initial comments/annotations should be made (reading).\nMost classes will not contain slide presentations, but when there are slides to share, they will be provided here.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\n\n\nTitle\n\n\n\n\n\n\nDec 8, 2024\n\n\n\n\n\nSample Report\n\n\n\n\nOct 24, 2024\n\n\n\n\n\nDebugging Excercises\n\n\n\n\nOct 21, 2024\n\n\n\n\n\nHomework: Awesomely Bad Graphics\n\n\n\n\nOct 14, 2024\n\n\n\n\n\nHomework: Murder in SQL City\n\n\n\n\nOct 14, 2024\n\n\n\n\n\nProject Guidelines\n\n\n\n\nOct 14, 2024\n\n\n\n\n\nStat 850 Project Proposal\n\n\n\n\nOct 8, 2024\n\n\n\n\n\nMurder in SQL City\n\n\n\n\nOct 7, 2024\n\n\n\n\n\nString Processing and Data Wrangling in R and Python\n\n\n\n\nOct 3, 2024\n\n\n\n\n\nWrangling Data\n\n\n\n\nOct 1, 2024\n\n\n\n\n\nWrangling Data\n\n\n\n\nSep 30, 2024\n\n\n\n\n\nChocolate Chip Cookies\n\n\n\n\nSep 24, 2024\n\n\n\n\n\nExploring Data\n\n\n\n\nSep 20, 2024\n\n\n\n\n\nHomework: Data Programming\n\n\n\n\nSep 17, 2024\n\n\n\n\n\nCase Studies\n\n\n\n\nSep 13, 2024\n\n\n\n\n\nHomework: Fizzbuzz\n\n\n\n\nSep 9, 2024\n\n\n\n\n\nHomework: Finding Your Way in R and Python\n\n\n\n\nSep 9, 2024\n\n\n\n\n\nFizzing and Buzzing\n\n\n\n\nSep 5, 2024\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nSep 3, 2024\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nSep 2, 2024\n\n\n\n\n\n👋 The Basics of GitHub\n\n\n\n\nAug 29, 2024\n\n\n\n\n\nStat 850: Git and Github\n\n\n\n\nAug 27, 2024\n\n\n\n\n\nStat 850 Introduction\n\n\n\n\n\nNo matching items"
+    "text": "Course Materials\nDates shown are due dates (for homework, projects) and dates by which initial comments/annotations should be made (reading).\nMost classes will not contain slide presentations, but when there are slides to share, they will be provided here.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\n\n\nTitle\n\n\n\n\n\n\nDec 8, 2024\n\n\n\n\n\nSample Report\n\n\n\n\nNov 25, 2024\n\n\n\n\n\nHomework 11: Simulation (Probability)\n\n\n\n\nNov 15, 2024\n\n\n\n\n\nHomework 11: Simulation (Implementation)\n\n\n\n\nNov 8, 2024\n\n\n\n\n\nHomework 11: Simulation (Pseudocode)\n\n\n\n\nNov 4, 2024\n\n\n\n\n\nHomework 10: Professional Communication\n\n\n\n\nOct 24, 2024\n\n\n\n\n\nDebugging Excercises\n\n\n\n\nOct 21, 2024\n\n\n\n\n\nHomework: Awesomely Bad Graphics\n\n\n\n\nOct 14, 2024\n\n\n\n\n\nHomework: Murder in SQL City\n\n\n\n\nOct 14, 2024\n\n\n\n\n\nProject Guidelines\n\n\n\n\nOct 14, 2024\n\n\n\n\n\nStat 850 Project Proposal\n\n\n\n\nOct 8, 2024\n\n\n\n\n\nMurder in SQL City\n\n\n\n\nOct 7, 2024\n\n\n\n\n\nString Processing and Data Wrangling in R and Python\n\n\n\n\nOct 3, 2024\n\n\n\n\n\nWrangling Data\n\n\n\n\nOct 1, 2024\n\n\n\n\n\nWrangling Data\n\n\n\n\nSep 30, 2024\n\n\n\n\n\nChocolate Chip Cookies\n\n\n\n\nSep 24, 2024\n\n\n\n\n\nExploring Data\n\n\n\n\nSep 20, 2024\n\n\n\n\n\nHomework: Data Programming\n\n\n\n\nSep 17, 2024\n\n\n\n\n\nCase Studies\n\n\n\n\nSep 13, 2024\n\n\n\n\n\nHomework: Fizzbuzz\n\n\n\n\nSep 9, 2024\n\n\n\n\n\nHomework: Finding Your Way in R and Python\n\n\n\n\nSep 9, 2024\n\n\n\n\n\nFizzing and Buzzing\n\n\n\n\nSep 5, 2024\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nSep 3, 2024\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nSep 2, 2024\n\n\n\n\n\n👋 The Basics of GitHub\n\n\n\n\nAug 29, 2024\n\n\n\n\n\nStat 850: Git and Github\n\n\n\n\nAug 27, 2024\n\n\n\n\n\nStat 850 Introduction\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -579,6 +649,55 @@
     "title": "Homework: Murder in SQL City",
     "section": "Python",
     "text": "Python\n\nimport pandas as pd\nimport sqlite3\n\n# Read sqlite query results into a pandas DataFrame\ncon = sqlite3.connect(\"sql-murder-mystery.db\")\n\ncrime_scene_report = pd.read_sql_query(\"SELECT * from crime_scene_report\", con)\ndrivers_license = pd.read_sql_query(\"SELECT * from drivers_license\", con)\nfacebook_event_checkin = pd.read_sql_query(\"SELECT * from facebook_event_checkin\", con)\nget_fit_now_check_in = pd.read_sql_query(\"SELECT * from get_fit_now_check_in\", con)\nget_fit_now_member = pd.read_sql_query(\"SELECT * from get_fit_now_member\", con)\nincome = pd.read_sql_query(\"SELECT * from income\", con)\ninterview = pd.read_sql_query(\"SELECT * from interview\", con)\nperson = pd.read_sql_query(\"SELECT * from person\", con)\n\n# Verify that result of SQL query is stored in the dataframe\nprint(crime_scene_report.head())\n\n       date  ...      city\n0  20180115  ...       NYC\n1  20180115  ...    Albany\n2  20180115  ...      Reno\n3  20180215  ...  SQL City\n4  20180215  ...  SQL City\n\n[5 rows x 4 columns]\n\n\ncon.close()"
+  },
+  {
+    "objectID": "homework/10.html",
+    "href": "homework/10.html",
+    "title": "Homework 10: Professional Communication",
+    "section": "",
+    "text": "Note: This assignment must be submitted in github classroom."
+  },
+  {
+    "objectID": "homework/10.html#instructions",
+    "href": "homework/10.html#instructions",
+    "title": "Homework 10: Professional Communication",
+    "section": "Instructions",
+    "text": "Instructions\n\nPart 1\nFor this assignment, you will create a set of slides in at least two different programs – one that requires beamer/LaTeX and one that is HTML-based (reveal.js, xaringan, etc.). You may pick any of the libraries mentioned in the textbook or any modules you discover online.\nIn your slides, I’d like you to introduce yourself, provide some basic biographical information (birthday, where you grew up, what program you’re in, and when you expect to graduate). On subsequent slides, you should provide:\n\nA picture of your favorite animal\nYour favorite plot (can be one you’ve already generated in this class), which should be generated as part of your document (you can’t just include the picture).\nA link to your CV, which you will create in the next part.\n\nYou should not show any code, automatically generated error messages, etc. in your generated files - you should only show the end product.\nThese slide decks should have at most 5 slides (title, introduction, animal picture, plot, and CV link), so hopefully they won’t take too much time. The goal of the assignment is that you will be familiar with the advantages and disadvantages of each slide ecosystem.\n\n\nPart 2\nUse one of the CV packages mentioned in the textbook (or another LaTeX or markdown CV package that you want to try) to create a basic CV. I will not be grading the CV on how much content there is, so don’t worry if you don’t have publications, etc. You can add a fake publication if you want, just put the title as XXX sample XXX or something.\nYou can customize your CV as you like – it’s a good idea to keep your CV up to date, so take the time to do that now if you want.\nAnother good source for CV templates is Overleaf\n\n\nPart 3\nUse a GitHub pages site (.github.io) to host your CV and slide decks.\nSteps: 1. Set up github pages for your user, as in the video. Make sure your repository is set to be public. 2. In your .github.io repository, upload your CV and slides. 3. In your .github.io repository, edit the README.md file to link to your CV and slides. You can use local links (e.g. [link text](file.html)). This will allow you to navigate from .github.io to your slides and CV so that you can get good links.\nUpload the link to your .github.io page to Canvas to complete this assignment.\nNote, this assignment does not require you to make changes to this file or repository. All of your work will be done in your .github.io repository, which will be public.\nSome things to keep in mind:\n\nYou don’t need to commit every file latex/markdown generates: only commit the essentials:\n\nsource document,\nany file dependencies (like pictures or data), and\nthe final result (if you are planning to make the final result available online).\n\nWhen you ask for help, remember to make your question as reproducible as possible!\n\nUpload the link to the compiled index.html file to Canvas to complete this assignment."
+  },
+  {
+    "objectID": "homework/11b.html",
+    "href": "homework/11b.html",
+    "title": "Homework 11: Simulation (Implementation)",
+    "section": "",
+    "text": "Note: This assignment must be submitted in github classroom."
+  },
+  {
+    "objectID": "homework/11b.html#before-you-start",
+    "href": "homework/11b.html#before-you-start",
+    "title": "Homework 11: Simulation (Implementation)",
+    "section": "Before you start:",
+    "text": "Before you start:\nGo to _quarto.yml and fill in your name. This will ensure that all documents in this project have your name on them."
+  },
+  {
+    "objectID": "homework/11b.html#rules-for-this-assignment",
+    "href": "homework/11b.html#rules-for-this-assignment",
+    "title": "Homework 11: Simulation (Implementation)",
+    "section": "Rules for this assignment:",
+    "text": "Rules for this assignment:\n\nYou must write your own code for this assignment. You may work with other students and discuss the problem and how to solve it, but your code must be written individually.\nYou may use generative AI on this assignment, but any prompt/script must be saved and turned in with the assignment. You must also be able to explain every line of code you submit, whether or not you used AI to write it."
+  },
+  {
+    "objectID": "homework/11b.html#assignment-process",
+    "href": "homework/11b.html#assignment-process",
+    "title": "Homework 11: Simulation (Implementation)",
+    "section": "Assignment Process",
+    "text": "Assignment Process\nYou will have 3 weeks to complete the steps of this assignment.\n\npseudocode.qmd - you will design pseudocode to play and summarize one or more games of craps, with some help from generative AI.\ncraps-code.qmd - you will write code (using any language taught in this class) to implement the simulated game of craps using the pseudocode created in the first week.\nsimulation.qmd - you will write code to answer a complex probability question using your craps code from week 2.\n\nI will grade pseudocode.qmd after the first week, craps-code.qmd after the second week, and simulation.qmd after the end of third week. Your assignment will be graded on the progress in your github repository at the end of each week, so please make sure you push your code after each significant modification."
+  },
+  {
+    "objectID": "homework/11b.html#grading-schema",
+    "href": "homework/11b.html#grading-schema",
+    "title": "Homework 11: Simulation (Implementation)",
+    "section": "Grading Schema",
+    "text": "Grading Schema\n\nThe pseudocode for this assignment is worth one homework grade.\nThe code for the game of craps is worth a second homework grade.\nThe simulation results using the code in the previous assignment is worth a 3rd homework grade.\n\n\nPseudocode rubric\n\n\nCode rubric\n\n\nSimulation rubric"
   },
   {
     "objectID": "project/guidelines.html",
