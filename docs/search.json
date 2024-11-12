@@ -1,45 +1,94 @@
 [
   {
-    "objectID": "project/proposal.html",
-    "href": "project/proposal.html",
-    "title": "Stat 850 Project Proposal",
+    "objectID": "project/report.html",
+    "href": "project/report.html",
+    "title": "Sample Report",
     "section": "",
-    "text": "Each member of your team should modify this document in some way and push their modifications to the repository in a separate commit. This will ensure that you have set your repository up in a way that ensures all group members are working with the same repository.\nPlease ensure that you have set your git name and email address on your computer by modifying the following commands and running them in the terminal:\ngit config --global user.name \"Mona Lisa\"\ngit config --global user.email \"mona@lisa.com\"\nIn the proposal as in the final report, all of your code chunks should be set so that echo = F, which prevents the code from being printed in the report. You should also set message = F, warning = F, which will reduce the amount of additional output which is present in the report. You can customize the execution of code in quarto by using additional options, some of which are detailed here."
+    "text": "# This code chunk contains code to install all of the dependencies\n# necessary to compile and run your report, using if-statements to\n# reduce install time for unnecessary code.\n# It should be set to eval = F by default, so you aren't installing\n# software on someone's computer without their consent.\n\n# This works for packages that are on CRAN\nif (!\"dplyr\" %in% installed.packages()) {\n  install.packages(\"dplyr\")\n}\nif (!\"remotes\" %in% installed.packages()) {\n  install.packages(\"remotes\")\n}\n\n# This is how to do it for a package that's only on github\nif (!\"emo\" %in% installed.packages()) {\n  remotes::install_github(\"hadley/emo\")"
   },
   {
-    "objectID": "project/proposal.html#instructions",
-    "href": "project/proposal.html#instructions",
-    "title": "Stat 850 Project Proposal",
+    "objectID": "project/report.html#introduction",
+    "href": "project/report.html#introduction",
+    "title": "Sample Report",
+    "section": "Introduction",
+    "text": "Introduction\nIntroduce your dataset and basic questions for exploration. Explain any unique approaches you will take or any interesting features of your dataset that you have to overcome. Cite the source of your dataset, and briefly discuss how it was collected.\nDiscuss the variables in the dataset and if there are anomalies in the variables, provide some visual assessment of the anomalies and explain how they may have arisen. You should cover most of the information in your proposal data section, but should primarily use paragraphs and not lists/tables (the exception may be a list of e.g. items which were measured)."
+  },
+  {
+    "objectID": "project/report.html#methods",
+    "href": "project/report.html#methods",
+    "title": "Sample Report",
+    "section": "Methods",
+    "text": "Methods\nDescribe any data cleaning and rearranging you needed to do to get your dataset into a workable form. Make sure to cite any packages which were important in your data cleaning process in this section. For instance, if you used dplyr, then it would be appropriate to say something like\n\nwe used the group-apply-combine paradigm with the dplyr functions group_by and summarize [@dplyr-package] to generate a dataset for each day of the observation period from the 15-minute interval observations in the raw data set."
+  },
+  {
+    "objectID": "project/report.html#topic-of-exploration",
+    "href": "project/report.html#topic-of-exploration",
+    "title": "Sample Report",
+    "section": "Topic of Exploration",
+    "text": "Topic of Exploration\nHere, you want to introduce the first topic you want to explore with your (newly cleaned up) data. Code to process data should be contained in chunks above this point, and those chunks should not be included in the report.\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed).\nIf you generate a figure, it should have a caption. Here’s a demonstration of how to do that:\n\n\n\n\n\n\n\n\nFigure 1: This figure shows the relationship between sepal width and petal width in irises. I’ve used geom_jitter to combat overplotting, as the data are measured in relatively consistent increments. The figure is drawn with ggplot2 [@ggplot2-package].\n\n\n\n\n\nThen, you can reference Figure 1 in the text and the appropriate cross-reference will be generated.\nYou can find additional information about formatting figures generated from code in the quarto documentation."
+  },
+  {
+    "objectID": "project/report.html#additional-exploration-topic",
+    "href": "project/report.html#additional-exploration-topic",
+    "title": "Sample Report",
+    "section": "Additional Exploration topic",
+    "text": "Additional Exploration topic\nAdd another topic here… as many as you desire, really. Make sure to include a transition between the two sections that connects the two with some sort of logical train of thought."
+  },
+  {
+    "objectID": "project/report.html#conclusion",
+    "href": "project/report.html#conclusion",
+    "title": "Sample Report",
+    "section": "Conclusion",
+    "text": "Conclusion\nHere, you want to summarize the main points of what you’ve learned from this investigation, in paragraph form."
+  },
+  {
+    "objectID": "project/report.html#tips",
+    "href": "project/report.html#tips",
+    "title": "Sample Report",
+    "section": "Tips",
+    "text": "Tips\n(delete this section from your report!)\nAlmost anything you might want to know about how to format output in quarto can be found here. Feel free to email/come to office hours to figure out how to do XYZ - part of the goal of making you write this report is that I want you to know how to write e.g. a journal paper in Quarto as well, so now’s the time to experiment.\nIf you want to know what the wordcount of your report is, you can run the following command in your terminal:\npandoc --lua-filter wordcount.lua report.qmd\nNotice that I have not pushed _output/report.html or the _output/report_files/ folder to github - this is intentional. I have actually set _output to not show up in git, to encourage you all to NOT push the rendered files to github and to instead work from the markdown files directly.\nYou may find it cleaner to create a figure subdirectory and store any figures that aren’t created by R/Python in that folder. I encourage you to organize this repository in a sensible way."
+  },
+  {
+    "objectID": "project/guidelines.html",
+    "href": "project/guidelines.html",
+    "title": "Project Guidelines",
     "section": "",
-    "text": "Each member of your team should modify this document in some way and push their modifications to the repository in a separate commit. This will ensure that you have set your repository up in a way that ensures all group members are working with the same repository.\nPlease ensure that you have set your git name and email address on your computer by modifying the following commands and running them in the terminal:\ngit config --global user.name \"Mona Lisa\"\ngit config --global user.email \"mona@lisa.com\"\nIn the proposal as in the final report, all of your code chunks should be set so that echo = F, which prevents the code from being printed in the report. You should also set message = F, warning = F, which will reduce the amount of additional output which is present in the report. You can customize the execution of code in quarto by using additional options, some of which are detailed here."
+    "text": "Your final project consists of a written report and a presentation (uploaded to YouTube), to be turned in instead of a final exam. In this project, you will select a topic, acquire data from one or more sources, and present any interesting findings you might come across as you explore your data."
   },
   {
-    "objectID": "project/proposal.html#data",
-    "href": "project/proposal.html#data",
-    "title": "Stat 850 Project Proposal",
-    "section": "Data",
-    "text": "Data\n\nSource\nThe data we are using in this project comes from [link to web site].\nIf you cannot link directly to the data file, then you need to additionally describe how someone could acquire the same data:\n\nYou can download the data directly using [process]\n\nProvide some code to read in the data (either stored in the repository or read in directly from the source).\n\n\nDescription\nThis dataset contains information about …\nIt was collected from …\nHere is a data dictionary showing each variable, the type of variable, units, and range of values that are possible:\nNote: this is an example table, please modify to actually match your data. Ensure that all of the same information is represented.\n\n\n\n\n\n\n\n\n\n\nName\nDescription\nType\nUnits\nRange/Values\n\n\n\n\nday_of_week\nThe day of the week on which the observation took place\ncategorical\nNA\n0 = Sunday\n1 = Monday\n…\n6 = Saturday\n7 = Unknown\n\n\nweight\nThe weight of the individual\nnumeric\nlbs\n0 - 300 (max weight measurable on the scale used)\nNA indicates missing data\n\n\ntime\nThe time of the observation\nnumeric\nHHMM\n0000 corresponds to midnight,\n2359 corresponds to 1 minute before midnight on the same day."
+    "objectID": "project/guidelines.html#general-rules",
+    "href": "project/guidelines.html#general-rules",
+    "title": "Project Guidelines",
+    "section": "General rules",
+    "text": "General rules\n\nYou may work in teams of up to 3 people, but each member of the team should contribute approximately evenly (I will measure this using your git contributions)\nYour work should be reproducible from start to finish. Do not modify the data by hand! I should be able to take the original data and your repository and go through your analysis from start to finish on my own machine.\nYou should not have to do any complicated statistical modeling for this project. If you want to fit a model, you need to be able to explain it to the rest of the class - but other members of the class may have had different statistics classes than you’ve had. In general, this project should focus on exploratory data analysis; any model results should be explained using graphs, not statistical tests.\nYour project should use what you have learned (and what you will learn) about data visualization, data wrangling, programming, functions, interactive graphics, and dynamic documents. Your ultimate goal is to demonstrate the class objectives and your ability to conduct reproducible analyses and produce professional products using markdown and R/Python code."
   },
   {
-    "objectID": "project/proposal.html#project-goals",
-    "href": "project/proposal.html#project-goals",
-    "title": "Stat 850 Project Proposal",
-    "section": "Project Goals",
-    "text": "Project Goals\nDescribe why this data is interesting and what you hope to do with it.\nWe will use [dataset] to explore the following topics:\n\ninteresting thing 1\ninteresting thing 2\n…\n\nWe expect to create\n\ndescription of some of the graphs you might create\na shiny application\na statistical model\n…"
+    "objectID": "project/guidelines.html#datasets",
+    "href": "project/guidelines.html#datasets",
+    "title": "Project Guidelines",
+    "section": "Datasets",
+    "text": "Datasets\nYour dataset(s)\n\nshould be fun and interesting to you.\nPast classes have worked on data covering witch trials, Super Mario competitive times, personal music databases, and many other topics. You can choose something serious, or something decidedly not serious and be successful with the analysis. The best predictor of success is that the data you’re working with is something you find interesting and want to explore.\nshould be on a topic of general interest - something you could discuss with your parents or grandparents\nIf you use a technical dataset, you need to write your report with the more general audience in mind, which means you will need to explain any jargon you use, and provide diagrams of e.g. plant anatomy, etc. to get the reader up to speed. If you work with sports data, you should provide an explanation like this as well, because I (Susan) have no background knowledge about sports at all and I (Heike) will call everything ‘Fussball’, because that’s really the only sport that matters :).\nmust have at least 1000 records (rows) and at least 5 variables\nmust include at least one meaningful categorical variable and one meaningful numeric variable (these can be derived, if you are e.g. working with text or image data)\nmust not be published in a textbook or have a published analysis unless\n\nyou get prior permission and\nyour analysis is very different from what has previously been published\n\nmust be something that you can make available to the entire class (so e.g. proprietary datasets from work or other sources aren’t acceptable)\nmust be traceable to the original source of the data. You MAY NOT use data uploaded to Kaggle - go back to the data source. If you need help assembling your data, come talk to me about it and I may be able to help.\n\nHere are some potential sources of interesting and/or fun data that explain how the data was acquired/sourced and (usually) have adequate data documentation:\n\nData is Plural archive\nTidyTuesday Archive\nData.gov The US government data archive"
   },
   {
-    "objectID": "project/proposal.html#division-of-labor",
-    "href": "project/proposal.html#division-of-labor",
-    "title": "Stat 850 Project Proposal",
-    "section": "Division of Labor",
-    "text": "Division of Labor\nDescribe how you plan to work together as a team. Set intermediate deadlines - what do you plan to have done by the project check-in? The more you have done (report/slides/code), the better feedback I can give you."
+    "objectID": "project/guidelines.html#version-control",
+    "href": "project/guidelines.html#version-control",
+    "title": "Project Guidelines",
+    "section": "Version Control",
+    "text": "Version Control\nYou should use GitHub to track your project throughout its life cycle. Some tips:\n\nPull before you start working, and after each commit.\nWorking in teams on github means that you have to allow for merge conflicts and become skilled at resolving them. This is part of my goal for making you work in groups - forcing you to develop these skills. See https://www.youtube.com/watch?v=97m0N4zIvOs for a demonstration of how to work with merge conflicts in rstudio.\nI do not expect you to work on branches for this project, unless you really want to - with 3 people and a defined scope, you should be able to work out of the main branch with few problems.\nCommit your changes in small, task-oriented batches. Try to work on small tasks and commit as soon as you finish the task. This will reduce merge conflicts.\nMinimize merge conflicts:\nPut each sentence on a different line in your document - this makes it much easier for git to resolve the changes, as git works line-by-line. I make all of my graduate students do this with their papers, and it makes things much easier to work around.\nREAD THE ERROR MESSAGE FROM GIT.\nSeriously, this will help you figure out about 90% of the things that go wrong. Git actually has good error messages that help you know what to do next.\nOnly commit the essential files necessary to compile your project report to github. This will reduce merge conflicts and save you a ton of time in the long run.\n\nStick to original files only - i.e. don’t commit pictures generated by R/python, .tex files generated as an intermediate stage, or even html/pdf files that are the final product until the very end. I have set this repository up in such a way that each of the quarto files renders to the _output folder, and git ignores everything in this folder, in the hopes that this will be enough to help you out.\nDo commit any R/python source files you need to e.g. define a shiny application or do some data processing. Organize these in a code folder, and create a header in each code file that describes what the file does and how it relates to other code files in the project.\nDon’t commit any files you didn’t personally create. Be selective in what you add to git. Use the .gitignore file to keep git from tracking files that shouldn’t be added to the repository.\n\n\nI will track your contributions to the project using the python git-fame package, which you can install with the command pip install git-fame.\nI will typically use some variant of the following command to track your group contributions:\ngit fame . --incl=\".(q|R)md\"\nThis only counts modifications to the markdown files, which ensures that whoever adds a dataset to the repository doesn’t get credit for doing a ton of work by just uploading a file. This also ensures that people committing intermediate files don’t get credit for making the repository a mess."
   },
   {
-    "objectID": "project/proposal.html#additional-comments",
-    "href": "project/proposal.html#additional-comments",
-    "title": "Stat 850 Project Proposal",
-    "section": "Additional Comments",
-    "text": "Additional Comments\nWhat concerns do you have about this project? This is your place to provide feedback about the project guidelines and ask clarifying questions for me to address either individually or in class, if the question is relevant to everyone."
+    "objectID": "project/guidelines.html#project-report",
+    "href": "project/guidelines.html#project-report",
+    "title": "Project Guidelines",
+    "section": "Project Report",
+    "text": "Project Report\nYour project report should:\n\nbe contained in report.qmd. Saving your report in a different file will result in a 10 point deduction.\nuse the report.qmd template file provided in the project repository to assemble your report. It contains demonstrations of all of the requirements above. If you don’t want to overwrite this, save the template as report-template.qmd for reference and then edit report.qmd.\ninclude a separate requirements.txt file where you list out the R and python packages required to compile your report and slides.\nbe approximately \\(450\\times(2n + 1)\\) words, where \\(n\\) is the number of people in your group. The extra length is to allow you space to describe your dataset, methods, and conclusions; everyone will need to do that regardless of group size.\nIf you want to know what the wordcount of your report is, you can run the following command in your terminal (in the project directory, assuming you’ve cloned it from github classroom):\n\npandoc --lua-filter wordcount.lua report.qmd\n\nbe grammatically correct. Please feel free to make use of the writing center for editing, so that your report has appropriate grammar and structure.\ncontain an introduction and a conclusion, written in paragraphs. The “meat” of the report should tell a story. This means your report should be written and formatted as a paper - think about writing a journal article describing your data analysis and results. This means your writeup should contain paragraphs, and each figure should be cross-referenced within the text.\nbe factually correct, and should reference outside sources appropriately (see below) using quarto references.\nhave a references section, using markdown’s references functionality. You should not manually create your bibliography - it should be created automatically using a bib file.\nreference the software packages you’ve used in your analysis/report and cite them appropriately. Software is a scholarly work, and deserves to be cited. The citation() R command can help you assemble appropriate references for software packages.\nuse figures. Figures must have appropriate captions, and each figure should be referenced within the body of the paper using markdown reference syntax."
+  },
+  {
+    "objectID": "project/guidelines.html#presentation",
+    "href": "project/guidelines.html#presentation",
+    "title": "Project Guidelines",
+    "section": "Presentation",
+    "text": "Presentation\nYour project presentation should:\n\ninclude a visual aid (slides or a poster) that highlight(s) the findings you have presented in your report. The visual aid must be created using LaTeX or markdown.\ninclude participation from each member of your group\nbe approximately \\(4\\times(n+1)\\) minutes long.\nbe uploaded to YouTube (you can set the link such that people with the link can view the presentation but where it is not searchable) or YuJa (but YouTube is easier for your classmates to work with). You will submit the link to the presentation on Canvas.\n\nYou will be expected to peer-evaluate two other groups presentations and/or reports, using the rubric."
   },
   {
     "objectID": "homework/11c.html",
@@ -231,88 +280,186 @@
     "text": "In the following examples, evaluate each problem using the criteria of a minimal reproducible example from this StackOverflow post.\nSpecifically, address the following things:\n\nAre the question and problem description complete?\nIs the issue reproducible? Does it have a description of the problem, with code that reproduces the problem? What could improve it?\nIs the example minimal? Does it include extra code or information that is not necessary?\nDoes the question describe any attempted solutions?\n\nThen, using what you know about R and Python, try to debug the problem using the strategies in the debugging chapter. Once you are thoroughly stumped, or you believe you have solved the problem, compare your solutions to those given on StackOverflow using the link.\n\nWhy Doesn’t this R function work?\n\nI created the following function to append new strings on a vector of strings called “meals”. However, when I use this function to append an string input into my “meals” vector, it does not work.\n\n add &lt;- function(str) {\n      meals &lt;- append(meals, as.character(str))  \n    }\nLink to original SO post.\n\n\nFunction not working R\n\nI’ve never programmed before and am trying to learn. I’m following that “coursera” course that I’ve seen other people post about — a course offered by Johns Hopkins on R programming.\n\n\nAnyway, this was supposed to be my first function. Yet, it doesn’t work! But when I type out all the steps individually, it runs just fine… Can anyone tell me why?\n\npollutantmean &lt;- function(directory, pollutant, id = 1:332){\n    x&lt;- list.files(\"/Users/mike******/Desktop/directory\", full.names=TRUE)\n    y&lt;- lapply(x, read.csv)\n    z&lt;- do.call(rbind.data.frame, y[id])\n\n    mean(z$pollutant, na.rm=TRUE)\n}\npollutantmean(specdata,nitrate,1:10)\n[1] NA\nWarning message:\nIn mean.default(z$pollutant, na.rm = TRUE) :\n  argument is not numeric or logical: returning NA\n\n####\n\nx&lt;- list.files(\"/Users/mike******/Desktop/specdata\",full.names=TRUE)\ny&lt;- lapply(x,read.csv)\nz&lt;- do.call(rbind.data.frame,y[1:10])\nmean(z$nitrate,na.rm=TRUE)\n[1] 0.7976266\nLink\n\n\nInexplicable error when trying to export my R notebook\n\nGetting this error from R Markdown when trying to export my .RMD\n\n\"Error in filter(Gastropods, Species == \"Cellana\") :  object 'Species' not found Calls: &lt;Anonymous&gt; ... withCallingHandlers -&gt; withVisible -&gt; eval -&gt; eval -&gt; filter\"\n\nHowever, all my plots are coming out successfully. I can clearly see in the data that the species column is there and that Cellana is a species. No spelling errors or anything.\n\n\nMy first 20 or so lines of code are below (between the ### symbols)\n\n\n\n###\n---\ntitle: \" Lab Report 2 - z5016113\"\noutput: html_notebook\ni---\n\n#1. Gastropod abundance vs. height on the shore\n\n```{r}\nGastropods &lt;- read.csv(file = \"MaroubraZones.csv\", header = TRUE)\nlibrary(ggplot2, dplyr)\n```\n\n```{r}\nGastropods$Zone &lt;- factor(Gastropods$Zone, levels = c(\"Low\", \"Mid\", \"High\"))\n```\n\n```{r}\nCellana &lt;- filter(Gastropods, Species == \"Cellana\")  ------&gt; This line is causing the error\n```\n\n```{r}\nggplot(Cellana, aes(Zone, Abundance)) + geom_boxplot()\n```\n###\n\n\nYou can find this sample file here\nLink\n\n\nPython if elif else statement\n\nI’m trying to create a program with python that calculate the cost for shipping.\n\n\nHowever, I can’t run the program to where it works properly.\n\n\nWhat ever my total is the same amount comes out as $6 for US and $8 for Canada. I can’t seem to get pass that.\n\n\nExample:\n\ntotal = raw_input('What is the total amount for your online shopping?')\ncountry = raw_input('Shipping within the US or Canada?')\n\nif country == \"US\":\n    if total &lt;= \"50\":\n        print \"Shipping Costs $6.00\"\n    elif total &lt;= \"100\":\n            print \"Shipping Costs $9.00\"\n    elif total &lt;= \"150\":\n            print \"Shipping Costs $12.00\"\n    else:\n        print \"FREE\"\n\nif country == \"Canada\":\n    if total &lt;= \"50\":\n        print \"Shipping Costs $8.00\"\n    elif total &lt;= \"100\":\n        print \"Shipping Costs $12.00\"\n    elif total &lt;= \"150\":\n        print \"Shipping Costs $15.00\"\n    else:\n        print \"FREE\"\nLink"
   },
   {
-    "objectID": "slides/07-murder.html#this-weeks-big-picture-goal",
-    "href": "slides/07-murder.html#this-weeks-big-picture-goal",
-    "title": "Murder in SQL City",
+    "objectID": "slides/11-simulation.html#homework-project-work",
+    "href": "slides/11-simulation.html#homework-project-work",
+    "title": "Simulation",
+    "section": "Homework & Project work",
+    "text": "Homework & Project work\n\ndue dates … some are harder than others.\n\nI realize that RStudio was freezing up … a lot. So this one is not as hard.\nGenerally: you can (re-)submit assignments. If they are egregiously late, I will deduct a late penalty.\nActually hard deadline: Monday after Thanksgiving, Dec 2 2024"
+  },
+  {
+    "objectID": "slides/11-simulation.html#remainder-of-the-semester",
+    "href": "slides/11-simulation.html#remainder-of-the-semester",
+    "title": "Simulation",
+    "section": "Remainder of the semester",
+    "text": "Remainder of the semester\n\nOnly two more homework assignments!\n\nSimulation & interactive graphics\n\nProject work!\n\nhttps://posit.co/blog/closeread-prize-announcement/"
+  },
+  {
+    "objectID": "slides/11-simulation.html#this-weeks-big-picture-goal",
+    "href": "slides/11-simulation.html#this-weeks-big-picture-goal",
+    "title": "Simulation",
     "section": "This week’s big picture goal:",
-    "text": "This week’s big picture goal:\nWorking with data filters, joining data"
+    "text": "This week’s big picture goal:\nBringing everything together - working on a project-like homework."
   },
   {
-    "objectID": "slides/07-murder.html#todays-goals",
-    "href": "slides/07-murder.html#todays-goals",
-    "title": "Murder in SQL City",
+    "objectID": "slides/11-simulation.html#todays-goals",
+    "href": "slides/11-simulation.html#todays-goals",
+    "title": "Simulation",
     "section": "Today’s Goals:",
-    "text": "Today’s Goals:\n\nIn Canvas, follow the Github Classroom link to Homework 7\nClone the repo for Homework 7 to your local machine\nMake sure that you are able to render index.qmd\nYou might have to install the package RSQLite\n\nStart solving the murder … by … ahem, finding that crime report."
+    "text": "Today’s Goals:\n\nIn Canvas, follow the Github Classroom link to Homework 11\nClone the repo for Homework 11 to your local machine\nThree deliverables in total: pseudocode.qmd (this week), craps-code.qmd, and simulation.qmd"
   },
   {
-    "objectID": "slides/07-murder.html#resources",
-    "href": "slides/07-murder.html#resources",
-    "title": "Murder in SQL City",
+    "objectID": "slides/11-simulation.html#resources",
+    "href": "slides/11-simulation.html#resources",
+    "title": "Simulation",
     "section": "Resources",
     "text": "Resources\n\nR cheat sheet\npython cheat sheet"
   },
   {
-    "objectID": "slides/05-data-explorations.html#this-weeks-big-picture-goal",
-    "href": "slides/05-data-explorations.html#this-weeks-big-picture-goal",
-    "title": "Exploring Data",
+    "objectID": "slides/06-data-wrangling.html#this-weeks-big-picture-goal",
+    "href": "slides/06-data-wrangling.html#this-weeks-big-picture-goal",
+    "title": "Wrangling Data",
     "section": "This week’s big picture goal:",
-    "text": "This week’s big picture goal:\nGetting comfortable working with data sets and start asking questions!"
+    "text": "This week’s big picture goal:\nWorking with text and practicing exploration skills"
   },
   {
-    "objectID": "slides/05-data-explorations.html#organization",
-    "href": "slides/05-data-explorations.html#organization",
-    "title": "Exploring Data",
+    "objectID": "slides/06-data-wrangling.html#organization",
+    "href": "slides/06-data-wrangling.html#organization",
+    "title": "Wrangling Data",
     "section": "Organization",
-    "text": "Organization\n\nHomework #4: make sure to put the link to your repo on Github into Canvas\nHomework #5:\nplease check that you can access the github classroom repo\nDr. Vanderplas will take over on Thursday"
+    "text": "Organization\nHomework #5:\n\nmake sure to put the link to your repo on Github into Canvas\nauthorization: usethis::create_github_token()\nwhich files to push? any original files!"
   },
   {
-    "objectID": "slides/05-data-explorations.html#todays-goals",
-    "href": "slides/05-data-explorations.html#todays-goals",
-    "title": "Exploring Data",
+    "objectID": "slides/06-data-wrangling.html#todays-goals",
+    "href": "slides/06-data-wrangling.html#todays-goals",
+    "title": "Wrangling Data",
     "section": "Today’s Goals:",
-    "text": "Today’s Goals:\n\nClone the repo for Homework 5\nMake sure that you are able to render index.qmd\nStart to explore! https://www.mrdbourke.com/a-gentle-introduction-to-exploratory-data-analysis/"
+    "text": "Today’s Goals:\n\nIn Canvas, follow the Github Classroom link to Homework 6\nClone the repo for Homework 6 to your local machine\nMake sure that you are able to render index.qmd\nStart wrangling these poems!\n\nTry to get past checkpoints 1 and 2 for both python and R, so you can focus on the exploration on Thursday"
   },
   {
-    "objectID": "slides/05-data-explorations.html#resources",
-    "href": "slides/05-data-explorations.html#resources",
-    "title": "Exploring Data",
+    "objectID": "slides/06-data-wrangling.html#helpful-functions",
+    "href": "slides/06-data-wrangling.html#helpful-functions",
+    "title": "Wrangling Data",
+    "section": "Helpful functions",
+    "text": "Helpful functions\n\nin R: separate_longer_delim, str_count (make sure to check ?boundary()),\nin python: str.split, str.count, explode"
+  },
+  {
+    "objectID": "slides/06-data-wrangling.html#resources",
+    "href": "slides/06-data-wrangling.html#resources",
+    "title": "Wrangling Data",
     "section": "Resources",
     "text": "Resources\n\nR cheat sheet\npython cheat sheet"
   },
   {
-    "objectID": "slides/03-fizzing-and-buzzing.html#organizationclean-up",
-    "href": "slides/03-fizzing-and-buzzing.html#organizationclean-up",
-    "title": "Fizzing and Buzzing",
-    "section": "Organization/clean-up",
-    "text": "Organization/clean-up\n\nHomework #2: make sure to put the link to your repo on Github into Canvas\nHomework #3 repo structure"
+    "objectID": "slides/04-case-studies.html#organization",
+    "href": "slides/04-case-studies.html#organization",
+    "title": "Case Studies",
+    "section": "Organization",
+    "text": "Organization\n\nHomework #3: make sure to put the link to your repo on Github into Canvas\nHomework #4:\nplease check that you can access the github classroom repo\nHeads-up: watch 1h video before next class: tidy tuesday screencast"
   },
   {
-    "objectID": "slides/03-fizzing-and-buzzing.html#this-weeks-big-picture-goal",
-    "href": "slides/03-fizzing-and-buzzing.html#this-weeks-big-picture-goal",
-    "title": "Fizzing and Buzzing",
+    "objectID": "slides/04-case-studies.html#this-weeks-big-picture-goal",
+    "href": "slides/04-case-studies.html#this-weeks-big-picture-goal",
+    "title": "Case Studies",
     "section": "This week’s big picture goal:",
-    "text": "This week’s big picture goal:\nGoing from using functions to writing the first functions"
+    "text": "This week’s big picture goal:\nConsolidate your knowledge\nChapter 15\nPractice! Practice! Practice!"
   },
   {
-    "objectID": "slides/03-fizzing-and-buzzing.html#todays-goals",
-    "href": "slides/03-fizzing-and-buzzing.html#todays-goals",
-    "title": "Fizzing and Buzzing",
+    "objectID": "slides/04-case-studies.html#todays-goals",
+    "href": "slides/04-case-studies.html#todays-goals",
+    "title": "Case Studies",
     "section": "Today’s Goals:",
-    "text": "Today’s Goals:\nUnderstand\n\nWorking with packages in R and Python\nDistinguish and recognize data structures (data as in objects, not the statistics data)\nMatrix operations\n\nDo\n\nfirst part of homework #3\n\nRead-up on\n\nControl Structures, program flows\nWriting Functions"
+    "text": "Today’s Goals:\n\nClone the repo for Homework 4\nMake sure that you are able to render index.qmd\n\nyou might have to install some packages (R package curl, python package plotnine)\n\nRead actively through the examples in Chapter 15\n\nload the data from the homework into an R session\nadapt (if possible) the commands from the examples to the homework data"
   },
   {
-    "objectID": "slides/03-fizzing-and-buzzing.html#resources",
-    "href": "slides/03-fizzing-and-buzzing.html#resources",
-    "title": "Fizzing and Buzzing",
+    "objectID": "slides/04-case-studies.html#resources",
+    "href": "slides/04-case-studies.html#resources",
+    "title": "Case Studies",
     "section": "Resources",
     "text": "Resources\n\nR cheat sheet\npython cheat sheet"
   },
   {
-    "objectID": "slides/03-fizzing-and-buzzing.html#next-class",
-    "href": "slides/03-fizzing-and-buzzing.html#next-class",
-    "title": "Fizzing and Buzzing",
+    "objectID": "slides/04-case-studies.html#next-class",
+    "href": "slides/04-case-studies.html#next-class",
+    "title": "Case Studies",
     "section": "Next class",
-    "text": "Next class\n\nFunction writing in R and Python"
+    "text": "Next class\n\nPlanning out code"
+  },
+  {
+    "objectID": "slides/02b-Finding-Your-Way.html#todays-goals",
+    "href": "slides/02b-Finding-Your-Way.html#todays-goals",
+    "title": "Finding your way in R and Python",
+    "section": "Today’s Goals:",
+    "text": "Today’s Goals:\nUnderstand\n\nBasic Data Types\nCreating Variables\nUsing R/Python as a calculator\n\nPractice working with errors\n\nIntro to Debugging"
+  },
+  {
+    "objectID": "slides/02b-Finding-Your-Way.html#work-on-the-homework",
+    "href": "slides/02b-Finding-Your-Way.html#work-on-the-homework",
+    "title": "Finding your way in R and Python",
+    "section": "Work on the homework!",
+    "text": "Work on the homework!\nDue date: Monday, Sep 9"
+  },
+  {
+    "objectID": "slides/02b-Finding-Your-Way.html#next-class",
+    "href": "slides/02b-Finding-Your-Way.html#next-class",
+    "title": "Finding your way in R and Python",
+    "section": "Next class",
+    "text": "Next class\n\nData structures: vectors, lists, arrays, …\nArithmetic operators for matrices\nFunction writing in R and Python"
+  },
+  {
+    "objectID": "slides/01b-intro.html#goals-for-today",
+    "href": "slides/01b-intro.html#goals-for-today",
+    "title": "Stat 850: Git and Github",
+    "section": "Goals for Today",
+    "text": "Goals for Today\n\nSet up Git (Chapter 5 of the textbook)\nHow to submit homework with Github Classroom\nGit concepts: Push/Pull"
+  },
+  {
+    "objectID": "slides/01b-intro.html#preview-next-week",
+    "href": "slides/01b-intro.html#preview-next-week",
+    "title": "Stat 850: Git and Github",
+    "section": "Preview: Next Week",
+    "text": "Preview: Next Week\n\nFinding your way in R and Python\n\nNavigating RStudio\nExecution modes: script, console, interactive\nPython vs. R code\n\nIntroduction to Programming"
+  },
+  {
+    "objectID": "slides/01b-intro.html#reminders",
+    "href": "slides/01b-intro.html#reminders",
+    "title": "Stat 850: Git and Github",
+    "section": "Reminders",
+    "text": "Reminders\n\nHomework due Monday at 8pm\nRead the assigned chapters in the textbook (7, 8) for class next week!"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Stat 850",
+    "section": "",
+    "text": "Course Description\nIntroductions to statistical computing packages and document preparation software. Topics include: graphical techniques, data management, Monte Carlo simulation, dynamic document preparation, presentation software.\n\n\nCourse Goals\n\nLearn how to use R and/or Python for data analysis, data processing, and data visualization.\nBecome familiar with the process, techniques, and goals of exploratory data analysis.\nCreate, assess, and debug code effectively.\n\nUse online resources to find software to perform a task, comparing approaches taken by competing programs.\nRead error messages, find related problems in online forums, and isolate the conditions necessary to generate the error.\nGenerate minimum working examples or reproducible examples of errors in order to ask for help effectively.\n\nCommunicate statistical results using reproducible, dynamic tools. Understand the importance of reproducibility in scientific computation.\n\n\n\nCourse Objectives\n(what you should be able to do at the end of this course)\n\nClean and format the data appropriately for the intended analysis or visualization method. (Goals: 1)\nExplore a data set using numerical and visual summaries, developing questions which can be answered using statistics. (Goals: 1, 2)\nEvaluate methods or software to assess relevance to a problem. Compare similar options to determine which are more appropriate for a given application (Goals: 1, 3)\nTest and debug software, using the following sequence: (Goals: 3, 4)\n\nReproduce the error in a new environment,\nCreate a minimal reproducible example,\nResearch the error message and evaluate online resources for relevance,\nAsk for help, describing the error or problem appropriately.\n\nDocument the data, methods, and results of an analysis using reproducible methods. (Goals: 1, 2, 4)\n\n\n\nTextbook\nIn keeping with the principles of this course, any course materials I develop will be made available on GitHub, in the (continuously evolving) course textbook. The book is laid out with the same structure as the course. In order to avoid duplicating content available elsewhere, where it is appropriate, I will link to relevant material available on other sites. This makes the course easier to maintain, but it also ensures you get the most relevant and up to date instructions.\nIn addition, you may find it useful to reference some of the following resources that I have consulted while assembling the textbook. Most are available online for free, though some require an institutional email address.\n\nR for Data Science\nAdvanced R\nPython for Everybody\nPython for Data Analysis *\nPython Data Science Handbook *\n\n* Available online for free if you register with your UNL email address."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Stat 850: Computing Tools for Statistics",
+    "section": "",
+    "text": "Course Materials\nDates shown are due dates (for homework, projects) and dates by which initial comments/annotations should be made (reading).\nMost classes will not contain slide presentations, but when there are slides to share, they will be provided here.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\n\n\nTitle\n\n\n\n\n\n\nDec 8, 2024\n\n\n\n\n\nSample Report\n\n\n\n\nNov 25, 2024\n\n\n\n\n\nHomework 11: Simulation (Probability)\n\n\n\n\nNov 18, 2024\n\n\n\n\n\nHomework 12: Shiny\n\n\n\n\nNov 15, 2024\n\n\n\n\n\nHomework 11: Simulation (Implementation)\n\n\n\n\nNov 8, 2024\n\n\n\n\n\nHomework 11: Simulation (Pseudocode)\n\n\n\n\nNov 5, 2024\n\n\n\n\n\nSimulation\n\n\n\n\nNov 4, 2024\n\n\n\n\n\nHomework 10: Professional Communication\n\n\n\n\nOct 29, 2024\n\n\n\n\n\nLaTeX and Markdown\n\n\n\n\nOct 24, 2024\n\n\n\n\n\nDebugging Excercises\n\n\n\n\nOct 21, 2024\n\n\n\n\n\nHomework: Awesomely Bad Graphics\n\n\n\n\nOct 14, 2024\n\n\n\n\n\nHomework: Murder in SQL City\n\n\n\n\nOct 14, 2024\n\n\n\n\n\nProject Guidelines\n\n\n\n\nOct 14, 2024\n\n\n\n\n\nStat 850 Project Proposal\n\n\n\n\nOct 8, 2024\n\n\n\n\n\nMurder in SQL City\n\n\n\n\nOct 7, 2024\n\n\n\n\n\nString Processing and Data Wrangling in R and Python\n\n\n\n\nOct 3, 2024\n\n\n\n\n\nWrangling Data\n\n\n\n\nOct 1, 2024\n\n\n\n\n\nWrangling Data\n\n\n\n\nSep 30, 2024\n\n\n\n\n\nChocolate Chip Cookies\n\n\n\n\nSep 24, 2024\n\n\n\n\n\nExploring Data\n\n\n\n\nSep 20, 2024\n\n\n\n\n\nHomework: Data Programming\n\n\n\n\nSep 17, 2024\n\n\n\n\n\nCase Studies\n\n\n\n\nSep 13, 2024\n\n\n\n\n\nHomework: Fizzbuzz\n\n\n\n\nSep 9, 2024\n\n\n\n\n\nHomework: Finding Your Way in R and Python\n\n\n\n\nSep 9, 2024\n\n\n\n\n\nFizzing and Buzzing\n\n\n\n\nSep 5, 2024\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nSep 3, 2024\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nSep 2, 2024\n\n\n\n\n\n👋 The Basics of GitHub\n\n\n\n\nAug 29, 2024\n\n\n\n\n\nStat 850: Git and Github\n\n\n\n\nAug 27, 2024\n\n\n\n\n\nStat 850 Introduction\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "slides/01a-intro.html#goals-for-today",
+    "href": "slides/01a-intro.html#goals-for-today",
+    "title": "Stat 850 Introduction",
+    "section": "Goals for Today",
+    "text": "Goals for Today\n\nSyllabus Q&A\nInstall software:\n\nR\nPython\nquarto\nRStudio\ngit\n\nStretch goal: set up Git"
+  },
+  {
+    "objectID": "slides/01a-intro.html#preview-thursday",
+    "href": "slides/01a-intro.html#preview-thursday",
+    "title": "Stat 850 Introduction",
+    "section": "Preview: Thursday",
+    "text": "Preview: Thursday\n\nSet up Git\nHow to submit homework with Github Classroom\nGit concepts: Push/Pull"
+  },
+  {
+    "objectID": "slides/01a-intro.html#reminders",
+    "href": "slides/01a-intro.html#reminders",
+    "title": "Stat 850 Introduction",
+    "section": "Reminders",
+    "text": "Reminders\n\nHomework due Monday at 8pm"
   },
   {
     "objectID": "slides/02a-Finding-Your-Way.html#todays-goals",
@@ -357,149 +504,86 @@
     "text": "Next Class\n\nBasic Data Types\nCreating Variables\nUsing R/Python as a calculator\nIntro to Debugging"
   },
   {
-    "objectID": "slides/01a-intro.html#goals-for-today",
-    "href": "slides/01a-intro.html#goals-for-today",
-    "title": "Stat 850 Introduction",
-    "section": "Goals for Today",
-    "text": "Goals for Today\n\nSyllabus Q&A\nInstall software:\n\nR\nPython\nquarto\nRStudio\ngit\n\nStretch goal: set up Git"
+    "objectID": "slides/03-fizzing-and-buzzing.html#organizationclean-up",
+    "href": "slides/03-fizzing-and-buzzing.html#organizationclean-up",
+    "title": "Fizzing and Buzzing",
+    "section": "Organization/clean-up",
+    "text": "Organization/clean-up\n\nHomework #2: make sure to put the link to your repo on Github into Canvas\nHomework #3 repo structure"
   },
   {
-    "objectID": "slides/01a-intro.html#preview-thursday",
-    "href": "slides/01a-intro.html#preview-thursday",
-    "title": "Stat 850 Introduction",
-    "section": "Preview: Thursday",
-    "text": "Preview: Thursday\n\nSet up Git\nHow to submit homework with Github Classroom\nGit concepts: Push/Pull"
-  },
-  {
-    "objectID": "slides/01a-intro.html#reminders",
-    "href": "slides/01a-intro.html#reminders",
-    "title": "Stat 850 Introduction",
-    "section": "Reminders",
-    "text": "Reminders\n\nHomework due Monday at 8pm"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Stat 850: Computing Tools for Statistics",
-    "section": "",
-    "text": "Course Materials\nDates shown are due dates (for homework, projects) and dates by which initial comments/annotations should be made (reading).\nMost classes will not contain slide presentations, but when there are slides to share, they will be provided here.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\n\n\nTitle\n\n\n\n\n\n\nDec 8, 2024\n\n\n\n\n\nSample Report\n\n\n\n\nNov 25, 2024\n\n\n\n\n\nHomework 11: Simulation (Probability)\n\n\n\n\nNov 15, 2024\n\n\n\n\n\nHomework 11: Simulation (Implementation)\n\n\n\n\nNov 8, 2024\n\n\n\n\n\nHomework 11: Simulation (Pseudocode)\n\n\n\n\nNov 5, 2024\n\n\n\n\n\nSimulation\n\n\n\n\nNov 4, 2024\n\n\n\n\n\nHomework 10: Professional Communication\n\n\n\n\nOct 29, 2024\n\n\n\n\n\nLaTeX and Markdown\n\n\n\n\nOct 24, 2024\n\n\n\n\n\nDebugging Excercises\n\n\n\n\nOct 21, 2024\n\n\n\n\n\nHomework: Awesomely Bad Graphics\n\n\n\n\nOct 14, 2024\n\n\n\n\n\nHomework: Murder in SQL City\n\n\n\n\nOct 14, 2024\n\n\n\n\n\nProject Guidelines\n\n\n\n\nOct 14, 2024\n\n\n\n\n\nStat 850 Project Proposal\n\n\n\n\nOct 8, 2024\n\n\n\n\n\nMurder in SQL City\n\n\n\n\nOct 7, 2024\n\n\n\n\n\nString Processing and Data Wrangling in R and Python\n\n\n\n\nOct 3, 2024\n\n\n\n\n\nWrangling Data\n\n\n\n\nOct 1, 2024\n\n\n\n\n\nWrangling Data\n\n\n\n\nSep 30, 2024\n\n\n\n\n\nChocolate Chip Cookies\n\n\n\n\nSep 24, 2024\n\n\n\n\n\nExploring Data\n\n\n\n\nSep 20, 2024\n\n\n\n\n\nHomework: Data Programming\n\n\n\n\nSep 17, 2024\n\n\n\n\n\nCase Studies\n\n\n\n\nSep 13, 2024\n\n\n\n\n\nHomework: Fizzbuzz\n\n\n\n\nSep 9, 2024\n\n\n\n\n\nHomework: Finding Your Way in R and Python\n\n\n\n\nSep 9, 2024\n\n\n\n\n\nFizzing and Buzzing\n\n\n\n\nSep 5, 2024\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nSep 3, 2024\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nSep 2, 2024\n\n\n\n\n\n👋 The Basics of GitHub\n\n\n\n\nAug 29, 2024\n\n\n\n\n\nStat 850: Git and Github\n\n\n\n\nAug 27, 2024\n\n\n\n\n\nStat 850 Introduction\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About Stat 850",
-    "section": "",
-    "text": "Course Description\nIntroductions to statistical computing packages and document preparation software. Topics include: graphical techniques, data management, Monte Carlo simulation, dynamic document preparation, presentation software.\n\n\nCourse Goals\n\nLearn how to use R and/or Python for data analysis, data processing, and data visualization.\nBecome familiar with the process, techniques, and goals of exploratory data analysis.\nCreate, assess, and debug code effectively.\n\nUse online resources to find software to perform a task, comparing approaches taken by competing programs.\nRead error messages, find related problems in online forums, and isolate the conditions necessary to generate the error.\nGenerate minimum working examples or reproducible examples of errors in order to ask for help effectively.\n\nCommunicate statistical results using reproducible, dynamic tools. Understand the importance of reproducibility in scientific computation.\n\n\n\nCourse Objectives\n(what you should be able to do at the end of this course)\n\nClean and format the data appropriately for the intended analysis or visualization method. (Goals: 1)\nExplore a data set using numerical and visual summaries, developing questions which can be answered using statistics. (Goals: 1, 2)\nEvaluate methods or software to assess relevance to a problem. Compare similar options to determine which are more appropriate for a given application (Goals: 1, 3)\nTest and debug software, using the following sequence: (Goals: 3, 4)\n\nReproduce the error in a new environment,\nCreate a minimal reproducible example,\nResearch the error message and evaluate online resources for relevance,\nAsk for help, describing the error or problem appropriately.\n\nDocument the data, methods, and results of an analysis using reproducible methods. (Goals: 1, 2, 4)\n\n\n\nTextbook\nIn keeping with the principles of this course, any course materials I develop will be made available on GitHub, in the (continuously evolving) course textbook. The book is laid out with the same structure as the course. In order to avoid duplicating content available elsewhere, where it is appropriate, I will link to relevant material available on other sites. This makes the course easier to maintain, but it also ensures you get the most relevant and up to date instructions.\nIn addition, you may find it useful to reference some of the following resources that I have consulted while assembling the textbook. Most are available online for free, though some require an institutional email address.\n\nR for Data Science\nAdvanced R\nPython for Everybody\nPython for Data Analysis *\nPython Data Science Handbook *\n\n* Available online for free if you register with your UNL email address."
-  },
-  {
-    "objectID": "slides/01b-intro.html#goals-for-today",
-    "href": "slides/01b-intro.html#goals-for-today",
-    "title": "Stat 850: Git and Github",
-    "section": "Goals for Today",
-    "text": "Goals for Today\n\nSet up Git (Chapter 5 of the textbook)\nHow to submit homework with Github Classroom\nGit concepts: Push/Pull"
-  },
-  {
-    "objectID": "slides/01b-intro.html#preview-next-week",
-    "href": "slides/01b-intro.html#preview-next-week",
-    "title": "Stat 850: Git and Github",
-    "section": "Preview: Next Week",
-    "text": "Preview: Next Week\n\nFinding your way in R and Python\n\nNavigating RStudio\nExecution modes: script, console, interactive\nPython vs. R code\n\nIntroduction to Programming"
-  },
-  {
-    "objectID": "slides/01b-intro.html#reminders",
-    "href": "slides/01b-intro.html#reminders",
-    "title": "Stat 850: Git and Github",
-    "section": "Reminders",
-    "text": "Reminders\n\nHomework due Monday at 8pm\nRead the assigned chapters in the textbook (7, 8) for class next week!"
-  },
-  {
-    "objectID": "slides/02b-Finding-Your-Way.html#todays-goals",
-    "href": "slides/02b-Finding-Your-Way.html#todays-goals",
-    "title": "Finding your way in R and Python",
-    "section": "Today’s Goals:",
-    "text": "Today’s Goals:\nUnderstand\n\nBasic Data Types\nCreating Variables\nUsing R/Python as a calculator\n\nPractice working with errors\n\nIntro to Debugging"
-  },
-  {
-    "objectID": "slides/02b-Finding-Your-Way.html#work-on-the-homework",
-    "href": "slides/02b-Finding-Your-Way.html#work-on-the-homework",
-    "title": "Finding your way in R and Python",
-    "section": "Work on the homework!",
-    "text": "Work on the homework!\nDue date: Monday, Sep 9"
-  },
-  {
-    "objectID": "slides/02b-Finding-Your-Way.html#next-class",
-    "href": "slides/02b-Finding-Your-Way.html#next-class",
-    "title": "Finding your way in R and Python",
-    "section": "Next class",
-    "text": "Next class\n\nData structures: vectors, lists, arrays, …\nArithmetic operators for matrices\nFunction writing in R and Python"
-  },
-  {
-    "objectID": "slides/04-case-studies.html#organization",
-    "href": "slides/04-case-studies.html#organization",
-    "title": "Case Studies",
-    "section": "Organization",
-    "text": "Organization\n\nHomework #3: make sure to put the link to your repo on Github into Canvas\nHomework #4:\nplease check that you can access the github classroom repo\nHeads-up: watch 1h video before next class: tidy tuesday screencast"
-  },
-  {
-    "objectID": "slides/04-case-studies.html#this-weeks-big-picture-goal",
-    "href": "slides/04-case-studies.html#this-weeks-big-picture-goal",
-    "title": "Case Studies",
+    "objectID": "slides/03-fizzing-and-buzzing.html#this-weeks-big-picture-goal",
+    "href": "slides/03-fizzing-and-buzzing.html#this-weeks-big-picture-goal",
+    "title": "Fizzing and Buzzing",
     "section": "This week’s big picture goal:",
-    "text": "This week’s big picture goal:\nConsolidate your knowledge\nChapter 15\nPractice! Practice! Practice!"
+    "text": "This week’s big picture goal:\nGoing from using functions to writing the first functions"
   },
   {
-    "objectID": "slides/04-case-studies.html#todays-goals",
-    "href": "slides/04-case-studies.html#todays-goals",
-    "title": "Case Studies",
+    "objectID": "slides/03-fizzing-and-buzzing.html#todays-goals",
+    "href": "slides/03-fizzing-and-buzzing.html#todays-goals",
+    "title": "Fizzing and Buzzing",
     "section": "Today’s Goals:",
-    "text": "Today’s Goals:\n\nClone the repo for Homework 4\nMake sure that you are able to render index.qmd\n\nyou might have to install some packages (R package curl, python package plotnine)\n\nRead actively through the examples in Chapter 15\n\nload the data from the homework into an R session\nadapt (if possible) the commands from the examples to the homework data"
+    "text": "Today’s Goals:\nUnderstand\n\nWorking with packages in R and Python\nDistinguish and recognize data structures (data as in objects, not the statistics data)\nMatrix operations\n\nDo\n\nfirst part of homework #3\n\nRead-up on\n\nControl Structures, program flows\nWriting Functions"
   },
   {
-    "objectID": "slides/04-case-studies.html#resources",
-    "href": "slides/04-case-studies.html#resources",
-    "title": "Case Studies",
+    "objectID": "slides/03-fizzing-and-buzzing.html#resources",
+    "href": "slides/03-fizzing-and-buzzing.html#resources",
+    "title": "Fizzing and Buzzing",
     "section": "Resources",
     "text": "Resources\n\nR cheat sheet\npython cheat sheet"
   },
   {
-    "objectID": "slides/04-case-studies.html#next-class",
-    "href": "slides/04-case-studies.html#next-class",
-    "title": "Case Studies",
+    "objectID": "slides/03-fizzing-and-buzzing.html#next-class",
+    "href": "slides/03-fizzing-and-buzzing.html#next-class",
+    "title": "Fizzing and Buzzing",
     "section": "Next class",
-    "text": "Next class\n\nPlanning out code"
+    "text": "Next class\n\nFunction writing in R and Python"
   },
   {
-    "objectID": "slides/06-data-wrangling.html#this-weeks-big-picture-goal",
-    "href": "slides/06-data-wrangling.html#this-weeks-big-picture-goal",
-    "title": "Wrangling Data",
+    "objectID": "slides/05-data-explorations.html#this-weeks-big-picture-goal",
+    "href": "slides/05-data-explorations.html#this-weeks-big-picture-goal",
+    "title": "Exploring Data",
     "section": "This week’s big picture goal:",
-    "text": "This week’s big picture goal:\nWorking with text and practicing exploration skills"
+    "text": "This week’s big picture goal:\nGetting comfortable working with data sets and start asking questions!"
   },
   {
-    "objectID": "slides/06-data-wrangling.html#organization",
-    "href": "slides/06-data-wrangling.html#organization",
-    "title": "Wrangling Data",
+    "objectID": "slides/05-data-explorations.html#organization",
+    "href": "slides/05-data-explorations.html#organization",
+    "title": "Exploring Data",
     "section": "Organization",
-    "text": "Organization\nHomework #5:\n\nmake sure to put the link to your repo on Github into Canvas\nauthorization: usethis::create_github_token()\nwhich files to push? any original files!"
+    "text": "Organization\n\nHomework #4: make sure to put the link to your repo on Github into Canvas\nHomework #5:\nplease check that you can access the github classroom repo\nDr. Vanderplas will take over on Thursday"
   },
   {
-    "objectID": "slides/06-data-wrangling.html#todays-goals",
-    "href": "slides/06-data-wrangling.html#todays-goals",
-    "title": "Wrangling Data",
+    "objectID": "slides/05-data-explorations.html#todays-goals",
+    "href": "slides/05-data-explorations.html#todays-goals",
+    "title": "Exploring Data",
     "section": "Today’s Goals:",
-    "text": "Today’s Goals:\n\nIn Canvas, follow the Github Classroom link to Homework 6\nClone the repo for Homework 6 to your local machine\nMake sure that you are able to render index.qmd\nStart wrangling these poems!\n\nTry to get past checkpoints 1 and 2 for both python and R, so you can focus on the exploration on Thursday"
+    "text": "Today’s Goals:\n\nClone the repo for Homework 5\nMake sure that you are able to render index.qmd\nStart to explore! https://www.mrdbourke.com/a-gentle-introduction-to-exploratory-data-analysis/"
   },
   {
-    "objectID": "slides/06-data-wrangling.html#helpful-functions",
-    "href": "slides/06-data-wrangling.html#helpful-functions",
-    "title": "Wrangling Data",
-    "section": "Helpful functions",
-    "text": "Helpful functions\n\nin R: separate_longer_delim, str_count (make sure to check ?boundary()),\nin python: str.split, str.count, explode"
+    "objectID": "slides/05-data-explorations.html#resources",
+    "href": "slides/05-data-explorations.html#resources",
+    "title": "Exploring Data",
+    "section": "Resources",
+    "text": "Resources\n\nR cheat sheet\npython cheat sheet"
   },
   {
-    "objectID": "slides/06-data-wrangling.html#resources",
-    "href": "slides/06-data-wrangling.html#resources",
-    "title": "Wrangling Data",
+    "objectID": "slides/07-murder.html#this-weeks-big-picture-goal",
+    "href": "slides/07-murder.html#this-weeks-big-picture-goal",
+    "title": "Murder in SQL City",
+    "section": "This week’s big picture goal:",
+    "text": "This week’s big picture goal:\nWorking with data filters, joining data"
+  },
+  {
+    "objectID": "slides/07-murder.html#todays-goals",
+    "href": "slides/07-murder.html#todays-goals",
+    "title": "Murder in SQL City",
+    "section": "Today’s Goals:",
+    "text": "Today’s Goals:\n\nIn Canvas, follow the Github Classroom link to Homework 7\nClone the repo for Homework 7 to your local machine\nMake sure that you are able to render index.qmd\nYou might have to install the package RSQLite\n\nStart solving the murder … by … ahem, finding that crime report."
+  },
+  {
+    "objectID": "slides/07-murder.html#resources",
+    "href": "slides/07-murder.html#resources",
+    "title": "Murder in SQL City",
     "section": "Resources",
     "text": "Resources\n\nR cheat sheet\npython cheat sheet"
   },
@@ -700,95 +784,60 @@
     "text": "Grading Schema\n\nThe pseudocode for this assignment is worth one homework grade.\nThe code for the game of craps is worth a second homework grade.\nThe simulation results using the code in the previous assignment is worth a 3rd homework grade.\n\n\nPseudocode rubric\n\n\nCode rubric\n\n\nSimulation rubric"
   },
   {
-    "objectID": "project/guidelines.html",
-    "href": "project/guidelines.html",
-    "title": "Project Guidelines",
+    "objectID": "homework/12.html",
+    "href": "homework/12.html",
+    "title": "Homework 12: Shiny",
     "section": "",
-    "text": "Your final project consists of a written report and a presentation (uploaded to YouTube), to be turned in instead of a final exam. In this project, you will select a topic, acquire data from one or more sources, and present any interesting findings you might come across as you explore your data."
+    "text": "Note: This assignment must be submitted in github classroom."
   },
   {
-    "objectID": "project/guidelines.html#general-rules",
-    "href": "project/guidelines.html#general-rules",
-    "title": "Project Guidelines",
-    "section": "General rules",
-    "text": "General rules\n\nYou may work in teams of up to 3 people, but each member of the team should contribute approximately evenly (I will measure this using your git contributions)\nYour work should be reproducible from start to finish. Do not modify the data by hand! I should be able to take the original data and your repository and go through your analysis from start to finish on my own machine.\nYou should not have to do any complicated statistical modeling for this project. If you want to fit a model, you need to be able to explain it to the rest of the class - but other members of the class may have had different statistics classes than you’ve had. In general, this project should focus on exploratory data analysis; any model results should be explained using graphs, not statistical tests.\nYour project should use what you have learned (and what you will learn) about data visualization, data wrangling, programming, functions, interactive graphics, and dynamic documents. Your ultimate goal is to demonstrate the class objectives and your ability to conduct reproducible analyses and produce professional products using markdown and R/Python code."
+    "objectID": "homework/12.html#instructions",
+    "href": "homework/12.html#instructions",
+    "title": "Homework 12: Shiny",
+    "section": "Instructions",
+    "text": "Instructions\nUse the TidyTuesday Cocktail Data to create a shiny applet containing the following:\n\nA visual exploration of the cocktail data\nA way for a user to search through cocktail recipes by ingredient\n\nYour applet should make use of reactivity in both components, but the specifics of what you do and how you do it are up to you.\nOnce you’re satisfied with your applet, upload it to ShinyApps.io. You should be able to use the free hosting - you’re not creating any high-traffic applications yet.\nYou can find the instructions for deploying your application here.\nWhen you’ve deployed your application, edit this README to contain a link to your applet."
   },
   {
-    "objectID": "project/guidelines.html#datasets",
-    "href": "project/guidelines.html#datasets",
-    "title": "Project Guidelines",
-    "section": "Datasets",
-    "text": "Datasets\nYour dataset(s)\n\nshould be fun and interesting to you.\nPast classes have worked on data covering witch trials, Super Mario competitive times, personal music databases, and many other topics. You can choose something serious, or something decidedly not serious and be successful with the analysis. The best predictor of success is that the data you’re working with is something you find interesting and want to explore.\nshould be on a topic of general interest - something you could discuss with your parents or grandparents\nIf you use a technical dataset, you need to write your report with the more general audience in mind, which means you will need to explain any jargon you use, and provide diagrams of e.g. plant anatomy, etc. to get the reader up to speed. If you work with sports data, you should provide an explanation like this as well, because I (Susan) have no background knowledge about sports at all and I (Heike) will call everything ‘Fussball’, because that’s really the only sport that matters :).\nmust have at least 1000 records (rows) and at least 5 variables\nmust include at least one meaningful categorical variable and one meaningful numeric variable (these can be derived, if you are e.g. working with text or image data)\nmust not be published in a textbook or have a published analysis unless\n\nyou get prior permission and\nyour analysis is very different from what has previously been published\n\nmust be something that you can make available to the entire class (so e.g. proprietary datasets from work or other sources aren’t acceptable)\nmust be traceable to the original source of the data. You MAY NOT use data uploaded to Kaggle - go back to the data source. If you need help assembling your data, come talk to me about it and I may be able to help.\n\nHere are some potential sources of interesting and/or fun data that explain how the data was acquired/sourced and (usually) have adequate data documentation:\n\nData is Plural archive\nTidyTuesday Archive\nData.gov The US government data archive"
-  },
-  {
-    "objectID": "project/guidelines.html#version-control",
-    "href": "project/guidelines.html#version-control",
-    "title": "Project Guidelines",
-    "section": "Version Control",
-    "text": "Version Control\nYou should use GitHub to track your project throughout its life cycle. Some tips:\n\nPull before you start working, and after each commit.\nWorking in teams on github means that you have to allow for merge conflicts and become skilled at resolving them. This is part of my goal for making you work in groups - forcing you to develop these skills. See https://www.youtube.com/watch?v=97m0N4zIvOs for a demonstration of how to work with merge conflicts in rstudio.\nI do not expect you to work on branches for this project, unless you really want to - with 3 people and a defined scope, you should be able to work out of the main branch with few problems.\nCommit your changes in small, task-oriented batches. Try to work on small tasks and commit as soon as you finish the task. This will reduce merge conflicts.\nMinimize merge conflicts:\nPut each sentence on a different line in your document - this makes it much easier for git to resolve the changes, as git works line-by-line. I make all of my graduate students do this with their papers, and it makes things much easier to work around.\nREAD THE ERROR MESSAGE FROM GIT.\nSeriously, this will help you figure out about 90% of the things that go wrong. Git actually has good error messages that help you know what to do next.\nOnly commit the essential files necessary to compile your project report to github. This will reduce merge conflicts and save you a ton of time in the long run.\n\nStick to original files only - i.e. don’t commit pictures generated by R/python, .tex files generated as an intermediate stage, or even html/pdf files that are the final product until the very end. I have set this repository up in such a way that each of the quarto files renders to the _output folder, and git ignores everything in this folder, in the hopes that this will be enough to help you out.\nDo commit any R/python source files you need to e.g. define a shiny application or do some data processing. Organize these in a code folder, and create a header in each code file that describes what the file does and how it relates to other code files in the project.\nDon’t commit any files you didn’t personally create. Be selective in what you add to git. Use the .gitignore file to keep git from tracking files that shouldn’t be added to the repository.\n\n\nI will track your contributions to the project using the python git-fame package, which you can install with the command pip install git-fame.\nI will typically use some variant of the following command to track your group contributions:\ngit fame . --incl=\".(q|R)md\"\nThis only counts modifications to the markdown files, which ensures that whoever adds a dataset to the repository doesn’t get credit for doing a ton of work by just uploading a file. This also ensures that people committing intermediate files don’t get credit for making the repository a mess."
-  },
-  {
-    "objectID": "project/guidelines.html#project-report",
-    "href": "project/guidelines.html#project-report",
-    "title": "Project Guidelines",
-    "section": "Project Report",
-    "text": "Project Report\nYour project report should:\n\nbe contained in report.qmd. Saving your report in a different file will result in a 10 point deduction.\nuse the report.qmd template file provided in the project repository to assemble your report. It contains demonstrations of all of the requirements above. If you don’t want to overwrite this, save the template as report-template.qmd for reference and then edit report.qmd.\ninclude a separate requirements.txt file where you list out the R and python packages required to compile your report and slides.\nbe approximately \\(450\\times(2n + 1)\\) words, where \\(n\\) is the number of people in your group. The extra length is to allow you space to describe your dataset, methods, and conclusions; everyone will need to do that regardless of group size.\nIf you want to know what the wordcount of your report is, you can run the following command in your terminal (in the project directory, assuming you’ve cloned it from github classroom):\n\npandoc --lua-filter wordcount.lua report.qmd\n\nbe grammatically correct. Please feel free to make use of the writing center for editing, so that your report has appropriate grammar and structure.\ncontain an introduction and a conclusion, written in paragraphs. The “meat” of the report should tell a story. This means your report should be written and formatted as a paper - think about writing a journal article describing your data analysis and results. This means your writeup should contain paragraphs, and each figure should be cross-referenced within the text.\nbe factually correct, and should reference outside sources appropriately (see below) using quarto references.\nhave a references section, using markdown’s references functionality. You should not manually create your bibliography - it should be created automatically using a bib file.\nreference the software packages you’ve used in your analysis/report and cite them appropriately. Software is a scholarly work, and deserves to be cited. The citation() R command can help you assemble appropriate references for software packages.\nuse figures. Figures must have appropriate captions, and each figure should be referenced within the body of the paper using markdown reference syntax."
-  },
-  {
-    "objectID": "project/guidelines.html#presentation",
-    "href": "project/guidelines.html#presentation",
-    "title": "Project Guidelines",
-    "section": "Presentation",
-    "text": "Presentation\nYour project presentation should:\n\ninclude a visual aid (slides or a poster) that highlight(s) the findings you have presented in your report. The visual aid must be created using LaTeX or markdown.\ninclude participation from each member of your group\nbe approximately \\(4\\times(n+1)\\) minutes long.\nbe uploaded to YouTube (you can set the link such that people with the link can view the presentation but where it is not searchable) or YuJa (but YouTube is easier for your classmates to work with). You will submit the link to the presentation on Canvas.\n\nYou will be expected to peer-evaluate two other groups presentations and/or reports, using the rubric."
-  },
-  {
-    "objectID": "project/report.html",
-    "href": "project/report.html",
-    "title": "Sample Report",
+    "objectID": "project/proposal.html",
+    "href": "project/proposal.html",
+    "title": "Stat 850 Project Proposal",
     "section": "",
-    "text": "# This code chunk contains code to install all of the dependencies\n# necessary to compile and run your report, using if-statements to\n# reduce install time for unnecessary code.\n# It should be set to eval = F by default, so you aren't installing\n# software on someone's computer without their consent.\n\n# This works for packages that are on CRAN\nif (!\"dplyr\" %in% installed.packages()) {\n  install.packages(\"dplyr\")\n}\nif (!\"remotes\" %in% installed.packages()) {\n  install.packages(\"remotes\")\n}\n\n# This is how to do it for a package that's only on github\nif (!\"emo\" %in% installed.packages()) {\n  remotes::install_github(\"hadley/emo\")"
+    "text": "Each member of your team should modify this document in some way and push their modifications to the repository in a separate commit. This will ensure that you have set your repository up in a way that ensures all group members are working with the same repository.\nPlease ensure that you have set your git name and email address on your computer by modifying the following commands and running them in the terminal:\ngit config --global user.name \"Mona Lisa\"\ngit config --global user.email \"mona@lisa.com\"\nIn the proposal as in the final report, all of your code chunks should be set so that echo = F, which prevents the code from being printed in the report. You should also set message = F, warning = F, which will reduce the amount of additional output which is present in the report. You can customize the execution of code in quarto by using additional options, some of which are detailed here."
   },
   {
-    "objectID": "project/report.html#introduction",
-    "href": "project/report.html#introduction",
-    "title": "Sample Report",
-    "section": "Introduction",
-    "text": "Introduction\nIntroduce your dataset and basic questions for exploration. Explain any unique approaches you will take or any interesting features of your dataset that you have to overcome. Cite the source of your dataset, and briefly discuss how it was collected.\nDiscuss the variables in the dataset and if there are anomalies in the variables, provide some visual assessment of the anomalies and explain how they may have arisen. You should cover most of the information in your proposal data section, but should primarily use paragraphs and not lists/tables (the exception may be a list of e.g. items which were measured)."
+    "objectID": "project/proposal.html#instructions",
+    "href": "project/proposal.html#instructions",
+    "title": "Stat 850 Project Proposal",
+    "section": "",
+    "text": "Each member of your team should modify this document in some way and push their modifications to the repository in a separate commit. This will ensure that you have set your repository up in a way that ensures all group members are working with the same repository.\nPlease ensure that you have set your git name and email address on your computer by modifying the following commands and running them in the terminal:\ngit config --global user.name \"Mona Lisa\"\ngit config --global user.email \"mona@lisa.com\"\nIn the proposal as in the final report, all of your code chunks should be set so that echo = F, which prevents the code from being printed in the report. You should also set message = F, warning = F, which will reduce the amount of additional output which is present in the report. You can customize the execution of code in quarto by using additional options, some of which are detailed here."
   },
   {
-    "objectID": "project/report.html#methods",
-    "href": "project/report.html#methods",
-    "title": "Sample Report",
-    "section": "Methods",
-    "text": "Methods\nDescribe any data cleaning and rearranging you needed to do to get your dataset into a workable form. Make sure to cite any packages which were important in your data cleaning process in this section. For instance, if you used dplyr, then it would be appropriate to say something like\n\nwe used the group-apply-combine paradigm with the dplyr functions group_by and summarize [@dplyr-package] to generate a dataset for each day of the observation period from the 15-minute interval observations in the raw data set."
+    "objectID": "project/proposal.html#data",
+    "href": "project/proposal.html#data",
+    "title": "Stat 850 Project Proposal",
+    "section": "Data",
+    "text": "Data\n\nSource\nThe data we are using in this project comes from [link to web site].\nIf you cannot link directly to the data file, then you need to additionally describe how someone could acquire the same data:\n\nYou can download the data directly using [process]\n\nProvide some code to read in the data (either stored in the repository or read in directly from the source).\n\n\nDescription\nThis dataset contains information about …\nIt was collected from …\nHere is a data dictionary showing each variable, the type of variable, units, and range of values that are possible:\nNote: this is an example table, please modify to actually match your data. Ensure that all of the same information is represented.\n\n\n\n\n\n\n\n\n\n\nName\nDescription\nType\nUnits\nRange/Values\n\n\n\n\nday_of_week\nThe day of the week on which the observation took place\ncategorical\nNA\n0 = Sunday\n1 = Monday\n…\n6 = Saturday\n7 = Unknown\n\n\nweight\nThe weight of the individual\nnumeric\nlbs\n0 - 300 (max weight measurable on the scale used)\nNA indicates missing data\n\n\ntime\nThe time of the observation\nnumeric\nHHMM\n0000 corresponds to midnight,\n2359 corresponds to 1 minute before midnight on the same day."
   },
   {
-    "objectID": "project/report.html#topic-of-exploration",
-    "href": "project/report.html#topic-of-exploration",
-    "title": "Sample Report",
-    "section": "Topic of Exploration",
-    "text": "Topic of Exploration\nHere, you want to introduce the first topic you want to explore with your (newly cleaned up) data. Code to process data should be contained in chunks above this point, and those chunks should not be included in the report.\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed).\nIf you generate a figure, it should have a caption. Here’s a demonstration of how to do that:\n\n\n\n\n\n\n\n\nFigure 1: This figure shows the relationship between sepal width and petal width in irises. I’ve used geom_jitter to combat overplotting, as the data are measured in relatively consistent increments. The figure is drawn with ggplot2 [@ggplot2-package].\n\n\n\n\n\nThen, you can reference Figure 1 in the text and the appropriate cross-reference will be generated.\nYou can find additional information about formatting figures generated from code in the quarto documentation."
+    "objectID": "project/proposal.html#project-goals",
+    "href": "project/proposal.html#project-goals",
+    "title": "Stat 850 Project Proposal",
+    "section": "Project Goals",
+    "text": "Project Goals\nDescribe why this data is interesting and what you hope to do with it.\nWe will use [dataset] to explore the following topics:\n\ninteresting thing 1\ninteresting thing 2\n…\n\nWe expect to create\n\ndescription of some of the graphs you might create\na shiny application\na statistical model\n…"
   },
   {
-    "objectID": "project/report.html#additional-exploration-topic",
-    "href": "project/report.html#additional-exploration-topic",
-    "title": "Sample Report",
-    "section": "Additional Exploration topic",
-    "text": "Additional Exploration topic\nAdd another topic here… as many as you desire, really. Make sure to include a transition between the two sections that connects the two with some sort of logical train of thought."
+    "objectID": "project/proposal.html#division-of-labor",
+    "href": "project/proposal.html#division-of-labor",
+    "title": "Stat 850 Project Proposal",
+    "section": "Division of Labor",
+    "text": "Division of Labor\nDescribe how you plan to work together as a team. Set intermediate deadlines - what do you plan to have done by the project check-in? The more you have done (report/slides/code), the better feedback I can give you."
   },
   {
-    "objectID": "project/report.html#conclusion",
-    "href": "project/report.html#conclusion",
-    "title": "Sample Report",
-    "section": "Conclusion",
-    "text": "Conclusion\nHere, you want to summarize the main points of what you’ve learned from this investigation, in paragraph form."
-  },
-  {
-    "objectID": "project/report.html#tips",
-    "href": "project/report.html#tips",
-    "title": "Sample Report",
-    "section": "Tips",
-    "text": "Tips\n(delete this section from your report!)\nAlmost anything you might want to know about how to format output in quarto can be found here. Feel free to email/come to office hours to figure out how to do XYZ - part of the goal of making you write this report is that I want you to know how to write e.g. a journal paper in Quarto as well, so now’s the time to experiment.\nIf you want to know what the wordcount of your report is, you can run the following command in your terminal:\npandoc --lua-filter wordcount.lua report.qmd\nNotice that I have not pushed _output/report.html or the _output/report_files/ folder to github - this is intentional. I have actually set _output to not show up in git, to encourage you all to NOT push the rendered files to github and to instead work from the markdown files directly.\nYou may find it cleaner to create a figure subdirectory and store any figures that aren’t created by R/Python in that folder. I encourage you to organize this repository in a sensible way."
+    "objectID": "project/proposal.html#additional-comments",
+    "href": "project/proposal.html#additional-comments",
+    "title": "Stat 850 Project Proposal",
+    "section": "Additional Comments",
+    "text": "Additional Comments\nWhat concerns do you have about this project? This is your place to provide feedback about the project guidelines and ask clarifying questions for me to address either individually or in class, if the question is relevant to everyone."
   },
   {
     "objectID": "slides/10a-latex-markdown.html#contents",
@@ -901,40 +950,5 @@
     "title": "LaTeX and Markdown",
     "section": "Special Document Types",
     "text": "Special Document Types\nBoth LaTeX and quarto/Rmarkdown make use of other libraries to expand the types of documents available.\n\n\n\nDocument Type\nLibrary\nCompiler\nEnd Result\n\n\n\n\n\nSlides\nBeamer\nLaTeX or Markdown + LaTeX\nPDF\n\n\n\n \nReveal.js\nMarkdown\nHTML\n\n\n\n \nIOSlides\nMarkdown\nHTML\n\n\n\n \nSlidy\nMarkdown\nHTML\n\n\n\n \nPowerPoint\nMarkdown\nPowerPoint\n\n\n\n \nXaringan\nMarkdown + JS\nHTML/markdown hybrid\n\n\n\nPoster\nBeamer\nLaTeX\nPDF\n\n\n\n \nPosterdown\nMarkdown\nHTML\n\n\n\n \nPagedown\nMarkdown\nHTML\n\n\n\n\nThese documents use the same basic markdown or LaTeX syntax, but render differently."
-  },
-  {
-    "objectID": "slides/11-simulation.html#homework-project-work",
-    "href": "slides/11-simulation.html#homework-project-work",
-    "title": "Simulation",
-    "section": "Homework & Project work",
-    "text": "Homework & Project work\n\ndue dates … some are harder than others.\n\nI realize that RStudio was freezing up … a lot. So this one is not as hard.\nGenerally: you can (re-)submit assignments. If they are egregiously late, I will deduct a late penalty.\nActually hard deadline: Monday after Thanksgiving, Dec 2 2024"
-  },
-  {
-    "objectID": "slides/11-simulation.html#this-weeks-big-picture-goal",
-    "href": "slides/11-simulation.html#this-weeks-big-picture-goal",
-    "title": "Simulation",
-    "section": "This week’s big picture goal:",
-    "text": "This week’s big picture goal:\nBringing everything together - working on a project-like homework."
-  },
-  {
-    "objectID": "slides/11-simulation.html#todays-goals",
-    "href": "slides/11-simulation.html#todays-goals",
-    "title": "Simulation",
-    "section": "Today’s Goals:",
-    "text": "Today’s Goals:\n\nIn Canvas, follow the Github Classroom link to Homework 11\nClone the repo for Homework 11 to your local machine\nThree deliverables in total: pseudocode.qmd (this week), craps-code.qmd, and simulation.qmd"
-  },
-  {
-    "objectID": "slides/11-simulation.html#resources",
-    "href": "slides/11-simulation.html#resources",
-    "title": "Simulation",
-    "section": "Resources",
-    "text": "Resources\n\nR cheat sheet\npython cheat sheet"
-  },
-  {
-    "objectID": "slides/11-simulation.html#remainder-of-the-semester",
-    "href": "slides/11-simulation.html#remainder-of-the-semester",
-    "title": "Simulation",
-    "section": "Remainder of the semester",
-    "text": "Remainder of the semester\n\nOnly two more homework assignments!\n\nSimulation & interactive graphics\n\nProject work!\n\nhttps://posit.co/blog/closeread-prize-announcement/"
   }
 ]
