@@ -1,0 +1,42 @@
+---
+title: "Simulation - now with results!"
+date: "2024-11-19"
+categories: Slides
+format: 
+  revealjs:
+    theme: default
+---
+
+## Today's Goals:
+
+- Work on deliverable number 3 for homework 11: simulate!
+
+
+- Three deliverables in total: `pseudocode.qmd`, `craps-code.qmd`, and `simulation.qmd` (this week)
+
+----
+
+## `Simulate.qmd`
+
+- In your repo, create a file with that name.
+
+- There need to answer the following three questions:
+  
+  1. Which probability do you want to estimate?
+  2. What is the simulation result (in numbers and visuals)?
+  3. What is the simulation variability?
+
+Make sure to set a seed to make your analysis reproducible. 
+
+----
+
+## Resources
+
+- [R cheat sheet](https://srvanderplas.github.io/stat-computing-r-python/files/Short-refcard.pdf)
+
+- [python cheat sheet](https://srvanderplas.github.io/stat-computing-r-python/files/Python3_reference_cheat_sheet.pdf)
+
+
+
+
+
