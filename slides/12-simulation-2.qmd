@@ -20,7 +20,7 @@ format:
 
 - In your repo, create a file with that name.
 
-- There need to answer the following three questions:
+- You need to answer the following three questions:
   
   1. Which probability do you want to estimate?
   2. What is the simulation result (in numbers and visuals)?
