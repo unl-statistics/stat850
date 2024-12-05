@@ -20,4 +20,5 @@ format:
 |------|----------|--------------------------------------------------------------------|
 |  Recording    | The Trio | Invisible Threats: A Global Look at the Best and Worst Air Quality |
 | Recording | Black Tea DC | Exploring Coffee Preferences: Insights from the Great American Coffee Taste Test |
-|      |          |                                                                    |
+|  Recording    |   BAND-X       |    Carbon Footprints on Wheels: Unpacking Vehicle Emissions |
+| Recording | Data Detectives | The Summit Story: Data Insights into Himalayan Expeditions|
