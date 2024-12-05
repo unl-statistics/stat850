@@ -280,214 +280,123 @@
     "text": "In the following examples, evaluate each problem using the criteria of a minimal reproducible example from this StackOverflow post.\nSpecifically, address the following things:\n\nAre the question and problem description complete?\nIs the issue reproducible? Does it have a description of the problem, with code that reproduces the problem? What could improve it?\nIs the example minimal? Does it include extra code or information that is not necessary?\nDoes the question describe any attempted solutions?\n\nThen, using what you know about R and Python, try to debug the problem using the strategies in the debugging chapter. Once you are thoroughly stumped, or you believe you have solved the problem, compare your solutions to those given on StackOverflow using the link.\n\nWhy Doesn’t this R function work?\n\nI created the following function to append new strings on a vector of strings called “meals”. However, when I use this function to append an string input into my “meals” vector, it does not work.\n\n add &lt;- function(str) {\n      meals &lt;- append(meals, as.character(str))  \n    }\nLink to original SO post.\n\n\nFunction not working R\n\nI’ve never programmed before and am trying to learn. I’m following that “coursera” course that I’ve seen other people post about — a course offered by Johns Hopkins on R programming.\n\n\nAnyway, this was supposed to be my first function. Yet, it doesn’t work! But when I type out all the steps individually, it runs just fine… Can anyone tell me why?\n\npollutantmean &lt;- function(directory, pollutant, id = 1:332){\n    x&lt;- list.files(\"/Users/mike******/Desktop/directory\", full.names=TRUE)\n    y&lt;- lapply(x, read.csv)\n    z&lt;- do.call(rbind.data.frame, y[id])\n\n    mean(z$pollutant, na.rm=TRUE)\n}\npollutantmean(specdata,nitrate,1:10)\n[1] NA\nWarning message:\nIn mean.default(z$pollutant, na.rm = TRUE) :\n  argument is not numeric or logical: returning NA\n\n####\n\nx&lt;- list.files(\"/Users/mike******/Desktop/specdata\",full.names=TRUE)\ny&lt;- lapply(x,read.csv)\nz&lt;- do.call(rbind.data.frame,y[1:10])\nmean(z$nitrate,na.rm=TRUE)\n[1] 0.7976266\nLink\n\n\nInexplicable error when trying to export my R notebook\n\nGetting this error from R Markdown when trying to export my .RMD\n\n\"Error in filter(Gastropods, Species == \"Cellana\") :  object 'Species' not found Calls: &lt;Anonymous&gt; ... withCallingHandlers -&gt; withVisible -&gt; eval -&gt; eval -&gt; filter\"\n\nHowever, all my plots are coming out successfully. I can clearly see in the data that the species column is there and that Cellana is a species. No spelling errors or anything.\n\n\nMy first 20 or so lines of code are below (between the ### symbols)\n\n\n\n###\n---\ntitle: \" Lab Report 2 - z5016113\"\noutput: html_notebook\ni---\n\n#1. Gastropod abundance vs. height on the shore\n\n```{r}\nGastropods &lt;- read.csv(file = \"MaroubraZones.csv\", header = TRUE)\nlibrary(ggplot2, dplyr)\n```\n\n```{r}\nGastropods$Zone &lt;- factor(Gastropods$Zone, levels = c(\"Low\", \"Mid\", \"High\"))\n```\n\n```{r}\nCellana &lt;- filter(Gastropods, Species == \"Cellana\")  ------&gt; This line is causing the error\n```\n\n```{r}\nggplot(Cellana, aes(Zone, Abundance)) + geom_boxplot()\n```\n###\n\n\nYou can find this sample file here\nLink\n\n\nPython if elif else statement\n\nI’m trying to create a program with python that calculate the cost for shipping.\n\n\nHowever, I can’t run the program to where it works properly.\n\n\nWhat ever my total is the same amount comes out as $6 for US and $8 for Canada. I can’t seem to get pass that.\n\n\nExample:\n\ntotal = raw_input('What is the total amount for your online shopping?')\ncountry = raw_input('Shipping within the US or Canada?')\n\nif country == \"US\":\n    if total &lt;= \"50\":\n        print \"Shipping Costs $6.00\"\n    elif total &lt;= \"100\":\n            print \"Shipping Costs $9.00\"\n    elif total &lt;= \"150\":\n            print \"Shipping Costs $12.00\"\n    else:\n        print \"FREE\"\n\nif country == \"Canada\":\n    if total &lt;= \"50\":\n        print \"Shipping Costs $8.00\"\n    elif total &lt;= \"100\":\n        print \"Shipping Costs $12.00\"\n    elif total &lt;= \"150\":\n        print \"Shipping Costs $15.00\"\n    else:\n        print \"FREE\"\nLink"
   },
   {
-    "objectID": "slides/13-presentation-schedule.html#todays-goals",
-    "href": "slides/13-presentation-schedule.html#todays-goals",
+    "objectID": "slides/14-presentation-schedule.html#in-class-presentations",
+    "href": "slides/14-presentation-schedule.html#in-class-presentations",
     "title": "Presentation Schedule",
+    "section": "In-Class Presentations",
+    "text": "In-Class Presentations\n\n\n\n\n\n\n\n\nTime\nTeam\nTitle\n\n\n\n\n12:35 - 12:51\nBreeding\nThe Summary of U.S. Border Crossing/Entry Data"
+  },
+  {
+    "objectID": "slides/14-presentation-schedule.html#recordings",
+    "href": "slides/14-presentation-schedule.html#recordings",
+    "title": "Presentation Schedule",
+    "section": "Recordings",
+    "text": "Recordings\n\n\n\n\n\n\n\n\nTime\nTeam\nTitle\n\n\n\n\nRecording\nThe Trio\nInvisible Threats: A Global Look at the Best and Worst Air Quality\n\n\nRecording\nBlack Tea DC\nExploring Coffee Preferences: Insights from the Great American Coffee Taste Test"
+  },
+  {
+    "objectID": "slides/12-simulation-2.html#todays-goals",
+    "href": "slides/12-simulation-2.html#todays-goals",
+    "title": "Simulation - now with results!",
     "section": "Today’s Goals:",
-    "text": "Today’s Goals:\n\nSet the presentation schedule (and agree on a format)\nWork on the report and/or the presentation"
+    "text": "Today’s Goals:\n\nWork on deliverable number 3 for homework 11: simulate!\nThree deliverables in total: pseudocode.qmd, craps-code.qmd, and simulation.qmd (this week)"
   },
   {
-    "objectID": "slides/13-presentation-schedule.html#from-the-presentation-rubric",
-    "href": "slides/13-presentation-schedule.html#from-the-presentation-rubric",
-    "title": "Presentation Schedule",
-    "section": "From the Presentation rubric",
-    "text": "From the Presentation rubric\n\nDue date: Thursday, Dec 12\nWhat to submit:\n\nlink to video of the presentation (link in Canvas)\nslides.qmd in project repository on github\n\nLength of Presentation:\n\n4*(n+1) minutes, where n is team size"
+    "objectID": "slides/12-simulation-2.html#simulate.qmd",
+    "href": "slides/12-simulation-2.html#simulate.qmd",
+    "title": "Simulation - now with results!",
+    "section": "Simulate.qmd",
+    "text": "Simulate.qmd\n\nIn your repo, create a file with that name.\nYou need to answer the following three questions:\n\nWhich probability do you want to estimate?\nWhat is the simulation result (in numbers and visuals)?\nWhat is the simulation variability?\n\n\nMake sure to set a seed to make your analysis reproducible."
   },
   {
-    "objectID": "slides/13-presentation-schedule.html#present-live-or-record",
-    "href": "slides/13-presentation-schedule.html#present-live-or-record",
-    "title": "Presentation Schedule",
-    "section": "Present live or record?",
-    "text": "Present live or record?\nFive teams with 18 members in total: \\(18 \\cdot 4 + 5\\cdot 4 = 92\\) minutes\nYour team’s choice: submit your choice on Canvas"
-  },
-  {
-    "objectID": "slides/13-presentation-schedule.html#resources",
-    "href": "slides/13-presentation-schedule.html#resources",
-    "title": "Presentation Schedule",
+    "objectID": "slides/12-simulation-2.html#resources",
+    "href": "slides/12-simulation-2.html#resources",
+    "title": "Simulation - now with results!",
     "section": "Resources",
     "text": "Resources\n\nR cheat sheet\npython cheat sheet"
   },
   {
-    "objectID": "slides/11-simulation.html#homework-project-work",
-    "href": "slides/11-simulation.html#homework-project-work",
-    "title": "Simulation",
-    "section": "Homework & Project work",
-    "text": "Homework & Project work\n\ndue dates … some are harder than others.\n\nI realize that RStudio was freezing up … a lot. So this one is not as hard.\nGenerally: you can (re-)submit assignments. If they are egregiously late, I will deduct a late penalty.\nActually hard deadline: Monday after Thanksgiving, Dec 2 2024"
-  },
-  {
-    "objectID": "slides/11-simulation.html#remainder-of-the-semester",
-    "href": "slides/11-simulation.html#remainder-of-the-semester",
-    "title": "Simulation",
-    "section": "Remainder of the semester",
-    "text": "Remainder of the semester\n\nOnly two more homework assignments!\n\nSimulation & interactive graphics\n\nProject work!\n\nhttps://posit.co/blog/closeread-prize-announcement/"
-  },
-  {
-    "objectID": "slides/11-simulation.html#this-weeks-big-picture-goal",
-    "href": "slides/11-simulation.html#this-weeks-big-picture-goal",
-    "title": "Simulation",
+    "objectID": "slides/07-murder.html#this-weeks-big-picture-goal",
+    "href": "slides/07-murder.html#this-weeks-big-picture-goal",
+    "title": "Murder in SQL City",
     "section": "This week’s big picture goal:",
-    "text": "This week’s big picture goal:\nBringing everything together - working on a project-like homework."
+    "text": "This week’s big picture goal:\nWorking with data filters, joining data"
   },
   {
-    "objectID": "slides/11-simulation.html#todays-goals",
-    "href": "slides/11-simulation.html#todays-goals",
-    "title": "Simulation",
+    "objectID": "slides/07-murder.html#todays-goals",
+    "href": "slides/07-murder.html#todays-goals",
+    "title": "Murder in SQL City",
     "section": "Today’s Goals:",
-    "text": "Today’s Goals:\n\nIn Canvas, follow the Github Classroom link to Homework 11\nClone the repo for Homework 11 to your local machine\nThree deliverables in total: pseudocode.qmd (this week), craps-code.qmd, and simulation.qmd"
+    "text": "Today’s Goals:\n\nIn Canvas, follow the Github Classroom link to Homework 7\nClone the repo for Homework 7 to your local machine\nMake sure that you are able to render index.qmd\nYou might have to install the package RSQLite\n\nStart solving the murder … by … ahem, finding that crime report."
   },
   {
-    "objectID": "slides/11-simulation.html#resources",
-    "href": "slides/11-simulation.html#resources",
-    "title": "Simulation",
+    "objectID": "slides/07-murder.html#resources",
+    "href": "slides/07-murder.html#resources",
+    "title": "Murder in SQL City",
     "section": "Resources",
     "text": "Resources\n\nR cheat sheet\npython cheat sheet"
   },
   {
-    "objectID": "slides/06-data-wrangling.html#this-weeks-big-picture-goal",
-    "href": "slides/06-data-wrangling.html#this-weeks-big-picture-goal",
-    "title": "Wrangling Data",
+    "objectID": "slides/05-data-explorations.html#this-weeks-big-picture-goal",
+    "href": "slides/05-data-explorations.html#this-weeks-big-picture-goal",
+    "title": "Exploring Data",
     "section": "This week’s big picture goal:",
-    "text": "This week’s big picture goal:\nWorking with text and practicing exploration skills"
+    "text": "This week’s big picture goal:\nGetting comfortable working with data sets and start asking questions!"
   },
   {
-    "objectID": "slides/06-data-wrangling.html#organization",
-    "href": "slides/06-data-wrangling.html#organization",
-    "title": "Wrangling Data",
+    "objectID": "slides/05-data-explorations.html#organization",
+    "href": "slides/05-data-explorations.html#organization",
+    "title": "Exploring Data",
     "section": "Organization",
-    "text": "Organization\nHomework #5:\n\nmake sure to put the link to your repo on Github into Canvas\nauthorization: usethis::create_github_token()\nwhich files to push? any original files!"
+    "text": "Organization\n\nHomework #4: make sure to put the link to your repo on Github into Canvas\nHomework #5:\nplease check that you can access the github classroom repo\nDr. Vanderplas will take over on Thursday"
   },
   {
-    "objectID": "slides/06-data-wrangling.html#todays-goals",
-    "href": "slides/06-data-wrangling.html#todays-goals",
-    "title": "Wrangling Data",
+    "objectID": "slides/05-data-explorations.html#todays-goals",
+    "href": "slides/05-data-explorations.html#todays-goals",
+    "title": "Exploring Data",
     "section": "Today’s Goals:",
-    "text": "Today’s Goals:\n\nIn Canvas, follow the Github Classroom link to Homework 6\nClone the repo for Homework 6 to your local machine\nMake sure that you are able to render index.qmd\nStart wrangling these poems!\n\nTry to get past checkpoints 1 and 2 for both python and R, so you can focus on the exploration on Thursday"
+    "text": "Today’s Goals:\n\nClone the repo for Homework 5\nMake sure that you are able to render index.qmd\nStart to explore! https://www.mrdbourke.com/a-gentle-introduction-to-exploratory-data-analysis/"
   },
   {
-    "objectID": "slides/06-data-wrangling.html#helpful-functions",
-    "href": "slides/06-data-wrangling.html#helpful-functions",
-    "title": "Wrangling Data",
-    "section": "Helpful functions",
-    "text": "Helpful functions\n\nin R: separate_longer_delim, str_count (make sure to check ?boundary()),\nin python: str.split, str.count, explode"
-  },
-  {
-    "objectID": "slides/06-data-wrangling.html#resources",
-    "href": "slides/06-data-wrangling.html#resources",
-    "title": "Wrangling Data",
+    "objectID": "slides/05-data-explorations.html#resources",
+    "href": "slides/05-data-explorations.html#resources",
+    "title": "Exploring Data",
     "section": "Resources",
     "text": "Resources\n\nR cheat sheet\npython cheat sheet"
   },
   {
-    "objectID": "slides/04-case-studies.html#organization",
-    "href": "slides/04-case-studies.html#organization",
-    "title": "Case Studies",
-    "section": "Organization",
-    "text": "Organization\n\nHomework #3: make sure to put the link to your repo on Github into Canvas\nHomework #4:\nplease check that you can access the github classroom repo\nHeads-up: watch 1h video before next class: tidy tuesday screencast"
+    "objectID": "slides/03-fizzing-and-buzzing.html#organizationclean-up",
+    "href": "slides/03-fizzing-and-buzzing.html#organizationclean-up",
+    "title": "Fizzing and Buzzing",
+    "section": "Organization/clean-up",
+    "text": "Organization/clean-up\n\nHomework #2: make sure to put the link to your repo on Github into Canvas\nHomework #3 repo structure"
   },
   {
-    "objectID": "slides/04-case-studies.html#this-weeks-big-picture-goal",
-    "href": "slides/04-case-studies.html#this-weeks-big-picture-goal",
-    "title": "Case Studies",
+    "objectID": "slides/03-fizzing-and-buzzing.html#this-weeks-big-picture-goal",
+    "href": "slides/03-fizzing-and-buzzing.html#this-weeks-big-picture-goal",
+    "title": "Fizzing and Buzzing",
     "section": "This week’s big picture goal:",
-    "text": "This week’s big picture goal:\nConsolidate your knowledge\nChapter 15\nPractice! Practice! Practice!"
+    "text": "This week’s big picture goal:\nGoing from using functions to writing the first functions"
   },
   {
-    "objectID": "slides/04-case-studies.html#todays-goals",
-    "href": "slides/04-case-studies.html#todays-goals",
-    "title": "Case Studies",
+    "objectID": "slides/03-fizzing-and-buzzing.html#todays-goals",
+    "href": "slides/03-fizzing-and-buzzing.html#todays-goals",
+    "title": "Fizzing and Buzzing",
     "section": "Today’s Goals:",
-    "text": "Today’s Goals:\n\nClone the repo for Homework 4\nMake sure that you are able to render index.qmd\n\nyou might have to install some packages (R package curl, python package plotnine)\n\nRead actively through the examples in Chapter 15\n\nload the data from the homework into an R session\nadapt (if possible) the commands from the examples to the homework data"
+    "text": "Today’s Goals:\nUnderstand\n\nWorking with packages in R and Python\nDistinguish and recognize data structures (data as in objects, not the statistics data)\nMatrix operations\n\nDo\n\nfirst part of homework #3\n\nRead-up on\n\nControl Structures, program flows\nWriting Functions"
   },
   {
-    "objectID": "slides/04-case-studies.html#resources",
-    "href": "slides/04-case-studies.html#resources",
-    "title": "Case Studies",
+    "objectID": "slides/03-fizzing-and-buzzing.html#resources",
+    "href": "slides/03-fizzing-and-buzzing.html#resources",
+    "title": "Fizzing and Buzzing",
     "section": "Resources",
     "text": "Resources\n\nR cheat sheet\npython cheat sheet"
   },
   {
-    "objectID": "slides/04-case-studies.html#next-class",
-    "href": "slides/04-case-studies.html#next-class",
-    "title": "Case Studies",
+    "objectID": "slides/03-fizzing-and-buzzing.html#next-class",
+    "href": "slides/03-fizzing-and-buzzing.html#next-class",
+    "title": "Fizzing and Buzzing",
     "section": "Next class",
-    "text": "Next class\n\nPlanning out code"
-  },
-  {
-    "objectID": "slides/02b-Finding-Your-Way.html#todays-goals",
-    "href": "slides/02b-Finding-Your-Way.html#todays-goals",
-    "title": "Finding your way in R and Python",
-    "section": "Today’s Goals:",
-    "text": "Today’s Goals:\nUnderstand\n\nBasic Data Types\nCreating Variables\nUsing R/Python as a calculator\n\nPractice working with errors\n\nIntro to Debugging"
-  },
-  {
-    "objectID": "slides/02b-Finding-Your-Way.html#work-on-the-homework",
-    "href": "slides/02b-Finding-Your-Way.html#work-on-the-homework",
-    "title": "Finding your way in R and Python",
-    "section": "Work on the homework!",
-    "text": "Work on the homework!\nDue date: Monday, Sep 9"
-  },
-  {
-    "objectID": "slides/02b-Finding-Your-Way.html#next-class",
-    "href": "slides/02b-Finding-Your-Way.html#next-class",
-    "title": "Finding your way in R and Python",
-    "section": "Next class",
-    "text": "Next class\n\nData structures: vectors, lists, arrays, …\nArithmetic operators for matrices\nFunction writing in R and Python"
-  },
-  {
-    "objectID": "slides/01b-intro.html#goals-for-today",
-    "href": "slides/01b-intro.html#goals-for-today",
-    "title": "Stat 850: Git and Github",
-    "section": "Goals for Today",
-    "text": "Goals for Today\n\nSet up Git (Chapter 5 of the textbook)\nHow to submit homework with Github Classroom\nGit concepts: Push/Pull"
-  },
-  {
-    "objectID": "slides/01b-intro.html#preview-next-week",
-    "href": "slides/01b-intro.html#preview-next-week",
-    "title": "Stat 850: Git and Github",
-    "section": "Preview: Next Week",
-    "text": "Preview: Next Week\n\nFinding your way in R and Python\n\nNavigating RStudio\nExecution modes: script, console, interactive\nPython vs. R code\n\nIntroduction to Programming"
-  },
-  {
-    "objectID": "slides/01b-intro.html#reminders",
-    "href": "slides/01b-intro.html#reminders",
-    "title": "Stat 850: Git and Github",
-    "section": "Reminders",
-    "text": "Reminders\n\nHomework due Monday at 8pm\nRead the assigned chapters in the textbook (7, 8) for class next week!"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About Stat 850",
-    "section": "",
-    "text": "Course Description\nIntroductions to statistical computing packages and document preparation software. Topics include: graphical techniques, data management, Monte Carlo simulation, dynamic document preparation, presentation software.\n\n\nCourse Goals\n\nLearn how to use R and/or Python for data analysis, data processing, and data visualization.\nBecome familiar with the process, techniques, and goals of exploratory data analysis.\nCreate, assess, and debug code effectively.\n\nUse online resources to find software to perform a task, comparing approaches taken by competing programs.\nRead error messages, find related problems in online forums, and isolate the conditions necessary to generate the error.\nGenerate minimum working examples or reproducible examples of errors in order to ask for help effectively.\n\nCommunicate statistical results using reproducible, dynamic tools. Understand the importance of reproducibility in scientific computation.\n\n\n\nCourse Objectives\n(what you should be able to do at the end of this course)\n\nClean and format the data appropriately for the intended analysis or visualization method. (Goals: 1)\nExplore a data set using numerical and visual summaries, developing questions which can be answered using statistics. (Goals: 1, 2)\nEvaluate methods or software to assess relevance to a problem. Compare similar options to determine which are more appropriate for a given application (Goals: 1, 3)\nTest and debug software, using the following sequence: (Goals: 3, 4)\n\nReproduce the error in a new environment,\nCreate a minimal reproducible example,\nResearch the error message and evaluate online resources for relevance,\nAsk for help, describing the error or problem appropriately.\n\nDocument the data, methods, and results of an analysis using reproducible methods. (Goals: 1, 2, 4)\n\n\n\nTextbook\nIn keeping with the principles of this course, any course materials I develop will be made available on GitHub, in the (continuously evolving) course textbook. The book is laid out with the same structure as the course. In order to avoid duplicating content available elsewhere, where it is appropriate, I will link to relevant material available on other sites. This makes the course easier to maintain, but it also ensures you get the most relevant and up to date instructions.\nIn addition, you may find it useful to reference some of the following resources that I have consulted while assembling the textbook. Most are available online for free, though some require an institutional email address.\n\nR for Data Science\nAdvanced R\nPython for Everybody\nPython for Data Analysis *\nPython Data Science Handbook *\n\n* Available online for free if you register with your UNL email address."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Stat 850: Computing Tools for Statistics",
-    "section": "",
-    "text": "Course Materials\nDates shown are due dates (for homework, projects) and dates by which initial comments/annotations should be made (reading).\nMost classes will not contain slide presentations, but when there are slides to share, they will be provided here.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\n\n\nTitle\n\n\n\n\n\n\nDec 8, 2024\n\n\n\n\n\nSample Report\n\n\n\n\nDec 3, 2024\n\n\n\n\n\nPresentation Schedule\n\n\n\n\nNov 25, 2024\n\n\n\n\n\nHomework 11: Simulation (Probability)\n\n\n\n\nNov 19, 2024\n\n\n\n\n\nSimulation - now with results!\n\n\n\n\nNov 18, 2024\n\n\n\n\n\nHomework 12: Shiny\n\n\n\n\nNov 15, 2024\n\n\n\n\n\nHomework 11: Simulation (Implementation)\n\n\n\n\nNov 8, 2024\n\n\n\n\n\nHomework 11: Simulation (Pseudocode)\n\n\n\n\nNov 5, 2024\n\n\n\n\n\nSimulation\n\n\n\n\nNov 4, 2024\n\n\n\n\n\nHomework 10: Professional Communication\n\n\n\n\nOct 29, 2024\n\n\n\n\n\nLaTeX and Markdown\n\n\n\n\nOct 24, 2024\n\n\n\n\n\nDebugging Excercises\n\n\n\n\nOct 21, 2024\n\n\n\n\n\nHomework: Awesomely Bad Graphics\n\n\n\n\nOct 14, 2024\n\n\n\n\n\nHomework: Murder in SQL City\n\n\n\n\nOct 14, 2024\n\n\n\n\n\nProject Guidelines\n\n\n\n\nOct 14, 2024\n\n\n\n\n\nStat 850 Project Proposal\n\n\n\n\nOct 8, 2024\n\n\n\n\n\nMurder in SQL City\n\n\n\n\nOct 7, 2024\n\n\n\n\n\nString Processing and Data Wrangling in R and Python\n\n\n\n\nOct 3, 2024\n\n\n\n\n\nWrangling Data\n\n\n\n\nOct 1, 2024\n\n\n\n\n\nWrangling Data\n\n\n\n\nSep 30, 2024\n\n\n\n\n\nChocolate Chip Cookies\n\n\n\n\nSep 24, 2024\n\n\n\n\n\nExploring Data\n\n\n\n\nSep 20, 2024\n\n\n\n\n\nHomework: Data Programming\n\n\n\n\nSep 17, 2024\n\n\n\n\n\nCase Studies\n\n\n\n\nSep 13, 2024\n\n\n\n\n\nHomework: Fizzbuzz\n\n\n\n\nSep 9, 2024\n\n\n\n\n\nHomework: Finding Your Way in R and Python\n\n\n\n\nSep 9, 2024\n\n\n\n\n\nFizzing and Buzzing\n\n\n\n\nSep 5, 2024\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nSep 3, 2024\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nSep 2, 2024\n\n\n\n\n\n👋 The Basics of GitHub\n\n\n\n\nAug 29, 2024\n\n\n\n\n\nStat 850: Git and Github\n\n\n\n\nAug 27, 2024\n\n\n\n\n\nStat 850 Introduction\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "slides/01a-intro.html#goals-for-today",
-    "href": "slides/01a-intro.html#goals-for-today",
-    "title": "Stat 850 Introduction",
-    "section": "Goals for Today",
-    "text": "Goals for Today\n\nSyllabus Q&A\nInstall software:\n\nR\nPython\nquarto\nRStudio\ngit\n\nStretch goal: set up Git"
-  },
-  {
-    "objectID": "slides/01a-intro.html#preview-thursday",
-    "href": "slides/01a-intro.html#preview-thursday",
-    "title": "Stat 850 Introduction",
-    "section": "Preview: Thursday",
-    "text": "Preview: Thursday\n\nSet up Git\nHow to submit homework with Github Classroom\nGit concepts: Push/Pull"
-  },
-  {
-    "objectID": "slides/01a-intro.html#reminders",
-    "href": "slides/01a-intro.html#reminders",
-    "title": "Stat 850 Introduction",
-    "section": "Reminders",
-    "text": "Reminders\n\nHomework due Monday at 8pm"
+    "text": "Next class\n\nFunction writing in R and Python"
   },
   {
     "objectID": "slides/02a-Finding-Your-Way.html#todays-goals",
@@ -532,107 +441,212 @@
     "text": "Next Class\n\nBasic Data Types\nCreating Variables\nUsing R/Python as a calculator\nIntro to Debugging"
   },
   {
-    "objectID": "slides/03-fizzing-and-buzzing.html#organizationclean-up",
-    "href": "slides/03-fizzing-and-buzzing.html#organizationclean-up",
-    "title": "Fizzing and Buzzing",
-    "section": "Organization/clean-up",
-    "text": "Organization/clean-up\n\nHomework #2: make sure to put the link to your repo on Github into Canvas\nHomework #3 repo structure"
+    "objectID": "slides/01a-intro.html#goals-for-today",
+    "href": "slides/01a-intro.html#goals-for-today",
+    "title": "Stat 850 Introduction",
+    "section": "Goals for Today",
+    "text": "Goals for Today\n\nSyllabus Q&A\nInstall software:\n\nR\nPython\nquarto\nRStudio\ngit\n\nStretch goal: set up Git"
   },
   {
-    "objectID": "slides/03-fizzing-and-buzzing.html#this-weeks-big-picture-goal",
-    "href": "slides/03-fizzing-and-buzzing.html#this-weeks-big-picture-goal",
-    "title": "Fizzing and Buzzing",
-    "section": "This week’s big picture goal:",
-    "text": "This week’s big picture goal:\nGoing from using functions to writing the first functions"
+    "objectID": "slides/01a-intro.html#preview-thursday",
+    "href": "slides/01a-intro.html#preview-thursday",
+    "title": "Stat 850 Introduction",
+    "section": "Preview: Thursday",
+    "text": "Preview: Thursday\n\nSet up Git\nHow to submit homework with Github Classroom\nGit concepts: Push/Pull"
   },
   {
-    "objectID": "slides/03-fizzing-and-buzzing.html#todays-goals",
-    "href": "slides/03-fizzing-and-buzzing.html#todays-goals",
-    "title": "Fizzing and Buzzing",
+    "objectID": "slides/01a-intro.html#reminders",
+    "href": "slides/01a-intro.html#reminders",
+    "title": "Stat 850 Introduction",
+    "section": "Reminders",
+    "text": "Reminders\n\nHomework due Monday at 8pm"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Stat 850: Computing Tools for Statistics",
+    "section": "",
+    "text": "Course Materials\nDates shown are due dates (for homework, projects) and dates by which initial comments/annotations should be made (reading).\nMost classes will not contain slide presentations, but when there are slides to share, they will be provided here.\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\n\n\nTitle\n\n\n\n\n\n\nDec 12, 2024\n\n\n\n\n\nPresentation Schedule\n\n\n\n\nDec 8, 2024\n\n\n\n\n\nSample Report\n\n\n\n\nDec 3, 2024\n\n\n\n\n\nPresentation Schedule\n\n\n\n\nNov 25, 2024\n\n\n\n\n\nHomework 11: Simulation (Probability)\n\n\n\n\nNov 19, 2024\n\n\n\n\n\nSimulation - now with results!\n\n\n\n\nNov 18, 2024\n\n\n\n\n\nHomework 12: Shiny\n\n\n\n\nNov 15, 2024\n\n\n\n\n\nHomework 11: Simulation (Implementation)\n\n\n\n\nNov 8, 2024\n\n\n\n\n\nHomework 11: Simulation (Pseudocode)\n\n\n\n\nNov 5, 2024\n\n\n\n\n\nSimulation\n\n\n\n\nNov 4, 2024\n\n\n\n\n\nHomework 10: Professional Communication\n\n\n\n\nOct 29, 2024\n\n\n\n\n\nLaTeX and Markdown\n\n\n\n\nOct 24, 2024\n\n\n\n\n\nDebugging Excercises\n\n\n\n\nOct 21, 2024\n\n\n\n\n\nHomework: Awesomely Bad Graphics\n\n\n\n\nOct 14, 2024\n\n\n\n\n\nHomework: Murder in SQL City\n\n\n\n\nOct 14, 2024\n\n\n\n\n\nProject Guidelines\n\n\n\n\nOct 14, 2024\n\n\n\n\n\nStat 850 Project Proposal\n\n\n\n\nOct 8, 2024\n\n\n\n\n\nMurder in SQL City\n\n\n\n\nOct 7, 2024\n\n\n\n\n\nString Processing and Data Wrangling in R and Python\n\n\n\n\nOct 3, 2024\n\n\n\n\n\nWrangling Data\n\n\n\n\nOct 1, 2024\n\n\n\n\n\nWrangling Data\n\n\n\n\nSep 30, 2024\n\n\n\n\n\nChocolate Chip Cookies\n\n\n\n\nSep 24, 2024\n\n\n\n\n\nExploring Data\n\n\n\n\nSep 20, 2024\n\n\n\n\n\nHomework: Data Programming\n\n\n\n\nSep 17, 2024\n\n\n\n\n\nCase Studies\n\n\n\n\nSep 13, 2024\n\n\n\n\n\nHomework: Fizzbuzz\n\n\n\n\nSep 9, 2024\n\n\n\n\n\nHomework: Finding Your Way in R and Python\n\n\n\n\nSep 9, 2024\n\n\n\n\n\nFizzing and Buzzing\n\n\n\n\nSep 5, 2024\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nSep 3, 2024\n\n\n\n\n\nFinding your way in R and Python\n\n\n\n\nSep 2, 2024\n\n\n\n\n\n👋 The Basics of GitHub\n\n\n\n\nAug 29, 2024\n\n\n\n\n\nStat 850: Git and Github\n\n\n\n\nAug 27, 2024\n\n\n\n\n\nStat 850 Introduction\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Stat 850",
+    "section": "",
+    "text": "Course Description\nIntroductions to statistical computing packages and document preparation software. Topics include: graphical techniques, data management, Monte Carlo simulation, dynamic document preparation, presentation software.\n\n\nCourse Goals\n\nLearn how to use R and/or Python for data analysis, data processing, and data visualization.\nBecome familiar with the process, techniques, and goals of exploratory data analysis.\nCreate, assess, and debug code effectively.\n\nUse online resources to find software to perform a task, comparing approaches taken by competing programs.\nRead error messages, find related problems in online forums, and isolate the conditions necessary to generate the error.\nGenerate minimum working examples or reproducible examples of errors in order to ask for help effectively.\n\nCommunicate statistical results using reproducible, dynamic tools. Understand the importance of reproducibility in scientific computation.\n\n\n\nCourse Objectives\n(what you should be able to do at the end of this course)\n\nClean and format the data appropriately for the intended analysis or visualization method. (Goals: 1)\nExplore a data set using numerical and visual summaries, developing questions which can be answered using statistics. (Goals: 1, 2)\nEvaluate methods or software to assess relevance to a problem. Compare similar options to determine which are more appropriate for a given application (Goals: 1, 3)\nTest and debug software, using the following sequence: (Goals: 3, 4)\n\nReproduce the error in a new environment,\nCreate a minimal reproducible example,\nResearch the error message and evaluate online resources for relevance,\nAsk for help, describing the error or problem appropriately.\n\nDocument the data, methods, and results of an analysis using reproducible methods. (Goals: 1, 2, 4)\n\n\n\nTextbook\nIn keeping with the principles of this course, any course materials I develop will be made available on GitHub, in the (continuously evolving) course textbook. The book is laid out with the same structure as the course. In order to avoid duplicating content available elsewhere, where it is appropriate, I will link to relevant material available on other sites. This makes the course easier to maintain, but it also ensures you get the most relevant and up to date instructions.\nIn addition, you may find it useful to reference some of the following resources that I have consulted while assembling the textbook. Most are available online for free, though some require an institutional email address.\n\nR for Data Science\nAdvanced R\nPython for Everybody\nPython for Data Analysis *\nPython Data Science Handbook *\n\n* Available online for free if you register with your UNL email address."
+  },
+  {
+    "objectID": "slides/01b-intro.html#goals-for-today",
+    "href": "slides/01b-intro.html#goals-for-today",
+    "title": "Stat 850: Git and Github",
+    "section": "Goals for Today",
+    "text": "Goals for Today\n\nSet up Git (Chapter 5 of the textbook)\nHow to submit homework with Github Classroom\nGit concepts: Push/Pull"
+  },
+  {
+    "objectID": "slides/01b-intro.html#preview-next-week",
+    "href": "slides/01b-intro.html#preview-next-week",
+    "title": "Stat 850: Git and Github",
+    "section": "Preview: Next Week",
+    "text": "Preview: Next Week\n\nFinding your way in R and Python\n\nNavigating RStudio\nExecution modes: script, console, interactive\nPython vs. R code\n\nIntroduction to Programming"
+  },
+  {
+    "objectID": "slides/01b-intro.html#reminders",
+    "href": "slides/01b-intro.html#reminders",
+    "title": "Stat 850: Git and Github",
+    "section": "Reminders",
+    "text": "Reminders\n\nHomework due Monday at 8pm\nRead the assigned chapters in the textbook (7, 8) for class next week!"
+  },
+  {
+    "objectID": "slides/02b-Finding-Your-Way.html#todays-goals",
+    "href": "slides/02b-Finding-Your-Way.html#todays-goals",
+    "title": "Finding your way in R and Python",
     "section": "Today’s Goals:",
-    "text": "Today’s Goals:\nUnderstand\n\nWorking with packages in R and Python\nDistinguish and recognize data structures (data as in objects, not the statistics data)\nMatrix operations\n\nDo\n\nfirst part of homework #3\n\nRead-up on\n\nControl Structures, program flows\nWriting Functions"
+    "text": "Today’s Goals:\nUnderstand\n\nBasic Data Types\nCreating Variables\nUsing R/Python as a calculator\n\nPractice working with errors\n\nIntro to Debugging"
   },
   {
-    "objectID": "slides/03-fizzing-and-buzzing.html#resources",
-    "href": "slides/03-fizzing-and-buzzing.html#resources",
-    "title": "Fizzing and Buzzing",
-    "section": "Resources",
-    "text": "Resources\n\nR cheat sheet\npython cheat sheet"
+    "objectID": "slides/02b-Finding-Your-Way.html#work-on-the-homework",
+    "href": "slides/02b-Finding-Your-Way.html#work-on-the-homework",
+    "title": "Finding your way in R and Python",
+    "section": "Work on the homework!",
+    "text": "Work on the homework!\nDue date: Monday, Sep 9"
   },
   {
-    "objectID": "slides/03-fizzing-and-buzzing.html#next-class",
-    "href": "slides/03-fizzing-and-buzzing.html#next-class",
-    "title": "Fizzing and Buzzing",
+    "objectID": "slides/02b-Finding-Your-Way.html#next-class",
+    "href": "slides/02b-Finding-Your-Way.html#next-class",
+    "title": "Finding your way in R and Python",
     "section": "Next class",
-    "text": "Next class\n\nFunction writing in R and Python"
+    "text": "Next class\n\nData structures: vectors, lists, arrays, …\nArithmetic operators for matrices\nFunction writing in R and Python"
   },
   {
-    "objectID": "slides/05-data-explorations.html#this-weeks-big-picture-goal",
-    "href": "slides/05-data-explorations.html#this-weeks-big-picture-goal",
-    "title": "Exploring Data",
-    "section": "This week’s big picture goal:",
-    "text": "This week’s big picture goal:\nGetting comfortable working with data sets and start asking questions!"
-  },
-  {
-    "objectID": "slides/05-data-explorations.html#organization",
-    "href": "slides/05-data-explorations.html#organization",
-    "title": "Exploring Data",
+    "objectID": "slides/04-case-studies.html#organization",
+    "href": "slides/04-case-studies.html#organization",
+    "title": "Case Studies",
     "section": "Organization",
-    "text": "Organization\n\nHomework #4: make sure to put the link to your repo on Github into Canvas\nHomework #5:\nplease check that you can access the github classroom repo\nDr. Vanderplas will take over on Thursday"
+    "text": "Organization\n\nHomework #3: make sure to put the link to your repo on Github into Canvas\nHomework #4:\nplease check that you can access the github classroom repo\nHeads-up: watch 1h video before next class: tidy tuesday screencast"
   },
   {
-    "objectID": "slides/05-data-explorations.html#todays-goals",
-    "href": "slides/05-data-explorations.html#todays-goals",
-    "title": "Exploring Data",
-    "section": "Today’s Goals:",
-    "text": "Today’s Goals:\n\nClone the repo for Homework 5\nMake sure that you are able to render index.qmd\nStart to explore! https://www.mrdbourke.com/a-gentle-introduction-to-exploratory-data-analysis/"
-  },
-  {
-    "objectID": "slides/05-data-explorations.html#resources",
-    "href": "slides/05-data-explorations.html#resources",
-    "title": "Exploring Data",
-    "section": "Resources",
-    "text": "Resources\n\nR cheat sheet\npython cheat sheet"
-  },
-  {
-    "objectID": "slides/07-murder.html#this-weeks-big-picture-goal",
-    "href": "slides/07-murder.html#this-weeks-big-picture-goal",
-    "title": "Murder in SQL City",
+    "objectID": "slides/04-case-studies.html#this-weeks-big-picture-goal",
+    "href": "slides/04-case-studies.html#this-weeks-big-picture-goal",
+    "title": "Case Studies",
     "section": "This week’s big picture goal:",
-    "text": "This week’s big picture goal:\nWorking with data filters, joining data"
+    "text": "This week’s big picture goal:\nConsolidate your knowledge\nChapter 15\nPractice! Practice! Practice!"
   },
   {
-    "objectID": "slides/07-murder.html#todays-goals",
-    "href": "slides/07-murder.html#todays-goals",
-    "title": "Murder in SQL City",
+    "objectID": "slides/04-case-studies.html#todays-goals",
+    "href": "slides/04-case-studies.html#todays-goals",
+    "title": "Case Studies",
     "section": "Today’s Goals:",
-    "text": "Today’s Goals:\n\nIn Canvas, follow the Github Classroom link to Homework 7\nClone the repo for Homework 7 to your local machine\nMake sure that you are able to render index.qmd\nYou might have to install the package RSQLite\n\nStart solving the murder … by … ahem, finding that crime report."
+    "text": "Today’s Goals:\n\nClone the repo for Homework 4\nMake sure that you are able to render index.qmd\n\nyou might have to install some packages (R package curl, python package plotnine)\n\nRead actively through the examples in Chapter 15\n\nload the data from the homework into an R session\nadapt (if possible) the commands from the examples to the homework data"
   },
   {
-    "objectID": "slides/07-murder.html#resources",
-    "href": "slides/07-murder.html#resources",
-    "title": "Murder in SQL City",
+    "objectID": "slides/04-case-studies.html#resources",
+    "href": "slides/04-case-studies.html#resources",
+    "title": "Case Studies",
     "section": "Resources",
     "text": "Resources\n\nR cheat sheet\npython cheat sheet"
   },
   {
-    "objectID": "slides/12-simulation-2.html#todays-goals",
-    "href": "slides/12-simulation-2.html#todays-goals",
-    "title": "Simulation - now with results!",
+    "objectID": "slides/04-case-studies.html#next-class",
+    "href": "slides/04-case-studies.html#next-class",
+    "title": "Case Studies",
+    "section": "Next class",
+    "text": "Next class\n\nPlanning out code"
+  },
+  {
+    "objectID": "slides/06-data-wrangling.html#this-weeks-big-picture-goal",
+    "href": "slides/06-data-wrangling.html#this-weeks-big-picture-goal",
+    "title": "Wrangling Data",
+    "section": "This week’s big picture goal:",
+    "text": "This week’s big picture goal:\nWorking with text and practicing exploration skills"
+  },
+  {
+    "objectID": "slides/06-data-wrangling.html#organization",
+    "href": "slides/06-data-wrangling.html#organization",
+    "title": "Wrangling Data",
+    "section": "Organization",
+    "text": "Organization\nHomework #5:\n\nmake sure to put the link to your repo on Github into Canvas\nauthorization: usethis::create_github_token()\nwhich files to push? any original files!"
+  },
+  {
+    "objectID": "slides/06-data-wrangling.html#todays-goals",
+    "href": "slides/06-data-wrangling.html#todays-goals",
+    "title": "Wrangling Data",
     "section": "Today’s Goals:",
-    "text": "Today’s Goals:\n\nWork on deliverable number 3 for homework 11: simulate!\nThree deliverables in total: pseudocode.qmd, craps-code.qmd, and simulation.qmd (this week)"
+    "text": "Today’s Goals:\n\nIn Canvas, follow the Github Classroom link to Homework 6\nClone the repo for Homework 6 to your local machine\nMake sure that you are able to render index.qmd\nStart wrangling these poems!\n\nTry to get past checkpoints 1 and 2 for both python and R, so you can focus on the exploration on Thursday"
   },
   {
-    "objectID": "slides/12-simulation-2.html#simulate.qmd",
-    "href": "slides/12-simulation-2.html#simulate.qmd",
-    "title": "Simulation - now with results!",
-    "section": "Simulate.qmd",
-    "text": "Simulate.qmd\n\nIn your repo, create a file with that name.\nYou need to answer the following three questions:\n\nWhich probability do you want to estimate?\nWhat is the simulation result (in numbers and visuals)?\nWhat is the simulation variability?\n\n\nMake sure to set a seed to make your analysis reproducible."
+    "objectID": "slides/06-data-wrangling.html#helpful-functions",
+    "href": "slides/06-data-wrangling.html#helpful-functions",
+    "title": "Wrangling Data",
+    "section": "Helpful functions",
+    "text": "Helpful functions\n\nin R: separate_longer_delim, str_count (make sure to check ?boundary()),\nin python: str.split, str.count, explode"
   },
   {
-    "objectID": "slides/12-simulation-2.html#resources",
-    "href": "slides/12-simulation-2.html#resources",
-    "title": "Simulation - now with results!",
+    "objectID": "slides/06-data-wrangling.html#resources",
+    "href": "slides/06-data-wrangling.html#resources",
+    "title": "Wrangling Data",
+    "section": "Resources",
+    "text": "Resources\n\nR cheat sheet\npython cheat sheet"
+  },
+  {
+    "objectID": "slides/11-simulation.html#homework-project-work",
+    "href": "slides/11-simulation.html#homework-project-work",
+    "title": "Simulation",
+    "section": "Homework & Project work",
+    "text": "Homework & Project work\n\ndue dates … some are harder than others.\n\nI realize that RStudio was freezing up … a lot. So this one is not as hard.\nGenerally: you can (re-)submit assignments. If they are egregiously late, I will deduct a late penalty.\nActually hard deadline: Monday after Thanksgiving, Dec 2 2024"
+  },
+  {
+    "objectID": "slides/11-simulation.html#remainder-of-the-semester",
+    "href": "slides/11-simulation.html#remainder-of-the-semester",
+    "title": "Simulation",
+    "section": "Remainder of the semester",
+    "text": "Remainder of the semester\n\nOnly two more homework assignments!\n\nSimulation & interactive graphics\n\nProject work!\n\nhttps://posit.co/blog/closeread-prize-announcement/"
+  },
+  {
+    "objectID": "slides/11-simulation.html#this-weeks-big-picture-goal",
+    "href": "slides/11-simulation.html#this-weeks-big-picture-goal",
+    "title": "Simulation",
+    "section": "This week’s big picture goal:",
+    "text": "This week’s big picture goal:\nBringing everything together - working on a project-like homework."
+  },
+  {
+    "objectID": "slides/11-simulation.html#todays-goals",
+    "href": "slides/11-simulation.html#todays-goals",
+    "title": "Simulation",
+    "section": "Today’s Goals:",
+    "text": "Today’s Goals:\n\nIn Canvas, follow the Github Classroom link to Homework 11\nClone the repo for Homework 11 to your local machine\nThree deliverables in total: pseudocode.qmd (this week), craps-code.qmd, and simulation.qmd"
+  },
+  {
+    "objectID": "slides/11-simulation.html#resources",
+    "href": "slides/11-simulation.html#resources",
+    "title": "Simulation",
+    "section": "Resources",
+    "text": "Resources\n\nR cheat sheet\npython cheat sheet"
+  },
+  {
+    "objectID": "slides/13-presentation-schedule.html#todays-goals",
+    "href": "slides/13-presentation-schedule.html#todays-goals",
+    "title": "Presentation Schedule",
+    "section": "Today’s Goals:",
+    "text": "Today’s Goals:\n\nSet the presentation schedule (and agree on a format)\nWork on the report and/or the presentation"
+  },
+  {
+    "objectID": "slides/13-presentation-schedule.html#from-the-presentation-rubric",
+    "href": "slides/13-presentation-schedule.html#from-the-presentation-rubric",
+    "title": "Presentation Schedule",
+    "section": "From the Presentation rubric",
+    "text": "From the Presentation rubric\n\nDue date: Thursday, Dec 12\nWhat to submit:\n\nlink to video of the presentation (link in Canvas)\nslides.qmd in project repository on github\n\nLength of Presentation:\n\n4*(n+1) minutes, where n is team size"
+  },
+  {
+    "objectID": "slides/13-presentation-schedule.html#present-live-or-record",
+    "href": "slides/13-presentation-schedule.html#present-live-or-record",
+    "title": "Presentation Schedule",
+    "section": "Present live or record?",
+    "text": "Present live or record?\nFive teams with 18 members in total: \\(18 \\cdot 4 + 5\\cdot 4 = 92\\) minutes\nYour team’s choice: submit your choice on Canvas"
+  },
+  {
+    "objectID": "slides/13-presentation-schedule.html#resources",
+    "href": "slides/13-presentation-schedule.html#resources",
+    "title": "Presentation Schedule",
     "section": "Resources",
     "text": "Resources\n\nR cheat sheet\npython cheat sheet"
   },

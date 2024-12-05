@@ -1,0 +1,23 @@
+---
+title: "Presentation Schedule"
+date: "2024-12-12"
+categories: Slides
+format: 
+  revealjs:
+    theme: default
+---
+
+## In-Class Presentations
+
+| Time | Team     | Title                                                              |
+|------|----------|--------------------------------------------------------------------|
+|   12:35 - 12:51   |  Breeding        |    The Summary of U.S. Border Crossing/Entry Data                                                                |
+|      |          |                                                                    |
+
+## Recordings
+
+| Time | Team     | Title                                                              |
+|------|----------|--------------------------------------------------------------------|
+|  Recording    | The Trio | Invisible Threats: A Global Look at the Best and Worst Air Quality |
+| Recording | Black Tea DC | Exploring Coffee Preferences: Insights from the Great American Coffee Taste Test |
+|      |          |                                                                    |
