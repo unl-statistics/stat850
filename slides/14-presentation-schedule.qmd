@@ -11,8 +11,10 @@ format:
 
 | Time | Team     | Title                                                              |
 |------|----------|--------------------------------------------------------------------|
-|   12:35 - 12:51   |  Breeding        |    The Summary of U.S. Border Crossing/Entry Data                                                                |
-|      |          |                                                                    |
+|   12:40 - 12:56   |  Breeding        |    The Summary of U.S. Border Crossing/Entry Data                                                                |
+| 1:00 - 1:20  | Data Detectives | The Summit Story: Data Insights into Himalayan Expeditions|
+|  1:25  - 1:41  | The Trio | Invisible Threats: A Global Look at the Best and Worst Air Quality |
+
 
 ## Recordings
 
