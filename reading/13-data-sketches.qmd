@@ -1,0 +1,19 @@
+---
+title: "Data Sketches"
+date: 2023-12-01
+---
+
+Read 3 of the following chapters from Data Sketches by Shirley Wu and Nadieh Bremer:
+
+- [Film Flowers](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/12340988500006387?auth=SAML)
+- [My Life in Vacations](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/12340988610006387?auth=SAML)
+- [Putting Emojis on the President's Face](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/12340988730006387?auth=SAML)
+- [Magic is Everywhere](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/12340988810006387?auth=SAML)
+- [Beautiful in English](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/12340988890006387?auth=SAML)
+
+Annotate with hypothes.is (use the O'Reilly link through the library, please, so we all annotate the same thing.)
+
+Think about/comment on: 
+
+- How do these data visualizations differ from graphs made with e.g. ggplot2 or seaborn?
+- Do you find these types of visualizations useful? aesthetically pleasing? fun?

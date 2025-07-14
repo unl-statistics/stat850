@@ -1,6 +1,6 @@
 ---
 title: "Homework 11: Simulation (Pseudocode)"
-date: Nov 8, 2024
+
 ---
 
 Note: This assignment must be submitted in github classroom.

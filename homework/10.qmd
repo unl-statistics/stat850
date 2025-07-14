@@ -1,6 +1,6 @@
 ---
 title: "Homework 10: Professional Communication"
-date: Nov 4, 2024
+
 ---
 
 Note: This assignment must be submitted in github classroom.

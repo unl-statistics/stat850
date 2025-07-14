@@ -1,7 +1,0 @@
----
-title: "Sample Proposal"
-date: 2024-10-14
----
-
-
-{{< include proj-template/proposal.qmd >}}

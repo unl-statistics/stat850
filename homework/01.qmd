@@ -1,8 +1,8 @@
 ---
 title: "Homework 1: Git and Github"
-date: Sep 02, 2024
+
 ---
 
 Note: This assignment must be submitted in github classroom.
 
-{{< include ../homework-repos/01-git-github/README.qmd >}}
+{{< include ../homework-templates/01/README.qmd >}}

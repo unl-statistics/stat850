@@ -1,0 +1,24 @@
+---
+title: "Simulation"
+date: 2023-11-03
+---
+
+Read: 
+
+- [Free Wifi with Randomness](https://articles.foletta.org/post/random-wifi-password/)
+
+- [Seductions of Sim - Policy as a Simulation Game](https://www.princeton.edu/~starr/17star.html)
+
+
+Annotate with hypothes.is
+
+Think about/comment on: 
+
+- Seductions of Sim
+
+  - What are the consequences of simulation?
+  - How useful is simulation as a model exploration tool?
+
+- Free Wifi with Randomness
+  - What did you learn about Monte Carlo methods?
+  - Are there any interesting tricks you've learned from this blog post?

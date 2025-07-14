@@ -1,0 +1,16 @@
+---
+title: "Tidy Tuesday Screencast: Doctor Who"
+date: 2023-09-15
+---
+
+Watch the following screencast:
+
+<iframe width="796" height="448" src="https://www.youtube.com/embed/89l_3Y53qMM" title="Tidy Tuesday live screencast: Analyzing Doctor Who in R" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+Think about/comment on: 
+
+- You might try to follow along with the data, but pay attention to how the analysis proceeds over time. 
+- What did you learn from watching someone else do data analysis in realtime?
+
+Submit your answers to the Canvas quiz. If you want to annotate the YouTube page, that is fine, but I will grade the Canvas quiz.

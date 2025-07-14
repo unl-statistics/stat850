@@ -1,26 +1,21 @@
 ---
-title: "Stat 850: Computing Tools for Statistics"
+title: Stat 349 - Technical Skills for Statisticians
 format: html
-listing:
-  - id: hwlst
-    categories: true
-    contents: 
-      - "!archive/"
-      - "homework/*.qmd"
-      - "!homework/hearts.qmd"
-      - "reading/*.qmd"
-      - "project/*.qmd" 
-      - "slides/*.qmd"
-    sort: "date desc"
-    type: table
-    fields: [date, image, title]
 ---
 
-# Course Materials
 
-Dates shown are due dates (for homework, projects) and dates by which initial comments/annotations should be made (reading). 
-
-Most classes will not contain slide presentations, but when there are slides to share, they will be provided here.
-
-::: {#hwlst}
-:::
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+source("schedule.R")
+library(DT)
+  schedule |>
+  bind_rows(tibble(Week = 16, Topic = "Finals Week")) |>
+  tidyr::replace_na(list("Important Dates" = "", Topic =  "Finals Week")) |>
+  mutate(Topic = if_else(Week < 16, sprintf("<a href='https://unl-statistics.github.io/stat349/weeks/week-%02d.html'> %s </a>", Week, Topic), Topic)) |>
+  group_by(Week, Topic) |>
+  summarize(`Important Dates` = paste(`Important Dates`, collapse = "<br>")) |>
+  ungroup() |>
+  datatable(escape = F, selection = 'none', filter='none', options = list(paging = F, info = F, searching = F, ordering = F), rownames = F, style = "bootstrap")
+```

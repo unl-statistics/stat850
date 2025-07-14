@@ -1,6 +1,6 @@
 ---
 title: "Homework 11: Simulation (Probability)"
-date: Nov 25, 2024
+
 ---
 
 Note: This assignment must be submitted in github classroom.

@@ -1,6 +1,6 @@
 ---
 title: "Homework 7: Murder in SQL City"
-date: October 14, 2024
+
 ---
 
 Note: This assignment must be submitted in github classroom.

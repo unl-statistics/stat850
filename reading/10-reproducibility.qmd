@@ -1,0 +1,34 @@
+---
+title: "Reproducibility"
+date: 2023-10-27
+---
+
+Read: 
+
+- [Framed! Reproducing and Revisiting 150-Year-Old Charts](https://www.tandfonline.com/doi/full/10.1080/10618600.2018.1562937)
+
+- [A Study in Reproducibility: The Congruent Matching Cells Algorithm and cmcR Package](https://journal.r-project.org/articles/RJ-2023-014/)
+    - Focus here on the reproducibility part - the forensics is a bit complicated, but the trouble the authors had reproducing this method that had been published many times in the past was... excruciating (spoiler alert, I'm one of the authors).
+
+
+Annotate with hypothes.is
+
+Think about/comment on: 
+
+- What attempts at reproducibility worked and didn't work in each article?
+
+- How important is long-term reproducibility?
+
+- How do the two articles differ with respect to types of reproducibility?
+
+- What important factors must exist for reproducibility?
+
+
+Other Resources (not required):
+
+- You can see all of the pages of the Statistical Atlases at the Library of Congress (and even download extremely high resolution scans, if you want to):
+    - [9th census (1870)](https://www.loc.gov/item/05019329/)
+    - [10th census (1880)](https://www.loc.gov/item/a40001834/)
+    - [11th census (1890)](https://www.loc.gov/item/07019233)
+    - [Census page with links to other censuses](https://www.census.gov/history/www/programs/geography/statistical_atlases.html) - the 1900,1910, and 1920 census atlases are not nearly as impressive :(. )
+    - A Modern [Census Atlas](https://www.census.gov/library/publications/2007/dec/censr-29.html) produced in 2007 attempted to reclaim this graphical history.

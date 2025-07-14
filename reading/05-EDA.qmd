@@ -1,0 +1,16 @@
+---
+title: "Exploratory Data Analysis"
+date: 2023-09-22
+---
+
+Read: 
+- [Chapter 1 of Exploratory Data Analysis by John Tukey](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/12340320650006387?auth=SAML) (available on Canvas)
+
+Annotate using hypothes.is (not the built in annotation tool)
+
+Think about/comment on: 
+
+- What do you think about Tukey's approach to exploratory data analysis?
+- What new ways to use Stem and Leaf plots did you learn?
+- How has the use of computers made EDA easier? harder?
+

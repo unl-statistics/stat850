@@ -1,15 +1,3 @@
-[submodule "homework-repos/02-finding-your-way"]
-	path = homework-repos/02-finding-your-way
-	url = git@github.com:stat850-unl/Hw-02-Finding-Your-Way.git
-[submodule "homework-repos/01-git-github"]
-	path = homework-repos/01-git-github
-	url = git@github.com:stat850-unl/github-starter-course.git
-[submodule "homework-repos/03-fizzbuzz"]
-	path = homework-repos/03-fizzbuzz
-	url = git@github.com:stat-assignments/fizzbuzz-full.git
-[submodule "homework-repos/04-data-prog"]
-	path = homework-repos/04-data-prog
-	url = git@github.com:stat850-unl/Hw-04-DataProgramming.git
 [submodule "homework-repos/05-data-cookies"]
 	path = homework-repos/05-data-cookies
 	url = git@github.com:unl-stat251/hw-reading-data-template.git
@@ -34,3 +22,6 @@
 [submodule "homework-repos/11-simulate-craps"]
 	path = homework-repos/11-simulate-craps
 	url = git@github.com:stat-assignments/simulation-craps.git
+[submodule "homework-templates/01"]
+	path = homework-templates/01
+	url = https://github.com/stat-assignments/github-intro

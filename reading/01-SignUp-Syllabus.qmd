@@ -1,0 +1,42 @@
+---
+title: "Setup and Syllabus Annotation"
+categories: Reading
+date: 2023-08-25
+---
+
+In this class, we will have weekly readings that are intended to broaden your horizons, introduce you to new ideas related to computing and reproducibility, and highlight important ethical considerations that we won't discuss directly in class but that have implications for computing.
+
+I haven't yet found a great tool for "social annotation", but the idea is to allow you to read an article, make snarky (or insightful) comments, and see how your classmates react, ideally starting discussions and enriching everyone's experiences.
+
+This semester I've decided to try Hypothes.is. I haven't used this before, so we'll see how it goes.
+
+
+## Setup
+
+1. Create a [free Hypothes.is account](https://hypothes.is/signup) using your UNL email address
+2. Join the [Class Group](https://hypothes.is/groups/3wwBG1zm/2023-stat850) 
+3. Install the [browser addon](https://web.hypothes.is/help/installing-the-chrome-extension/) in Chrome/Edge or the [bookmarklet](https://web.hypothes.is/help/installing-the-bookmarklet/) 
+in your  browser of choice.
+
+![](using-hypothesis-bookmarklet.gif){fig-alt="Gif showing steps to use Hypothesis bookmarklet, described in the Setup subheading"}
+
+
+## Annotate the Syllabus
+
+Open the [syllabus](https://srvanderplas.github.io/unl-stat850/syllabus.pdf) in your browser.
+
+1. Activate hypothes.is using the addon or the bookmarklet.
+2. Log in (if necessary)
+3. Make sure you are posting your annotations to the 2023-Stat850 group.
+4. Highlight some text and make a comment. Ask a question about something you don't understand, or complain about something you find unfair - I'm totally fine with that, I can take it. 
+5. Read through the remainder of the syllabus and comment/highlight important points, things that need clarification, etc.
+6. Respond to your classmates' comments before Friday at 8pm. 
+
+## Evaluation
+
+I will grade this assignment (and future assignments) by looking at your annotations in the 2023-Stat850 group. 
+If you annotate articles and post the comments to "Public" instead of our group, I have no way to give you credit for the assignment.
+
+You will get credit both for your own annotations and for responses to classmates' comments/questions. 
+These responses should be organic, not formulaic - I expect you to engage with interesting thoughts/comments, but you are not required to make a specific number of comments each week. 
+I will instead track your overall engagement over the course of the semester. 

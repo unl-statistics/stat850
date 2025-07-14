@@ -1,6 +1,6 @@
 ---
 title: "Homework 12: Shiny"
-date: November 18, 2024
+
 ---
 
 Note: This assignment must be submitted in github classroom.
