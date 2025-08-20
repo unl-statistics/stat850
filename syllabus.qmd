@@ -22,7 +22,7 @@ web: "srvanderplas.github.io"
 officehours: [By Appointment - use this link](https://calendly.com/vanderplas/office-hours)
 office: "Hardin 343D"
 classroom: "Keim 214"
-classhours: "TR 9:30-11:45"
+classhours: "TR 9:30-10:45"
 final: "Dec 17, 10am - 12pm"
 execute: 
   cache: false
@@ -52,7 +52,7 @@ source("schedule.R")
 
 Introductions to statistical computing packages and document preparation software. Topics include: graphical techniques, data management, Monte Carlo simulation, dynamic document preparation, presentation software.
 
-# Course Goals
+## Goals
 1. Learn how to use R and/or Python for data analysis, data processing, data visualization, and statistical simulation.
 2. Become familiar with the process, techniques, and goals of exploratory data analysis.
 3. Create, assess, and debug code effectively.
@@ -61,7 +61,7 @@ Introductions to statistical computing packages and document preparation softwar
     iii. Generate minimum working examples or reproducible examples of errors in order to ask for help effectively.
 4. Communicate statistical results using reproducible, dynamic tools. Understand the importance of reproducibility in scientific computation.
 
-# Course Objectives
+## Objectives
 (what you should be able to do at the end of this course)
 
 A.  Clean and format the data appropriately for the intended analysis or visualization method. (Goals: 1)
@@ -86,7 +86,7 @@ F.  Construct a reproducible statistical simulation for a given problem using me
 In this course, I will assume that you have access to:
 
 - A computer (ideally a laptop) capable of running R, python, RStudio, and quarto. 
-- Access to a scanner to scan handwritten sketches, etc. for homework assignments.
+- Access to a scanner or camera to scan or photograph handwritten sketches, etc. for homework assignments.
 
 ## Textbook
 
@@ -111,84 +111,7 @@ In addition, you may find it useful to reference some of the following resources
 
 Additional readings will be selected from various other books and will be made available via Library Course Reserves. 
 
-## Additional Resources
 
-See [the course support page]() for links to resources for academic support, mental health and wellness support, and technology support. 
-
-# Assessment/Grading
-
-Assignments | Weight
------ | -----
-Weekly Homework | 50% 
-Textbook Quizzes | 10%
-Midterm + Final | 20%
-Final | 20%
-
-Lower bounds for grade cutoffs are shown in the following table. 
-Do NOT ask for a grade bump or to have your grade rounded up - this is a statistics course, and I expect you to understand the mathematical rules of rounding. 
-
-Letter grade |	X + |  	X |	X - 
--------- | ----- | ----- | -----
-A |	97 |	94 | 	90
-B |	87 |	84 |	80
-C |	77 |	74 |	70
-D |	67 |	64 |	60
-F |	<60 | |
-
-Interpretation of this table: 
-
-- A grade of 86.4 will receive a B, and a grade of 86.6 will receive a B+. 
-- A grade of 73.2 will receive a C-, and a grade of 73.9 will receive a C+. 
-- Anything below a 59.5 will receive an F. 
-
-## Reading Quizzes
-
-This class uses a flipped classroom model, which assumes that you read the material and/or watch the videos before class so that you are prepared to apply the material during in-class activities. 
-This model is most familiar in science laboratory settings - there may be a brief review of material at the start of the lab period, but most of your class time will be spent working interactively in pairs or small groups. 
-
-To ensure that you are prepared for class, there are low-stakes quizzes to accompany most textbook chapters; these quizzes will highlight some important items to remember from each chapter.
-You are encouraged to have the textbook chapter(s) open when you complete the quiz. 
-
-Quizzes will be due at 8am on class days (if there are multiple textbook chapters assigned for the week, one quiz may be due on Tuesday and one on Thursday, depending on whether the material is intended to be consumed sequentially or in parallel). 
-
-## Homework
-
-Approximately 13 homework assignments will be made over the course of the semester.
-The only way to learn statistics is to practice working problems, and homework is therefore an essential part of the course. 
-
-- You will have one week to work on each of the assignments. 
-- Homework must be submitted in the file format specified (quarto document, in the correct github repository), and should run or compile as submitted on a different machine.
-
-### Resubmission Policy
-A total of two homework assignments may be submitted for regrading (one before the midterm, one between the midterm and the final exam).
-When you submit a previously submitted assignment, you must address all feedback provided on your initial submission. 
-You must also write 2-3 sentences as a submission comment explaining what you learned between your initial submission and your resubmission. 
-
-Resubmissions are due on October 20 (pre-midterm) and December 8 (post-midterm). 
-
-## Contextual Reading
-
-Articles will be provided for each week in order to give you different perspectives on the week's material or provide context for the week's topic. 
-These articles may relate to how the material is used in the real world, what statisticians were thinking when the concept was formalized, differences between implementations in R/Python/SAS, or ethical or societal challenges associated with the material. 
-You will be expected to summarize and respond to the articles in free-response (essay/short-answer) questions on your midterm and final exam. 
-
-## Exams
-
-Tentative dates:
-- Midterm:
-    - October 23 (in-class portion)
-    - October 23-24 (outside of class)
-- Final: 
-  - December 11-12 (outside of class), 
-  - December 17 (scheduled final exam), 10am - 12pm
-
-Exams will be hybrid, with an in-class portion as well as a take-home portion. 
-On exams, you may NOT use AI or external resources like StackOverflow unless indicated by the problem. 
-
-Exam problems which ask you to program will be conceptually similar to the homework assignments. 
-Exams will also include questions which require you to write a paragraph or a short essay. 
-It is difficult to write coherently about a topic if you don't have a good understanding of that topic and related concepts. 
-Testing your ability to write and explain something is one way of measuring higher level understanding and integration of course material. 
 
 # Class Schedule & Topic Outline
 
@@ -221,25 +144,123 @@ class_days %>% select(date, topic, time) %>%
 kableExtra::kable(caption = "Tentative schedule of class topics & project due dates", format = "simple")
 ```
 
-# Course Policies
+# Course Essentials
 
-## General Evaluation Criteria
+## Assessment/Grading
 
-In every assignment, discussion, and written component of this class, you are expected to demonstrate that you are intellectually engaging with the material. 
-I will evaluate you based on this engagement, which means that technically correct but low effort answers which do not demonstrate engagement or understanding will not receive full credit.
+Assignments | Weight
+----- | -----
+Reading Quizzes & Participation | 10%
+Weekly Homework | 50% 
+Midterm | 20%
+Final | 20%
 
-When you answer questions in this class, your goal is to show that you either understand the material or are actively engaging with it. 
-If you did not achieve this goal, then your answer is incomplete, regardless of whether or not it is technically correct. 
-This is not to encourage you to add unnecessary complexity to your answer - simple, elegant solutions are always preferable to unwieldy, complex solutions that accomplish the same task.
+Lower bounds for grade cutoffs are shown in the following table. 
+Do NOT ask for a grade bump or to have your grade rounded up - this is a statistics course, and I expect you to understand the mathematical rules of rounding. 
 
-While this is not an English class, grammar and spelling are important, as is your ability to communicate technical information in writing; both of these criteria will be used in addition to assignment-specific rubrics to evaluate your work.
 
-## Attendance & Participation
+| Letter grade | X +    | X    | X -  |
+|--------------|--------|------|------|
+| A            | 96.5   | 93.5 | 89.5 |
+| B            | 86.5   | 83.5 | 79.5 |
+| C            | 76.5   | 73.5 | 69.5 |
+| D            | 66.5   | 63.5 | 60.5 |
+| F            | \<60.5 |      |      |
+
+Interpretation of this table: 
+
+- A grade of 86.4 will receive a B, and a grade of 86.6 will receive a B+. 
+- A grade of 73.2 will receive a C-, and a grade of 73.9 will receive a C+. 
+- Anything below a 59.5 will receive an F. 
+
+## Course Components
+
+### Reading Quizzes :book:
+
+This class uses a flipped classroom model, which assumes that you read the material and/or watch the videos before class so that you are prepared to apply the material during in-class activities. 
+This model is most familiar in science laboratory settings - there may be a brief review of material at the start of the lab period, but most of your class time will be spent working interactively in pairs or small groups. 
+
+To ensure that you are prepared for class, there are low-stakes quizzes to accompany most textbook chapters; these quizzes will highlight some important items to remember from each chapter.
+You are encouraged to have the textbook chapter(s) open when you complete the quiz. 
+
+Quizzes will be due at 8am on class days (if there are multiple textbook chapters assigned for the week, one quiz may be due on Tuesday and one on Thursday, depending on whether the material is intended to be consumed sequentially or in parallel). 
+
+### Homework :computer:
+
+Weekly formative assignments (assignments meant to help you practice skills) will be given throughout the semester. 
+
+-   You will typically have one week to work on each of the assignments.
+
+-   Assignments must be submitted in the file format specified, and should run or compile as submitted for credit to be given.
+
+-   I will attempt to grade formative assignments within a week of the specified due date.
+
+-   The assignment due date in Canvas will be set to at least 48 hours before the hard deadline for assignment submission. This provides an implicit "grace period" for assignment submission. No additional extensions will be provided. 
+
+<!-- ### Resubmission Policy -->
+
+<!-- A total of two homework assignments may be submitted for regrading (one before the midterm, one between the midterm and the final exam). -->
+<!-- When you submit a previously submitted assignment, you must address all feedback provided on your initial submission.  -->
+<!-- You must also write 2-3 sentences as a submission comment explaining what you learned between your initial submission and your resubmission.  -->
+
+<!-- Resubmissions are due on October 20 (pre-midterm) and December 8 (post-midterm).  -->
+
+### Contextual Reading
+
+Articles will be provided for each week in order to give you different perspectives on the week's material or provide context for the week's topic. 
+These articles may relate to how the material is used in the real world, what statisticians were thinking when the concept was formalized, differences between implementations in R/Python/SAS, or ethical or societal challenges associated with the material. 
+You will be expected to summarize and respond to the articles in free-response (essay/short-answer) questions on your midterm and final exam. 
+
+### Exams (Midterm and Final)
+
+Tentative dates:
+- Midterm:
+    - October 23 (in-class portion)
+    - October 23-24 (outside of class)
+- Final: 
+  - December 11-12 (outside of class), 
+  - December 17 (scheduled final exam), 10am - 12pm
+
+Exams will be hybrid, with an in-class portion as well as a take-home portion. 
+On exams, you may NOT use AI or external resources like StackOverflow unless indicated by the problem. 
+
+Exam problems which ask you to program will be conceptually similar to the homework assignments. 
+Exams will also include questions which require you to write a paragraph or a short essay. 
+It is difficult to write coherently about a topic if you don't have a good understanding of that topic and related concepts. 
+Testing your ability to write and explain something is one way of measuring higher level understanding and integration of course material. 
+
+## Course Policies
+
+### Late Work Policy :alarm_clock:
+
+Late assignments will be accepted only under extenuating circumstances, and only if you have contacted me **prior** to the assignment due date and received permission to hand the assignment in late. 
+I reserve the right not to grade (or to assign a 0 to) any assignments received after the assignment due date without prior approval.
+Most lab assignments build in a "grace period" - they are typically due on Friday and the assignment closes Sunday evening. 
+This additional time serves as a general deadline extension to provide an extra few days to work on the assignment. 
+
+### Exam Make-Up Policy
+
+Students should make every possible attempt to ensure that they are available for both the midterm and final exam.
+The following policies will determine whether a student is eligible for a make-up exam or other accommodation:
+
+- Only university-excused absences will be accommodated. 
+
+- If there is a scheduled conflict with an exam date, students should contact the instructor as soon as practicable. In most cases, conflicts must be identified within the first two weeks of the semester. 
+
+- In the case of emergent conflicts (illness, bereavement),  students must notify the instructor as soon as possible. 
+In most cases, this notice must be received before the scheduled exam date. 
+
+- If the midterm exam is missed due to a university-excused absence, the weight of the midterm will be transferred to the final exam.
+
+- If the final exam is missed due to a university-excused absence, the instructor will work with the student to determine an appropriate accommodation or alternate assignment.
+
+
+### Attendance & Participation
 
 You are expected to attend class and participate in online discussions. 
 Consistent, repeated failure to attend class or actively participate in class will affect the participation portion of your grade.
 
-### Excused Absences
+#### Excused Absences
 
 The university lists several reasons that a student may miss a class or significant component of the course such as an exam  [Faculty Senate Class Attendance Policy](https://facultysenate.unl.edu/faculty-senate-policies-and-documents/class-attendance-policy/).
 
@@ -265,43 +286,24 @@ Disability Services may require medical documentation as part of the accommodati
 Note that scheduling of vacations or international travel is NOT considered a university approved absence. 
 :::
 
-#### Illness
+
+#### Illness :face_with_thermometer: & Excused Absences
 
 If you are feeling ill, please **do not come to class**. 
-Instead, review the material and work on the homework assignment, and then [schedule an appointment to meet virtually](https://calendly.com/vanderplas/office-hours). 
+Instead, review the material and work on the homework/lab assignment, and then schedule an appointment with me to meet virtually within a week of your absence. 
 In the appointment reason field on Calendly, indicate that this appointment is to substitute for your in-class participation on the date you missed.
 
-If you need to miss more than 2 classes for illness, I reserve the right to require documentation (from Disability Services or a medical provider) in order to continue using this substitute for attendance grades. 
+If you need to miss more than 1-2 classes for illness, I reserve the right to require documentation from Disability Services or a medical provider. 
 
-### Inclement Weather
+
+#### Inclement Weather :cloud_with_snow: :tornado: :cloud_with_lightning_and_rain:
 
 If in-person classes are canceled, you will be notified of the instructional continuity plan for this class by Canvas Announcement. 
-In most circumstances where there is power in the Lincoln area, we will continue to hold class via Zoom. 
-
-### Make-Up Policy
-
-#### Assignments
-
-Late assignments will be accepted only under extenuating circumstances, and only if you have contacted me **prior** to the assignment due date and received permission to hand the assignment in late. 
-I reserve the right not to grade any assignments received after the assignment due date.
-
-#### Exams
-
-Students should make every possible attempt to ensure that they are available for both the midterm and final exam.
-The following policies will determine whether a student is eligible for a make-up exam or other accommodation:
-
-- Only university-excused absences will be accommodated. 
-
-- If there is a scheduled conflict with an exam date, students should contact the instructor as soon as practicable. In most cases, conflicts must be identified within the first two weeks of the semester. 
-
-- In the case of emergent conflicts (illness, bereavement),  students must notify the instructor as soon as possible. 
-In most cases, this notice must be received before the scheduled exam date. 
-
-- If the midterm exam is missed due to a university-excused absence, the weight of the midterm will be transferred to the final exam.
-
-- If the final exam is missed due to a university-excused absence, the instructor will work with the student to determine an appropriate accommodation.
-
-
+When there is power in the Lincoln area, we may hold class via Zoom; however, I may assign an asynchronous activity instead. 
+You will be held to the same participation and professionalism standards on Zoom as you are in person, and participation and attendance will be graded accordingly.
+That is -- cameras should be on, you should be fully clothed, and you should be an active participant and not an empty black box. 
+If there is a reason you don't want your camera to be on (e.g. if you're in an environment you can't fully control, or you're sick and don't want to be on camera), just let me know. 
+Pets are 100% welcome to join the zoom call :heart: :dog: :cat:. 
 
 ## Expectations
 
@@ -320,60 +322,67 @@ I expect you to:
 - Do your own troubleshooting before contacting me for help (and mention things you've already tried when you do ask for help!)
 - Be respectful and considerate of everyone in the class
 
-
-
 ### Communication
 
 If you are lost or confused or have a problem related to the course, make contact early!
 It is much easier to address a small problem early than to fix a cascade of issues later in the semester.
 
-<!-- In the past, I have found [similar](https://haoeric.gitbooks.io/r-advanced/content/) [textbooks](https://es.r4ds.hadley.nz/) and [resources](https://www.coursera.org/learn/data-science-2-tus-primeros-pasos-con-python) in other languages for nonnative speakers, developed a way to generate an audiobook from the textbook for people who prefer auditory information, and accommodated a variety of life events which come up.  -->
+### Make Mistakes! :car: :collision:
 
-### Make Mistakes!
+Programming is the process of making a series of silly or stupid mistakes, and then slowly fixing each mistake (while potentially adding a few more). The only way to know how to fix these mistakes (and avoid them in the future) is to make them. (Sometimes, you have to make the same mistake a few dozen times before you can avoid it in the future). At some point during the class, you will find that you've spent 30 minutes staring at an error caused by a typo, a space, or a parenthesis in the wrong place. You may ask for help debugging this weird error, only to have someone immediately point out the problem... it is always easier to see these things in someone else's code. This is part of programming, it is normal, and you shouldn't feel embarrassed or sorry (unless you put no effort into troubleshooting the problem before you asked for help).
 
-Programming is the process of making a series of silly or stupid mistakes, and then slowly fixing each mistake (while potentially adding a few more). 
-The only way to know how to fix these mistakes (and avoid them in the future) is to make them.
-(Sometimes, you have to make the same mistake a few dozen times before you can avoid it in the future). 
-At some point during the class, you will find that you've spent 30 minutes staring at an error caused by a typo, a space, or a parenthesis in the wrong place. 
-You may ask a neighbor for help debugging this weird error, only to have them immediately point out the problem... it is always easier to see these things in someone else's code.
-This is part of programming, it is normal, and you shouldn't feel embarrassed or sorry (unless you put no effort into troubleshooting the problem before you asked for help).
+If you manage to produce an error I haven't seen before, then congratulations. You have achieved something special, and that achievement should be celebrated. Each new and bizarre error is an opportunity to learn a bit more about the programming language, the operating system, or the interaction between the two.
 
-If you manage to produce an error I haven't seen before, then congratulations!
-You have achieved something special, and that achievement should be celebrated. 
-Each new and bizarre error is an opportunity to learn a bit more about the programming language, the operating system, or the interaction between the two.
+### Evaluation Criteria
 
-### Class Conduct
+In every assignment, discussion, and written component of this class, you are expected to **demonstrate that you are intellectually engaging with the material**.
+I will evaluate you based on this engagement, which means that technically correct but low effort answers which do not demonstrate engagement or understanding will receive no credit.
 
+When you answer questions in this class, your goal is to show that you either understand the material or are actively engaging with it. 
+If you did not achieve this goal, then your answer is incomplete, regardless of whether or not it is technically correct. 
+This is not to encourage you to add unnecessary complexity to your answer - simple, elegant solutions are always preferable to unwieldy, complex solutions that accomplish the same task.
 
-You will be engaging in discussions and collaborative activities throughout the semester. 
+Grammar and spelling are important, as is your ability to communicate technical information clearly in a written format; both of these criteria will be used in addition to assignment-specific rubrics to evaluate your work.
+
+### Academic Integrity and Class Conduct
+
+You will be engaging with your classmates and me through in-person discussions and collaborative activities. 
 It is expected that everyone will engage in these interactions civilly and in good faith. 
 Discussion and disagreement are important parts of the learning process, but it is important that mutual respect prevail. 
-Individuals who detract from an atmosphere of civility and respect will be removed from the conversation and, if necessary, the classroom.
-
-
-## Academic Integrity and Class Conduct
+Individuals who detract from an atmosphere of civility and respect will be removed from the conversation or the classroom.
 
 Students are expected to adhere to guidelines concerning academic dishonesty outlined in [Article III B.1 of the University's Student Code of Conduct](http://stuafs.unl.edu/dos/code). The Statistics Department [academic integrity and grade appeal policy is available here](https://statistics.unl.edu/grade-appeals-and-academic-integrity-policy).
 
-### Course Academic Integrity Policies
 
-You must be able to explain how the logic works for any code you turn in. 
-This means that code you obtained from e.g. StackOverflow or ChatGPT is fine to use **if you can explain it and modify it to meet the requirements**, and if you document the original source of the code using e.g. a URL in a comment.
-If you cannot explain your code, you will not get credit for the assignment.
-This is in line with what is generally considered acceptable behavior in programming - reuse is fine (subject to the code's license), but you must still be able to **understand** and **modify** any code you did not write yourself. 
-I reserve the right to replace the grade on any assignment with an oral exam over that assignment's content and key concepts. 
 
+#### AI and Explainability Policy
 
 **Any use of generative AI must be disclosed** in an appendix to your submission - this includes brainstorming, editing, using AI as spell-check/grammar-check, and so on. You must document the following:
 
 -   the version of the generative AI used
 -   the full sequence of prompts and responses
 -   any additional inputs you provided to the AI system
--   a "diff" between the AI responses and your submission, showing exactly what was generated by the AI system and what you changed.
+-   a "diff" between the AI responses and your submission, showing exactly what was generated by the AI system and what you changed. 
 
+It may be useful to leverage AI tools to ensure that your work conforms to grammar and style guidelines, but I very highly discourage the use of generative AI for content or code.
+
+#### Oral Exams
+I reserve the right to replace the grade on any written assignment with a graded oral exam on your submission. 
+This policy is not intended to be punitive -- it may be used to resolve issues where question wording was not clear or was misinterpreted. 
+Rather, it is intended to be used to assess what you actually know when I suspect that the written assignment is not a good measure of your knowledge or skills. 
+
+#### Code
+You must be able to explain any work you turn in. 
+  - If you cannot explain the logic behind your approach as well as how it works in practice, then you will not receive credit for your submission. This is in line with what is generally considered acceptable behavior in programming - reuse is fine (subject to the code's license), but you must still be able to **understand** and **modify** any code you did not write yourself. 
+
+  - If you copy and modify code from another source (StackOverflow, Rbloggers, etc.), provide that source in a comment above the code. This provides you with documentation as to how you got to the solution, and also provides credit to the original source. (This practice has been helpful to me on many occasions when I come back to code I wrote long ago)
+
+
+#### Exams
 
 **No external resources** are allowed on exams (including, but not limited to: the internet, AI, StackOverflow, a friend) for assistance unless specifically stated in the problem (and then, only on that specific problem).
 Use of any external resources will be grounds for an academic integrity violation under [Section 2.A.5](https://studentconduct.unl.edu/university-nebraska-student-code-conduct-0/#sectionii), "Failing to follow the rules". 
+
 
 
 
