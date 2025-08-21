@@ -36,10 +36,10 @@
 	url = git@github.com:stat-assignments/data-programming-steam-games.git
 [submodule "homework-templates/05"]
 	path = homework-templates/05
-	url = git@github.com:stat850-unl/stat850-unl-2025c-exploratory-data-analysis-with-cookies-reading-data-cookies.git
+	url = git@github.com:stat-assignments/reading-data-cookies.git
 [submodule "homework-templates/06"]
 	path = homework-templates/06
-	url = git@github.com:stat850-unl/stat850-unl-2025c-data-wrangling-dplyr-reddit-poetry.git
+	url = git@github.com:stat-assignments/dplyr-reddit-poetry.git
 [submodule "homework-templates/07"]
 	path = homework-templates/07
 	url = git@github.com:stat-assignments/sql-murder.git
