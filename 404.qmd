@@ -2,4 +2,4 @@
 title: 404 Page Not Found
 ---
 
-![](images/404.jpg){fig-alt="Illustration of cat in a box with a speech bubble that says \"I can't find what you're looking for in here\"." width="900"}
+![](https://httpcats.com/404.jpg){fig-alt="Illustration of cat in a box with text below that says 404 Not Found."}
