@@ -19,7 +19,7 @@ semester: Fall 2025
 
 email: "[svanderplas2@unl.edu](mailto:svanderplas2@unl.edu?subject=Stat%20850)"
 web: "srvanderplas.github.io"
-officehours: [By Appointment - use this link](https://calendly.com/vanderplas/office-hours)
+officehours: "[By Appointment - use this link](https://calendly.com/vanderplas/office-hours)"
 office: "Hardin 343D"
 classroom: "Keim 214"
 classhours: "TR 9:30-10:45"
@@ -133,14 +133,8 @@ class_cal
 #| message: false
 #| eval: true
 #| fig-pos: 'h'
-class_days %>% select(date, topic, time) %>%
-  mutate(time = ifelse(is.na(time), "", time)) %>%
-  mutate(date2 = format(date, "%b %e")) %>%
-  set_names(c("date", "Topic", "Time", "Date")) %>%
-  group_by(Topic, Time) %>%
-  summarize(date = min(date), Date = paste(Date, sep = ",", collapse = ", ")) %>%
-  arrange(date) %>%
-  select(Date, Time, Topic) %>%
+schedule %>%
+  tidyr::replace_na(list("Important Dates" = "")) |>
 kableExtra::kable(caption = "Tentative schedule of class topics & project due dates", format = "simple")
 ```
 

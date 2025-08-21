@@ -1,11 +1,22 @@
-# Week 4: Organizing Information
-  
+# Week 4: Data Programming
+
 ## 📖 Reading
 
-  - [ ] Read [ETC Patterns of Organization and Methods of Development](https://wisc.pb.unizin.org/opencomp/chapter/patterns-of-organization-and-methods-of-development/)
-- [ ] Read [ETC Transitions and Organization](https://wisc.pb.unizin.org/opencomp/chapter/transitions-and-organization/)
-- [ ] Read [ETC Reverse Outlining](https://wisc.pb.unizin.org/opencomp/chapter/reverse-outlining/)
-- [ ] Read [ETC Reading Games](https://wisc.pb.unizin.org/opencomp/chapter/reading-games-strategies-for-reading-scholarly-sources/)
+For Class: 
+
+ - [ ] [Programming with Data](https://srvanderplas.github.io/stat-computing-r-python/part-gen-prog/07-prog-data.html)
+
+Context:
+
+- [ ] [Chapter 2: “A Pragmatic Approach” of The Pragmatic Programmer: Your Journey to Mastery, by David Thomas and Andrew Hunt](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/16973139740006387?auth=SAML). As you read this chapter, make a checklist of good code practices that you can use before submitting your homework.  Make a note of principles you don’t understand yet (that’s ok!) that you can come back to at the end of the semester. 
+- [ ] [Tidy Tuesday Screencast: Doctor Who, by David Robinson](https://www.youtube.com/live/89l_3Y53qMM?feature=shared).    
+- [ ] [How does Software Development Compare with Statistical Programming/Analysis](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/16973101700006387?auth=SAML) - a StackOverflow discussion of differences between software development and statistical programming. Not an exhaustive set of viewpoints, but a useful discussion to read. 
+
+Think about: 
+
+- What did you learn from watching someone else do data analysis in realtime? 
+- In your opinion, does programming with data differ from software development? How, and in what ways? 
+- What skills are shared between software dev and statistical programming, and what skills are specific to each?
 
 ### 🎯 Check your understanding
 
@@ -13,19 +24,17 @@
 
 ## 🥣 Prepare for class
 
-- [ ] For Wednesday: Submit a topic idea that you will write a user guide about. Your idea should be a subset of your annual review article (or a topic covered in that article), but you should focus on the practical implementation (e.g. demonstrating the use of software which can perform the task).
+- [ ] Work through the examples in the textbook
 
-## ☕ Monday
+## 🌮 Tuesday
 
-- Transitions and Organizing Information
-- [Slides](../slides/04-organizing-information.qmd)
-  
-## 🐪 Wednesday
+- [Slides](../slides/04-case-studies.qmd)
 
-- Thing Explainer In-Class Activity: how does audience matter, and what assumptions do we make about the audience’s technical knowledge?
+## 🔨️ Thursday 🌩
+
+- [Slides](../slides/04-case-studies.qmd)
 
 ##  🏋️ Practice your skills
 
-- [ ] Highlight transitions in your review article and comment on their effectiveness, obviousness, etc.
-- [ ] Create a reverse outline of your review article. Are there any obvious holes?
+- [ ] [Homework 4](../homework/04.qmd)
 

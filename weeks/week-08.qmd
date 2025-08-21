@@ -1,25 +1,42 @@
-# Week 8: Charts, Tables, and Diagrams
-  
+# Week 8: Graphics
+
 ## 📖 Reading
 
-  - [ ] Read [SWHR 4 - Tables and Figures](https://ehsanx.github.io/Scientific-Writing-for-Health-Research/tables-and-figures.html)
-- [ ] Read [OTC 4.7 – Tables, Charts, and Graphs](https://alg.manifoldapp.org/read/open-technical-communication/section/b1ca4069-52c9-49bb-9e47-510858d4e6f3)
-- [ ] Read [OTC 4.8 - Graphics](https://alg.manifoldapp.org/read/open-technical-communication/section/d03f3bce-d354-4976-b0cd-63a1476416c2)
+For Class: 
+
+- [ ] [Data Visualization](https://srvanderplas.github.io/stat-computing-r-python/part-wrangling/02b-graphics.html)
+- [ ] [Creating Good Charts](https://srvanderplas.github.io/stat-computing-r-python/part-wrangling/02c-good-graphics.html)
+
+Context: 
+
+- [Chapter 3 of Data Feminism: On Rational, Scientific, Objective Viewpoints from Mythical, Imaginary, Impossible Standpoints](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/12340425610006387?auth=SAML)
+
+Content warning: This chapter contains an image of a largely unclothed body (PG or PG13 at most).  
+
+Think about:   
+
+- When do you think it is appropriate to create graphics which inspire and elevate emotion in viewers? When is this not appropriate? 
+- When you see a chart, do you think of it as a rhetorical tool or an objective display? What factors contribute to viewing the chart as one or the other?  
+- What ways do you think are effective for showing uncertainty in data? Have you seen any effective ways of visualizing uncertainty or missing data which are not mentioned in this chapter?
+
 
 ### 🎯 Check your understanding
 
 - [ ] Reading Quiz Week 8
 
-## ☕ Monday
+## 🥣 Prepare for class
 
-- [Tables and charts](../slides/08-tables-charts.qmd)
-  
-## 🐪 Wednesday
+- [ ] Work through the examples in the textbook
 
-- [Diagrams](../slides/08-diagrams.qmd)
-- Peer review time – User guide
+## 🌮 Tuesday
+
+- [Slides](../slides/08-graphics.qmd)
+
+## 🔨️ Thursday 🌩
+
+- [Slides](../slides/08-graphics.qmd)
 
 ##  🏋️ Practice your skills
 
-- (not turned in) Work on analysis and relevant graphics for your business report
+- [ ] [Homework 8](../homework/08.qmd)
 

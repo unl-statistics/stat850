@@ -8,55 +8,53 @@ plan <- read_xlsx("course-schedule.xlsx", "Week-plan")
 
 
 plan_bits <- c(
-  Week = "# Week {Week}:",
+  Week = "# Week {Week}: {Title}
+
+",
   Date_First_Class = "",
-  Title = " {Title}
-  
-", 
-  Reading = "## 📖 Reading
+  Title = "",
+  Read = "{if(!is.na(Read))
+  '## 📖 Reading
 
-  {Reading}
-
-", 
-  Reading_Quiz = "### 🎯 Check your understanding
-
-{Reading_Quiz}
-
-", 
-  Prepare = "## 🥣 Prepare for class
-
-{Prepare}
+'}{if(!is.na(Read)) Read}
 
 ",
-  Monday_Class = "## ☕ Monday
+  Reading_Quiz = "{if(!is.na(Reading_Quiz))
+  '### 🎯 Check your understanding
 
-{Monday_Class}
-  
-",
-  Wednesday_Class = "## 🐪 Wednesday
-
-{Wednesday_Class}
+'}{if(!is.na(Reading_Quiz)) Reading_Quiz}
 
 ",
-  Exam = "## 🧪 Exam
-  
-  {Exam}
-  
-",
-  Assignments = "##  🏋️ Practice your skills
+  Prepare = "{if(!is.na(Prepare))
+  '## 🥣 Prepare for class
 
-{Assignments}
+'}{if(!is.na(Prepare)) Prepare}
+
+",
+  Tuesday_Class = "{if(!is.na(Tuesday_Class))
+  '## 🌮 Tuesday
+
+'}{if(!is.na(Tuesday_Class)) Tuesday_Class}
+
+",
+  Thursday_Class = "{if(!is.na(Thursday_Class))
+  '## 🔨️ Thursday 🌩
+
+'}{if(!is.na(Thursday_Class)) Thursday_Class}
+
+",
+  Assignments = "{if(!is.na(Assignments))
+  '##  🏋️ Practice your skills
+
+'}{if(!is.na(Assignments)) Assignments}
 
 "
 )
 
-templates <- purrr::map(split(plan, 1:nrow(plan)), ~paste(plan_bits[names(.)[!is.na(.)]], collapse = "") )
-
+templates <- purrr::map(split(plan, 1:nrow(plan)), ~ paste(plan_bits[names(.)[!is.na(.)]], collapse = ""))
 
 md <- map2_chr(split(plan, 1:nrow(plan)), templates, glue_data)
 
 md <- set_names(md, sprintf("weeks/week-%02d.qmd", plan$Week))
 
-walk2(md, names(md), ~writeLines(.x, con = .y))
-
-
+walk2(md, names(md), ~ writeLines(.x, con = .y))

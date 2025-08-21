@@ -1,11 +1,32 @@
-# Week 5: Making an Argument
-  
+# Week 5: Reading and Exploring Data
+
 ## 📖 Reading
 
-  - [ ] Read [OTC Chapter 5.1 – Process](https://alg.manifoldapp.org/read/open-technical-communication/section/134f046e-ff01-4eec-a525-2d1128957c1e)
-- [ ] Read [OTC Chapter 5.2 – Audience Analysis](https://alg.manifoldapp.org/read/open-technical-communication/section/415d5b4f-758e-49ac-8149-18d4c3c4c10c)
-- [ ] Read [OTC Chapter 5.4 – Articulating Technical Information](https://alg.manifoldapp.org/read/open-technical-communication/section/39c29f74-f502-4050-80b3-1162a9cdd8b0) 
-- [ ] Read [ETC Backpacks V. Briefcases: Steps Toward Rhetorical Analysis](https://wisc.pb.unizin.org/opencomp/chapter/backpacks-v-briefcases-steps-toward-rhetorical-analysis/), focusing primarily  on the basic components of rhetorical analysis
+For Class:
+
+- [ ] [Data Input](https://srvanderplas.github.io/stat-computing-r-python/part-wrangling/01-data-input.html)
+- [ ] [Basic Data Visualization](https://srvanderplas.github.io/stat-computing-r-python/part-wrangling/02-basic-data-vis.html)
+- [ ] [Exploratory Data Analysis](https://srvanderplas.github.io/stat-computing-r-python/part-wrangling/02a-eda.html)
+
+
+
+Extra Resources: 
+
+- [ ] [Python for R Users](https://www.rebeccabarter.com/blog/2023-09-11-from_r_to_python)
+
+Context: 
+
+- [ ] [Chapter 1: “Scratching Down Numbers” from Exploratory Data Analysis, by John Tukey](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/16973102780006387?auth=SAML)
+- [ ] [Chapter 5: “Plots of Relationship” from Exploratory Data Analysis, by John Tukey](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/16973102920006387?auth=SAML)
+
+Think about: 
+
+- What do you think about Tukey's approach to exploratory data analysis? 
+- What new ways to use Stem and Leaf plots did you see? 
+- How has the use of computers made EDA easier? Harder? 
+- How does EDA change when it’s easy to make new plots? Is that change good, bad, mixed, or neutral?
+  
+
 
 ### 🎯 Check your understanding
 
@@ -13,22 +34,17 @@
 
 ## 🥣 Prepare for class
 
-- [ ] By Wednesday night: Clone the business report template in Github classroom (link is in the assignment on Canvas)
+- [ ] Work through the examples in the textbook
 
-## ☕ Monday
+## 🌮 Tuesday
 
-- [Slides](../slides/05-argument-business-report.qmd)
-    - Discuss business report & assign report topics
-    - Basic components of argument and rhetoric in scientific writing
-  
-## 🐪 Wednesday
+- [Slides](../slides/05-data-explorations.qmd)
 
-- In class activity: [Arguments in scientific and technical writing](../activities/arguments.qmd)
-  - [Slides](../slides/05-argument-activity.qmd)
+## 🔨️ Thursday 🌩
+
+- [Slides](../slides/05-data-explorations.qmd)
 
 ##  🏋️ Practice your skills
 
-- [ ] Analyze the rhetorical decisions and arguments in your research article (1 pg summary)
-
-- Start planning business report – locate data sets to support your analysis
+- [ ] [Homework 5](../homework/05.qmd)
 

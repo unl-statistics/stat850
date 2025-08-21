@@ -1,11 +1,19 @@
 ---
 title: "Stat 850 Introduction"
-subtitle: "![](https://media.mas.to/masto-public/media_attachments/files/110/911/201/296/167/652/original/d164ffd6f7e5d676.jpeg){width='50%'}"
-date: 2024-08-27
-format: revealjs
+subtitle: "![](deps/rock-cpu-thinking.webp){width='50%' fig-alt='daisyowl, @daisyowl if you ever code something that \"feels like a hack but it works,\" just remember that a CPU is literally a rock that we tricked into thinking. Reply: daisyowl, @daisyowl    not to oversimplify: first you have to flatten the rock and put lightning inside it.'}"
+format: 
+    revealjs:
+        navigation-mode: vertical
+        logo: deps/unl/N.svg
+        theme: deps/unl/inverse.scss
+        css: deps/unl/styles.css
+        includes:
+          in_header: deps/unl/header.html
+        lib_dir: libs
+        embed-resources: true
 ---
 
-## Goals for Today
+# Goals for Today
 
 - Syllabus Q&A
 
@@ -18,7 +26,76 @@ format: revealjs
 
 - Stretch goal: set up Git
 
-## Preview: Thursday
+# Syllabus
+
+## Contact Info
+
+- Email: [susan.vanderplas@unl.edu](mailto:susan.vanderplas@unl.edu?subject=Stat251)
+
+- Office: 343D Hardin Hall North Wing
+
+- Office Hours:     
+[https://calendly.com/drvanderplas/officehours](https://calendly.com/drvanderplas/officehours)    
+[Self-serve, by Zoom unless you specify otherwise.]{.small}
+
+## Tentative Schedule
+
+```{r schedule}
+#| echo: false
+#| warning: false
+#| message: false
+#| eval: true
+#| fig-pos: 'h'
+source("../schedule.R", chdir = T)
+schedule |>
+  tidyr::replace_na(list("Important Dates" = "")) |>
+knitr::kable(caption = "Tentative schedule of class topics & project due dates", format = "simple")
+```
+
+## Grading
+
+
+Assignments | Weight
+----- | -----
+Reading Quizzes & Participation | 10%
+Weekly Homework | 50% 
+Midterm | 20%
+Final | 20%
+
+## Grading
+
+| Letter grade | X +    | X    | X -  |
+|--------------|--------|------|------|
+| A            | 96.5   | 93.5 | 89.5 |
+| B            | 86.5   | 83.5 | 79.5 |
+| C            | 76.5   | 73.5 | 69.5 |
+| D            | 66.5   | 63.5 | 60.5 |
+| F            | \<60.5 |      |      |
+
+
+## Some Things About Me
+
+::: columns
+::: {.column width="69%"}
+![2 kids (and a Ryan)](deps/family.jpg)
+
+:::
+::: {.column  width="31%"}
+::: {layout-nrow=2}
+
+![Ivy "Mischief" Q-tip Vanderplas](deps/Ivy.jpg)
+
+![Edison (Eddie) Eduardo Vanderplas](deps/Eddie.jpg)
+
+:::
+:::
+:::
+
+## Class Picture
+
+![[Image Source](http://www.shutterstock.com/pic-283980695/stock-vector-vector-set-of-different-male-and-female-icons-in-trendy-flat-style-flat-people-faces-icon.html)](deps/prosopagnosia.png){width="80%" fig-alt="A cartoon view of 6 heads showing only gross features such as hair, glasses, and facial hair."}
+
+# Preview: Thursday
 
 - Set up Git
 
@@ -26,6 +103,6 @@ format: revealjs
 
 - Git concepts: Push/Pull
 
-## Reminders
+# Reminders
 
-- Homework due Monday at 8pm
+- Homework due Friday night

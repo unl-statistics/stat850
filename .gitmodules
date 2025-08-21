@@ -44,5 +44,5 @@
 	path = homework-templates/07
 	url = git@github.com:stat-assignments/sql-murder.git
 [submodule "homework-templates/09"]
-	path = homework-templates/09
+	path = homework-templates/08
 	url = git@github.com:stat-assignments/graphics-banknote-ugly.git

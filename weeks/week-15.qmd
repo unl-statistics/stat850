@@ -1,16 +1,29 @@
-# Week 15: In Class Presentations
-  
-## ☕ Monday
+# Week 15: Interactive Graphics
 
-- Business presentations
-  
-## 🐪 Wednesday
+## 📖 Reading
 
-- Business presentations
+For Class:
 
-##  🏋️ Practice your skills
+- [ ] [Animated and Interactive Graphics](https://srvanderplas.github.io/stat-computing-r-python/part-advanced-topics/07-intro-interactive-graphics.html)
 
-- [ ] Slides for business presentation
-- [ ] Business report due!
-- [ ] Procedure/method guide, business report, and business presentation slides added to your portfolio. Portfolio link submitted to Canvas.
+Context: 
+
+- [ ] [Reddit thread on professional web app frameworks vs. Shiny](https://www.reddit.com/r/rstats/comments/1j0b9mj/as_an_r_shiny_user_seeing_professional_web_apps/)
+
+
+### 🎯 Check your understanding
+
+- [ ] Reading Quiz Week 13
+
+## 🥣 Prepare for class
+
+- [ ] Work through the examples in the textbook
+
+## 🌮 Tuesday
+
+- [Slides](../slides/13-interactive-graphics.qmd)
+
+## 🔨️ Thursday 🌩
+
+- [Slides](../slides/13-interactive-graphics.qmd)
 

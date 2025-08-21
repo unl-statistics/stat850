@@ -1,27 +1,43 @@
-# Week 1: Getting Started
-  
+# Week 1: Exploring the Toolbox
+
 ## 📖 Reading
 
-  - [ ] Read the [syllabus](../syllabus.pdf)
-- [ ] Read the [course support](../course-support.qmd) page
-- [ ] Read [OTC Chapter 1](https://alg.manifoldapp.org/read/open-technical-communication/section/0debb16b-f623-4033-a47b-973d65ab0961)
+For Class: 
+
+- [ ] Read the [syllabus](../syllabus.qmd)
+- [ ] Read [Computer Basics](https://srvanderplas.github.io/stat-computing-r-python/part-tools/01-computer-basics.html)
+- [ ] Read [Setting up your Computer](https://srvanderplas.github.io/stat-computing-r-python/part-tools/02-setting-up-computer.html)
+- [ ] Read [Rstudio’s Interface](https://srvanderplas.github.io/stat-computing-r-python/part-tools/03-Rstudio-interface.html)
+- [ ] Read [Scripts and Notebooks](https://srvanderplas.github.io/stat-computing-r-python/part-tools/04-scripts-notebooks.html)
+- [ ] Read [Version Control with Git](https://srvanderplas.github.io/stat-computing-r-python/part-tools/05-git-and-github.html)
+
+Hopefully, Computer Basics will be familiar to you, and the remaining information will just serve to orient you to the tools we’ll be using this semester. Focus on the last two chapters – Scripts and Notebooks, and Version control with Git – as those sections tend to be more tricky.
+
+Context: 
+
+- [ ] [R4DS Introduction](https://r4ds.hadley.nz/intro.html)
+- [ ] [Oh Shit, Git!: Recipes for Getting Out of a Git Mess, by Julia Evans](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/16972919150006387?auth=SAML) (optional, but useful, and in comic form)
 
 ### 🎯 Check your understanding
 
 - [ ] Reading Quiz Week 1
 
-## ☕ Monday
+## 🥣 Prepare for class
 
-MLK day
-  
-## 🐪 Wednesday
+- [ ] Install R, python, RStudio, quarto, and git on your computer
+- [ ] Register for a github account (you can use any email address)
+- [ ] Join the github classroom
 
-- [Introduction](../slides/01-intro.qmd)
+## 🌮 Tuesday
+
 - Syllabus
-- [Set up Quarto portfolio site](../instructions/setup-github-portfolio.qmd)
+- [Slides](../slides/01a-intro.qmd)
+
+## 🔨️ Thursday 🌩
+
+- [Slides](../slides/01b-intro.qmd)
 
 ##  🏋️ Practice your skills
 
-- [ ] Find a job to apply for that is interesting to you and uses the skills you expect to have at the end of this program – submit on Canvas as a PDF printout (because links don’t stay for that long)
-- [ ] Submit a link to your github pages portfolio site
+- [ ] [Homework 1](../homework/01.qmd)
 

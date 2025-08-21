@@ -1,11 +1,25 @@
-# Week 3: References
-  
+# Week 3: Data and Control Structures
+
 ## 📖 Reading
 
-  - [ ] Read [OTC Chapter 5.6 – References](https://alg.manifoldapp.org/read/open-technical-communication/section/d9202f07-41a2-4dc9-8b29-486e164c1775)  
-- [ ] Read [OTC Chapter 3 - Ethics](https://alg.manifoldapp.org/read/open-technical-communication/section/8b530f4b-5942-4071-845a-0a138601da10)  
-- [ ] Read [ETC Annoying Ways People Use Sources](https://wisc.pb.unizin.org/opencomp/chapter/annoying-ways-people-use-sources/)
-- [ ] Practical Tutorial: [Connecting Rstudio + Zotero](https://gsverhoeven.github.io/post/zotero-rmarkdown-csl/)
+For Class: 
+
+- [ ] [Using Functions and Libraries](https://srvanderplas.github.io/stat-computing-r-python/part-gen-prog/02-prog-functions.html)
+- [ ] [Data Structures](https://srvanderplas.github.io/stat-computing-r-python/part-gen-prog/03-data-struct.html)
+- [ ] [Matrix Calculations](https://srvanderplas.github.io/stat-computing-r-python/part-gen-prog/035-matrix-calcs.html)
+- [ ] [Control Structures](https://srvanderplas.github.io/stat-computing-r-python/part-gen-prog/04-control-struct.html)
+- [ ] [Writing Functions](https://srvanderplas.github.io/stat-computing-r-python/part-gen-prog/05-functions.html)
+
+
+Context:
+
+- [ ] [Good enough practices for scientific computing](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/16972940370006387?auth=SAML)
+
+Think about: 
+
+- What basic computing skills were you taught? Which ones were you not taught? 
+- Which workflows do you think will be useful to you? Which ones do you plan to ignore for now? Why? 
+- If you are planning to ignore one or more workflows, when (if ever) do you think you will want or need to learn them?
 
 ### 🎯 Check your understanding
 
@@ -13,20 +27,17 @@
 
 ## 🥣 Prepare for class
 
-- [ ] For Monday: [Download and Install Zotero](https://www.zotero.org/) citation manager and [Zotero Connector](https://www.zotero.org/download/connectors) for your preferred browser
+- [ ] Work through the examples in the textbook
 
-## ☕ Monday
+## 🌮 Tuesday
 
-- Citation Managers – Demonstrate Zotero features 
+- [Slides](../slides/03-fizzing-and-buzzing.qmd)
 
-  
-## 🐪 Wednesday
+## 🔨️ Thursday 🌩
 
-- How to read technical reports and academic articles
-- How to summarize (without ChatGPT)
-- [Slides](../slides/03-reading-summarizing.qmd)
+- [Slides](../slides/03-fizzing-and-buzzing.qmd)
 
 ##  🏋️ Practice your skills
 
-- [ ] Create an annotated bibliography with 2 of the references cited in your annual review article. Pick references that you think are important based on the way they are discussed in the article.
+- [ ] [Homework 3](../homework/03.qmd)
 

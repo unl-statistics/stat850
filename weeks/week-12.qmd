@@ -1,24 +1,34 @@
-# Week 12: Countering Logical Fallacies
-  
+# Week 12: Simulation
+
 ## 📖 Reading
 
-  - [ ] Read [OTC 5.13-5.15 - Logic](https://alg.manifoldapp.org/read/open-technical-communication/section/7899c269-bf9e-4d23-a881-0d43241fb1e5)
-- [ ] Read [Wikipedia’s article on Misuse of Statistics](https://en.wikipedia.org/wiki/Misuse_of_statistics)
-- [ ] Read [The Misuse of Statistics](https://doi.org/10.1080/08989620212968)
+For Class:
+
+- [ ] [Simulation](https://srvanderplas.github.io/stat-computing-r-python/part-advanced-topics/01-simulation.html)
+
+Context: 
+
+- [Free Wifi with Randomness](https://articles.foletta.org/post/random-wifi-password/)
+    - [Numerical Integration](../activities/11-numerical-integration.qmd)
+
+- [Seductions of Sim - Policy as a Simulation Game](https://www.princeton.edu/~starr/17star.html)
+
+Probability Theory and Monte Carlohttps://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/17174402200006387?auth=SAML (This uses Excel for computing, which sucks, but it is also a decent explanation of the process)](- [
+- [Input Analysis](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/17174402200006387?auth=SAML) ) (Optional)
 
 ### 🎯 Check your understanding
 
-- [ ] Reading Quiz Week 12
+- [ ] Reading Quiz Week 11
 
-## ☕ Monday
+## 🥣 Prepare for class
 
-- [Case Study - Statistical Ethics](../slides/12-ethics.qmd)
-  
-## 🐪 Wednesday
+- [ ] Work through the examples in the textbook
 
-- [Case Study - Statistical Ethics](../slides/12-ethics.qmd)
+## 🌮 Tuesday
 
-##  🏋️ Practice your skills
+- [Slides](../slides/12-simulation.qmd)
 
-- (not turned in) Revise business report sections (methods, results, intro, conclusion, executive summary) and prepare to integrate them into a full report
+## 🔨️ Thursday 🌩
+
+- [Slides](../slides/12-simulation.qmd)
 

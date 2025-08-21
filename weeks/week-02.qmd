@@ -1,9 +1,18 @@
-# Week 2: Communicating You!
-  
+# Week 2: Introduction to Programming and Variable Types
+
 ## 📖 Reading
 
-  - [ ] Read [OTC Chapter 2](https://alg.manifoldapp.org/read/open-technical-communication/section/67472d69-a8f9-4aa9-9342-501970a730e7)
+For Class:
 
+- [ ] [Introduction to Programming](https://srvanderplas.github.io/stat-computing-r-python/part-gen-prog/00-intro.html)
+- [ ] [Variables and Basic Data Types](https://srvanderplas.github.io/stat-computing-r-python/part-gen-prog/01-basic-var-types.html)
+- [ ] [Getting Started with Quarto](https://quarto.org/docs/get-started/hello/rstudio.html)
+
+Context:
+
+- [ ] [Chapter 2 of The Programmer’s Brain: What Every Programmer Needs to Know About Cognition by Felienne Hermans](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/12345046000006387?auth=SAML)
+   Note that the examples in this book are given in unfamiliar programming languages. That's ok -  read the code as best as you can, but part of the point of this chapter is that reading code can be hard, and it’s useful to see how the programming language affects that perception. 
+- [ ] [How Integers and Floats Work, by Julia Evans](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/16972919280006387?auth=SAML) (optional)
 
 ### 🎯 Check your understanding
 
@@ -11,21 +20,17 @@
 
 ## 🥣 Prepare for class
 
-- [ ] For Wednesday: Draft CV and cover letter (bring 2 printed copies)
+- [ ] Work through the examples in the textbook
 
-## ☕ Monday
+## 🌮 Tuesday
 
-- [CV/cover letter important components](../slides/02-cv-cover-letter.qmd)
-- Find a [quarto/LaTeX template for a CV and cover letter](../instructions/cv-templates.qmd)
+- [Slides](../slides/02a-Finding-Your-Way.qmd)
 
-  
-## 🐪 Wednesday
+## 🔨️ Thursday 🌩
 
-- Peer Review CV/cover letter
-- Discuss how to give good feedback (based on [ETC](https://wisc.pb.unizin.org/opencomp/chapter/providing-good-feedback/))
+- [Slides](../slides/02b-Finding-Your-Way.qmd)
 
 ##  🏋️ Practice your skills
 
-- [ ] Add CV/cover letter to portfolio
-- [ ] Choose an Annual Review article from those offered – no duplicates
+- [ ] [Homework 2](../homework/02.qmd)
 

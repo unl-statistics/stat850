@@ -1,9 +1,9 @@
 ---
-title: "Homework 11: Simulation (Pseudocode)"
+title: "Homework 11: Simulation"
 
 ---
 
 Note: This assignment must be submitted in github classroom.
 
-{{< include ../homework-repos/11-simulation/README.md >}}
+<!-- {{< include ../homework-templates/11/index.qmd >}} -->
 

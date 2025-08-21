@@ -1,24 +1,47 @@
-# Week 10: Introductions and Conclusions
-  
+# Week 10: Reproducibility, Reproducible Examples, and Advanced Quarto
+
 ## 📖 Reading
 
-  - [ ] Read [SWHR 2 - Introduction](https://ehsanx.github.io/Scientific-Writing-for-Health-Research/introduction-section.html)
-- [ ] Read [SWHR 6 - Discussion](https://ehsanx.github.io/Scientific-Writing-for-Health-Research/discussion-section.html)
+For Class:
+
+- [ ] [Debugging and Reproducible Examples](https://srvanderplas.github.io/stat-computing-r-python/part-gen-prog/06-debugging.html)
+- [ ] [Reproducibility and Professional Communication](https://srvanderplas.github.io/stat-computing-r-python/part-tools/06-documents.html)
+
+Context: 
+
+- [ ] [Common errors in R: An Empirical Investigation](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/16973345280006387?auth=SAML)
+- [ ] [Framed! Reproducing and Revisiting 150-year-old Charts](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/16973346280006387?auth=SAML)
+- [ ] [A Study in Reproducibility: The Congruent Matching Cells Algorithm and cmcR package](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/16973346790006387?auth=SAML)  (Optional)
+- [ ] [Opinionated Analysis Development](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/16973344600006387?auth=SAML) (Recommended)
+- How important is long-term reproducibility?  
+- How do the two articles differ with respect to types of reproducibility?   
+- What attempts at reproducibility worked and didn't work in each article?  
+- What important factors must exist for reproducibility?  
+
+Other Resources (not required):  
+
+- You can see all of the pages of the Statistical Atlases at the Library of Congress (and even download extremely high resolution scans, if you want to):
+     - [9th census (1870)](https://www.loc.gov/item/05019329/)
+     - [10th census (1880)](https://www.loc.gov/item/a40001834/)
+     - [11th census (1890)](https://www.loc.gov/item/07019233)
+     - [Census page with links to other censuses](https://www.census.gov/history/www/programs/geography/statistical_atlases.html) 
+- the 1900,1910, and 1920 census atlases are not nearly as impressive.
+    - A Modern [Census Atlas](https://www.census.gov/library/publications/2007/dec/censr-29.html) produced in 2007 attempted to reclaim this graphical history. 
+
 
 ### 🎯 Check your understanding
 
 - [ ] Reading Quiz Week 10
 
-## ☕ Monday
+## 🥣 Prepare for class
 
-- [Conclusion](../slides/10-conclusion.qmd)
-- [Quarto Formatting](../slides/10-quarto-features.qmd)
-  
-## 🐪 Wednesday
+- [ ] Complete the [debugging exercises](../activities/09-debugging-exercise.qmd) to gain an appreciation for the importance of reproducible examples
 
-- [Introductions](../slides/10-intro.qmd)
+## 🌮 Tuesday
 
-##  🏋️ Practice your skills
+- [Slides](../slides/10a-debugging.qmd)
 
-- [ ] Draft of introduction and conclusion sections of business report
+## 🔨️ Thursday 🌩
+
+- [Slides](../slides/10b-reproducibility.qmd)
 

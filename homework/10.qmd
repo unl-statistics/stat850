@@ -1,8 +1,8 @@
 ---
-title: "Homework 10: Professional Communication"
+title: "Homework 10: Reproducibility"
 
 ---
 
 Note: This assignment must be submitted in github classroom.
 
-{{< include ../homework-repos/10-professional/README.md >}}
+<!-- {{< include ../homework-repos/10-professional/README.md >}} -->

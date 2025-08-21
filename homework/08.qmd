@@ -5,4 +5,4 @@ title: "Homework 8: Graphics"
 
 Note: This assignment must be submitted in github classroom.
 
-{{< include ../homework-repos/08-graphics/index.qmd >}}
+{{< include ../homework-templates/08/index.qmd >}}

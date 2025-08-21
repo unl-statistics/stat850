@@ -1,28 +1,33 @@
-# Week 11: Abstracts & Summaries
-  
+# Week 11: Lists and Nested Data Structures
+
 ## 📖 Reading
 
-  - [ ] Read [SWHR 7 - Title & Abstract](https://ehsanx.github.io/Scientific-Writing-for-Health-Research/title-and-abstract.html)
-- [ ] Read [OTC Chapter 2.11 – Titles, Abstracts, Introductions, Conclusions](https://alg.manifoldapp.org/read/open-technical-communication/section/a31e38b4-7f1f-4e9c-b8e9-9485d74d04b8)
+For Class:  
+
+- [ ] [Functional Programming](https://srvanderplas.github.io/stat-computing-r-python/part-wrangling/08-functional-prog.html)
+More practice with list processing, using JSON and XML files.    
+
+Context:  
+
+- [ ] [Functional Programming (Advanced R)](http://adv-r.had.co.nz/Functional-programming.html) 
+- [ ] [Why Functional Programming Should Be the Future of Software](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/17174391540006387?auth=SAML) 
+- [ ] [What is a Monad?](https://www.youtube.com/watch?v=t1e8gqXLbsU)  
+- [ ] Optional: [Functional Programming HOWTO (Python)](https://docs.python.org/3/howto/functional.html) 
+- [ ] Optional: [Record-based Data and List Processing Strategies](https://srvanderplas.github.io/stat-computing-r-python/part-advanced-topics/04-xml-json-list-processing.html)
 
 ### 🎯 Check your understanding
 
-- [ ] Reading Quiz Week 11
+- [ ] Reading Quiz Week 14
 
 ## 🥣 Prepare for class
 
-- [ ] For Wednesday: Find 2 articles about how to write an executive summary, one from an educational resource (a university) and one from a business or professional resource (e.g. LinkedIn, Adobe, etc.). What do they have in common? What recommendations conflict?
+- [ ] Work through the examples in the textbook
 
-## ☕ Monday
+## 🌮 Tuesday
 
-- [Abstracts](../slides/11-abstract.qmd)
-  
-## 🐪 Wednesday
+- [Slides](../slides/11-lists.qmd)
 
-- [Executive Summaries](../slides/11-exec-summary.qmd)
-- Class Discussion
+## 🔨️ Thursday 🌩
 
-##  🏋️ Practice your skills
-
-- [ ] Draft of executive summary of business report
+- [Slides](../slides/11-lists.qmd)
 

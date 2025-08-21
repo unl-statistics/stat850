@@ -5,4 +5,4 @@ title: "Homework 2: Finding Your Way in R and Python"
 
 Note: This assignment must be submitted in github classroom.
 
-{{< include ../homework-repos/02-finding-your-way/index.qmd >}}
+{{< include ../homework-templates/02/index.qmd >}}

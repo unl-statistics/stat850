@@ -1,27 +1,43 @@
-# Week 6: Problem Statements & Data
-  
+# Week 6: Data Cleaning and Manipulation
+
 ## 📖 Reading
 
-  - [ ] Read [UW's guide to data documentation](https://data.wisc.edu/data-literacy/document/)
-- [ ] Read [OTC Chapter 2.9 – Recommendation and Feasibility Reports](https://alg.manifoldapp.org/read/open-technical-communication/section/9ed77f57-00e0-471c-8049-187cd9d00bc2)
-- [ ] Read [SWHR 1.1 – 1.3 – Research Question](https://ehsanx.github.io/Scientific-Writing-for-Health-Research/research-question.html)
+For Class:
+
+- [ ] [Data Cleaning](https://srvanderplas.github.io/stat-computing-r-python/part-wrangling/03-data-cleaning.html)
+- [ ] [Strings](https://srvanderplas.github.io/stat-computing-r-python/part-wrangling/04-strings.html)
+
+Context: 
+
+- [ ] [Chapter 5: “Designing and Structuring Data Pipelines” from The Pragmatic Programmer for Machine Learning by Marco Scutari and Mauro Malvestio](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/16973142100006387?auth=SAML)
+- [ ] [Tidy Tools Manifesto](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/16973145870006387?auth=SAML)
+- [ ] [Pandas vs. dplyr Reddit discussion](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/16973146240006387?auth=SAML) (optional, but useful to understand why pandas is different than dplyr)
+- [ ] [Method chaining in Pandas](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/16973147040006387?auth=SAML) (optional but useful)
+
+Think about:
+
+- What do you think the strengths and weaknesses are of the `dplyr` approach to tidy code compared to `pandas`? 
+- What do you need to focus on when writing code if you want to make your code tidy? 
+- Which approach to data manipulation do you prefer? Why? Is there a case where you would prefer the other program?
+
 
 ### 🎯 Check your understanding
 
 - [ ] Reading Quiz Week 6
 
-## ☕ Monday
+## 🥣 Prepare for class
 
-- [Problem Statements](../slides/06-problem-statements.qmd)
-- In class activity: write good problem statements for examples
-  
-## 🐪 Wednesday
+- [ ] Work through the examples in the textbook
 
-- [Documenting Data](../slides/06-documenting-data.qmd)
-- Discussion of essential components of data documentation
-- Data documentation that matters for statistical analysis
+## 🌮 Tuesday
+
+- [Slides](../slides/06-data-wrangling.qmd)
+
+## 🔨️ Thursday 🌩
+
+- [Slides](../slides/06b-data-wrangling.qmd)
 
 ##  🏋️ Practice your skills
 
-- [ ] Document data that you plan to use for your business report
+- [ ] [Homework 6](../homework/06.qmd)
 

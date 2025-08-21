@@ -1,24 +1,29 @@
-# Week 13: Reports and Presentations
-  
+# Week 13: Simulation
+
 ## 📖 Reading
 
-  - [ ] Read [OTC 2.12 - Oral Presentations](https://alg.manifoldapp.org/read/open-technical-communication/section/e4660e24-17b6-4dcc-ac00-717c13bd30ff)
-- [ ] Read [OTC 4.1 – Report Design](https://alg.manifoldapp.org/read/open-technical-communication/section/967e506e-8d1e-4baf-bee2-8ace4ebf80f1) and skim 4.3-4.5
+For Class:  
 
-### 🎯 Check your understanding
+- [ ] [Monte Carlo Simulation](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/17174409750006387?auth=SAML) 
+- [ ] [Probability Theory Shown by Simulation](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/17174410770006387?auth=SAML) (Optional) 
+- [ ] [Resampling Methods](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/17174411360006387?auth=SAML) (Optional)  
 
-- [ ] Reading Quiz Week 13
+Historically, students have a very hard time with the simulation question on the statistics qualifier. I’m experimenting this year with some ways to reinforce this material, despite the fact that you’ll be asked to apply simulation to models and use cases you may not have learned yet, since Stat 850 is taken during your first semester. [This book](https://learning.oreilly.com/library/view/simulation-for-data/9781785881169/?sso_link=yes&sso_link_from=unl-edu) is a good resource for you to keep in mind when studying for the qualifying exam and is available online for free through the library.   
 
-## ☕ Monday
+Other Resources:  
 
-- Business and Technical Reports -- general formatting and concerns
-  
-## 🐪 Wednesday
+- [ ] [Statistical Simulation](https://www.youtube.com/watch?v= sTXVNbe8fto) - ~1h long lecture on statistical model simulation 
+- [ ] [The Strange Math That Predicts Almost Anything](https://www.youtube.com/watch?v=KZeIEiBrT_w) - ~30 minutes, Importance of Monte Carlo Simulation
 
-- In class activity: Analyzing government reports
+## 🥣 Prepare for class
 
-##  🏋️ Practice your skills
+- [ ] Work through the examples in the textbook
 
-- [ ] Rough draft of business report submitted along with to-do list
-- (not turned in) Prepare business presentation slides/talk
+## 🌮 Tuesday
+
+- [Slides](../slides/12-simulation-2.qmd)
+
+## 🔨️ Thursday 🌩
+
+- [Slides](../slides/12-simulation-2.qmd)
 

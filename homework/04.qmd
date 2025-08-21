@@ -5,4 +5,4 @@ title: "Homework 4: Data Programming"
 
 Note: This assignment must be submitted in github classroom.
 
-{{< include ../homework-repos/04-data-prog/index.qmd >}}
+{{< include ../homework-templates/04/index.qmd >}}

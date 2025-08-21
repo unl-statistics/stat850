@@ -5,4 +5,4 @@ title: "Homework 5: Exploratory Data Analysis with Cookies"
 
 Note: This assignment must be submitted in github classroom.
 
-{{< include ../homework-repos/05-data-cookies/index.qmd >}}
+{{< include ../homework-templates/05/index.qmd >}}

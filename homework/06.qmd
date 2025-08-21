@@ -5,4 +5,4 @@ title: "Homework 6: Strings and Data Wrangling"
 
 Note: This assignment must be submitted in github classroom.
 
-{{< include ../homework-repos/06-wrangling/index.qmd >}}
+{{< include ../homework-templates/06/index.qmd >}}
