@@ -25,3 +25,9 @@
 [submodule "homework-templates/01"]
 	path = homework-templates/01
 	url = https://github.com/stat-assignments/github-intro
+[submodule "homework-templates/03"]
+	path = homework-templates/03
+	url = git@github.com:stat-assignments/fizzbuzz-full.git
+[submodule "homework-templates/02"]
+	path = homework-templates/02
+	url = git@github.com:stat-assignments/scripts-code-quarto.git
