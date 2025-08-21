@@ -31,3 +31,18 @@
 [submodule "homework-templates/02"]
 	path = homework-templates/02
 	url = git@github.com:stat-assignments/scripts-code-quarto.git
+[submodule "homework-templates/04"]
+	path = homework-templates/04
+	url = git@github.com:stat-assignments/data-programming-steam-games.git
+[submodule "homework-templates/05"]
+	path = homework-templates/05
+	url = git@github.com:stat850-unl/stat850-unl-2025c-exploratory-data-analysis-with-cookies-reading-data-cookies.git
+[submodule "homework-templates/06"]
+	path = homework-templates/06
+	url = git@github.com:stat850-unl/stat850-unl-2025c-data-wrangling-dplyr-reddit-poetry.git
+[submodule "homework-templates/07"]
+	path = homework-templates/07
+	url = git@github.com:stat-assignments/sql-murder.git
+[submodule "homework-templates/09"]
+	path = homework-templates/09
+	url = git@github.com:stat-assignments/graphics-banknote-ugly.git
