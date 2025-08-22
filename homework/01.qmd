@@ -5,4 +5,4 @@ title: "Homework 1: Git and Github"
 
 Note: This assignment must be submitted in github classroom.
 
-{{< include ../homework-templates/01/README.qmd >}}
+{{< include ../homework-templates/01/index.qmd >}}

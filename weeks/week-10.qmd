@@ -1,4 +1,4 @@
-# Week 10: Reproducibility, Reproducible Examples, and Advanced Quarto
+# Week 10: Reproducibility & Documents
 
 ## 📖 Reading
 
@@ -13,6 +13,9 @@ Context:
 - [ ] [Framed! Reproducing and Revisiting 150-year-old Charts](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/16973346280006387?auth=SAML)
 - [ ] [A Study in Reproducibility: The Congruent Matching Cells Algorithm and cmcR package](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/16973346790006387?auth=SAML)  (Optional)
 - [ ] [Opinionated Analysis Development](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/16973344600006387?auth=SAML) (Recommended)
+
+Think about: 
+
 - How important is long-term reproducibility?  
 - How do the two articles differ with respect to types of reproducibility?   
 - What attempts at reproducibility worked and didn't work in each article?  

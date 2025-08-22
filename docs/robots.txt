@@ -1,1 +1,1 @@
-Sitemap: https://unl-statistics.github.io/stat349/sitemap.xml
+Sitemap: https://unl-statistics.github.io/stat850/sitemap.xml

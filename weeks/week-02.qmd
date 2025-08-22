@@ -17,6 +17,7 @@ Context:
 ### 🎯 Check your understanding
 
 - [ ] Reading Quiz Week 2
+- [ ] Reading Quiz Week 2.5
 
 ## 🥣 Prepare for class
 

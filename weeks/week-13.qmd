@@ -15,6 +15,10 @@ Other Resources:
 - [ ] [Statistical Simulation](https://www.youtube.com/watch?v= sTXVNbe8fto) - ~1h long lecture on statistical model simulation 
 - [ ] [The Strange Math That Predicts Almost Anything](https://www.youtube.com/watch?v=KZeIEiBrT_w) - ~30 minutes, Importance of Monte Carlo Simulation
 
+### 🎯 Check your understanding
+
+- [ ] Reading Quiz Week 13
+
 ## 🥣 Prepare for class
 
 - [ ] Work through the examples in the textbook

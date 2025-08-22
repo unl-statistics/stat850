@@ -1,8 +1,9 @@
-# Week 7: Data Transformations
+# Week 7: Data Joins &Transformations
 
 ## 📖 Reading
 
 For Class:
+
 - [ ] [Reshaping Data](https://srvanderplas.github.io/stat-computing-r-python/part-wrangling/05-data-reshape.html)
 - [ ] [Joining Data](https://srvanderplas.github.io/stat-computing-r-python/part-wrangling/06-data-join.html)
 - [ ] [Normal Forms of Data](https://srvanderplas.github.io/stat-computing-r-python/part-wrangling/05b-normal-forms.html) (optional, but useful)

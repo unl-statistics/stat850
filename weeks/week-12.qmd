@@ -13,12 +13,12 @@ Context:
 
 - [Seductions of Sim - Policy as a Simulation Game](https://www.princeton.edu/~starr/17star.html)
 
-Probability Theory and Monte Carlohttps://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/17174402200006387?auth=SAML (This uses Excel for computing, which sucks, but it is also a decent explanation of the process)](- [
-- [Input Analysis](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/17174402200006387?auth=SAML) ) (Optional)
+- [Probability Theory and Monte Carlo](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/17174402200006387?auth=SAML) (This uses Excel for computing, which sucks, but it is also a decent explanation of the process)
+- [Input Analysis](https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/17174402200006387?auth=SAML)  (Optional)
 
 ### 🎯 Check your understanding
 
-- [ ] Reading Quiz Week 11
+- [ ] Reading Quiz Week 12
 
 ## 🥣 Prepare for class
 

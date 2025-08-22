@@ -1,4 +1,4 @@
-# Week 11: Lists and Nested Data Structures
+# Week 11: Functional Programming
 
 ## 📖 Reading
 
@@ -17,7 +17,7 @@ Context:
 
 ### 🎯 Check your understanding
 
-- [ ] Reading Quiz Week 14
+- [ ] Reading Quiz Week 11
 
 ## 🥣 Prepare for class
 

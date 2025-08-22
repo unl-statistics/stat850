@@ -8,12 +8,22 @@ For Class:
 
 Context: 
 
-- [ ] [Reddit thread on professional web app frameworks vs. Shiny](https://www.reddit.com/r/rstats/comments/1j0b9mj/as_an_r_shiny_user_seeing_professional_web_apps/)
+- [The Tiger Mom Tax](https://www.propublica.org/article/asians-nearly-twice-as-likely-to-get-higher-price-from-princeton-review)
+- [Rent Going Up? One Company's Algorithm Could Be Why](https://www.propublica.org/article/yieldstar-rent-increase-realpage-rent)
+- [Racial Discrimination in Face Recognition Technology](https://sitn.hms.harvard.edu/flash/2020/racial-discrimination-in-face-recognition-technology/)
+- [Machine Bias](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing)
+
+Think about: 
+
+- When is it ethical to use an algorithm to make decisions?
+- When is it unethical to use an algorithm to make decisions?
+- What conditions need to exist for an algorithm to be trustworthy?
+- How do you, as a statistician, ensure that you understand the biases in your models?
 
 
 ### 🎯 Check your understanding
 
-- [ ] Reading Quiz Week 13
+- [ ] Reading Quiz Week 15
 
 ## 🥣 Prepare for class
 
