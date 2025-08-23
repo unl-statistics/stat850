@@ -200,7 +200,7 @@
     "href": "slides/04-case-studies.html#organization",
     "title": "Case Studies",
     "section": "Organization",
-    "text": "Organization\n\nHomework #3: make sure to put the link to your repo on Github into Canvas\nHomework #4:\nplease check that you can access the github classroom repo\nHeads-up: watch 1h video before next class: tidy tuesday screencast"
+    "text": "Organization\n\nHeads-up: watch 1h video before next class: tidy tuesday screencast"
   },
   {
     "objectID": "slides/04-case-studies.html#this-weeks-big-picture-goal",
@@ -270,7 +270,7 @@
     "href": "slides/01b-intro.html#reminders",
     "title": "Stat 850: Git and Github",
     "section": "Reminders",
-    "text": "Reminders\n\nHomework due Monday at 8pm\nRead the assigned chapters in the textbook (7, 8) for class next week!"
+    "text": "Reminders\n\nHomework due Friday\nRead the assigned chapters in the textbook for class next week!"
   },
   {
     "objectID": "homework/13.html",
@@ -1847,6 +1847,13 @@
     "text": "Tentative Schedule\n\n\n\nTentative schedule of class topics & project due dates\n\n\nWeek\nTopic\nImportant Dates\n\n\n\n\n1\nExploring the Toolbox\n\n\n\n2\nIntroduction to Programming and Variable Types\n\n\n\n3\nData and Control Structures\n\n\n\n4\nData Programming\n\n\n\n5\nReading and Exploring Data\n\n\n\n6\nData Cleaning and Manipulation\n\n\n\n7\nData Joins &Transformations\n\n\n\n8\nGraphics\n\n\n\n9\nFall Break & Midterm Exam\nMidterm: Oct 23\n\n\n10\nReproducibility & Documents\n\n\n\n11\nFunctional Programming\n\n\n\n12\nSimulation\n\n\n\n13\nSimulation\n\n\n\n14\nThanksgiving\n\n\n\n15\nInteractive Graphics\n\n\n\n16\nFinal Part 1\n\n\n\n17\nFinal Exam\nFinal: Dec 17"
   },
   {
+    "objectID": "slides/01a-intro.html#course-rhythm",
+    "href": "slides/01a-intro.html#course-rhythm",
+    "title": "Stat 850 Introduction",
+    "section": "Course Rhythm",
+    "text": "Course Rhythm\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nS\nS\nM\nT\nW\nR\nF\n\n\n\n\n\nWeek before\n\nWeek Start\n\n\n\n\n\n\n\nTextbook\nSkim\nRead\nWork Examples\nReading Quiz\nAssignment-focused review\nReview difficult concepts\nSummarize important concepts\n\n\n\nHomework\n\n\nAccept assignment & pull\nRead assignment\nWork in class\nWork at home (if necessary)\nWork in class\nSubmit assignment\n\n\nContextual Reading\n\n\n\n\n\n\nRead articles\nRead articles & summarize"
+  },
+  {
     "objectID": "slides/01a-intro.html#grading",
     "href": "slides/01a-intro.html#grading",
     "title": "Stat 850 Introduction",
@@ -1861,18 +1868,25 @@
     "text": "Grading\n\n\n\nLetter grade\nX +\nX\nX -\n\n\n\n\nA\n96.5\n93.5\n89.5\n\n\nB\n86.5\n83.5\n79.5\n\n\nC\n76.5\n73.5\n69.5\n\n\nD\n66.5\n63.5\n60.5\n\n\nF\n&lt;60.5"
   },
   {
-    "objectID": "slides/01a-intro.html#some-things-about-me",
-    "href": "slides/01a-intro.html#some-things-about-me",
+    "objectID": "slides/01a-intro.html#exams",
+    "href": "slides/01a-intro.html#exams",
     "title": "Stat 850 Introduction",
-    "section": "Some Things About Me",
-    "text": "Some Things About Me\n\n\n\n\n\n2 kids (and a Ryan)\n\n\n\n\n\n\n\n\n\nIvy “Mischief” Q-tip Vanderplas\n\n\n\n\n\n\n\n\n\nEdison (Eddie) Eduardo Vanderplas"
+    "section": "Exams",
+    "text": "Exams\n\nMidterm and Final\nIn class component + take-home component\nFinal take-home component will happen during “dead week”\nExams will include at least one response question from the contextual readings"
   },
   {
-    "objectID": "slides/01a-intro.html#class-picture",
-    "href": "slides/01a-intro.html#class-picture",
+    "objectID": "slides/01a-intro.html#ai-use-policy",
+    "href": "slides/01a-intro.html#ai-use-policy",
     "title": "Stat 850 Introduction",
-    "section": "Class Picture",
-    "text": "Class Picture\n\nImage Source"
+    "section": "AI Use Policy",
+    "text": "AI Use Policy\n\nUsing AI to write code (Don’t!)\nUsing AI to explain an error (Ok)\nUsing AI to write explanations (Don’t)\nIf you use AI\n\nDocument the use, version, input, and output\nProvide a diff of your submission vs. the AI output"
+  },
+  {
+    "objectID": "slides/01a-intro.html#oral-exams",
+    "href": "slides/01a-intro.html#oral-exams",
+    "title": "Stat 850 Introduction",
+    "section": "Oral Exams",
+    "text": "Oral Exams\n\nI reserve the right to replace any grade with an oral exam on your submission\nAllows me to clarify how much you understand when that isn’t clear\nHelps when I write an ambiguous question or you miss a key part of a question\nIf you can’t explain your code/answer you don’t get any credit"
   },
   {
     "objectID": "slides/02a-Finding-Your-Way.html#todays-goals",
@@ -1915,13 +1929,6 @@
     "title": "Finding your way in R and Python",
     "section": "Next Class",
     "text": "Next Class\n\nBasic Data Types\nCreating Variables\nUsing R/Python as a calculator\nIntro to Debugging"
-  },
-  {
-    "objectID": "slides/03-fizzing-and-buzzing.html#organizationclean-up",
-    "href": "slides/03-fizzing-and-buzzing.html#organizationclean-up",
-    "title": "Fizzing and Buzzing",
-    "section": "Organization/clean-up",
-    "text": "Organization/clean-up\n\nHomework #2: make sure to put the link to your repo on Github into Canvas\nHomework #3 repo structure"
   },
   {
     "objectID": "slides/03-fizzing-and-buzzing.html#this-weeks-big-picture-goal",
@@ -2048,33 +2055,5 @@
     "title": "Simulation",
     "section": "Resources",
     "text": "Resources\n\nR cheat sheet\npython cheat sheet"
-  },
-  {
-    "objectID": "slides/01a-intro.html#course-rhythm",
-    "href": "slides/01a-intro.html#course-rhythm",
-    "title": "Stat 850 Introduction",
-    "section": "Course Rhythm",
-    "text": "Course Rhythm\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nS\nS\nM\nT\nW\nR\nF\n\n\n\n\n\nWeek before\n\nWeek Start\n\n\n\n\n\n\n\nTextbook\nSkim\nRead\nWork Examples\nReading Quiz\nAssignment-focused review\nReview difficult concepts\nSummarize important concepts\n\n\n\nHomework\n\n\nAccept assignment & pull\nRead assignment\nWork in class\nWork at home (if necessary)\nWork in class\nSubmit assignment\n\n\nContextual Reading\n\n\n\n\n\n\nRead articles\nRead articles & summarize"
-  },
-  {
-    "objectID": "slides/01a-intro.html#exams",
-    "href": "slides/01a-intro.html#exams",
-    "title": "Stat 850 Introduction",
-    "section": "Exams",
-    "text": "Exams\n\nMidterm and Final\nIn class component + take-home component\nFinal take-home component will happen during “dead week”\nExams will include at least one response question from the contextual readings"
-  },
-  {
-    "objectID": "slides/01a-intro.html#ai-use-policy",
-    "href": "slides/01a-intro.html#ai-use-policy",
-    "title": "Stat 850 Introduction",
-    "section": "AI Use Policy",
-    "text": "AI Use Policy\n\nUsing AI to write code (Don’t!)\nUsing AI to explain an error (Ok)\nUsing AI to write explanations (Don’t)\nIf you use AI\n\nDocument the use, version, input, and output\nProvide a diff of your submission vs. the AI output"
-  },
-  {
-    "objectID": "slides/01a-intro.html#oral-exams",
-    "href": "slides/01a-intro.html#oral-exams",
-    "title": "Stat 850 Introduction",
-    "section": "Oral Exams",
-    "text": "Oral Exams\n\nI reserve the right to replace any grade with an oral exam on your submission\nAllows me to clarify how much you understand when that isn’t clear\nHelps when I write an ambiguous question or you miss a key part of a question\nIf you can’t explain your code/answer you don’t get any credit"
   }
 ]
