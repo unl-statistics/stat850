@@ -172,7 +172,7 @@
     "href": "slides/06-data-wrangling.html#organization",
     "title": "Wrangling Data",
     "section": "Organization",
-    "text": "Organization\nHomework #5:\n\nmake sure to put the link to your repo on Github into Canvas\nauthorization: usethis::create_github_token()\nwhich files to push? any original files!"
+    "text": "Organization\n\nauthorization: usethis::create_github_token()\nwhich files to push? any original files!"
   },
   {
     "objectID": "slides/06-data-wrangling.html#todays-goals",
@@ -1966,13 +1966,6 @@
     "text": "This week’s big picture goal:\nGetting comfortable working with data sets and start asking questions!"
   },
   {
-    "objectID": "slides/05-data-explorations.html#organization",
-    "href": "slides/05-data-explorations.html#organization",
-    "title": "Exploring Data",
-    "section": "Organization",
-    "text": "Organization\n\nHomework #4: make sure to put the link to your repo on Github into Canvas\nHomework #5:\nplease check that you can access the github classroom repo\nDr. Vanderplas will take over on Thursday"
-  },
-  {
     "objectID": "slides/05-data-explorations.html#todays-goals",
     "href": "slides/05-data-explorations.html#todays-goals",
     "title": "Exploring Data",
@@ -2001,13 +1994,6 @@
     "text": "Organization\n\ncode for homework submissions:\n\nalways make sure that the index.qmd file renders for you (that’s where your answers are supposed to be)\ncomment out any and all calls that produce:\n\nexcessive output: ls(), dir(), print()\nadditional windows: View(), ? (or ??, help),\ninstall software: install.packages(),\n\nreferences to files outside of your repository"
   },
   {
-    "objectID": "slides/06b-data-wrangling.html#projects",
-    "href": "slides/06b-data-wrangling.html#projects",
-    "title": "Wrangling Data",
-    "section": "## Projects",
-    "text": "## Projects"
-  },
-  {
     "objectID": "slides/06b-data-wrangling.html#todays-goals",
     "href": "slides/06b-data-wrangling.html#todays-goals",
     "title": "Wrangling Data",
@@ -2020,6 +2006,62 @@
     "title": "Wrangling Data",
     "section": "Resources",
     "text": "Resources\n\nR cheat sheet\npython cheat sheet"
+  },
+  {
+    "objectID": "slides/08-graphics.html#this-weeks-big-picture-goal",
+    "href": "slides/08-graphics.html#this-weeks-big-picture-goal",
+    "title": "Graphics",
+    "section": "This week’s big picture goal:",
+    "text": "This week’s big picture goal:\n\nCreate well-designed graphics\nIdentify which chart(s) to use\nUnderstand how cognition/perception impact graphics"
+  },
+  {
+    "objectID": "slides/08-graphics.html#todays-goals",
+    "href": "slides/08-graphics.html#todays-goals",
+    "title": "Graphics",
+    "section": "Today’s Goals:",
+    "text": "Today’s Goals:\n\nPull the homework\nCreate graphics in R and python\nStart thinking about what makes a chart “ugly”"
+  },
+  {
+    "objectID": "slides/08-graphics.html#ugly-graphics",
+    "href": "slides/08-graphics.html#ugly-graphics",
+    "title": "Graphics",
+    "section": "Ugly Graphics",
+    "text": "Ugly Graphics\n\n\n\n\n\nImage Source\n\n\n\n\nWeekly wages aren’t really comparable to home prices, scale-wise\nAlternatives:\n\ncompare annual wages to home prices\nuse some other standard scaling for affordability"
+  },
+  {
+    "objectID": "slides/08-graphics.html#ugly-graphics-1",
+    "href": "slides/08-graphics.html#ugly-graphics-1",
+    "title": "Graphics",
+    "section": "Ugly Graphics",
+    "text": "Ugly Graphics\n\nImage Source"
+  },
+  {
+    "objectID": "slides/08-graphics.html#ugly-graphics-2",
+    "href": "slides/08-graphics.html#ugly-graphics-2",
+    "title": "Graphics",
+    "section": "Ugly Graphics",
+    "text": "Ugly Graphics\n\nImage Source"
+  },
+  {
+    "objectID": "slides/08-graphics.html#good-graphics",
+    "href": "slides/08-graphics.html#good-graphics",
+    "title": "Graphics",
+    "section": "Good Graphics",
+    "text": "Good Graphics\n\nImage Source"
+  },
+  {
+    "objectID": "slides/08-graphics.html#good-graphics-1",
+    "href": "slides/08-graphics.html#good-graphics-1",
+    "title": "Graphics",
+    "section": "Good Graphics",
+    "text": "Good Graphics\n\nImage Source"
+  },
+  {
+    "objectID": "slides/08-graphics.html#good-graphics-2",
+    "href": "slides/08-graphics.html#good-graphics-2",
+    "title": "Graphics",
+    "section": "Good Graphics",
+    "text": "Good Graphics\n\n\n\nImage source"
   },
   {
     "objectID": "slides/11-simulation.html#homework-project-work",

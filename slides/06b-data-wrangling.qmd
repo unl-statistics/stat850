@@ -1,18 +1,20 @@
 ---
 title: "Wrangling Data"
-date: "2024-10-03"
-categories: Slides
 format: 
-  revealjs:
-    theme: default
+    revealjs:
+        navigation-mode: vertical
+        logo: deps/unl/N.svg
+        theme: deps/unl/inverse.scss
+        css: deps/unl/styles.css
+        includes:
+          in_header: deps/unl/header.html
+        lib_dir: libs
 ---
 
 
 ## This week's big picture goal:
 
 Working with text and practicing exploration skills
-
----
 
 ## Organization
 
@@ -30,11 +32,6 @@ Working with text and practicing exploration skills
   
   - references to files outside of your repository
 
----
-
-## Projects
----
-
 ## Today's Goals:
 
 
@@ -42,10 +39,6 @@ Working with text and practicing exploration skills
 
 
 Ideally you have passed checkpoint 2 for both R and python. If not, finish up checkpoint 2 for one language and proceed with that.
-
-
-
-----
 
 ## Resources
 

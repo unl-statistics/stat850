@@ -1,10 +1,14 @@
 ---
 title: "Murder in SQL City"
-date: "2024-10-08"
-categories: Slides
 format: 
-  revealjs:
-    theme: default
+    revealjs:
+        navigation-mode: vertical
+        logo: deps/unl/N.svg
+        theme: deps/unl/inverse.scss
+        css: deps/unl/styles.css
+        includes:
+          in_header: deps/unl/header.html
+        lib_dir: libs
 ---
 
 
@@ -12,7 +16,6 @@ format:
 
 Working with data filters, joining data
 
----
 
 
 ## Today's Goals:
@@ -27,8 +30,6 @@ Working with data filters, joining data
 
 Start solving the murder ... by ... ahem, finding that crime report. 
 
-
-----
 
 ## Resources
 

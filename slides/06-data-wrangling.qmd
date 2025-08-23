@@ -1,10 +1,14 @@
 ---
 title: "Wrangling Data"
-date: "2024-10-01"
-categories: Slides
 format: 
-  revealjs:
-    theme: default
+    revealjs:
+        navigation-mode: vertical
+        logo: deps/unl/N.svg
+        theme: deps/unl/inverse.scss
+        css: deps/unl/styles.css
+        includes:
+          in_header: deps/unl/header.html
+        lib_dir: libs
 ---
 
 
@@ -12,20 +16,13 @@ format:
 
 Working with text and practicing exploration skills
 
----
 
 ## Organization
-
-Homework #5: 
-
-- make sure to put the link to your repo on Github into Canvas
 
 - authorization: `usethis::create_github_token()`
 
 - which files to push? any original files! 
 
-
----
 
 ## Today's Goals:
 
@@ -46,8 +43,6 @@ Try to get past checkpoints 1 and 2 for both python and R, so you can focus on t
   -  in R: `separate_longer_delim`, `str_count` (make sure to check `?boundary()`), 
 
   -  in python: `str.split`, `str.count`, `explode`
-
-----
 
 ## Resources
 
