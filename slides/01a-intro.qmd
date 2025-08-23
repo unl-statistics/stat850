@@ -10,7 +10,6 @@ format:
         includes:
           in_header: deps/unl/header.html
         lib_dir: libs
-        embed-resources: true
 ---
 
 # Goals for Today
@@ -52,6 +51,15 @@ schedule |>
 knitr::kable(caption = "Tentative schedule of class topics & project due dates", format = "simple")
 ```
 
+## Course Rhythm
+
+| |  F |  S |  S |  M |  T |  W |  R |  F |
+| -- | -- | -- | -- | -- | -- | -- | -- | -- |
+| | Week before | | Week Start | | | | |
+| Textbook | Skim | Read | Work Examples | Reading Quiz | Assignment-focused review | Review difficult concepts | Summarize important concepts | |
+| Homework | | | Accept assignment & pull | Read assignment | Work in class | Work at home (if necessary) | Work in class | Submit assignment | 
+| Contextual Reading | | | | | | | Read articles | Read articles & summarize |
+
 ## Grading
 
 
@@ -73,7 +81,40 @@ Final | 20%
 | F            | \<60.5 |      |      |
 
 
-## Some Things About Me
+## Exams
+
+- Midterm and Final
+
+- In class component + take-home component
+
+- Final take-home component will happen during "dead week"
+
+- Exams will include at least one response question from the contextual readings
+
+
+## AI Use Policy
+
+- Using AI to write code (Don't!)
+
+- Using AI to explain an error (Ok)
+
+- Using AI to write explanations (Don't)
+
+- If you use AI
+  - Document the use, version, input, and output
+  - Provide a diff of your submission vs. the AI output
+
+## Oral Exams
+
+- I reserve the right to replace any grade with an oral exam on your submission
+
+- Allows me to clarify how much you understand when that isn't clear
+
+- Helps when I write an ambiguous question or you miss a key part of a question
+
+- If you can't explain your code/answer you don't get any credit
+
+# Some Things About Me
 
 ::: columns
 ::: {.column width="69%"}
@@ -91,7 +132,7 @@ Final | 20%
 :::
 :::
 
-## Class Picture
+# Class Picture
 
 ![[Image Source](http://www.shutterstock.com/pic-283980695/stock-vector-vector-set-of-different-male-and-female-icons-in-trendy-flat-style-flat-people-faces-icon.html)](deps/prosopagnosia.png){width="80%" fig-alt="A cartoon view of 6 heads showing only gross features such as hair, glasses, and facial hair."}
 

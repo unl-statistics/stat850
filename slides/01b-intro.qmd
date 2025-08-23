@@ -1,7 +1,14 @@
 ---
 title: "Stat 850: Git and Github"
-date: 2024-08-29
-format: revealjs
+format: 
+    revealjs:
+        navigation-mode: vertical
+        logo: deps/unl/N.svg
+        theme: deps/unl/inverse.scss
+        css: deps/unl/styles.css
+        includes:
+          in_header: deps/unl/header.html
+        lib_dir: libs
 ---
 
 ## Goals for Today
@@ -23,6 +30,6 @@ format: revealjs
 
 ## Reminders
 
-- Homework due Monday at 8pm
+- Homework due Friday
 
-- Read the assigned chapters in the textbook (7, 8) for class next week!
+- Read the assigned chapters in the textbook for class next week!
