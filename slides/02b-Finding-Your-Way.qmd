@@ -1,10 +1,14 @@
 ---
 title: "Finding your way in R and Python"
-date: "2024-09-05"
-categories: Slides
 format: 
-  revealjs:
-    theme: default
+    revealjs:
+        navigation-mode: vertical
+        logo: deps/unl/N.svg
+        theme: deps/unl/inverse.scss
+        css: deps/unl/styles.css
+        includes:
+          in_header: deps/unl/header.html
+        lib_dir: libs
 ---
 
 ## Today's Goals:
@@ -28,7 +32,6 @@ Practice working with errors
 
 ## Work on the homework!
 
-Due date: Monday, Sep 9
 
 ----
 
