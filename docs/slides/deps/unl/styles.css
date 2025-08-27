@@ -18,13 +18,13 @@ $theme-colors: (
 /* css styles */
 .vcenter{
   margin: 0!important;
-  height: 1em;
+  /*height: 1em;*/
 }
 
 .reveal section {
   background-position: left 10px bottom 10px;
   background-size: 10%;
-	font-size: 20px;
+	/*font-size: 20px;*/
 	text-shadow: 0 0 0 #333;
 }
 
@@ -34,31 +34,35 @@ $theme-colors: (
     margin-top: 10px;
 }
 
+.reveal section h1, .reveal section h2 {
+  font-family: 'Roboto', sans-serif;
+}
+
+.reveal section h3, .reveal section h4 {
+  font-family: 'Roboto', sans-serif;
+}
+
 .reveal section h1 {
 	color: #d00000;
-  font-size: 3.5em;
-  font-family: 'Roboto', sans-serif;
+  /*font-size: 3.5em;*/
   /*background: rgba(.9961, .9922, .9804, .3);*/
-  padding:20px;
+  /*padding:20px;*/
 }
 .reveal section h2 {
 	color: #001226;
-  font-size: 2.5em;
-  font-family: 'Roboto', sans-serif;
+  /*font-size: 2.5em;*/
 }
 .reveal section h3 {
 	color: #249ab5;
-  font-size: 1.5em;
-  font-family: 'Montserrat', sans-serif;
+  /*font-size: 1.5em;*/
 }
 .reveal section h4 {
-  font-size: 1.25em;
-  font-family: 'Montserrat', sans-serif;
+  /*font-size: 1.25em;*/
 }
 
 .reveal section body{
   left: 12%;
-  font-size: 1em;
+  /*font-size: 1em;*/
   font-weight:400;
 }
 

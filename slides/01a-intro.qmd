@@ -2,14 +2,14 @@
 title: "Stat 850 Introduction"
 subtitle: "![](deps/rock-cpu-thinking.webp){width='50%' fig-alt='daisyowl, @daisyowl if you ever code something that \"feels like a hack but it works,\" just remember that a CPU is literally a rock that we tricked into thinking. Reply: daisyowl, @daisyowl    not to oversimplify: first you have to flatten the rock and put lightning inside it.'}"
 format: 
-    revealjs:
-        navigation-mode: vertical
-        logo: deps/unl/N.svg
-        theme: deps/unl/inverse.scss
-        css: deps/unl/styles.css
-        includes:
-          in_header: deps/unl/header.html
-        lib_dir: libs
+  revealjs:
+    navigation-mode: vertical
+    logo: deps/unl/N.svg
+    theme: deps/unl/inverse.scss
+    css: deps/unl/styles.css
+    includes:
+      in_header: deps/unl/header.html
+    lib_dir: libs
 ---
 
 # Goals for Today
