@@ -11,7 +11,7 @@ format:
         lib_dir: libs
 ---
 
-## Goals for Today
+## Goals for Today {.r-fit-text}
 
 - Set up Git (Chapter 5 of the textbook)
 
@@ -19,7 +19,7 @@ format:
 
 - Git concepts: Push/Pull
 
-## Preview: Next Week
+## Preview: Next Week {.r-fit-text}
 
 - Finding your way in R and Python
     - Navigating RStudio
@@ -28,7 +28,7 @@ format:
 
 - Introduction to Programming
 
-## Reminders
+## Reminders {.r-fit-text}
 
 - Homework due Friday
 

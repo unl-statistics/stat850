@@ -30,11 +30,11 @@ website:
 
   page-footer:
     left: "&copy; Copyright 2025, Susan Vanderplas"
-    background: "$secondary"
+    background: "$purple"
 
   sidebar:
     title: Stat 850
-    background: "$secondary"
+    background: "$purple"
     aria-label: "Sidebar nagivation"
     logo: "images/logo.png"
     pinned: true
@@ -96,8 +96,8 @@ format:
   html:
     page-layout: full
     theme:
-      light: [flatly, theme.scss, _variables-flatly.scss]
-      dark: [darkly, theme.scss, _variables-darkly.scss]
+      light: [theme.scss, flatly, _variables-flatly.scss]
+      dark: [theme.scss, darkly, _variables-darkly.scss]
     mainfont: "Atkinson Hyperlegible"
     toc: true
 

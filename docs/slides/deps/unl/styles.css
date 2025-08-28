@@ -36,23 +36,19 @@ $theme-colors: (
 
 .reveal section h1 {
 	color: #d00000;
-  font-size: 3.5em;
   font-family: 'Roboto', sans-serif;
   /*background: rgba(.9961, .9922, .9804, .3);*/
   padding:20px;
 }
 .reveal section h2 {
 	color: #001226;
-  font-size: 2.5em;
   font-family: 'Roboto', sans-serif;
 }
 .reveal section h3 {
 	color: #249ab5;
-  font-size: 1.5em;
   font-family: 'Montserrat', sans-serif;
 }
 .reveal section h4 {
-  font-size: 1.25em;
   font-family: 'Montserrat', sans-serif;
 }
 
