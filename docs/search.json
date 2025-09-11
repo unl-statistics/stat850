@@ -231,6 +231,48 @@
     "text": "Next class\n\nPlanning out code"
   },
   {
+    "objectID": "slides/03a-fizzing-and-buzzing.html#this-weeks-big-picture-goal",
+    "href": "slides/03a-fizzing-and-buzzing.html#this-weeks-big-picture-goal",
+    "title": "Fizzing and Buzzing",
+    "section": "This week’s big picture goal:",
+    "text": "This week’s big picture goal:\nGoing from using functions to writing the first functions"
+  },
+  {
+    "objectID": "slides/03a-fizzing-and-buzzing.html#todays-goals",
+    "href": "slides/03a-fizzing-and-buzzing.html#todays-goals",
+    "title": "Fizzing and Buzzing",
+    "section": "Today’s Goals:",
+    "text": "Today’s Goals:\nUnderstand\n\nDistinguish and recognize data structures\nUse Control structures - if/else and for loops"
+  },
+  {
+    "objectID": "slides/03a-fizzing-and-buzzing.html#todays-goals-1",
+    "href": "slides/03a-fizzing-and-buzzing.html#todays-goals-1",
+    "title": "Fizzing and Buzzing",
+    "section": "Today’s Goals:",
+    "text": "Today’s Goals:\nDo\n\nHomework 3 – read carefully, work step by step from top to bottom"
+  },
+  {
+    "objectID": "slides/03a-fizzing-and-buzzing.html#todays-goals-2",
+    "href": "slides/03a-fizzing-and-buzzing.html#todays-goals-2",
+    "title": "Fizzing and Buzzing",
+    "section": "Today’s Goals:",
+    "text": "Today’s Goals:\nRead Up On\n\nControl Structures, program flows\nWriting Functions"
+  },
+  {
+    "objectID": "slides/03a-fizzing-and-buzzing.html#resources",
+    "href": "slides/03a-fizzing-and-buzzing.html#resources",
+    "title": "Fizzing and Buzzing",
+    "section": "Resources",
+    "text": "Resources\n\nR cheat sheet\npython cheat sheet"
+  },
+  {
+    "objectID": "slides/03a-fizzing-and-buzzing.html#next-class",
+    "href": "slides/03a-fizzing-and-buzzing.html#next-class",
+    "title": "Fizzing and Buzzing",
+    "section": "Next class",
+    "text": "Next class\n\nFunction writing in R and Python"
+  },
+  {
     "objectID": "slides/02b-Finding-Your-Way.html#todays-goals",
     "href": "slides/02b-Finding-Your-Way.html#todays-goals",
     "title": "Finding your way in R and Python",
@@ -1967,6 +2009,20 @@
     "text": "Today’s Goals:\nUnderstand\n\nDistinguish and recognize data structures\nUse Control structures - if/else and for loops"
   },
   {
+    "objectID": "slides/03-fizzing-and-buzzing.html#todays-goals-1",
+    "href": "slides/03-fizzing-and-buzzing.html#todays-goals-1",
+    "title": "Fizzing and Buzzing",
+    "section": "Today’s Goals:",
+    "text": "Today’s Goals:\nDo\n\nHomework 3 – read carefully, work step by step from top to bottom"
+  },
+  {
+    "objectID": "slides/03-fizzing-and-buzzing.html#todays-goals-2",
+    "href": "slides/03-fizzing-and-buzzing.html#todays-goals-2",
+    "title": "Fizzing and Buzzing",
+    "section": "Today’s Goals:",
+    "text": "Today’s Goals:\nRead Up On\n\nControl Structures, program flows\nWriting Functions"
+  },
+  {
     "objectID": "slides/03-fizzing-and-buzzing.html#resources",
     "href": "slides/03-fizzing-and-buzzing.html#resources",
     "title": "Fizzing and Buzzing",
@@ -1977,6 +2033,48 @@
     "objectID": "slides/03-fizzing-and-buzzing.html#next-class",
     "href": "slides/03-fizzing-and-buzzing.html#next-class",
     "title": "Fizzing and Buzzing",
+    "section": "Next class",
+    "text": "Next class\n\nFunction writing in R and Python"
+  },
+  {
+    "objectID": "slides/03b-fizzing-and-buzzing.html#this-weeks-big-picture-goal",
+    "href": "slides/03b-fizzing-and-buzzing.html#this-weeks-big-picture-goal",
+    "title": "Fizzing and Buzzing (Part 2)",
+    "section": "This week’s big picture goal:",
+    "text": "This week’s big picture goal:\nGoing from using functions to writing the first functions"
+  },
+  {
+    "objectID": "slides/03b-fizzing-and-buzzing.html#todays-goals",
+    "href": "slides/03b-fizzing-and-buzzing.html#todays-goals",
+    "title": "Fizzing and Buzzing (Part 2)",
+    "section": "Today’s Goals:",
+    "text": "Today’s Goals:\nUnderstand\n\nKnow how to move code into a function (and what changes)\nUse error handling appropriately"
+  },
+  {
+    "objectID": "slides/03b-fizzing-and-buzzing.html#todays-goals-1",
+    "href": "slides/03b-fizzing-and-buzzing.html#todays-goals-1",
+    "title": "Fizzing and Buzzing (Part 2)",
+    "section": "Today’s Goals:",
+    "text": "Today’s Goals:\nDo\n\nHomework 3 – read carefully, work step by step from top to bottom"
+  },
+  {
+    "objectID": "slides/03b-fizzing-and-buzzing.html#todays-goals-2",
+    "href": "slides/03b-fizzing-and-buzzing.html#todays-goals-2",
+    "title": "Fizzing and Buzzing (Part 2)",
+    "section": "Today’s Goals:",
+    "text": "Today’s Goals:\nRead Up On\n\nControl Structures, program flows\nWriting Functions"
+  },
+  {
+    "objectID": "slides/03b-fizzing-and-buzzing.html#resources",
+    "href": "slides/03b-fizzing-and-buzzing.html#resources",
+    "title": "Fizzing and Buzzing (Part 2)",
+    "section": "Resources",
+    "text": "Resources\n\nR cheat sheet\npython cheat sheet"
+  },
+  {
+    "objectID": "slides/03b-fizzing-and-buzzing.html#next-class",
+    "href": "slides/03b-fizzing-and-buzzing.html#next-class",
+    "title": "Fizzing and Buzzing (Part 2)",
     "section": "Next class",
     "text": "Next class\n\nFunction writing in R and Python"
   },
@@ -2119,19 +2217,5 @@
     "title": "Simulation",
     "section": "Resources",
     "text": "Resources\n\nR cheat sheet\npython cheat sheet"
-  },
-  {
-    "objectID": "slides/03-fizzing-and-buzzing.html#todays-goals-1",
-    "href": "slides/03-fizzing-and-buzzing.html#todays-goals-1",
-    "title": "Fizzing and Buzzing",
-    "section": "Today’s Goals:",
-    "text": "Today’s Goals:\nDo\n\nHomework 3 – read carefully, work step by step from top to bottom"
-  },
-  {
-    "objectID": "slides/03-fizzing-and-buzzing.html#todays-goals-2",
-    "href": "slides/03-fizzing-and-buzzing.html#todays-goals-2",
-    "title": "Fizzing and Buzzing",
-    "section": "Today’s Goals:",
-    "text": "Today’s Goals:\nRead Up On\n\nControl Structures, program flows\nWriting Functions"
   }
 ]

@@ -1,0 +1,52 @@
+---
+title: "Fizzing and Buzzing (Part 2)"
+format: 
+    revealjs:
+        navigation-mode: vertical
+        logo: deps/unl/N.svg
+        theme: deps/unl/inverse.scss
+        css: deps/unl/styles.css
+        includes:
+          in_header: deps/unl/header.html
+        lib_dir: libs
+---
+
+
+## This week's big picture goal:
+
+Going from using functions to writing the first functions
+
+## Today's Goals: {.r-fit-text}
+
+### Understand
+
+- Know how to move code into a function (and what changes)
+- Use error handling appropriately
+
+---
+## Today's Goals: {.r-fit-text}
+
+### Do
+
+- Homework 3 -- read carefully, work step by step from top to bottom
+
+## Today's Goals: {.r-fit-text}
+
+### Read Up On
+
+- Control Structures, program flows
+
+- Writing Functions
+
+## Resources
+
+- [R cheat sheet](https://srvanderplas.github.io/stat-computing-r-python/files/Short-refcard.pdf)
+
+- [python cheat sheet](https://srvanderplas.github.io/stat-computing-r-python/files/Python3_reference_cheat_sheet.pdf)
+
+
+## Next class
+
+- Function writing in R and Python
+
+

@@ -32,11 +32,11 @@ Think about:
 
 ## 🌮 Tuesday
 
-- [Slides](../slides/03-fizzing-and-buzzing.qmd)
+- [Slides](../slides/03a-fizzing-and-buzzing.qmd)
 
 ## 🔨️ Thursday 🌩
 
-- [Slides](../slides/03-fizzing-and-buzzing.qmd)
+- [Slides](../slides/03b-fizzing-and-buzzing.qmd)
 
 ##  🏋️ Practice your skills
 
