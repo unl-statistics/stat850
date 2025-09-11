@@ -16,21 +16,23 @@ format:
 
 Going from using functions to writing the first functions
 
-## Today's Goals:
+## Today's Goals: {.r-fit-text}
 
+### Understand
 
-### Understand 
+- Distinguish and recognize data structures
+- Use Control structures - if/else and for loops
 
-- Working with packages in R and Python
-
-- Distinguish and recognize data structures (data as in objects, not the statistics data)
+---
+## Today's Goals: {.r-fit-text}
 
 ### Do
 
-- first part of homework #3
+- Homework 3 -- read carefully, work step by step from top to bottom
 
+## Today's Goals: {.r-fit-text}
 
-### Read-up on 
+### Read Up On
 
 - Control Structures, program flows
 
