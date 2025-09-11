@@ -43,8 +43,6 @@ Going from using functions to writing the first functions
 - [python cheat sheet](https://srvanderplas.github.io/stat-computing-r-python/files/Python3_reference_cheat_sheet.pdf)
 
 
-----
-
 ## Next class
 
 - Function writing in R and Python
