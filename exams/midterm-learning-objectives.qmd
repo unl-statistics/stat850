@@ -1,0 +1,130 @@
+---
+title: "Exam Learning Objectives"
+---
+
+These are copied directly from the textbook chapters we have covered. 
+Anything that you have to do that doesn't fall under one of these objectives (e.g. plotting) will have sample code provided that will be relatively simple to change to get to the required objective. 
+
+## Computer Basics
+
+
+- Know the meaning of computer hardware and operating system terms such as hard drive, memory, CPU, OS/operating system, file system, directory, and system paths
+
+- Understand the basics of how the above concepts relate to each other and contribute to how a computer works
+
+- Understand the file system mental model for computers enough to identify where your files are stored
+
+- Locate and follow directions for software installation based on your computer’s hardware and operating system.
+
+## Setting Up Your Computer
+
+- Set up RStudio, R, Quarto, and python
+- Be able to run demo code in R and python
+
+## RStudio's Interface
+
+- Locate different panes of RStudio
+- Use cues such as buttons and icons to identify what type of file is open and what language is being interpreted
+
+## Scripts and Notebooks and Terminals
+
+
+- Understand the different ways you can interact with a programming language
+- Identify which interface (terminal, interactive, script, notebook) and language are being used based on the appearance of the interface
+- Select the appropriate way of interacting with a computer for a given task given considerations such as target audience, human intervention, and need to repeat the analysis.
+
+
+## Version Control with Git
+
+
+- Install git
+- Create a github account
+- Understand why version control is useful and what problems it can solve
+- Understand the distinction between git and github, and what each is used for
+- Use version control to track changes to a document (git add, commit, push, pull)
+
+## Introduction to Programming
+
+
+- Define programming and provide examples of programming
+- Identify reserved words in R and python
+- Know how to get help when using R and python
+
+
+## Variables and Data Types
+
+
+- Know the basic data types and what their restrictions are
+- Know how to test to see if a variable is a given data type
+- Understand the basics of implicit and explicit type conversion
+- Write code that assigns values to variables
+
+
+## Mathematical and Logical Operators
+
+
+- Understand and use mathematical operators for mathematical computation
+- Understand and use logical operators to evaluate complex conditions
+- Understand and use basic string operations (repetition and concatenation)
+- Evaluate expressions using order of operations to predict how the computer will execute code
+- Translate mathematical concepts into a series of computational operations
+
+
+## Functions, Packages, and Environments
+
+
+- Use pre-written functions to perform operations
+- Use python environments to manage packages
+- Install and load packages in R and Python
+- Use pipes to write readable code
+
+
+## Data Structures
+
+
+- Understand the differences between lists, vectors, data frames, matrices, and arrays in R and python
+- Use location-based indexing in R or python to pull out subsets of a complex data object
+- Use logical indexing in R or python to pull out subsets of a data object
+- Understand categories of mathematical, descriptive, and set operations on vectors
+- Use vector operations in R and python to perform simple calculations
+
+
+## Matrix Calculations
+
+- Understand how to do matrix algebra in relevant programming languages
+
+## Control Structures
+
+
+- Understand how to use conditional statements
+- Understand how conditional statements are evaluated by a program
+- Use program flow diagrams to break a problem into parts and evaluate how a program will execute
+- Understand how to use loops
+- Select the appropriate type of loop for a problem
+
+
+## Writing Functions
+
+
+- Identify the parts of a function from provided source code
+- Predict what the function will return when provided with input values and source code
+- Given a task, lay out the steps necessary to complete the task in pseudocode
+- Write a function which uses necessary input values to complete a task
+
+## Debugging
+
+- Create reproducible examples of problems
+- Use built in debugging tools to trace errors
+- Use online resources to research errors
+
+## Programming with Data
+
+- Write functions to create simple plots and data summaries
+- Apply syntax knowledge to reference variables and observations in common data structures
+- Create new variables and columns or reformat existing columns in provided data structures
+
+## Data Input
+
+
+- Read in data from common formats into R or Python
+- Identify delimiters, headers, and other essential components of files
