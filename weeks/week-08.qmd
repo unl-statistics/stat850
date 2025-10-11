@@ -39,7 +39,7 @@ Think about:
 ##  🏋️ Practice your skills
 
 - [ ] [Homework 8](../homework/08.qmd)
-- [ ] [Review Learning objectives for Midterm](../exams/mideterm-learning-objectives.qmd)
+- [ ] [Review Learning objectives for Midterm](../exams/midterm-learning-objectives.qmd)
 - [ ] [Practice Midterm 1](../homework/practice-midterm1.qmd) 
 - [ ] [Practice Midterm 2](../homework/practice-midterm2.qmd)
 
