@@ -1,0 +1,535 @@
+---
+title: "Midterm Exam Practice -- In Class Portion"
+author: "Your Name"
+date: "2025-10-23"
+format: html
+---
+
+::: callout-note
+
+This exam is quite a bit longer than the exam I will give you in class, but I want you to have a feel for the types of questions I might ask.
+
+:::
+
+Note -- these directions are copied directly from the exam.
+
+-   This exam is due at the end of class on October 23, 2025.
+
+-   I will grade the exam as it is pushed to github. I cannot grade the exam that exists on your computer, so please double-check your github repository to ensure that the file that is on github is the file you want me to grade.
+
+-   For each of these problems, you may choose to solve the problem in either R or python. I have provided both R and python chunks. You should feel free to remove the unused chunk for each question.
+
+-   (5 points) Please put your code under the comment corresponding to the part you are working on. This will help me to grade your work more efficiently.
+
+
+## Rules
+
+- You may use the textbook and your notes on this exam.
+
+- If you need to search for 'how do I do X in Y language', that is allowable using google/duckduckgo, but you must 1) document that you did the search, and 2) provide a link to the website you used to get a solution. AI results should be turned off by adding " -ai" to your query.
+
+- AI and LLM usage is strictly forbidden. Use of any unauthorized resources will result in a 0 on this exam.
+
+- You must be able to explain how any code you submit on this exam works.
+    - Oral exams based on your submissions will be held the week of October 28, 2025.
+    - You will be notified of the need for an oral exam by Monday, October 28.
+    - If you are notified that an oral exam is required, you must schedule a time for the exam within 24h.
+
+- If you get stuck, you may ask Dr. Vanderplas for the solution to the problem you are stuck on, at the cost of the points which would be awarded for that problem.  This is designed to get you un-stuck and allow you to complete multi-part problems.
+
+- (5 points) Your submitted qmd file must compile without errors. Use `error=TRUE` in a chunk if it is supposed to return an error or if you cannot get the code to work properly.
+
+
+# Least Common Multiple
+
+In this problem, you will work towards building code that will find the least common multiple of two numbers.
+
+The least common multiple of $a$ and $b$ is the number $c$ for which $c/a$ and $c/b$ both produce integer values.
+
+We'll start by installing a package that helps work with prime numbers... `cheapr` in R, `math` in Python.
+
+## Skill: Install Packages
+
+### R
+
+Write code to install the `cheapr` package in R. Run the code.
+
+```{r install-cheapr-r}
+# install.packages("cheapr")
+```
+
+This practice problem has no equivalent install command in python (`math` is installed by default), but you should know how to install a python package as well, either via a terminal/bash chunk or within a python chunk using iPython magic commands.
+
+### Thinking Criticially
+How could you ensure that the code above to install the package isn't evaluated? Think of at least two ways.
+
+- set `eval: false` as a chunk option
+- comment out the code using `#` at the front of the line
+
+
+## Skill: Loading packages
+
+Load the packages you just installed in R and Python using the chunks below.
+
+### R
+
+```{r load-cheapr-r}
+library(cheapr)
+```
+
+### Python
+
+```{python load-math-py}
+import math
+```
+
+
+## Skill: Using prewritten functions
+
+### R
+
+Use the `scm2(x, y)` function to find the smallest common multiple between 35 and 49.
+
+```{r use-scm-r}
+scm2(35, 49)
+```
+
+
+### Python
+
+Use the `math.lcm(a, b)` function to get the smallest common multiple between 3726 and 9321.
+Store this number in a variable called multiple.
+
+```{python use-lcm-fn-py}
+math.lcm(3726,9321)
+```
+
+
+## Skill: Matrices and Loops
+
+You have a vector of values: $x = [23, 81, 264, 198, 261, 18, 35]$.
+
+Create a 7x7 matrix where $M_{ij}$ contains the least common multiple of $x_i$ and $x_j$.
+
+### R
+
+```{r}
+x <- c(23, 81, 264, 198, 261, 18, 35)
+
+mat <- matrix(nrow = length(x), ncol = length(x))
+
+for(i in 1:length(x)) {
+  for(j in 1:length(x)) {
+    mat[i,j] <- scm2(x[i], x[j])
+  }
+}
+mat
+```
+
+### Python
+
+```{python}
+import numpy as np
+import pandas as pd
+
+x = np.array([23, 81, 264, 198, 261, 18, 35])
+
+mat = [[math.lcm(int(i),int(j)) for i in x] for j in x]
+mat = np.array(mat)
+mat
+```
+
+
+## Skill: Creating Data Frames
+
+You have a vector of values: $x = [23, 81, 264, 198, 261, 18, 35]$.
+
+### R
+
+Use the `tidyr` function `expand_grid` to create a data frame with columns $x$ and $y$, each containing values of $x$. The resulting data frame should have 49 rows.
+
+```{r}
+library(tidyr)
+df <- expand_grid(x = x, y = x)
+```
+
+### Python
+
+Use a list comprehension to create a DataFrame (perhaps from a list) with columns $x$ and $y$, each containing values of $x$. The resulting data frame should have 49 rows and two columns.
+
+```{python}
+df = pd.DataFrame([{'x':i,'y':j} for i in x for j in x])
+```
+
+
+## Skill: Creating New Variables
+
+Create a new column in your data frame, `lcm`, from the previous step, containing the least common multiple between columns $x$ and $y$. 
+
+### R
+
+```{r}
+df$lcm <- NA # Make the column
+
+for(i in 1:nrow(df)) {
+  df$lcm[i] <- scm2(df$x[i], df$y[i])
+}
+
+# or,
+df$lcm2 <- scm2(df$x, df$y)
+```
+
+
+### Python
+
+```{python}
+
+df['lcm'] = np.array([math.lcm(df.x[idx], df.y[idx]) for idx,i in enumerate(df.x)])
+```
+
+
+## Skill: Data Transformations
+Use your skills at data transformations to convert your data frame `lcm` column into a data frame that has a similar form to your matrix -- e.g. columns named `yXXX` where XXX is the number representing `y`.  
+
+### R
+
+```{r}
+df |>
+  select(-lcm2) |>
+  pivot_wider(names_from="y", values_from = matches("lcm"), values_fn = mean, names_prefix = "y")
+```
+
+
+### Python
+
+```{python}
+# https://pandas.pydata.org/docs/reference/api/pandas.pivot.html
+pd.pivot(df, columns = 'y', index = 'x')
+```
+
+
+## Skill: Subsets and Indexing 
+
+Get all rows in your (long-form) data frame where $x$ and $y$ have no common factors (that is, LCM(x, y) = x*y). Store these rows in a data frame called `no_common_factors`.
+
+### R
+
+```{r}
+df$xy <- df$x*df$y
+no_common_factors <- filter(df, xy==lcm)
+```
+
+
+
+### Python
+
+```{python}
+df['xy'] = df.x*df.y
+no_common_factors = df.loc[df.xy==df.lcm]
+```
+
+## Skill: Writing Functions & Type Conversion
+
+In the previous section, you determined the LCM of values $x$ and $y$. 
+
+In R and python, write a function, `gcd(x, y)`, which will find the greatest common divisor between $x$ and $y$.
+
+Note: Your GCD should be an integer.
+
+Hint: Can you use the LCM of $x$ and $y$ to find the GCD?
+
+### Planning
+
+Using the provided scratch paper (please put your name at the top), sketch a basic program flow map that shows how the code you've already written fits together to solve this problem.
+Identify any bits of logic you need to write to solve the problem.
+
+<!-- Identify which sheet of scratch paper your answer is on (Sheet X) here -->
+
+My solution is sketched out on sheet ___
+
+<!-- ---------------------------------------------------------------------- -->
+
+### R
+
+```{r gcd-r}
+
+gcm <- function(x, y) {
+  stopifnot(is.numeric(x), is.numeric(y))
+  stopifnot(length(x) == length(y))
+  
+  xy <- x*y
+  lcm <- scm2(x,y)
+  return(as.integer(xy/lcm))
+} 
+
+
+gcd(2, 3)
+
+gcd(12, 3)
+```
+
+### Python
+
+```{python gcd-py}
+
+def gcd(x,y):
+  xy = x*y
+  lcm = math.lcm(x,y)
+  return int(xy/lcm)
+
+gcd(2,3)
+gcd(12, 3)
+
+
+```
+
+## Skill: Data Frames, Loops
+
+Use your function to create a new column in your data frame, `gcd`, and populate it using a loop. 
+
+
+### R
+
+```{r gcd-col-r}
+# The R function is fully vectorized, so this is a bit unnecessary
+
+df$gcd <- gcd(df$x, df$y)
+
+df$gcd <- NA
+for(i in 1:nrow(df)){
+  df$gcd[i] <- gcd(df$x[i], df$y[i])
+}
+head(df)
+```
+
+### Python
+
+```{python gcd-col-py}
+df['gcd'] = [gcd(df.x[idx], df.y[idx]) for idx,i in enumerate(df.x)]
+
+df.head()
+```
+
+## Skill: String Operations
+
+Take the data frame you created in the previous problem and
+write a `format_results(df)` function that will
+output the results of each pair of $(x, y)$ as "The LCD of (a, b) is c and the GCM is d",
+where a, b, c, d are the values x, y, LCD, and GCM. 
+
+Hint:
+
+- Python: in a DataFrame, you can convert the whole column to a string using `df.colname.astype("str")` (replace df, colname with appropriate data frame name and column name)
+
+### R
+
+```{r string-ops-r}
+formal_results <- function(dfrow) {
+  stopifnot(all(c("x", "y", "lcm", "gcd") %in% names(dfrow)))
+  
+  sprintf("The LCM of (%d,%d) is %d and the GCD is %d", dfrow$x, dfrow$y, dfrow$lcm, dfrow$gcd)
+}
+
+formal_results(df[12,])
+```
+
+### Python
+
+```{python string-ops-py}
+
+def formal_results(dfrow):
+  return "The LCD of (" + str(dfrow.x) + ", " + str(dfrow.y) + ") is " + str(dfrow.lcm) + " and the GCD is " + str(dfrow.gcd)
+
+formal_results(df.loc[11,:])
+```
+
+
+## Skill: Control Statements
+
+Modify the code you wrote in the previous section. If $x$ and $y$ have no common factors, instead of outputting the LCM and GCD, output "__ and __ have no common factors". 
+
+### Planning
+
+What modifications will you need to make to handle this additional requirement?
+
+<!-- Your answer goes between these lines -->
+
+Test whether x*y is the same as lcm and return a different result when that is true.
+
+<!-- ------------------------------------ -->
+
+<!-- If you want to sketch this out, please clearly indicate on your scratch paper that you're adding a solution (draw a horizontal line across the page and write Control Statements below the line) -- or use a new sheet of paper. Tell me in the section below where to find your sketch. -->
+
+<!-- Identify which sheet of scratch paper your answer is on (Sheet X) here -->
+<!-- Uncomment the line below if you used scratch paper -->
+<!-- My solution is sketched out on sheet ___ -->
+<!-- ---------------------------------------------------------------------- -->
+
+
+How can you use previously written code and functions to accomplish this task?
+<!-- Your answer goes between these lines -->
+
+The R code is vectorized, so it would be most efficient to test the condition and replace only those indices. 
+
+The python code is not vectorized, so it would be fine just to have a condition and return value, and then a different return value if the condition is false. 
+
+<!-- ------------------------------------ -->
+
+
+What additional code do you need to write?
+
+<!-- Your answer goes between these lines -->
+
+The condition and the replacement string that gets put into the proper place. 
+
+<!-- ------------------------------------ -->
+
+### R
+
+```{r output-multiples-r}
+formal_results <- function(dfrow) {
+  stopifnot(all(c("x", "y", "lcm", "gcd") %in% names(dfrow)))
+  
+  res <- sprintf("The LCM of (%d,%d) is %d and the GCD is %d", dfrow$x, dfrow$y, dfrow$lcm, dfrow$gcd)
+  
+  dfrow_idx <- dfrow$x*dfrow$y==dfrow$lcm
+  res[dfrow_idx] <- sprintf("%d and %d have no common factors.", dfrow$x[dfrow_idx], dfrow$y[dfrow_idx])
+  
+  return(res)
+}
+
+formal_results(df[c(2,12),])
+```
+
+
+### Python
+
+```{python output-multiples-py}
+
+def formal_results(dfrow):
+  if dfrow.x*dfrow.y==dfrow.lcm:
+    return(str(dfrow.x) + " and " + str(dfrow.y) + " have no common factors.")
+  
+  return "The LCD of (" + str(dfrow.x) + ", " + str(dfrow.y) + ") is " + str(dfrow.lcm) + " and the GCD is " + str(dfrow.gcd)
+
+
+formal_results(df.loc[1,:])
+formal_results(df.loc[11,:])
+```
+
+## Skill: User-proofing your function
+
+It is never safe to assume that your user knows what they are doing.
+Can you make your function from the previous part more robust by testing the user input to ensure that it conforms to your expectations?
+
+
+### Planning
+
+What assumptions does your previous answer make about parameters?
+<!-- Your answer goes between these lines -->
+
+- parameter is a data frame 
+- parameter has columns x, y, lcm, and gcd
+- all column values are integers
+
+
+<!-- ------------------------------------ -->
+
+What do you need to test to ensure those assumptions are met?
+<!-- Your answer goes between these lines -->
+
+- test that type is data frame
+- test for column names that exist in the data frame
+- test types of the names that are required
+
+
+<!-- ------------------------------------ -->
+
+
+
+### R
+
+```{r checks-r}
+formal_results <- function(dfrow) {
+  stopifnot(is.data.frame(dfrow))
+  stopifnot(all(c("x", "y", "lcm", "gcd") %in% names(dfrow)))
+  stopifnot(all(is.integer(dfrow$x), is.integer(dfrow$y), is.integer(dfrow$lcm), is.integer(dfrow$gcd)))
+  
+  res <- sprintf("The LCM of (%d,%d) is %d and the GCD is %d", dfrow$x, dfrow$y, dfrow$lcm, dfrow$gcd)
+  
+  dfrow_idx <- dfrow$x*dfrow$y==dfrow$lcm
+  res[dfrow_idx] <- sprintf("%d and %d have no common factors.", dfrow$x[dfrow_idx], dfrow$y[dfrow_idx])
+  
+  return(res)
+}
+
+formal_results(data.frame(x = "x", y = 3, lcm = "5", gcd = 2.3))
+formal_results(data.frame(x = 3, y = 2, lcg = 3, gcm = 4))
+```
+
+
+### Python
+
+```{python checks-py}
+# https://www.geeksforgeeks.org/python/formatted-string-literals-f-strings-python/
+# This makes errors easier to raise
+import numpy as np
+
+def formal_results(dfrow):
+    required_columns = ['x', 'y', 'lcm', 'gcd']
+    
+    # Check for missing columns
+    for col in required_columns:
+        if col not in dfrow:
+            raise KeyError(f"Missing required column: '{col}'")
+    
+    # Check that all required columns are integers (Python int or NumPy int64)
+    for col in required_columns:
+        if not isinstance(dfrow[col], (int, np.int64)):
+            raise TypeError(f"Column '{col}' must be of type int or np.int64, but got {type(dfrow[col]).__name__}")
+    
+    # Proceed with original logic
+    if dfrow.x * dfrow.y == dfrow.lcm:
+        return f"{dfrow.x} and {dfrow.y} have no common factors."
+    
+    return f"The LCD of ({dfrow.x}, {dfrow.y}) is {dfrow.lcm} and the GCD is {dfrow.gcd}"
+
+
+
+formal_results(df.loc[1,:])
+formal_results(df.loc[11,:])
+formal_results(pd.DataFrame({"x": [3,2], "y": [3,4], "gcd": [4,4], "lcm": ["a", "b"]}))
+```
+
+
+## Skill: Summarizing Data
+
+For each $x$, create a data frame with the $y$ that has the greatest common denominator, excluding any rows where $x$ is equal to $y$. 
+
+### R
+
+```{r}
+df |>
+  filter(x!=y) |>
+  group_by(x) |>
+  arrange(desc(gcd)) |>
+  slice_head(n=1)
+```
+
+
+### Python
+
+```{python}
+# https://stackoverflow.com/questions/27842613/pandas-groupby-then-sort-within-groups
+res = df.query('x!=y').sort_values("gcd", ascending = False).groupby("x").head(1)
+res
+```
+
+
+
+
+## Additional Questions (out of class portion)
+
+- Be prepared to identify which functions do which things in e.g. matching or multiple choice questions
+
+- Be prepared to summarize the arguments made in different "practical" reading articles

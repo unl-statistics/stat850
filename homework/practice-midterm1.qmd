@@ -1,0 +1,8 @@
+---
+title: "Practice Midterm 1"
+format: html
+---
+
+
+{{< include ../exams/midterm-practice/index.qmd >}}
+

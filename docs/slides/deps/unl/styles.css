@@ -44,11 +44,8 @@ $theme-colors: (
 
 .reveal section h1 {
 	color: #d00000;
-<<<<<<< HEAD
   font-family: 'Roboto', sans-serif;
-=======
   /*font-size: 3.5em;*/
->>>>>>> 37a1cadc277981a6c0070b479ed17415ea747847
   /*background: rgba(.9961, .9922, .9804, .3);*/
   /*padding:20px;*/
 }

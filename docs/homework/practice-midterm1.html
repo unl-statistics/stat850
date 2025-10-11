@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Your Name">
+<meta name="dcterms.date" content="2025-10-23">
 
-<title>week-08 – STAT 850</title>
+<title>Midterm Exam Practice – In Class Portion – STAT 850</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,8 +31,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../weeks/week-09.html" rel="next">
-<link href="../weeks/week-07.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -70,269 +70,405 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="STAT 850">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Midterm Exam Practice – In Class Portion – STAT 850">
+<meta property="og:description" content="Computing Tools for Statistics">
+<meta property="og:image" content="https://unl-statistics.github.io/stat850/figs/homework.svg">
 <meta property="og:site_name" content="STAT 850">
 </head>
 
-<body class="nav-sidebar docked">
+<body>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week-01.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../weeks/week-08.html">Week 8 - Graphics</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
-</header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
-      <a href="../index.html" class="sidebar-logo-link">
-      <img src="../images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
-      </a>
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">Stat 850</a> 
-        <div class="sidebar-tools-main">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-</div>
-    </div>
-      </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Course information</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../course-overview.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Overview</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../syllabus.pdf" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Syllabus</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../course-support.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Support</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Schedule</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../course-links.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Useful links</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Weekly materials</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 1 - Tools</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 2 - Programming</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 3 - Data &amp; Control Structures</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 4 - Data Programming</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 5 - Reading Data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 6 - Data Cleaning</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-07.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 7 - Data Joins</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-08.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Week 8 - Graphics</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-09.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 9 - Midterm Exam</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 10 - Reproducibility</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 11 - Functional Prog.</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 12 - Simulation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 13 - Simulation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 14 - Thanksgiving</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../weeks/week-15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 15 - Interactive Graphics</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#week-8-graphics" id="toc-week-8-graphics" class="nav-link active" data-scroll-target="#week-8-graphics">Week 8: Graphics</a>
+  <li><a href="#rules" id="toc-rules" class="nav-link active" data-scroll-target="#rules">Rules</a></li>
+  <li><a href="#least-common-multiple" id="toc-least-common-multiple" class="nav-link" data-scroll-target="#least-common-multiple">Least Common Multiple</a>
   <ul class="collapse">
-  <li><a href="#reading" id="toc-reading" class="nav-link" data-scroll-target="#reading">📖 Reading</a>
+  <li><a href="#skill-install-packages" id="toc-skill-install-packages" class="nav-link" data-scroll-target="#skill-install-packages">Skill: Install Packages</a>
   <ul class="collapse">
-  <li><a href="#check-your-understanding" id="toc-check-your-understanding" class="nav-link" data-scroll-target="#check-your-understanding">🎯 Check your understanding</a></li>
+  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
+  <li><a href="#thinking-criticially" id="toc-thinking-criticially" class="nav-link" data-scroll-target="#thinking-criticially">Thinking Criticially</a></li>
   </ul></li>
-  <li><a href="#prepare-for-class" id="toc-prepare-for-class" class="nav-link" data-scroll-target="#prepare-for-class">🥣 Prepare for class</a></li>
-  <li><a href="#tuesday" id="toc-tuesday" class="nav-link" data-scroll-target="#tuesday">🌮 Tuesday</a></li>
-  <li><a href="#thursday" id="toc-thursday" class="nav-link" data-scroll-target="#thursday">🔨️ Thursday 🌩</a></li>
-  <li><a href="#practice-your-skills" id="toc-practice-your-skills" class="nav-link" data-scroll-target="#practice-your-skills">🏋️ Practice your skills</a></li>
+  <li><a href="#skill-loading-packages" id="toc-skill-loading-packages" class="nav-link" data-scroll-target="#skill-loading-packages">Skill: Loading packages</a>
+  <ul class="collapse">
+  <li><a href="#r-1" id="toc-r-1" class="nav-link" data-scroll-target="#r-1">R</a></li>
+  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
+  </ul></li>
+  <li><a href="#skill-using-prewritten-functions" id="toc-skill-using-prewritten-functions" class="nav-link" data-scroll-target="#skill-using-prewritten-functions">Skill: Using prewritten functions</a>
+  <ul class="collapse">
+  <li><a href="#r-2" id="toc-r-2" class="nav-link" data-scroll-target="#r-2">R</a></li>
+  <li><a href="#python-1" id="toc-python-1" class="nav-link" data-scroll-target="#python-1">Python</a></li>
+  </ul></li>
+  <li><a href="#skill-matrices-and-loops" id="toc-skill-matrices-and-loops" class="nav-link" data-scroll-target="#skill-matrices-and-loops">Skill: Matrices and Loops</a>
+  <ul class="collapse">
+  <li><a href="#r-3" id="toc-r-3" class="nav-link" data-scroll-target="#r-3">R</a></li>
+  <li><a href="#python-2" id="toc-python-2" class="nav-link" data-scroll-target="#python-2">Python</a></li>
+  </ul></li>
+  <li><a href="#skill-creating-data-frames" id="toc-skill-creating-data-frames" class="nav-link" data-scroll-target="#skill-creating-data-frames">Skill: Creating Data Frames</a>
+  <ul class="collapse">
+  <li><a href="#r-4" id="toc-r-4" class="nav-link" data-scroll-target="#r-4">R</a></li>
+  <li><a href="#python-3" id="toc-python-3" class="nav-link" data-scroll-target="#python-3">Python</a></li>
+  </ul></li>
+  <li><a href="#skill-creating-new-variables" id="toc-skill-creating-new-variables" class="nav-link" data-scroll-target="#skill-creating-new-variables">Skill: Creating New Variables</a>
+  <ul class="collapse">
+  <li><a href="#r-5" id="toc-r-5" class="nav-link" data-scroll-target="#r-5">R</a></li>
+  <li><a href="#python-4" id="toc-python-4" class="nav-link" data-scroll-target="#python-4">Python</a></li>
+  </ul></li>
+  <li><a href="#skill-data-transformations" id="toc-skill-data-transformations" class="nav-link" data-scroll-target="#skill-data-transformations">Skill: Data Transformations</a>
+  <ul class="collapse">
+  <li><a href="#r-6" id="toc-r-6" class="nav-link" data-scroll-target="#r-6">R</a></li>
+  <li><a href="#python-5" id="toc-python-5" class="nav-link" data-scroll-target="#python-5">Python</a></li>
+  </ul></li>
+  <li><a href="#skill-subsets-and-indexing" id="toc-skill-subsets-and-indexing" class="nav-link" data-scroll-target="#skill-subsets-and-indexing">Skill: Subsets and Indexing</a>
+  <ul class="collapse">
+  <li><a href="#r-7" id="toc-r-7" class="nav-link" data-scroll-target="#r-7">R</a></li>
+  <li><a href="#python-6" id="toc-python-6" class="nav-link" data-scroll-target="#python-6">Python</a></li>
+  </ul></li>
+  <li><a href="#skill-writing-functions-type-conversion" id="toc-skill-writing-functions-type-conversion" class="nav-link" data-scroll-target="#skill-writing-functions-type-conversion">Skill: Writing Functions &amp; Type Conversion</a>
+  <ul class="collapse">
+  <li><a href="#planning" id="toc-planning" class="nav-link" data-scroll-target="#planning">Planning</a></li>
+  <li><a href="#r-8" id="toc-r-8" class="nav-link" data-scroll-target="#r-8">R</a></li>
+  <li><a href="#python-7" id="toc-python-7" class="nav-link" data-scroll-target="#python-7">Python</a></li>
+  </ul></li>
+  <li><a href="#skill-data-frames-loops" id="toc-skill-data-frames-loops" class="nav-link" data-scroll-target="#skill-data-frames-loops">Skill: Data Frames, Loops</a>
+  <ul class="collapse">
+  <li><a href="#r-9" id="toc-r-9" class="nav-link" data-scroll-target="#r-9">R</a></li>
+  <li><a href="#python-8" id="toc-python-8" class="nav-link" data-scroll-target="#python-8">Python</a></li>
+  </ul></li>
+  <li><a href="#skill-string-operations" id="toc-skill-string-operations" class="nav-link" data-scroll-target="#skill-string-operations">Skill: String Operations</a>
+  <ul class="collapse">
+  <li><a href="#r-10" id="toc-r-10" class="nav-link" data-scroll-target="#r-10">R</a></li>
+  <li><a href="#python-9" id="toc-python-9" class="nav-link" data-scroll-target="#python-9">Python</a></li>
+  </ul></li>
+  <li><a href="#skill-control-statements" id="toc-skill-control-statements" class="nav-link" data-scroll-target="#skill-control-statements">Skill: Control Statements</a>
+  <ul class="collapse">
+  <li><a href="#planning-1" id="toc-planning-1" class="nav-link" data-scroll-target="#planning-1">Planning</a></li>
+  <li><a href="#r-11" id="toc-r-11" class="nav-link" data-scroll-target="#r-11">R</a></li>
+  <li><a href="#python-10" id="toc-python-10" class="nav-link" data-scroll-target="#python-10">Python</a></li>
+  </ul></li>
+  <li><a href="#skill-user-proofing-your-function" id="toc-skill-user-proofing-your-function" class="nav-link" data-scroll-target="#skill-user-proofing-your-function">Skill: User-proofing your function</a>
+  <ul class="collapse">
+  <li><a href="#planning-2" id="toc-planning-2" class="nav-link" data-scroll-target="#planning-2">Planning</a></li>
+  <li><a href="#r-12" id="toc-r-12" class="nav-link" data-scroll-target="#r-12">R</a></li>
+  <li><a href="#python-11" id="toc-python-11" class="nav-link" data-scroll-target="#python-11">Python</a></li>
+  </ul></li>
+  <li><a href="#skill-summarizing-data" id="toc-skill-summarizing-data" class="nav-link" data-scroll-target="#skill-summarizing-data">Skill: Summarizing Data</a>
+  <ul class="collapse">
+  <li><a href="#r-13" id="toc-r-13" class="nav-link" data-scroll-target="#r-13">R</a></li>
+  <li><a href="#python-12" id="toc-python-12" class="nav-link" data-scroll-target="#python-12">Python</a></li>
+  </ul></li>
+  <li><a href="#additional-questions-out-of-class-portion" id="toc-additional-questions-out-of-class-portion" class="nav-link" data-scroll-target="#additional-questions-out-of-class-portion">Additional Questions (out of class portion)</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/unl-statistics/stat850/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week-01.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../weeks/week-08.html">Week 8 - Graphics</a></li></ol></nav></header>
+<main class="content column-page-left" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Midterm Exam Practice – In Class Portion</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">HW</div>
+  </div>
+  </div>
 
 
 
+<div class="quarto-title-meta column-page-left">
 
-<section id="week-8-graphics" class="level1">
-<h1>Week 8: Graphics</h1>
-<section id="reading" class="level2">
-<h2 class="anchored" data-anchor-id="reading">📖 Reading</h2>
-<p>For Class:</p>
-<ul class="task-list">
-<li><label><input type="checkbox"><a href="https://srvanderplas.github.io/stat-computing-r-python/part-wrangling/02b-graphics.html">Data Visualization</a></label></li>
-<li><label><input type="checkbox"><a href="https://srvanderplas.github.io/stat-computing-r-python/part-wrangling/02c-good-graphics.html">Creating Good Charts</a></label></li>
-</ul>
-<p>Context:</p>
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Your Name </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2025-10-23</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This exam is quite a bit longer than the exam I will give you in class, but I want you to have a feel for the types of questions I might ask.</p>
+<p>You can find the git repository for this midterm at https://github.com/stat-assignments/2025-850-practice-midterm.</p>
+<p>You should be able to clone it to your machine, but you should not be able to push your results back to the repository.</p>
+</div>
+</div>
+<p>Note – these directions are copied directly from the exam.</p>
 <ul>
-<li><a href="https://unl.alma.exlibrisgroup.com/leganto/public/01UON_LINC/citation/12340425610006387?auth=SAML">Chapter 3 of Data Feminism: On Rational, Scientific, Objective Viewpoints from Mythical, Imaginary, Impossible Standpoints</a></li>
+<li><p>This exam is due at the end of class on October 23, 2025.</p></li>
+<li><p>I will grade the exam as it is pushed to github. I cannot grade the exam that exists on your computer, so please double-check your github repository to ensure that the file that is on github is the file you want me to grade.</p></li>
+<li><p>For each of these problems, you may choose to solve the problem in either R or python. I have provided both R and python chunks. You should feel free to remove the unused chunk for each question.</p></li>
+<li><p>(5 points) Please put your code under the comment corresponding to the part you are working on. This will help me to grade your work more efficiently.</p></li>
 </ul>
-<p>Content warning: This chapter contains an image of a largely unclothed body (PG or PG13 at most).</p>
-<p>Think about:</p>
+<section id="rules" class="level2">
+<h2 class="anchored" data-anchor-id="rules">Rules</h2>
 <ul>
-<li>When do you think it is appropriate to create graphics which inspire and elevate emotion in viewers? When is this not appropriate?</li>
-<li>When you see a chart, do you think of it as a rhetorical tool or an objective display? What factors contribute to viewing the chart as one or the other?<br>
-</li>
-<li>What ways do you think are effective for showing uncertainty in data? Have you seen any effective ways of visualizing uncertainty or missing data which are not mentioned in this chapter?</li>
-</ul>
-<section id="check-your-understanding" class="level3">
-<h3 class="anchored" data-anchor-id="check-your-understanding">🎯 Check your understanding</h3>
-<ul class="task-list">
-<li><label><input type="checkbox">Reading Quiz Week 8</label></li>
-</ul>
-</section>
-</section>
-<section id="prepare-for-class" class="level2">
-<h2 class="anchored" data-anchor-id="prepare-for-class">🥣 Prepare for class</h2>
-<ul class="task-list">
-<li><label><input type="checkbox">Work through the examples in the textbook</label></li>
-</ul>
-</section>
-<section id="tuesday" class="level2">
-<h2 class="anchored" data-anchor-id="tuesday">🌮 Tuesday</h2>
+<li><p>You may use the textbook and your notes on this exam.</p></li>
+<li><p>If you need to search for ‘how do I do X in Y language’, that is allowable using google/duckduckgo, but you must 1) document that you did the search, and 2) provide a link to the website you used to get a solution. AI results should be turned off by adding ” -ai” to your query.</p></li>
+<li><p>AI and LLM usage is strictly forbidden. Use of any unauthorized resources will result in a 0 on this exam.</p></li>
+<li><p>You must be able to explain how any code you submit on this exam works.</p>
 <ul>
-<li><a href="../slides/08-graphics.html">Slides</a></li>
+<li>Oral exams based on your submissions will be held the week of October 28, 2025.</li>
+<li>You will be notified of the need for an oral exam by Monday, October 28.</li>
+<li>If you are notified that an oral exam is required, you must schedule a time for the exam within 24h.</li>
+</ul></li>
+<li><p>If you get stuck, you may ask Dr.&nbsp;Vanderplas for the solution to the problem you are stuck on, at the cost of the points which would be awarded for that problem. This is designed to get you un-stuck and allow you to complete multi-part problems.</p></li>
+<li><p>(5 points) Your submitted qmd file must compile without errors. Use <code>error=TRUE</code> in a chunk if it is supposed to return an error or if you cannot get the code to work properly.</p></li>
 </ul>
 </section>
-<section id="thursday" class="level2">
-<h2 class="anchored" data-anchor-id="thursday">🔨️ Thursday 🌩</h2>
+<section id="least-common-multiple" class="level1">
+<h1>Least Common Multiple</h1>
+<p>In this problem, you will work towards building code that will find the least common multiple of two numbers.</p>
+<p>The least common multiple of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> is the number <span class="math inline">\(c\)</span> for which <span class="math inline">\(c/a\)</span> and <span class="math inline">\(c/b\)</span> both produce integer values.</p>
+<p>We’ll start by installing a package that helps work with prime numbers… <code>cheapr</code> in R, <code>math</code> in Python.</p>
+<section id="skill-install-packages" class="level2">
+<h2 class="anchored" data-anchor-id="skill-install-packages">Skill: Install Packages</h2>
+<section id="r" class="level3">
+<h3 class="anchored" data-anchor-id="r">R</h3>
+<p>Write code to install the <code>cheapr</code> package in R. Run the code.</p>
+<p>This practice problem has no equivalent install command in python (<code>math</code> is installed by default), but you should know how to install a python package as well, either via a terminal/bash chunk or within a python chunk using iPython magic commands.</p>
+</section>
+<section id="thinking-criticially" class="level3">
+<h3 class="anchored" data-anchor-id="thinking-criticially">Thinking Criticially</h3>
+<p>How could you ensure that the code above to install the package isn’t evaluated? Think of at least two ways.</p>
+</section>
+</section>
+<section id="skill-loading-packages" class="level2">
+<h2 class="anchored" data-anchor-id="skill-loading-packages">Skill: Loading packages</h2>
+<p>Load the packages you just installed in R and Python using the chunks below.</p>
+<section id="r-1" class="level3">
+<h3 class="anchored" data-anchor-id="r-1">R</h3>
+</section>
+<section id="python" class="level3">
+<h3 class="anchored" data-anchor-id="python">Python</h3>
+</section>
+</section>
+<section id="skill-using-prewritten-functions" class="level2">
+<h2 class="anchored" data-anchor-id="skill-using-prewritten-functions">Skill: Using prewritten functions</h2>
+<section id="r-2" class="level3">
+<h3 class="anchored" data-anchor-id="r-2">R</h3>
+<p>Use the <code>scm2(x, y)</code> function to find the smallest common multiple between 35 and 49.</p>
+</section>
+<section id="python-1" class="level3">
+<h3 class="anchored" data-anchor-id="python-1">Python</h3>
+<p>Use the <code>math.lcm(a, b)</code> function to get the smallest common multiple between 3726 and 9321. Store this number in a variable called multiple.</p>
+</section>
+</section>
+<section id="skill-matrices-and-loops" class="level2">
+<h2 class="anchored" data-anchor-id="skill-matrices-and-loops">Skill: Matrices and Loops</h2>
+<p>You have a vector of values: <span class="math inline">\(x = [23, 81, 264, 198, 261, 18, 35]\)</span>.</p>
+<p>Create a 7x7 matrix where <span class="math inline">\(M_{ij}\)</span> contains the least common multiple of <span class="math inline">\(x_i\)</span> and <span class="math inline">\(x_j\)</span>.</p>
+<section id="r-3" class="level3">
+<h3 class="anchored" data-anchor-id="r-3">R</h3>
+</section>
+<section id="python-2" class="level3">
+<h3 class="anchored" data-anchor-id="python-2">Python</h3>
+</section>
+</section>
+<section id="skill-creating-data-frames" class="level2">
+<h2 class="anchored" data-anchor-id="skill-creating-data-frames">Skill: Creating Data Frames</h2>
+<p>You have a vector of values: <span class="math inline">\(x = [23, 81, 264, 198, 261, 18, 35]\)</span>.</p>
+<section id="r-4" class="level3">
+<h3 class="anchored" data-anchor-id="r-4">R</h3>
+<p>Use the <code>tidyr</code> function <code>expand_grid</code> to create a data frame with columns <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, each containing values of <span class="math inline">\(x\)</span>. The resulting data frame should have 49 rows.</p>
+</section>
+<section id="python-3" class="level3">
+<h3 class="anchored" data-anchor-id="python-3">Python</h3>
+<p>Use a list comprehension to create a DataFrame (perhaps from a list) with columns <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, each containing values of <span class="math inline">\(x\)</span>. The resulting data frame should have 49 rows and two columns.</p>
+</section>
+</section>
+<section id="skill-creating-new-variables" class="level2">
+<h2 class="anchored" data-anchor-id="skill-creating-new-variables">Skill: Creating New Variables</h2>
+<p>Create a new column in your data frame, <code>lcm</code>, from the previous step, containing the least common multiple between columns <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
+<section id="r-5" class="level3">
+<h3 class="anchored" data-anchor-id="r-5">R</h3>
+</section>
+<section id="python-4" class="level3">
+<h3 class="anchored" data-anchor-id="python-4">Python</h3>
+</section>
+</section>
+<section id="skill-data-transformations" class="level2">
+<h2 class="anchored" data-anchor-id="skill-data-transformations">Skill: Data Transformations</h2>
+<p>Use your skills at data transformations to convert your data frame <code>lcm</code> column into a data frame that has a similar form to your matrix – e.g.&nbsp;columns named <code>yXXX</code> where XXX is the number representing <code>y</code>.</p>
+<section id="r-6" class="level3">
+<h3 class="anchored" data-anchor-id="r-6">R</h3>
+</section>
+<section id="python-5" class="level3">
+<h3 class="anchored" data-anchor-id="python-5">Python</h3>
+</section>
+</section>
+<section id="skill-subsets-and-indexing" class="level2">
+<h2 class="anchored" data-anchor-id="skill-subsets-and-indexing">Skill: Subsets and Indexing</h2>
+<p>Get all rows in your (long-form) data frame where <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> have no common factors (that is, LCM(x, y) = x*y). Store these rows in a data frame called <code>no_common_factors</code>.</p>
+<section id="r-7" class="level3">
+<h3 class="anchored" data-anchor-id="r-7">R</h3>
+</section>
+<section id="python-6" class="level3">
+<h3 class="anchored" data-anchor-id="python-6">Python</h3>
+</section>
+</section>
+<section id="skill-writing-functions-type-conversion" class="level2">
+<h2 class="anchored" data-anchor-id="skill-writing-functions-type-conversion">Skill: Writing Functions &amp; Type Conversion</h2>
+<p>In the previous section, you determined the LCM of values <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
+<p>In R and python, write a function, <code>gcd(x, y)</code>, which will find the greatest common divisor between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
+<p>Note: Your GCD should be an integer.</p>
+<p>Hint: Can you use the LCM of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> to find the GCD?</p>
+<section id="planning" class="level3">
+<h3 class="anchored" data-anchor-id="planning">Planning</h3>
+<p>Using the provided scratch paper (please put your name at the top), sketch a basic program flow map that shows how the code you’ve already written fits together to solve this problem. Identify any bits of logic you need to write to solve the problem.</p>
+<!-- Identify which sheet of scratch paper your answer is on (Sheet X) here -->
+<p>My solution is sketched out on sheet ___</p>
+<!-- ---------------------------------------------------------------------- -->
+</section>
+<section id="r-8" class="level3">
+<h3 class="anchored" data-anchor-id="r-8">R</h3>
+</section>
+<section id="python-7" class="level3">
+<h3 class="anchored" data-anchor-id="python-7">Python</h3>
+</section>
+</section>
+<section id="skill-data-frames-loops" class="level2">
+<h2 class="anchored" data-anchor-id="skill-data-frames-loops">Skill: Data Frames, Loops</h2>
+<p>Use your function to create a new column in your data frame, <code>gcd</code>, and populate it using a loop.</p>
+<section id="r-9" class="level3">
+<h3 class="anchored" data-anchor-id="r-9">R</h3>
+</section>
+<section id="python-8" class="level3">
+<h3 class="anchored" data-anchor-id="python-8">Python</h3>
+</section>
+</section>
+<section id="skill-string-operations" class="level2">
+<h2 class="anchored" data-anchor-id="skill-string-operations">Skill: String Operations</h2>
+<p>Take the data frame you created in the previous problem and write a <code>format_results(df)</code> function that will output the results of each pair of <span class="math inline">\((x, y)\)</span> as “The LCD of (a, b) is c and the GCM is d”, where a, b, c, d are the values x, y, LCD, and GCM.</p>
+<p>Hint:</p>
 <ul>
-<li><a href="../slides/08-graphics.html">Slides</a></li>
+<li>Python: in a DataFrame, you can convert the whole column to a string using <code>df.colname.astype("str")</code> (replace df, colname with appropriate data frame name and column name)</li>
 </ul>
+<section id="r-10" class="level3">
+<h3 class="anchored" data-anchor-id="r-10">R</h3>
 </section>
-<section id="practice-your-skills" class="level2">
-<h2 class="anchored" data-anchor-id="practice-your-skills">🏋️ Practice your skills</h2>
-<ul class="task-list">
-<li><label><input type="checkbox"><a href="../homework/08.html">Homework 8</a></label></li>
-<li><label><input type="checkbox"><a href="../exams/mideterm-learning-objectives.qmd">Review Learning objectives for Midterm</a></label></li>
-<li><label><input type="checkbox"><a href="../homework/practice-midterm1.html">Practice Midterm 1</a></label></li>
-<li><label><input type="checkbox"><a href="../homework/practice-midterm2.html">Practice Midterm 2</a></label></li>
+<section id="python-9" class="level3">
+<h3 class="anchored" data-anchor-id="python-9">Python</h3>
+</section>
+</section>
+<section id="skill-control-statements" class="level2">
+<h2 class="anchored" data-anchor-id="skill-control-statements">Skill: Control Statements</h2>
+<p>Modify the code you wrote in the previous section. If <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> have no common factors, instead of outputting the LCM and GCD, output “__ and __ have no common factors”.</p>
+<section id="planning-1" class="level3">
+<h3 class="anchored" data-anchor-id="planning-1">Planning</h3>
+<p>What modifications will you need to make to handle this additional requirement?</p>
+<!-- Your answer goes between these lines -->
+<!-- ------------------------------------ -->
+<!-- If you want to sketch this out, please clearly indicate on your scratch paper that you're adding a solution (draw a horizontal line across the page and write Control Statements below the line) -- or use a new sheet of paper. Tell me in the section below where to find your sketch. -->
+<!-- Identify which sheet of scratch paper your answer is on (Sheet X) here -->
+<!-- Uncomment the line below if you used scratch paper -->
+<!-- My solution is sketched out on sheet ___ -->
+<!-- ---------------------------------------------------------------------- -->
+<p>How can you use previously written code and functions to accomplish this task? <!-- Your answer goes between these lines --></p>
+<!-- ------------------------------------ -->
+<p>What additional code do you need to write?</p>
+<!-- Your answer goes between these lines -->
+<!-- ------------------------------------ -->
+</section>
+<section id="r-11" class="level3">
+<h3 class="anchored" data-anchor-id="r-11">R</h3>
+</section>
+<section id="python-10" class="level3">
+<h3 class="anchored" data-anchor-id="python-10">Python</h3>
+</section>
+</section>
+<section id="skill-user-proofing-your-function" class="level2">
+<h2 class="anchored" data-anchor-id="skill-user-proofing-your-function">Skill: User-proofing your function</h2>
+<p>It is never safe to assume that your user knows what they are doing. Can you make your function from the previous part more robust by testing the user input to ensure that it conforms to your expectations?</p>
+<section id="planning-2" class="level3">
+<h3 class="anchored" data-anchor-id="planning-2">Planning</h3>
+<p>What assumptions does your previous answer make about parameters? <!-- Your answer goes between these lines --></p>
+<!-- ------------------------------------ -->
+<p>What do you need to test to ensure those assumptions are met? <!-- Your answer goes between these lines --></p>
+<!-- ------------------------------------ -->
+</section>
+<section id="r-12" class="level3">
+<h3 class="anchored" data-anchor-id="r-12">R</h3>
+</section>
+<section id="python-11" class="level3">
+<h3 class="anchored" data-anchor-id="python-11">Python</h3>
+</section>
+</section>
+<section id="skill-summarizing-data" class="level2">
+<h2 class="anchored" data-anchor-id="skill-summarizing-data">Skill: Summarizing Data</h2>
+<p>For each <span class="math inline">\(x\)</span>, create a data frame with the <span class="math inline">\(y\)</span> that has the greatest common denominator.</p>
+<section id="r-13" class="level3">
+<h3 class="anchored" data-anchor-id="r-13">R</h3>
+</section>
+<section id="python-12" class="level3">
+<h3 class="anchored" data-anchor-id="python-12">Python</h3>
+</section>
+</section>
+<section id="additional-questions-out-of-class-portion" class="level2">
+<h2 class="anchored" data-anchor-id="additional-questions-out-of-class-portion">Additional Questions (out of class portion)</h2>
+<ul>
+<li><p>Be prepared to identify which functions do which things in e.g.&nbsp;matching or multiple choice questions</p></li>
+<li><p>Be prepared to summarize the arguments made in different “practical” reading articles</p></li>
 </ul>
+<p>A key for this exam can be found <a href="https://unl-statistics.github.io/stat850/activities/midterm-practice-key.qmd">here</a>.</p>
 
 
 </section>
@@ -900,18 +1036,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation column-body">
-  <div class="nav-page nav-page-previous">
-      <a href="../weeks/week-07.html" class="pagination-link" aria-label="Week 7 - Data Joins">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 7 - Data Joins</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../weeks/week-09.html" class="pagination-link" aria-label="Week 9 - Midterm Exam">
-        <span class="nav-page-text">Week 9 - Midterm Exam</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

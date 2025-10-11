@@ -25,3 +25,6 @@
 [submodule "exams/midterm"]
 	path = exams/midterm
 	url = git@github.com:stat-assignments/2025-850-midterm.git
+[submodule "exams/midterm-practice"]
+	path = exams/midterm-practice
+	url = git@github.com:stat-assignments/2025-850-practice-midterm.git
