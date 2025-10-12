@@ -48,3 +48,7 @@ Other Resources (not required):
 
 - [Slides](../slides/10b-reproducibility.qmd)
 
+##  🏋️ Practice your skills
+
+- [ ] [Homework 10](../homework/10.qmd)
+
