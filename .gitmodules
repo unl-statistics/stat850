@@ -25,3 +25,6 @@
 [submodule "exams/midterm-practice"]
 	path = exams/midterm-practice
 	url = git@github.com:stat-assignments/2025-850-practice-midterm.git
+[submodule "homework-templates/10"]
+	path = homework-templates/10
+	url = git@github.com:srvanderplas/reproducibility-public-communication.git
