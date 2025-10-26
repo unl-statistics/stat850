@@ -8,3 +8,7 @@ No Class – Fall Break!
 
 Midterm Exam
 
+##  🏋️ Practice your skills
+
+- [ ] [Look at the ugly charts y'all made!](../activities/ugly-graphics.qmd)
+

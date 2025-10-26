@@ -1,0 +1,69 @@
+---
+title: "Ugly Graphics"
+format: html
+filters: 
+  - lightbox
+---
+
+Click on one of these and it will fullscreen so that you can scroll through the whole gallery. 
+
+:::{layout-ncol=6 #fig-ugly-layout}
+
+![](ugly/as1.png){.lightbox group="ugly" fig-alt="An ugly version of the palmerpenguins data, using R or python plotting libraries"}
+
+![](ugly/as2.png){.lightbox group="ugly" fig-alt="An ugly version of the palmerpenguins data, using R or python plotting libraries"}
+
+![](ugly/dt1.png){.lightbox group="ugly" fig-alt="An ugly version of the palmerpenguins data, using R or python plotting libraries"}
+
+![](ugly/dt2.png){.lightbox group="ugly" fig-alt="An ugly version of the palmerpenguins data, using R or python plotting libraries"}
+
+![](ugly/as1.png){.lightbox group="ugly" fig-alt="An ugly version of the palmerpenguins data, using R or python plotting libraries"}
+
+![](ugly/gk1.png){.lightbox group="ugly" fig-alt="An ugly version of the palmerpenguins data, using R or python plotting libraries"}
+
+![](ugly/gk2.png){.lightbox group="ugly" fig-alt="An ugly version of the palmerpenguins data, using R or python plotting libraries"}
+
+![](ugly/gm1.png){.lightbox group="ugly" fig-alt="An ugly version of the palmerpenguins data, using R or python plotting libraries"}
+
+![](ugly/gm2.png){.lightbox group="ugly" fig-alt="An ugly version of the palmerpenguins data, using R or python plotting libraries"}
+
+![](ugly/ja1.png){.lightbox group="ugly" fig-alt="An ugly version of the palmerpenguins data, using R or python plotting libraries"}
+
+![](ugly/ja2.png){.lightbox group="ugly" fig-alt="An ugly version of the palmerpenguins data, using R or python plotting libraries"}
+
+![](ugly/ks1.png){.lightbox group="ugly" fig-alt="An ugly version of the palmerpenguins data, using R or python plotting libraries"}
+
+![](ugly/ks2.png){.lightbox group="ugly" fig-alt="An ugly version of the palmerpenguins data, using R or python plotting libraries"}
+
+![](ugly/ks3.png){.lightbox group="ugly" fig-alt="An ugly version of the palmerpenguins data, using R or python plotting libraries"}
+
+![](ugly/lb1.png){.lightbox group="ugly" fig-alt="An ugly version of the palmerpenguins data, using R or python plotting libraries"}
+
+![](ugly/lb2.png){.lightbox group="ugly" fig-alt="An ugly version of the palmerpenguins data, using R or python plotting libraries"}
+
+![](ugly/mn1.png){.lightbox group="ugly" fig-alt="An ugly version of the palmerpenguins data, using R or python plotting libraries"}
+
+![](ugly/mn2.png){.lightbox group="ugly" fig-alt="An ugly version of the palmerpenguins data, using R or python plotting libraries"}
+
+![](ugly/nl1.png){.lightbox group="ugly" fig-alt="An ugly version of the palmerpenguins data, using R or python plotting libraries"}
+
+![](ugly/nl2.png){.lightbox group="ugly" fig-alt="An ugly version of the palmerpenguins data, using R or python plotting libraries"}
+
+![](ugly/ot1.png){.lightbox group="ugly" fig-alt="An ugly version of the palmerpenguins data, using R or python plotting libraries"}
+
+![](ugly/ot2.png){.lightbox group="ugly" fig-alt="An ugly version of the palmerpenguins data, using R or python plotting libraries"}
+
+![](ugly/rb1.png){.lightbox group="ugly" fig-alt="An ugly version of the palmerpenguins data, using R or python plotting libraries"}
+
+![](ugly/rb2.png){.lightbox group="ugly" fig-alt="An ugly version of the palmerpenguins data, using R or python plotting libraries"}
+
+![](ugly/sr1.png){.lightbox group="ugly" fig-alt="An ugly version of the palmerpenguins data, using R or python plotting libraries"}
+
+![](ugly/sr2.png){.lightbox group="ugly" fig-alt="An ugly version of the palmerpenguins data, using R or python plotting libraries"}
+
+![](ugly/ts1.png){.lightbox group="ugly" fig-alt="An ugly version of the palmerpenguins data, using R or python plotting libraries"}
+
+![](ugly/ts2.png){.lightbox group="ugly" fig-alt="An ugly version of the palmerpenguins data, using R or python plotting libraries"}
+
+Class of 2025's Ugly Plots experiments!
+:::

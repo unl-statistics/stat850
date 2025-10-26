@@ -194,6 +194,8 @@ Use your skills at data transformations to convert your data frame `lcm` column 
 ### R
 
 ```{r}
+library(dplyr)
+
 df |>
   select(-lcm2) |>
   pivot_wider(names_from="y", values_from = matches("lcm"), values_fn = mean, names_prefix = "y")
@@ -253,12 +255,12 @@ My solution is sketched out on sheet ___
 
 ```{r gcd-r}
 
-gcm <- function(x, y) {
+gcd <- function(x, y) {
   stopifnot(is.numeric(x), is.numeric(y))
   stopifnot(length(x) == length(y))
   
   xy <- x*y
-  lcm <- scm2(x,y)
+  lcm <- cheapr::scm2(x,y)
   return(as.integer(xy/lcm))
 } 
 
@@ -450,6 +452,9 @@ What do you need to test to ensure those assumptions are met?
 ### R
 
 ```{r checks-r}
+#| error: true
+
+
 formal_results <- function(dfrow) {
   stopifnot(is.data.frame(dfrow))
   stopifnot(all(c("x", "y", "lcm", "gcd") %in% names(dfrow)))
@@ -471,6 +476,8 @@ formal_results(data.frame(x = 3, y = 2, lcg = 3, gcm = 4))
 ### Python
 
 ```{python checks-py}
+#| error: true
+
 # https://www.geeksforgeeks.org/python/formatted-string-literals-f-strings-python/
 # This makes errors easier to raise
 import numpy as np

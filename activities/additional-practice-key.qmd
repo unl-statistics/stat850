@@ -45,7 +45,7 @@ pip install sympy
 You must complete this question regardless of the language used above.
 
 
-1. Add `#| eval: false` to the first line of the code chunk (below the \`\`\`{r} or \`\`\`{python} chunk header) to stop that code from running every time the document is executed. 
+1. Add `#| eval: false` to the first line of the code chunk (below the r or python chunk header) to stop that code from running every time the document is executed. 
 
 2. List at least one additional way to keep the code in the quarto document but prevent it from running.
 
