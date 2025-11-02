@@ -31,3 +31,7 @@ Context:
 
 - [Slides](../slides/11-lists.qmd)
 
+##  🏋️ Practice your skills
+
+- [ ] [Homework 11](../homework/11.qmd)
+

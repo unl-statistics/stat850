@@ -2,12 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Your Name Here">
 
-<title>Homework 11: Simulation – STAT 850</title>
+<title>Lab: List Processing – STAT 850</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,18 +32,19 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-4e438c96f14a73c0b6248a43c44040fc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-c1d09b6482dc8dab498baea3d31c9ff3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-4e438c96f14a73c0b6248a43c44040fc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5d9596d08bac7195c4af002be3d09af4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-14ab6d7cf99ccfae0262a55dc5807b3b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-5d9596d08bac7195c4af002be3d09af4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Homework 11: Simulation – STAT 850">
+<meta property="og:title" content="Lab: List Processing – STAT 850">
 <meta property="og:description" content="Computing Tools for Statistics">
 <meta property="og:image" content="https://unl-statistics.github.io/stat850/figs/homework.svg">
 <meta property="og:site_name" content="STAT 850">
@@ -247,16 +249,37 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#data-source" id="toc-data-source" class="nav-link active" data-scroll-target="#data-source"><span class="header-section-number">1</span> Data Source</a></li>
+  <li><a href="#warming-up" id="toc-warming-up" class="nav-link" data-scroll-target="#warming-up"><span class="header-section-number">2</span> Warming Up</a>
+  <ul class="collapse">
+  <li><a href="#parse-the-file" id="toc-parse-the-file" class="nav-link" data-scroll-target="#parse-the-file"><span class="header-section-number">2.1</span> Parse the file</a></li>
+  <li><a href="#examining-list-data-structures" id="toc-examining-list-data-structures" class="nav-link" data-scroll-target="#examining-list-data-structures"><span class="header-section-number">2.2</span> Examining List Data Structures</a></li>
+  <li><a href="#develop-a-strategy" id="toc-develop-a-strategy" class="nav-link" data-scroll-target="#develop-a-strategy"><span class="header-section-number">2.3</span> Develop A Strategy</a></li>
+  <li><a href="#implement-your-strategy" id="toc-implement-your-strategy" class="nav-link" data-scroll-target="#implement-your-strategy"><span class="header-section-number">2.4</span> Implement Your Strategy</a></li>
+  <li><a href="#examining-episode-air-dates" id="toc-examining-episode-air-dates" class="nav-link" data-scroll-target="#examining-episode-air-dates"><span class="header-section-number">2.5</span> Examining Episode Air Dates</a></li>
+  </ul></li>
+  <li><a href="#timey-wimey-series-and-episodes" id="toc-timey-wimey-series-and-episodes" class="nav-link" data-scroll-target="#timey-wimey-series-and-episodes"><span class="header-section-number">3</span> Timey-Wimey Series and Episodes</a>
+  <ul class="collapse">
+  <li><a href="#setting-up" id="toc-setting-up" class="nav-link" data-scroll-target="#setting-up"><span class="header-section-number">3.1</span> Setting Up</a></li>
+  <li><a href="#air-time" id="toc-air-time" class="nav-link" data-scroll-target="#air-time"><span class="header-section-number">3.2</span> Air Time</a></li>
+  <li><a href="#another-layer-of-json" id="toc-another-layer-of-json" class="nav-link" data-scroll-target="#another-layer-of-json"><span class="header-section-number">3.3</span> Another Layer of JSON</a></li>
+  <li><a href="#explore" id="toc-explore" class="nav-link" data-scroll-target="#explore"><span class="header-section-number">3.4</span> Explore!</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/unl-statistics/stat850/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Homework 11: Simulation</h1>
+<h1 class="title">Lab: List Processing</h1>
   <div class="quarto-categories">
     <div class="quarto-category">HW</div>
   </div>
@@ -264,8 +287,14 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta column-page-left">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Your Name Here </p>
+          </div>
+  </div>
     
   
     
@@ -277,9 +306,119 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Note: This assignment must be submitted in github classroom.</p>
-<!-- {{< include ../homework-templates/11/index.qmd >}} -->
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>You can see the purpose of this assignment as well as the skills and knowledge you should be using and acquiring, in the <a href="tilt.qmd">Transparency in Learning and Teaching (TILT)</a> document in this repository. The TILT document also contains a checklist for self-reflection that will provide some guidance on how the assignment will be graded.</p>
+</div>
+</div>
+</div>
+<section id="data-source" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Data Source</h1>
+<p>JSON data files for this assignment were obtained from the TVMaze API for three different Doctor Who series as well as two different spin-offs.</p>
+<ul>
+<li>Dr.&nbsp;Who <a href="https://www.tvmaze.com/shows/72724/doctor-who">2023-2025</a></li>
+<li>Dr.&nbsp;Who <a href="https://www.tvmaze.com/shows/210/doctor-who">2005-2022</a></li>
+<li>Dr.&nbsp;Who <a href="https://www.tvmaze.com/shows/766/doctor-who">1963-1996</a></li>
+<li><a href="https://www.tvmaze.com/shows/970/the-sarah-jane-adventures">The Sarah Jane Adventures (2007-2020)</a></li>
+<li><a href="https://www.tvmaze.com/shows/659/torchwood">Torchwood (2006-2011)</a></li>
+<li><a href="https://www.tvmaze.com/shows/26694/torchwood-web-of-lies">Torchwood: Web of Lies (2011)</a></li>
+</ul>
+</section>
+<section id="warming-up" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Warming Up</h1>
+<p>For this portion of the assignment, only work with the canonical Dr.&nbsp;Who files (drwho2023.json, drwho2005.json, drwho1963.json).</p>
+<section id="parse-the-file" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="parse-the-file"><span class="header-section-number">2.1</span> Parse the file</h2>
+<p>Add a code chunk that will read each of the JSON files in. Store the data in a <code>drwhoYYYY</code> object, where <code>YYYY</code> is the first year the series began to air. How are the data objects stored?</p>
+<hr>
+</section>
+<section id="examining-list-data-structures" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="examining-list-data-structures"><span class="header-section-number">2.2</span> Examining List Data Structures</h2>
+<p>Create a nested markdown list showing what variables are nested at each level of the JSON file. Include an ‘episode’ object that is a stand-in for a generic episode (e.g.&nbsp;don’t create a list with all 700+ episodes in it, just show what a single episode has). Make sure you use proper markdown formatting to ensure that the lists are rendered properly when you compile your document.</p>
+<p>Hint: The <code>prettify()</code> function in the R package <code>jsonlite</code> will spit out a better-formatted version of a JSON file.</p>
+<hr>
+<p>List here</p>
+<hr>
+<p>Is there any information stored in the list structure that you feel is redundant? If so, why?</p>
+</section>
+<section id="develop-a-strategy" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="develop-a-strategy"><span class="header-section-number">2.3</span> Develop A Strategy</h2>
+<p>Consider what information you would need to examine the structure of Dr.&nbsp;Who episodes over time (show runtime, season length, specials) as well as the ratings, combining information across all three data files.</p>
+<p>Sketch one or more rectangular data tables that look like your expected output. Remember that if you link to an image, you must link to something with a picture extension (<code>.png</code>, <code>.jpg</code>), and if you reference a file it should be using a local path and you must also add the picture to your git repository.</p>
+<hr>
+<p>Sketch goes here</p>
+<hr>
+<p>What operations will you need to perform to get the data into a form matching your sketch? Make an ordered list of steps you need to take.</p>
+<hr>
+<ol type="1">
+<li>… fill me in</li>
+<li>…</li>
+<li>…</li>
+</ol>
+</section>
+<section id="implement-your-strategy" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="implement-your-strategy"><span class="header-section-number">2.4</span> Implement Your Strategy</h2>
+<p>Add a code chunk that will convert the JSON files into the table(s) you sketched above. Make sure that the resulting tables have the correct variable types (e.g., dates should not be stored as character variables).</p>
+<p>Print out the first 5 rows of each table that you create (but no more)!</p>
+</section>
+<section id="examining-episode-air-dates" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="examining-episode-air-dates"><span class="header-section-number">2.5</span> Examining Episode Air Dates</h2>
+<p>Visually represent the length of time between air dates of adjacent episodes within the same season, across all seasons of Dr.&nbsp;Who. You may need to create a factor to indicate which Dr.&nbsp;Who series is indicated, as there will be a Season 1 for each of the series. Your plot must have appropriate labels and a title.</p>
+<hr>
+<p>code chunk here</p>
+<hr>
+<p>In 2-3 sentences, explain what conclusions you might draw from the data. What patterns do you notice? Are there data quality issues?</p>
+</section>
+</section>
+<section id="timey-wimey-series-and-episodes" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Timey-Wimey Series and Episodes</h1>
+<section id="setting-up" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="setting-up"><span class="header-section-number">3.1</span> Setting Up</h2>
+<p>In this section of the assignment, you will work with all of the provided JSON files. Use a functional programming approach to read in all of the files and bind them together.</p>
+<hr>
+<p>functional code goes here</p>
+<hr>
+<p>Then, use the processing code you wrote for the previous section to perform appropriate data cleaning steps. At the end of the chunk, your data should be in a reasonably tidy, rectangular form with appropriate data types. Call this rectangular table <code>whoverse</code>.</p>
+<hr>
+<p>Cleaning code goes here</p>
+<hr>
+</section>
+<section id="air-time" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="air-time"><span class="header-section-number">3.2</span> Air Time</h2>
+<p>Investigate the air time of the episodes relative to the air date, series, and season. It may help to know that the <a href="https://en.wikipedia.org/wiki/Watershed_(broadcasting)">watershed</a> period in the UK is 9:00pm - 5:30am. Content that is unsuitable for minors may only be shown during this window. What conclusions do you draw about the target audience for each show?</p>
+<p>How can you explain any shows in the Dr.&nbsp;Who universe which do not have airtimes provided?</p>
+</section>
+<section id="another-layer-of-json" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="another-layer-of-json"><span class="header-section-number">3.3</span> Another Layer of JSON</h2>
+<p>Use the show URL (<code>_links</code> &gt; <code>show</code> &gt; <code>href</code>) to read in the JSON file for each show. As with scraping, it is important to be polite and not make unnecessary server calls, so pre-process the data to ensure that you only make one server call for each show. You should use a functional programming approach when reading in these files.</p>
+<hr>
+<p>Read in JSON files from URLs here</p>
+<hr>
+<p>Process the JSON files using a functional approach and construct an appropriate table for the combined data you’ve acquired during this step (no need to join the data with the full <code>whoverse</code> episode-level data).</p>
+<hr>
+<p>Process JSON files to make a table here</p>
+<hr>
+<p>What keys would you use to join this data with the <code>whoverse</code> episode level data? Explain.</p>
+<blockquote class="blockquote">
+<p>Explanation</p>
+</blockquote>
+</section>
+<section id="explore" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="explore"><span class="header-section-number">3.4</span> Explore!</h2>
+<p>Use the data you’ve assembled to answer a question you find interesting about this data. Any graphics you make should have appropriate titles and axis labels. Tables should be reasonably concise (e.g.&nbsp;don’t show all 900 episodes in a table), generated in a reproducible fashion, and formatted with markdown. Any results (graphics, tables, models) should be explained with at least 2-3 sentences.</p>
+<p>If you’re stuck, consider examining the frequency of words in the episode descriptions across different series or seasons. Or, look at the episode guest cast by appending <code>/guestcast/</code> to the episode URL and see whether there are common guests across different seasons.</p>
+<hr>
+<p>Question goes here</p>
+<hr>
+<p>Code goes here – once you output a result, you should explain it using markdown text, and then start a new code chunk to continue your exploration.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -346,13 +485,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -702,7 +842,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/unl-statistics/stat850/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/unl-statistics/stat850/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

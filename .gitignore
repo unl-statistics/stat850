@@ -8,3 +8,5 @@ archive
 .Rprofile
 homework-repos/*
 exams/midterm
+
+**/*.quarto_ipynb
