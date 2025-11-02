@@ -105,6 +105,76 @@
     "text": "Resources\n\nR cheat sheet\npython cheat sheet"
   },
   {
+    "objectID": "slides/11-lists.html#purrr",
+    "href": "slides/11-lists.html#purrr",
+    "title": "Lists and Functional Programming",
+    "section": "Purrr",
+    "text": "Purrr\n\n\ndplyr handles data frames\npurrr handles lists\n\nRemember: a data frame is a list\nof vectors with equal length.\n\nLists can be used inside data frames with list-columns"
+  },
+  {
+    "objectID": "slides/11-lists.html#list-columns",
+    "href": "slides/11-lists.html#list-columns",
+    "title": "Lists and Functional Programming",
+    "section": "List-Columns",
+    "text": "List-Columns\nA vector of single values is an atomic vector. But, not all vectors are atomic.\n\nlibrary(tibble)\ndf &lt;- tibble(x = 1:3, \n             y = list(rnorm(5), \n                      rnorm(15), \n                      rnorm(25)))\ndf\n\n# A tibble: 3 × 2\n      x y         \n  &lt;int&gt; &lt;list&gt;    \n1     1 &lt;dbl [5]&gt; \n2     2 &lt;dbl [15]&gt;\n3     3 &lt;dbl [25]&gt;\n\n\ny is a list-column."
+  },
+  {
+    "objectID": "slides/11-lists.html#list-columns-1",
+    "href": "slides/11-lists.html#list-columns-1",
+    "title": "Lists and Functional Programming",
+    "section": "List-Columns",
+    "text": "List-Columns\nWe can handle list-columns in multiple ways:\n\nUnnest into an atomic vector (tidyr)\nWork with the list column using map_* and similar functions\n\n\nlibrary(tidyr)\n\ndf |&gt; unnest(y) |&gt; head()\n\n# A tibble: 6 × 2\n      x       y\n  &lt;int&gt;   &lt;dbl&gt;\n1     1 -0.202 \n2     1  0.267 \n3     1  0.370 \n4     1  0.0894\n5     1  0.986 \n6     2  0.954"
+  },
+  {
+    "objectID": "slides/11-lists.html#map-functions",
+    "href": "slides/11-lists.html#map-functions",
+    "title": "Lists and Functional Programming",
+    "section": "Map Functions",
+    "text": "Map Functions\nThe map_* family of functions\n\nTakes a list\nApplies a function to each element of the list\nReturns a list (map) or a vector (map_xxx) of type xxx\n\nmap is like a type-safe, pipe-friendly apply function from base R"
+  },
+  {
+    "objectID": "slides/11-lists.html#demonstrating-map",
+    "href": "slides/11-lists.html#demonstrating-map",
+    "title": "Lists and Functional Programming",
+    "section": "Demonstrating Map",
+    "text": "Demonstrating Map\nI want to show the Central Limit Theorem using simulation, using the Exponential(5) distribution.\n\nDistribution of the sample mean converges to a normal distribution if \\(\\mu\\) exists and \\(\\sigma^2 &lt;\\infty\\) as \\(n\\rightarrow\\infty\\)\n\n\nSelect values of \\(n\\): 1, 3, 5, 10, 20, 50, 100, 500, 1000\nDecide how many times you want to draw a sample for each value of \\(n\\).\nFor \\(i=1, ..., 500\\), sample \\(n\\) from Exp(5)\nSet up a tibble with \\(n\\) as a column, with each \\(n\\) repeated 500 times.\nFor each row in the tibble, draw a sample.\nFor each sample, calculate \\(\\overline{x}\\)\nPlot the \\(\\overline{x}_i\\) values"
+  },
+  {
+    "objectID": "slides/11-lists.html#demonstrating-map-1",
+    "href": "slides/11-lists.html#demonstrating-map-1",
+    "title": "Lists and Functional Programming",
+    "section": "Demonstrating Map",
+    "text": "Demonstrating Map\nI want to show the Central Limit Theorem using simulation.\n\nDistribution of the sample mean converges to a normal distribution if \\(\\mu\\) exists and \\(\\sigma^2 &lt;\\infty\\) as \\(n\\rightarrow\\infty\\)\n\n\nlibrary(dplyr)\nlibrary(purrr)\nsim_df &lt;- tibble(n = rep(c(1, 3, 5, 10, 20, 50, 100, 500, 1000), each = 500)) |&gt;\n  # Create a list-column with mutate + map*\n  mutate(sample = map(n, ~rexp(., rate=5))) |&gt;\n  # Summarize a list-column with mutate + map*\n  mutate(mean = map_dbl(sample, mean), \n         sd = map_dbl(sample, sd))\n\nhead(sim_df)\n\n# A tibble: 6 × 4\n      n sample      mean    sd\n  &lt;dbl&gt; &lt;list&gt;     &lt;dbl&gt; &lt;dbl&gt;\n1     1 &lt;dbl [1]&gt; 0.0978    NA\n2     1 &lt;dbl [1]&gt; 0.0754    NA\n3     1 &lt;dbl [1]&gt; 0.0519    NA\n4     1 &lt;dbl [1]&gt; 0.0762    NA\n5     1 &lt;dbl [1]&gt; 0.459     NA\n6     1 &lt;dbl [1]&gt; 0.265     NA"
+  },
+  {
+    "objectID": "slides/11-lists.html#demonstrating-map-2",
+    "href": "slides/11-lists.html#demonstrating-map-2",
+    "title": "Lists and Functional Programming",
+    "section": "Demonstrating Map",
+    "text": "Demonstrating Map\nI want to show the Central Limit Theorem using simulation.\n\nDistribution of the sample mean converges to a normal distribution if \\(\\mu\\) exists and \\(\\sigma^2 &lt;\\infty\\) as \\(n\\rightarrow\\infty\\)\n\n\nlibrary(ggplot2)\n\nggplot(sim_df, aes(x = mean)) + geom_histogram() + facet_wrap(~n, scales = \"free_x\")"
+  },
+  {
+    "objectID": "slides/11-lists.html#demonstrating-nestunnest",
+    "href": "slides/11-lists.html#demonstrating-nestunnest",
+    "title": "Lists and Functional Programming",
+    "section": "Demonstrating Nest/Unnest",
+    "text": "Demonstrating Nest/Unnest\nI want to show the Central Limit Theorem using simulation, using the Exponential(5) distribution.\n\nDistribution of the sample mean converges to a normal distribution if \\(\\mu\\) exists and \\(\\sigma^2 &lt;\\infty\\) as \\(n\\rightarrow\\infty\\)\n\n\nSelect values of \\(n\\): 1, 3, 5, 10, 20, 50, 100, 500, 1000\nDecide how many times you want to draw a sample for each value of \\(n\\).\nFor \\(i=1, ..., 500\\), sample \\(n\\) from Exp(5)\nSet up a tibble with \\(n\\) as a column, with each \\(n\\) repeated 500 times. Define index \\(i\\) as another column.\nFor each row in the tibble, draw a sample. Unnest the samples.\nFor each sample, calculate \\(\\overline{x}_i\\), grouping by \\(i\\)\nPlot the \\(\\overline{x}_i\\) values"
+  },
+  {
+    "objectID": "slides/11-lists.html#demonstrating-nestunnest-1",
+    "href": "slides/11-lists.html#demonstrating-nestunnest-1",
+    "title": "Lists and Functional Programming",
+    "section": "Demonstrating Nest/Unnest",
+    "text": "Demonstrating Nest/Unnest\nI want to show the Central Limit Theorem using simulation.\n\nDistribution of the sample mean converges to a normal distribution if \\(\\mu\\) exists and \\(\\sigma^2 &lt;\\infty\\) as \\(n\\rightarrow\\infty\\)\n\n\nlibrary(dplyr)\nlibrary(purrr)\nsim_df &lt;- tibble(n = rep(c(1, 3, 5, 10, 20, 50, 100, 500, 1000), each = 500)) |&gt;\n  # Create i column\n  group_by(n) |&gt;\n  mutate(i = 1:n()) |&gt;\n  ungroup() |&gt;\n  # Create a list-column with mutate + map*\n  mutate(sample = map(n, ~rexp(., rate=5))) |&gt;\n  unnest(sample)\n\nres_df &lt;- sim_df |&gt;\n  group_by(n, i) |&gt;\n  # Summarize a list-column with mutate + map*\n  summarize(mean = mean(sample)) |&gt;\n  ungroup()\n\nhead(sim_df)\n\n# A tibble: 6 × 3\n      n     i sample\n  &lt;dbl&gt; &lt;int&gt;  &lt;dbl&gt;\n1     1     1  0.180\n2     1     2  0.104\n3     1     3  0.568\n4     1     4  0.623\n5     1     5  0.562\n6     1     6  0.137\n\nhead(res_df)\n\n# A tibble: 6 × 3\n      n     i  mean\n  &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt;\n1     1     1 0.180\n2     1     2 0.104\n3     1     3 0.568\n4     1     4 0.623\n5     1     5 0.562\n6     1     6 0.137"
+  },
+  {
+    "objectID": "slides/11-lists.html#demonstrating-nestunnest-2",
+    "href": "slides/11-lists.html#demonstrating-nestunnest-2",
+    "title": "Lists and Functional Programming",
+    "section": "Demonstrating Nest/Unnest",
+    "text": "Demonstrating Nest/Unnest\nI want to show the Central Limit Theorem using simulation.\n\nDistribution of the sample mean converges to a normal distribution if \\(\\mu\\) exists and \\(\\sigma^2 &lt;\\infty\\) as \\(n\\rightarrow\\infty\\)\n\n\nlibrary(ggplot2)\n\nggplot(res_df, aes(x = mean)) + geom_histogram() + facet_wrap(~n, scales = \"free_x\")"
+  },
+  {
     "objectID": "slides/10a-latex-markdown.html#contents",
     "href": "slides/10a-latex-markdown.html#contents",
     "title": "LaTeX and Markdown",

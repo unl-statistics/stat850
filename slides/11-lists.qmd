@@ -1,5 +1,5 @@
 ---
-title: "Record and Hierarchical Data"
+title: "Lists and Functional Programming"
 format: 
     revealjs:
         navigation-mode: vertical
@@ -9,6 +9,183 @@ format:
         includes:
           in_header: deps/unl/header.html
         lib_dir: libs
+title-slide-attributes:
+    data-background-image: cat.jpg
+    data-background-size: contain
+    data-background-opacity: "0.5"
+echo: true
 ---
 
-## 
+## Purrr
+
+<!-- Bkgd img src: https://en.wikipedia.org/wiki/Cat#/media/File:Siam_lilacpoint.jpg -->
+
+- `dplyr` handles data frames
+- `purrr` handles lists
+
+Remember: a data frame is a **list**    
+of vectors with equal length. 
+
+![](purrr.svg){width="20%" style="position: absolute; top: 20px; right: 20px;"}
+
+Lists can be used inside data frames with [**list-columns**]{.emph .blue}
+
+## List-Columns
+
+A vector of single values is an **atomic vector**. But, not all vectors are atomic. 
+
+```{r}
+library(tibble)
+df <- tibble(x = 1:3, 
+             y = list(rnorm(5), 
+                      rnorm(15), 
+                      rnorm(25)))
+df
+```
+
+`y` is a [**list-column**]{.emph .purple}. 
+
+
+## List-Columns
+
+We can handle list-columns in multiple ways: 
+
+1. Unnest into an atomic vector (`tidyr`)
+2. Work with the list column using `map_*` and similar functions
+
+
+```{r}
+library(tidyr)
+
+df |> unnest(y) |> head()
+```
+
+## Map Functions
+
+The `map_*` family of functions
+
+1. Takes a list
+2. Applies a function to each element of the list
+3. Returns a list (`map`) or a vector (`map_xxx`) of type `xxx`
+
+`map` is like a type-safe, pipe-friendly `apply` function from base R
+
+
+## Demonstrating Map
+
+I want to show the Central Limit Theorem using simulation, using the Exponential(5) distribution. 
+
+> Distribution of the sample mean converges to a normal distribution if $\mu$ exists and $\sigma^2 <\infty$ as $n\rightarrow\infty$
+
+1. Select values of $n$: 1, 3, 5, 10, 20, 50, 100, 500, 1000
+
+2. Decide how many times you want to draw a sample for each value of $n$.    
+For $i=1, ..., 500$, sample $n$ from Exp(5)
+
+3. Set up a tibble with $n$ as a column, with each $n$ repeated 500 times.
+
+4. For each row in the tibble, draw a sample.
+
+5. For each sample, calculate $\overline{x}$
+
+6. Plot the $\overline{x}_i$ values
+
+## Demonstrating Map
+
+I want to show the Central Limit Theorem using simulation. 
+
+> Distribution of the sample mean converges to a normal distribution if $\mu$ exists and $\sigma^2 <\infty$ as $n\rightarrow\infty$
+
+```{r}
+library(dplyr)
+library(purrr)
+sim_df <- tibble(n = rep(c(1, 3, 5, 10, 20, 50, 100, 500, 1000), each = 500)) |>
+  # Create a list-column with mutate + map*
+  mutate(sample = map(n, ~rexp(., rate=5))) |>
+  # Summarize a list-column with mutate + map*
+  mutate(mean = map_dbl(sample, mean), 
+         sd = map_dbl(sample, sd))
+
+head(sim_df)
+```
+
+## Demonstrating Map
+
+I want to show the Central Limit Theorem using simulation. 
+
+> Distribution of the sample mean converges to a normal distribution if $\mu$ exists and $\sigma^2 <\infty$ as $n\rightarrow\infty$
+
+```{r}
+#| fig-width: 6
+#| fig-height: 6
+
+library(ggplot2)
+
+ggplot(sim_df, aes(x = mean)) + geom_histogram() + facet_wrap(~n, scales = "free_x")
+```
+
+
+## Demonstrating Nest/Unnest
+
+I want to show the Central Limit Theorem using simulation, using the Exponential(5) distribution. 
+
+> Distribution of the sample mean converges to a normal distribution if $\mu$ exists and $\sigma^2 <\infty$ as $n\rightarrow\infty$
+
+1. Select values of $n$: 1, 3, 5, 10, 20, 50, 100, 500, 1000
+
+2. Decide how many times you want to draw a sample for each value of $n$.    
+For $i=1, ..., 500$, sample $n$ from Exp(5)
+
+3. Set up a tibble with $n$ as a column, with each $n$ repeated 500 times. Define index $i$ as another column. 
+
+4. For each row in the tibble, draw a sample. Unnest the samples. 
+
+5. For each sample, calculate $\overline{x}_i$, grouping by $i$
+
+6. Plot the $\overline{x}_i$ values
+
+## Demonstrating Nest/Unnest
+
+I want to show the Central Limit Theorem using simulation. 
+
+> Distribution of the sample mean converges to a normal distribution if $\mu$ exists and $\sigma^2 <\infty$ as $n\rightarrow\infty$
+
+```{r}
+library(dplyr)
+library(purrr)
+sim_df <- tibble(n = rep(c(1, 3, 5, 10, 20, 50, 100, 500, 1000), each = 500)) |>
+  # Create i column
+  group_by(n) |>
+  mutate(i = 1:n()) |>
+  ungroup() |>
+  # Create a list-column with mutate + map*
+  mutate(sample = map(n, ~rexp(., rate=5))) |>
+  unnest(sample)
+
+res_df <- sim_df |>
+  group_by(n, i) |>
+  # Summarize a list-column with mutate + map*
+  summarize(mean = mean(sample)) |>
+  ungroup()
+
+head(sim_df)
+head(res_df)
+```
+
+## Demonstrating Nest/Unnest
+
+
+I want to show the Central Limit Theorem using simulation. 
+
+> Distribution of the sample mean converges to a normal distribution if $\mu$ exists and $\sigma^2 <\infty$ as $n\rightarrow\infty$
+
+```{r}
+#| fig-width: 6
+#| fig-height: 6
+
+library(ggplot2)
+
+ggplot(res_df, aes(x = mean)) + geom_histogram() + facet_wrap(~n, scales = "free_x")
+```
+
+
