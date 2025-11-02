@@ -28,3 +28,6 @@
 [submodule "homework-templates/10"]
 	path = homework-templates/10
 	url = git@github.com:stat-assignments/reproducibility-public-communication.git
+[submodule "homework-templates/11"]
+	path = homework-templates/11
+	url = git@github.com:stat850-unl/stat850-unl-2025c-list-processing-drwho.git

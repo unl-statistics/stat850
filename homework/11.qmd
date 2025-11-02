@@ -1,9 +1,9 @@
 ---
-title: "Homework 11: Simulation"
+title: "Homework 11: List Processing"
 
 ---
 
 Note: This assignment must be submitted in github classroom.
 
-<!-- {{< include ../homework-templates/11/index.qmd >}} -->
+{{< include ../homework-templates/11/index.qmd >}}
 
