@@ -1,0 +1,166 @@
+---
+title: "Simulation Using Built-In Functions"
+format: 
+    revealjs:
+        navigation-mode: vertical
+        logo: deps/unl/N.svg
+        theme: deps/unl/inverse.scss
+        css: deps/unl/styles.css
+        includes:
+          in_header: deps/unl/header.html
+        lib_dir: libs
+echo: true
+cache: false
+---
+
+## Linear Regression Assumptions
+
+1. Linearity and Additivity of DVs
+
+2. Independence of Errors
+
+3. Constant Variance of Errors
+
+4. Normality of Errors
+
+## How Bad is it? -- Linearity
+
+```{r}
+#| fig-width: 4
+#| fig-height: 4
+#| output-location: column
+
+library(tidyverse)
+set.seed(2034927344)
+data <- tibble(
+  x1 = seq(-10, 10, 
+           length.out = 100) + 
+    runif(100, -.1, .1), # wiggle
+  x2 = seq(10, -10, 
+           length.out = 100) + 
+    runif(100, -.1, .1), # wiggle
+  
+  # Definitely not linear
+  y =  x1 + x1^2/2 + # main effect
+    rnorm(100, 0, 10) # actual error
+)
+
+ggplot(data, aes(x = x1, y = y)) + 
+  geom_point()
+```
+
+[Clearly non-linear]{.fragment .emph .red .large}
+
+## How Bad is it? -- Linearity {.smaller}
+
+```{r}
+#| output-location: column
+model <- lm(y ~ x1 + x2, data = data)
+summary(model)
+
+```
+
+## How Bad is it? 
+
+```{r}
+model2 <- lm(y ~ x1 + I(x1^2), data = data)
+summary(model2)
+```
+
+
+## Models
+
+![](sim-true-model.png){fig-alt="y_i = x_{1i} + x_{1i}^2/2 + e_i, where e_i ~ N(0, 10) is the ground truth model."}
+
+![](sim-fit-model.png){fig-alt="y_i=x_{1i} + x_{2i} + e_i where e_i ~ N(0, sigma) is the model which we fit to the data."}
+
+## Simulation -- Questions
+
+1. How does $\hat{s}$ compare to $\sigma=10$?
+2. How does $\hat\alpha$ compare to true value $\alpha=1$?
+3. How does $\hat\beta$ compare to true value $\beta=0$?
+
+## Simulation -- Linearity assumption
+
+```{r}
+sim_linearity <- function(i, n = 100, formula = y ~ x1+x2, trueformula = y ~ x1 + I(x1^2)) {
+  data <- tibble(
+    x1 = seq(-10, 10, length.out = n) + runif(n, -.1, .1),
+    x2 = seq(-10, 10, length.out = n) + runif(n, -.1, .1),
+    y =  x1 + x1^2/2 + rnorm(n, 0, 10) # Definitely not additive or linear
+  )
+  
+  model <- lm(formula = formula, data = data)
+  model2 <- lm(formula = trueformula, data = data)
+  tibble(
+    i = i, 
+    data = list(data), 
+    model = tibble(type = c("misspec", "actual"), 
+                   model = list(model, model2))
+         )
+}
+
+set.seed(249382736)
+sim_n <- map_df(1:1000, ~sim_linearity(.)) |> 
+  unnest(model)
+```
+
+## Simulation -- Getting Estimates Out
+
+```{r}
+library(broom) # very useful for tidying nested model dataframes
+
+sim_n <- sim_n |> mutate(
+  # One line per parameter
+  tidy_model = purrr::map(model, tidy), 
+  # One line per model
+  glance_model = purrr::map(model, glance))  
+```
+
+## Error Variance
+
+```{r}
+#| fig-width: 8
+#| fig-height: 3
+
+tmp <- sim_n |>
+  unnest(glance_model)
+ggplot(tmp, aes(x = sigma, fill = type)) + 
+  geom_density() + 
+  geom_vline(xintercept = 10, linetype = "dashed")
+```
+
+
+## $\alpha$ coefficient
+
+```{r}
+#| fig-width: 8
+#| fig-height: 3
+
+sim_n|>
+  unnest(tidy_model) |> filter(term == "x1") |>
+  ggplot(aes(x = estimate, fill = type)) + 
+  geom_density() + 
+  geom_vline(xintercept = 1, linetype = "dashed") + 
+  facet_wrap(~type, scales="free")
+```
+
+[That is some *wide* error variance!]{.fragment .emph .blue .large}
+
+
+## $\beta$ coefficient
+
+```{r}
+#| fig-width: 4
+#| fig-height: 4
+#| output-location: column
+
+sim_n|>
+  unnest(tidy_model) |>
+  # Only occurs in misspec model
+  filter(term == "x2") |>
+  ggplot(aes(x = estimate, fill = type)) + 
+  geom_density(alpha=0.5) + 
+  geom_vline(xintercept = 0, 
+             linetype = "dashed")
+```
