@@ -5,4 +5,4 @@ title: "Homework 12: Simulation"
 
 Note: This assignment must be submitted in github classroom.
 
-<!-- {{< include ../homework-repos/12/index.qmd >}} -->
+{{< include ../homework-templates/12/index.qmd >}}

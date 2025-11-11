@@ -31,3 +31,6 @@
 [submodule "homework-templates/11"]
 	path = homework-templates/11
 	url = git@github.com:stat850-unl/stat850-unl-2025c-list-processing-drwho.git
+[submodule "homework-templates/12"]
+	path = homework-templates/12
+	url = git@github.com:stat850-unl/stat850-unl-2025c-simulating-distributions-simulation-distributions.git

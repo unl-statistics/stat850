@@ -1,0 +1,201 @@
+---
+title: "Exam Learning Objectives"
+---
+
+These are copied directly from the textbook chapters we have covered. 
+Anything that you have to do that doesn't fall under one of these objectives (e.g. plotting) will have sample code provided that will be relatively simple to change to get to the required objective. 
+
+## Computer Basics
+
+
+- Know the meaning of computer hardware and operating system terms such as hard drive, memory, CPU, OS/operating system, file system, directory, and system paths
+
+- Understand the basics of how the above concepts relate to each other and contribute to how a computer works
+
+- Understand the file system mental model for computers enough to identify where your files are stored
+
+- Locate and follow directions for software installation based on your computer’s hardware and operating system.
+
+## Setting Up Your Computer
+
+- Set up RStudio, R, Quarto, and python
+- Be able to run demo code in R and python
+
+## RStudio's Interface
+
+- Locate different panes of RStudio
+- Use cues such as buttons and icons to identify what type of file is open and what language is being interpreted
+
+## Scripts and Notebooks and Terminals
+
+
+- Understand the different ways you can interact with a programming language
+- Identify which interface (terminal, interactive, script, notebook) and language are being used based on the appearance of the interface
+- Select the appropriate way of interacting with a computer for a given task given considerations such as target audience, human intervention, and need to repeat the analysis.
+
+
+## Version Control with Git
+
+
+- Install git
+- Create a github account
+- Understand why version control is useful and what problems it can solve
+- Understand the distinction between git and github, and what each is used for
+- Use version control to track changes to a document (git add, commit, push, pull)
+
+## Introduction to Programming
+
+
+- Define programming and provide examples of programming
+- Identify reserved words in R and python
+- Know how to get help when using R and python
+
+
+## Variables and Data Types
+
+
+- Know the basic data types and what their restrictions are
+- Know how to test to see if a variable is a given data type
+- Understand the basics of implicit and explicit type conversion
+- Write code that assigns values to variables
+
+
+## Mathematical and Logical Operators
+
+
+- Understand and use mathematical operators for mathematical computation
+- Understand and use logical operators to evaluate complex conditions
+- Understand and use basic string operations (repetition and concatenation)
+- Evaluate expressions using order of operations to predict how the computer will execute code
+- Translate mathematical concepts into a series of computational operations
+
+
+## Functions, Packages, and Environments
+
+
+- Use pre-written functions to perform operations
+- Use python environments to manage packages
+- Install and load packages in R and Python
+- Use pipes to write readable code
+
+
+## Data Structures
+
+
+- Understand the differences between lists, vectors, data frames, matrices, and arrays in R and python
+- Use location-based indexing in R or python to pull out subsets of a complex data object
+- Use logical indexing in R or python to pull out subsets of a data object
+- Understand categories of mathematical, descriptive, and set operations on vectors
+- Use vector operations in R and python to perform simple calculations
+
+
+## Matrix Calculations
+
+- Understand how to do matrix algebra in relevant programming languages
+
+## Control Structures
+
+
+- Understand how to use conditional statements
+- Understand how conditional statements are evaluated by a program
+- Use program flow diagrams to break a problem into parts and evaluate how a program will execute
+- Understand how to use loops
+- Select the appropriate type of loop for a problem
+
+
+## Writing Functions
+
+
+- Identify the parts of a function from provided source code
+- Predict what the function will return when provided with input values and source code
+- Given a task, lay out the steps necessary to complete the task in pseudocode
+- Write a function which uses necessary input values to complete a task
+
+## Debugging
+
+- Create reproducible examples of problems
+- Use built in debugging tools to trace errors
+- Use online resources to research errors
+
+## Programming with Data
+
+- Write functions to create simple plots and data summaries
+- Apply syntax knowledge to reference variables and observations in common data structures
+- Create new variables and columns or reformat existing columns in provided data structures
+
+## Data Input
+
+- Read in data from common formats into R or Python
+- Identify delimiters, headers, and other essential components of files
+
+## Data Cleaning
+
+- Identify required sequence of steps for data cleaning
+- Describe step-by-step data cleaning process in lay terms appropriately
+- Apply data manipulation verbs to prepare data for analysis
+- Understand the consequences of data cleaning steps for statistical analysis
+- Create summaries of data appropriate for analysis or display using data manipulation techniques
+
+## Strings
+
+- Use functions to perform find-and-replace operations
+- Use functions to split string data into multiple columns/variables
+- Use functions to join string data from multiple columns/variables into a single column/variable
+
+## Reshaping Data
+
+
+- Determine what data format is necessary to generate a desired plot or statistical model
+- Understand the differences between “wide” and “long” format data and how to transition between the two structures
+
+## Joining Data
+
+- Identify columns (keys) which can be used to join separate but related tables
+- Sketch/plan out join operations based on matching keys and given objectives
+- Implement planned join operations in R or python
+- Identify when join operations have not completed successfully by looking for duplicated rows, number of rows/columns in the finished object, and missing value counts.
+
+## Graphics
+
+- Describe charts using the grammar of graphics
+- Create charts designed to communicate specific aspects of the data
+- Create layered graphics that highlight multiple aspects of the data
+
+## Creating Good Charts
+
+- Understand what features make graphics effective
+- Evaluate existing charts for accessibility and readability
+- Make improvements to charts to increase comprehension and accessibility
+
+## Professional Communication
+
+- Create professional documents (slides, posters, CVs) using LaTeX and/or markdown
+
+## Debugging
+
+- Create reproducible examples of problems
+- Use built in debugging tools to trace errors
+- Use online resources to research errors
+
+
+## Functional Programming
+
+
+- Use functional programming to replace for loops
+- Articulate why functional programming can be preferable to using for loops
+- Use functional programming to clean data, model data subsets, and assemble hierarchical data.
+
+## Simulation
+
+- Understand the limitations of pseudorandom number generation
+- Understand the connection between sampling methods such as inverse probability sampling and rejection sampling and theoretical statistics
+- Implement sampling methods as required for distributions that do not have closed form approximations
+- Use Monte Carlo methods for integration and other simulation tasks
+- Determine the appropriate data structure to use for storing simulation task results
+
+## Interactive Graphics
+
+- Identify appropriate types of interactivity to accomplish a visualization task
+- Select an appropriate interactive toolkit that supports the required type(s) of interactivity
+- Create animated or interactive charts that facilitate viewer understanding
+

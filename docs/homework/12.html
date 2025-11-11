@@ -2,12 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.7.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Your Name Here">
 
-<title>Homework 12: Simulation – STAT 850</title>
+<title>Simulation – STAT 850</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,19 +32,18 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5d9596d08bac7195c4af002be3d09af4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-14ab6d7cf99ccfae0262a55dc5807b3b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-5d9596d08bac7195c4af002be3d09af4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-4e438c96f14a73c0b6248a43c44040fc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-c1d09b6482dc8dab498baea3d31c9ff3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-4e438c96f14a73c0b6248a43c44040fc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,8 +72,37 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="Homework 12: Simulation – STAT 850">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Simulation – STAT 850">
 <meta property="og:description" content="Computing Tools for Statistics">
 <meta property="og:image" content="https://unl-statistics.github.io/stat850/figs/homework.svg">
 <meta property="og:site_name" content="STAT 850">
@@ -248,16 +277,26 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#warming-up" id="toc-warming-up" class="nav-link active" data-scroll-target="#warming-up">Warming Up</a>
+  <ul class="collapse">
+  <li><a href="#exponential-distribution" id="toc-exponential-distribution" class="nav-link" data-scroll-target="#exponential-distribution">Exponential Distribution</a></li>
+  <li><a href="#gamma-distribution" id="toc-gamma-distribution" class="nav-link" data-scroll-target="#gamma-distribution">Gamma Distribution</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/unl-statistics/stat850/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Homework 12: Simulation</h1>
+<h1 class="title">Simulation</h1>
   <div class="quarto-categories">
     <div class="quarto-category">HW</div>
   </div>
@@ -265,8 +304,14 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta column-page-left">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Your Name Here </p>
+          </div>
+  </div>
     
   
     
@@ -278,9 +323,38 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Note: This assignment must be submitted in github classroom.</p>
-<!-- {{< include ../homework-repos/12/index.qmd >}} -->
+<section id="warming-up" class="level1">
+<h1>Warming Up</h1>
+<p>Most statistical software packages have several built-in distributions to handle the most common situations statisticians come across when simulating values.</p>
+<p>Remember to set your seeds for these exercises so that you get the same answer each time the code is evaluated.</p>
+<section id="exponential-distribution" class="level2">
+<h2 class="anchored" data-anchor-id="exponential-distribution">Exponential Distribution</h2>
+<ol type="1">
+<li><p>Simulate 1000 draws from the exponential distribution <span class="math display">\[f(x) = \lambda e^{-\lambda x},\;\;\;\; x\geq0, \text{ with } \lambda=3\]</span></p></li>
+<li><p>Create a density plot of your values. Add the PDF of the exponential(3) distribution to your plot in a different color. How do they compare?</p></li>
+<li><p>How might you use your 1000 draws to estimate the probability that <span class="math inline">\(x &gt; 1\)</span>? Provide an estimate using only your 1000 draws, and compare this estimate to one derived from <code>pexp</code> (R) or <code>scipy.stats.expon.cdf</code> (Python).</p></li>
+<li><p>What is the average error from using a <span class="math inline">\(n=1000\)</span> simulation instead of a numerical calculation for the probability that <span class="math inline">\(x&gt;1\)</span>? Write a function to calculate the error from one simulation, and evaluate that function 100 times to calculate the expected error from using a simulation estimate rather than deterministic numerical integration.</p></li>
+</ol>
+</section>
+<section id="gamma-distribution" class="level2">
+<h2 class="anchored" data-anchor-id="gamma-distribution">Gamma Distribution</h2>
+<p>The Gamma distribution is an exponential family, so it has MLEs that are unbiased and efficient estimators, if somewhat challenging to calculate in closed form.</p>
+<p>Luckily, there are functions in R and python to handle this:</p>
+<ul>
+<li><p><code>fitdistr(...)</code> in the <code>MASS</code> package (R) will estimate the parameters for a gamma distribution from sample data.</p></li>
+<li><p><code>scipy.stats</code> distribution functions have a <code>.fit(data)</code> method that will estimate distributional parameters</p></li>
+</ul>
+<p>In this problem, you will work with the gamma distribution with parameters <span class="math inline">\(\alpha, \beta\)</span> (note that R uses a different parameterization than Python) and PDF</p>
+<p><span class="math display">\[f(x | \alpha, \beta) = \frac{\beta^\alpha x^{\alpha-1} e^{-x}}{\Gamma(\alpha)}.\]</span></p>
+<ol type="1">
+<li><p>Write a function that will calculate the MLE <span class="math inline">\(\hat\alpha,\hat\beta\)</span> from a vector <span class="math inline">\(x_{samp}\)</span> of gamma-distributed samples. Your function should have required parameter <span class="math inline">\(x\)</span> and optional parameters <span class="math inline">\(\alpha,\beta\)</span> representing the true values. The function should return a list of <span class="math inline">\(\hat\alpha, \hat\beta\)</span> and, if <span class="math inline">\(\alpha,\beta\)</span> are provided, it should also return <span class="math inline">\(\alpha_{err} = \alpha-\hat\alpha\)</span> and <span class="math inline">\(\beta_{err} = \beta-\hat\beta\)</span>.</p></li>
+<li><p>For a grid of <span class="math inline">\(\alpha \times \beta=\{0.25, 0.50, 1.00, 2.00, 4.00\}\times\{0.25, 0.50, 1.00, 2.00, 4.00\}\)</span>, sample 100 values from the <span class="math inline">\(\text{gamma}(\alpha,\beta)\)</span> distribution. Provide the true parameter values and plot your error values in an appropriate plot. Take care to choose your plot mappings to support your discussion of the following: What trends (if any) do you notice in the estimation error?</p></li>
+<li><p>Now, let’s vary the sample size. For <span class="math inline">\(n=\{20, 30, 50, 100\}\)</span>, use your function to evaluate the error for <span class="math inline">\(\alpha=1, \beta=2\)</span>. How does the error change as <span class="math inline">\(n\)</span> increases? Provide an appropriate plot as well as a description of the changes for increasing <span class="math inline">\(n\)</span>.</p></li>
+</ol>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -347,14 +421,13 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -704,7 +777,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/unl-statistics/stat850/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/unl-statistics/stat850/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

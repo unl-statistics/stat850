@@ -125,6 +125,5 @@ Anything that you have to do that doesn't fall under one of these objectives (e.
 
 ## Data Input
 
-
 - Read in data from common formats into R or Python
 - Identify delimiters, headers, and other essential components of files

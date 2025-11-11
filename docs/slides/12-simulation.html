@@ -6,8 +6,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.25">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.31">
 
   <title>STAT 850 – Simulation Using Built-In Functions</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -94,7 +94,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-d878a951bf411864e4812399b6de45a0.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-a2d545adc24850e99bc1115dcd6d7e9f.css">
   <link rel="stylesheet" href="deps/unl/styles.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -215,7 +215,7 @@
 <h2>How Bad is it? – Linearity</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a></a><span class="fu">set.seed</span>(<span class="dv">2034927344</span>)</span>
 <span id="cb1-3"><a></a>data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
 <span id="cb1-4"><a></a>  <span class="at">x1 =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">10</span>, </span>
@@ -231,7 +231,7 @@
 <span id="cb1-14"><a></a>)</span>
 <span id="cb1-15"><a></a></span>
 <span id="cb1-16"><a></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> x1, <span class="at">y =</span> y)) <span class="sc">+</span> </span>
-<span id="cb1-17"><a></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-17"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -247,8 +247,8 @@
 <h2>How Bad is it? – Linearity</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x1 <span class="sc">+</span> x2, <span class="at">data =</span> data)</span>
-<span id="cb2-2"><a></a><span class="fu">summary</span>(model)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x1 <span class="sc">+</span> x2, <span class="at">data =</span> data)</span>
+<span id="cb2-2"><a></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -276,8 +276,8 @@ F-statistic: 4.212 on 2 and 97 DF,  p-value: 0.01761</code></pre>
 <section id="how-bad-is-it" class="slide level2">
 <h2>How Bad is it?</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x1 <span class="sc">+</span> <span class="fu">I</span>(x1<span class="sc">^</span><span class="dv">2</span>), <span class="at">data =</span> data)</span>
-<span id="cb4-2"><a></a><span class="fu">summary</span>(model2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x1 <span class="sc">+</span> <span class="fu">I</span>(x1<span class="sc">^</span><span class="dv">2</span>), <span class="at">data =</span> data)</span>
+<span id="cb4-2"><a></a><span class="fu">summary</span>(model2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -317,7 +317,7 @@ F-statistic: 128.6 on 2 and 97 DF,  p-value: &lt; 2.2e-16</code></pre>
 <section id="simulation-linearity-assumption" class="slide level2">
 <h2>Simulation – Linearity assumption</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>sim_linearity <span class="ot">&lt;-</span> <span class="cf">function</span>(i, <span class="at">n =</span> <span class="dv">100</span>, <span class="at">formula =</span> y <span class="sc">~</span> x1<span class="sc">+</span>x2, <span class="at">trueformula =</span> y <span class="sc">~</span> x1 <span class="sc">+</span> <span class="fu">I</span>(x1<span class="sc">^</span><span class="dv">2</span>)) {</span>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>sim_linearity <span class="ot">&lt;-</span> <span class="cf">function</span>(i, <span class="at">n =</span> <span class="dv">100</span>, <span class="at">formula =</span> y <span class="sc">~</span> x1<span class="sc">+</span>x2, <span class="at">trueformula =</span> y <span class="sc">~</span> x1 <span class="sc">+</span> <span class="fu">I</span>(x1<span class="sc">^</span><span class="dv">2</span>)) {</span>
 <span id="cb6-2"><a></a>  data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
 <span id="cb6-3"><a></a>    <span class="at">x1 =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="at">length.out =</span> n) <span class="sc">+</span> <span class="fu">runif</span>(n, <span class="sc">-</span>.<span class="dv">1</span>, .<span class="dv">1</span>),</span>
 <span id="cb6-4"><a></a>    <span class="at">x2 =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="at">length.out =</span> n) <span class="sc">+</span> <span class="fu">runif</span>(n, <span class="sc">-</span>.<span class="dv">1</span>, .<span class="dv">1</span>),</span>
@@ -336,41 +336,41 @@ F-statistic: 128.6 on 2 and 97 DF,  p-value: &lt; 2.2e-16</code></pre>
 <span id="cb6-17"><a></a></span>
 <span id="cb6-18"><a></a><span class="fu">set.seed</span>(<span class="dv">249382736</span>)</span>
 <span id="cb6-19"><a></a>sim_n <span class="ot">&lt;-</span> <span class="fu">map_df</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>, <span class="sc">~</span><span class="fu">sim_linearity</span>(.)) <span class="sc">|&gt;</span> </span>
-<span id="cb6-20"><a></a>  <span class="fu">unnest</span>(model)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-20"><a></a>  <span class="fu">unnest</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="simulation-getting-estimates-out" class="slide level2">
 <h2>Simulation – Getting Estimates Out</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">library</span>(broom) <span class="co"># very useful for tidying nested model dataframes</span></span>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">library</span>(broom) <span class="co"># very useful for tidying nested model dataframes</span></span>
 <span id="cb7-2"><a></a></span>
 <span id="cb7-3"><a></a>sim_n <span class="ot">&lt;-</span> sim_n <span class="sc">|&gt;</span> <span class="fu">mutate</span>(</span>
 <span id="cb7-4"><a></a>  <span class="co"># One line per parameter</span></span>
 <span id="cb7-5"><a></a>  <span class="at">tidy_model =</span> purrr<span class="sc">::</span><span class="fu">map</span>(model, tidy), </span>
 <span id="cb7-6"><a></a>  <span class="co"># One line per model</span></span>
-<span id="cb7-7"><a></a>  <span class="at">glance_model =</span> purrr<span class="sc">::</span><span class="fu">map</span>(model, glance))  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb7-7"><a></a>  <span class="at">glance_model =</span> purrr<span class="sc">::</span><span class="fu">map</span>(model, glance))  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="error-variance" class="slide level2">
 <h2>Error Variance</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>tmp <span class="ot">&lt;-</span> sim_n <span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>tmp <span class="ot">&lt;-</span> sim_n <span class="sc">|&gt;</span></span>
 <span id="cb8-2"><a></a>  <span class="fu">unnest</span>(glance_model)</span>
 <span id="cb8-3"><a></a><span class="fu">ggplot</span>(tmp, <span class="fu">aes</span>(<span class="at">x =</span> sigma, <span class="at">fill =</span> type)) <span class="sc">+</span> </span>
 <span id="cb8-4"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span> </span>
-<span id="cb8-5"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">10</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb8-5"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">10</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="12-simulation_files/figure-revealjs/unnamed-chunk-6-1.png" width="768" class="r-stretch"></section>
 <section id="alpha-coefficient" class="slide level2">
 <h2><span class="math inline">\(\alpha\)</span> coefficient</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>sim_n<span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>sim_n<span class="sc">|&gt;</span></span>
 <span id="cb9-2"><a></a>  <span class="fu">unnest</span>(tidy_model) <span class="sc">|&gt;</span> <span class="fu">filter</span>(term <span class="sc">==</span> <span class="st">"x1"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb9-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> estimate, <span class="at">fill =</span> type)) <span class="sc">+</span> </span>
 <span id="cb9-4"><a></a>  <span class="fu">geom_density</span>() <span class="sc">+</span> </span>
 <span id="cb9-5"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span> </span>
-<span id="cb9-6"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>type, <span class="at">scales=</span><span class="st">"free"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-6"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>type, <span class="at">scales=</span><span class="st">"free"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="12-simulation_files/figure-revealjs/unnamed-chunk-7-1.png" width="768" class="r-stretch"><p><span class="fragment emph blue large">That is some <em>wide</em> error variance!</span></p>
@@ -379,14 +379,14 @@ F-statistic: 128.6 on 2 and 97 DF,  p-value: &lt; 2.2e-16</code></pre>
 <h2><span class="math inline">\(\beta\)</span> coefficient</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>sim_n<span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>sim_n<span class="sc">|&gt;</span></span>
 <span id="cb10-2"><a></a>  <span class="fu">unnest</span>(tidy_model) <span class="sc">|&gt;</span></span>
 <span id="cb10-3"><a></a>  <span class="co"># Only occurs in misspec model</span></span>
 <span id="cb10-4"><a></a>  <span class="fu">filter</span>(term <span class="sc">==</span> <span class="st">"x2"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb10-5"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> estimate, <span class="at">fill =</span> type)) <span class="sc">+</span> </span>
 <span id="cb10-6"><a></a>  <span class="fu">geom_density</span>(<span class="at">alpha=</span><span class="fl">0.5</span>) <span class="sc">+</span> </span>
 <span id="cb10-7"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, </span>
-<span id="cb10-8"><a></a>             <span class="at">linetype =</span> <span class="st">"dashed"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb10-8"><a></a>             <span class="at">linetype =</span> <span class="st">"dashed"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -589,7 +589,7 @@ F-statistic: 128.6 on 2 and 97 DF,  p-value: &lt; 2.2e-16</code></pre>
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -701,14 +701,13 @@ F-statistic: 128.6 on 2 and 97 DF,  p-value: &lt; 2.2e-16</code></pre>
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-          const outerScaffold = trigger.parentElement.cloneNode(true);
-          const codeEl = outerScaffold.querySelector('code');
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
             }
-          }
-          return codeEl.innerText;
+            return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

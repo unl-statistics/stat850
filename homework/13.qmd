@@ -1,8 +1,7 @@
 ---
 title: "Homework 13: Shiny"
-
 ---
 
 Note: This assignment must be submitted in github classroom.
 
-<!-- {{< include ../homework-templates/13/README.md >}} -->
+{{< include ../homework-templates/13/README.md >}}

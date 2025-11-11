@@ -21,10 +21,6 @@ Think about:
 - How do you, as a statistician, ensure that you understand the biases in your models?
 
 
-### 🎯 Check your understanding
-
-- [ ] Reading Quiz Week 15
-
 ## 🥣 Prepare for class
 
 - [ ] Work through the examples in the textbook
@@ -36,4 +32,8 @@ Think about:
 ## 🔨️ Thursday 🌩
 
 - [Slides](../slides/13-interactive-graphics.qmd)
+
+##  🏋️ Practice your skills
+
+- [ ] [Shiny Cocktails](../homework/13.qmd)
 
