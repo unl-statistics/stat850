@@ -1,0 +1,491 @@
+---
+title: "Interactive Graphics with Shiny"
+format: 
+    revealjs:
+        navigation-mode: vertical
+        logo: deps/unl/N.svg
+        theme: deps/unl/inverse.scss
+        css: deps/unl/styles.css
+        includes:
+          in_header: deps/unl/header.html
+        lib_dir: libs
+echo: true
+---
+
+## Shiny
+
+These slides modified from [https://github.com/dime-wb-trainings/shiny-training](https://github.com/dime-wb-trainings/shiny-training)
+
+## What Is Shiny?
+
+> Shiny is a web application framework for R that allows you to turn analyses into interactive web apps — all in R.
+
+![](images/shiny_logo.png)
+
+**Why use it?**
+
+- Easy to learn and use
+- Fast development cycle
+- Powerful for data visualization
+- Built on R (leverage your analysis directly)
+- Great for sharing insights interactively
+
+---
+
+## Anatomy of a Shiny App
+
+A Shiny app has two core components:
+
+- **UI (User Interface)**: Defines how the app looks
+- **Server**: Defines how the app works
+
+
+
+![](images/diagram_structure.png)
+
+---
+
+## The Client, Host, and Server
+
+Apps are served to users via a [host]{.emph .cerulean} and [port]{.emph .cerulean}. The R session running the server reacts to user actions, computes results, and sends them back.
+
+**Client**: The web browser where the user interacts with the app
+
+**Host:Port**: Shiny app is served at an IP (host) and port
+
+**Server**: Runs R session to monitor inputs and respond with outputs
+
+---
+
+![](images/host_structure.png){width="100%"}
+
+
+## Let's Build Our First App Together (with the help of the R template) ✍️
+
+**Step-by-step instructions:**
+
+1. Open RStudio
+2. If you haven’t already installed Shiny, run:
+```r
+install.packages("shiny")
+```
+3. Load the Shiny library:
+```r
+library(shiny)
+```
+4. Create a new Shiny Web App: Click on **File > New File > R Shiny Web App**
+
+
+
+```{r, echo=FALSE, out.width='85%'}
+# add image with size 
+knitr::include_graphics("images/new_app.png")
+
+```
+
+---
+
+## Let's Build Our First App Together (with the help of the R template) ✍️
+
+5\. Choose **Single File** option when prompted:
+
+```{r, echo=FALSE, out.width='40%'}
+# add image with size 
+knitr::include_graphics("images/single_file.png")
+
+```
+
+6\. Name your folder and click OK
+
+7\. Click **Run App** in the top-right corner
+
+8\. 🎉 You’re running your first Shiny app!
+
+# Let's Explore the Code 🧠
+## `ui` — User Interface
+::::: {.columns}
+::: {.column width="70%"}
+```{.r source-line-numbers="1"}
+ui <- fluidPage( #<<
+  titlePanel("Old Faithful Geyser Data"),
+  sidebarLayout(
+    sidebarPanel(
+      sliderInput("bins", 
+                  "Number of bins:", 
+                  min = 1, 
+                  max = 50, 
+                  value = 30)
+    ),
+    mainPanel(
+      plotOutput("distPlot")
+    )
+  )
+)
+```
+:::
+
+::: {.column width="30%"}
+```{r, echo=FALSE}
+knitr::include_graphics("images/fluidpage.png")
+```
+:::
+:::::
+
+**Layout elements**
+
+- **`fluidPage()`** is the container for the app interface, the layout in which your content is. This is the most common, but there are other types of layouts. Check [here](https://shiny.posit.co/r/articles/build/layout-guide/)
+
+## `ui` — User Interface
+
+::::: {.columns}
+::: {.column width="70%"}
+```{.r source-line-numbers="1"}
+ui <- fluidPage(
+  titlePanel("Old Faithful Geyser Data"),
+  sidebarLayout( #<<
+    sidebarPanel(
+      sliderInput("bins", 
+                  "Number of bins:", 
+                  min = 1, 
+                  max = 50, 
+                  value = 30)
+    ),
+    mainPanel(
+      plotOutput("distPlot")
+    )
+  )
+)
+```
+:::
+
+::: {.column width="30%"}
+```{r, echo=FALSE}
+knitr::include_graphics("images/sidebarlayout.png")
+```
+:::
+:::::
+
+**Layout elements**
+
+- **`sidebarLayout()`** splits the layout into sidebar (sidebarPanel()) and main area (mainPanel()). This is also optional.
+
+## `ui` — User Interface
+::::: {.columns}
+::: {.column width="70%"}
+```{.r source-line-numbers="1"}
+ui <- fluidPage(
+  titlePanel("Old Faithful Geyser Data"),
+  sidebarLayout(
+    sidebarPanel( #<<
+      sliderInput("bins",  #<<
+                  "Number of bins:",  #<<
+                  min = 1, #<<
+                  max = 50, #<<
+                  value = 30) #<<
+    ),
+    mainPanel(
+      plotOutput("distPlot")
+    )
+  )
+)
+```
+:::
+
+::: {.column width="30%"}
+```{r, echo=FALSE}
+knitr::include_graphics("images/sidebarpanel.png")
+```
+:::
+:::::
+
+**Page content**
+
+- **`sidebarPanel()`** contains one input field (`sliderInput()`) called “bins”. This is a slider that lets a user choose a number. As you can infer from the name, in this case, it's the number of histogram bins.
+
+## `ui` — User Interface
+::::: {.columns}
+::: {.column width="70%"}
+```{.r source-line-numbers="1"}
+ui <- fluidPage(
+  titlePanel("Old Faithful Geyser Data"),
+  sidebarLayout(
+    sidebarPanel(
+      sliderInput("bins", 
+                  "Number of bins:", 
+                  min = 1, 
+                  max = 50, 
+                  value = 30)
+    ),
+    mainPanel( #<<
+      plotOutput("distPlot") #<<
+    )
+  )
+)
+```
+:::
+
+::: {.column width="30%"}
+```{r, echo=FALSE}
+knitr::include_graphics("images/mainpanel.png")
+```
+:::
+:::::
+
+**Page content**
+
+- **`mainPanel()`** contains a histogram (`plotOutput()`), which will be defined in the server function. The name, or id, of this histogram is **“distPlot”**
+
+## Shiny `server` Logic Explained ⚙️
+
+```r
+server <- function(input, output) {
+...
+}
+```
+
+The `server()` function takes two arguments:
+
+- `input`: a **reactive list** of input values from the UI
+- `output`: a **reactive list** where you assign render functions
+
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/server.png")
+```
+
+**Reactive lists** are "special" lists used in **reactive programming** — a way to make your app **automatically update** outputs when inputs change.
+
+## Shiny `server` Logic Explained ⚙️
+
+
+```r
+server <- function(input, output) {
+  output$outputId <- renderFunction({
+    value <- input$inputId
+})
+}
+```
+
+Let's take a look at reactivity inside a simple `server( )`:
+
+- **`renderFunction`**: A function like `renderPlot()`, `renderTable()`, etc. used to render an output (a plot, a table...)
+- **`outputId`**: Identifies the rendered output in the output list (`output$`) for the UI
+- The function regenerates **`value`** every time the input field referenced by **inputID** in the **input** list changes.
+
+## Shiny `server` Logic Explained ⚙️
+
+
+```r
+server <- function(input, output) {
+  output$distPlot <- renderPlot({
+    x <- faithful[, 2]
+    bins <- seq(min(x), max(x), length.out = input$bins + 1)
+    
+    hist(x, breaks = bins, col = 'darkgray', border = 'white',
+         xlab = 'Waiting time to next eruption (in mins)',
+         main = 'Histogram of waiting times')
+  })
+}
+```
+
+
+
+::::: {.columns}
+::: {.column width="50%"}
+
+In our case:
+
+- the server contains the logic to create the histogram `distPlot` in the output list (`output$`), using the render function `renderPlot()`.
+
+- `distPlot`  depends on one user input 
+(`input$bins`), which pulls the number from the slider input in the UI.
+
+:::
+::: {.column width="50%"}
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/server2.png")
+```
+
+ ➡️️ **Result**: the histogram updates as the slider moves!
+:::
+:::::
+
+## How the Server Connects to the UI 🧩
+
+Remember these connections?
+
+
+
+| UI        | Server    |
+| --------- | --------- | 
+| `plotOutput("distPlot")`  |`output$distPlot <- renderPlot()`   | 
+| `sliderInput("bins", ...)`  | `input$bins`  | 
+
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/inputoutput2.png")
+#cat('<img src="images/inputoutput.png" style="width: 100%; height: auto;" />')
+```
+
+
+## Inputs & Outputs in Shiny 🧠
+
+Shiny apps are built by connecting **inputs** (from the UI) to **outputs** (rendered in the server).
+
+| Part     | Role                                    | Examples                        |
+| -------- | --------------------------------------- | ------------------------------- |
+| `ui`     | Define layout and inputs/outputs        | `sliderInput()`, `plotOutput()` |
+| `server` | Logic to render outputs based on inputs | `renderPlot()`, `renderText()`  |
+
+🔁 **Reactivity** connects them:
+
+* `input$...` pulls values from UI controls
+* `output$... <- render...()` generates dynamic content
+
+---
+
+## A recap on Reactivity 🔁
+
+* **Reactive programming** lets your app respond to changes without needing to re-run code manually.
+* `input` and `output` behave like **reactive lists** — not regular R lists, but special objects in Shiny.
+* When a user selects a value on the slider, say **5**, Shiny stores it as `input$bins = 5`.
+* If the user changes it to **7**, Shiny automatically updates the `input` list — and any **render function** using it will re-execute.
+* This is why `output$distPlot <- renderPlot({ ... input$bins ... })` updates **instantly**.
+
+Together, `input`, `output`, and `render*()` functions form the **reactive backbone** of your app.
+
+
+
+## Common Input Widgets 🛠️️
+
+Shiny includes many built-in **widgets** to capture user input:
+
+| Widget           | Purpose                    | Example Use       |
+| ---------------- | -------------------------- | ----------------- |
+| `numericInput()` | Enter a number             | Age, price        |
+| `sliderInput()`  | Select from a range        | Histogram bins    |
+| `selectInput()`  | Choose from a list         | Country selector  |
+| `radioButtons()` | Choose one option          | Plot type         |
+| `textInput()`    | Enter text                 | Comments, filters |
+| `fileInput()`    | Upload a file              | CSV, Excel        |
+| `actionButton()` | Trigger an action manually | Run, Submit       |
+
+📚 See the full gallery:
+➡️ [Shiny Widgets Gallery](https://shiny.posit.co/r/gallery/widgets/widget-gallery/)
+
+---
+
+
+## Let's start with some basic modifications  ✍️
+
+
+1. Change the title of the app
+2. Change the number of bins to 20
+3. Change the color of the histogram to `#ca8dfd` (a shade of purple)
+
+
+## Let's start with some basic modifications  ✍️
+
+After your modifications the app should look like this:
+
+```{r, echo=FALSE, out.width='40%'}
+# add image with size
+knitr::include_graphics("images/app_edit.png")
+
+```
+
+- The app with the modifications is available [here](https://github.com/dime-wb-trainings/shiny-training/blob/main/example_single/app.R)
+
+## Behind the Scenes: Running a Shiny App ⚙️
+
+Before you close the app, check the **R console**. You'll see something like:
+
+```r
+#> Listening on http://127.0.0.1:3827
+```
+
+🔍 **What it means:**
+- `127.0.0.1` refers to your local machine ("localhost")
+- `3827` is a random port number
+- You can open the app in any browser using this address
+
+⛔ **While the app is running:**
+- The R console is blocked (no new commands allowed)
+- A stop sign appears in the RStudio toolbar
+
+🛑 **To stop the app:**
+- Click the stop sign icon
+- Press `Esc` (or `Ctrl + C` in terminal)
+- Close the Shiny app window
+
+
+## Questions 
+
+![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExajJ2ZjYwaDJjd2E5c3hhaDA1Njd1MXY2N2RhaDYzcHBpMjBzYmVtYSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/xT0xeuOy2Fcl9vDGiA/giphy.gif)
+
+
+## Share your Shiny app
+
+- 🏢 **Posit Connect Internal Server**  
+  - Recommended option for **secure deployment within the Bank**
+  - Content is deployed on Bank server behind a firewall, **only accessible to Bank employees**
+  
+  
+- 🌐 **Posit Connect Public Server**  
+  - Content is deployed on Bank server behind a firewall, but accessible to all. 
+  - **Only display public use data**
+
+For both:
+
+  - Push-button publishing from RStudio or publish directly from GitHub 
+  
+  - Request Posit Connect access as a Software Request
+  
+  - [Learn more](https://posit.co/products/enterprise/connect/), [Internal Resources](https://w0lxdrconn01.worldbank.org/user-guide/wb-connect-users-guide.html)
+  
+---
+  
+## Share your Shiny app 
+  
+  
+```{r, echo=FALSE, out.width='50%'}
+knitr::include_graphics("images/posit_connect.png")
+```
+  
+
+---
+
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGJ5ejdmZXlsZmdraXJ2aWZpamQ3M2t0MG1iZjd4enM3Nm9sZW1iYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KzOey2JYlgHAc/giphy.gif){width="100%"}
+
+
+## Additional Resources 📚
+
+Want to go further with Shiny? Here are some helpful resources:
+
+- 🧪 **Shiny Tutorial** (Official Getting Started Guide) [here](https://shiny.posit.co/tutorial)  
+
+- 📘 **Mastering Shiny** by Hadley Wickham (Free online book) [here](https://mastering-shiny.org) 
+
+- 💡 **Shiny Widgets Gallery**  [here](https://shiny.posit.co/r/gallery/widgets/widget-gallery/)
+
+- 🧩 **Awesome Shiny Extensions** (Community plugins)  [here](https://github.com/nanxstats/awesome-shiny-extensions)
+  
+- 🌐 **Shiny Community** (Forums, discussions) [here](https://community.rstudio.com/c/shiny)
+  
+- 📦 **Building Web Applications** (Training) [here](https://rstudio-education.github.io/shiny-course/)
+
+- 🧱 **Adding multiple objects in layout** [here](https://shiny.posit.co/r/reference/shiny/0.14/column.html)
+
+## Some examples ✨
+
+- Shiny App Gallery [here](https://shiny.posit.co/r/gallery/)
+
+- California Schools Climate Hazards Dashboard [here](https://schoolclimatehazards.grit.ucsb.edu/)
+
+- New Zealand Trade Intelligence Dashboard [here](https://gallery.shinyapps.io/nz-trade-dash)
+
+- Locating Blood Banks in India [here](https://opndt.shinyapps.io/bloodbank_india/)
+
+- Understanding voters’ profile in Brazilian elections [here](https://shiny.posit.co/r/gallery/government-public-sector/brazil-voter-profile/)

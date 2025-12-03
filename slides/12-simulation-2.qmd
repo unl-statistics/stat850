@@ -1,42 +1,43 @@
 ---
-title: "Simulation - now with results!"
-date: "2024-11-19"
-categories: Slides
+title: "Random Walks and MCMC"
+date: "2025-11-18"
 format: 
-  revealjs:
-    theme: default
+    revealjs:
+        navigation-mode: vertical
+        logo: deps/unl/N.svg
+        theme: deps/unl/inverse.scss
+        css: deps/unl/styles.css
+        includes:
+          in_header: deps/unl/header.html
+        lib_dir: libs
+echo: true
 ---
 
-## Today's Goals:
+## Non-standard distributions
 
-- Work on deliverable number 3 for homework 11: simulate!
+How do we sample from distributions that are not gamma, exponential, normal, etc?
 
+$$ f(x)=\begin{cases} 2-4x, & 0 \leq x< 1/2\\ 4x-2, & 1/2 \leq x \leq 1 \end{cases} $$
 
-- Three deliverables in total: `pseudocode.qmd`, `craps-code.qmd`, and `simulation.qmd` (this week)
+## Inverse Probability Sampling
 
-----
-
-## `Simulate.qmd`
-
-- In your repo, create a file with that name.
-
-- You need to answer the following three questions:
-  
-  1. Which probability do you want to estimate?
-  2. What is the simulation result (in numbers and visuals)?
-  3. What is the simulation variability?
-
-Make sure to set a seed to make your analysis reproducible. 
-
-----
-
-## Resources
-
-- [R cheat sheet](https://srvanderplas.github.io/stat-computing-r-python/files/Short-refcard.pdf)
-
-- [python cheat sheet](https://srvanderplas.github.io/stat-computing-r-python/files/Python3_reference_cheat_sheet.pdf)
+1. Get the CDF, $F(x) = ...$
+2. Invert the CDF to get $F^{-1}(u) = x$
+3. Generate uniform $u\sim U[0,1]$ random variables
+4. Use the Inverse CDF to get samples $x$ from $f(x)$
 
 
+## Inverse Probability Sampling
+
+$$F(x) = \begin{cases} -2x^2 + 2x, & 0 \leq x< 1/2\\ \hphantom{-}2x^2-2x, & 1/2 \leq x \leq 1 \end{cases}$$
+
+$$F^{-1}(u) = \begin{cases} \frac{1}{2}-\frac{\sqrt{1-2u}}{2} & u < 0.5\\\frac{1}{2} + \frac{\sqrt{u}}{\sqrt2} & u \geq 0.5\end{cases}$$
 
 
+```{r}
+set.seed(2043872)
+u <- runif(100)
+x <- 1/2 -0.5*(1-2*u)*(u<0.5) + (u/2)^0.5 * (u>0.5)
+hist(x)
+```
 
