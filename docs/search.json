@@ -84,25 +84,200 @@
     "text": "In the following examples, evaluate each problem using the criteria of a minimal reproducible example from this StackOverflow post.\nSpecifically, address the following things:\n\nAre the question and problem description complete?\nIs the issue reproducible? Does it have a description of the problem, with code that reproduces the problem? What could improve it?\nIs the example minimal? Does it include extra code or information that is not necessary?\nDoes the question describe any attempted solutions?\n\nThen, using what you know about R and Python, try to debug the problem using the strategies in the debugging chapter. Once you are thoroughly stumped, or you believe you have solved the problem, compare your solutions to those given on StackOverflow using the link.\n\nWhy Doesn’t this R function work?\n\nI created the following function to append new strings on a vector of strings called “meals”. However, when I use this function to append an string input into my “meals” vector, it does not work.\n\n add &lt;- function(str) {\n      meals &lt;- append(meals, as.character(str))  \n    }\nLink to original SO post.\n\n\nFunction not working R\n\nI’ve never programmed before and am trying to learn. I’m following that “coursera” course that I’ve seen other people post about — a course offered by Johns Hopkins on R programming.\n\n\nAnyway, this was supposed to be my first function. Yet, it doesn’t work! But when I type out all the steps individually, it runs just fine… Can anyone tell me why?\n\npollutantmean &lt;- function(directory, pollutant, id = 1:332){\n    x&lt;- list.files(\"/Users/mike******/Desktop/directory\", full.names=TRUE)\n    y&lt;- lapply(x, read.csv)\n    z&lt;- do.call(rbind.data.frame, y[id])\n\n    mean(z$pollutant, na.rm=TRUE)\n}\npollutantmean(specdata,nitrate,1:10)\n[1] NA\nWarning message:\nIn mean.default(z$pollutant, na.rm = TRUE) :\n  argument is not numeric or logical: returning NA\n\n####\n\nx&lt;- list.files(\"/Users/mike******/Desktop/specdata\",full.names=TRUE)\ny&lt;- lapply(x,read.csv)\nz&lt;- do.call(rbind.data.frame,y[1:10])\nmean(z$nitrate,na.rm=TRUE)\n[1] 0.7976266\nLink\n\n\nInexplicable error when trying to export my R notebook\n\nGetting this error from R Markdown when trying to export my .RMD\n\n\"Error in filter(Gastropods, Species == \"Cellana\") :  object 'Species' not found Calls: &lt;Anonymous&gt; ... withCallingHandlers -&gt; withVisible -&gt; eval -&gt; eval -&gt; filter\"\n\nHowever, all my plots are coming out successfully. I can clearly see in the data that the species column is there and that Cellana is a species. No spelling errors or anything.\n\n\nMy first 20 or so lines of code are below (between the ### symbols)\n\n\n\n###\n---\ntitle: \" Lab Report 2 - z5016113\"\noutput: html_notebook\ni---\n\n#1. Gastropod abundance vs. height on the shore\n\n```{r}\nGastropods &lt;- read.csv(file = \"MaroubraZones.csv\", header = TRUE)\nlibrary(ggplot2, dplyr)\n```\n\n```{r}\nGastropods$Zone &lt;- factor(Gastropods$Zone, levels = c(\"Low\", \"Mid\", \"High\"))\n```\n\n```{r}\nCellana &lt;- filter(Gastropods, Species == \"Cellana\")  ------&gt; This line is causing the error\n```\n\n```{r}\nggplot(Cellana, aes(Zone, Abundance)) + geom_boxplot()\n```\n###\n\n\nYou can find this sample file here\nLink\n\n\nPython if elif else statement\n\nI’m trying to create a program with python that calculate the cost for shipping.\n\n\nHowever, I can’t run the program to where it works properly.\n\n\nWhat ever my total is the same amount comes out as $6 for US and $8 for Canada. I can’t seem to get pass that.\n\n\nExample:\n\ntotal = raw_input('What is the total amount for your online shopping?')\ncountry = raw_input('Shipping within the US or Canada?')\n\nif country == \"US\":\n    if total &lt;= \"50\":\n        print \"Shipping Costs $6.00\"\n    elif total &lt;= \"100\":\n            print \"Shipping Costs $9.00\"\n    elif total &lt;= \"150\":\n            print \"Shipping Costs $12.00\"\n    else:\n        print \"FREE\"\n\nif country == \"Canada\":\n    if total &lt;= \"50\":\n        print \"Shipping Costs $8.00\"\n    elif total &lt;= \"100\":\n        print \"Shipping Costs $12.00\"\n    elif total &lt;= \"150\":\n        print \"Shipping Costs $15.00\"\n    else:\n        print \"FREE\"\nLink"
   },
   {
-    "objectID": "slides/12-simulation-2.html#todays-goals",
-    "href": "slides/12-simulation-2.html#todays-goals",
-    "title": "Simulation - now with results!",
-    "section": "Today’s Goals:",
-    "text": "Today’s Goals:\n\nWork on deliverable number 3 for homework 11: simulate!\nThree deliverables in total: pseudocode.qmd, craps-code.qmd, and simulation.qmd (this week)"
+    "objectID": "slides/13-interactive-graphics.html#shiny",
+    "href": "slides/13-interactive-graphics.html#shiny",
+    "title": "Interactive Graphics with Shiny",
+    "section": "Shiny",
+    "text": "Shiny\nThese slides modified from https://github.com/dime-wb-trainings/shiny-training"
   },
   {
-    "objectID": "slides/12-simulation-2.html#simulate.qmd",
-    "href": "slides/12-simulation-2.html#simulate.qmd",
-    "title": "Simulation - now with results!",
-    "section": "Simulate.qmd",
-    "text": "Simulate.qmd\n\nIn your repo, create a file with that name.\nYou need to answer the following three questions:\n\nWhich probability do you want to estimate?\nWhat is the simulation result (in numbers and visuals)?\nWhat is the simulation variability?\n\n\nMake sure to set a seed to make your analysis reproducible."
+    "objectID": "slides/13-interactive-graphics.html#what-is-shiny",
+    "href": "slides/13-interactive-graphics.html#what-is-shiny",
+    "title": "Interactive Graphics with Shiny",
+    "section": "What Is Shiny?",
+    "text": "What Is Shiny?\n\nShiny is a web application framework for R that allows you to turn analyses into interactive web apps — all in R.\n\n\nWhy use it?\n\nEasy to learn and use\nFast development cycle\nPowerful for data visualization\nBuilt on R (leverage your analysis directly)\nGreat for sharing insights interactively"
   },
   {
-    "objectID": "slides/12-simulation-2.html#resources",
-    "href": "slides/12-simulation-2.html#resources",
-    "title": "Simulation - now with results!",
-    "section": "Resources",
-    "text": "Resources\n\nR cheat sheet\npython cheat sheet"
+    "objectID": "slides/13-interactive-graphics.html#anatomy-of-a-shiny-app",
+    "href": "slides/13-interactive-graphics.html#anatomy-of-a-shiny-app",
+    "title": "Interactive Graphics with Shiny",
+    "section": "Anatomy of a Shiny App",
+    "text": "Anatomy of a Shiny App\nA Shiny app has two core components:\n\nUI (User Interface): Defines how the app looks\nServer: Defines how the app works"
+  },
+  {
+    "objectID": "slides/13-interactive-graphics.html#the-client-host-and-server",
+    "href": "slides/13-interactive-graphics.html#the-client-host-and-server",
+    "title": "Interactive Graphics with Shiny",
+    "section": "The Client, Host, and Server",
+    "text": "The Client, Host, and Server\nApps are served to users via a host and port. The R session running the server reacts to user actions, computes results, and sends them back.\nClient: The web browser where the user interacts with the app\nHost:Port: Shiny app is served at an IP (host) and port\nServer: Runs R session to monitor inputs and respond with outputs"
+  },
+  {
+    "objectID": "slides/13-interactive-graphics.html#lets-build-our-first-app-together-with-the-help-of-the-r-template",
+    "href": "slides/13-interactive-graphics.html#lets-build-our-first-app-together-with-the-help-of-the-r-template",
+    "title": "Interactive Graphics with Shiny",
+    "section": "Let’s Build Our First App Together (with the help of the R template) ✍️",
+    "text": "Let’s Build Our First App Together (with the help of the R template) ✍️\nStep-by-step instructions:\n\nOpen RStudio\nIf you haven’t already installed Shiny, run:\n\ninstall.packages(\"shiny\")\n\nLoad the Shiny library:\n\nlibrary(shiny)\n\nCreate a new Shiny Web App: Click on File &gt; New File &gt; R Shiny Web App"
+  },
+  {
+    "objectID": "slides/13-interactive-graphics.html#lets-build-our-first-app-together-with-the-help-of-the-r-template-1",
+    "href": "slides/13-interactive-graphics.html#lets-build-our-first-app-together-with-the-help-of-the-r-template-1",
+    "title": "Interactive Graphics with Shiny",
+    "section": "Let’s Build Our First App Together (with the help of the R template) ✍️",
+    "text": "Let’s Build Our First App Together (with the help of the R template) ✍️\n5. Choose Single File option when prompted:\n\n6. Name your folder and click OK\n7. Click Run App in the top-right corner\n8. 🎉 You’re running your first Shiny app!"
+  },
+  {
+    "objectID": "slides/13-interactive-graphics.html#ui-user-interface",
+    "href": "slides/13-interactive-graphics.html#ui-user-interface",
+    "title": "Interactive Graphics with Shiny",
+    "section": "ui — User Interface",
+    "text": "ui — User Interface\n\n\nui &lt;- fluidPage( #&lt;&lt;\n  titlePanel(\"Old Faithful Geyser Data\"),\n  sidebarLayout(\n    sidebarPanel(\n      sliderInput(\"bins\", \n                  \"Number of bins:\", \n                  min = 1, \n                  max = 50, \n                  value = 30)\n    ),\n    mainPanel(\n      plotOutput(\"distPlot\")\n    )\n  )\n)\n\n\n\n\n\n\n\n\n\n\n\nLayout elements\n\nfluidPage() is the container for the app interface, the layout in which your content is. This is the most common, but there are other types of layouts. Check here"
+  },
+  {
+    "objectID": "slides/13-interactive-graphics.html#ui-user-interface-1",
+    "href": "slides/13-interactive-graphics.html#ui-user-interface-1",
+    "title": "Interactive Graphics with Shiny",
+    "section": "ui — User Interface",
+    "text": "ui — User Interface\n\n\nui &lt;- fluidPage(\n  titlePanel(\"Old Faithful Geyser Data\"),\n  sidebarLayout( #&lt;&lt;\n    sidebarPanel(\n      sliderInput(\"bins\", \n                  \"Number of bins:\", \n                  min = 1, \n                  max = 50, \n                  value = 30)\n    ),\n    mainPanel(\n      plotOutput(\"distPlot\")\n    )\n  )\n)\n\n\n\n\n\n\n\n\n\n\n\nLayout elements\n\nsidebarLayout() splits the layout into sidebar (sidebarPanel()) and main area (mainPanel()). This is also optional."
+  },
+  {
+    "objectID": "slides/13-interactive-graphics.html#ui-user-interface-2",
+    "href": "slides/13-interactive-graphics.html#ui-user-interface-2",
+    "title": "Interactive Graphics with Shiny",
+    "section": "ui — User Interface",
+    "text": "ui — User Interface\n\n\nui &lt;- fluidPage(\n  titlePanel(\"Old Faithful Geyser Data\"),\n  sidebarLayout(\n    sidebarPanel( #&lt;&lt;\n      sliderInput(\"bins\",  #&lt;&lt;\n                  \"Number of bins:\",  #&lt;&lt;\n                  min = 1, #&lt;&lt;\n                  max = 50, #&lt;&lt;\n                  value = 30) #&lt;&lt;\n    ),\n    mainPanel(\n      plotOutput(\"distPlot\")\n    )\n  )\n)\n\n\n\n\n\n\n\n\n\n\n\nPage content\n\nsidebarPanel() contains one input field (sliderInput()) called “bins”. This is a slider that lets a user choose a number. As you can infer from the name, in this case, it’s the number of histogram bins."
+  },
+  {
+    "objectID": "slides/13-interactive-graphics.html#ui-user-interface-3",
+    "href": "slides/13-interactive-graphics.html#ui-user-interface-3",
+    "title": "Interactive Graphics with Shiny",
+    "section": "ui — User Interface",
+    "text": "ui — User Interface\n\n\nui &lt;- fluidPage(\n  titlePanel(\"Old Faithful Geyser Data\"),\n  sidebarLayout(\n    sidebarPanel(\n      sliderInput(\"bins\", \n                  \"Number of bins:\", \n                  min = 1, \n                  max = 50, \n                  value = 30)\n    ),\n    mainPanel( #&lt;&lt;\n      plotOutput(\"distPlot\") #&lt;&lt;\n    )\n  )\n)\n\n\n\n\n\n\n\n\n\n\n\nPage content\n\nmainPanel() contains a histogram (plotOutput()), which will be defined in the server function. The name, or id, of this histogram is “distPlot”"
+  },
+  {
+    "objectID": "slides/13-interactive-graphics.html#shiny-server-logic-explained",
+    "href": "slides/13-interactive-graphics.html#shiny-server-logic-explained",
+    "title": "Interactive Graphics with Shiny",
+    "section": "Shiny server Logic Explained ⚙️",
+    "text": "Shiny server Logic Explained ⚙️\nserver &lt;- function(input, output) {\n...\n}\nThe server() function takes two arguments:\n\ninput: a reactive list of input values from the UI\noutput: a reactive list where you assign render functions\n\n\nReactive lists are “special” lists used in reactive programming — a way to make your app automatically update outputs when inputs change."
+  },
+  {
+    "objectID": "slides/13-interactive-graphics.html#shiny-server-logic-explained-1",
+    "href": "slides/13-interactive-graphics.html#shiny-server-logic-explained-1",
+    "title": "Interactive Graphics with Shiny",
+    "section": "Shiny server Logic Explained ⚙️",
+    "text": "Shiny server Logic Explained ⚙️\nserver &lt;- function(input, output) {\n  output$outputId &lt;- renderFunction({\n    value &lt;- input$inputId\n})\n}\nLet’s take a look at reactivity inside a simple server( ):\n\nrenderFunction: A function like renderPlot(), renderTable(), etc. used to render an output (a plot, a table…)\noutputId: Identifies the rendered output in the output list (output$) for the UI\nThe function regenerates value every time the input field referenced by inputID in the input list changes."
+  },
+  {
+    "objectID": "slides/13-interactive-graphics.html#shiny-server-logic-explained-2",
+    "href": "slides/13-interactive-graphics.html#shiny-server-logic-explained-2",
+    "title": "Interactive Graphics with Shiny",
+    "section": "Shiny server Logic Explained ⚙️",
+    "text": "Shiny server Logic Explained ⚙️\nserver &lt;- function(input, output) {\n  output$distPlot &lt;- renderPlot({\n    x &lt;- faithful[, 2]\n    bins &lt;- seq(min(x), max(x), length.out = input$bins + 1)\n    \n    hist(x, breaks = bins, col = 'darkgray', border = 'white',\n         xlab = 'Waiting time to next eruption (in mins)',\n         main = 'Histogram of waiting times')\n  })\n}\n\n\nIn our case:\n\nthe server contains the logic to create the histogram distPlot in the output list (output$), using the render function renderPlot().\ndistPlot depends on one user input (input$bins), which pulls the number from the slider input in the UI.\n\n\n\n\n\n\n\n\n\n\n\n➡️️ Result: the histogram updates as the slider moves!"
+  },
+  {
+    "objectID": "slides/13-interactive-graphics.html#how-the-server-connects-to-the-ui",
+    "href": "slides/13-interactive-graphics.html#how-the-server-connects-to-the-ui",
+    "title": "Interactive Graphics with Shiny",
+    "section": "How the Server Connects to the UI 🧩",
+    "text": "How the Server Connects to the UI 🧩\nRemember these connections?\n\n\n\nUI\nServer\n\n\n\n\nplotOutput(\"distPlot\")\noutput$distPlot &lt;- renderPlot()\n\n\nsliderInput(\"bins\", ...)\ninput$bins"
+  },
+  {
+    "objectID": "slides/13-interactive-graphics.html#inputs-outputs-in-shiny",
+    "href": "slides/13-interactive-graphics.html#inputs-outputs-in-shiny",
+    "title": "Interactive Graphics with Shiny",
+    "section": "Inputs & Outputs in Shiny 🧠",
+    "text": "Inputs & Outputs in Shiny 🧠\nShiny apps are built by connecting inputs (from the UI) to outputs (rendered in the server).\n\n\n\n\n\n\n\n\nPart\nRole\nExamples\n\n\n\n\nui\nDefine layout and inputs/outputs\nsliderInput(), plotOutput()\n\n\nserver\nLogic to render outputs based on inputs\nrenderPlot(), renderText()\n\n\n\n🔁 Reactivity connects them:\n\ninput$... pulls values from UI controls\noutput$... &lt;- render...() generates dynamic content"
+  },
+  {
+    "objectID": "slides/13-interactive-graphics.html#a-recap-on-reactivity",
+    "href": "slides/13-interactive-graphics.html#a-recap-on-reactivity",
+    "title": "Interactive Graphics with Shiny",
+    "section": "A recap on Reactivity 🔁",
+    "text": "A recap on Reactivity 🔁\n\nReactive programming lets your app respond to changes without needing to re-run code manually.\ninput and output behave like reactive lists — not regular R lists, but special objects in Shiny.\nWhen a user selects a value on the slider, say 5, Shiny stores it as input$bins = 5.\nIf the user changes it to 7, Shiny automatically updates the input list — and any render function using it will re-execute.\nThis is why output$distPlot &lt;- renderPlot({ ... input$bins ... }) updates instantly.\n\nTogether, input, output, and render*() functions form the reactive backbone of your app."
+  },
+  {
+    "objectID": "slides/13-interactive-graphics.html#common-input-widgets",
+    "href": "slides/13-interactive-graphics.html#common-input-widgets",
+    "title": "Interactive Graphics with Shiny",
+    "section": "Common Input Widgets 🛠️️",
+    "text": "Common Input Widgets 🛠️️\nShiny includes many built-in widgets to capture user input:\n\n\n\nWidget\nPurpose\nExample Use\n\n\n\n\nnumericInput()\nEnter a number\nAge, price\n\n\nsliderInput()\nSelect from a range\nHistogram bins\n\n\nselectInput()\nChoose from a list\nCountry selector\n\n\nradioButtons()\nChoose one option\nPlot type\n\n\ntextInput()\nEnter text\nComments, filters\n\n\nfileInput()\nUpload a file\nCSV, Excel\n\n\nactionButton()\nTrigger an action manually\nRun, Submit\n\n\n\n📚 See the full gallery: ➡️ Shiny Widgets Gallery"
+  },
+  {
+    "objectID": "slides/13-interactive-graphics.html#lets-start-with-some-basic-modifications",
+    "href": "slides/13-interactive-graphics.html#lets-start-with-some-basic-modifications",
+    "title": "Interactive Graphics with Shiny",
+    "section": "Let’s start with some basic modifications ✍️",
+    "text": "Let’s start with some basic modifications ✍️\n\nChange the title of the app\nChange the number of bins to 20\nChange the color of the histogram to #ca8dfd (a shade of purple)"
+  },
+  {
+    "objectID": "slides/13-interactive-graphics.html#lets-start-with-some-basic-modifications-1",
+    "href": "slides/13-interactive-graphics.html#lets-start-with-some-basic-modifications-1",
+    "title": "Interactive Graphics with Shiny",
+    "section": "Let’s start with some basic modifications ✍️",
+    "text": "Let’s start with some basic modifications ✍️\nAfter your modifications the app should look like this:\n\n\nThe app with the modifications is available here"
+  },
+  {
+    "objectID": "slides/13-interactive-graphics.html#behind-the-scenes-running-a-shiny-app",
+    "href": "slides/13-interactive-graphics.html#behind-the-scenes-running-a-shiny-app",
+    "title": "Interactive Graphics with Shiny",
+    "section": "Behind the Scenes: Running a Shiny App ⚙️",
+    "text": "Behind the Scenes: Running a Shiny App ⚙️\nBefore you close the app, check the R console. You’ll see something like:\n#&gt; Listening on http://127.0.0.1:3827\n🔍 What it means: - 127.0.0.1 refers to your local machine (“localhost”) - 3827 is a random port number - You can open the app in any browser using this address\n⛔ While the app is running: - The R console is blocked (no new commands allowed) - A stop sign appears in the RStudio toolbar\n🛑 To stop the app: - Click the stop sign icon - Press Esc (or Ctrl + C in terminal) - Close the Shiny app window"
+  },
+  {
+    "objectID": "slides/13-interactive-graphics.html#questions",
+    "href": "slides/13-interactive-graphics.html#questions",
+    "title": "Interactive Graphics with Shiny",
+    "section": "Questions",
+    "text": "Questions"
+  },
+  {
+    "objectID": "slides/13-interactive-graphics.html#share-your-shiny-app",
+    "href": "slides/13-interactive-graphics.html#share-your-shiny-app",
+    "title": "Interactive Graphics with Shiny",
+    "section": "Share your Shiny app",
+    "text": "Share your Shiny app\n\n🏢 Posit Connect Internal Server\n\nRecommended option for secure deployment within the Bank\nContent is deployed on Bank server behind a firewall, only accessible to Bank employees\n\n🌐 Posit Connect Public Server\n\nContent is deployed on Bank server behind a firewall, but accessible to all.\nOnly display public use data\n\n\nFor both:\n\nPush-button publishing from RStudio or publish directly from GitHub\nRequest Posit Connect access as a Software Request\nLearn more, Internal Resources"
+  },
+  {
+    "objectID": "slides/13-interactive-graphics.html#share-your-shiny-app-1",
+    "href": "slides/13-interactive-graphics.html#share-your-shiny-app-1",
+    "title": "Interactive Graphics with Shiny",
+    "section": "Share your Shiny app",
+    "text": "Share your Shiny app"
+  },
+  {
+    "objectID": "slides/13-interactive-graphics.html#additional-resources",
+    "href": "slides/13-interactive-graphics.html#additional-resources",
+    "title": "Interactive Graphics with Shiny",
+    "section": "Additional Resources 📚",
+    "text": "Additional Resources 📚\nWant to go further with Shiny? Here are some helpful resources:\n\n🧪 Shiny Tutorial (Official Getting Started Guide) here\n📘 Mastering Shiny by Hadley Wickham (Free online book) here\n💡 Shiny Widgets Gallery here\n🧩 Awesome Shiny Extensions (Community plugins) here\n🌐 Shiny Community (Forums, discussions) here\n📦 Building Web Applications (Training) here\n🧱 Adding multiple objects in layout here"
+  },
+  {
+    "objectID": "slides/13-interactive-graphics.html#some-examples",
+    "href": "slides/13-interactive-graphics.html#some-examples",
+    "title": "Interactive Graphics with Shiny",
+    "section": "Some examples ✨",
+    "text": "Some examples ✨\n\nShiny App Gallery here\nCalifornia Schools Climate Hazards Dashboard here\nNew Zealand Trade Intelligence Dashboard here\nLocating Blood Banks in India here\nUnderstanding voters’ profile in Brazilian elections here"
+  },
+  {
+    "objectID": "slides/12-simulation-2.html#non-standard-distributions",
+    "href": "slides/12-simulation-2.html#non-standard-distributions",
+    "title": "Random Walks and MCMC",
+    "section": "Non-standard distributions",
+    "text": "Non-standard distributions\nHow do we sample from distributions that are not gamma, exponential, normal, etc?\n\\[ f(x)=\\begin{cases} 2-4x, & 0 \\leq x&lt; 1/2\\\\ 4x-2, & 1/2 \\leq x \\leq 1 \\end{cases} \\]"
+  },
+  {
+    "objectID": "slides/12-simulation-2.html#inverse-probability-sampling",
+    "href": "slides/12-simulation-2.html#inverse-probability-sampling",
+    "title": "Random Walks and MCMC",
+    "section": "Inverse Probability Sampling",
+    "text": "Inverse Probability Sampling\n\nGet the CDF, \\(F(x) = ...\\)\nInvert the CDF to get \\(F^{-1}(u) = x\\)\nGenerate uniform \\(u\\sim U[0,1]\\) random variables\nUse the Inverse CDF to get samples \\(x\\) from \\(f(x)\\)"
+  },
+  {
+    "objectID": "slides/12-simulation-2.html#inverse-probability-sampling-1",
+    "href": "slides/12-simulation-2.html#inverse-probability-sampling-1",
+    "title": "Random Walks and MCMC",
+    "section": "Inverse Probability Sampling",
+    "text": "Inverse Probability Sampling\n\\[F(x) = \\begin{cases} -2x^2 + 2x, & 0 \\leq x&lt; 1/2\\\\ \\hphantom{-}2x^2-2x, & 1/2 \\leq x \\leq 1 \\end{cases}\\]\n\\[F^{-1}(u) = \\begin{cases} \\frac{1}{2}-\\frac{\\sqrt{1-2u}}{2} & u &lt; 0.5\\\\\\frac{1}{2} + \\frac{\\sqrt{u}}{\\sqrt2} & u \\geq 0.5\\end{cases}\\]\n\nset.seed(2043872)\nu &lt;- runif(100)\nx &lt;- 1/2 -0.5*(1-2*u)*(u&lt;0.5) + (u/2)^0.5 * (u&gt;0.5)\nhist(x)"
   },
   {
     "objectID": "slides/08-graphics.html#this-weeks-big-picture-goal",

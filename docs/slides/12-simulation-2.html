@@ -9,8 +9,8 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.31">
 
-  <meta name="dcterms.date" content="2024-11-19">
-  <title>STAT 850 – Simulation - now with results!</title>
+  <meta name="dcterms.date" content="2025-11-18">
+  <title>STAT 850 – Random Walks and MCMC</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -28,8 +28,75 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-f563837468303362081e247dddd440d0.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-a2d545adc24850e99bc1115dcd6d7e9f.css">
+  <link rel="stylesheet" href="deps/unl/styles.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -121,7 +188,7 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Simulation - now with results! – STAT 850">
+<meta property="og:title" content="Random Walks and MCMC – STAT 850">
 <meta property="og:image" content="https://unl-statistics.github.io/stat850/figs/person-chalkboard-solid.svg">
 <meta property="og:site_name" content="STAT 850">
 </head>
@@ -130,44 +197,44 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Simulation - now with results!</h1>
+  <h1 class="title">Random Walks and MCMC</h1>
 
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">2024-11-19</p>
+  <p class="date">2025-11-18</p>
 </section>
-<section id="todays-goals" class="slide level2">
-<h2>Today’s Goals:</h2>
-<ul>
-<li><p>Work on deliverable number 3 for homework 11: simulate!</p></li>
-<li><p>Three deliverables in total: <code>pseudocode.qmd</code>, <code>craps-code.qmd</code>, and <code>simulation.qmd</code> (this week)</p></li>
-</ul>
+<section id="non-standard-distributions" class="slide level2">
+<h2>Non-standard distributions</h2>
+<p>How do we sample from distributions that are not gamma, exponential, normal, etc?</p>
+<p><span class="math display">\[ f(x)=\begin{cases} 2-4x, &amp; 0 \leq x&lt; 1/2\\ 4x-2, &amp; 1/2 \leq x \leq 1 \end{cases} \]</span></p>
 </section>
-<section id="simulate.qmd" class="slide level2">
-<h2><code>Simulate.qmd</code></h2>
-<ul>
-<li><p>In your repo, create a file with that name.</p></li>
-<li><p>You need to answer the following three questions:</p>
+<section id="inverse-probability-sampling" class="slide level2">
+<h2>Inverse Probability Sampling</h2>
 <ol type="1">
-<li>Which probability do you want to estimate?</li>
-<li>What is the simulation result (in numbers and visuals)?</li>
-<li>What is the simulation variability?</li>
-</ol></li>
-</ul>
-<p>Make sure to set a seed to make your analysis reproducible.</p>
+<li>Get the CDF, <span class="math inline">\(F(x) = ...\)</span></li>
+<li>Invert the CDF to get <span class="math inline">\(F^{-1}(u) = x\)</span></li>
+<li>Generate uniform <span class="math inline">\(u\sim U[0,1]\)</span> random variables</li>
+<li>Use the Inverse CDF to get samples <span class="math inline">\(x\)</span> from <span class="math inline">\(f(x)\)</span></li>
+</ol>
 </section>
-<section id="resources" class="slide level2">
-<h2>Resources</h2>
-<ul>
-<li><p><a href="https://srvanderplas.github.io/stat-computing-r-python/files/Short-refcard.pdf">R cheat sheet</a></p></li>
-<li><p><a href="https://srvanderplas.github.io/stat-computing-r-python/files/Python3_reference_cheat_sheet.pdf">python cheat sheet</a></p></li>
-</ul>
+<section id="inverse-probability-sampling-1" class="slide level2">
+<h2>Inverse Probability Sampling</h2>
+<p><span class="math display">\[F(x) = \begin{cases} -2x^2 + 2x, &amp; 0 \leq x&lt; 1/2\\ \hphantom{-}2x^2-2x, &amp; 1/2 \leq x \leq 1 \end{cases}\]</span></p>
+<p><span class="math display">\[F^{-1}(u) = \begin{cases} \frac{1}{2}-\frac{\sqrt{1-2u}}{2} &amp; u &lt; 0.5\\\frac{1}{2} + \frac{\sqrt{u}}{\sqrt2} &amp; u \geq 0.5\end{cases}\]</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">set.seed</span>(<span class="dv">2043872</span>)</span>
+<span id="cb1-2"><a></a>u <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">100</span>)</span>
+<span id="cb1-3"><a></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span> <span class="sc">-</span><span class="fl">0.5</span><span class="sc">*</span>(<span class="dv">1-2</span><span class="sc">*</span>u)<span class="sc">*</span>(u<span class="sc">&lt;</span><span class="fl">0.5</span>) <span class="sc">+</span> (u<span class="sc">/</span><span class="dv">2</span>)<span class="sc">^</span><span class="fl">0.5</span> <span class="sc">*</span> (u<span class="sc">&gt;</span><span class="fl">0.5</span>)</span>
+<span id="cb1-4"><a></a><span class="fu">hist</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
 
 
-</section>
+<img data-src="12-simulation-2_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="deps/unl/N.svg" class="slide-logo"></p>
 <div class="footer footer-default">
 
 </div>
@@ -263,7 +330,7 @@
         rtl: false,
 
         // see https://revealjs.com/vertical-slides/#navigation-mode
-        navigationMode: 'linear',
+        navigationMode: 'default',
 
         // Randomizes the order of slides each time the presentation loads
         shuffle: false,
@@ -381,6 +448,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
