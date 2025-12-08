@@ -1,0 +1,112 @@
+---
+title: "Final Exam"
+---
+
+# Introduction
+
+(In the spirit of Advent of Code, if not actually advent-of-code problems because the license doesn't allow that). 
+
+You're in charge of logistics and predictive analytics for Santa's workshop at the North Pole. 
+There have been some supply chain issues this year that mean that the workshop hasn't been able to obtain the parts necessary to build enough of some popular toys. 
+It's important to figure out which toys are impacted, identify demand for those toys, and determine what alternative presents each child should receive. 
+
+```{r}
+library(dplyr)
+library(tidyr)
+library(knitr)
+library(ggplot2)
+library(readxl)
+
+if (!file.exists("Toys.xlsx")) {
+  download.file("https://github.com/unl-statistics/stat850/raw/refs/heads/main/exams/final/Toys.xlsx", "Toys.xlsx")
+}
+toys <- read_xlsx("Toys.xlsx", sheet = 1)
+wishlist <- read_xlsx("Toys.xlsx", sheet = 2)
+```
+
+
+# Affected Toys
+
+
+## Electrical regulators
+
+One of the parts which is hard to acquire this year is an electrical regulator that modulates between the battery 🔋 and a circuit board to ensure that the circuit board doesn't short out ⚡. 
+All of these parts have been gobbled up by computer chip manufacturers to build AI data centers 😢. 
+
+Identify the toys which may be impacted by this shortage (toys with chips and batteries). Output a table with the toy name and relative demand, sorted in decreasing order by demand. 
+
+Your table should be nicely formatted using a function such as `knitr::kable`, `DT:DT`, etc.
+
+
+```{r}
+
+```
+
+## Fabric
+
+There is also a shortage of fabric, since JoAnn fabrics went out of business (they were the North Pole's #1 fabric supplier). 
+Only high-demand (demand > 50) fabric toys can be made this year. 
+
+Identify the toys which can be manufactured, accounting for both the electrical regulator and fabric constraints. 
+
+```{r}
+
+```
+
+
+## Shortage Demographics
+
+### Cleaning the data
+
+The age range column is not easy to work with as is. 
+Create a tidier representation of that column that uses numeric variables.
+
+
+### Ages Hit by Shortage
+
+For ages 0 - 18, calculate the number of toys appropriate for that age as well as the number of toys which cannot be produced because of product shortages. 
+
+
+
+# Part 2 - 🎶 He's Making A List! 🎅
+
+## Formatting
+
+Get the `wishlist` data into tidy form. 
+
+```{r}
+
+```
+
+What was not tidy about its original form? How did your changes make the data tidy?
+
+
+## Christmas Disappointments
+
+Identify the child with the highest percentage of unavailable toys on their wishlist. 
+
+```{r}
+
+```
+
+
+
+## Making Santa's List
+
+Identify the top three available presents for each child, relative to their wishlist. 
+
+```{r}
+
+```
+
+
+## Workshop Logistics
+
+How many of each toy need to be made, based on your answer to the previous question?
+
+```{r}
+
+```
+
+
+

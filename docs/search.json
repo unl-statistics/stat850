@@ -11,7 +11,7 @@
     "href": "activities/additional-practice-key.html",
     "title": "Midterm Exam Practice 2",
     "section": "",
-    "text": "In this problem, you will work towards building code that will decompose a number into its prime factors.\nWe’ll start by installing a package that helps work with prime numbers… primes in R, SymPy in Python.\n\n\n\n\nWrite code to install the primes package in R. Run the code.\n\ninstall.packages(\"primes\")\n\n\n\n\nWrite code to install the SymPy package in Python. If you choose to install the package via the terminal, place your code in the bash chunk; otherwise, place your code in the python chunk.\n\npip install sympy\n\n\n%pip install sympy\n\n\n\n\nYou must complete this question regardless of the language used above.\n\nAdd #| eval: false to the first line of the code chunk (below the r or python chunk header) to stop that code from running every time the document is executed.\nList at least one additional way to keep the code in the quarto document but prevent it from running.\n\n\nComment the line of code out using # at the front of the line.\n\n\n\n\n\nLoad the packages you just installed in R and Python using the chunks below.\n\n\n\nlibrary(primes)\n\n\n\n\nHint: SymPy should be typed as sympy when loading the package. You will only need the primerange function in SymPy.\n\nfrom sympy import primerange\n# import sympy as sp\n# import sympy\n\n\n\n\n\n\n\nUse the generate_primes(min, max) function to generate all the primes between 1 and 47, inclusive. Store these numbers in a variable called myprimes.\n\nmyprimes &lt;- generate_primes(1, 47)\n\n\n\n\nUse the primerange(a, b) function in SymPy to get all primes between 1 and 47, inclusive. Store these numbers in a variable called myprimes.\nYou may have to convert the output of primerange to a list by wrapping the function call in list(). It may be convenient to then convert your list into a numpy array using np.array(list(...)). If you choose to do this, you will also need to import the numpy library.\n\n# import numpy as np\n# myprimes = np.array(list(primerange(1, 48)))\nmyprimes = list(primerange(1, 48)) # without numpy\n\n\n\n\nDo the function parameters you used in R and python differ? Why?\n\nIn Python, intervals are half-open, that is, primerange(1, 47) would not include 47, so it is necessary to use primerange(1, 48) to get 47, which is prime. In R, intervals are closed, so generate_primes(1, 47) includes 47 within the acceptable interval. \n\n\n\n\nUsing your primes variables (in both R and python), determine which primes are a factor of a second variable, x. You may want to test your code on values like x=18, x=25, x = 34, x=43, Your code should output only the prime factors of x.\n\n\n\n\n\n\nReminder: Modular Division\n\n\n\nRemember that modular division gives you the remainder when dividing a number by another number. x %% 3 (R) or x % 3 (Python) will give you the remainder when x is divided by 3.\nIf x is an integer and the divisor is an integer, the result of modular division will also be an integer.\n\n\n\n\n\nx &lt;- 43\nmyprimes[x%%myprimes == 0]\n\n[1] 43\n\n\n\n\n\n\nx = 18\n[i for i in myprimes if x%i==0] # without numpy\n\n[2, 3]\n\n# myprimes[x%myprimes == 0] # with numpy\n\n\n\n\n\nIn the previous section, you determined which primes were factors of a given number. Of course, it is possible to have a number which has multiple occurrences of the same prime factor.\nIn R and python, write a function, prime_n(x, prime), which will determine how many times a single, pre-specified prime number prime can be evenly divided into a number x. You may want to calculate an upper bound for this possibility to help you in your search. Your function should take parameters x and prime and return the integer number of times prime occurs in the prime factorization of x.\n\n\n\n\n\n\nReminder: Logs with different bases\n\n\n\nThe operation \\(\\log_a(x) = b\\) is defined the number \\(b\\) such that \\(a^b = x\\) for fixed \\(a\\) and \\(x\\). You can use this information to determine the maximum number of times a factor could be repeated when calculating the prime factorization of a number.\nYou will need to load the math library in Python to access the math.log(a, Base) function. In R, the log(x, base) function is built in.\nIt may also be useful to know that the floor() function (R) and math.floor() function (Python) will round down to the integer below a value.\n\n\n\n\n\nprime_n &lt;- function(x, prime) {\n  max_n &lt;- floor(log(x, base =  prime))\n  prime_seq &lt;- prime^(1:max_n)\n  which.max(prime_seq[x%%prime_seq == 0])\n}\n\nprime_n(18, 3)\n\n[1] 2\n\nprime_n(32, 2)\n\n[1] 5\n\n\nA number of you handled this using a while loop – which is a great way to do it, and doesn’t require the log hint I gave you.\n\nprime_n &lt;- function(x, prime) {\n  times &lt;- 0\n  while(x%%prime == 0) {\n    x &lt;- x/prime # Divide x by prime\n    times &lt;- times + 1 # Increase times to account for that\n  }\n  \n  if(times == 0) {\n    return(NULL)\n  } else {\n    return(times)\n  }\n}\n\nprime_n(18, 3)\n\n[1] 2\n\nprime_n(32, 2)\n\n[1] 5\n\n\n\n\n\n\nimport math\nimport numpy as np\ndef prime_n(x, prime):\n  max_n = math.floor(math.log(x, prime))\n  exp_opts = np.array(range(1, max_n+1))\n  prime_seq = prime**(exp_opts)\n  ans = max(exp_opts[x%prime_seq == 0])\n  return ans\n\n\nprime_n(18, 3)\n\nnp.int64(2)\n\nprime_n(32, 2)\n\nnp.int64(5)\n\n\n\nimport math\nimport numpy as np\ndef prime_n(x, prime):\n  times=0\n  while(x%prime==0):\n    x=x/prime\n    times = times + 1\n  \n  if(times != 0):\n    return times\n  \n  return 'Not a factor'\n\n\nprime_n(18, 3)\n\n2\n\nprime_n(32, 2)\n\n5\n\n\n\n\n\n\nPutting the pieces together, use your function and your list of prime factors to determine the prime factorization of a given number. Store your factorization as a data frame with two columns: factor and power, where factor contains the factor and power contains the number of times that factor appears in the prime factorization.\nFor instance, your result for x=18 should be a data frame that looks like this:\n\n\n\nfactor\npower\n\n\n\n\n2\n1\n\n\n3\n2\n\n\n\nHint:\n\nR: rbind(df, row) will add row to the bottom of df if df is a data frame\nPython: pandas.concat([df, row]) will add row to the bottom of df if df is a data frame.\n\n\n\nUsing the provided scratch paper (please put your name at the top), sketch a basic program flow map that shows how the code you’ve already written fits together to solve this problem. Identify any bits of logic you need to write to solve the problem.\n\nMy solution is sketched out on sheet ___\n\n\n\n\n\nx = 56\n\nfactors &lt;- myprimes[x%%myprimes==0]\nmy_factorization &lt;- data.frame()\nfor(i in factors) {\n  times &lt;- prime_n(x, i)\n  my_factorization &lt;- rbind(my_factorization, \n                            data.frame(factor = i, power = times))\n}\n\nmy_factorization\n\n  factor power\n1      2     3\n2      7     1\n\n\n\n\n\n\nimport pandas as pd\nx = 56\n\nfactors = [i for i in myprimes if x%i==0]\nmy_factorization = pd.DataFrame(columns=['factor', 'power'])\nfor i in factors:\n  times = prime_n(x, i)\n  new_row = pd.DataFrame([[i, times]], columns=['factor', 'power'])\n  my_factorization = pd.concat([my_factorization, new_row], ignore_index=True)\n\nmy_factorization\n\n  factor power\n0      2     3\n1      7     1\n\n\n\n\n\n\nTake the data frame you created in the previous problem and write a format_factorization(df) function that will output the results of that data frame as a string, so that the data frame containing the prime factorization of 18 that is shown above would return “2^1 x 3^2”.\nHint:\n\nPython: in a DataFrame, you can convert the whole column to a string using df.colname.astype(\"str\") (replace df, colname with appropriate data frame name and column name)\n\n\n\n\nformat_factorization &lt;- function(df) {\n  stopifnot(\"factor\" %in% names(df), \"power\" %in% names(df))\n  \n  paste(paste0(df$factor, \"^\", df$power), collapse = \" x \")\n}\n\n\n\n\n\ndef format_factorization(df):\n  mystr = df.factor.astype(\"str\") + \"^\" + df.power.astype(\"str\")\n  return \" x \".join(mystr)\n\nformat_factorization(my_factorization)\n\n'2^3 x 7^1'\n\n\n\n\n\n\nTake the code you wrote in the previous part and use it to create a function prime_factorize that will return the prime factorization of a number. If the number provided is a prime, your function should return “ is prime” instead of returning that the factorization is ^1 (which is not as clear).\n\n\nWhat modifications will you need to make to handle any number? e.g. what if the number is greater than 47?\n\nNeed to list out all primes which are strictly less than the number, using the original functions in primes and sympy.\n\nWhat modifications will you need to make to handle prime numbers?\n\nAdd an if statement detecting whether the number is prime (has no prime factors &lt; itself) and output the prime number statement instead of the factorization.\n\n\n\n\n\n\nHow can you use previously written code and functions to accomplish this task? \n\nObtain primes using primerange and generate_primes\nDetermine which primes are factors using subsetting and modular division\nIf a number has no prime factors, return the prime message\nOtherwise, use prime_n function to determine how many times each prime is a factor\nUse this information to build a data frame\nUse the prime_factorization function to return the prime factorization\n\n\nWhat additional code do you need to write? \nCode to obtain a generic number of primes\nIf statement to test for primeness\n\nIf you sketched anything for this problem out on scratch paper, please give me a page number to look at. \nMy solution is sketched out on sheet ___\n\n\n\n\n\nprime_factorize &lt;- function(x) {\n  stopifnot(is.numeric(x))\n  # Use prewritten function, but don't get x -- \n  #   get only primes less than x\n  myprimes &lt;- generate_primes(2, x-1)\n  # Check whether primes are factors\n  factors &lt;- myprimes[x%%myprimes==0]\n  \n  # Test whether x is prime\n  if (length(factors) == 0) {\n    return(paste(x, \"is a prime number\"))\n  }\n  \n  # This code only runs if x is not prime\n  my_factorization &lt;- data.frame()\n  for(i in factors) {\n    times &lt;- prime_n(x, i)\n    my_factorization &lt;- rbind(my_factorization,\n                              data.frame(factor = i, \n                                         power = times))\n  }\n  \n  # Return the formatted factorization\n  return(format_factorization(my_factorization))\n}\n\n\nprime_factorize(34253)\n\n[1] \"34253 is a prime number\"\n\nprime_factorize(prod(2:10))\n\n[1] \"2^8 x 3^4 x 5^2 x 7^1\"\n\n\n\n\n\n\ndef prime_factorize(x):\n  \n  myprimes = list(primerange(2, x))\n  factors = [i for i in myprimes if x%i==0]\n  \n  if len(factors) == 0:\n    return str(x) + \" is prime\"\n  \n  my_factorization = pd.DataFrame(columns=['factor', 'power'])\n  for i in factors:\n    times = prime_n(x, i)\n    new_row = pd.DataFrame([[i, times]], columns=['factor', 'power'])\n    my_factorization = pd.concat([my_factorization, new_row], ignore_index=True)\n\n  return format_factorization(my_factorization)\n\n\nprime_factorize(34253) # should output \"34253 is a prime number\"\n\n'34253 is prime'\n\nprime_factorize(3628800) # should output \"2^8 x 3^4 x 5^2 x 7^1\"\n\n'2^8 x 3^4 x 5^2 x 7^1'\n\n\n\n\n\n\nIt is never safe to assume that your user knows what they are doing. Can you make your function from the previous part more robust by testing the user input to ensure that it conforms to your expectations?\n\n\nWhat assumptions does your previous answer make about parameters?  Numeric x Single value x \nWhat do you need to test to ensure those assumptions are met?  test type of x and length of x if type is wrong, stop if length is &gt;1 then work with only 1st entry in x \n\n\n\n\nprime_factorize &lt;- function(x) {\n  stopifnot(is.numeric(x))\n  if(length(x) &gt; 1) {\n    warning(\"x should be a single value. Using only the first entry in x\")\n    x &lt;- x[1]\n  }\n  \n  # Use prewritten function, but don't get x -- \n  #   get only primes less than x\n  myprimes &lt;- generate_primes(2, x-1)\n  # Check whether primes are factors\n  factors &lt;- myprimes[x%%myprimes==0]\n  \n  # Test whether x is prime\n  if (length(factors) == 0) {\n    return(paste(x, \"is a prime number\"))\n  }\n  \n  # This code only runs if x is not prime\n  my_factorization &lt;- data.frame()\n  for(i in factors) {\n    times &lt;- prime_n(x, i)\n    my_factorization &lt;- rbind(my_factorization,\n                              data.frame(factor = i, \n                                         power = times))\n  }\n  \n  # Return the formatted factorization\n  return(format_factorization(my_factorization))\n}\n\n\nprime_factorize(\"string\")\n\nError in prime_factorize(\"string\"): is.numeric(x) is not TRUE\n\nprime_factorize(2:5)\n\nWarning in prime_factorize(2:5): x should be a single value. Using only the\nfirst entry in x\n\n\n[1] \"2 is a prime number\"\n\n\n\n\n\n\ndef prime_factorize(x):\n  try:\n    x = int(x) # convert to integer\n  except ValueError as e:\n    print(f\"Error: {e}. x must be coercible to an integer\")\n  except TypeError as e:\n    print(f\"Error: {e}\")\n  else:  \n    myprimes = list(primerange(2, x))\n    factors = [i for i in myprimes if x%i==0]\n    \n    if len(factors) == 0:\n      return str(x) + \" is prime\"\n    \n    my_factorization = pd.DataFrame(columns=['factor', 'power'])\n    for i in factors:\n      times = prime_n(x, i)\n      new_row = pd.DataFrame([[i, times]], columns=['factor', 'power'])\n      my_factorization = pd.concat([my_factorization, new_row], ignore_index=True)\n  \n    return format_factorization(my_factorization)\n\n\nprime_factorize(\"string\")\n\nError: invalid literal for int() with base 10: 'string'. x must be coercible to an integer\n\nprime_factorize([2, 3, 4, 5])\n\nError: int() argument must be a string, a bytes-like object or a real number, not 'list'"
+    "text": "In this problem, you will work towards building code that will decompose a number into its prime factors.\nWe’ll start by installing a package that helps work with prime numbers… primes in R, SymPy in Python.\n\n\n\n\nWrite code to install the primes package in R. Run the code.\n\ninstall.packages(\"primes\")\n\n\n\n\nWrite code to install the SymPy package in Python. If you choose to install the package via the terminal, place your code in the bash chunk; otherwise, place your code in the python chunk.\n\npip install sympy\n\n\n%pip install sympy\n\n\n\n\nYou must complete this question regardless of the language used above.\n\nAdd #| eval: false to the first line of the code chunk (below the r or python chunk header) to stop that code from running every time the document is executed.\nList at least one additional way to keep the code in the quarto document but prevent it from running.\n\n\nComment the line of code out using # at the front of the line.\n\n\n\n\n\nLoad the packages you just installed in R and Python using the chunks below.\n\n\n\nlibrary(primes)\n\n\n\n\nHint: SymPy should be typed as sympy when loading the package. You will only need the primerange function in SymPy.\n\nfrom sympy import primerange\n# import sympy as sp\n# import sympy\n\n\n\n\n\n\n\nUse the generate_primes(min, max) function to generate all the primes between 1 and 47, inclusive. Store these numbers in a variable called myprimes.\n\nmyprimes &lt;- generate_primes(1, 47)\n\n\n\n\nUse the primerange(a, b) function in SymPy to get all primes between 1 and 47, inclusive. Store these numbers in a variable called myprimes.\nYou may have to convert the output of primerange to a list by wrapping the function call in list(). It may be convenient to then convert your list into a numpy array using np.array(list(...)). If you choose to do this, you will also need to import the numpy library.\n\n# import numpy as np\n# myprimes = np.array(list(primerange(1, 48)))\nmyprimes = list(primerange(1, 48)) # without numpy\n\n\n\n\nDo the function parameters you used in R and python differ? Why?\n\nIn Python, intervals are half-open, that is, primerange(1, 47) would not include 47, so it is necessary to use primerange(1, 48) to get 47, which is prime. In R, intervals are closed, so generate_primes(1, 47) includes 47 within the acceptable interval. \n\n\n\n\nUsing your primes variables (in both R and python), determine which primes are a factor of a second variable, x. You may want to test your code on values like x=18, x=25, x = 34, x=43, Your code should output only the prime factors of x.\n\n\n\n\n\n\nNoteReminder: Modular Division\n\n\n\nRemember that modular division gives you the remainder when dividing a number by another number. x %% 3 (R) or x % 3 (Python) will give you the remainder when x is divided by 3.\nIf x is an integer and the divisor is an integer, the result of modular division will also be an integer.\n\n\n\n\n\nx &lt;- 43\nmyprimes[x%%myprimes == 0]\n\n[1] 43\n\n\n\n\n\n\nx = 18\n[i for i in myprimes if x%i==0] # without numpy\n\n[2, 3]\n\n# myprimes[x%myprimes == 0] # with numpy\n\n\n\n\n\nIn the previous section, you determined which primes were factors of a given number. Of course, it is possible to have a number which has multiple occurrences of the same prime factor.\nIn R and python, write a function, prime_n(x, prime), which will determine how many times a single, pre-specified prime number prime can be evenly divided into a number x. You may want to calculate an upper bound for this possibility to help you in your search. Your function should take parameters x and prime and return the integer number of times prime occurs in the prime factorization of x.\n\n\n\n\n\n\nNoteReminder: Logs with different bases\n\n\n\nThe operation \\(\\log_a(x) = b\\) is defined the number \\(b\\) such that \\(a^b = x\\) for fixed \\(a\\) and \\(x\\). You can use this information to determine the maximum number of times a factor could be repeated when calculating the prime factorization of a number.\nYou will need to load the math library in Python to access the math.log(a, Base) function. In R, the log(x, base) function is built in.\nIt may also be useful to know that the floor() function (R) and math.floor() function (Python) will round down to the integer below a value.\n\n\n\n\n\nprime_n &lt;- function(x, prime) {\n  max_n &lt;- floor(log(x, base =  prime))\n  prime_seq &lt;- prime^(1:max_n)\n  which.max(prime_seq[x%%prime_seq == 0])\n}\n\nprime_n(18, 3)\n\n[1] 2\n\nprime_n(32, 2)\n\n[1] 5\n\n\nA number of you handled this using a while loop – which is a great way to do it, and doesn’t require the log hint I gave you.\n\nprime_n &lt;- function(x, prime) {\n  times &lt;- 0\n  while(x%%prime == 0) {\n    x &lt;- x/prime # Divide x by prime\n    times &lt;- times + 1 # Increase times to account for that\n  }\n  \n  if(times == 0) {\n    return(NULL)\n  } else {\n    return(times)\n  }\n}\n\nprime_n(18, 3)\n\n[1] 2\n\nprime_n(32, 2)\n\n[1] 5\n\n\n\n\n\n\nimport math\nimport numpy as np\ndef prime_n(x, prime):\n  max_n = math.floor(math.log(x, prime))\n  exp_opts = np.array(range(1, max_n+1))\n  prime_seq = prime**(exp_opts)\n  ans = max(exp_opts[x%prime_seq == 0])\n  return ans\n\n\nprime_n(18, 3)\n\nnp.int64(2)\n\nprime_n(32, 2)\n\nnp.int64(5)\n\n\n\nimport math\nimport numpy as np\ndef prime_n(x, prime):\n  times=0\n  while(x%prime==0):\n    x=x/prime\n    times = times + 1\n  \n  if(times != 0):\n    return times\n  \n  return 'Not a factor'\n\n\nprime_n(18, 3)\n\n2\n\nprime_n(32, 2)\n\n5\n\n\n\n\n\n\nPutting the pieces together, use your function and your list of prime factors to determine the prime factorization of a given number. Store your factorization as a data frame with two columns: factor and power, where factor contains the factor and power contains the number of times that factor appears in the prime factorization.\nFor instance, your result for x=18 should be a data frame that looks like this:\n\n\n\nfactor\npower\n\n\n\n\n2\n1\n\n\n3\n2\n\n\n\nHint:\n\nR: rbind(df, row) will add row to the bottom of df if df is a data frame\nPython: pandas.concat([df, row]) will add row to the bottom of df if df is a data frame.\n\n\n\nUsing the provided scratch paper (please put your name at the top), sketch a basic program flow map that shows how the code you’ve already written fits together to solve this problem. Identify any bits of logic you need to write to solve the problem.\n\nMy solution is sketched out on sheet ___\n\n\n\n\n\nx = 56\n\nfactors &lt;- myprimes[x%%myprimes==0]\nmy_factorization &lt;- data.frame()\nfor(i in factors) {\n  times &lt;- prime_n(x, i)\n  my_factorization &lt;- rbind(my_factorization, \n                            data.frame(factor = i, power = times))\n}\n\nmy_factorization\n\n  factor power\n1      2     3\n2      7     1\n\n\n\n\n\n\nimport pandas as pd\nx = 56\n\nfactors = [i for i in myprimes if x%i==0]\nmy_factorization = pd.DataFrame(columns=['factor', 'power'])\nfor i in factors:\n  times = prime_n(x, i)\n  new_row = pd.DataFrame([[i, times]], columns=['factor', 'power'])\n  my_factorization = pd.concat([my_factorization, new_row], ignore_index=True)\n\nmy_factorization\n\n  factor power\n0      2     3\n1      7     1\n\n\n\n\n\n\nTake the data frame you created in the previous problem and write a format_factorization(df) function that will output the results of that data frame as a string, so that the data frame containing the prime factorization of 18 that is shown above would return “2^1 x 3^2”.\nHint:\n\nPython: in a DataFrame, you can convert the whole column to a string using df.colname.astype(\"str\") (replace df, colname with appropriate data frame name and column name)\n\n\n\n\nformat_factorization &lt;- function(df) {\n  stopifnot(\"factor\" %in% names(df), \"power\" %in% names(df))\n  \n  paste(paste0(df$factor, \"^\", df$power), collapse = \" x \")\n}\n\n\n\n\n\ndef format_factorization(df):\n  mystr = df.factor.astype(\"str\") + \"^\" + df.power.astype(\"str\")\n  return \" x \".join(mystr)\n\nformat_factorization(my_factorization)\n\n'2^3 x 7^1'\n\n\n\n\n\n\nTake the code you wrote in the previous part and use it to create a function prime_factorize that will return the prime factorization of a number. If the number provided is a prime, your function should return “ is prime” instead of returning that the factorization is ^1 (which is not as clear).\n\n\nWhat modifications will you need to make to handle any number? e.g. what if the number is greater than 47?\n\nNeed to list out all primes which are strictly less than the number, using the original functions in primes and sympy.\n\nWhat modifications will you need to make to handle prime numbers?\n\nAdd an if statement detecting whether the number is prime (has no prime factors &lt; itself) and output the prime number statement instead of the factorization.\n\n\n\n\n\n\nHow can you use previously written code and functions to accomplish this task? \n\nObtain primes using primerange and generate_primes\nDetermine which primes are factors using subsetting and modular division\nIf a number has no prime factors, return the prime message\nOtherwise, use prime_n function to determine how many times each prime is a factor\nUse this information to build a data frame\nUse the prime_factorization function to return the prime factorization\n\n\nWhat additional code do you need to write? \nCode to obtain a generic number of primes\nIf statement to test for primeness\n\nIf you sketched anything for this problem out on scratch paper, please give me a page number to look at. \nMy solution is sketched out on sheet ___\n\n\n\n\n\nprime_factorize &lt;- function(x) {\n  stopifnot(is.numeric(x))\n  # Use prewritten function, but don't get x -- \n  #   get only primes less than x\n  myprimes &lt;- generate_primes(2, x-1)\n  # Check whether primes are factors\n  factors &lt;- myprimes[x%%myprimes==0]\n  \n  # Test whether x is prime\n  if (length(factors) == 0) {\n    return(paste(x, \"is a prime number\"))\n  }\n  \n  # This code only runs if x is not prime\n  my_factorization &lt;- data.frame()\n  for(i in factors) {\n    times &lt;- prime_n(x, i)\n    my_factorization &lt;- rbind(my_factorization,\n                              data.frame(factor = i, \n                                         power = times))\n  }\n  \n  # Return the formatted factorization\n  return(format_factorization(my_factorization))\n}\n\n\nprime_factorize(34253)\n\n[1] \"34253 is a prime number\"\n\nprime_factorize(prod(2:10))\n\n[1] \"2^8 x 3^4 x 5^2 x 7^1\"\n\n\n\n\n\n\ndef prime_factorize(x):\n  \n  myprimes = list(primerange(2, x))\n  factors = [i for i in myprimes if x%i==0]\n  \n  if len(factors) == 0:\n    return str(x) + \" is prime\"\n  \n  my_factorization = pd.DataFrame(columns=['factor', 'power'])\n  for i in factors:\n    times = prime_n(x, i)\n    new_row = pd.DataFrame([[i, times]], columns=['factor', 'power'])\n    my_factorization = pd.concat([my_factorization, new_row], ignore_index=True)\n\n  return format_factorization(my_factorization)\n\n\nprime_factorize(34253) # should output \"34253 is a prime number\"\n\n'34253 is prime'\n\nprime_factorize(3628800) # should output \"2^8 x 3^4 x 5^2 x 7^1\"\n\n'2^8 x 3^4 x 5^2 x 7^1'\n\n\n\n\n\n\nIt is never safe to assume that your user knows what they are doing. Can you make your function from the previous part more robust by testing the user input to ensure that it conforms to your expectations?\n\n\nWhat assumptions does your previous answer make about parameters?  Numeric x Single value x \nWhat do you need to test to ensure those assumptions are met?  test type of x and length of x if type is wrong, stop if length is &gt;1 then work with only 1st entry in x \n\n\n\n\nprime_factorize &lt;- function(x) {\n  stopifnot(is.numeric(x))\n  if(length(x) &gt; 1) {\n    warning(\"x should be a single value. Using only the first entry in x\")\n    x &lt;- x[1]\n  }\n  \n  # Use prewritten function, but don't get x -- \n  #   get only primes less than x\n  myprimes &lt;- generate_primes(2, x-1)\n  # Check whether primes are factors\n  factors &lt;- myprimes[x%%myprimes==0]\n  \n  # Test whether x is prime\n  if (length(factors) == 0) {\n    return(paste(x, \"is a prime number\"))\n  }\n  \n  # This code only runs if x is not prime\n  my_factorization &lt;- data.frame()\n  for(i in factors) {\n    times &lt;- prime_n(x, i)\n    my_factorization &lt;- rbind(my_factorization,\n                              data.frame(factor = i, \n                                         power = times))\n  }\n  \n  # Return the formatted factorization\n  return(format_factorization(my_factorization))\n}\n\n\nprime_factorize(\"string\")\n\nError in prime_factorize(\"string\"): is.numeric(x) is not TRUE\n\nprime_factorize(2:5)\n\nWarning in prime_factorize(2:5): x should be a single value. Using only the\nfirst entry in x\n\n\n[1] \"2 is a prime number\"\n\n\n\n\n\n\ndef prime_factorize(x):\n  try:\n    x = int(x) # convert to integer\n  except ValueError as e:\n    print(f\"Error: {e}. x must be coercible to an integer\")\n  except TypeError as e:\n    print(f\"Error: {e}\")\n  else:  \n    myprimes = list(primerange(2, x))\n    factors = [i for i in myprimes if x%i==0]\n    \n    if len(factors) == 0:\n      return str(x) + \" is prime\"\n    \n    my_factorization = pd.DataFrame(columns=['factor', 'power'])\n    for i in factors:\n      times = prime_n(x, i)\n      new_row = pd.DataFrame([[i, times]], columns=['factor', 'power'])\n      my_factorization = pd.concat([my_factorization, new_row], ignore_index=True)\n  \n    return format_factorization(my_factorization)\n\n\nprime_factorize(\"string\")\n\nError: invalid literal for int() with base 10: 'string'. x must be coercible to an integer\n\nprime_factorize([2, 3, 4, 5])\n\nError: int() argument must be a string, a bytes-like object or a real number, not 'list'"
   },
   {
     "objectID": "activities/additional-practice-key.html#skill-install-packages",
@@ -39,14 +39,14 @@
     "href": "activities/additional-practice-key.html#skill-indexing-and-subsets",
     "title": "Midterm Exam Practice 2",
     "section": "",
-    "text": "Using your primes variables (in both R and python), determine which primes are a factor of a second variable, x. You may want to test your code on values like x=18, x=25, x = 34, x=43, Your code should output only the prime factors of x.\n\n\n\n\n\n\nReminder: Modular Division\n\n\n\nRemember that modular division gives you the remainder when dividing a number by another number. x %% 3 (R) or x % 3 (Python) will give you the remainder when x is divided by 3.\nIf x is an integer and the divisor is an integer, the result of modular division will also be an integer.\n\n\n\n\n\nx &lt;- 43\nmyprimes[x%%myprimes == 0]\n\n[1] 43\n\n\n\n\n\n\nx = 18\n[i for i in myprimes if x%i==0] # without numpy\n\n[2, 3]\n\n# myprimes[x%myprimes == 0] # with numpy"
+    "text": "Using your primes variables (in both R and python), determine which primes are a factor of a second variable, x. You may want to test your code on values like x=18, x=25, x = 34, x=43, Your code should output only the prime factors of x.\n\n\n\n\n\n\nNoteReminder: Modular Division\n\n\n\nRemember that modular division gives you the remainder when dividing a number by another number. x %% 3 (R) or x % 3 (Python) will give you the remainder when x is divided by 3.\nIf x is an integer and the divisor is an integer, the result of modular division will also be an integer.\n\n\n\n\n\nx &lt;- 43\nmyprimes[x%%myprimes == 0]\n\n[1] 43\n\n\n\n\n\n\nx = 18\n[i for i in myprimes if x%i==0] # without numpy\n\n[2, 3]\n\n# myprimes[x%myprimes == 0] # with numpy"
   },
   {
     "objectID": "activities/additional-practice-key.html#skill-writing-functions",
     "href": "activities/additional-practice-key.html#skill-writing-functions",
     "title": "Midterm Exam Practice 2",
     "section": "",
-    "text": "In the previous section, you determined which primes were factors of a given number. Of course, it is possible to have a number which has multiple occurrences of the same prime factor.\nIn R and python, write a function, prime_n(x, prime), which will determine how many times a single, pre-specified prime number prime can be evenly divided into a number x. You may want to calculate an upper bound for this possibility to help you in your search. Your function should take parameters x and prime and return the integer number of times prime occurs in the prime factorization of x.\n\n\n\n\n\n\nReminder: Logs with different bases\n\n\n\nThe operation \\(\\log_a(x) = b\\) is defined the number \\(b\\) such that \\(a^b = x\\) for fixed \\(a\\) and \\(x\\). You can use this information to determine the maximum number of times a factor could be repeated when calculating the prime factorization of a number.\nYou will need to load the math library in Python to access the math.log(a, Base) function. In R, the log(x, base) function is built in.\nIt may also be useful to know that the floor() function (R) and math.floor() function (Python) will round down to the integer below a value.\n\n\n\n\n\nprime_n &lt;- function(x, prime) {\n  max_n &lt;- floor(log(x, base =  prime))\n  prime_seq &lt;- prime^(1:max_n)\n  which.max(prime_seq[x%%prime_seq == 0])\n}\n\nprime_n(18, 3)\n\n[1] 2\n\nprime_n(32, 2)\n\n[1] 5\n\n\nA number of you handled this using a while loop – which is a great way to do it, and doesn’t require the log hint I gave you.\n\nprime_n &lt;- function(x, prime) {\n  times &lt;- 0\n  while(x%%prime == 0) {\n    x &lt;- x/prime # Divide x by prime\n    times &lt;- times + 1 # Increase times to account for that\n  }\n  \n  if(times == 0) {\n    return(NULL)\n  } else {\n    return(times)\n  }\n}\n\nprime_n(18, 3)\n\n[1] 2\n\nprime_n(32, 2)\n\n[1] 5\n\n\n\n\n\n\nimport math\nimport numpy as np\ndef prime_n(x, prime):\n  max_n = math.floor(math.log(x, prime))\n  exp_opts = np.array(range(1, max_n+1))\n  prime_seq = prime**(exp_opts)\n  ans = max(exp_opts[x%prime_seq == 0])\n  return ans\n\n\nprime_n(18, 3)\n\nnp.int64(2)\n\nprime_n(32, 2)\n\nnp.int64(5)\n\n\n\nimport math\nimport numpy as np\ndef prime_n(x, prime):\n  times=0\n  while(x%prime==0):\n    x=x/prime\n    times = times + 1\n  \n  if(times != 0):\n    return times\n  \n  return 'Not a factor'\n\n\nprime_n(18, 3)\n\n2\n\nprime_n(32, 2)\n\n5"
+    "text": "In the previous section, you determined which primes were factors of a given number. Of course, it is possible to have a number which has multiple occurrences of the same prime factor.\nIn R and python, write a function, prime_n(x, prime), which will determine how many times a single, pre-specified prime number prime can be evenly divided into a number x. You may want to calculate an upper bound for this possibility to help you in your search. Your function should take parameters x and prime and return the integer number of times prime occurs in the prime factorization of x.\n\n\n\n\n\n\nNoteReminder: Logs with different bases\n\n\n\nThe operation \\(\\log_a(x) = b\\) is defined the number \\(b\\) such that \\(a^b = x\\) for fixed \\(a\\) and \\(x\\). You can use this information to determine the maximum number of times a factor could be repeated when calculating the prime factorization of a number.\nYou will need to load the math library in Python to access the math.log(a, Base) function. In R, the log(x, base) function is built in.\nIt may also be useful to know that the floor() function (R) and math.floor() function (Python) will round down to the integer below a value.\n\n\n\n\n\nprime_n &lt;- function(x, prime) {\n  max_n &lt;- floor(log(x, base =  prime))\n  prime_seq &lt;- prime^(1:max_n)\n  which.max(prime_seq[x%%prime_seq == 0])\n}\n\nprime_n(18, 3)\n\n[1] 2\n\nprime_n(32, 2)\n\n[1] 5\n\n\nA number of you handled this using a while loop – which is a great way to do it, and doesn’t require the log hint I gave you.\n\nprime_n &lt;- function(x, prime) {\n  times &lt;- 0\n  while(x%%prime == 0) {\n    x &lt;- x/prime # Divide x by prime\n    times &lt;- times + 1 # Increase times to account for that\n  }\n  \n  if(times == 0) {\n    return(NULL)\n  } else {\n    return(times)\n  }\n}\n\nprime_n(18, 3)\n\n[1] 2\n\nprime_n(32, 2)\n\n[1] 5\n\n\n\n\n\n\nimport math\nimport numpy as np\ndef prime_n(x, prime):\n  max_n = math.floor(math.log(x, prime))\n  exp_opts = np.array(range(1, max_n+1))\n  prime_seq = prime**(exp_opts)\n  ans = max(exp_opts[x%prime_seq == 0])\n  return ans\n\n\nprime_n(18, 3)\n\nnp.int64(2)\n\nprime_n(32, 2)\n\nnp.int64(5)\n\n\n\nimport math\nimport numpy as np\ndef prime_n(x, prime):\n  times=0\n  while(x%prime==0):\n    x=x/prime\n    times = times + 1\n  \n  if(times != 0):\n    return times\n  \n  return 'Not a factor'\n\n\nprime_n(18, 3)\n\n2\n\nprime_n(32, 2)\n\n5"
   },
   {
     "objectID": "activities/additional-practice-key.html#skill-data-frames-loops",
@@ -84,11 +84,18 @@
     "text": "In the following examples, evaluate each problem using the criteria of a minimal reproducible example from this StackOverflow post.\nSpecifically, address the following things:\n\nAre the question and problem description complete?\nIs the issue reproducible? Does it have a description of the problem, with code that reproduces the problem? What could improve it?\nIs the example minimal? Does it include extra code or information that is not necessary?\nDoes the question describe any attempted solutions?\n\nThen, using what you know about R and Python, try to debug the problem using the strategies in the debugging chapter. Once you are thoroughly stumped, or you believe you have solved the problem, compare your solutions to those given on StackOverflow using the link.\n\nWhy Doesn’t this R function work?\n\nI created the following function to append new strings on a vector of strings called “meals”. However, when I use this function to append an string input into my “meals” vector, it does not work.\n\n add &lt;- function(str) {\n      meals &lt;- append(meals, as.character(str))  \n    }\nLink to original SO post.\n\n\nFunction not working R\n\nI’ve never programmed before and am trying to learn. I’m following that “coursera” course that I’ve seen other people post about — a course offered by Johns Hopkins on R programming.\n\n\nAnyway, this was supposed to be my first function. Yet, it doesn’t work! But when I type out all the steps individually, it runs just fine… Can anyone tell me why?\n\npollutantmean &lt;- function(directory, pollutant, id = 1:332){\n    x&lt;- list.files(\"/Users/mike******/Desktop/directory\", full.names=TRUE)\n    y&lt;- lapply(x, read.csv)\n    z&lt;- do.call(rbind.data.frame, y[id])\n\n    mean(z$pollutant, na.rm=TRUE)\n}\npollutantmean(specdata,nitrate,1:10)\n[1] NA\nWarning message:\nIn mean.default(z$pollutant, na.rm = TRUE) :\n  argument is not numeric or logical: returning NA\n\n####\n\nx&lt;- list.files(\"/Users/mike******/Desktop/specdata\",full.names=TRUE)\ny&lt;- lapply(x,read.csv)\nz&lt;- do.call(rbind.data.frame,y[1:10])\nmean(z$nitrate,na.rm=TRUE)\n[1] 0.7976266\nLink\n\n\nInexplicable error when trying to export my R notebook\n\nGetting this error from R Markdown when trying to export my .RMD\n\n\"Error in filter(Gastropods, Species == \"Cellana\") :  object 'Species' not found Calls: &lt;Anonymous&gt; ... withCallingHandlers -&gt; withVisible -&gt; eval -&gt; eval -&gt; filter\"\n\nHowever, all my plots are coming out successfully. I can clearly see in the data that the species column is there and that Cellana is a species. No spelling errors or anything.\n\n\nMy first 20 or so lines of code are below (between the ### symbols)\n\n\n\n###\n---\ntitle: \" Lab Report 2 - z5016113\"\noutput: html_notebook\ni---\n\n#1. Gastropod abundance vs. height on the shore\n\n```{r}\nGastropods &lt;- read.csv(file = \"MaroubraZones.csv\", header = TRUE)\nlibrary(ggplot2, dplyr)\n```\n\n```{r}\nGastropods$Zone &lt;- factor(Gastropods$Zone, levels = c(\"Low\", \"Mid\", \"High\"))\n```\n\n```{r}\nCellana &lt;- filter(Gastropods, Species == \"Cellana\")  ------&gt; This line is causing the error\n```\n\n```{r}\nggplot(Cellana, aes(Zone, Abundance)) + geom_boxplot()\n```\n###\n\n\nYou can find this sample file here\nLink\n\n\nPython if elif else statement\n\nI’m trying to create a program with python that calculate the cost for shipping.\n\n\nHowever, I can’t run the program to where it works properly.\n\n\nWhat ever my total is the same amount comes out as $6 for US and $8 for Canada. I can’t seem to get pass that.\n\n\nExample:\n\ntotal = raw_input('What is the total amount for your online shopping?')\ncountry = raw_input('Shipping within the US or Canada?')\n\nif country == \"US\":\n    if total &lt;= \"50\":\n        print \"Shipping Costs $6.00\"\n    elif total &lt;= \"100\":\n            print \"Shipping Costs $9.00\"\n    elif total &lt;= \"150\":\n            print \"Shipping Costs $12.00\"\n    else:\n        print \"FREE\"\n\nif country == \"Canada\":\n    if total &lt;= \"50\":\n        print \"Shipping Costs $8.00\"\n    elif total &lt;= \"100\":\n        print \"Shipping Costs $12.00\"\n    elif total &lt;= \"150\":\n        print \"Shipping Costs $15.00\"\n    else:\n        print \"FREE\"\nLink"
   },
   {
+    "objectID": "slides/13-interactive-graphics.html",
+    "href": "slides/13-interactive-graphics.html",
+    "title": "Interactive Graphics with Shiny",
+    "section": "",
+    "text": "These slides modified from https://github.com/dime-wb-trainings/shiny-training"
+  },
+  {
     "objectID": "slides/13-interactive-graphics.html#shiny",
     "href": "slides/13-interactive-graphics.html#shiny",
     "title": "Interactive Graphics with Shiny",
-    "section": "Shiny",
-    "text": "Shiny\nThese slides modified from https://github.com/dime-wb-trainings/shiny-training"
+    "section": "",
+    "text": "These slides modified from https://github.com/dime-wb-trainings/shiny-training"
   },
   {
     "objectID": "slides/13-interactive-graphics.html#what-is-shiny",
@@ -123,42 +130,42 @@
     "href": "slides/13-interactive-graphics.html#lets-build-our-first-app-together-with-the-help-of-the-r-template-1",
     "title": "Interactive Graphics with Shiny",
     "section": "Let’s Build Our First App Together (with the help of the R template) ✍️",
-    "text": "Let’s Build Our First App Together (with the help of the R template) ✍️\n5. Choose Single File option when prompted:\n\n6. Name your folder and click OK\n7. Click Run App in the top-right corner\n8. 🎉 You’re running your first Shiny app!"
+    "text": "Let’s Build Our First App Together (with the help of the R template) ✍️\n5. Choose Single File option when prompted:\n\n\n\n\n\n\n\n\n\n6. Name your folder and click OK\n7. Click Run App in the top-right corner\n8. 🎉 You’re running your first Shiny app!"
   },
   {
     "objectID": "slides/13-interactive-graphics.html#ui-user-interface",
     "href": "slides/13-interactive-graphics.html#ui-user-interface",
     "title": "Interactive Graphics with Shiny",
     "section": "ui — User Interface",
-    "text": "ui — User Interface\n\n\nui &lt;- fluidPage( #&lt;&lt;\n  titlePanel(\"Old Faithful Geyser Data\"),\n  sidebarLayout(\n    sidebarPanel(\n      sliderInput(\"bins\", \n                  \"Number of bins:\", \n                  min = 1, \n                  max = 50, \n                  value = 30)\n    ),\n    mainPanel(\n      plotOutput(\"distPlot\")\n    )\n  )\n)\n\n\n\n\n\n\n\n\n\n\n\nLayout elements\n\nfluidPage() is the container for the app interface, the layout in which your content is. This is the most common, but there are other types of layouts. Check here"
+    "text": "ui — User Interface\n\n\nui &lt;- fluidPage( #&lt;&lt;\n  titlePanel(\"Old Faithful Geyser Data\"),\n  sidebarLayout(\n    sidebarPanel(\n      sliderInput(\"bins\", \n                  \"Number of bins:\", \n                  min = 1, \n                  max = 50, \n                  value = 30)\n    ),\n    mainPanel(\n      plotOutput(\"distPlot\")\n    )\n  )\n)\n\n\n\n\n\n\n\n\n\n\n\n\nLayout elements\n\nfluidPage() is the container for the app interface, the layout in which your content is. This is the most common, but there are other types of layouts. Check here"
   },
   {
     "objectID": "slides/13-interactive-graphics.html#ui-user-interface-1",
     "href": "slides/13-interactive-graphics.html#ui-user-interface-1",
     "title": "Interactive Graphics with Shiny",
     "section": "ui — User Interface",
-    "text": "ui — User Interface\n\n\nui &lt;- fluidPage(\n  titlePanel(\"Old Faithful Geyser Data\"),\n  sidebarLayout( #&lt;&lt;\n    sidebarPanel(\n      sliderInput(\"bins\", \n                  \"Number of bins:\", \n                  min = 1, \n                  max = 50, \n                  value = 30)\n    ),\n    mainPanel(\n      plotOutput(\"distPlot\")\n    )\n  )\n)\n\n\n\n\n\n\n\n\n\n\n\nLayout elements\n\nsidebarLayout() splits the layout into sidebar (sidebarPanel()) and main area (mainPanel()). This is also optional."
+    "text": "ui — User Interface\n\n\nui &lt;- fluidPage(\n  titlePanel(\"Old Faithful Geyser Data\"),\n  sidebarLayout( #&lt;&lt;\n    sidebarPanel(\n      sliderInput(\"bins\", \n                  \"Number of bins:\", \n                  min = 1, \n                  max = 50, \n                  value = 30)\n    ),\n    mainPanel(\n      plotOutput(\"distPlot\")\n    )\n  )\n)\n\n\n\n\n\n\n\n\n\n\n\n\nLayout elements\n\nsidebarLayout() splits the layout into sidebar (sidebarPanel()) and main area (mainPanel()). This is also optional."
   },
   {
     "objectID": "slides/13-interactive-graphics.html#ui-user-interface-2",
     "href": "slides/13-interactive-graphics.html#ui-user-interface-2",
     "title": "Interactive Graphics with Shiny",
     "section": "ui — User Interface",
-    "text": "ui — User Interface\n\n\nui &lt;- fluidPage(\n  titlePanel(\"Old Faithful Geyser Data\"),\n  sidebarLayout(\n    sidebarPanel( #&lt;&lt;\n      sliderInput(\"bins\",  #&lt;&lt;\n                  \"Number of bins:\",  #&lt;&lt;\n                  min = 1, #&lt;&lt;\n                  max = 50, #&lt;&lt;\n                  value = 30) #&lt;&lt;\n    ),\n    mainPanel(\n      plotOutput(\"distPlot\")\n    )\n  )\n)\n\n\n\n\n\n\n\n\n\n\n\nPage content\n\nsidebarPanel() contains one input field (sliderInput()) called “bins”. This is a slider that lets a user choose a number. As you can infer from the name, in this case, it’s the number of histogram bins."
+    "text": "ui — User Interface\n\n\nui &lt;- fluidPage(\n  titlePanel(\"Old Faithful Geyser Data\"),\n  sidebarLayout(\n    sidebarPanel( #&lt;&lt;\n      sliderInput(\"bins\",  #&lt;&lt;\n                  \"Number of bins:\",  #&lt;&lt;\n                  min = 1, #&lt;&lt;\n                  max = 50, #&lt;&lt;\n                  value = 30) #&lt;&lt;\n    ),\n    mainPanel(\n      plotOutput(\"distPlot\")\n    )\n  )\n)\n\n\n\n\n\n\n\n\n\n\n\n\nPage content\n\nsidebarPanel() contains one input field (sliderInput()) called “bins”. This is a slider that lets a user choose a number. As you can infer from the name, in this case, it’s the number of histogram bins."
   },
   {
     "objectID": "slides/13-interactive-graphics.html#ui-user-interface-3",
     "href": "slides/13-interactive-graphics.html#ui-user-interface-3",
     "title": "Interactive Graphics with Shiny",
     "section": "ui — User Interface",
-    "text": "ui — User Interface\n\n\nui &lt;- fluidPage(\n  titlePanel(\"Old Faithful Geyser Data\"),\n  sidebarLayout(\n    sidebarPanel(\n      sliderInput(\"bins\", \n                  \"Number of bins:\", \n                  min = 1, \n                  max = 50, \n                  value = 30)\n    ),\n    mainPanel( #&lt;&lt;\n      plotOutput(\"distPlot\") #&lt;&lt;\n    )\n  )\n)\n\n\n\n\n\n\n\n\n\n\n\nPage content\n\nmainPanel() contains a histogram (plotOutput()), which will be defined in the server function. The name, or id, of this histogram is “distPlot”"
+    "text": "ui — User Interface\n\n\nui &lt;- fluidPage(\n  titlePanel(\"Old Faithful Geyser Data\"),\n  sidebarLayout(\n    sidebarPanel(\n      sliderInput(\"bins\", \n                  \"Number of bins:\", \n                  min = 1, \n                  max = 50, \n                  value = 30)\n    ),\n    mainPanel( #&lt;&lt;\n      plotOutput(\"distPlot\") #&lt;&lt;\n    )\n  )\n)\n\n\n\n\n\n\n\n\n\n\n\n\nPage content\n\nmainPanel() contains a histogram (plotOutput()), which will be defined in the server function. The name, or id, of this histogram is “distPlot”"
   },
   {
     "objectID": "slides/13-interactive-graphics.html#shiny-server-logic-explained",
     "href": "slides/13-interactive-graphics.html#shiny-server-logic-explained",
     "title": "Interactive Graphics with Shiny",
     "section": "Shiny server Logic Explained ⚙️",
-    "text": "Shiny server Logic Explained ⚙️\nserver &lt;- function(input, output) {\n...\n}\nThe server() function takes two arguments:\n\ninput: a reactive list of input values from the UI\noutput: a reactive list where you assign render functions\n\n\nReactive lists are “special” lists used in reactive programming — a way to make your app automatically update outputs when inputs change."
+    "text": "Shiny server Logic Explained ⚙️\nserver &lt;- function(input, output) {\n...\n}\nThe server() function takes two arguments:\n\ninput: a reactive list of input values from the UI\noutput: a reactive list where you assign render functions\n\n\n\n\n\n\n\n\n\n\nReactive lists are “special” lists used in reactive programming — a way to make your app automatically update outputs when inputs change."
   },
   {
     "objectID": "slides/13-interactive-graphics.html#shiny-server-logic-explained-1",
@@ -214,7 +221,7 @@
     "href": "slides/13-interactive-graphics.html#lets-start-with-some-basic-modifications-1",
     "title": "Interactive Graphics with Shiny",
     "section": "Let’s start with some basic modifications ✍️",
-    "text": "Let’s start with some basic modifications ✍️\nAfter your modifications the app should look like this:\n\n\nThe app with the modifications is available here"
+    "text": "Let’s start with some basic modifications ✍️\nAfter your modifications the app should look like this:\n\n\n\n\n\n\n\n\n\n\nThe app with the modifications is available here"
   },
   {
     "objectID": "slides/13-interactive-graphics.html#behind-the-scenes-running-a-shiny-app",
@@ -259,11 +266,18 @@
     "text": "Some examples ✨\n\nShiny App Gallery here\nCalifornia Schools Climate Hazards Dashboard here\nNew Zealand Trade Intelligence Dashboard here\nLocating Blood Banks in India here\nUnderstanding voters’ profile in Brazilian elections here"
   },
   {
+    "objectID": "slides/12-simulation-2.html",
+    "href": "slides/12-simulation-2.html",
+    "title": "Random Walks and MCMC",
+    "section": "",
+    "text": "How do we sample from distributions that are not gamma, exponential, normal, etc?\n\\[ f(x)=\\begin{cases} 2-4x, & 0 \\leq x&lt; 1/2\\\\ 4x-2, & 1/2 \\leq x \\leq 1 \\end{cases} \\]"
+  },
+  {
     "objectID": "slides/12-simulation-2.html#non-standard-distributions",
     "href": "slides/12-simulation-2.html#non-standard-distributions",
     "title": "Random Walks and MCMC",
-    "section": "Non-standard distributions",
-    "text": "Non-standard distributions\nHow do we sample from distributions that are not gamma, exponential, normal, etc?\n\\[ f(x)=\\begin{cases} 2-4x, & 0 \\leq x&lt; 1/2\\\\ 4x-2, & 1/2 \\leq x \\leq 1 \\end{cases} \\]"
+    "section": "",
+    "text": "How do we sample from distributions that are not gamma, exponential, normal, etc?\n\\[ f(x)=\\begin{cases} 2-4x, & 0 \\leq x&lt; 1/2\\\\ 4x-2, & 1/2 \\leq x \\leq 1 \\end{cases} \\]"
   },
   {
     "objectID": "slides/12-simulation-2.html#inverse-probability-sampling",
@@ -280,11 +294,18 @@
     "text": "Inverse Probability Sampling\n\\[F(x) = \\begin{cases} -2x^2 + 2x, & 0 \\leq x&lt; 1/2\\\\ \\hphantom{-}2x^2-2x, & 1/2 \\leq x \\leq 1 \\end{cases}\\]\n\\[F^{-1}(u) = \\begin{cases} \\frac{1}{2}-\\frac{\\sqrt{1-2u}}{2} & u &lt; 0.5\\\\\\frac{1}{2} + \\frac{\\sqrt{u}}{\\sqrt2} & u \\geq 0.5\\end{cases}\\]\n\nset.seed(2043872)\nu &lt;- runif(100)\nx &lt;- 1/2 -0.5*(1-2*u)*(u&lt;0.5) + (u/2)^0.5 * (u&gt;0.5)\nhist(x)"
   },
   {
+    "objectID": "slides/08-graphics.html",
+    "href": "slides/08-graphics.html",
+    "title": "Graphics",
+    "section": "",
+    "text": "Create well-designed graphics\nIdentify which chart(s) to use\nUnderstand how cognition/perception impact graphics"
+  },
+  {
     "objectID": "slides/08-graphics.html#this-weeks-big-picture-goal",
     "href": "slides/08-graphics.html#this-weeks-big-picture-goal",
     "title": "Graphics",
-    "section": "This week’s big picture goal:",
-    "text": "This week’s big picture goal:\n\nCreate well-designed graphics\nIdentify which chart(s) to use\nUnderstand how cognition/perception impact graphics"
+    "section": "",
+    "text": "Create well-designed graphics\nIdentify which chart(s) to use\nUnderstand how cognition/perception impact graphics"
   },
   {
     "objectID": "slides/08-graphics.html#todays-goals",
@@ -298,35 +319,35 @@
     "href": "slides/08-graphics.html#ugly-graphics",
     "title": "Graphics",
     "section": "Ugly Graphics",
-    "text": "Ugly Graphics\n\n\n\n\n\nImage Source\n\n\n\n\nWeekly wages aren’t really comparable to home prices, scale-wise\nAlternatives:\n\ncompare annual wages to home prices\nuse some other standard scaling for affordability"
+    "text": "Ugly Graphics\n\n\n\n\n\n\nImage Source\n\n\n\n\nWeekly wages aren’t really comparable to home prices, scale-wise\nAlternatives:\n\ncompare annual wages to home prices\nuse some other standard scaling for affordability"
   },
   {
     "objectID": "slides/08-graphics.html#ugly-graphics-1",
     "href": "slides/08-graphics.html#ugly-graphics-1",
     "title": "Graphics",
     "section": "Ugly Graphics",
-    "text": "Ugly Graphics\n\nImage Source"
+    "text": "Ugly Graphics\n\n\n\nImage Source"
   },
   {
     "objectID": "slides/08-graphics.html#ugly-graphics-2",
     "href": "slides/08-graphics.html#ugly-graphics-2",
     "title": "Graphics",
     "section": "Ugly Graphics",
-    "text": "Ugly Graphics\n\nImage Source"
+    "text": "Ugly Graphics\n\n\n\nImage Source"
   },
   {
     "objectID": "slides/08-graphics.html#good-graphics",
     "href": "slides/08-graphics.html#good-graphics",
     "title": "Graphics",
     "section": "Good Graphics",
-    "text": "Good Graphics\n\nImage Source"
+    "text": "Good Graphics\n\n\n\nImage Source"
   },
   {
     "objectID": "slides/08-graphics.html#good-graphics-1",
     "href": "slides/08-graphics.html#good-graphics-1",
     "title": "Graphics",
     "section": "Good Graphics",
-    "text": "Good Graphics\n\nImage Source"
+    "text": "Good Graphics\n\n\n\nImage Source"
   },
   {
     "objectID": "slides/08-graphics.html#good-graphics-2",
@@ -336,11 +357,18 @@
     "text": "Good Graphics\n\n\n\nImage source"
   },
   {
+    "objectID": "slides/06b-data-wrangling.html",
+    "href": "slides/06b-data-wrangling.html",
+    "title": "Wrangling Data",
+    "section": "",
+    "text": "Working with text and practicing exploration skills"
+  },
+  {
     "objectID": "slides/06b-data-wrangling.html#this-weeks-big-picture-goal",
     "href": "slides/06b-data-wrangling.html#this-weeks-big-picture-goal",
     "title": "Wrangling Data",
-    "section": "This week’s big picture goal:",
-    "text": "This week’s big picture goal:\nWorking with text and practicing exploration skills"
+    "section": "",
+    "text": "Working with text and practicing exploration skills"
   },
   {
     "objectID": "slides/06b-data-wrangling.html#organization",
@@ -364,11 +392,18 @@
     "text": "Resources\n\nR cheat sheet\npython cheat sheet"
   },
   {
+    "objectID": "slides/05-data-explorations.html",
+    "href": "slides/05-data-explorations.html",
+    "title": "Exploring Data",
+    "section": "",
+    "text": "Getting comfortable working with data sets and start asking questions!"
+  },
+  {
     "objectID": "slides/05-data-explorations.html#this-weeks-big-picture-goal",
     "href": "slides/05-data-explorations.html#this-weeks-big-picture-goal",
     "title": "Exploring Data",
-    "section": "This week’s big picture goal:",
-    "text": "This week’s big picture goal:\nGetting comfortable working with data sets and start asking questions!"
+    "section": "",
+    "text": "Getting comfortable working with data sets and start asking questions!"
   },
   {
     "objectID": "slides/05-data-explorations.html#todays-goals",
@@ -385,32 +420,39 @@
     "text": "Resources\n\nR cheat sheet\npython cheat sheet"
   },
   {
+    "objectID": "slides/03b-fizzing-and-buzzing.html",
+    "href": "slides/03b-fizzing-and-buzzing.html",
+    "title": "Fizzing and Buzzing (Part 2)",
+    "section": "",
+    "text": "Going from using functions to writing the first functions"
+  },
+  {
     "objectID": "slides/03b-fizzing-and-buzzing.html#this-weeks-big-picture-goal",
     "href": "slides/03b-fizzing-and-buzzing.html#this-weeks-big-picture-goal",
     "title": "Fizzing and Buzzing (Part 2)",
-    "section": "This week’s big picture goal:",
-    "text": "This week’s big picture goal:\nGoing from using functions to writing the first functions"
+    "section": "",
+    "text": "Going from using functions to writing the first functions"
   },
   {
     "objectID": "slides/03b-fizzing-and-buzzing.html#todays-goals",
     "href": "slides/03b-fizzing-and-buzzing.html#todays-goals",
     "title": "Fizzing and Buzzing (Part 2)",
     "section": "Today’s Goals:",
-    "text": "Today’s Goals:\nUnderstand\n\nKnow how to move code into a function (and what changes)\nUse error handling appropriately"
+    "text": "Today’s Goals:\n\nUnderstand\n\nKnow how to move code into a function (and what changes)\nUse error handling appropriately"
   },
   {
     "objectID": "slides/03b-fizzing-and-buzzing.html#todays-goals-1",
     "href": "slides/03b-fizzing-and-buzzing.html#todays-goals-1",
     "title": "Fizzing and Buzzing (Part 2)",
     "section": "Today’s Goals:",
-    "text": "Today’s Goals:\nDo\n\nHomework 3 – read carefully, work step by step from top to bottom"
+    "text": "Today’s Goals:\n\nDo\n\nHomework 3 – read carefully, work step by step from top to bottom"
   },
   {
     "objectID": "slides/03b-fizzing-and-buzzing.html#todays-goals-2",
     "href": "slides/03b-fizzing-and-buzzing.html#todays-goals-2",
     "title": "Fizzing and Buzzing (Part 2)",
     "section": "Today’s Goals:",
-    "text": "Today’s Goals:\nRead Up On\n\nControl Structures, program flows\nWriting Functions"
+    "text": "Today’s Goals:\n\nRead Up On\n\nControl Structures, program flows\nWriting Functions"
   },
   {
     "objectID": "slides/03b-fizzing-and-buzzing.html#resources",
@@ -427,11 +469,18 @@
     "text": "Next class\n\nFunction writing in R and Python"
   },
   {
+    "objectID": "slides/02b-Finding-Your-Way.html",
+    "href": "slides/02b-Finding-Your-Way.html",
+    "title": "Finding your way in R and Python",
+    "section": "",
+    "text": "Understand\n\nBasic Data Types\nCreating Variables\nUsing R/Python as a calculator\n\nPractice working with errors\n\nIntro to Debugging"
+  },
+  {
     "objectID": "slides/02b-Finding-Your-Way.html#todays-goals",
     "href": "slides/02b-Finding-Your-Way.html#todays-goals",
     "title": "Finding your way in R and Python",
-    "section": "Today’s Goals:",
-    "text": "Today’s Goals:\nUnderstand\n\nBasic Data Types\nCreating Variables\nUsing R/Python as a calculator\n\nPractice working with errors\n\nIntro to Debugging"
+    "section": "",
+    "text": "Understand\n\nBasic Data Types\nCreating Variables\nUsing R/Python as a calculator\n\nPractice working with errors\n\nIntro to Debugging"
   },
   {
     "objectID": "slides/02b-Finding-Your-Way.html#work-on-the-homework",
@@ -448,11 +497,18 @@
     "text": "Next class\n\nData structures: vectors, lists, arrays, …\nArithmetic operators for matrices\nFunction writing in R and Python"
   },
   {
+    "objectID": "slides/01b-intro.html",
+    "href": "slides/01b-intro.html",
+    "title": "Stat 850: Git and Github",
+    "section": "",
+    "text": "Set up Git (Chapter 5 of the textbook)\nHow to submit homework with Github Classroom\nGit concepts: Push/Pull"
+  },
+  {
     "objectID": "slides/01b-intro.html#goals-for-today",
     "href": "slides/01b-intro.html#goals-for-today",
     "title": "Stat 850: Git and Github",
-    "section": "Goals for Today",
-    "text": "Goals for Today\n\nSet up Git (Chapter 5 of the textbook)\nHow to submit homework with Github Classroom\nGit concepts: Push/Pull"
+    "section": "",
+    "text": "Set up Git (Chapter 5 of the textbook)\nHow to submit homework with Github Classroom\nGit concepts: Push/Pull"
   },
   {
     "objectID": "slides/01b-intro.html#preview-next-week",
@@ -501,14 +557,14 @@
     "href": "homework/practice-midterm2.html#skill-indexing-and-subsets",
     "title": "Midterm Exam Practice 2",
     "section": "Skill: Indexing and Subsets",
-    "text": "Skill: Indexing and Subsets\nUsing your primes variables (in both R and python), determine which primes are a factor of a second variable, x. You may want to test your code on values like x=18, x=25, x = 34, x=43, Your code should output only the prime factors of x.\n\n\n\n\n\n\nReminder: Modular Division\n\n\n\nRemember that modular division gives you the remainder when dividing a number by another number. x %% 3 (R) or x % 3 (Python) will give you the remainder when x is divided by 3.\nIf x is an integer and the divisor is an integer, the result of modular division will also be an integer.\n\n\n\nR\n\n\nPython"
+    "text": "Skill: Indexing and Subsets\nUsing your primes variables (in both R and python), determine which primes are a factor of a second variable, x. You may want to test your code on values like x=18, x=25, x = 34, x=43, Your code should output only the prime factors of x.\n\n\n\n\n\n\nNoteReminder: Modular Division\n\n\n\nRemember that modular division gives you the remainder when dividing a number by another number. x %% 3 (R) or x % 3 (Python) will give you the remainder when x is divided by 3.\nIf x is an integer and the divisor is an integer, the result of modular division will also be an integer.\n\n\n\nR\n\n\nPython"
   },
   {
     "objectID": "homework/practice-midterm2.html#skill-writing-functions",
     "href": "homework/practice-midterm2.html#skill-writing-functions",
     "title": "Midterm Exam Practice 2",
     "section": "Skill: Writing Functions",
-    "text": "Skill: Writing Functions\nIn the previous section, you determined which primes were factors of a given number. Of course, it is possible to have a number which has multiple occurrences of the same prime factor.\nIn R and python, write a function, prime_n(x, prime), which will determine how many times a single, pre-specified prime number prime can be evenly divided into a number x. You may want to calculate an upper bound for this possibility to help you in your search. Your function should take parameters x and prime and return the integer number of times prime occurs in the prime factorization of x.\n\n\n\n\n\n\nReminder: Logs with different bases\n\n\n\nThe operation \\(\\log_a(x) = b\\) is defined the number \\(b\\) such that \\(a^b = x\\) for fixed \\(a\\) and \\(x\\). You can use this information to determine the maximum number of times a factor could be repeated when calculating the prime factorization of a number.\nYou will need to load the math library in Python to access the math.log(a, Base) function. In R, the log(x, base) function is built in.\nIt may also be useful to know that the floor() function (R) and math.floor() function (Python) will round down to the integer below a value.\n\n\n\nR\nA number of you handled this using a while loop – which is a great way to do it, and doesn’t require the log hint I gave you.\n\n\nPython"
+    "text": "Skill: Writing Functions\nIn the previous section, you determined which primes were factors of a given number. Of course, it is possible to have a number which has multiple occurrences of the same prime factor.\nIn R and python, write a function, prime_n(x, prime), which will determine how many times a single, pre-specified prime number prime can be evenly divided into a number x. You may want to calculate an upper bound for this possibility to help you in your search. Your function should take parameters x and prime and return the integer number of times prime occurs in the prime factorization of x.\n\n\n\n\n\n\nNoteReminder: Logs with different bases\n\n\n\nThe operation \\(\\log_a(x) = b\\) is defined the number \\(b\\) such that \\(a^b = x\\) for fixed \\(a\\) and \\(x\\). You can use this information to determine the maximum number of times a factor could be repeated when calculating the prime factorization of a number.\nYou will need to load the math library in Python to access the math.log(a, Base) function. In R, the log(x, base) function is built in.\nIt may also be useful to know that the floor() function (R) and math.floor() function (Python) will round down to the integer below a value.\n\n\n\nR\nA number of you handled this using a while loop – which is a great way to do it, and doesn’t require the log hint I gave you.\n\n\nPython"
   },
   {
     "objectID": "homework/practice-midterm2.html#skill-data-frames-loops",
@@ -1024,16 +1080,37 @@
   {
     "objectID": "weeks/week-16.html",
     "href": "weeks/week-16.html",
-    "title": "Week 16: Final Part 1",
+    "title": "Week 16: Final Exam Review",
     "section": "",
-    "text": "Everything!"
+    "text": "Everything!\n\n\n\n\nFinal Exam Review\n\n\n\n\n\nFinal Exam Review\n\n\n\n\n\nFinal Exam on Canvas – Due Dec 17, 12pm"
   },
   {
     "objectID": "weeks/week-16.html#reading",
     "href": "weeks/week-16.html#reading",
-    "title": "Week 16: Final Part 1",
+    "title": "Week 16: Final Exam Review",
     "section": "",
     "text": "Everything!"
+  },
+  {
+    "objectID": "weeks/week-16.html#tuesday",
+    "href": "weeks/week-16.html#tuesday",
+    "title": "Week 16: Final Exam Review",
+    "section": "",
+    "text": "Final Exam Review"
+  },
+  {
+    "objectID": "weeks/week-16.html#thursday",
+    "href": "weeks/week-16.html#thursday",
+    "title": "Week 16: Final Exam Review",
+    "section": "",
+    "text": "Final Exam Review"
+  },
+  {
+    "objectID": "weeks/week-16.html#practice-your-skills",
+    "href": "weeks/week-16.html#practice-your-skills",
+    "title": "Week 16: Final Exam Review",
+    "section": "",
+    "text": "Final Exam on Canvas – Due Dec 17, 12pm"
   },
   {
     "objectID": "weeks/week-14.html",
@@ -1462,127 +1539,6 @@
     "crumbs": [
       "Weekly materials",
       "Week 2 - Programming"
-    ]
-  },
-  {
-    "objectID": "course-support.html",
-    "href": "course-support.html",
-    "title": "Course support",
-    "section": "",
-    "text": "If you have a question during lecture or lab, feel free to ask it! There are likely other students with the same question, so by asking you will create a learning opportunity for everyone.",
-    "crumbs": [
-      "Course information",
-      "Support"
-    ]
-  },
-  {
-    "objectID": "course-support.html#lectures-and-labs",
-    "href": "course-support.html#lectures-and-labs",
-    "title": "Course support",
-    "section": "",
-    "text": "If you have a question during lecture or lab, feel free to ask it! There are likely other students with the same question, so by asking you will create a learning opportunity for everyone.",
-    "crumbs": [
-      "Course information",
-      "Support"
-    ]
-  },
-  {
-    "objectID": "course-support.html#office-hours",
-    "href": "course-support.html#office-hours",
-    "title": "Course support",
-    "section": "Office hours",
-    "text": "Office hours\nOffice hours are available by appointment at this link. In general, office hours will be via Zoom - this allows me to offer more availability, and doesn’t require you to come to East campus to visit my office.\nIf you’d prefer to meet in person, try to schedule your appointment on Tuesday or Thursday, and mention in the request that you want an in-person meeting. I will let you know if that’s feasible given my schedule for the day.",
-    "crumbs": [
-      "Course information",
-      "Support"
-    ]
-  },
-  {
-    "objectID": "course-support.html#email",
-    "href": "course-support.html#email",
-    "title": "Course support",
-    "section": "Email",
-    "text": "Email\nPlease only use email for questions about personal matters that may not be appropriate for the public course forum (e.g., illness, grades, accommodations, etc.). In these cases, please add “Stat850” to the subject line, so that I can prioritize your email.",
-    "crumbs": [
-      "Course information",
-      "Support"
-    ]
-  },
-  {
-    "objectID": "course-support.html#academic-support",
-    "href": "course-support.html#academic-support",
-    "title": "Course support",
-    "section": "Academic support",
-    "text": "Academic support\nThere are times you may need help with the class that is beyond what can be provided by the teaching team. In those instances, I encourage you to visit the Center for Academic Success and Transition (CAST). CAST offers free services to all students.\nStudents have access to peer tutoring, academic coaching, and academic success workshops.",
-    "crumbs": [
-      "Course information",
-      "Support"
-    ]
-  },
-  {
-    "objectID": "course-support.html#mental-health-and-wellness",
-    "href": "course-support.html#mental-health-and-wellness",
-    "title": "Course support",
-    "section": "Mental health and wellness",
-    "text": "Mental health and wellness\nYour mental health and wellness extremely important, and the university offers resources to support students in managing daily stress and self-care. UNL offers several resources for students to manage stress, seek help with well-being, and access crisis and long-term care.\n\nCounseling and Psychological Services (CAPS), 402-472-7450\nCenter for Advocacy, Response, & Education (CARE), 402-472-3553 – resources for victims/survivors of interpersonal violence.\nServices for Students with Disabilities (SSD), ssd@unl.edu or 402-472-3787 – resources for students experiencing short or long-term disabilities that affect the campus or educational experience.",
-    "crumbs": [
-      "Course information",
-      "Support"
-    ]
-  },
-  {
-    "objectID": "course-support.html#technology",
-    "href": "course-support.html#technology",
-    "title": "Course support",
-    "section": "Technology",
-    "text": "Technology\nStudents who do not have a working computer can check out a loaner laptop from HuskerTech on city campus (Love South, Adele Hall) and east campus (Dinsdale).\nIf you are unable to get a loaner laptop set up with the software required for parts of this course, please try to let me know ahead of time - it is possible that I will be able to assist you with browser-based solutions.",
-    "crumbs": [
-      "Course information",
-      "Support"
-    ]
-  },
-  {
-    "objectID": "course-links.html",
-    "href": "course-links.html",
-    "title": "Useful links",
-    "section": "",
-    "text": "Canvas\nAssignment Submissions, Reading Quizzes, Gradebook\n\n\n\nProject Submissions\n\n\nScientific Writing for Health Research\nTextbook\n\n\nEntering the Conversation\nTextbook\n\n\nOpen Technical Communication\nTextbook",
-    "crumbs": [
-      "Course information",
-      "Useful links"
-    ]
-  },
-  {
-    "objectID": "course-overview.html",
-    "href": "course-overview.html",
-    "title": "Stat 850: Computing Tools for Statisticians",
-    "section": "",
-    "text": "Introductions to statistical computing packages and document preparation software. Topics include: graphical techniques, data management, Monte Carlo simulation, dynamic document preparation, presentation software.",
-    "crumbs": [
-      "Course information",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "course-overview.html#goals",
-    "href": "course-overview.html#goals",
-    "title": "Stat 850: Computing Tools for Statisticians",
-    "section": "Goals",
-    "text": "Goals\n\nLearn how to use R and/or Python for data analysis, data processing, data visualization, and statistical simulation.\nBecome familiar with the process, techniques, and goals of exploratory data analysis.\nCreate, assess, and debug code effectively.\n\nUse online resources to find software to perform a task, comparing approaches taken by competing programs.\nRead error messages, find related problems in online forums, and isolate the conditions necessary to generate the error.\nGenerate minimum working examples or reproducible examples of errors in order to ask for help effectively.\n\nCommunicate statistical results using reproducible, dynamic tools. Understand the importance of reproducibility in scientific computation.",
-    "crumbs": [
-      "Course information",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "course-overview.html#objectives",
-    "href": "course-overview.html#objectives",
-    "title": "Stat 850: Computing Tools for Statisticians",
-    "section": "Objectives",
-    "text": "Objectives\n(what you should be able to do at the end of this course)\n\nClean and format the data appropriately for the intended analysis or visualization method. (Goals: 1)\nExplore a data set using numerical and visual summaries, developing questions which can be answered using statistics. (Goals: 1, 2)\nEvaluate methods or software to assess relevance to a problem. Compare similar options to determine which are more appropriate for a given application (Goals: 1, 3)\nTest and debug software, using the following sequence: (Goals: 3, 4)\n\nReproduce the error in a new environment,\nCreate a minimal reproducible example,\nResearch the error message and evaluate online resources for relevance,\nAsk for help, describing the error or problem appropriately.\n\nDocument the data, methods, and results of an analysis using reproducible methods. (Goals: 1, 2, 4)\nConstruct a reproducible statistical simulation for a given problem using methods such as MCMC, inverse probability sampling, and rejection sampling. (Goals: 1, 3, 4)",
-    "crumbs": [
-      "Course information",
-      "Overview"
     ]
   },
   {
@@ -2085,14 +2041,21 @@
     "href": "weeks/week-17.html",
     "title": "Week 17: Final Exam",
     "section": "",
-    "text": "Everything!"
+    "text": "Final exam will be completed online based on class consensus.\n\n\n\n\nFinal Exam on Canvas – Due Dec 17, 12pm"
   },
   {
     "objectID": "weeks/week-17.html#reading",
     "href": "weeks/week-17.html#reading",
     "title": "Week 17: Final Exam",
     "section": "",
-    "text": "Everything!"
+    "text": "Final exam will be completed online based on class consensus."
+  },
+  {
+    "objectID": "weeks/week-17.html#practice-your-skills",
+    "href": "weeks/week-17.html#practice-your-skills",
+    "title": "Week 17: Final Exam",
+    "section": "",
+    "text": "Final Exam on Canvas – Due Dec 17, 12pm"
   },
   {
     "objectID": "homework-templates/02/index.html",
@@ -2571,6 +2534,13 @@
     "text": "Additional Questions (out of class portion)\n\nBe prepared to identify which functions do which things in e.g. matching or multiple choice questions\nBe prepared to summarize the arguments made in different “practical” reading articles\n\nA key for this exam can be found here."
   },
   {
+    "objectID": "slides/01a-intro.html",
+    "href": "slides/01a-intro.html",
+    "title": "Stat 850 Introduction",
+    "section": "",
+    "text": "Syllabus Q&A\nInstall software:\n\nR\nPython\nquarto\nRStudio\ngit\n\nStretch goal: set up Git"
+  },
+  {
     "objectID": "slides/01a-intro.html#contact-info",
     "href": "slides/01a-intro.html#contact-info",
     "title": "Stat 850 Introduction",
@@ -2627,18 +2597,25 @@
     "text": "Oral Exams\n\nI reserve the right to replace any grade with an oral exam on your submission\nAllows me to clarify how much you understand when that isn’t clear\nHelps when I write an ambiguous question or you miss a key part of a question\nIf you can’t explain your code/answer you don’t get any credit"
   },
   {
+    "objectID": "slides/02a-Finding-Your-Way.html",
+    "href": "slides/02a-Finding-Your-Way.html",
+    "title": "Finding your way in R and Python",
+    "section": "",
+    "text": "Know the 3 different ways to execute code from within RStudio\n\nTerminal (Command Line)\nSource Script (RStudio Button)\nInteractive Mode (line by line)\n\nDifferentiate between the Console and the Terminal\nDifferentiate between R and Python in the Console"
+  },
+  {
     "objectID": "slides/02a-Finding-Your-Way.html#todays-goals",
     "href": "slides/02a-Finding-Your-Way.html#todays-goals",
     "title": "Finding your way in R and Python",
-    "section": "Today’s Goals:",
-    "text": "Today’s Goals:\n\nKnow the 3 different ways to execute code from within RStudio\n\nTerminal (Command Line)\nSource Script (RStudio Button)\nInteractive Mode (line by line)\n\nDifferentiate between the Console and the Terminal\nDifferentiate between R and Python in the Console"
+    "section": "",
+    "text": "Know the 3 different ways to execute code from within RStudio\n\nTerminal (Command Line)\nSource Script (RStudio Button)\nInteractive Mode (line by line)\n\nDifferentiate between the Console and the Terminal\nDifferentiate between R and Python in the Console"
   },
   {
     "objectID": "slides/02a-Finding-Your-Way.html#rstudio-projects",
     "href": "slides/02a-Finding-Your-Way.html#rstudio-projects",
     "title": "Finding your way in R and Python",
     "section": "RStudio Projects",
-    "text": "RStudio Projects\nRStudio projects are a way to keep your work organized.\nLet’s create one for this week’s class work.\n\nCreating an RStudio Project"
+    "text": "RStudio Projects\nRStudio projects are a way to keep your work organized.\nLet’s create one for this week’s class work.\n\n\n\nCreating an RStudio Project"
   },
   {
     "objectID": "slides/02a-Finding-Your-Way.html#ways-to-execute-code",
@@ -2652,14 +2629,14 @@
     "href": "slides/02a-Finding-Your-Way.html#command-line",
     "title": "Finding your way in R and Python",
     "section": "Command Line",
-    "text": "Command Line\n\nRunning madlibs.py at the command line"
+    "text": "Command Line\n\n\n\nRunning madlibs.py at the command line"
   },
   {
     "objectID": "slides/02a-Finding-Your-Way.html#source-script",
     "href": "slides/02a-Finding-Your-Way.html#source-script",
     "title": "Finding your way in R and Python",
     "section": "Source Script",
-    "text": "Source Script\n\nRunning madlibs.py using Source Script in RStudio"
+    "text": "Source Script\n\n\n\nRunning madlibs.py using Source Script in RStudio"
   },
   {
     "objectID": "slides/02a-Finding-Your-Way.html#next-class",
@@ -2669,32 +2646,39 @@
     "text": "Next Class\n\nBasic Data Types\nCreating Variables\nUsing R/Python as a calculator\nIntro to Debugging"
   },
   {
+    "objectID": "slides/03a-fizzing-and-buzzing.html",
+    "href": "slides/03a-fizzing-and-buzzing.html",
+    "title": "Fizzing and Buzzing",
+    "section": "",
+    "text": "Going from using functions to writing the first functions"
+  },
+  {
     "objectID": "slides/03a-fizzing-and-buzzing.html#this-weeks-big-picture-goal",
     "href": "slides/03a-fizzing-and-buzzing.html#this-weeks-big-picture-goal",
     "title": "Fizzing and Buzzing",
-    "section": "This week’s big picture goal:",
-    "text": "This week’s big picture goal:\nGoing from using functions to writing the first functions"
+    "section": "",
+    "text": "Going from using functions to writing the first functions"
   },
   {
     "objectID": "slides/03a-fizzing-and-buzzing.html#todays-goals",
     "href": "slides/03a-fizzing-and-buzzing.html#todays-goals",
     "title": "Fizzing and Buzzing",
     "section": "Today’s Goals:",
-    "text": "Today’s Goals:\nUnderstand\n\nDistinguish and recognize data structures\nUse Control structures - if/else and for loops"
+    "text": "Today’s Goals:\n\nUnderstand\n\nDistinguish and recognize data structures\nUse Control structures - if/else and for loops"
   },
   {
     "objectID": "slides/03a-fizzing-and-buzzing.html#todays-goals-1",
     "href": "slides/03a-fizzing-and-buzzing.html#todays-goals-1",
     "title": "Fizzing and Buzzing",
     "section": "Today’s Goals:",
-    "text": "Today’s Goals:\nDo\n\nHomework 3 – read carefully, work step by step from top to bottom"
+    "text": "Today’s Goals:\n\nDo\n\nHomework 3 – read carefully, work step by step from top to bottom"
   },
   {
     "objectID": "slides/03a-fizzing-and-buzzing.html#todays-goals-2",
     "href": "slides/03a-fizzing-and-buzzing.html#todays-goals-2",
     "title": "Fizzing and Buzzing",
     "section": "Today’s Goals:",
-    "text": "Today’s Goals:\nRead Up On\n\nControl Structures, program flows\nWriting Functions"
+    "text": "Today’s Goals:\n\nRead Up On\n\nControl Structures, program flows\nWriting Functions"
   },
   {
     "objectID": "slides/03a-fizzing-and-buzzing.html#resources",
@@ -2711,11 +2695,18 @@
     "text": "Next class\n\nFunction writing in R and Python"
   },
   {
+    "objectID": "slides/04-case-studies.html",
+    "href": "slides/04-case-studies.html",
+    "title": "Case Studies",
+    "section": "",
+    "text": "Heads-up: watch 1h video before next class: tidy tuesday screencast"
+  },
+  {
     "objectID": "slides/04-case-studies.html#organization",
     "href": "slides/04-case-studies.html#organization",
     "title": "Case Studies",
-    "section": "Organization",
-    "text": "Organization\n\nHeads-up: watch 1h video before next class: tidy tuesday screencast"
+    "section": "",
+    "text": "Heads-up: watch 1h video before next class: tidy tuesday screencast"
   },
   {
     "objectID": "slides/04-case-studies.html#this-weeks-big-picture-goal",
@@ -2746,11 +2737,18 @@
     "text": "Next class\n\nPlanning out code"
   },
   {
+    "objectID": "slides/06-data-wrangling.html",
+    "href": "slides/06-data-wrangling.html",
+    "title": "Wrangling Data",
+    "section": "",
+    "text": "Working with text and practicing exploration skills"
+  },
+  {
     "objectID": "slides/06-data-wrangling.html#this-weeks-big-picture-goal",
     "href": "slides/06-data-wrangling.html#this-weeks-big-picture-goal",
     "title": "Wrangling Data",
-    "section": "This week’s big picture goal:",
-    "text": "This week’s big picture goal:\nWorking with text and practicing exploration skills"
+    "section": "",
+    "text": "Working with text and practicing exploration skills"
   },
   {
     "objectID": "slides/06-data-wrangling.html#organization",
@@ -2781,11 +2779,18 @@
     "text": "Resources\n\nR cheat sheet\npython cheat sheet"
   },
   {
+    "objectID": "slides/07-murder.html",
+    "href": "slides/07-murder.html",
+    "title": "Murder in SQL City",
+    "section": "",
+    "text": "Working with data filters, joining data"
+  },
+  {
     "objectID": "slides/07-murder.html#this-weeks-big-picture-goal",
     "href": "slides/07-murder.html#this-weeks-big-picture-goal",
     "title": "Murder in SQL City",
-    "section": "This week’s big picture goal:",
-    "text": "This week’s big picture goal:\nWorking with data filters, joining data"
+    "section": "",
+    "text": "Working with data filters, joining data"
   },
   {
     "objectID": "slides/07-murder.html#todays-goals",
@@ -2809,18 +2814,25 @@
     "text": "In the following examples, evaluate each problem using the criteria of a minimal reproducible example from this StackOverflow post.\nSpecifically, address the following things:\n\nAre the question and problem description complete?\nIs the issue reproducible? Does it have a description of the problem, with code that reproduces the problem? What could improve it?\nIs the example minimal? Does it include extra code or information that is not necessary?\nDoes the question describe any attempted solutions?\n\nThen, using what you know about R and Python, try to debug the problem using the strategies in the debugging chapter. Once you are thoroughly stumped, or you believe you have solved the problem, compare your solutions to those given on StackOverflow using the link.\n\nWhy Doesn’t this R function work?\n\nI created the following function to append new strings on a vector of strings called “meals”. However, when I use this function to append an string input into my “meals” vector, it does not work.\n\n add &lt;- function(str) {\n      meals &lt;- append(meals, as.character(str))  \n    }\nLink to original SO post.\n\n\nFunction not working R\n\nI’ve never programmed before and am trying to learn. I’m following that “coursera” course that I’ve seen other people post about — a course offered by Johns Hopkins on R programming.\n\n\nAnyway, this was supposed to be my first function. Yet, it doesn’t work! But when I type out all the steps individually, it runs just fine… Can anyone tell me why?\n\npollutantmean &lt;- function(directory, pollutant, id = 1:332){\n    x&lt;- list.files(\"/Users/mike******/Desktop/directory\", full.names=TRUE)\n    y&lt;- lapply(x, read.csv)\n    z&lt;- do.call(rbind.data.frame, y[id])\n\n    mean(z$pollutant, na.rm=TRUE)\n}\npollutantmean(specdata,nitrate,1:10)\n[1] NA\nWarning message:\nIn mean.default(z$pollutant, na.rm = TRUE) :\n  argument is not numeric or logical: returning NA\n\n####\n\nx&lt;- list.files(\"/Users/mike******/Desktop/specdata\",full.names=TRUE)\ny&lt;- lapply(x,read.csv)\nz&lt;- do.call(rbind.data.frame,y[1:10])\nmean(z$nitrate,na.rm=TRUE)\n[1] 0.7976266\nLink\n\n\nInexplicable error when trying to export my R notebook\n\nGetting this error from R Markdown when trying to export my .RMD\n\n\"Error in filter(Gastropods, Species == \"Cellana\") :  object 'Species' not found Calls: &lt;Anonymous&gt; ... withCallingHandlers -&gt; withVisible -&gt; eval -&gt; eval -&gt; filter\"\n\nHowever, all my plots are coming out successfully. I can clearly see in the data that the species column is there and that Cellana is a species. No spelling errors or anything.\n\n\nMy first 20 or so lines of code are below (between the ### symbols)\n\n\n\n###\n---\ntitle: \" Lab Report 2 - z5016113\"\noutput: html_notebook\ni---\n\n#1. Gastropod abundance vs. height on the shore\n\n```{r}\nGastropods &lt;- read.csv(file = \"MaroubraZones.csv\", header = TRUE)\nlibrary(ggplot2, dplyr)\n```\n\n```{r}\nGastropods$Zone &lt;- factor(Gastropods$Zone, levels = c(\"Low\", \"Mid\", \"High\"))\n```\n\n```{r}\nCellana &lt;- filter(Gastropods, Species == \"Cellana\")  ------&gt; This line is causing the error\n```\n\n```{r}\nggplot(Cellana, aes(Zone, Abundance)) + geom_boxplot()\n```\n###\n\n\nYou can find this sample file here\nLink\n\n\nPython if elif else statement\n\nI’m trying to create a program with python that calculate the cost for shipping.\n\n\nHowever, I can’t run the program to where it works properly.\n\n\nWhat ever my total is the same amount comes out as $6 for US and $8 for Canada. I can’t seem to get pass that.\n\n\nExample:\n\ntotal = raw_input('What is the total amount for your online shopping?')\ncountry = raw_input('Shipping within the US or Canada?')\n\nif country == \"US\":\n    if total &lt;= \"50\":\n        print \"Shipping Costs $6.00\"\n    elif total &lt;= \"100\":\n            print \"Shipping Costs $9.00\"\n    elif total &lt;= \"150\":\n            print \"Shipping Costs $12.00\"\n    else:\n        print \"FREE\"\n\nif country == \"Canada\":\n    if total &lt;= \"50\":\n        print \"Shipping Costs $8.00\"\n    elif total &lt;= \"100\":\n        print \"Shipping Costs $12.00\"\n    elif total &lt;= \"150\":\n        print \"Shipping Costs $15.00\"\n    else:\n        print \"FREE\"\nLink"
   },
   {
+    "objectID": "slides/10a-latex-markdown.html",
+    "href": "slides/10a-latex-markdown.html",
+    "title": "LaTeX and Markdown",
+    "section": "",
+    "text": "(in chronological order)\n\nLaTeX\nMarkdown and Pandoc\nAdding in R\n\nSweave/knitr\nRmarkdown/quarto\n\nSpecial Document Types"
+  },
+  {
     "objectID": "slides/10a-latex-markdown.html#contents",
     "href": "slides/10a-latex-markdown.html#contents",
     "title": "LaTeX and Markdown",
-    "section": "Contents",
-    "text": "Contents\n(in chronological order)\n\nLaTeX\nMarkdown and Pandoc\nAdding in R\n\nSweave/knitr\nRmarkdown/quarto\n\nSpecial Document Types"
+    "section": "",
+    "text": "(in chronological order)\n\nLaTeX\nMarkdown and Pandoc\nAdding in R\n\nSweave/knitr\nRmarkdown/quarto\n\nSpecial Document Types"
   },
   {
     "objectID": "slides/10a-latex-markdown.html#latex-a-document-prep-system",
     "href": "slides/10a-latex-markdown.html#latex-a-document-prep-system",
     "title": "LaTeX and Markdown",
     "section": "LaTeX: a document prep system",
-    "text": "LaTeX: a document prep system\n\n\nThink of it as the digital version of a printing press.\nYou will use tags to control the formatting of your document, and then compile it to PDF.\n\n\\emph{} for italic text\n\\textbf{} for bold text\n{\\HUGE }, {\\footnotesize }\n\nThe LaTeX system lays out your document according to a set of rules for spacing, margins, figure captions, cross-references, …\n\n\n\n\nPrinting press"
+    "text": "LaTeX: a document prep system\n\n\nThink of it as the digital version of a printing press.\nYou will use tags to control the formatting of your document, and then compile it to PDF.\n\n\\emph{} for italic text\n\\textbf{} for bold text\n{\\HUGE }, {\\footnotesize }\n\nThe LaTeX system lays out your document according to a set of rules for spacing, margins, figure captions, cross-references, …\n\n\n\n\nPrinting press\n\n\n\n\n\n\nLet us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to humans what we want the computer to do.\n\n\n— Donald E. Knuth, Literate Programming, 1984\n\nuseR! 2016 was celebrating the markdown systems as epic milestones for literate programming: https://www.r-project.org/conferences/useR-2016/keynotes.html"
   },
   {
     "objectID": "slides/10a-latex-markdown.html#latex-editors",
@@ -2834,7 +2846,7 @@
     "href": "slides/10a-latex-markdown.html#basic-latex",
     "title": "LaTeX and Markdown",
     "section": "Basic LaTeX",
-    "text": "Basic LaTeX\n\n\n\n\\documentclass{article}     % 1\n\\usepackage[utf8]{inputenc} % 2\n\n\\usepackage{natbib}         % 3 \n\\usepackage{graphicx}       % 4\n\n\\title{Demo}                % 5\n\\author{Susan VanderPlas}\n\\date{\\today}\n\n\\begin{document}            % 6\n\n\\maketitle                  % 7\n\n\\section{Introduction}      % 8\n\\citet{adams1995hitchhiker}\n\\section{Conclusion}\n\n\\bibliographystyle{plain}   % 9\n\\bibliography{refs}\n\\end{document}\nBasic LaTeX document\n\n\ntype of document (article)\nallow UTF-8 characters\nuse a bibliography\nallow pictures\nDocument header information\nActual document content\nCreate document title/header\nCreate introduction section (with a citation)\nCreate the bibliography\n\nOverleaf Gallery of possibilities\n\n\nLink to edit document"
+    "text": "Basic LaTeX\n\n\n\n\\documentclass{article}     % 1\n\\usepackage[utf8]{inputenc} % 2\n\n\\usepackage{natbib}         % 3 \n\\usepackage{graphicx}       % 4\n\n\\title{Demo}                % 5\n\\author{Susan VanderPlas}\n\\date{\\today}\n\n\\begin{document}            % 6\n\n\\maketitle                  % 7\n\n\\section{Introduction}      % 8\n\\citet{adams1995hitchhiker}\n\\section{Conclusion}\n\n\\bibliographystyle{plain}   % 9\n\\bibliography{refs}\n\\end{document}\nBasic LaTeX document\n\n\ntype of document (article)\nallow UTF-8 characters\nuse a bibliography\nallow pictures\nDocument header information\nActual document content\nCreate document title/header\nCreate introduction section (with a citation)\nCreate the bibliography\n\nOverleaf Gallery of possibilities\n\n\n\nLink to edit document"
   },
   {
     "objectID": "slides/10a-latex-markdown.html#bibtex",
@@ -2848,7 +2860,7 @@
     "href": "slides/10a-latex-markdown.html#typesetting-math",
     "title": "LaTeX and Markdown",
     "section": "Typesetting math",
-    "text": "Typesetting math\n\n\nInline math: $x + 2$\nCentered math:\n$$ x+2 $$\n \n \n \nSystems of equations:\n\\begin {align} x &= a + b\\\\\ny &= c + d \\end{align}\n \nMath characters:\n\\alpha, \\beta, \\gamma, \\infty, \\rightarrow, \\int,\\frac{a}{b}\n\n\\(x + 2\\) is an inline equation.\nWe can also center equations within a paragraph, like this: \\[x + 2\\] The paragraph resumes after we’re done.\nSystems of equations:\n\\(\\begin{align} x &= a + b\\\\ y &= c + d\\end{align}\\)\n \nMath characters:\n\\[\\alpha,\\beta,\\gamma,\\infty,\\rightarrow,\\int,\\frac{a}{b}\\]\n\nCheatsheet for math mode"
+    "text": "Typesetting math\n\n\nInline math: $x + 2$\nCentered math:\n$$ x+2 $$\n \n \n \nSystems of equations:\n\\begin {align} x &= a + b\\\\\ny &= c + d \\end{align}\n \nMath characters:\n\\alpha, \\beta, \\gamma, \\infty, \\rightarrow, \\int,\\frac{a}{b}\n\n\\(x + 2\\) is an inline equation.\nWe can also center equations within a paragraph, like this: \\[x + 2\\] The paragraph resumes after we’re done.\nSystems of equations:\n\\(\\begin{align} x &= a + b\\\\ y &= c + d\\end{align}\\)\n \nMath characters:\n\\[\\alpha,\\beta,\\gamma,\\infty,\\rightarrow,\\int,\\frac{a}{b}\\]\n\n\nCheatsheet for math mode"
   },
   {
     "objectID": "slides/10a-latex-markdown.html#try-it-out",
@@ -2890,7 +2902,7 @@
     "href": "slides/10a-latex-markdown.html#rmarkdown",
     "title": "LaTeX and Markdown",
     "section": "Markdown + R?",
-    "text": "Markdown + R?\nYou’ve been using quarto for the entire semester, but it works essentially the same way as adding R to LaTeX:\n\nRmarkdown WorkflowQuarto is similar, but supports even more formats and allows you to use even more programming languages in code chunks."
+    "text": "Markdown + R?\nYou’ve been using quarto for the entire semester, but it works essentially the same way as adding R to LaTeX:\n\n\n\nRmarkdown Workflow\n\n\nQuarto is similar, but supports even more formats and allows you to use even more programming languages in code chunks."
   },
   {
     "objectID": "slides/10a-latex-markdown.html#code-chunk-options",
@@ -2921,11 +2933,18 @@
     "text": "Special Document Types\nBoth LaTeX and quarto/Rmarkdown make use of other libraries to expand the types of documents available.\n\n\n\nDocument Type\nLibrary\nCompiler\nEnd Result\n\n\n\n\n\nSlides\nBeamer\nLaTeX or Markdown + LaTeX\nPDF\n\n\n\n \nReveal.js\nMarkdown\nHTML\n\n\n\n \nIOSlides\nMarkdown\nHTML\n\n\n\n \nSlidy\nMarkdown\nHTML\n\n\n\n \nPowerPoint\nMarkdown\nPowerPoint\n\n\n\n \nXaringan\nMarkdown + JS\nHTML/markdown hybrid\n\n\n\nPoster\nBeamer\nLaTeX\nPDF\n\n\n\n \nPosterdown\nMarkdown\nHTML\n\n\n\n \nPagedown\nMarkdown\nHTML\n\n\n\n\nThese documents use the same basic markdown or LaTeX syntax, but render differently."
   },
   {
+    "objectID": "slides/11-lists.html",
+    "href": "slides/11-lists.html",
+    "title": "Lists and Functional Programming",
+    "section": "",
+    "text": "dplyr handles data frames\npurrr handles lists\n\nRemember: a data frame is a list\nof vectors with equal length.\n\nLists can be used inside data frames with list-columns"
+  },
+  {
     "objectID": "slides/11-lists.html#purrr",
     "href": "slides/11-lists.html#purrr",
     "title": "Lists and Functional Programming",
-    "section": "Purrr",
-    "text": "Purrr\n\n\ndplyr handles data frames\npurrr handles lists\n\nRemember: a data frame is a list\nof vectors with equal length.\n\nLists can be used inside data frames with list-columns"
+    "section": "",
+    "text": "dplyr handles data frames\npurrr handles lists\n\nRemember: a data frame is a list\nof vectors with equal length.\n\nLists can be used inside data frames with list-columns"
   },
   {
     "objectID": "slides/11-lists.html#list-columns",
@@ -2991,25 +3010,32 @@
     "text": "Demonstrating Nest/Unnest\nI want to show the Central Limit Theorem using simulation.\n\nDistribution of the sample mean converges to a normal distribution if \\(\\mu\\) exists and \\(\\sigma^2 &lt;\\infty\\) as \\(n\\rightarrow\\infty\\)\n\n\nlibrary(ggplot2)\n\nggplot(res_df, aes(x = mean)) + geom_histogram() + facet_wrap(~n, scales = \"free_x\")"
   },
   {
+    "objectID": "slides/12-simulation.html",
+    "href": "slides/12-simulation.html",
+    "title": "Simulation Using Built-In Functions",
+    "section": "",
+    "text": "Linearity and Additivity of DVs\nIndependence of Errors\nConstant Variance of Errors\nNormality of Errors"
+  },
+  {
     "objectID": "slides/12-simulation.html#linear-regression-assumptions",
     "href": "slides/12-simulation.html#linear-regression-assumptions",
     "title": "Simulation Using Built-In Functions",
-    "section": "Linear Regression Assumptions",
-    "text": "Linear Regression Assumptions\n\nLinearity and Additivity of DVs\nIndependence of Errors\nConstant Variance of Errors\nNormality of Errors"
+    "section": "",
+    "text": "Linearity and Additivity of DVs\nIndependence of Errors\nConstant Variance of Errors\nNormality of Errors"
   },
   {
     "objectID": "slides/12-simulation.html#how-bad-is-it-linearity",
     "href": "slides/12-simulation.html#how-bad-is-it-linearity",
     "title": "Simulation Using Built-In Functions",
     "section": "How Bad is it? – Linearity",
-    "text": "How Bad is it? – Linearity\n\n\nlibrary(tidyverse)\nset.seed(2034927344)\ndata &lt;- tibble(\n  x1 = seq(-10, 10, \n           length.out = 100) + \n    runif(100, -.1, .1), # wiggle\n  x2 = seq(10, -10, \n           length.out = 100) + \n    runif(100, -.1, .1), # wiggle\n  \n  # Definitely not linear\n  y =  x1 + x1^2/2 + # main effect\n    rnorm(100, 0, 10) # actual error\n)\n\nggplot(data, aes(x = x1, y = y)) + \n  geom_point()\n\n\n\n\n\n\n\n\n\nClearly non-linear"
+    "text": "How Bad is it? – Linearity\n\nlibrary(tidyverse)\nset.seed(2034927344)\ndata &lt;- tibble(\n  x1 = seq(-10, 10, \n           length.out = 100) + \n    runif(100, -.1, .1), # wiggle\n  x2 = seq(10, -10, \n           length.out = 100) + \n    runif(100, -.1, .1), # wiggle\n  \n  # Definitely not linear\n  y =  x1 + x1^2/2 + # main effect\n    rnorm(100, 0, 10) # actual error\n)\n\nggplot(data, aes(x = x1, y = y)) + \n  geom_point()\n\n\n\n\n\n\n\n\nClearly non-linear"
   },
   {
     "objectID": "slides/12-simulation.html#how-bad-is-it-linearity-1",
     "href": "slides/12-simulation.html#how-bad-is-it-linearity-1",
     "title": "Simulation Using Built-In Functions",
     "section": "How Bad is it? – Linearity",
-    "text": "How Bad is it? – Linearity\n\n\nmodel &lt;- lm(y ~ x1 + x2, data = data)\nsummary(model)\n\n\n\nCall:\nlm(formula = y ~ x1 + x2, data = data)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-35.805 -15.641  -1.853  16.714  44.165 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)   16.457      1.913   8.605 1.37e-13 ***\nx1           -20.473     24.200  -0.846    0.400    \nx2           -21.413     24.238  -0.883    0.379    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 19.08 on 97 degrees of freedom\nMultiple R-squared:  0.07991,   Adjusted R-squared:  0.06094 \nF-statistic: 4.212 on 2 and 97 DF,  p-value: 0.01761"
+    "text": "How Bad is it? – Linearity\n\nmodel &lt;- lm(y ~ x1 + x2, data = data)\nsummary(model)\n\n\nCall:\nlm(formula = y ~ x1 + x2, data = data)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-35.805 -15.641  -1.853  16.714  44.165 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)   16.457      1.913   8.605 1.37e-13 ***\nx1           -20.473     24.200  -0.846    0.400    \nx2           -21.413     24.238  -0.883    0.379    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 19.08 on 97 degrees of freedom\nMultiple R-squared:  0.07991,   Adjusted R-squared:  0.06094 \nF-statistic: 4.212 on 2 and 97 DF,  p-value: 0.01761"
   },
   {
     "objectID": "slides/12-simulation.html#how-bad-is-it",
@@ -3058,14 +3084,14 @@
     "href": "slides/12-simulation.html#alpha-coefficient",
     "title": "Simulation Using Built-In Functions",
     "section": "\\(\\alpha\\) coefficient",
-    "text": "\\(\\alpha\\) coefficient\n\nsim_n|&gt;\n  unnest(tidy_model) |&gt; filter(term == \"x1\") |&gt;\n  ggplot(aes(x = estimate, fill = type)) + \n  geom_density() + \n  geom_vline(xintercept = 1, linetype = \"dashed\") + \n  facet_wrap(~type, scales=\"free\")\n\n\nThat is some wide error variance!"
+    "text": "\\(\\alpha\\) coefficient\n\nsim_n|&gt;\n  unnest(tidy_model) |&gt; filter(term == \"x1\") |&gt;\n  ggplot(aes(x = estimate, fill = type)) + \n  geom_density() + \n  geom_vline(xintercept = 1, linetype = \"dashed\") + \n  facet_wrap(~type, scales=\"free\")\n\n\n\n\n\n\n\n\nThat is some wide error variance!"
   },
   {
     "objectID": "slides/12-simulation.html#beta-coefficient",
     "href": "slides/12-simulation.html#beta-coefficient",
     "title": "Simulation Using Built-In Functions",
     "section": "\\(\\beta\\) coefficient",
-    "text": "\\(\\beta\\) coefficient\n\n\nsim_n|&gt;\n  unnest(tidy_model) |&gt;\n  # Only occurs in misspec model\n  filter(term == \"x2\") |&gt;\n  ggplot(aes(x = estimate, fill = type)) + \n  geom_density(alpha=0.5) + \n  geom_vline(xintercept = 0, \n             linetype = \"dashed\")"
+    "text": "\\(\\beta\\) coefficient\n\nsim_n|&gt;\n  unnest(tidy_model) |&gt;\n  # Only occurs in misspec model\n  filter(term == \"x2\") |&gt;\n  ggplot(aes(x = estimate, fill = type)) + \n  geom_density(alpha=0.5) + \n  geom_vline(xintercept = 0, \n             linetype = \"dashed\")"
   },
   {
     "objectID": "exams/midterm-learning-objectives.html",
