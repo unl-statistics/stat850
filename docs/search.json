@@ -84,18 +84,207 @@
     "text": "In the following examples, evaluate each problem using the criteria of a minimal reproducible example from this StackOverflow post.\nSpecifically, address the following things:\n\nAre the question and problem description complete?\nIs the issue reproducible? Does it have a description of the problem, with code that reproduces the problem? What could improve it?\nIs the example minimal? Does it include extra code or information that is not necessary?\nDoes the question describe any attempted solutions?\n\nThen, using what you know about R and Python, try to debug the problem using the strategies in the debugging chapter. Once you are thoroughly stumped, or you believe you have solved the problem, compare your solutions to those given on StackOverflow using the link.\n\nWhy Doesn’t this R function work?\n\nI created the following function to append new strings on a vector of strings called “meals”. However, when I use this function to append an string input into my “meals” vector, it does not work.\n\n add &lt;- function(str) {\n      meals &lt;- append(meals, as.character(str))  \n    }\nLink to original SO post.\n\n\nFunction not working R\n\nI’ve never programmed before and am trying to learn. I’m following that “coursera” course that I’ve seen other people post about — a course offered by Johns Hopkins on R programming.\n\n\nAnyway, this was supposed to be my first function. Yet, it doesn’t work! But when I type out all the steps individually, it runs just fine… Can anyone tell me why?\n\npollutantmean &lt;- function(directory, pollutant, id = 1:332){\n    x&lt;- list.files(\"/Users/mike******/Desktop/directory\", full.names=TRUE)\n    y&lt;- lapply(x, read.csv)\n    z&lt;- do.call(rbind.data.frame, y[id])\n\n    mean(z$pollutant, na.rm=TRUE)\n}\npollutantmean(specdata,nitrate,1:10)\n[1] NA\nWarning message:\nIn mean.default(z$pollutant, na.rm = TRUE) :\n  argument is not numeric or logical: returning NA\n\n####\n\nx&lt;- list.files(\"/Users/mike******/Desktop/specdata\",full.names=TRUE)\ny&lt;- lapply(x,read.csv)\nz&lt;- do.call(rbind.data.frame,y[1:10])\nmean(z$nitrate,na.rm=TRUE)\n[1] 0.7976266\nLink\n\n\nInexplicable error when trying to export my R notebook\n\nGetting this error from R Markdown when trying to export my .RMD\n\n\"Error in filter(Gastropods, Species == \"Cellana\") :  object 'Species' not found Calls: &lt;Anonymous&gt; ... withCallingHandlers -&gt; withVisible -&gt; eval -&gt; eval -&gt; filter\"\n\nHowever, all my plots are coming out successfully. I can clearly see in the data that the species column is there and that Cellana is a species. No spelling errors or anything.\n\n\nMy first 20 or so lines of code are below (between the ### symbols)\n\n\n\n###\n---\ntitle: \" Lab Report 2 - z5016113\"\noutput: html_notebook\ni---\n\n#1. Gastropod abundance vs. height on the shore\n\n```{r}\nGastropods &lt;- read.csv(file = \"MaroubraZones.csv\", header = TRUE)\nlibrary(ggplot2, dplyr)\n```\n\n```{r}\nGastropods$Zone &lt;- factor(Gastropods$Zone, levels = c(\"Low\", \"Mid\", \"High\"))\n```\n\n```{r}\nCellana &lt;- filter(Gastropods, Species == \"Cellana\")  ------&gt; This line is causing the error\n```\n\n```{r}\nggplot(Cellana, aes(Zone, Abundance)) + geom_boxplot()\n```\n###\n\n\nYou can find this sample file here\nLink\n\n\nPython if elif else statement\n\nI’m trying to create a program with python that calculate the cost for shipping.\n\n\nHowever, I can’t run the program to where it works properly.\n\n\nWhat ever my total is the same amount comes out as $6 for US and $8 for Canada. I can’t seem to get pass that.\n\n\nExample:\n\ntotal = raw_input('What is the total amount for your online shopping?')\ncountry = raw_input('Shipping within the US or Canada?')\n\nif country == \"US\":\n    if total &lt;= \"50\":\n        print \"Shipping Costs $6.00\"\n    elif total &lt;= \"100\":\n            print \"Shipping Costs $9.00\"\n    elif total &lt;= \"150\":\n            print \"Shipping Costs $12.00\"\n    else:\n        print \"FREE\"\n\nif country == \"Canada\":\n    if total &lt;= \"50\":\n        print \"Shipping Costs $8.00\"\n    elif total &lt;= \"100\":\n        print \"Shipping Costs $12.00\"\n    elif total &lt;= \"150\":\n        print \"Shipping Costs $15.00\"\n    else:\n        print \"FREE\"\nLink"
   },
   {
-    "objectID": "slides/13-interactive-graphics.html",
-    "href": "slides/13-interactive-graphics.html",
-    "title": "Interactive Graphics with Shiny",
+    "objectID": "exams/final-learning-objectives.html",
+    "href": "exams/final-learning-objectives.html",
+    "title": "Exam Learning Objectives",
     "section": "",
-    "text": "These slides modified from https://github.com/dime-wb-trainings/shiny-training"
+    "text": "These are copied directly from the textbook chapters we have covered. Anything that you have to do that doesn’t fall under one of these objectives (e.g. plotting) will have sample code provided that will be relatively simple to change to get to the required objective."
+  },
+  {
+    "objectID": "exams/final-learning-objectives.html#computer-basics",
+    "href": "exams/final-learning-objectives.html#computer-basics",
+    "title": "Exam Learning Objectives",
+    "section": "Computer Basics",
+    "text": "Computer Basics\n\nKnow the meaning of computer hardware and operating system terms such as hard drive, memory, CPU, OS/operating system, file system, directory, and system paths\nUnderstand the basics of how the above concepts relate to each other and contribute to how a computer works\nUnderstand the file system mental model for computers enough to identify where your files are stored\nLocate and follow directions for software installation based on your computer’s hardware and operating system."
+  },
+  {
+    "objectID": "exams/final-learning-objectives.html#setting-up-your-computer",
+    "href": "exams/final-learning-objectives.html#setting-up-your-computer",
+    "title": "Exam Learning Objectives",
+    "section": "Setting Up Your Computer",
+    "text": "Setting Up Your Computer\n\nSet up RStudio, R, Quarto, and python\nBe able to run demo code in R and python"
+  },
+  {
+    "objectID": "exams/final-learning-objectives.html#rstudios-interface",
+    "href": "exams/final-learning-objectives.html#rstudios-interface",
+    "title": "Exam Learning Objectives",
+    "section": "RStudio’s Interface",
+    "text": "RStudio’s Interface\n\nLocate different panes of RStudio\nUse cues such as buttons and icons to identify what type of file is open and what language is being interpreted"
+  },
+  {
+    "objectID": "exams/final-learning-objectives.html#scripts-and-notebooks-and-terminals",
+    "href": "exams/final-learning-objectives.html#scripts-and-notebooks-and-terminals",
+    "title": "Exam Learning Objectives",
+    "section": "Scripts and Notebooks and Terminals",
+    "text": "Scripts and Notebooks and Terminals\n\nUnderstand the different ways you can interact with a programming language\nIdentify which interface (terminal, interactive, script, notebook) and language are being used based on the appearance of the interface\nSelect the appropriate way of interacting with a computer for a given task given considerations such as target audience, human intervention, and need to repeat the analysis."
+  },
+  {
+    "objectID": "exams/final-learning-objectives.html#version-control-with-git",
+    "href": "exams/final-learning-objectives.html#version-control-with-git",
+    "title": "Exam Learning Objectives",
+    "section": "Version Control with Git",
+    "text": "Version Control with Git\n\nInstall git\nCreate a github account\nUnderstand why version control is useful and what problems it can solve\nUnderstand the distinction between git and github, and what each is used for\nUse version control to track changes to a document (git add, commit, push, pull)"
+  },
+  {
+    "objectID": "exams/final-learning-objectives.html#introduction-to-programming",
+    "href": "exams/final-learning-objectives.html#introduction-to-programming",
+    "title": "Exam Learning Objectives",
+    "section": "Introduction to Programming",
+    "text": "Introduction to Programming\n\nDefine programming and provide examples of programming\nIdentify reserved words in R and python\nKnow how to get help when using R and python"
+  },
+  {
+    "objectID": "exams/final-learning-objectives.html#variables-and-data-types",
+    "href": "exams/final-learning-objectives.html#variables-and-data-types",
+    "title": "Exam Learning Objectives",
+    "section": "Variables and Data Types",
+    "text": "Variables and Data Types\n\nKnow the basic data types and what their restrictions are\nKnow how to test to see if a variable is a given data type\nUnderstand the basics of implicit and explicit type conversion\nWrite code that assigns values to variables"
+  },
+  {
+    "objectID": "exams/final-learning-objectives.html#mathematical-and-logical-operators",
+    "href": "exams/final-learning-objectives.html#mathematical-and-logical-operators",
+    "title": "Exam Learning Objectives",
+    "section": "Mathematical and Logical Operators",
+    "text": "Mathematical and Logical Operators\n\nUnderstand and use mathematical operators for mathematical computation\nUnderstand and use logical operators to evaluate complex conditions\nUnderstand and use basic string operations (repetition and concatenation)\nEvaluate expressions using order of operations to predict how the computer will execute code\nTranslate mathematical concepts into a series of computational operations"
+  },
+  {
+    "objectID": "exams/final-learning-objectives.html#functions-packages-and-environments",
+    "href": "exams/final-learning-objectives.html#functions-packages-and-environments",
+    "title": "Exam Learning Objectives",
+    "section": "Functions, Packages, and Environments",
+    "text": "Functions, Packages, and Environments\n\nUse pre-written functions to perform operations\nUse python environments to manage packages\nInstall and load packages in R and Python\nUse pipes to write readable code"
+  },
+  {
+    "objectID": "exams/final-learning-objectives.html#data-structures",
+    "href": "exams/final-learning-objectives.html#data-structures",
+    "title": "Exam Learning Objectives",
+    "section": "Data Structures",
+    "text": "Data Structures\n\nUnderstand the differences between lists, vectors, data frames, matrices, and arrays in R and python\nUse location-based indexing in R or python to pull out subsets of a complex data object\nUse logical indexing in R or python to pull out subsets of a data object\nUnderstand categories of mathematical, descriptive, and set operations on vectors\nUse vector operations in R and python to perform simple calculations"
+  },
+  {
+    "objectID": "exams/final-learning-objectives.html#matrix-calculations",
+    "href": "exams/final-learning-objectives.html#matrix-calculations",
+    "title": "Exam Learning Objectives",
+    "section": "Matrix Calculations",
+    "text": "Matrix Calculations\n\nUnderstand how to do matrix algebra in relevant programming languages"
+  },
+  {
+    "objectID": "exams/final-learning-objectives.html#control-structures",
+    "href": "exams/final-learning-objectives.html#control-structures",
+    "title": "Exam Learning Objectives",
+    "section": "Control Structures",
+    "text": "Control Structures\n\nUnderstand how to use conditional statements\nUnderstand how conditional statements are evaluated by a program\nUse program flow diagrams to break a problem into parts and evaluate how a program will execute\nUnderstand how to use loops\nSelect the appropriate type of loop for a problem"
+  },
+  {
+    "objectID": "exams/final-learning-objectives.html#writing-functions",
+    "href": "exams/final-learning-objectives.html#writing-functions",
+    "title": "Exam Learning Objectives",
+    "section": "Writing Functions",
+    "text": "Writing Functions\n\nIdentify the parts of a function from provided source code\nPredict what the function will return when provided with input values and source code\nGiven a task, lay out the steps necessary to complete the task in pseudocode\nWrite a function which uses necessary input values to complete a task"
+  },
+  {
+    "objectID": "exams/final-learning-objectives.html#debugging",
+    "href": "exams/final-learning-objectives.html#debugging",
+    "title": "Exam Learning Objectives",
+    "section": "Debugging",
+    "text": "Debugging\n\nCreate reproducible examples of problems\nUse built in debugging tools to trace errors\nUse online resources to research errors"
+  },
+  {
+    "objectID": "exams/final-learning-objectives.html#programming-with-data",
+    "href": "exams/final-learning-objectives.html#programming-with-data",
+    "title": "Exam Learning Objectives",
+    "section": "Programming with Data",
+    "text": "Programming with Data\n\nWrite functions to create simple plots and data summaries\nApply syntax knowledge to reference variables and observations in common data structures\nCreate new variables and columns or reformat existing columns in provided data structures"
+  },
+  {
+    "objectID": "exams/final-learning-objectives.html#data-input",
+    "href": "exams/final-learning-objectives.html#data-input",
+    "title": "Exam Learning Objectives",
+    "section": "Data Input",
+    "text": "Data Input\n\nRead in data from common formats into R or Python\nIdentify delimiters, headers, and other essential components of files"
+  },
+  {
+    "objectID": "exams/final-learning-objectives.html#data-cleaning",
+    "href": "exams/final-learning-objectives.html#data-cleaning",
+    "title": "Exam Learning Objectives",
+    "section": "Data Cleaning",
+    "text": "Data Cleaning\n\nIdentify required sequence of steps for data cleaning\nDescribe step-by-step data cleaning process in lay terms appropriately\nApply data manipulation verbs to prepare data for analysis\nUnderstand the consequences of data cleaning steps for statistical analysis\nCreate summaries of data appropriate for analysis or display using data manipulation techniques"
+  },
+  {
+    "objectID": "exams/final-learning-objectives.html#strings",
+    "href": "exams/final-learning-objectives.html#strings",
+    "title": "Exam Learning Objectives",
+    "section": "Strings",
+    "text": "Strings\n\nUse functions to perform find-and-replace operations\nUse functions to split string data into multiple columns/variables\nUse functions to join string data from multiple columns/variables into a single column/variable"
+  },
+  {
+    "objectID": "exams/final-learning-objectives.html#reshaping-data",
+    "href": "exams/final-learning-objectives.html#reshaping-data",
+    "title": "Exam Learning Objectives",
+    "section": "Reshaping Data",
+    "text": "Reshaping Data\n\nDetermine what data format is necessary to generate a desired plot or statistical model\nUnderstand the differences between “wide” and “long” format data and how to transition between the two structures"
+  },
+  {
+    "objectID": "exams/final-learning-objectives.html#joining-data",
+    "href": "exams/final-learning-objectives.html#joining-data",
+    "title": "Exam Learning Objectives",
+    "section": "Joining Data",
+    "text": "Joining Data\n\nIdentify columns (keys) which can be used to join separate but related tables\nSketch/plan out join operations based on matching keys and given objectives\nImplement planned join operations in R or python\nIdentify when join operations have not completed successfully by looking for duplicated rows, number of rows/columns in the finished object, and missing value counts."
+  },
+  {
+    "objectID": "exams/final-learning-objectives.html#graphics",
+    "href": "exams/final-learning-objectives.html#graphics",
+    "title": "Exam Learning Objectives",
+    "section": "Graphics",
+    "text": "Graphics\n\nDescribe charts using the grammar of graphics\nCreate charts designed to communicate specific aspects of the data\nCreate layered graphics that highlight multiple aspects of the data"
+  },
+  {
+    "objectID": "exams/final-learning-objectives.html#creating-good-charts",
+    "href": "exams/final-learning-objectives.html#creating-good-charts",
+    "title": "Exam Learning Objectives",
+    "section": "Creating Good Charts",
+    "text": "Creating Good Charts\n\nUnderstand what features make graphics effective\nEvaluate existing charts for accessibility and readability\nMake improvements to charts to increase comprehension and accessibility"
+  },
+  {
+    "objectID": "exams/final-learning-objectives.html#professional-communication",
+    "href": "exams/final-learning-objectives.html#professional-communication",
+    "title": "Exam Learning Objectives",
+    "section": "Professional Communication",
+    "text": "Professional Communication\n\nCreate professional documents (slides, posters, CVs) using LaTeX and/or markdown"
+  },
+  {
+    "objectID": "exams/final-learning-objectives.html#debugging-1",
+    "href": "exams/final-learning-objectives.html#debugging-1",
+    "title": "Exam Learning Objectives",
+    "section": "Debugging",
+    "text": "Debugging\n\nCreate reproducible examples of problems\nUse built in debugging tools to trace errors\nUse online resources to research errors"
+  },
+  {
+    "objectID": "exams/final-learning-objectives.html#functional-programming",
+    "href": "exams/final-learning-objectives.html#functional-programming",
+    "title": "Exam Learning Objectives",
+    "section": "Functional Programming",
+    "text": "Functional Programming\n\nUse functional programming to replace for loops\nArticulate why functional programming can be preferable to using for loops\nUse functional programming to clean data, model data subsets, and assemble hierarchical data."
+  },
+  {
+    "objectID": "exams/final-learning-objectives.html#simulation",
+    "href": "exams/final-learning-objectives.html#simulation",
+    "title": "Exam Learning Objectives",
+    "section": "Simulation",
+    "text": "Simulation\n\nUnderstand the limitations of pseudorandom number generation\nUnderstand the connection between sampling methods such as inverse probability sampling and rejection sampling and theoretical statistics\nImplement sampling methods as required for distributions that do not have closed form approximations\nUse Monte Carlo methods for integration and other simulation tasks\nDetermine the appropriate data structure to use for storing simulation task results"
+  },
+  {
+    "objectID": "exams/final-learning-objectives.html#interactive-graphics",
+    "href": "exams/final-learning-objectives.html#interactive-graphics",
+    "title": "Exam Learning Objectives",
+    "section": "Interactive Graphics",
+    "text": "Interactive Graphics\n\nIdentify appropriate types of interactivity to accomplish a visualization task\nSelect an appropriate interactive toolkit that supports the required type(s) of interactivity\nCreate animated or interactive charts that facilitate viewer understanding"
   },
   {
     "objectID": "slides/13-interactive-graphics.html#shiny",
     "href": "slides/13-interactive-graphics.html#shiny",
     "title": "Interactive Graphics with Shiny",
-    "section": "",
-    "text": "These slides modified from https://github.com/dime-wb-trainings/shiny-training"
+    "section": "Shiny",
+    "text": "Shiny\nThese slides modified from https://github.com/dime-wb-trainings/shiny-training"
   },
   {
     "objectID": "slides/13-interactive-graphics.html#what-is-shiny",
@@ -130,42 +319,42 @@
     "href": "slides/13-interactive-graphics.html#lets-build-our-first-app-together-with-the-help-of-the-r-template-1",
     "title": "Interactive Graphics with Shiny",
     "section": "Let’s Build Our First App Together (with the help of the R template) ✍️",
-    "text": "Let’s Build Our First App Together (with the help of the R template) ✍️\n5. Choose Single File option when prompted:\n\n\n\n\n\n\n\n\n\n6. Name your folder and click OK\n7. Click Run App in the top-right corner\n8. 🎉 You’re running your first Shiny app!"
+    "text": "Let’s Build Our First App Together (with the help of the R template) ✍️\n5. Choose Single File option when prompted:\n\n6. Name your folder and click OK\n7. Click Run App in the top-right corner\n8. 🎉 You’re running your first Shiny app!"
   },
   {
     "objectID": "slides/13-interactive-graphics.html#ui-user-interface",
     "href": "slides/13-interactive-graphics.html#ui-user-interface",
     "title": "Interactive Graphics with Shiny",
     "section": "ui — User Interface",
-    "text": "ui — User Interface\n\n\nui &lt;- fluidPage( #&lt;&lt;\n  titlePanel(\"Old Faithful Geyser Data\"),\n  sidebarLayout(\n    sidebarPanel(\n      sliderInput(\"bins\", \n                  \"Number of bins:\", \n                  min = 1, \n                  max = 50, \n                  value = 30)\n    ),\n    mainPanel(\n      plotOutput(\"distPlot\")\n    )\n  )\n)\n\n\n\n\n\n\n\n\n\n\n\n\nLayout elements\n\nfluidPage() is the container for the app interface, the layout in which your content is. This is the most common, but there are other types of layouts. Check here"
+    "text": "ui — User Interface\n\n\nui &lt;- fluidPage( #&lt;&lt;\n  titlePanel(\"Old Faithful Geyser Data\"),\n  sidebarLayout(\n    sidebarPanel(\n      sliderInput(\"bins\", \n                  \"Number of bins:\", \n                  min = 1, \n                  max = 50, \n                  value = 30)\n    ),\n    mainPanel(\n      plotOutput(\"distPlot\")\n    )\n  )\n)\n\n\n\n\n\n\n\n\n\n\n\nLayout elements\n\nfluidPage() is the container for the app interface, the layout in which your content is. This is the most common, but there are other types of layouts. Check here"
   },
   {
     "objectID": "slides/13-interactive-graphics.html#ui-user-interface-1",
     "href": "slides/13-interactive-graphics.html#ui-user-interface-1",
     "title": "Interactive Graphics with Shiny",
     "section": "ui — User Interface",
-    "text": "ui — User Interface\n\n\nui &lt;- fluidPage(\n  titlePanel(\"Old Faithful Geyser Data\"),\n  sidebarLayout( #&lt;&lt;\n    sidebarPanel(\n      sliderInput(\"bins\", \n                  \"Number of bins:\", \n                  min = 1, \n                  max = 50, \n                  value = 30)\n    ),\n    mainPanel(\n      plotOutput(\"distPlot\")\n    )\n  )\n)\n\n\n\n\n\n\n\n\n\n\n\n\nLayout elements\n\nsidebarLayout() splits the layout into sidebar (sidebarPanel()) and main area (mainPanel()). This is also optional."
+    "text": "ui — User Interface\n\n\nui &lt;- fluidPage(\n  titlePanel(\"Old Faithful Geyser Data\"),\n  sidebarLayout( #&lt;&lt;\n    sidebarPanel(\n      sliderInput(\"bins\", \n                  \"Number of bins:\", \n                  min = 1, \n                  max = 50, \n                  value = 30)\n    ),\n    mainPanel(\n      plotOutput(\"distPlot\")\n    )\n  )\n)\n\n\n\n\n\n\n\n\n\n\n\nLayout elements\n\nsidebarLayout() splits the layout into sidebar (sidebarPanel()) and main area (mainPanel()). This is also optional."
   },
   {
     "objectID": "slides/13-interactive-graphics.html#ui-user-interface-2",
     "href": "slides/13-interactive-graphics.html#ui-user-interface-2",
     "title": "Interactive Graphics with Shiny",
     "section": "ui — User Interface",
-    "text": "ui — User Interface\n\n\nui &lt;- fluidPage(\n  titlePanel(\"Old Faithful Geyser Data\"),\n  sidebarLayout(\n    sidebarPanel( #&lt;&lt;\n      sliderInput(\"bins\",  #&lt;&lt;\n                  \"Number of bins:\",  #&lt;&lt;\n                  min = 1, #&lt;&lt;\n                  max = 50, #&lt;&lt;\n                  value = 30) #&lt;&lt;\n    ),\n    mainPanel(\n      plotOutput(\"distPlot\")\n    )\n  )\n)\n\n\n\n\n\n\n\n\n\n\n\n\nPage content\n\nsidebarPanel() contains one input field (sliderInput()) called “bins”. This is a slider that lets a user choose a number. As you can infer from the name, in this case, it’s the number of histogram bins."
+    "text": "ui — User Interface\n\n\nui &lt;- fluidPage(\n  titlePanel(\"Old Faithful Geyser Data\"),\n  sidebarLayout(\n    sidebarPanel( #&lt;&lt;\n      sliderInput(\"bins\",  #&lt;&lt;\n                  \"Number of bins:\",  #&lt;&lt;\n                  min = 1, #&lt;&lt;\n                  max = 50, #&lt;&lt;\n                  value = 30) #&lt;&lt;\n    ),\n    mainPanel(\n      plotOutput(\"distPlot\")\n    )\n  )\n)\n\n\n\n\n\n\n\n\n\n\n\nPage content\n\nsidebarPanel() contains one input field (sliderInput()) called “bins”. This is a slider that lets a user choose a number. As you can infer from the name, in this case, it’s the number of histogram bins."
   },
   {
     "objectID": "slides/13-interactive-graphics.html#ui-user-interface-3",
     "href": "slides/13-interactive-graphics.html#ui-user-interface-3",
     "title": "Interactive Graphics with Shiny",
     "section": "ui — User Interface",
-    "text": "ui — User Interface\n\n\nui &lt;- fluidPage(\n  titlePanel(\"Old Faithful Geyser Data\"),\n  sidebarLayout(\n    sidebarPanel(\n      sliderInput(\"bins\", \n                  \"Number of bins:\", \n                  min = 1, \n                  max = 50, \n                  value = 30)\n    ),\n    mainPanel( #&lt;&lt;\n      plotOutput(\"distPlot\") #&lt;&lt;\n    )\n  )\n)\n\n\n\n\n\n\n\n\n\n\n\n\nPage content\n\nmainPanel() contains a histogram (plotOutput()), which will be defined in the server function. The name, or id, of this histogram is “distPlot”"
+    "text": "ui — User Interface\n\n\nui &lt;- fluidPage(\n  titlePanel(\"Old Faithful Geyser Data\"),\n  sidebarLayout(\n    sidebarPanel(\n      sliderInput(\"bins\", \n                  \"Number of bins:\", \n                  min = 1, \n                  max = 50, \n                  value = 30)\n    ),\n    mainPanel( #&lt;&lt;\n      plotOutput(\"distPlot\") #&lt;&lt;\n    )\n  )\n)\n\n\n\n\n\n\n\n\n\n\n\nPage content\n\nmainPanel() contains a histogram (plotOutput()), which will be defined in the server function. The name, or id, of this histogram is “distPlot”"
   },
   {
     "objectID": "slides/13-interactive-graphics.html#shiny-server-logic-explained",
     "href": "slides/13-interactive-graphics.html#shiny-server-logic-explained",
     "title": "Interactive Graphics with Shiny",
     "section": "Shiny server Logic Explained ⚙️",
-    "text": "Shiny server Logic Explained ⚙️\nserver &lt;- function(input, output) {\n...\n}\nThe server() function takes two arguments:\n\ninput: a reactive list of input values from the UI\noutput: a reactive list where you assign render functions\n\n\n\n\n\n\n\n\n\n\nReactive lists are “special” lists used in reactive programming — a way to make your app automatically update outputs when inputs change."
+    "text": "Shiny server Logic Explained ⚙️\nserver &lt;- function(input, output) {\n...\n}\nThe server() function takes two arguments:\n\ninput: a reactive list of input values from the UI\noutput: a reactive list where you assign render functions\n\n\nReactive lists are “special” lists used in reactive programming — a way to make your app automatically update outputs when inputs change."
   },
   {
     "objectID": "slides/13-interactive-graphics.html#shiny-server-logic-explained-1",
@@ -221,7 +410,7 @@
     "href": "slides/13-interactive-graphics.html#lets-start-with-some-basic-modifications-1",
     "title": "Interactive Graphics with Shiny",
     "section": "Let’s start with some basic modifications ✍️",
-    "text": "Let’s start with some basic modifications ✍️\nAfter your modifications the app should look like this:\n\n\n\n\n\n\n\n\n\n\nThe app with the modifications is available here"
+    "text": "Let’s start with some basic modifications ✍️\nAfter your modifications the app should look like this:\n\n\nThe app with the modifications is available here"
   },
   {
     "objectID": "slides/13-interactive-graphics.html#behind-the-scenes-running-a-shiny-app",
@@ -266,18 +455,11 @@
     "text": "Some examples ✨\n\nShiny App Gallery here\nCalifornia Schools Climate Hazards Dashboard here\nNew Zealand Trade Intelligence Dashboard here\nLocating Blood Banks in India here\nUnderstanding voters’ profile in Brazilian elections here"
   },
   {
-    "objectID": "slides/12-simulation-2.html",
-    "href": "slides/12-simulation-2.html",
-    "title": "Random Walks and MCMC",
-    "section": "",
-    "text": "How do we sample from distributions that are not gamma, exponential, normal, etc?\n\\[ f(x)=\\begin{cases} 2-4x, & 0 \\leq x&lt; 1/2\\\\ 4x-2, & 1/2 \\leq x \\leq 1 \\end{cases} \\]"
-  },
-  {
     "objectID": "slides/12-simulation-2.html#non-standard-distributions",
     "href": "slides/12-simulation-2.html#non-standard-distributions",
     "title": "Random Walks and MCMC",
-    "section": "",
-    "text": "How do we sample from distributions that are not gamma, exponential, normal, etc?\n\\[ f(x)=\\begin{cases} 2-4x, & 0 \\leq x&lt; 1/2\\\\ 4x-2, & 1/2 \\leq x \\leq 1 \\end{cases} \\]"
+    "section": "Non-standard distributions",
+    "text": "Non-standard distributions\nHow do we sample from distributions that are not gamma, exponential, normal, etc?\n\\[ f(x)=\\begin{cases} 2-4x, & 0 \\leq x&lt; 1/2\\\\ 4x-2, & 1/2 \\leq x \\leq 1 \\end{cases} \\]"
   },
   {
     "objectID": "slides/12-simulation-2.html#inverse-probability-sampling",
@@ -294,18 +476,11 @@
     "text": "Inverse Probability Sampling\n\\[F(x) = \\begin{cases} -2x^2 + 2x, & 0 \\leq x&lt; 1/2\\\\ \\hphantom{-}2x^2-2x, & 1/2 \\leq x \\leq 1 \\end{cases}\\]\n\\[F^{-1}(u) = \\begin{cases} \\frac{1}{2}-\\frac{\\sqrt{1-2u}}{2} & u &lt; 0.5\\\\\\frac{1}{2} + \\frac{\\sqrt{u}}{\\sqrt2} & u \\geq 0.5\\end{cases}\\]\n\nset.seed(2043872)\nu &lt;- runif(100)\nx &lt;- 1/2 -0.5*(1-2*u)*(u&lt;0.5) + (u/2)^0.5 * (u&gt;0.5)\nhist(x)"
   },
   {
-    "objectID": "slides/08-graphics.html",
-    "href": "slides/08-graphics.html",
-    "title": "Graphics",
-    "section": "",
-    "text": "Create well-designed graphics\nIdentify which chart(s) to use\nUnderstand how cognition/perception impact graphics"
-  },
-  {
     "objectID": "slides/08-graphics.html#this-weeks-big-picture-goal",
     "href": "slides/08-graphics.html#this-weeks-big-picture-goal",
     "title": "Graphics",
-    "section": "",
-    "text": "Create well-designed graphics\nIdentify which chart(s) to use\nUnderstand how cognition/perception impact graphics"
+    "section": "This week’s big picture goal:",
+    "text": "This week’s big picture goal:\n\nCreate well-designed graphics\nIdentify which chart(s) to use\nUnderstand how cognition/perception impact graphics"
   },
   {
     "objectID": "slides/08-graphics.html#todays-goals",
@@ -319,35 +494,35 @@
     "href": "slides/08-graphics.html#ugly-graphics",
     "title": "Graphics",
     "section": "Ugly Graphics",
-    "text": "Ugly Graphics\n\n\n\n\n\n\nImage Source\n\n\n\n\nWeekly wages aren’t really comparable to home prices, scale-wise\nAlternatives:\n\ncompare annual wages to home prices\nuse some other standard scaling for affordability"
+    "text": "Ugly Graphics\n\n\n\n\n\nImage Source\n\n\n\n\nWeekly wages aren’t really comparable to home prices, scale-wise\nAlternatives:\n\ncompare annual wages to home prices\nuse some other standard scaling for affordability"
   },
   {
     "objectID": "slides/08-graphics.html#ugly-graphics-1",
     "href": "slides/08-graphics.html#ugly-graphics-1",
     "title": "Graphics",
     "section": "Ugly Graphics",
-    "text": "Ugly Graphics\n\n\n\nImage Source"
+    "text": "Ugly Graphics\n\nImage Source"
   },
   {
     "objectID": "slides/08-graphics.html#ugly-graphics-2",
     "href": "slides/08-graphics.html#ugly-graphics-2",
     "title": "Graphics",
     "section": "Ugly Graphics",
-    "text": "Ugly Graphics\n\n\n\nImage Source"
+    "text": "Ugly Graphics\n\nImage Source"
   },
   {
     "objectID": "slides/08-graphics.html#good-graphics",
     "href": "slides/08-graphics.html#good-graphics",
     "title": "Graphics",
     "section": "Good Graphics",
-    "text": "Good Graphics\n\n\n\nImage Source"
+    "text": "Good Graphics\n\nImage Source"
   },
   {
     "objectID": "slides/08-graphics.html#good-graphics-1",
     "href": "slides/08-graphics.html#good-graphics-1",
     "title": "Graphics",
     "section": "Good Graphics",
-    "text": "Good Graphics\n\n\n\nImage Source"
+    "text": "Good Graphics\n\nImage Source"
   },
   {
     "objectID": "slides/08-graphics.html#good-graphics-2",
@@ -357,18 +532,11 @@
     "text": "Good Graphics\n\n\n\nImage source"
   },
   {
-    "objectID": "slides/06b-data-wrangling.html",
-    "href": "slides/06b-data-wrangling.html",
-    "title": "Wrangling Data",
-    "section": "",
-    "text": "Working with text and practicing exploration skills"
-  },
-  {
     "objectID": "slides/06b-data-wrangling.html#this-weeks-big-picture-goal",
     "href": "slides/06b-data-wrangling.html#this-weeks-big-picture-goal",
     "title": "Wrangling Data",
-    "section": "",
-    "text": "Working with text and practicing exploration skills"
+    "section": "This week’s big picture goal:",
+    "text": "This week’s big picture goal:\nWorking with text and practicing exploration skills"
   },
   {
     "objectID": "slides/06b-data-wrangling.html#organization",
@@ -392,18 +560,11 @@
     "text": "Resources\n\nR cheat sheet\npython cheat sheet"
   },
   {
-    "objectID": "slides/05-data-explorations.html",
-    "href": "slides/05-data-explorations.html",
-    "title": "Exploring Data",
-    "section": "",
-    "text": "Getting comfortable working with data sets and start asking questions!"
-  },
-  {
     "objectID": "slides/05-data-explorations.html#this-weeks-big-picture-goal",
     "href": "slides/05-data-explorations.html#this-weeks-big-picture-goal",
     "title": "Exploring Data",
-    "section": "",
-    "text": "Getting comfortable working with data sets and start asking questions!"
+    "section": "This week’s big picture goal:",
+    "text": "This week’s big picture goal:\nGetting comfortable working with data sets and start asking questions!"
   },
   {
     "objectID": "slides/05-data-explorations.html#todays-goals",
@@ -420,39 +581,32 @@
     "text": "Resources\n\nR cheat sheet\npython cheat sheet"
   },
   {
-    "objectID": "slides/03b-fizzing-and-buzzing.html",
-    "href": "slides/03b-fizzing-and-buzzing.html",
-    "title": "Fizzing and Buzzing (Part 2)",
-    "section": "",
-    "text": "Going from using functions to writing the first functions"
-  },
-  {
     "objectID": "slides/03b-fizzing-and-buzzing.html#this-weeks-big-picture-goal",
     "href": "slides/03b-fizzing-and-buzzing.html#this-weeks-big-picture-goal",
     "title": "Fizzing and Buzzing (Part 2)",
-    "section": "",
-    "text": "Going from using functions to writing the first functions"
+    "section": "This week’s big picture goal:",
+    "text": "This week’s big picture goal:\nGoing from using functions to writing the first functions"
   },
   {
     "objectID": "slides/03b-fizzing-and-buzzing.html#todays-goals",
     "href": "slides/03b-fizzing-and-buzzing.html#todays-goals",
     "title": "Fizzing and Buzzing (Part 2)",
     "section": "Today’s Goals:",
-    "text": "Today’s Goals:\n\nUnderstand\n\nKnow how to move code into a function (and what changes)\nUse error handling appropriately"
+    "text": "Today’s Goals:\nUnderstand\n\nKnow how to move code into a function (and what changes)\nUse error handling appropriately"
   },
   {
     "objectID": "slides/03b-fizzing-and-buzzing.html#todays-goals-1",
     "href": "slides/03b-fizzing-and-buzzing.html#todays-goals-1",
     "title": "Fizzing and Buzzing (Part 2)",
     "section": "Today’s Goals:",
-    "text": "Today’s Goals:\n\nDo\n\nHomework 3 – read carefully, work step by step from top to bottom"
+    "text": "Today’s Goals:\nDo\n\nHomework 3 – read carefully, work step by step from top to bottom"
   },
   {
     "objectID": "slides/03b-fizzing-and-buzzing.html#todays-goals-2",
     "href": "slides/03b-fizzing-and-buzzing.html#todays-goals-2",
     "title": "Fizzing and Buzzing (Part 2)",
     "section": "Today’s Goals:",
-    "text": "Today’s Goals:\n\nRead Up On\n\nControl Structures, program flows\nWriting Functions"
+    "text": "Today’s Goals:\nRead Up On\n\nControl Structures, program flows\nWriting Functions"
   },
   {
     "objectID": "slides/03b-fizzing-and-buzzing.html#resources",
@@ -469,18 +623,11 @@
     "text": "Next class\n\nFunction writing in R and Python"
   },
   {
-    "objectID": "slides/02b-Finding-Your-Way.html",
-    "href": "slides/02b-Finding-Your-Way.html",
-    "title": "Finding your way in R and Python",
-    "section": "",
-    "text": "Understand\n\nBasic Data Types\nCreating Variables\nUsing R/Python as a calculator\n\nPractice working with errors\n\nIntro to Debugging"
-  },
-  {
     "objectID": "slides/02b-Finding-Your-Way.html#todays-goals",
     "href": "slides/02b-Finding-Your-Way.html#todays-goals",
     "title": "Finding your way in R and Python",
-    "section": "",
-    "text": "Understand\n\nBasic Data Types\nCreating Variables\nUsing R/Python as a calculator\n\nPractice working with errors\n\nIntro to Debugging"
+    "section": "Today’s Goals:",
+    "text": "Today’s Goals:\nUnderstand\n\nBasic Data Types\nCreating Variables\nUsing R/Python as a calculator\n\nPractice working with errors\n\nIntro to Debugging"
   },
   {
     "objectID": "slides/02b-Finding-Your-Way.html#work-on-the-homework",
@@ -497,18 +644,11 @@
     "text": "Next class\n\nData structures: vectors, lists, arrays, …\nArithmetic operators for matrices\nFunction writing in R and Python"
   },
   {
-    "objectID": "slides/01b-intro.html",
-    "href": "slides/01b-intro.html",
-    "title": "Stat 850: Git and Github",
-    "section": "",
-    "text": "Set up Git (Chapter 5 of the textbook)\nHow to submit homework with Github Classroom\nGit concepts: Push/Pull"
-  },
-  {
     "objectID": "slides/01b-intro.html#goals-for-today",
     "href": "slides/01b-intro.html#goals-for-today",
     "title": "Stat 850: Git and Github",
-    "section": "",
-    "text": "Set up Git (Chapter 5 of the textbook)\nHow to submit homework with Github Classroom\nGit concepts: Push/Pull"
+    "section": "Goals for Today",
+    "text": "Goals for Today\n\nSet up Git (Chapter 5 of the textbook)\nHow to submit homework with Github Classroom\nGit concepts: Push/Pull"
   },
   {
     "objectID": "slides/01b-intro.html#preview-next-week",
@@ -1542,6 +1682,127 @@
     ]
   },
   {
+    "objectID": "course-support.html",
+    "href": "course-support.html",
+    "title": "Course support",
+    "section": "",
+    "text": "If you have a question during lecture or lab, feel free to ask it! There are likely other students with the same question, so by asking you will create a learning opportunity for everyone.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#lectures-and-labs",
+    "href": "course-support.html#lectures-and-labs",
+    "title": "Course support",
+    "section": "",
+    "text": "If you have a question during lecture or lab, feel free to ask it! There are likely other students with the same question, so by asking you will create a learning opportunity for everyone.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#office-hours",
+    "href": "course-support.html#office-hours",
+    "title": "Course support",
+    "section": "Office hours",
+    "text": "Office hours\nOffice hours are available by appointment at this link. In general, office hours will be via Zoom - this allows me to offer more availability, and doesn’t require you to come to East campus to visit my office.\nIf you’d prefer to meet in person, try to schedule your appointment on Tuesday or Thursday, and mention in the request that you want an in-person meeting. I will let you know if that’s feasible given my schedule for the day.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#email",
+    "href": "course-support.html#email",
+    "title": "Course support",
+    "section": "Email",
+    "text": "Email\nPlease only use email for questions about personal matters that may not be appropriate for the public course forum (e.g., illness, grades, accommodations, etc.). In these cases, please add “Stat850” to the subject line, so that I can prioritize your email.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#academic-support",
+    "href": "course-support.html#academic-support",
+    "title": "Course support",
+    "section": "Academic support",
+    "text": "Academic support\nThere are times you may need help with the class that is beyond what can be provided by the teaching team. In those instances, I encourage you to visit the Center for Academic Success and Transition (CAST). CAST offers free services to all students.\nStudents have access to peer tutoring, academic coaching, and academic success workshops.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#mental-health-and-wellness",
+    "href": "course-support.html#mental-health-and-wellness",
+    "title": "Course support",
+    "section": "Mental health and wellness",
+    "text": "Mental health and wellness\nYour mental health and wellness extremely important, and the university offers resources to support students in managing daily stress and self-care. UNL offers several resources for students to manage stress, seek help with well-being, and access crisis and long-term care.\n\nCounseling and Psychological Services (CAPS), 402-472-7450\nCenter for Advocacy, Response, & Education (CARE), 402-472-3553 – resources for victims/survivors of interpersonal violence.\nServices for Students with Disabilities (SSD), ssd@unl.edu or 402-472-3787 – resources for students experiencing short or long-term disabilities that affect the campus or educational experience.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#technology",
+    "href": "course-support.html#technology",
+    "title": "Course support",
+    "section": "Technology",
+    "text": "Technology\nStudents who do not have a working computer can check out a loaner laptop from HuskerTech on city campus (Love South, Adele Hall) and east campus (Dinsdale).\nIf you are unable to get a loaner laptop set up with the software required for parts of this course, please try to let me know ahead of time - it is possible that I will be able to assist you with browser-based solutions.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-links.html",
+    "href": "course-links.html",
+    "title": "Useful links",
+    "section": "",
+    "text": "Canvas\nAssignment Submissions, Reading Quizzes, Gradebook\n\n\n\nProject Submissions\n\n\nScientific Writing for Health Research\nTextbook\n\n\nEntering the Conversation\nTextbook\n\n\nOpen Technical Communication\nTextbook",
+    "crumbs": [
+      "Course information",
+      "Useful links"
+    ]
+  },
+  {
+    "objectID": "course-overview.html",
+    "href": "course-overview.html",
+    "title": "Stat 850: Computing Tools for Statisticians",
+    "section": "",
+    "text": "Introductions to statistical computing packages and document preparation software. Topics include: graphical techniques, data management, Monte Carlo simulation, dynamic document preparation, presentation software.",
+    "crumbs": [
+      "Course information",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "course-overview.html#goals",
+    "href": "course-overview.html#goals",
+    "title": "Stat 850: Computing Tools for Statisticians",
+    "section": "Goals",
+    "text": "Goals\n\nLearn how to use R and/or Python for data analysis, data processing, data visualization, and statistical simulation.\nBecome familiar with the process, techniques, and goals of exploratory data analysis.\nCreate, assess, and debug code effectively.\n\nUse online resources to find software to perform a task, comparing approaches taken by competing programs.\nRead error messages, find related problems in online forums, and isolate the conditions necessary to generate the error.\nGenerate minimum working examples or reproducible examples of errors in order to ask for help effectively.\n\nCommunicate statistical results using reproducible, dynamic tools. Understand the importance of reproducibility in scientific computation.",
+    "crumbs": [
+      "Course information",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "course-overview.html#objectives",
+    "href": "course-overview.html#objectives",
+    "title": "Stat 850: Computing Tools for Statisticians",
+    "section": "Objectives",
+    "text": "Objectives\n(what you should be able to do at the end of this course)\n\nClean and format the data appropriately for the intended analysis or visualization method. (Goals: 1)\nExplore a data set using numerical and visual summaries, developing questions which can be answered using statistics. (Goals: 1, 2)\nEvaluate methods or software to assess relevance to a problem. Compare similar options to determine which are more appropriate for a given application (Goals: 1, 3)\nTest and debug software, using the following sequence: (Goals: 3, 4)\n\nReproduce the error in a new environment,\nCreate a minimal reproducible example,\nResearch the error message and evaluate online resources for relevance,\nAsk for help, describing the error or problem appropriately.\n\nDocument the data, methods, and results of an analysis using reproducible methods. (Goals: 1, 2, 4)\nConstruct a reproducible statistical simulation for a given problem using methods such as MCMC, inverse probability sampling, and rejection sampling. (Goals: 1, 3, 4)",
+    "crumbs": [
+      "Course information",
+      "Overview"
+    ]
+  },
+  {
     "objectID": "weeks/week-01.html",
     "href": "weeks/week-01.html",
     "title": "Week 1: Exploring the Toolbox",
@@ -2534,13 +2795,6 @@
     "text": "Additional Questions (out of class portion)\n\nBe prepared to identify which functions do which things in e.g. matching or multiple choice questions\nBe prepared to summarize the arguments made in different “practical” reading articles\n\nA key for this exam can be found here."
   },
   {
-    "objectID": "slides/01a-intro.html",
-    "href": "slides/01a-intro.html",
-    "title": "Stat 850 Introduction",
-    "section": "",
-    "text": "Syllabus Q&A\nInstall software:\n\nR\nPython\nquarto\nRStudio\ngit\n\nStretch goal: set up Git"
-  },
-  {
     "objectID": "slides/01a-intro.html#contact-info",
     "href": "slides/01a-intro.html#contact-info",
     "title": "Stat 850 Introduction",
@@ -2597,25 +2851,18 @@
     "text": "Oral Exams\n\nI reserve the right to replace any grade with an oral exam on your submission\nAllows me to clarify how much you understand when that isn’t clear\nHelps when I write an ambiguous question or you miss a key part of a question\nIf you can’t explain your code/answer you don’t get any credit"
   },
   {
-    "objectID": "slides/02a-Finding-Your-Way.html",
-    "href": "slides/02a-Finding-Your-Way.html",
-    "title": "Finding your way in R and Python",
-    "section": "",
-    "text": "Know the 3 different ways to execute code from within RStudio\n\nTerminal (Command Line)\nSource Script (RStudio Button)\nInteractive Mode (line by line)\n\nDifferentiate between the Console and the Terminal\nDifferentiate between R and Python in the Console"
-  },
-  {
     "objectID": "slides/02a-Finding-Your-Way.html#todays-goals",
     "href": "slides/02a-Finding-Your-Way.html#todays-goals",
     "title": "Finding your way in R and Python",
-    "section": "",
-    "text": "Know the 3 different ways to execute code from within RStudio\n\nTerminal (Command Line)\nSource Script (RStudio Button)\nInteractive Mode (line by line)\n\nDifferentiate between the Console and the Terminal\nDifferentiate between R and Python in the Console"
+    "section": "Today’s Goals:",
+    "text": "Today’s Goals:\n\nKnow the 3 different ways to execute code from within RStudio\n\nTerminal (Command Line)\nSource Script (RStudio Button)\nInteractive Mode (line by line)\n\nDifferentiate between the Console and the Terminal\nDifferentiate between R and Python in the Console"
   },
   {
     "objectID": "slides/02a-Finding-Your-Way.html#rstudio-projects",
     "href": "slides/02a-Finding-Your-Way.html#rstudio-projects",
     "title": "Finding your way in R and Python",
     "section": "RStudio Projects",
-    "text": "RStudio Projects\nRStudio projects are a way to keep your work organized.\nLet’s create one for this week’s class work.\n\n\n\nCreating an RStudio Project"
+    "text": "RStudio Projects\nRStudio projects are a way to keep your work organized.\nLet’s create one for this week’s class work.\n\nCreating an RStudio Project"
   },
   {
     "objectID": "slides/02a-Finding-Your-Way.html#ways-to-execute-code",
@@ -2629,14 +2876,14 @@
     "href": "slides/02a-Finding-Your-Way.html#command-line",
     "title": "Finding your way in R and Python",
     "section": "Command Line",
-    "text": "Command Line\n\n\n\nRunning madlibs.py at the command line"
+    "text": "Command Line\n\nRunning madlibs.py at the command line"
   },
   {
     "objectID": "slides/02a-Finding-Your-Way.html#source-script",
     "href": "slides/02a-Finding-Your-Way.html#source-script",
     "title": "Finding your way in R and Python",
     "section": "Source Script",
-    "text": "Source Script\n\n\n\nRunning madlibs.py using Source Script in RStudio"
+    "text": "Source Script\n\nRunning madlibs.py using Source Script in RStudio"
   },
   {
     "objectID": "slides/02a-Finding-Your-Way.html#next-class",
@@ -2646,39 +2893,32 @@
     "text": "Next Class\n\nBasic Data Types\nCreating Variables\nUsing R/Python as a calculator\nIntro to Debugging"
   },
   {
-    "objectID": "slides/03a-fizzing-and-buzzing.html",
-    "href": "slides/03a-fizzing-and-buzzing.html",
-    "title": "Fizzing and Buzzing",
-    "section": "",
-    "text": "Going from using functions to writing the first functions"
-  },
-  {
     "objectID": "slides/03a-fizzing-and-buzzing.html#this-weeks-big-picture-goal",
     "href": "slides/03a-fizzing-and-buzzing.html#this-weeks-big-picture-goal",
     "title": "Fizzing and Buzzing",
-    "section": "",
-    "text": "Going from using functions to writing the first functions"
+    "section": "This week’s big picture goal:",
+    "text": "This week’s big picture goal:\nGoing from using functions to writing the first functions"
   },
   {
     "objectID": "slides/03a-fizzing-and-buzzing.html#todays-goals",
     "href": "slides/03a-fizzing-and-buzzing.html#todays-goals",
     "title": "Fizzing and Buzzing",
     "section": "Today’s Goals:",
-    "text": "Today’s Goals:\n\nUnderstand\n\nDistinguish and recognize data structures\nUse Control structures - if/else and for loops"
+    "text": "Today’s Goals:\nUnderstand\n\nDistinguish and recognize data structures\nUse Control structures - if/else and for loops"
   },
   {
     "objectID": "slides/03a-fizzing-and-buzzing.html#todays-goals-1",
     "href": "slides/03a-fizzing-and-buzzing.html#todays-goals-1",
     "title": "Fizzing and Buzzing",
     "section": "Today’s Goals:",
-    "text": "Today’s Goals:\n\nDo\n\nHomework 3 – read carefully, work step by step from top to bottom"
+    "text": "Today’s Goals:\nDo\n\nHomework 3 – read carefully, work step by step from top to bottom"
   },
   {
     "objectID": "slides/03a-fizzing-and-buzzing.html#todays-goals-2",
     "href": "slides/03a-fizzing-and-buzzing.html#todays-goals-2",
     "title": "Fizzing and Buzzing",
     "section": "Today’s Goals:",
-    "text": "Today’s Goals:\n\nRead Up On\n\nControl Structures, program flows\nWriting Functions"
+    "text": "Today’s Goals:\nRead Up On\n\nControl Structures, program flows\nWriting Functions"
   },
   {
     "objectID": "slides/03a-fizzing-and-buzzing.html#resources",
@@ -2695,18 +2935,11 @@
     "text": "Next class\n\nFunction writing in R and Python"
   },
   {
-    "objectID": "slides/04-case-studies.html",
-    "href": "slides/04-case-studies.html",
-    "title": "Case Studies",
-    "section": "",
-    "text": "Heads-up: watch 1h video before next class: tidy tuesday screencast"
-  },
-  {
     "objectID": "slides/04-case-studies.html#organization",
     "href": "slides/04-case-studies.html#organization",
     "title": "Case Studies",
-    "section": "",
-    "text": "Heads-up: watch 1h video before next class: tidy tuesday screencast"
+    "section": "Organization",
+    "text": "Organization\n\nHeads-up: watch 1h video before next class: tidy tuesday screencast"
   },
   {
     "objectID": "slides/04-case-studies.html#this-weeks-big-picture-goal",
@@ -2737,18 +2970,11 @@
     "text": "Next class\n\nPlanning out code"
   },
   {
-    "objectID": "slides/06-data-wrangling.html",
-    "href": "slides/06-data-wrangling.html",
-    "title": "Wrangling Data",
-    "section": "",
-    "text": "Working with text and practicing exploration skills"
-  },
-  {
     "objectID": "slides/06-data-wrangling.html#this-weeks-big-picture-goal",
     "href": "slides/06-data-wrangling.html#this-weeks-big-picture-goal",
     "title": "Wrangling Data",
-    "section": "",
-    "text": "Working with text and practicing exploration skills"
+    "section": "This week’s big picture goal:",
+    "text": "This week’s big picture goal:\nWorking with text and practicing exploration skills"
   },
   {
     "objectID": "slides/06-data-wrangling.html#organization",
@@ -2779,18 +3005,11 @@
     "text": "Resources\n\nR cheat sheet\npython cheat sheet"
   },
   {
-    "objectID": "slides/07-murder.html",
-    "href": "slides/07-murder.html",
-    "title": "Murder in SQL City",
-    "section": "",
-    "text": "Working with data filters, joining data"
-  },
-  {
     "objectID": "slides/07-murder.html#this-weeks-big-picture-goal",
     "href": "slides/07-murder.html#this-weeks-big-picture-goal",
     "title": "Murder in SQL City",
-    "section": "",
-    "text": "Working with data filters, joining data"
+    "section": "This week’s big picture goal:",
+    "text": "This week’s big picture goal:\nWorking with data filters, joining data"
   },
   {
     "objectID": "slides/07-murder.html#todays-goals",
@@ -2814,25 +3033,18 @@
     "text": "In the following examples, evaluate each problem using the criteria of a minimal reproducible example from this StackOverflow post.\nSpecifically, address the following things:\n\nAre the question and problem description complete?\nIs the issue reproducible? Does it have a description of the problem, with code that reproduces the problem? What could improve it?\nIs the example minimal? Does it include extra code or information that is not necessary?\nDoes the question describe any attempted solutions?\n\nThen, using what you know about R and Python, try to debug the problem using the strategies in the debugging chapter. Once you are thoroughly stumped, or you believe you have solved the problem, compare your solutions to those given on StackOverflow using the link.\n\nWhy Doesn’t this R function work?\n\nI created the following function to append new strings on a vector of strings called “meals”. However, when I use this function to append an string input into my “meals” vector, it does not work.\n\n add &lt;- function(str) {\n      meals &lt;- append(meals, as.character(str))  \n    }\nLink to original SO post.\n\n\nFunction not working R\n\nI’ve never programmed before and am trying to learn. I’m following that “coursera” course that I’ve seen other people post about — a course offered by Johns Hopkins on R programming.\n\n\nAnyway, this was supposed to be my first function. Yet, it doesn’t work! But when I type out all the steps individually, it runs just fine… Can anyone tell me why?\n\npollutantmean &lt;- function(directory, pollutant, id = 1:332){\n    x&lt;- list.files(\"/Users/mike******/Desktop/directory\", full.names=TRUE)\n    y&lt;- lapply(x, read.csv)\n    z&lt;- do.call(rbind.data.frame, y[id])\n\n    mean(z$pollutant, na.rm=TRUE)\n}\npollutantmean(specdata,nitrate,1:10)\n[1] NA\nWarning message:\nIn mean.default(z$pollutant, na.rm = TRUE) :\n  argument is not numeric or logical: returning NA\n\n####\n\nx&lt;- list.files(\"/Users/mike******/Desktop/specdata\",full.names=TRUE)\ny&lt;- lapply(x,read.csv)\nz&lt;- do.call(rbind.data.frame,y[1:10])\nmean(z$nitrate,na.rm=TRUE)\n[1] 0.7976266\nLink\n\n\nInexplicable error when trying to export my R notebook\n\nGetting this error from R Markdown when trying to export my .RMD\n\n\"Error in filter(Gastropods, Species == \"Cellana\") :  object 'Species' not found Calls: &lt;Anonymous&gt; ... withCallingHandlers -&gt; withVisible -&gt; eval -&gt; eval -&gt; filter\"\n\nHowever, all my plots are coming out successfully. I can clearly see in the data that the species column is there and that Cellana is a species. No spelling errors or anything.\n\n\nMy first 20 or so lines of code are below (between the ### symbols)\n\n\n\n###\n---\ntitle: \" Lab Report 2 - z5016113\"\noutput: html_notebook\ni---\n\n#1. Gastropod abundance vs. height on the shore\n\n```{r}\nGastropods &lt;- read.csv(file = \"MaroubraZones.csv\", header = TRUE)\nlibrary(ggplot2, dplyr)\n```\n\n```{r}\nGastropods$Zone &lt;- factor(Gastropods$Zone, levels = c(\"Low\", \"Mid\", \"High\"))\n```\n\n```{r}\nCellana &lt;- filter(Gastropods, Species == \"Cellana\")  ------&gt; This line is causing the error\n```\n\n```{r}\nggplot(Cellana, aes(Zone, Abundance)) + geom_boxplot()\n```\n###\n\n\nYou can find this sample file here\nLink\n\n\nPython if elif else statement\n\nI’m trying to create a program with python that calculate the cost for shipping.\n\n\nHowever, I can’t run the program to where it works properly.\n\n\nWhat ever my total is the same amount comes out as $6 for US and $8 for Canada. I can’t seem to get pass that.\n\n\nExample:\n\ntotal = raw_input('What is the total amount for your online shopping?')\ncountry = raw_input('Shipping within the US or Canada?')\n\nif country == \"US\":\n    if total &lt;= \"50\":\n        print \"Shipping Costs $6.00\"\n    elif total &lt;= \"100\":\n            print \"Shipping Costs $9.00\"\n    elif total &lt;= \"150\":\n            print \"Shipping Costs $12.00\"\n    else:\n        print \"FREE\"\n\nif country == \"Canada\":\n    if total &lt;= \"50\":\n        print \"Shipping Costs $8.00\"\n    elif total &lt;= \"100\":\n        print \"Shipping Costs $12.00\"\n    elif total &lt;= \"150\":\n        print \"Shipping Costs $15.00\"\n    else:\n        print \"FREE\"\nLink"
   },
   {
-    "objectID": "slides/10a-latex-markdown.html",
-    "href": "slides/10a-latex-markdown.html",
-    "title": "LaTeX and Markdown",
-    "section": "",
-    "text": "(in chronological order)\n\nLaTeX\nMarkdown and Pandoc\nAdding in R\n\nSweave/knitr\nRmarkdown/quarto\n\nSpecial Document Types"
-  },
-  {
     "objectID": "slides/10a-latex-markdown.html#contents",
     "href": "slides/10a-latex-markdown.html#contents",
     "title": "LaTeX and Markdown",
-    "section": "",
-    "text": "(in chronological order)\n\nLaTeX\nMarkdown and Pandoc\nAdding in R\n\nSweave/knitr\nRmarkdown/quarto\n\nSpecial Document Types"
+    "section": "Contents",
+    "text": "Contents\n(in chronological order)\n\nLaTeX\nMarkdown and Pandoc\nAdding in R\n\nSweave/knitr\nRmarkdown/quarto\n\nSpecial Document Types"
   },
   {
     "objectID": "slides/10a-latex-markdown.html#latex-a-document-prep-system",
     "href": "slides/10a-latex-markdown.html#latex-a-document-prep-system",
     "title": "LaTeX and Markdown",
     "section": "LaTeX: a document prep system",
-    "text": "LaTeX: a document prep system\n\n\nThink of it as the digital version of a printing press.\nYou will use tags to control the formatting of your document, and then compile it to PDF.\n\n\\emph{} for italic text\n\\textbf{} for bold text\n{\\HUGE }, {\\footnotesize }\n\nThe LaTeX system lays out your document according to a set of rules for spacing, margins, figure captions, cross-references, …\n\n\n\n\nPrinting press\n\n\n\n\n\n\nLet us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to humans what we want the computer to do.\n\n\n— Donald E. Knuth, Literate Programming, 1984\n\nuseR! 2016 was celebrating the markdown systems as epic milestones for literate programming: https://www.r-project.org/conferences/useR-2016/keynotes.html"
+    "text": "LaTeX: a document prep system\n\n\nThink of it as the digital version of a printing press.\nYou will use tags to control the formatting of your document, and then compile it to PDF.\n\n\\emph{} for italic text\n\\textbf{} for bold text\n{\\HUGE }, {\\footnotesize }\n\nThe LaTeX system lays out your document according to a set of rules for spacing, margins, figure captions, cross-references, …\n\n\n\n\nPrinting press"
   },
   {
     "objectID": "slides/10a-latex-markdown.html#latex-editors",
@@ -2846,7 +3058,7 @@
     "href": "slides/10a-latex-markdown.html#basic-latex",
     "title": "LaTeX and Markdown",
     "section": "Basic LaTeX",
-    "text": "Basic LaTeX\n\n\n\n\\documentclass{article}     % 1\n\\usepackage[utf8]{inputenc} % 2\n\n\\usepackage{natbib}         % 3 \n\\usepackage{graphicx}       % 4\n\n\\title{Demo}                % 5\n\\author{Susan VanderPlas}\n\\date{\\today}\n\n\\begin{document}            % 6\n\n\\maketitle                  % 7\n\n\\section{Introduction}      % 8\n\\citet{adams1995hitchhiker}\n\\section{Conclusion}\n\n\\bibliographystyle{plain}   % 9\n\\bibliography{refs}\n\\end{document}\nBasic LaTeX document\n\n\ntype of document (article)\nallow UTF-8 characters\nuse a bibliography\nallow pictures\nDocument header information\nActual document content\nCreate document title/header\nCreate introduction section (with a citation)\nCreate the bibliography\n\nOverleaf Gallery of possibilities\n\n\n\nLink to edit document"
+    "text": "Basic LaTeX\n\n\n\n\\documentclass{article}     % 1\n\\usepackage[utf8]{inputenc} % 2\n\n\\usepackage{natbib}         % 3 \n\\usepackage{graphicx}       % 4\n\n\\title{Demo}                % 5\n\\author{Susan VanderPlas}\n\\date{\\today}\n\n\\begin{document}            % 6\n\n\\maketitle                  % 7\n\n\\section{Introduction}      % 8\n\\citet{adams1995hitchhiker}\n\\section{Conclusion}\n\n\\bibliographystyle{plain}   % 9\n\\bibliography{refs}\n\\end{document}\nBasic LaTeX document\n\n\ntype of document (article)\nallow UTF-8 characters\nuse a bibliography\nallow pictures\nDocument header information\nActual document content\nCreate document title/header\nCreate introduction section (with a citation)\nCreate the bibliography\n\nOverleaf Gallery of possibilities\n\n\nLink to edit document"
   },
   {
     "objectID": "slides/10a-latex-markdown.html#bibtex",
@@ -2860,7 +3072,7 @@
     "href": "slides/10a-latex-markdown.html#typesetting-math",
     "title": "LaTeX and Markdown",
     "section": "Typesetting math",
-    "text": "Typesetting math\n\n\nInline math: $x + 2$\nCentered math:\n$$ x+2 $$\n \n \n \nSystems of equations:\n\\begin {align} x &= a + b\\\\\ny &= c + d \\end{align}\n \nMath characters:\n\\alpha, \\beta, \\gamma, \\infty, \\rightarrow, \\int,\\frac{a}{b}\n\n\\(x + 2\\) is an inline equation.\nWe can also center equations within a paragraph, like this: \\[x + 2\\] The paragraph resumes after we’re done.\nSystems of equations:\n\\(\\begin{align} x &= a + b\\\\ y &= c + d\\end{align}\\)\n \nMath characters:\n\\[\\alpha,\\beta,\\gamma,\\infty,\\rightarrow,\\int,\\frac{a}{b}\\]\n\n\nCheatsheet for math mode"
+    "text": "Typesetting math\n\n\nInline math: $x + 2$\nCentered math:\n$$ x+2 $$\n \n \n \nSystems of equations:\n\\begin {align} x &= a + b\\\\\ny &= c + d \\end{align}\n \nMath characters:\n\\alpha, \\beta, \\gamma, \\infty, \\rightarrow, \\int,\\frac{a}{b}\n\n\\(x + 2\\) is an inline equation.\nWe can also center equations within a paragraph, like this: \\[x + 2\\] The paragraph resumes after we’re done.\nSystems of equations:\n\\(\\begin{align} x &= a + b\\\\ y &= c + d\\end{align}\\)\n \nMath characters:\n\\[\\alpha,\\beta,\\gamma,\\infty,\\rightarrow,\\int,\\frac{a}{b}\\]\n\nCheatsheet for math mode"
   },
   {
     "objectID": "slides/10a-latex-markdown.html#try-it-out",
@@ -2902,7 +3114,7 @@
     "href": "slides/10a-latex-markdown.html#rmarkdown",
     "title": "LaTeX and Markdown",
     "section": "Markdown + R?",
-    "text": "Markdown + R?\nYou’ve been using quarto for the entire semester, but it works essentially the same way as adding R to LaTeX:\n\n\n\nRmarkdown Workflow\n\n\nQuarto is similar, but supports even more formats and allows you to use even more programming languages in code chunks."
+    "text": "Markdown + R?\nYou’ve been using quarto for the entire semester, but it works essentially the same way as adding R to LaTeX:\n\nRmarkdown WorkflowQuarto is similar, but supports even more formats and allows you to use even more programming languages in code chunks."
   },
   {
     "objectID": "slides/10a-latex-markdown.html#code-chunk-options",
@@ -2933,18 +3145,11 @@
     "text": "Special Document Types\nBoth LaTeX and quarto/Rmarkdown make use of other libraries to expand the types of documents available.\n\n\n\nDocument Type\nLibrary\nCompiler\nEnd Result\n\n\n\n\n\nSlides\nBeamer\nLaTeX or Markdown + LaTeX\nPDF\n\n\n\n \nReveal.js\nMarkdown\nHTML\n\n\n\n \nIOSlides\nMarkdown\nHTML\n\n\n\n \nSlidy\nMarkdown\nHTML\n\n\n\n \nPowerPoint\nMarkdown\nPowerPoint\n\n\n\n \nXaringan\nMarkdown + JS\nHTML/markdown hybrid\n\n\n\nPoster\nBeamer\nLaTeX\nPDF\n\n\n\n \nPosterdown\nMarkdown\nHTML\n\n\n\n \nPagedown\nMarkdown\nHTML\n\n\n\n\nThese documents use the same basic markdown or LaTeX syntax, but render differently."
   },
   {
-    "objectID": "slides/11-lists.html",
-    "href": "slides/11-lists.html",
-    "title": "Lists and Functional Programming",
-    "section": "",
-    "text": "dplyr handles data frames\npurrr handles lists\n\nRemember: a data frame is a list\nof vectors with equal length.\n\nLists can be used inside data frames with list-columns"
-  },
-  {
     "objectID": "slides/11-lists.html#purrr",
     "href": "slides/11-lists.html#purrr",
     "title": "Lists and Functional Programming",
-    "section": "",
-    "text": "dplyr handles data frames\npurrr handles lists\n\nRemember: a data frame is a list\nof vectors with equal length.\n\nLists can be used inside data frames with list-columns"
+    "section": "Purrr",
+    "text": "Purrr\n\n\ndplyr handles data frames\npurrr handles lists\n\nRemember: a data frame is a list\nof vectors with equal length.\n\nLists can be used inside data frames with list-columns"
   },
   {
     "objectID": "slides/11-lists.html#list-columns",
@@ -3010,32 +3215,25 @@
     "text": "Demonstrating Nest/Unnest\nI want to show the Central Limit Theorem using simulation.\n\nDistribution of the sample mean converges to a normal distribution if \\(\\mu\\) exists and \\(\\sigma^2 &lt;\\infty\\) as \\(n\\rightarrow\\infty\\)\n\n\nlibrary(ggplot2)\n\nggplot(res_df, aes(x = mean)) + geom_histogram() + facet_wrap(~n, scales = \"free_x\")"
   },
   {
-    "objectID": "slides/12-simulation.html",
-    "href": "slides/12-simulation.html",
-    "title": "Simulation Using Built-In Functions",
-    "section": "",
-    "text": "Linearity and Additivity of DVs\nIndependence of Errors\nConstant Variance of Errors\nNormality of Errors"
-  },
-  {
     "objectID": "slides/12-simulation.html#linear-regression-assumptions",
     "href": "slides/12-simulation.html#linear-regression-assumptions",
     "title": "Simulation Using Built-In Functions",
-    "section": "",
-    "text": "Linearity and Additivity of DVs\nIndependence of Errors\nConstant Variance of Errors\nNormality of Errors"
+    "section": "Linear Regression Assumptions",
+    "text": "Linear Regression Assumptions\n\nLinearity and Additivity of DVs\nIndependence of Errors\nConstant Variance of Errors\nNormality of Errors"
   },
   {
     "objectID": "slides/12-simulation.html#how-bad-is-it-linearity",
     "href": "slides/12-simulation.html#how-bad-is-it-linearity",
     "title": "Simulation Using Built-In Functions",
     "section": "How Bad is it? – Linearity",
-    "text": "How Bad is it? – Linearity\n\nlibrary(tidyverse)\nset.seed(2034927344)\ndata &lt;- tibble(\n  x1 = seq(-10, 10, \n           length.out = 100) + \n    runif(100, -.1, .1), # wiggle\n  x2 = seq(10, -10, \n           length.out = 100) + \n    runif(100, -.1, .1), # wiggle\n  \n  # Definitely not linear\n  y =  x1 + x1^2/2 + # main effect\n    rnorm(100, 0, 10) # actual error\n)\n\nggplot(data, aes(x = x1, y = y)) + \n  geom_point()\n\n\n\n\n\n\n\n\nClearly non-linear"
+    "text": "How Bad is it? – Linearity\n\n\nlibrary(tidyverse)\nset.seed(2034927344)\ndata &lt;- tibble(\n  x1 = seq(-10, 10, \n           length.out = 100) + \n    runif(100, -.1, .1), # wiggle\n  x2 = seq(10, -10, \n           length.out = 100) + \n    runif(100, -.1, .1), # wiggle\n  \n  # Definitely not linear\n  y =  x1 + x1^2/2 + # main effect\n    rnorm(100, 0, 10) # actual error\n)\n\nggplot(data, aes(x = x1, y = y)) + \n  geom_point()\n\n\n\n\n\n\n\n\n\nClearly non-linear"
   },
   {
     "objectID": "slides/12-simulation.html#how-bad-is-it-linearity-1",
     "href": "slides/12-simulation.html#how-bad-is-it-linearity-1",
     "title": "Simulation Using Built-In Functions",
     "section": "How Bad is it? – Linearity",
-    "text": "How Bad is it? – Linearity\n\nmodel &lt;- lm(y ~ x1 + x2, data = data)\nsummary(model)\n\n\nCall:\nlm(formula = y ~ x1 + x2, data = data)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-35.805 -15.641  -1.853  16.714  44.165 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)   16.457      1.913   8.605 1.37e-13 ***\nx1           -20.473     24.200  -0.846    0.400    \nx2           -21.413     24.238  -0.883    0.379    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 19.08 on 97 degrees of freedom\nMultiple R-squared:  0.07991,   Adjusted R-squared:  0.06094 \nF-statistic: 4.212 on 2 and 97 DF,  p-value: 0.01761"
+    "text": "How Bad is it? – Linearity\n\n\nmodel &lt;- lm(y ~ x1 + x2, data = data)\nsummary(model)\n\n\n\nCall:\nlm(formula = y ~ x1 + x2, data = data)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-35.805 -15.641  -1.853  16.714  44.165 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)   16.457      1.913   8.605 1.37e-13 ***\nx1           -20.473     24.200  -0.846    0.400    \nx2           -21.413     24.238  -0.883    0.379    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 19.08 on 97 degrees of freedom\nMultiple R-squared:  0.07991,   Adjusted R-squared:  0.06094 \nF-statistic: 4.212 on 2 and 97 DF,  p-value: 0.01761"
   },
   {
     "objectID": "slides/12-simulation.html#how-bad-is-it",
@@ -3084,14 +3282,14 @@
     "href": "slides/12-simulation.html#alpha-coefficient",
     "title": "Simulation Using Built-In Functions",
     "section": "\\(\\alpha\\) coefficient",
-    "text": "\\(\\alpha\\) coefficient\n\nsim_n|&gt;\n  unnest(tidy_model) |&gt; filter(term == \"x1\") |&gt;\n  ggplot(aes(x = estimate, fill = type)) + \n  geom_density() + \n  geom_vline(xintercept = 1, linetype = \"dashed\") + \n  facet_wrap(~type, scales=\"free\")\n\n\n\n\n\n\n\n\nThat is some wide error variance!"
+    "text": "\\(\\alpha\\) coefficient\n\nsim_n|&gt;\n  unnest(tidy_model) |&gt; filter(term == \"x1\") |&gt;\n  ggplot(aes(x = estimate, fill = type)) + \n  geom_density() + \n  geom_vline(xintercept = 1, linetype = \"dashed\") + \n  facet_wrap(~type, scales=\"free\")\n\n\nThat is some wide error variance!"
   },
   {
     "objectID": "slides/12-simulation.html#beta-coefficient",
     "href": "slides/12-simulation.html#beta-coefficient",
     "title": "Simulation Using Built-In Functions",
     "section": "\\(\\beta\\) coefficient",
-    "text": "\\(\\beta\\) coefficient\n\nsim_n|&gt;\n  unnest(tidy_model) |&gt;\n  # Only occurs in misspec model\n  filter(term == \"x2\") |&gt;\n  ggplot(aes(x = estimate, fill = type)) + \n  geom_density(alpha=0.5) + \n  geom_vline(xintercept = 0, \n             linetype = \"dashed\")"
+    "text": "\\(\\beta\\) coefficient\n\n\nsim_n|&gt;\n  unnest(tidy_model) |&gt;\n  # Only occurs in misspec model\n  filter(term == \"x2\") |&gt;\n  ggplot(aes(x = estimate, fill = type)) + \n  geom_density(alpha=0.5) + \n  geom_vline(xintercept = 0, \n             linetype = \"dashed\")"
   },
   {
     "objectID": "exams/midterm-learning-objectives.html",
@@ -3211,6 +3409,62 @@
     "title": "Exam Learning Objectives",
     "section": "Data Input",
     "text": "Data Input\n\nRead in data from common formats into R or Python\nIdentify delimiters, headers, and other essential components of files"
+  },
+  {
+    "objectID": "exams/final/exam-questions.html",
+    "href": "exams/final/exam-questions.html",
+    "title": "Final Exam",
+    "section": "",
+    "text": "(In the spirit of Advent of Code, if not actually advent-of-code problems because the license doesn’t allow that).\nYou’re in charge of logistics and predictive analytics for Santa’s workshop at the North Pole. There have been some supply chain issues this year that mean that the workshop hasn’t been able to obtain the parts necessary to build enough of some popular toys. It’s important to figure out which toys are impacted, identify demand for those toys, and determine what alternative presents each child should receive."
+  },
+  {
+    "objectID": "exams/final/exam-questions.html#electrical-regulators",
+    "href": "exams/final/exam-questions.html#electrical-regulators",
+    "title": "Final Exam",
+    "section": "Electrical regulators",
+    "text": "Electrical regulators\nOne of the parts which is hard to acquire this year is an electrical regulator that modulates between the battery 🔋 and a circuit board to ensure that the circuit board doesn’t short out ⚡. All of these parts have been gobbled up by computer chip manufacturers to build AI data centers 😢.\nIdentify the toys which may be impacted by this shortage (toys with chips and batteries). Output a table with the toy name and relative demand, sorted in decreasing order by demand.\nYour table should be nicely formatted using a function such as knitr::kable, DT:DT, etc."
+  },
+  {
+    "objectID": "exams/final/exam-questions.html#fabric",
+    "href": "exams/final/exam-questions.html#fabric",
+    "title": "Final Exam",
+    "section": "Fabric",
+    "text": "Fabric\nThere is also a shortage of fabric, since JoAnn fabrics went out of business (they were the North Pole’s #1 fabric supplier). Only high-demand (demand &gt; 50) fabric toys can be made this year.\nIdentify the toys which can be manufactured, accounting for both the electrical regulator and fabric constraints."
+  },
+  {
+    "objectID": "exams/final/exam-questions.html#shortage-demographics",
+    "href": "exams/final/exam-questions.html#shortage-demographics",
+    "title": "Final Exam",
+    "section": "Shortage Demographics",
+    "text": "Shortage Demographics\n\nCleaning the data\nThe age range column is not easy to work with as is. Create a tidier representation of that column that uses numeric variables.\n\n\nAges Hit by Shortage\nFor ages 0 - 18, calculate the number of toys appropriate for that age as well as the number of toys which cannot be produced because of product shortages.\nCreate a graph of the percentage of affected toys by age range. Make sure your graph has axis labels, is of an appropriate form for the data, and uses the principles of good graphics."
+  },
+  {
+    "objectID": "exams/final/exam-questions.html#formatting",
+    "href": "exams/final/exam-questions.html#formatting",
+    "title": "Final Exam",
+    "section": "Formatting",
+    "text": "Formatting\nGet the wishlist data into tidy form.\nWhat was not tidy about its original form? How did your changes make the data tidy?"
+  },
+  {
+    "objectID": "exams/final/exam-questions.html#christmas-disappointments",
+    "href": "exams/final/exam-questions.html#christmas-disappointments",
+    "title": "Final Exam",
+    "section": "Christmas Disappointments",
+    "text": "Christmas Disappointments\nIdentify the child with the highest percentage of unavailable toys on their wishlist."
+  },
+  {
+    "objectID": "exams/final/exam-questions.html#making-santas-list",
+    "href": "exams/final/exam-questions.html#making-santas-list",
+    "title": "Final Exam",
+    "section": "Making Santa’s List",
+    "text": "Making Santa’s List\nIdentify the top three available presents for each child, relative to their wishlist. Print out a list for each child, formatted as:\nChild Name\n\n1. Toy name\n2. Toy name\n3. Toy name"
+  },
+  {
+    "objectID": "exams/final/exam-questions.html#workshop-logistics",
+    "href": "exams/final/exam-questions.html#workshop-logistics",
+    "title": "Final Exam",
+    "section": "Workshop Logistics",
+    "text": "Workshop Logistics\nHow many of each toy need to be made, based on your answer to the previous question? Provide a simple, nicely formatted table."
   },
   {
     "objectID": "activities/11-numerical-integration.html",

@@ -16,6 +16,8 @@ project:
     - slides/*.qmd
     - "!archives"
     - exams/midterm-learning-objectives.qmd
+    - exams/final-learning-objectives.qmd
+    - exams/final/exam-questions.qmd
     - activities/*.qmd
 
 engine: knitr

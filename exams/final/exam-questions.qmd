@@ -1,5 +1,7 @@
 ---
 title: "Final Exam"
+author: "Your Name"
+error: true
 ---
 
 # Introduction
@@ -11,6 +13,7 @@ There have been some supply chain issues this year that mean that the workshop h
 It's important to figure out which toys are impacted, identify demand for those toys, and determine what alternative presents each child should receive. 
 
 ```{r}
+#| include: false
 library(dplyr)
 library(tidyr)
 library(knitr)
@@ -66,6 +69,16 @@ Create a tidier representation of that column that uses numeric variables.
 
 For ages 0 - 18, calculate the number of toys appropriate for that age as well as the number of toys which cannot be produced because of product shortages. 
 
+```{r}
+
+```
+
+
+Create a graph of the percentage of affected toys by age range. Make sure your graph has axis labels, is of an appropriate form for the data, and uses the principles of good graphics.
+
+```{r}
+
+```
 
 
 # Part 2 - 🎶 He's Making A List! 🎅
@@ -93,7 +106,16 @@ Identify the child with the highest percentage of unavailable toys on their wish
 
 ## Making Santa's List
 
-Identify the top three available presents for each child, relative to their wishlist. 
+Identify the top three available presents for each child, relative to their wishlist. Print out a list for each child, formatted as:
+
+```
+Child Name
+
+1. Toy name
+2. Toy name
+3. Toy name
+```
+
 
 ```{r}
 
@@ -102,7 +124,7 @@ Identify the top three available presents for each child, relative to their wish
 
 ## Workshop Logistics
 
-How many of each toy need to be made, based on your answer to the previous question?
+How many of each toy need to be made, based on your answer to the previous question? Provide a simple, nicely formatted table. 
 
 ```{r}
 
